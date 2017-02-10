@@ -86,5 +86,13 @@ data <- subset(data, loaded==1)
 #remove any city that didn't get merged
 data <- data[is.na(data$CENSUS2010POP)==F,]
 
+#remove the entry that inaccurately got assigned New Jersey as a city 
+#(I checked the rest, there don't appear to be any comparable errors)
+data <- subset(data, City!="New Jersey")
+
 #save results
 save(data, file="data/govWebsitesVerified.Rdata")
+
+#check population coverage
+sum(data$POPESTIMATE2015)
+#74152912
