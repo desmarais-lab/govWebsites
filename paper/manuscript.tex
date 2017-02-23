@@ -147,42 +147,66 @@ We use the resulting list of websites to acccess their copies stored in the Inte
 <Note: We have not actually done this last step for all websites (however, the R script which runs the Ruby package is already set up to do so once we need to). Instead 10 websites were randomly sampled from an older version of the GSA list, which still contained counties and townships, which is why one of the 10 websites is from Dutchess County, NY.>
 
 % latex table generated in R 3.3.2 by xtable 1.8-2 package
-% Wed Feb 22 14:08:54 2017
+% Wed Feb 22 21:39:50 2017
 \begin{table}[ht]
 	\centering
-	\begin{tabular}{rr}
+	\begin{tabular}{lr}
 		\hline
-		& V1 \\
+		File type & Occurrences \\ 
 		\hline
-		.asp &   1 \\
-		.aspx &  43 \\
-		.css &  32 \\
-		.doc &  35 \\
-		.docx &   5 \\
-		.eot &   1 \\
-		.gif &  99 \\
-		.GIF &   1 \\
-		.htm &   2 \\
-		.html & 819 \\
-		.ico &   1 \\
-		.jpg & 131 \\
-		.JPG &  26 \\
-		.js &  51 \\
-		.Net &  12 \\
-		.pdf & 1371 \\
-		.PDF &  50 \\
-		.png & 210 \\
-		.PNG &   1 \\
-		.ppt &   1 \\
-		.swf &   1 \\
-		.ttf &   3 \\
-		.txt &   1 \\
-		.woff &   2 \\
-		.xls &   2 \\
-		.xlsx &   6 \\
-		.xml &   3 \\
+		.pdf & 1371 \\ 
+		.html & 819 \\ 
+		.png & 210 \\ 
+		.jpg & 131 \\ 
+		.gif &  99 \\ 
+		.js &  51 \\ 
+		.PDF &  50 \\ 
+		.aspx &  43 \\ 
+		.doc &  35 \\ 
+		.css &  32 \\ 
+		.JPG &  26 \\ 
+		.Net &  12 \\ 
+		.xlsx &   6 \\ 
+		.docx &   5 \\ 
+		.ttf &   3 \\ 
+		.xml &   3 \\ 
+		.htm &   2 \\ 
+		.woff &   2 \\ 
+		.xls &   2 \\ 
+		.asp &   1 \\ 
+		.eot &   1 \\ 
+		.GIF &   1 \\ 
+		.ico &   1 \\ 
+		.PNG &   1 \\ 
+		.ppt &   1 \\ 
+		.swf &   1 \\ 
+		.txt &   1 \\ 
 		\hline
 	\end{tabular}
+	\caption{File types in scraped websites} 
+\end{table}
+
+% latex table generated in R 3.3.2 by xtable 1.8-2 package
+% Wed Feb 22 21:35:10 2017
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{lrr}
+		\hline
+		Website & Files & Size (MB) \\ 
+		\hline
+		brownsvilletn.gov & 188 & 14328 \\ 
+		www.centralpointoregon.gov & 150 & 137440 \\ 
+		www.dedham-ma.gov & 603 & 212572 \\ 
+		www.duncanok.gov &  84 & 47064 \\ 
+		www.dutchessny.gov & 110 & 291376 \\ 
+		www.ennistx.gov & 200 & 26244 \\ 
+		www.greenvillenc.gov & 333 & 25732 \\ 
+		www.romi.gov & 491 & 112584 \\ 
+		www.trumbull-ct.gov & 787 & 191540 \\ 
+		www.westonct.gov & 861 & 213140 \\ 
+		\hline
+	\end{tabular}
+	\caption{Test websites} 
 \end{table}
 
 \newpage
