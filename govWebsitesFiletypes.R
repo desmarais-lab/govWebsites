@@ -6,7 +6,7 @@ setwd("/home/markus/Dropbox/4_RA/govWebsites/websites/")
 a <- list.files(recursive = T) #create a list of all files in all subdirectories
 
 #file types
-library(stringr)
+require(stringr)
 #extract file type
 b <- str_extract(a,"(\\.[^.]+)$")
 #create table for file types with at most 5 characters
@@ -14,7 +14,7 @@ c <- data.frame(table(b[which(str_length(b)<6)]))
 names(c) <- c("File type","Occurrences")
 c <- c[-c(1:8),]
 c <- c[order(c$Occurrences, decreasing = T),]
-library(xtable)
+require(xtable)
 #omit some of the less useful types and turn table into latex object
 print(xtable(c, caption="File types in scraped websites"), include.rownames = F)
 
