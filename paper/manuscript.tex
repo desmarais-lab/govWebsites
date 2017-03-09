@@ -125,6 +125,18 @@
 % Description of the possible challenges
 \section{Introduction}
 
+\section{Background}
+
+\cite{grimmelikhuijsen2010transparency} run an experiment in which citizens are exposed to randomly selected levels of information about local government council minutes. They find a negative relationship between the information level and perceptions of competence in the local government. This raises an interesting question regarding whether citizens or more likely to participate when they perceive competence or when they perceive incompetence.
+
+\cite{wang2005evaluating} present a widely cited `model' for evaluating the accessibility of information on government websites. This is an important paper with which we should be familiar at a very detailed level as we use archived web content to assess the volume/accessibility of information provided by local governments.
+
+\cite{osman2014cobra} is less relevant, but they develop a multi-item measure to predict the level of citizen satisfaction with e-government services. 
+
+
+\cite{grimmelikhuijsen2012developing} conduct an enormously relevant study. Insofar as we analyze what predicts openness of government websites, we will be replicating and building upon this study. They focus on Dutch municipal websites, and their approach is fairly limited in scope and highly manual (which we can compliment). For example, one of the dependent variables ``Decision-making transparency,'' is measured ``using a discrete (1/0) indicator for whether the underlying principles or reasons for local air pollution policies were given on the Web site.'' 
+
+
 \section{Data}
 The General Services Administration (GSA) maintains all .gov addresses, and provides a complete\footnote{Domains used for testing and internal programs are excluded.} list of all such domains to the public through GitHub\footnote{https://github.com/GSA/data/tree/gh-pages/dotgov-domains}. This list is updated once per month - we rely on the version released on January 16, 2017. The data from the GSA contains the following variables: One, domain name, specifically, the all-uppercase version of domain and top-level domain (for example, 'ABERDEENMD.GOV'). Two, the type of government entity to which the domain is registered, such as city, county, federal agency, etc. Three, for federal agencies, the name is specfied. Finally, the city in which the domain is registered, is noted.
 
@@ -251,6 +263,20 @@ We use the resulting list of websites to acccess their copies stored in the Inte
 	\end{tabular}
 	\caption{Top term frequencies for 10 test websites} 
 \end{table}
+
+\subsection{California City Websites}
+
+It would be fine to focus on California as a case. First, we need to answer some preliminary questions about the data.
+
+\begin{enumerate}
+
+\item For what percentage and number of CA cities can we find data from the WBM?
+\item For how many election cycles can we find political leadership data for these matched cities?
+\item CA is a deep blue state, in what number and percentage of cities is the local leadership majority Republican? 
+\item Relatedly, in a typical election cycle, for how many cities do we see a transition in party leadership (i.e., a shift from majority D (R) to majority (R) D). 
+
+\end{enumerate}
+
 
 \newpage
 
