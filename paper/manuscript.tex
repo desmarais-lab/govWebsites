@@ -277,10 +277,28 @@ It would be fine to focus on California as a case. First, we need to answer some
 
 \end{enumerate}
 
+\subsection{Topic modeling}
+We hypothesize that a change in leadership from one party to the other will lead to a change in website content because the two parties have different agendas. Democrats have a predilection towards policies that promote social and economic equality, whereas Republicans like to emphasize small government as well as law and order. Documents uploaded to city websites are expected to be a reflection of these preferences. The author-topic model \citep{Rosen-Zvi2004} captures this concept quite well, because it assumes that different authors prefer different topics, each of which is associated with a group of words. We classify all documents that have been present before the change in party control as from one party\footnote{This may be wrong in some cases, as they might be leftovers from yet another predecessor government. If the WaybackMachine data reaches back far enough, we might be able to identify and include only the documents that were added since the previous election.}, and the new documents as stemming from party 2. The number of topics \textit{j} would be set to at least three, where one topic would (hopefully) be reserved for purely administrative, non-partisan issues so that the other two (or more) would resolve to party-specific policy issues. Ideally, the result would then show significant\footnote{Though I am not sure how to calculate that.} differences in the probabilities of authors being assigned to partisan topics.
+
+Alternatively, the more commonplace LDA is another feasible way of modeling the way in which websites receive a makeover when party control of the mayorship changes. As noted by \citep{Rosen-Zvi2004}, LDA can be considered a special case of the author-topic model, ''where each document has one unique author''. Here, a city website would be a collection of documents, each of which originates entirely from either Democratic or Republican leadership. In a way, this captures the data-generating process more closely.
+
+Even so, neither the author-topic model nor the LDA model are a perfect fit for the structure of city government websites. One assumes that multiple authors write one document. This may be appropriate for the original purpose of author-topic models, scientific papers, which have multiple authors. This is not as good of a fit for city governments however. Using the LDA instead deals with this problem, but it also assumes that one document has multiple topics. For city government websites, this may be an erroneous assumption, because in many cases, each of these files appears to have one very specific purpose - agricultural, parks and recreation, smoke detectors, and so on.
+
+Furthermore, if we only investigate cities in which control of government changes from one party to another, we may overestimate its effect. Not only does a transition in party control occur, but the person in charge also changes. Parties are fairly homogeneous, so that two mayors from the same party may have very different policy preferences and managerial styles. To remedy this problem, we [could] utilize matching, pairing our cases with similar cities in which the incumbent does not run for re-election, but party control stays the same nevertheless.
+
+Another problem with these generative models is that they ignore the fact that despite possible changes to websites due to a leadership transition, large parts of the content carry over. This means that unless the successor government decides to delete everything, some of the existing documents will be preserved, and in the model, also attributed to the new 'author'. But the reverse is not possible, because the predecessor government can't choose to retain documents from the future.
+
+One solution might be to rely on LDA models, but only to apply them to documents that were deleted, the strongest possible expression of a successor governments diverging policy preferences. This way, we could identify directly which issues are considered to be the most divisive.
+
+Traditional author models that rely on lexical or syntactic differences may also be of use. Parties and their voters are associated with specific educational backgrounds, which may in turn be associated with specific writing styles. However, it seems likely that personal rather than partisan authorship is playing an even larger role here.
+
+Another option, that I have not looked closely at yet, are (continuous) dynamic topic models by David Blei, which would allow us to model the progression of topics over time, i.e. when party control changes.
+
 
 \newpage
 
-\bibliographystyle{apsr}
+%\bibliographystyle{apsr} % apsr stopped working for me
+\bibliographystyle{plainnat}
 \bibliography{ref}
 
 \end{document}
