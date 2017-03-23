@@ -2,18 +2,14 @@
 #by opening each in a webdriver-controlled browser
 #and recording the url it redirects to
 verify:
-	python2 govWebsitesVerification_1_900.py
-	python2 govWebsitesVerification_901_1800.py
-	python2 govWebsitesVerification_1801_2700.py
-	python2 govWebsitesVerification_2701_3600.py
-	python2 govWebsitesVerification_3601_4500.py
-	python2 govWebsitesVerification_4501_5647.py
+	python2 govWebsitesVerification.py 1 5647
 
 #same as above, but run 3 webdrivers at the same time; faster
 #depending on fast internet connection, 6 should be possible too
+#THIS MAY NOT WORK FROM THE MAKEFILE :(
 verify_parallel:
-	python2 govWebsitesVerification_1_900.py&	python2 govWebsitesVerification_901_1800.py&	python2 govWebsitesVerification_1801_2700.py
-	python2 govWebsitesVerification_2701_3600.py&	python2 govWebsitesVerification_3601_4500.py&	python2 govWebsitesVerification_4501_5647.py
+	python2 govWebsitesVerification.py 1 901 &	python2 govWebsitesVerification.py 901 1801 &	python2 govWebsitesVerification.py 1801 2701
+	python2 govWebsitesVerification.py 2701 3601 &	python2 govWebsitesVerification.py 3601 4501 &	python2 govWebsitesVerification.py 4501 5647
 
 #assembles the output from the python scripts into a data frame and makes some corrections by hand
 verify_correct:

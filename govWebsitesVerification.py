@@ -10,6 +10,7 @@ import os
 import urllib2
 import time
 import csv
+import sys
 
 govWebsitesFile = open('data/current-full.csv')
 govWebsitesReader = csv.reader(govWebsitesFile)
@@ -19,7 +20,7 @@ siteslist = []
 browser = webdriver.Firefox()
 browser.set_page_load_timeout(25)
 
-for i in range(4501,5647): #sum(1 for line in open('data/current-full.csv'))
+for i in range(sys.argv[1],sys.argv[2]): #sum(1 for line in open('data/current-full.csv'))
     website = govWebsitesData[i][0]
     url = "http://www."+str.lower(str(website))
     try:
@@ -44,7 +45,7 @@ for i in range(4501,5647): #sum(1 for line in open('data/current-full.csv'))
         sitelink = "Error"
         siteslist.append(sitelink)
 
-outfile = open("results/results6.txt", 'w')
+outfile = open("results/results1.txt", 'w')
 for item in siteslist:
     outfile.write("%s\n" % item)
 outfile.close()
