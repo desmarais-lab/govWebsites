@@ -19,19 +19,31 @@ verify_parallel:
 verify_correct:
 	R CMD BATCH govWebsitesVerification.R
 
-#merge with census data
+#merge with census data; important file where a LOT gets done, partially by hand
 merge_census:
 	R CMD BATCH govWebsitesCensusMerge.R
 
 #produce states/population breakdown with ggplot
-merge_census:
+coverage:
 	R CMD BATCH govWebsitesCoverage.R
 
 #Use Ruby package (run from within R) to scrape 10 randomly selected
 #websites from the Wayback Machine
-merge_census:
+wayback_downloader:
 	R CMD BATCH internetarchive_webarchive.R
 
 #produce tables with filetypes of 10 test cases
-merge_census:
+check_filetypes:
 	R CMD BATCH govWebsitesFiletpyes.R
+
+#get top term frequencies
+ttf:
+	R CMD BATCH websites/termFrequencies.R
+
+#read in election data from indiana, scrape websites
+indiana:
+	R CMD BATCH govWebsitesIndiana2015.R
+
+#download Indianapolis website, then try out topic models
+indianapolis:
+	R CMD BATCH govWebsitesIndianapolis.R

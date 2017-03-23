@@ -234,6 +234,9 @@ data6 <- data6[,-c(23:30)]
 data9 <- merge(data8,data6, by.x="Group.1",by.y="StateCity",all.x = F,all.y = T)
 data9 <- data9[!duplicated(data9$Group.1),]
 
+#last minute correction
+data9$redirect[data9$City=="Indianapolis"] <- "http://www.indy.gov"
+
 #save results
 save(data9, file="data/govWebsitesVerifiedCensus.Rdata")
 

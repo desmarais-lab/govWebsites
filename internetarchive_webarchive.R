@@ -1,5 +1,3 @@
-
-#
 setwd("/home/markus/Dropbox/4_RA/govWebsites")
 load("data/govWebsitesVerified.Rdata")
 

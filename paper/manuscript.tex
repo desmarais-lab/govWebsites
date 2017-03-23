@@ -264,18 +264,56 @@ We use the resulting list of websites to acccess their copies stored in the Inte
 	\caption{Top term frequencies for 10 test websites} 
 \end{table}
 
-\subsection{California City Websites}
+\subsection{Indiana City Websites}
 
-It would be fine to focus on California as a case. First, we need to answer some preliminary questions about the data.
+It would be fine to focus on Indiana as a case. First, we need to answer some preliminary questions about the data.
 
 \begin{enumerate}
 
-\item For what percentage and number of CA cities can we find data from the WBM?
+\item For what percentage and number of IN cities can we find data from the WBM?
 \item For how many election cycles can we find political leadership data for these matched cities?
-\item CA is a deep blue state, in what number and percentage of cities is the local leadership majority Republican? 
+\item In what number and percentage of cities is the local leadership majority Republican? 
 \item Relatedly, in a typical election cycle, for how many cities do we see a transition in party leadership (i.e., a shift from majority D (R) to majority (R) D). 
 
 \end{enumerate}
+
+\begin{enumerate}
+	
+	\item 30 cities, with a combined population of 1,180,435. However, since only cities (as opposed to towns and villages) hold mayoral elections, only 16 of these, with a combined population of 1,094,383 can be matched to the election data.
+	\item 2015, 2011, 2007, 2003.
+	\item Of the 16 cities, 7 have Republican mayors after the 2015 elections.
+	\item In 6 cases, a shift of party control occurs, with 4 of these being Republican --> Democratic. 
+	
+\end{enumerate}
+
+% latex table generated in R 3.3.3 by xtable 1.8-2 package
+% Wed Mar 22 11:32:43 2017
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{lrrlrrl}
+		\hline
+		City & DemVotes & RepVotes & Winner & Change & Pop15 & url \\ 
+		\hline
+		Attica &  & 187 & Republican & 0 & 3117 & https://attica-in.gov/ \\ 
+		Connersville & 1005 & 995 & Democratic & 1 & 13010 & http://connersvillecommunity.com/ \\ 
+		Frankfort &  & 1748 & Republican & 0 & 16060 & http://frankfort-in.gov/ \\ 
+		Huntingburg & 447 & 793 & Republican & 0 & 6035 & http://www.huntingburg-in.gov/ \\ 
+		Indianapolis & 92830 & 56661 & Democratic & 1 & 862781 & http://www.indy.gov \\ 
+		Lake Station & 1483 & 227 & Democratic & 0 & 12054 & http://www.lakestation-in.gov/ \\ 
+		Linton & 785 & 692 & Democratic & 0 & 5284 & http://www.linton-in.gov/ \\ 
+		Madison & 1192 & 1915 & Republican & 0 & 12040 & http://www.madison-in.gov/ \\ 
+		Mitchell & 229 & 495 & Republican & 1 & 4252 & http://mitchell-in.com/ \\ 
+		Monticello & 0 &  & Democratic & 0 & 5322 & http://www.monticelloin.gov/ \\ 
+		North Vernon & 679 & 697 & Republican & 1 & 6619 & http://www.northvernon-in.gov/ \\ 
+		Richmond & 3421 & 2731 & Democratic & 0 & 35854 & http://www.richmondindiana.gov/ \\ 
+		Rockport & 286 & 272 & Democratic & 1 & 2223 & http://www.cityofrockport-in.gov/ \\ 
+		South Bend & 8515 & 2074 & Democratic & 0 & 101516 & https://www.southbendin.gov/ \\ 
+		Union City & 338 & 440 & Republican & 0 & 3447 & http://www.unioncity-in.gov/ \\ 
+		Winchester & 606 & 524 & Democratic & 1 & 4769 & http://www.winchester-in.gov/ \\ 
+		\hline
+	\end{tabular}
+	\caption{} 
+\end{table}
 
 \subsection{Topic modeling}
 We hypothesize that a change in leadership from one party to the other will lead to a change in website content because the two parties have different agendas. Democrats have a predilection towards policies that promote social and economic equality, whereas Republicans like to emphasize small government as well as law and order. Documents uploaded to city websites are expected to be a reflection of these preferences. The author-topic model \citep{Rosen-Zvi2004} captures this concept quite well, because it assumes that different authors prefer different topics, each of which is associated with a group of words. We classify all documents that have been present before the change in party control as from one party\footnote{This may be wrong in some cases, as they might be leftovers from yet another predecessor government. If the WaybackMachine data reaches back far enough, we might be able to identify and include only the documents that were added since the previous election.}, and the new documents as stemming from party 2. The number of topics \textit{j} would be set to at least three, where one topic would (hopefully) be reserved for purely administrative, non-partisan issues so that the other two (or more) would resolve to party-specific policy issues. Ideally, the result would then show significant\footnote{Though I am not sure how to calculate that.} differences in the probabilities of authors being assigned to partisan topics.
@@ -294,6 +332,11 @@ Traditional author models that rely on lexical or syntactic differences may also
 
 Another option, that I have not looked closely at yet, are (continuous) dynamic topic models by David Blei, which would allow us to model the progression of topics over time, i.e. when party control changes.
 
+\begin{figure}[!ht]
+	\centering
+	%\caption{Population coverage}
+	\includegraphics[width=\linewidth]{figures/wtpIndy.pdf}
+\end{figure}
 
 \newpage
 

@@ -4,3 +4,4 @@
 *.bbl
 *.synctex.gz
 *.DS_Store
+/websites/*

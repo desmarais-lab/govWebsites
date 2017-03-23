@@ -1,10 +1,11 @@
 #This script extracts the top term frequencies from the pdfs in the 10 test websites
 #Script is pretty much entirely based on:
 #https://rstudio-pubs-static.s3.amazonaws.com/31867_8236987cf0a8444e962ccd2aec46d9c3.html
+require(tm)
 
 setwd("/home/markus/Dropbox/4_RA/govWebsites/websites/pdfsfolder/")
+setwd("D:/Dropbox/4_RA/govWebsites/websites/pdfsfolder/")
 
-require(tm)
 docs <- Corpus(DirSource(pattern = ".*.txt"))
 
 #Preprocessing
@@ -25,4 +26,8 @@ dtm <- DocumentTermMatrix(docs)
 #tdm <- TermDocumentMatrix(docs)   
 
 #top 30 term frequencies
-sort(apply(dtm,2,sum),decreasing = T)[1:30]
+ttf <- sort(apply(dtm,2,sum),decreasing = T)[1:30]
+ttf <- data.frame(ttf)
+
+require(xtable)
+xtable(ttf, caption = "Top term frequencies for 10 test websites", digits = 0)
