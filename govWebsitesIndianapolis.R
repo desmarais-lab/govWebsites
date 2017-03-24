@@ -22,11 +22,16 @@ indianapolis <- subset(indiana, District=="Indianapolis")
 test <- indianapolis$redirect
 
 setwd("/home/markus/Dropbox/4_RA/govWebsites/websites/")
-system("mkdir oct15")
-system("mkdir jan16")
-system("mkdir feb16")
-system("mkdir mar16")
-setwd("/home/markus/Dropbox/4_RA/govWebsites/websites/feb16/")
+
+#system("mkdir oct15")
+#system("mkdir nov15")
+#system("mkdir dec15")
+#system("mkdir jan16")
+#system("mkdir feb16")
+#system("mkdir mar16")
+#system("mkdir apr16")
+#setwd("/home/markus/Dropbox/4_RA/govWebsites/websites/feb16/")
+
 #loop through websites, results automatically get saved into 'websites' folder inside wd
 
 #the following functions takes two inputs:
@@ -34,6 +39,10 @@ setwd("/home/markus/Dropbox/4_RA/govWebsites/websites/feb16/")
 #date "YearMonth", i.e. "201610"
 #there is no return() because the output (i.e. the downloaded websites) is directly written to the HD
 waybackDownloader <- function(test, date){
+  setwd("/home/markus/Dropbox/4_RA/govWebsites/websites/")
+  system(paste("mkdir", date, sep=" "))
+  setwd(paste("/home/markus/Dropbox/4_RA/govWebsites/websites/",date,sep=""))
+  
   for (i in 1:length(test)){
     
     website <- test[i] #loop through websites

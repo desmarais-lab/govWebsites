@@ -12,8 +12,8 @@ b <- str_extract(a,"(\\.[^.]+)$")
 #create table for file types with at most 5 characters
 c <- data.frame(table(b[which(str_length(b)<6)]))
 names(c) <- c("File type","Occurrences")
-c <- c[-c(1:8),]
 c <- c[order(c$Occurrences, decreasing = T),]
+c <- c[-c(1:8),]
 require(xtable)
 #omit some of the less useful types and turn table into latex object
 print(xtable(c, caption="File types in scraped websites"), include.rownames = F)

@@ -318,7 +318,7 @@ It would be fine to focus on Indiana as a case. First, we need to answer some pr
 \subsection{Topic modeling}
 We hypothesize that a change in leadership from one party to the other will lead to a change in website content because the two parties have different agendas. Democrats have a predilection towards policies that promote social and economic equality, whereas Republicans like to emphasize small government as well as law and order. Documents uploaded to city websites are expected to be a reflection of these preferences. The author-topic model \citep{Rosen-Zvi2004} captures this concept quite well, because it assumes that different authors prefer different topics, each of which is associated with a group of words. We classify all documents that have been present before the change in party control as from one party\footnote{This may be wrong in some cases, as they might be leftovers from yet another predecessor government. If the WaybackMachine data reaches back far enough, we might be able to identify and include only the documents that were added since the previous election.}, and the new documents as stemming from party 2. The number of topics \textit{j} would be set to at least three, where one topic would (hopefully) be reserved for purely administrative, non-partisan issues so that the other two (or more) would resolve to party-specific policy issues. Ideally, the result would then show significant\footnote{Though I am not sure how to calculate that.} differences in the probabilities of authors being assigned to partisan topics.
 
-Alternatively, the more commonplace LDA is another feasible way of modeling the way in which websites receive a makeover when party control of the mayorship changes. As noted by \citep{Rosen-Zvi2004}, LDA can be considered a special case of the author-topic model, ''where each document has one unique author''. Here, a city website would be a collection of documents, each of which originates entirely from either Democratic or Republican leadership. In a way, this captures the data-generating process more closely.
+Alternatively, the more commonplace LDA \cite{Blei2003} is another feasible way of modeling the way in which websites receive a makeover when party control of the mayorship changes. As noted by \citep{Rosen-Zvi2004}, LDA can be considered a special case of the author-topic model, ''where each document has one unique author''. Here, a city website would be a collection of documents, each of which originates entirely from either Democratic or Republican leadership. In a way, this captures the data-generating process more closely.
 
 Even so, neither the author-topic model nor the LDA model are a perfect fit for the structure of city government websites. One assumes that multiple authors write one document. This may be appropriate for the original purpose of author-topic models, scientific papers, which have multiple authors. This is not as good of a fit for city governments however. Using the LDA instead deals with this problem, but it also assumes that one document has multiple topics. For city government websites, this may be an erroneous assumption, because in many cases, each of these files appears to have one very specific purpose - agricultural, parks and recreation, smoke detectors, and so on.
 
@@ -327,6 +327,8 @@ Furthermore, if we only investigate cities in which control of government change
 Another problem with these generative models is that they ignore the fact that despite possible changes to websites due to a leadership transition, large parts of the content carry over. This means that unless the successor government decides to delete everything, some of the existing documents will be preserved, and in the model, also attributed to the new 'author'. But the reverse is not possible, because the predecessor government can't choose to retain documents from the future.
 
 One solution might be to rely on LDA models, but only to apply them to documents that were deleted, the strongest possible expression of a successor governments diverging policy preferences. This way, we could identify directly which issues are considered to be the most divisive.
+
+There is also a possibility that city size is a determinant of the number of topics. Larger cities tend to have bigger websites, owing to a larger set of issues that need to be dealt with.
 
 Traditional author models that rely on lexical or syntactic differences may also be of use. Parties and their voters are associated with specific educational backgrounds, which may in turn be associated with specific writing styles. However, it seems likely that personal rather than partisan authorship is playing an even larger role here.
 
@@ -337,6 +339,27 @@ Another option, that I have not looked closely at yet, are (continuous) dynamic 
 	%\caption{Population coverage}
 	\includegraphics[width=\linewidth]{figures/wtpIndy.pdf}
 \end{figure}
+
+% latex table generated in R 3.3.2 by xtable 1.8-2 package
+% Fri Mar 24 12:21:19 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{lrrrr}
+  \hline
+File type & oct15 & jan16 & feb16 & mar16 \\ 
+  \hline
+.pdf & 358 & 183 & 111 & 394 \\ 
+  .aspx &  99 & 112 & 116 &  76 \\ 
+  .jpg &  22 &  24 &  17 &  12 \\ 
+  .gif &   3 &   5 &   1 &   5 \\ 
+  .JPG &   3 &   2 &   1 &   5 \\ 
+  .png &   3 &   7 &   2 &   1 \\ 
+  .asmx &   2 &   1 &   1 &   5 \\ 
+  .PDF &   1 &   1 &   1 &   2 \\ 
+   \hline
+\end{tabular}
+\caption{File types of Indy.gov at different points in time} 
+\end{table}
 
 \newpage
 
