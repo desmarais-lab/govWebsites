@@ -324,7 +324,7 @@ Even so, neither the author-topic model nor the LDA model are a perfect fit for 
 
 Furthermore, if we only investigate cities in which control of government changes from one party to another, we may overestimate its effect. Not only does a transition in party control occur, but the person in charge also changes. Parties are fairly homogeneous, so that two mayors from the same party may have very different policy preferences and managerial styles. To remedy this problem, we [could] utilize matching, pairing our cases with similar cities in which the incumbent does not run for re-election, but party control stays the same nevertheless.
 
-Another problem with these generative models is that they ignore the fact that despite possible changes to websites due to a leadership transition, large parts of the content carry over. This means that unless the successor government decides to delete everything, some of the existing documents will be preserved, and in the model, also attributed to the new 'author'. But the reverse is not possible, because the predecessor government can't choose to retain documents from the future.
+Another problem with these generative models is that they ignore the fact that despite possible changes to websites due to a leadership transition, large parts of the content carry over. This means that unless the successor government decides to delete everything, some of the existing documents will be preserved, and in the model, also attributed to the new 'author'. But the reverse is not possible, because the predecessor government can't choose to retain documents from the future. {\em  This is a very important point for municipal websites. We should investigate the possibility of modeling only the changes---documents that change, documents that are deleted, and documents that are added. } 
 
 One solution might be to rely on LDA models, but only to apply them to documents that were deleted, the strongest possible expression of a successor governments diverging policy preferences. This way, we could identify directly which issues are considered to be the most divisive.
 
@@ -333,6 +333,10 @@ There is also a possibility that city size is a determinant of the number of top
 Traditional author models that rely on lexical or syntactic differences may also be of use. Parties and their voters are associated with specific educational backgrounds, which may in turn be associated with specific writing styles. However, it seems likely that personal rather than partisan authorship is playing an even larger role here.
 
 Another option, that I have not looked closely at yet, are (continuous) dynamic topic models by David Blei, which would allow us to model the progression of topics over time, i.e. when party control changes.
+
+
+
+
 
 \begin{figure}[!ht]
 	\centering
