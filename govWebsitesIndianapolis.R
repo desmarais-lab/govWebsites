@@ -82,7 +82,7 @@ rowTotals <- apply(dtmOCT15, 1, sum) #Find the sum of words in each Document
 dtmOCT15   <- dtmOCT15[rowTotals> 0, ]
 
 #LDA October 2015
-ap_ldaOCT15 <- LDA(dtmOCT15, k = 4, control = list(seed = 1234))
+ap_ldaOCT15 <- LDA(dtmOCT15, k = 20, control = list(seed = 1234))
 ap_topics <- tidy(ap_ldaOCT15, matrix = "beta")
 
 #Word-topic probabilities - Indianapolis October 2015

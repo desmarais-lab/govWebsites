@@ -1,3 +1,6 @@
+library(dplyr)
+library(tidyr)
+
 setwd("D:/Dropbox/4_RA/govWebsites") #Windows
 setwd("~/Dropbox/4_RA/govWebsites") #Linux
 
@@ -59,8 +62,7 @@ names(mIN15) <- names(mIN11)
 
 mIN15 <- subset(mIN15, select = -Candidate)
 mIN15 <- subset(mIN15, Party %in% c("Democratic","Republican"))
-library(dplyr)
-library(tidyr)
+
 mIN15$District <- factor(mIN15$District)
 mIN15 <- mIN15 %>% spread(Party, Votes)
 mIN15$Democratic[is.na(mIN15$Democratic)==T] <- -1
