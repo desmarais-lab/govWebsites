@@ -330,7 +330,7 @@ Labeling newly added documents after a change of power is quite simple. As far a
 
 If we really do end up getting swamped with administrative terms in our topic models (and it does kind of look like that at the moment), we might be able to separate the signal from the noise by running a preparatory LDA once and using its results to create a new, corpus-specific list of stop words. After that, we run the actual model. This way, politically charged terms and topics, which likely are not as common, but present nevertheless, should be able to rise to the surface. It might be possible to refine this process by running an exploratory model on website data from cities in which party control never changes, and the incumbent always wins by large margins. 'Safe' cities like this should have fairly homogeneous populations, with little need for the incumbent to play politics on the municipal website. Hence, these websites should be filled with purely administrative content.
 
-The use of asymmetric priors \citep{Wallach2009} in our topic model - i.e. the assumption that some topics, such as administrative content, are inherently more common - may be a more elegant way of dealing with this issue.
+The use of asymmetric priors \citep{Wallach2009} over the document topic distribution - i.e. the assumption that some topics, such as administrative content, are inherently more common - may be a more elegant way of dealing with this issue.
 
 Another intervening factor is that for cities in Indiana, mayoral terms begin in January. Since a lot of clerical and administrative tasks tend to be year-specific, work tends to pile up around the new year. Thus it is possible that a spike in newly added documents is not due to a change in party control, but owed to a seasonal increase in activity. We can test for this by comparing election years to non-election years. Furthermore, since in Louisiana, mayors take office in May, we have another point of comparison.
 
@@ -349,28 +349,32 @@ Furthermore, if we only investigate cities in which control of government change
 %\footnote{This may be wrong in some cases, as they might be leftovers from yet another predecessor government. If the WaybackMachine data reaches back far enough, we might be able to identify and include only the documents that were added since the previous election.}, and the new documents as stemming from party 2. The number of topics \textit{j} would be set to at least three, where one topic would (hopefully) be reserved for purely administrative, non-partisan issues so that the other two (or more) would resolve to party-specific policy issues. Ideally, the result would then show significant differences in the probabilities of authors being assigned to partisan topics.
 
 % latex table generated in R 3.3.3 by xtable 1.8-2 package
-% Sun Mar 26 22:39:59 2017
+% Wed Mar 29 11:30:05 2017
 \begin{table}[ht]
 	\centering
-	\begin{tabular}{rllllllllllllllll}
+	\begin{tabular}{lllr}
 		\hline
-		Date & Attica & Connersville & Frankfort & Huntingburg & Indianapolis & Lake Station & Linton & Madison & Mitchell & Monticello & North Vernon & Richmond & Rockport & South Bend & Union City & Winchester \\ 
+		City & snapshotPrior & electionDay & daysToElection \\ 
 		\hline
-		20150701.00 & 20141219004329 & 20090608160638 & 20150801164305 & 20150326174031 & 20080705032706 & 20150801185836 & 20130907112731 & 20150623192440 & 20150801214647 & 20150701005605 & 20150801221031 & 20150702075332 & 20150617220801 & 20150627165751 & 20150925160622 & 20150925022240 \\ 
-		20150801.00 & 20160129070621 & 20090608160638 & 20150801164305 & 20151030133234 & 20080705032706 & 20150801185836 & 20130907112731 & 20150801210044 & 20150801214647 & 20150804061315 & 20150801221031 & 20150802055917 & 20150801070026 & 20150726161609 & 20150925160622 & 20150925022240 \\ 
-		20150901.00 & 20160129070621 & 20090608160638 & 20150918063903 & 20151030133234 & 20080705032706 & 20150906164302 & 20130907112731 & 20150901105012 & 20150811063416 & 20150905074509 & 20150829185257 & 20150904033112 & 20150909192825 & 20150905085030 & 20150925160622 & 20150925022240 \\ 
-		20151001.00 & 20160129070621 & 20090608160638 & 20150925070028 & 20151030133234 & 20080705032706 & 20150908103757 & 20130907112731 & 20150905063305 & 20150811063416 & 20150908082732 & 20150829185257 & 20150921033423 & 20151011085644 & 20151002075030 & 20150925160622 & 20150925022240 \\ 
-		20151101.00 & 20160129070621 & 20090608160638 & 20151113140944 & 20151030133234 & 20080705032706 & 20151029043137 & 20130907112731 & 20151110090517 & 20160111041751 & 20151110131337 & 20151103095602 & 20151031212522 & 20151021163057 & 20151101043016 & 20150925160622 & 20151026092123 \\ 
-		20151201.00 & 20160129070621 & 20090608160638 & 20151121002259 & 20151030133234 & 20080705032706 & 20151201114611 & 20130907112731 & 20151216063136 & 20160111041751 & 20151115102706 & 20151206224620 & 20151201073504 & 20151212093554 & 20151209044311 & 20160111224058 & 20151127174603 \\ 
-		20160101.00 & 20160129070621 & 20090608160638 & 20160110065704 & 20160113165318 & 20080705032706 & 20160101144553 & 20130907112731 & 20151228192543 & 20160111041751 & 20151228224908 & 20160111074656 & 20160102015111 & 20160110195124 & 20151229083812 & 20160111224058 & 20151127174603 \\ 
-		20160201.00 & 20160129070621 & 20090608160638 & 20160127035634 & 20160122005059 & 20080705032706 & 20160201195326 & 20130907112731 & 20160201073437 & 20160202113637 & 20160206015204 & 20160111074656 & 20160213102047 & 20160112154213 & 20160206190816 & 20160111224058 & 20160303215247 \\ 
-		20160301.00 & 20160330220432 & 20090608160638 & 20160304094239 & 20160221045049 & 20080705032706 & 20160303165533 & 20130907112731 & 20160303181704 & 20160301141845 & 20160304035215 & 20160309122910 & 20160302140643 & 20160112154213 & 20160303175057 & 20160111224058 & 20160303215247 \\ 
-		20160401.00 & 20160330220432 & 20090608160638 & 20160321173048 & 20160317192932 & 20080705032706 & 20160404133508 & 20130907112731 & 20160402214824 & 20160405050341 & 20160403012946 & 20160318230947 & 20160403090645 & 20160603041333 & 20160325014215 & 20160111224058 & 20160416084956 \\ 
-		20160501.00 & 20160330220432 & 20090608160638 & 20160424080036 & 20160317192932 & 20080705032706 & 20160507020142 & 20130907112731 & 20160504014532 & 20160507154306 & 20160511155648 & 20160420092957 & 20160502154350 & 20160603041333 & 20160427024310 & 20160111224058 & 20160422124026 \\ 
-		20160601.00 & 20160330220432 & 20090608160638 & 20160424080036 & 20160317192932 & 20080705032706 & 20160507020142 & 20130907112731 & 20160521233726 & 20160507154306 & 20160522012629 & 20160420092957 & 20160522061744 & 20160603041333 & 20160522075620 & 20160111224058 & 20160517165930 \\ 
+		Attica & 2015-08-01 & 2015-11-03 & 94 \\ 
+		Cornersville & 2015-10-18 & 2015-11-03 & 16 \\ 
+		Frankfort & 2015-10-18 & 2015-11-03 & 16 \\ 
+		Huntingburg & 2015-10-30 & 2015-11-03 & 4 \\ 
+		Indianapolis & 2015-10-16 & 2015-11-03 & 18 \\ 
+		Lake Station & 2015-10-29 & 2015-11-03 & 5 \\ 
+		Linton & 2015-08-01 & 2015-11-03 & 94 \\ 
+		Madison & 2015-09-05 & 2015-11-03 & 59 \\ 
+		Mitchell &  & 2015-11-03 &  \\ 
+		Monticello & 2015-09-08 & 2015-11-03 & 56 \\ 
+		North Vernon & 2015-11-03 & 2015-11-03 & 0 \\ 
+		Richmond & 2015-10-31 & 2015-11-03 & 3 \\ 
+		Rockport & 2015-10-21 & 2015-11-03 & 13 \\ 
+		South Bend & 2015-11-01 & 2015-11-03 & 2 \\ 
+		Union City & 2015-09-25 & 2015-11-03 & 39 \\ 
+		Winchester & 2015-10-26 & 2015-11-03 & 8 \\ 
 		\hline
 	\end{tabular}
-	\caption{Dates of WaybackMachine snapshots 2015-16} 
+	\caption{Closest snapshots to election day} 
 \end{table}
 
 
