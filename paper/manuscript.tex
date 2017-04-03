@@ -315,7 +315,56 @@ It would be fine to focus on Indiana as a case. First, we need to answer some pr
 	\caption{} 
 \end{table}
 
+\subsection{Research Design}
+
+\begin{enumerate}
+\item Corpus:
+\begin{enumerate}
+\item Last snapshots before the election (November 3, 2015 in Indiana; tbd. in Louisiana (probably February))
+\item First snapshot that is at least 2 months after the new government's inauguration (which is in January for Indiana, May for Louisiana)
+\end{enumerate}
+\item Preprocessing:
+\begin{enumerate}
+\item restrict corpus to:
+\begin{enumerate}
+\item documents belonging to cities in which a change of power occurred
+\item documents that were added, deleted or changed between the two snapshots
+\end{enumerate}
+\item words to lowercase
+\item remove punctuation
+\item stemming (Porter stemming algorithm?)
+\item Remove stop words (regular list of stop words is enough, since we use an asymmetric prior)
+\end{enumerate}
+\item Apply Grimmer's expressed agenda model to the corpus
+\begin{enumerate}
+\item Asymmetric prior
+\item Each document can have only one topic (in contrast to the author-topic model)
+\item Cities $i = 1,..., n = 15$
+\item Topic $k(k = 1,..., K )$
+\item Documents $j(j = 1,...,D_i)$ from city i
+\item Party covariate in the prior, where the deleted and unmodified documents are coded as from the first, and the added and modified documents from the second party
+\end{enumerate}
+\item Results
+\begin{enumerate}
+\item Label topics using Grimmer's automatic cluster labeling method, based on most commonly used words in documents belonging to topic
+\item Evaluate topics
+\end{enumerate}
+\end{enumerate}
+
+Validation:
+
+\begin{itemize}
+\item Do the above for cities in which no change of power occurred.
+\item Check whether there is higher than average turnover around the new year by comparing changes to non-election years (and also Louisiana, where elections are later).
+\item Check how long documents stay on websites on average. Use websites with a lot of snapshots for this (these exist for both small and large cities).
+\end{itemize}
+
+Problem with using this model: Grimmer's expressed agenda model uses Senators as the actors. Senators is also who he is substantively interested in. For us, the equivalent to Senators is cities. However, we care about parties, not cities.
+
+
 \subsection{Topic modeling}
+Note: this chapter is mostly a wordy and less coherent version of the above.
+
 We hypothesize that a change in leadership from one party to the other will lead to a change in website content because the two parties have different agendas. Democrats have a predilection towards policies that promote social and economic equality, whereas Republicans like to emphasize small government as well as law and order. Documents uploaded to city websites are expected to be a reflection of these preferences.
 
 The Latent Dirichlet Allocation (LDA) \citep{Blei2003} is the most commonly used topic model. However, it is unable to account for the existence of two parties with very different policy agendas, translating to different preferred topics. There are two types of extensions to the LDA that fit our subject much better - the structural topic model, and the author-topic model.
