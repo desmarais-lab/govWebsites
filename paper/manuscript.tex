@@ -361,6 +361,21 @@ Validation:
 
 Problem with using this model: Grimmer's expressed agenda model uses Senators as the actors. Senators is also who he is substantively interested in. For us, the equivalent to Senators is cities. However, we care about parties, not cities.
 
+\subsection{Survival model}
+The existence of individual documents on municipal government websites can be though of as a survival process. No document stays on a website forever, and it appears to be a reasonable assumption that as documents get older and thus less relevant, they get replaced. The factors determining the steepness of the survival curve are the topic - fire safety regulations likely stay up longer than a bulletin on the annual spring banquet - and the change of party control after an election.
+
+Consequently the covariates include:
+\begin{itemize}
+\item a categorical independent variable, indicating which topic a document gets assigned to under the expressed agenda model
+%\item a variable indicating the change of party control at time $t$
+\item is the party that put the document up still present at time $t$
+\item interaction term between the two above
+\end{itemize}
+This will take up a lot of degrees of freedom.
+
+Proportional hazard? If not, then likely rising, although there might be some documents that really do hardly ever get changed, so it should probably fall again after a few years.
+
+Model document being changed vs. being removed as competing risks.
 
 \subsection{Topic modeling}
 Note: this chapter is mostly a wordy and less coherent version of the above.
@@ -397,34 +412,12 @@ Furthermore, if we only investigate cities in which control of government change
 
 %\footnote{This may be wrong in some cases, as they might be leftovers from yet another predecessor government. If the WaybackMachine data reaches back far enough, we might be able to identify and include only the documents that were added since the previous election.}, and the new documents as stemming from party 2. The number of topics \textit{j} would be set to at least three, where one topic would (hopefully) be reserved for purely administrative, non-partisan issues so that the other two (or more) would resolve to party-specific policy issues. Ideally, the result would then show significant differences in the probabilities of authors being assigned to partisan topics.
 
-% latex table generated in R 3.3.3 by xtable 1.8-2 package
-% Wed Mar 29 11:30:05 2017
-\begin{table}[ht]
+\begin{figure}[!ht]
 	\centering
-	\begin{tabular}{lllr}
-		\hline
-		City & snapshotPrior & electionDay & daysToElection \\ 
-		\hline
-		Attica & 2015-08-01 & 2015-11-03 & 94 \\ 
-		Cornersville & 2015-10-18 & 2015-11-03 & 16 \\ 
-		Frankfort & 2015-10-18 & 2015-11-03 & 16 \\ 
-		Huntingburg & 2015-10-30 & 2015-11-03 & 4 \\ 
-		Indianapolis & 2015-10-16 & 2015-11-03 & 18 \\ 
-		Lake Station & 2015-10-29 & 2015-11-03 & 5 \\ 
-		Linton & 2015-08-01 & 2015-11-03 & 94 \\ 
-		Madison & 2015-09-05 & 2015-11-03 & 59 \\ 
-		Mitchell &  & 2015-11-03 &  \\ 
-		Monticello & 2015-09-08 & 2015-11-03 & 56 \\ 
-		North Vernon & 2015-11-03 & 2015-11-03 & 0 \\ 
-		Richmond & 2015-10-31 & 2015-11-03 & 3 \\ 
-		Rockport & 2015-10-21 & 2015-11-03 & 13 \\ 
-		South Bend & 2015-11-01 & 2015-11-03 & 2 \\ 
-		Union City & 2015-09-25 & 2015-11-03 & 39 \\ 
-		Winchester & 2015-10-26 & 2015-11-03 & 8 \\ 
-		\hline
-	\end{tabular}
-	\caption{Closest snapshots to election day} 
-\end{table}
+	\caption{Dates of Wayback Machine snapshots. The vertical lines are municipal elections.}
+	\label{snapshots}
+	\includegraphics[width=\linewidth]{figures/Snapshots.pdf}
+\end{figure}
 
 
 \begin{figure}[!ht]

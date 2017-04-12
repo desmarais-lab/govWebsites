@@ -43,3 +43,7 @@ indiana:
 #download Indianapolis website, then try out topic models
 indianapolis:
 	R CMD BATCH govWebsitesIndianapolis.R
+
+#scrape snapshot dates and plot them
+indianapolis:
+	R CMD BATCH govWebsitesSnapshotsDates.R
