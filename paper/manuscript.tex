@@ -364,18 +364,56 @@ Problem with using this model: Grimmer's expressed agenda model uses Senators as
 \subsection{Survival model}
 The existence of individual documents on municipal government websites can be though of as a survival process. No document stays on a website forever, and it appears to be a reasonable assumption that as documents get older and thus less relevant, they get replaced. The factors determining the steepness of the survival curve are the topic - fire safety regulations likely stay up longer than a bulletin on the annual spring banquet - and the change of party control after an election.
 
-Consequently the covariates include:
-\begin{itemize}
-\item a categorical independent variable, indicating which topic a document gets assigned to under the expressed agenda model
-%\item a variable indicating the change of party control at time $t$
-\item is the party that put the document up still present at time $t$
-\item interaction term between the two above
-\end{itemize}
-This will take up a lot of degrees of freedom.
+\begin{quote}
+\textit{H1}: The older a document, the more likely it is to be removed.
+\end{quote}
 
-Proportional hazard? If not, then likely rising, although there might be some documents that really do hardly ever get changed, so it should probably fall again after a few years.
+$S(t)$ has a downward slope. Admittedly, this is almost impossible not to be true. Also, test proportional, rising and falling hazard models.
 
-Model document being changed vs. being removed as competing risks.
+\begin{quote}
+\textit{H2}: Documents pertaining to administrative matters are less likely to be removed.
+\end{quote}
+
+Introduce a categorical variable for the top 10(?) topics. A negative coefficient for administrative topics would support this hypothesis.
+
+\begin{quote}
+\textit{H3}: Documents introduced by the opposing party are more likely to be removed.
+\end{quote}
+
+Introduce two variables into the survival model: One variable indicating which party has introduced a document, and a time-varying variable describing which party is currently in government. The hypothesis is tested through an interaction term between the two.
+
+\begin{quote}
+\textit{H4a}: Democrats are more likely to remove documents with topics pertaining to private enterprise, private schools.
+\end{quote}
+
+Interaction term between party in power and categorical topic variable.
+
+\begin{quote}
+\textit{H4b}: Republicans are more likely to remove documents with topics pertaining to social justice, equality, taxes, public schools, etc.
+\end{quote}
+
+Interaction term between party in power and categorical topic variable.
+
+\begin{quote}
+\textit{H5}: In line with their commitment to small government, Republicans are more likely than Democrats to remove documents.
+\end{quote}
+
+Party in power variable.\\
+
+
+This model will take up a lot of degrees of freedom. The rarity of snapshots for some cities might be a problem. Documents being changed and being removed can be modeled as competing risks.
+
+
+\begin{equation} 
+\label{eq1}
+\begin{split}
+Y & = \text{Party that introduced the document} \\
+ & + \text{Party that is currently in power} \\
+ & + \text{Topic 1, topic 2, ..., topic k} \\
+ & + \text{Party that is currently in power} \times \text{Topic 1, topic 2, ..., topic k} \\
+ & + \text{Days since start of mayoral term (control)}
+\end{split}
+\end{equation}
 
 \subsection{Topic modeling}
 Note: this chapter is mostly a wordy and less coherent version of the above.
