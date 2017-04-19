@@ -55,6 +55,8 @@
 %% Now actually use the newly defined style.
 \urlstyle{same}
 \usepackage{times}
+
+\usepackage{lscape}
 % \usepackage{mathptmx}
 %\usepackage[colorlinks = true,
 %						bookmarksopen = true,
@@ -136,6 +138,13 @@
 
 \cite{grimmelikhuijsen2012developing} conduct an enormously relevant study. Insofar as we analyze what predicts openness of government websites, we will be replicating and building upon this study. They focus on Dutch municipal websites, and their approach is fairly limited in scope and highly manual (which we can compliment). For example, one of the dependent variables ``Decision-making transparency,'' is measured ``using a discrete (1/0) indicator for whether the underlying principles or reasons for local air pollution policies were given on the Web site.'' 
 
+\begin{landscape}
+\begin{figure}[!ht]
+	\centering
+	%\caption{Population coverage}
+	\includegraphics[width=\linewidth]{figures/literature.png}
+\end{figure}
+\end{landscape}
 
 \section{Data}
 The General Services Administration (GSA) maintains all .gov addresses, and provides a complete\footnote{Domains used for testing and internal programs are excluded.} list of all such domains to the public through GitHub\footnote{https://github.com/GSA/data/tree/gh-pages/dotgov-domains}. This list is updated once per month - we rely on the version released on January 16, 2017. The data from the GSA contains the following variables: One, domain name, specifically, the all-uppercase version of domain and top-level domain (for example, 'ABERDEENMD.GOV'). Two, the type of government entity to which the domain is registered, such as city, county, federal agency, etc. Three, for federal agencies, the name is specfied. Finally, the city in which the domain is registered, is noted.

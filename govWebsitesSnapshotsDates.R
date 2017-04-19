@@ -81,3 +81,30 @@ g1
 
 
 ggsave(g1, file="paper/figures/Snapshots.pdf", height = 10, width = 10)
+
+
+### Count number of snapshots
+Snapshots$one <- 1
+
+indianaS <- aggregate(one ~ City, Snapshots, FUN=sum)
+
+setwd("websites/IndianaTest/")
+#folder size
+#get folder names
+d <- list.files()
+e <- vector()
+#print directory size with Linux command 'du -s'
+for(i in 1:length(d)){
+  e[i] <- system(paste("du",d[i],"-s"), intern=T)
+}
+require(reshape2)
+f <- colsplit(e,"\\t",c("Size (KB)","Website"))
+f$Website <- sub("www.", "", f$Website)
+f$Website <- sub("cityofrockport", "rockport", f$Website)
+f <- f[order(f$Website),]
+
+storagesize <- cbind(indianaS,f)
+
+storagesize$result <- storagesize$`Size (MB)`*storagesize$one
+
+sum(storagesize$result)/1000000 #in gigabyte
