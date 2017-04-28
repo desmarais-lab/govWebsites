@@ -19,7 +19,7 @@ verify_correct:
 merge_census:
 	R CMD BATCH govWebsitesCensusMerge.R
 
-#produce states/population breakdown with ggplot
+#uses the matched GSA/Census data to produce states/population breakdown with ggplot
 coverage:
 	R CMD BATCH govWebsitesCoverage.R
 
@@ -36,7 +36,8 @@ check_filetypes:
 ttf:
 	R CMD BATCH websites/termFrequencies.R
 
-#read in election data from indiana, scrape websites
+#read in election data from indiana (downloaded from their website)
+#then download the gov. websites from the wayback machine
 indiana:
 	R CMD BATCH govWebsitesIndiana2015.R
 
@@ -44,6 +45,26 @@ indiana:
 indianapolis:
 	R CMD BATCH govWebsitesIndianapolis.R
 
-#scrape snapshot dates and plot them
-indianapolis:
+#check filetypes of documents of the indianapolis website
+indianapolis_filetypes:
+	R CMD BATCH govWebsitesIndianapolisFiletypes.R
+
+#scrape snapshot dates from the WaybackMachine 'calendar' and plot them
+snapshotsDates:
 	R CMD BATCH govWebsitesSnapshotsDates.R
+
+#scrape Louisiana website URLs from Wikipedia
+scrapeLouisianaURLs:
+	R CMD BATCH scrapeLousianaWebsites.R
+
+#scrape Indiana website URLs from Wikipedia
+scrapeIndianaURLs:
+	R CMD BATCH scrapeIndianaWebsites.R
+
+#combine the URLs from different sources
+combineURLs:
+	R CMD BATCH combineURLs.R
+
+#scrape URLs from Google, UNFINISHED
+#scrapeLousianaURLsGoogle:
+#	findLouisianaWebsites.py
