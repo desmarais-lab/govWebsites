@@ -48,7 +48,7 @@ indiana$snapshots[j] <- dates
 #
 indiana <- subset(indiana, select=c("District","snapshots"))
 
-save(indiana, file = "indianaSnapshots.rdata")
+#save(indiana, file = "indianaSnapshots.rdata")
 load("indianaSnapshots.rdata")
 
 Snapshots <- spread(indiana, key = District, value = snapshots) %>%

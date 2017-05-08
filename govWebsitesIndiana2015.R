@@ -1,10 +1,5 @@
-
-
-library(dplyr)
-library(tidyr)
-
-setwd("D:/Dropbox/4_RA/govWebsites") #Windows
-setwd("~/Dropbox/4_RA/govWebsites") #Linux
+library("dplyr")
+library("tidyr")
 
 #2015
 mIN15 <- read.csv("data/mayorIN2015.csv", header = F)
@@ -103,6 +98,8 @@ mIN$Republican[mIN$Republican==-1] <- NA
 
 #mIN <- mIN[mIN$Year==2015,]
 
+#save election data
+save(mIN, file="data/indianaElections2015.rdata")
 
 
 #load websites data
@@ -146,10 +143,10 @@ API_base <- 'http://archive.org/wayback/available?url='
 test <- indiana$redirect
 
 #set up folders
-setwd("/home/markus/Dropbox/4_RA/govWebsites/websites/")
+setwd("./websites/")
 system("mkdir oct15")
 system("mkdir jan16")
-setwd("/home/markus/Dropbox/4_RA/govWebsites/websites/jan16/")
+setwd("./jan16/")
 #loop through websites, results automatically get saved into 'websites' folder inside wd
 for (i in 1:length(test)){
   

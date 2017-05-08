@@ -1,8 +1,9 @@
 library("rio")
+library("dplyr")
 
 load(file="data/louisianaWebsiteURLs.rdata")
-load(file="data/IndianaWebsiteURLs.rdata")
-load(file="data/govWebsitesVerifiedCensus.rdata")
+load(file="data/indianaWebsiteURLs.rdata")
+load(file="data/govWebsitesVerifiedCensus.Rdata")
 
 #Preparing the data for merge
 
@@ -22,15 +23,26 @@ URLs <- rbind(indianaWebsiteUrls, louisianaWebsiteUrls)
 URLs$State_Name <- paste(URLs$State, URLs$Name, sep="_")
 
 #merge
-df <- merge(URLs, subset(data9, select=c("Website", "State_Name")), by="State_Name", all = T)
+URLs <- merge(URLs, subset(data9, select=c("Website", "State_Name")), by="State_Name", all = T)
 #the .gov URL is generally more reliable, so using that, if available
-df$Website.x[is.na(df$Website.y)==F] <- df$Website.y[is.na(df$Website.y)==F]
-df <- subset(df, select=-Website.y)
-names(df)[names(df)=="Website.x"] <- "Website"
+URLs$Website.x[is.na(URLs$Website.y)==F] <- URLs$Website.y[is.na(URLs$Website.y)==F]
+URLs <- subset(URLs, select=-Website.y)
+names(URLs)[names(URLs)=="Website.x"] <- "Website"
 
-length(which(is.na(df$Website)==F))
+length(which(is.na(URLs$Website)==F))
 
-#load LEAP data
+rm(data9,indianaWebsiteUrls,louisianaWebsiteUrls) #remove objects that are no longer needed
+
+# Load Indiana election data
+load("data/indianaElections2015.rdata")
+
+mIN <- filter(mIN, Year==2015)
+
+URLs <- merge(URLs, mIN, by.x = "Name", by.y = "District", all.x = T)
+
+rm(mIN) #remove objects that are no longer needed
+
+# Load Louisiana LEAP data
 leap <- import("data/LEAP_Louisiana_All_Offices_neumann.xlsx")
 
 leap$mayor <- grepl("Mayor", leap$office_name)
@@ -40,3 +52,7 @@ leap <- subset(leap, year_int>2010)
 sort(unique(leap$entity_name)) #cities
 
 length(unique(leap$results_election_id))
+
+
+## save
+save(URLs, file = "data/URLs.rdata")
