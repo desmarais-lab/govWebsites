@@ -28,7 +28,8 @@ coverage:
 wayback_downloader:
 	R CMD BATCH internetarchive_webarchive.R
 
-#produce tables with filetypes of 10 test cases
+#produce Latex tables with filetypes of websites
+#also produce Latex table of number of files and size of sites
 check_filetypes:
 	R CMD BATCH govWebsitesFiletpyes.R
 

@@ -1,5 +1,6 @@
 library("rio")
 library("dplyr")
+library("stringr")
 
 load(file="data/louisianaWebsiteURLs.rdata")
 load(file="data/indianaWebsiteURLs.rdata")
@@ -56,3 +57,20 @@ length(unique(leap$results_election_id))
 
 ## save
 save(URLs, file = "data/URLs.rdata")
+
+load(file = "data/URLs.rdata")
+URLs <- filter(URLs, Designation=="City") %>%
+  filter(is.na(Website)==F) %>%
+  filter(is.na(control_change)==F) %>%
+  filter(!Name%in%c("Decatur","Knox","Marion")) #remove few sites that are actually counties
+
+#remove /county/ from Tipton
+#unfortunately, wget and the ruby WBM downloader will still get both parts of the website
+#if I could stop this behavior, I should instead replace "/county/" with "/city/"
+URLs$Website[URLs$Name=="Tipton"] <- str_replace(URLs$Website[URLs$Name=="Tipton"], "/county/", "")
+
+#remove http//: or https//: as well as other forward slashes
+URLs$foldername <- str_extract(URLs$Website, "//(.*)") %>%
+  str_replace_all("/", "")
+
+save(URLs, file = "data/URLs_IN.rdata")
