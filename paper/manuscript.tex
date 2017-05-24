@@ -212,93 +212,82 @@ We use the resulting list of websites to acccess their copies stored in the Inte
 <Note: We have not actually done this last step for all websites (however, the R script which runs the Ruby package is already set up to do so once we need to). Instead 10 websites were randomly sampled from an older version of the GSA list, which still contained counties and townships, which is why one of the 10 websites is from Dutchess County, NY.>
 
 % latex table generated in R 3.4.0 by xtable 1.8-2 package
-% Tue May 16 13:38:43 2017
+% Tue May 23 19:28:26 2017
 \begin{table}[ht]
 	\centering
-	\begin{tabular}{lr}
+	\begin{tabular}{lrrr}
 		\hline
-		Filetype & Frequency \\ 
+		Filetype & current & before & after \\ 
 		\hline
-		& 47652 \\ 
-		pdf & 9486 \\ 
-		jpg & 4342 \\ 
-		html & 3492 \\ 
-		aspx & 2832 \\ 
-		png & 2358 \\ 
-		gif & 1296 \\ 
-		JPG & 545 \\ 
-		css & 385 \\ 
-		1 & 358 \\ 
-		js & 344 \\ 
-		htm & 264 \\ 
-		docx & 202 \\ 
-		dwf & 181 \\ 
-		doc & 168 \\ 
-		asp & 161 \\ 
-		PDF & 103 \\ 
-		php &  83 \\ 
-		egov &  54 \\ 
-		cfm &  45 \\ 
-		4 &  42 \\ 
-		2 &  35 \\ 
-		com &  31 \\ 
-		0 &  29 \\ 
-		3 &  26 \\ 
+		& 51455 & 13866 & 19199 \\ 
+		pdf & 9646 & 5489 & 7544 \\ 
+		jpg & 5216 & 1988 & 3512 \\ 
+		html & 3767 & 17842 & 17596 \\ 
+		aspx & 2832 & 4356 & 3271 \\ 
+		png & 2714 & 2327 & 3684 \\ 
+		gif & 1068 & 664 & 1077 \\ 
+		JPG & 478 & 182 & 263 \\ 
+		1 & 443 &  61 &  54 \\ 
+		css & 390 & 265 & 518 \\ 
+		js & 350 & 255 & 468 \\ 
+		htm & 264 & 295 & 256 \\ 
+		docx & 203 & 106 & 120 \\ 
+		doc & 167 &  70 & 130 \\ 
+		asp & 161 & 201 & 211 \\ 
+		svg &  87 &  55 &  69 \\ 
+		php &  83 & 157 & 241 \\ 
 		\hline
 	\end{tabular}
-	\caption{The 25 most common file types in scraped websites} 
+	\caption{The most common file types in scraped websites} 
 \end{table}
 
+\begin{landscape}
 % latex table generated in R 3.4.0 by xtable 1.8-2 package
-% Tue May 16 14:05:19 2017
+% Tue May 23 19:35:22 2017
 \begin{table}[ht]
 	\centering
-	\begin{tabular}{lrr}
+	\footnotesize
+	\begin{tabular}{lrrrrrrrrr}
 		\hline
-		Website & Files & Size (kB) \\ 
+		Website & current\_size & current\_files & before\_size & before\_files & after\_size & after\_files & size\_change & files\_change & control\_change \\ 
 		\hline
-		attica-in.gov & 1417 & 61988 \\ 
-		bedford.in.us & 560 & 57628 \\ 
-		cityofboonvilleindiana.com & 110 & 9848 \\ 
-		connersvillecommunity.com & 569 & 170684 \\ 
-		frankfort-in.gov & 2652 & 205368 \\ 
-		mitchell-in.com &  50 & 3036 \\ 
-		warsaw.in.gov & 2117 & 298264 \\ 
-		www.batesvilleindiana.us &   1 &  96 \\ 
-		www.bernein.com & 755 & 60836 \\ 
-		www.bloomington.in.gov &   1 &  52 \\ 
-		www.brazil.in.gov &   1 &  36 \\ 
-		www.carmel.in.gov & 8727 & 2267604 \\ 
-		www.ci.auburn.in.us & 1025 & 178496 \\ 
-		www.ci.bluffton.in.us &   1 & 132 \\ 
-		www.cityoffortwayne.org & 4378 & 2134540 \\ 
-		www.cityofhobart.org & 2463 & 718312 \\ 
-		www.cityofrisingsun.com & 3311 & 991736 \\ 
-		www.cityofrockport-in.gov &  98 & 11836 \\ 
-		www.clintonco.com & 524 & 134344 \\ 
-		www.elkhartindiana.org & 2345 & 1132612 \\ 
-		www.elwoodcity-in.org &   1 &  48 \\ 
-		www.evansvillegov.org & 11844 & 6339388 \\ 
-		www.gary.in.us & 1227 & 371480 \\ 
-		www.huntingburg-in.gov & 2496 & 388188 \\ 
-		www.indy.gov & 9675 & 5717888 \\ 
-		www.jasperindiana.gov & 4013 & 561212 \\ 
-		www.lakestation-in.gov &   2 &  40 \\ 
-		www.linton-in.gov &   1 &  32 \\ 
-		www.madison-in.gov & 1848 & 528200 \\ 
-		www.martinsville.in.gov & 1463 & 46544 \\ 
-		www.monticelloin.gov & 753 & 33352 \\ 
-		www.newhavenin.org & 626 & 84176 \\ 
-		www.northvernon-in.gov & 403 & 271452 \\ 
-		www.richmondindiana.gov & 1042 & 250028 \\ 
-		www.southbendin.gov & 4749 & 1252624 \\ 
-		www.tiptongov.com & 1151 & 130404 \\ 
-		www.unioncity-in.gov &   2 &  16 \\ 
-		www.winchester-in.gov & 2480 & 364368 \\ 
+		attica-in.gov & 61988 & 1417 & 7528 & 164 & 55956 & 1390 & 7.43 & 8.48 & 0.00 \\ 
+		bedford.in.us & 57628 & 560 & 27452 & 182 & 46388 & 525 & 1.69 & 2.88 & 0.00 \\ 
+		cityofboonvilleindiana.com & 9848 & 110 & 16996 & 172 & 20784 & 229 & 1.22 & 1.33 & 0.00 \\ 
+		frankfort-in.gov & 205368 & 2652 & 12208 & 242 & 138360 & 1077 & 11.33 & 4.45 & 0.00 \\ 
+		warsaw.in.gov & 298440 & 2117 & 26844 & 539 & 360400 & 2036 & 13.43 & 3.78 & 0.00 \\ 
+		www.bloomington.in.gov & 131128 & 2713 & 443360 & 14384 & 247096 & 9640 & 0.56 & 0.67 & 0.00 \\ 
+		www.brazil.in.gov & 43056 & 845 & 34472 & 625 & 55152 & 1214 & 1.60 & 1.94 & 0.00 \\ 
+		www.carmel.in.gov & 2270016 & 8727 & 1919344 & 5361 & 899900 & 2219 & 0.47 & 0.41 & 0.00 \\ 
+		www.ci.auburn.in.us & 183296 & 1025 & 21444 & 345 & 23564 & 211 & 1.10 & 0.61 & 0.00 \\ 
+		www.cityoffortwayne.org & 2136424 & 4378 & 266784 & 3582 & 233600 & 3018 & 0.88 & 0.84 & 0.00 \\ 
+		www.cityofhobart.org & 722000 & 2463 & 44192 & 650 & 62660 & 1037 & 1.42 & 1.60 & 0.00 \\ 
+		www.evansvillegov.org & 6345932 & 11844 & 290784 & 1281 & 1697224 & 6853 & 5.84 & 5.35 & 0.00 \\ 
+		www.gary.in.us & 373888 & 1227 & 121812 & 485 & 157140 & 719 & 1.29 & 1.48 & 0.00 \\ 
+		www.huntingburg-in.gov & 388680 & 2496 & 8644 & 213 & 375900 & 1953 & 43.49 & 9.17 & 0.00 \\ 
+		www.jasperindiana.gov & 561968 & 4013 & 55900 & 460 & 439072 & 2224 & 7.85 & 4.83 & 0.00 \\ 
+		www.lakestation-in.gov &  48 &   2 & 7724 &  84 & 257272 & 1097 & 33.31 & 13.06 & 0.00 \\ 
+		www.linton-in.gov &  32 &   1 &  24 &   2 &  24 &   2 & 1.00 & 1.00 & 0.00 \\ 
+		www.madison-in.gov & 531044 & 1848 & 36636 & 575 & 191624 & 1444 & 5.23 & 2.51 & 0.00 \\ 
+		www.martinsville.in.gov & 46792 & 1463 & 71628 & 1052 & 80944 & 800 & 1.13 & 0.76 & 0.00 \\ 
+		www.monticelloin.gov & 33656 & 753 & 18120 & 448 & 100680 & 2104 & 5.56 & 4.70 & 0.00 \\ 
+		www.newhavenin.org & 84364 & 626 & 2524 &  86 & 6792 & 334 & 2.69 & 3.88 & 0.00 \\ 
+		www.richmondindiana.gov & 250968 & 1042 & 217252 & 918 & 401672 & 2422 & 1.85 & 2.64 & 0.00 \\ 
+		www.southbendin.gov & 1264076 & 4749 & 454456 & 3286 & 1424136 & 2562 & 3.13 & 0.78 & 0.00 \\ 
+		connersvillecommunity.com & 170688 & 569 & 162316 & 815 & 187276 & 808 & 1.15 & 0.99 & 1.00 \\ 
+		www.batesvilleindiana.us & 166564 & 2348 & 39592 & 496 & 95696 & 1310 & 2.42 & 2.64 & 1.00 \\ 
+		www.cityofrisingsun.com & 994956 & 3311 & 321400 & 1268 & 80848 & 868 & 0.25 & 0.68 & 1.00 \\ 
+		www.cityofrockport-in.gov & 12068 &  98 & 5148 &  16 & 12068 &  98 & 2.34 & 6.12 & 1.00 \\ 
+		www.elkhartindiana.org & 1132828 & 2345 & 5588 & 123 & 6204 & 223 & 1.11 & 1.81 & 1.00 \\ 
+		www.elwoodcity-in.org & 224412 & 765 & 5000 & 123 & 139692 & 517 & 27.94 & 4.20 & 1.00 \\ 
+		www.indy.gov & 5726048 & 9675 & 6119260 & 10451 & 4984080 & 7981 & 0.81 & 0.76 & 1.00 \\ 
+		www.northvernon-in.gov & 272016 & 403 & 3132 & 112 & 289336 & 416 & 92.38 & 3.71 & 1.00 \\ 
+		www.winchester-in.gov & 364592 & 2480 & 6508 & 135 & 45488 & 567 & 6.99 & 4.20 & 1.00 \\ 
 		\hline
 	\end{tabular}
 	\caption{Number of files and size of websites} 
 \end{table}
+\end{landscape}
 
 % latex table generated in R 3.3.2 by xtable 1.8-2 package
 % Wed Mar  1 11:55:24 2017
@@ -395,6 +384,29 @@ It would be fine to focus on Indiana as a case. First, we need to answer some pr
 \end{table}
 
 \subsection{Research Design}
+
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{llr}
+		\hline
+		Variable & Unit & Source \\
+		\hline
+		Population size & 1000 people & Census \\
+		Population growth last 5 years & Percent & Census \\
+		Type of economy (agriculture/industry/services) & ? & Census \\
+		Economic performance (GDP?) & \$ & Census \\
+		Party of mayor before election & Rep/Dem/(Ind) & in.gov/sos/elections/ \\
+		Party of mayor after election & Rep/Dem/(Ind) & in.gov/sos/elections/ \\
+		Change of party control & 0/1 & in.gov/sos/elections/ \\
+		Presidential vote 2012 in county & Percent Rep & ? (but I have the data) \\
+		Unemployment rate & Percent & Census \\
+		Broadband speed & Avg. Mbps DL & broadbandmap.gov \\
+		\hline
+	\end{tabular}
+	\caption{List of covariates} 
+\end{table}
+
+
 
 \begin{enumerate}
 \item Corpus:
