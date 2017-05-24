@@ -1,3 +1,48 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: manuscript.aux
+This is BibTeX, Version 0.99d (TeX Live 2016/Arch Linux)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: manuscript.aux
 The style file: plainnat.bst
 Database file #1: ref.bib
+Warning--empty note in Einstein2015a
+You've used 10 entries,
+            2773 wiz_defined-function locations,
+            669 strings with 7039 characters,
+and the built_in function-call counts, 5104 in all, are:
+= -- 475
+> -- 296
+< -- 7
++ -- 100
+- -- 90
+* -- 416
+:= -- 787
+add.period$ -- 39
+call.type$ -- 10
+change.case$ -- 59
+chr.to.int$ -- 10
+cite$ -- 21
+duplicate$ -- 226
+empty$ -- 386
+format.name$ -- 104
+if$ -- 1071
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 10
+newline$ -- 66
+num.names$ -- 40
+pop$ -- 108
+preamble$ -- 1
+purify$ -- 50
+quote$ -- 0
+skip$ -- 184
+stack$ -- 0
+substring$ -- 205
+swap$ -- 35
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 105
+warning$ -- 1
+while$ -- 47
+width$ -- 0
+write$ -- 150
+(There was 1 warning)
