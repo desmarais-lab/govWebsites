@@ -90,5 +90,6 @@ filesfolders_all$files_change <- filesfolders_all$after_files/filesfolders_all$b
 load('./data/URLs_IN.rdata')
 URLs <- subset(URLs, select = c("foldername", "control_change"))
 filesfolders_all2 <- merge(filesfolders_all, URLs, by.x = "Website", by.y = "foldername")
+filesfolders_all2 <- filesfolders_all2[order(filesfolders_all2$control_change),]
 
-print(xtable(filesfolders_all, caption="Number of files and size of websites"), include.rownames = F)
+print(xtable(filesfolders_all2, caption="Number of files and size of websites"), include.rownames = F)
