@@ -69,3 +69,29 @@ combineURLs:
 #scrape URLs from Google, UNFINISHED
 #scrapeLousianaURLsGoogle:
 #	findLouisianaWebsites.py
+
+#recursively convert all files from pdf, html, doc, docx
+#requires:
+#antiword (https://www.archlinux.org/packages/community/x86_64/antiword/)
+#docx2txt (https://www.archlinux.org/packages/community/any/docx2txt/)
+#pdftotext (contained in many Unix pdf readers such as poppler, or xpdf)
+#html2text (https://aur.archlinux.org/packages/html2text-with-utf8)
+convertDOC:
+	./websites/docbatchconversion.sh
+convertDOCX:
+	cd ./websites
+	find . -name \*.docx -exec docx2txt.pl "{}" \;
+convertPDF:
+	cd ./websites
+	find . -name \*.pdf -exec pdftotext "{}" \;
+convertHTML:
+	./websites/htmlbatchconversion.sh
+
+#then delete everything in the folders except the text files
+removeNoTXT:
+	cd ./websites/before
+	find . -type f ! -name '*.txt' -delete
+	cd ./websites/after
+	find . -type f ! -name '*.txt' -delete
+	cd ./websites/current
+	find . -type f ! -name '*.txt' -delete
