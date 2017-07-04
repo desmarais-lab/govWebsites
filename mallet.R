@@ -1,7 +1,7 @@
 #This option has to be set BEFORE loading the rJava package (loaded by mallet)
-#Gives rJava about 8GB to work with
+#Gives rJava about 4GB to work with
 #So far, I've only needed 2.3GB
-options(java.parameters = "-Xmx8000m")
+options(java.parameters = "-Xmx4000m")
 
 library('mallet')
 library('tibble')
@@ -9,44 +9,116 @@ library('stringr')
 library('tools')
 library('tm')
 library('ggplot2')
+library('cowplot')
+library('dplyr')
+library('quanteda')
+library('hunspell')
 
-#setwd("./websites/websites")
-#setwd("~/RA4_website_archive/websites/current")
 
-f <- list.files(recursive = T) #create a list of all files in all subdirectories
+filepath <- "./websites/current"
+
+## Reading in the data
+
+f <- list.files(path = filepath, recursive = T) #create a list of all files in all subdirectories
 
 #file types
 ext <- file_ext(f) #get file extension
 folder <- str_split(f, "\\/(?=[^\\/]+$)", simplify = T)[,1]
 filename <- str_split(f, "\\/(?=[^\\/]+$)", simplify = T)[,2]
 
-d <- tibble(f, folder, filename, ext)
+#store objects in tibble
+d <- tibble(path = str_c(filepath, f, sep = "/"), 
+            folder = str_c(filepath, folder, sep = "/"),
+            filename,
+            ext)
 
 #read in file text
-a <- str_c(readLines(d$f[1]), sep = " ", collapse = " ")
-#a
-d$a <- sapply(d$f, function(x){str_c(readLines(x), sep = " ", collapse = " ")})
+d$doc <- sapply(d$path, function(x){str_c(readLines(x), sep = " ", collapse = " ")})
+d$doc <- as.character(d$doc)
 
-d$a <- as.character(d$a)
+## Pre-processing
 
-#write stopwords list from the tm package to a text file
-fileConn <- file("../../stopwords.txt")
-writeLines(stopwords("english"), fileConn)
+#Remove xml files
+d$xml <- str_detect(d$doc, "<?xml version=") #note which docs are xml
+d <- filter(d, d$xml==F) #Drop rows that are xml docs
+d <- select(d, -xml) #Drop xml variable
+
+#Remove words containing underscores
+d$doc <- str_replace_all(d$doc, "\\w*_\\w*", "")
+
+#Remove bullet points
+d$doc <- str_replace_all(d$doc, "  o ", " ")
+
+#Remove punctuation
+d$doc <- removePunctuation(d$doc)
+
+#Remove numbers
+d$doc <- removeNumbers(d$doc)
+
+#Remove extraneous whitespaces
+d$doc <- stripWhitespace(d$doc)
+
+#Convert text to UTF-8
+d$doc <- iconv(d$doc, "latin1", "UTF-8")
+
+#Everything to lowercase
+d$doc <- tolower(d$doc)
+
+#extract city from directory
+d$city <- str_split_fixed(d$path, "./websites/current/", 2)[,2]
+d$city <- str_split_fixed(d$city, "/", 2)[,1]
+
+#import and merge in city coeffs
+load("./data/URLs_IN.rdata")
+URLs$foldername[URLs$foldername=="www.batesvilleindiana.us"] <- "batesvilleindiana.us"
+URLs$foldername[URLs$foldername=="www.bloomington.in.gov"] <- "bloomington.in.gov"
+URLs$foldername[URLs$foldername=="www.brazil.in.gov"] <- "brazil.in.gov"
+URLs$foldername[URLs$foldername=="www.elwoodcity-in.org"] <- "elwoodcity-in.org"
+d <- merge(d, URLs, by.x = "city", by.y = "foldername")
+
+#remove empty files
+d <- d[!d$doc=="",]
+d <- d[!d$doc==" ",]
+
+save(d, file = "./rfiles/dd.Rdata")
+load(file = "./rfiles/dd.Rdata")
+
+#Hunspell
+#source("hunspellParallel.R")
+load(file = "./rfiles/docs.Rdata")
+
+#remove documents where spellchecking failed
+d <- d[d$spell_fail==0,]
+
+#remove non-spellchecked text
+d$doc <- d$doc2
+d <- select(d, -doc2)
+
+#Stemming
+#d$doc2 <- stemDocument(d$doc)
+
+#stopwords list from the tm package
+stopwrds <- stopwords("english")
+#additional words for the tm package
+stopwrds <- append(stopwrds, c("will","e"))
+
+#write  to a text file
+fileConn <- file("./rfiles/stopwords.txt")
+writeLines(stopwrds, fileConn)
 close(fileConn)
 
 ################################################################################
 
-#Mallet
+## Mallet
 
 #Import website text
 mallet.instances <- mallet.import(id.array = make.unique(d$folder),
-                                  text.array = d$a,
-                                  stoplist.file = "../../stopwords.txt",
+                                  text.array = d$doc,
+                                  stoplist.file = "./rfiles/stopwords.txt",
                                   token.regexp = "\\p{L}[\\p{L}\\p{P}]+\\p{L}")
 
-#
-n.topics <- 100
-topic.model <- MalletLDA(n.topics)
+#Create a Mallet topic model trainer
+topic.model <- MalletLDA(num.topics = 100)
 
 ## Load our documents. We could also pass in the filename of a 
 ##  saved instance list file that we build from the command-line tools.
@@ -69,7 +141,7 @@ topic.model$setAlphaOptimization(20, 50)
 topic.model$train(200)
 
 #R seems to be using about 2.3GB while training the model
-#Total time: 6 minutes 3 seconds
+#takes about 5 minutes
 
 ## NEW: run through a few iterations where we pick the best topic for each token, 
 ##  rather than sampling from the posterior distribution.
@@ -83,23 +155,10 @@ topic.words <- mallet.topic.words(topic.model, smoothed=T, normalized=T)
 
 ## What are the top words in topic 7?
 ##  Notice that R indexes from 1, so this will be the topic that mallet called topic 6.
-mallet.top.words(topic.model, topic.words[5,])
+mallet.top.words(topic.model, topic.words[10,])
 
 ## Show the first few documents with at least 5
 #head(documents[ doc.topics[7,] > 0.05 & doc.topics[10,] > 0.05, ])
-
-## How do topics differ across different sub-corpora?
-#nips.topic.words <- mallet.subset.topic.words(topic.model, documents$class == "NIPS",
-#                                              smoothed=T, normalized=T)
-#cvpr.topic.words <- mallet.subset.topic.words(topic.model, documents$class == "CVPR",
-#                                              smoothed=T, normalized=T)
-
-## How do they compare?
-#mallet.top.words(topic.model, nips.topic.words[10,])
-#mallet.top.words(topic.model, cvpr.topic.words[10,])
-
-
-
 
 #Plot top words for topics
 df.words <- tibble()
@@ -117,118 +176,67 @@ plotWTP_01 <- df.words %>% ggplot(aes(words, weights, fill = factor(topic))) +
   geom_bar(stat = "identity", show.legend = FALSE) +
   facet_wrap(~ topic, scales = "free", ncol = 3) +
   coord_flip() +
-  labs(title="Word-topic probabilities - before the election")
+  labs(title="Word-topic probabilities - wget")
 plotWTP_01
 
-ggsave(plotWTP_01, file="../../wtp_before.pdf", width=7, height=9)
-
-#
+ggsave(plotWTP_01, file="./paper/figures/wtp_current.pdf", width=7, height=9)
 
 
 
+## Subsets of the corpus
 
-# from http://www.cs.princeton.edu/~mimno/R/clustertrees.R
-## transpose and normalize the doc topics
-#topic.docs <- t(doc.topics)
-#topic.docs <- topic.docs / rowSums(topic.docs)
+## How do topics differ across different sub-corpora?
+dem.topic.words <- mallet.subset.topic.words(topic.model, d$winner == "Democratic",
+                                             smoothed=T, normalized=T)
+rep.topic.words <- mallet.subset.topic.words(topic.model, d$winner == "Republican",
+                                             smoothed=T, normalized=T)
 
-## Get a vector containing short names for the topics
-topics.labels <- rep("", n.topics)
-for (topic in 1:n.topics) topics.labels[topic] <- paste(mallet.top.words(topic.model, topic.words[topic,], num.top.words=5)$words, collapse=" ")
-# have a look at keywords for each topic
-topics.labels
+## How do they compare? (for the 10th topic)
+mallet.top.words(topic.model, dem.topic.words[10,])
+mallet.top.words(topic.model, rep.topic.words[10,])
 
-topic_docs <- data.frame(topic.docs)
-names(topic_docs) <- d$folder
+### Plot the results of the subsets
 
-#
-# find top n topics for a certain author
-df1 <- t(topic_docs[,grep("pdf", names(topic_docs))])
-colnames(df1) <- topics.labels
-require(reshape2)
-topic.proportions.df <- melt(cbind(data.frame(df1),
-                                   document=factor(1:nrow(df1))),
-                             variable.name="topic",
-                             id.vars = "document") 
-# plot for each doc by that author
-require(ggplot2)
-ggplot(topic.proportions.df, aes(topic, value, fill=document)) +
-  geom_bar(stat="identity") +
-  ylab("proportion") +
-  theme(axis.text.x = element_text(angle=90, hjust=1)) +  
+#Plot top words for topics
+df.words.dem <- tibble()
+df.words.rep <- tibble()
+
+for(i in 1:100){
+  df.words.dem2 <- as.tibble(mallet.top.words(topic.model, dem.topic.words[i,]))
+  df.words.rep2 <- as.tibble(mallet.top.words(topic.model, rep.topic.words[i,]))
+  df.words.dem2$topic <- str_c("topic_", str_pad(i, 2, pad = "0"))
+  df.words.rep2$topic <- str_c("topic_", str_pad(i, 2, pad = "0"))
+  df.words.dem <- rbind(df.words.dem, df.words.dem2)
+  df.words.rep <- rbind(df.words.rep, df.words.rep2)
+}
+
+#order the topics by their mean weight
+topic.order <- group_by(df.words.dem, topic) %>% 
+  summarise(meanweights = mean(weights)) %>%
+  arrange(-meanweights) %>%
+  select(topic)
+
+#keep only the top 5 (of the Democrats, for both parties)
+df.words.dem <- df.words.dem[df.words.dem$topic%in%topic.order$topic[1:5],]
+df.words.rep <- df.words.rep[df.words.rep$topic%in%topic.order$topic[1:5],]
+
+
+
+#Plot word-topic probabilities
+plotWTP_dem <- df.words.dem %>% ggplot(aes(words, weights, fill = factor(topic))) +
+  geom_bar(stat = "identity", show.legend = FALSE) +
+  facet_wrap(~ topic, scales = "free", ncol = 1) +
   coord_flip() +
-  facet_wrap(~ document, ncol=5)
+  labs(title = "Democrat")
+plotWTP_rep <- df.words.rep %>% ggplot(aes(words, weights, fill = factor(topic))) +
+  geom_bar(stat = "identity", show.legend = FALSE) +
+  facet_wrap(~ topic, scales = "free", ncol = 1) +
+  coord_flip() +
+  labs(title = "Republican")
 
+#arrange both plots next to each other
+plotWTP_dem_rep <- plot_grid(plotWTP_dem, plotWTP_rep)
+plotWTP_dem_rep
 
-## cluster based on shared words
-plot(hclust(dist(topic.words)), labels=topics.labels)
-
-
-## How do topics differ across different years?
-
-topic_docs_t <- data.frame(t(topic_docs))
-topic_docs_t$year <- documents$class
-# now we have a data frame where each row is a topic and 
-# each column is a document. The cells contain topic 
-# proportions. The next line computes the average proportion of
-# each topic in all the posts in a given year. Note that in 
-# topic_docs_t$year there is one FALSE, which dirties the data
-# slightly and causes warnings
-df3 <- aggregate(topic_docs_t, by=list(topic_docs_t$year), FUN=mean)
-# this next line transposes the wide data frame created by the above
-# line into a tall data frame where each column is a year. The 
-# input data frame is subset using the %in% function 
-# to omit the last row because this
-# last row is the result of the anomalous FALSE value that 
-# is in place of the year for one blog post. This is probably
-# a result of a glitch in the blog page format. I also exclude
-# the last column because it has NAs in it, a side-effect of the
-# aggregate function above. Here's my original line:
-# df3 <- data.frame(t(df3[-3,-length(df3)]), stringsAsFactors = FALSE)
-# And below is an updated version that generalises this in case 
-# you have more than two years:
-years <- sort(as.character(na.omit(as.numeric(as.character(unique(topic_docs_t$year))))))
-df3 <- data.frame(t(df3[(df3$Group.1 %in% years),-length(df3)]), stringsAsFactors = FALSE)
-# now we put on informative column names
-# names(df3) <- c("y2012", "y2013")
-# Here's a more general version in case you have more than two years
-# or different years to what I've got:
-names(df3) <- unname(sapply(years, function(i) paste0("y",i)))
-# the next line removes the first row, which is just the years
-df3 <- df3[-1,]
-# the next line converts all the values to numbers so we can 
-# work on them
-df3 <- data.frame(apply(df3, 2, as.numeric, as.character))
-df3$topic <- 1:n.topics
-
-# which topics differ the most between the years? 
-
-# If you have 
-# more than two years you will need to do things differently
-# by adding in some more pairwise comparisons. Here is one 
-# pairwise comparison:
-df3$diff <- df3[,1] - df3[,2] 
-df3[with(df3, order(-abs(diff))), ]
-# # then if you had three years you might then do
-# # a comparison of yrs 1 and 3
-# df3$diff2 <- df3[,1] - df3[,3] 
-# df3[with(df3, order(-abs(diff2))), ]
-# # and the other pairwise comparison of yrs 2 and 3
-# df3$diff3 <- df3[,2] - df3[,3] 
-# df3[with(df3, order(-abs(diff3))), ]
-## and so on
-
-
-# plot
-library(reshape2)
-# we reshape from long to very long! and drop the 
-# 'diff' column that we computed above by using a negatve 
-# index, that's the -4 in the line below. You'll need to change
-# that value if you have more than two years, you might find
-# replacing it with -ncol(df3) will do the trick, if you just
-# added one diff column. 
-df3m <- melt(df3[,-4], id = 3)
-ggplot(df3m, aes(fill = as.factor(topic), topic, value)) +
-  geom_bar(stat="identity") +
-  coord_flip()  +
-  facet_wrap(~ variable)
+#save
+ggsave(plotWTP_dem_rep, file="./paper/figures/wtp_current_dem_rep.pdf", width=7, height=9)
