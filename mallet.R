@@ -14,8 +14,8 @@ library('dplyr')
 library('quanteda')
 library('hunspell')
 
-
-filepath <- "./websites/current"
+corpus <- "current" #"current", "before", or "after"
+filepath <- str_c("./websites/", corpus)
 
 ## Reading in the data
 
@@ -65,7 +65,7 @@ d$doc <- iconv(d$doc, "latin1", "UTF-8")
 d$doc <- tolower(d$doc)
 
 #extract city from directory
-d$city <- str_split_fixed(d$path, "./websites/current/", 2)[,2]
+d$city <- str_split_fixed(d$path, str_c(filepath, "/"), 2)[,2]
 d$city <- str_split_fixed(d$city, "/", 2)[,1]
 
 #import and merge in city coeffs
@@ -179,7 +179,7 @@ plotWTP_01 <- df.words %>% ggplot(aes(words, weights, fill = factor(topic))) +
   labs(title="Word-topic probabilities - wget")
 plotWTP_01
 
-ggsave(plotWTP_01, file="./paper/figures/wtp_current.pdf", width=7, height=9)
+ggsave(plotWTP_01, file = str_c("./paper/figures/wtp_", corpus, ".pdf"), width=7, height=9)
 
 
 
@@ -239,4 +239,4 @@ plotWTP_dem_rep <- plot_grid(plotWTP_dem, plotWTP_rep)
 plotWTP_dem_rep
 
 #save
-ggsave(plotWTP_dem_rep, file="./paper/figures/wtp_current_dem_rep.pdf", width=7, height=9)
+ggsave(plotWTP_dem_rep, file = str_c("./paper/figures/wtp_", corpus, "_dem_rep.pdf"), width=7, height=9)

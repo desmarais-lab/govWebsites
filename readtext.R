@@ -4,7 +4,7 @@ library('tibble')
 library('stringr')
 
 #setwd("~/Dropbox/4_RA/govWebsites")
-setwd("./websites/websites")
+setwd("./websites")
 
 #rename html files to always have an html at the end
 #BUT ONLY IF we are actually somewhere in the govWebsites directory

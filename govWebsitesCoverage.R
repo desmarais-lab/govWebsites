@@ -1,8 +1,6 @@
 #This script uses the matched GSA/Census data to create a barplot
 #describing the percentage of each state's population covered by .gov websites
 
-setwd("/home/markus/Dropbox/4_RA/govWebsites")
-
 load("data/govWebsitesVerifiedCensus.Rdata")
 
 #population estimates for cities covered by GSA list

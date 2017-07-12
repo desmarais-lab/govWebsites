@@ -13,7 +13,6 @@ library(jsonlite) #for waybackmachine API
 require(tm) #text mining
 require(cowplot)
 
-setwd("~/Dropbox/4_RA/govWebsites") #Linux
 load(file="data/indiana2015.rdata")
 
 API_base <- 'http://archive.org/wayback/available?url='
@@ -21,7 +20,7 @@ indianapolis <- subset(indiana, District=="Indianapolis")
 
 test <- indianapolis$redirect
 
-setwd("/home/markus/Dropbox/4_RA/govWebsites/websites/")
+setwd("./websites")
 
 #system("mkdir oct15")
 #system("mkdir nov15")

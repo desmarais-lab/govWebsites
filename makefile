@@ -25,8 +25,10 @@ coverage:
 
 #Use Ruby package (run from within R) to scrape 10 randomly selected
 #websites from the Wayback Machine
-wayback_downloader:
-	R CMD BATCH internetarchive_webarchive.R
+#I changed this, this file is now just a function to for source()
+#which uses the Ruby waybackmachine downloader in R
+#wayback_downloader:
+#	R CMD BATCH internetarchive_webarchive.R
 
 #produce Latex tables with filetypes of websites
 #also produce Latex table of number of files and size of sites
@@ -35,7 +37,7 @@ check_filetypes:
 
 #get top term frequencies
 ttf:
-	R CMD BATCH websites/termFrequencies.R
+	R CMD BATCH termFrequencies.R
 
 #read in election data from indiana (downloaded from their website)
 #then download the gov. websites from the wayback machine
@@ -43,16 +45,19 @@ indiana:
 	R CMD BATCH govWebsitesIndiana2015.R
 
 #download Indianapolis website, then try out topic models
-indianapolis:
-	R CMD BATCH govWebsitesIndianapolis.R
+### OUTDATED, and not worth the trouble
+#indianapolis:
+#	R CMD BATCH govWebsitesIndianapolis.R
 
-#check filetypes of documents of the indianapolis website
+#check filetypes of documents
+#not actually limited to Indy any more
 indianapolis_filetypes:
 	R CMD BATCH govWebsitesIndianapolisFiletypes.R
 
 #scrape snapshot dates from the WaybackMachine 'calendar' and plot them
-snapshotsDates:
-	R CMD BATCH govWebsitesSnapshotsDates.R
+#given what we know about the wayback machine now, this doesnt actually make sense any more
+#snapshotsDates:
+#	R CMD BATCH govWebsitesSnapshotsDates.R
 
 #scrape Louisiana website URLs from Wikipedia
 scrapeLouisianaURLs:
@@ -87,3 +92,10 @@ convertEverything:
 #2. Kenneth Benoits readtext package for R
 convertEverythingR:
 	R CMD BATCH readtext.R
+
+#only one of the above is necessary
+
+#use Mallet,
+#this will also call the hunspell spellchecking
+mallet:
+	R CMD BATCH mallet.R

@@ -5,8 +5,6 @@
 #townships, counties, boroughs that are marked as citites
 #as well as correcting city names that don't correspond to the website
 
-setwd("/home/markus/Dropbox/4_RA/govWebsites")
-
 require(stringr)
 require(stringi)
 

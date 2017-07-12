@@ -2,8 +2,6 @@
 #Then it gets merged with the GSA websites data
 #About 80 manual corrections are necessary
 
-setwd("/home/markus/Dropbox/4_RA/govWebsites")
-
 #read in census data
 #Source:
 #http://www2.census.gov/programs-surveys/popest/datasets/2010-2015/cities/totals/sub-est2015_all.csv
