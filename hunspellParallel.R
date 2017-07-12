@@ -51,4 +51,4 @@ d$spell_fail <- 0
 d$spell_fail[d$doc2=="ERROR"] <- 1
 
 #save
-save(d, file = "../../docs.Rdata")
+save(d, file = str_c("../../docs_", corpus, ".Rdata"))

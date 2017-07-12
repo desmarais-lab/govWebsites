@@ -85,7 +85,7 @@ load(file = "./rfiles/dd.Rdata")
 
 #Hunspell
 #source("hunspellParallel.R")
-load(file = "./rfiles/docs.Rdata")
+load(file = str_c("./rfiles/docs_", corpus, ".Rdata"))
 
 #remove documents where spellchecking failed
 d <- d[d$spell_fail==0,]
