@@ -1,7 +1,7 @@
 #This option has to be set BEFORE loading the rJava package (loaded by mallet)
 #Gives rJava about 4GB to work with
 #So far, I've only needed 2.3GB
-options(java.parameters = "-Xmx4000m")
+options(java.parameters = "-Xmx3000m")
 
 library('mallet')
 library('tibble')
@@ -124,13 +124,14 @@ topic.model <- MalletLDA(num.topics = 100)
 ##  saved instance list file that we build from the command-line tools.
 topic.model$loadDocuments(mallet.instances)
 
-## Get the vocabulary, and some statistics about word frequencies.
-##  These may be useful in further curating the stopword list.
+## Get the vocabulary (i.e. list of all the words)
 vocabulary <- topic.model$getVocabulary()
 vocabulary
 
+## word frequencies
+## also contains a column with the total number of documents a word appears in
 word.freqs <- mallet.word.freqs(topic.model)
-word.freqs
+word.freqs[order(word.freqs$term.freq, decreasing = T),]
 
 ## Optimize hyperparameters every 20 iterations, 
 ##  after 50 burn-in iterations.
@@ -153,9 +154,9 @@ topic.model$maximize(10)
 doc.topics <- mallet.doc.topics(topic.model, smoothed=T, normalized=T)
 topic.words <- mallet.topic.words(topic.model, smoothed=T, normalized=T)
 
-## What are the top words in topic 7?
-##  Notice that R indexes from 1, so this will be the topic that mallet called topic 6.
-mallet.top.words(topic.model, topic.words[10,])
+## What are the top words in topic 10?
+##  Notice that R indexes from 1, so this will be the topic that mallet called topic 10.
+#mallet.top.words(topic.model, topic.words[10,])
 
 ## Show the first few documents with at least 5
 #head(documents[ doc.topics[7,] > 0.05 & doc.topics[10,] > 0.05, ])
@@ -192,8 +193,8 @@ rep.topic.words <- mallet.subset.topic.words(topic.model, d$winner == "Republica
                                              smoothed=T, normalized=T)
 
 ## How do they compare? (for the 10th topic)
-mallet.top.words(topic.model, dem.topic.words[10,])
-mallet.top.words(topic.model, rep.topic.words[10,])
+#mallet.top.words(topic.model, dem.topic.words[10,])
+#mallet.top.words(topic.model, rep.topic.words[10,])
 
 ### Plot the results of the subsets
 
