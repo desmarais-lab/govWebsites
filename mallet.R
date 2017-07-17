@@ -118,7 +118,8 @@ mallet.instances <- mallet.import(id.array = make.unique(d$folder),
                                   token.regexp = "\\p{L}[\\p{L}\\p{P}]+\\p{L}")
 
 #Create a Mallet topic model trainer
-topic.model <- MalletLDA(num.topics = 100)
+ntopics <- 100
+topic.model <- MalletLDA(num.topics = ntopics)
 
 ## Load our documents. We could also pass in the filename of a 
 ##  saved instance list file that we build from the command-line tools.
@@ -202,7 +203,7 @@ rep.topic.words <- mallet.subset.topic.words(topic.model, d$winner == "Republica
 df.words.dem <- tibble()
 df.words.rep <- tibble()
 
-for(i in 1:100){
+for(i in 1:ntopics){
   df.words.dem2 <- as.tibble(mallet.top.words(topic.model, dem.topic.words[i,]))
   df.words.rep2 <- as.tibble(mallet.top.words(topic.model, rep.topic.words[i,]))
   df.words.dem2$topic <- str_c("topic_", str_pad(i, 2, pad = "0"))
@@ -279,3 +280,62 @@ plotWTP_dem_rep
 
 #save
 ggsave(plotWTP_dem_rep, file = str_c("./paper/figures/wtp_", corpus, "_dem_rep_large_differences.pdf"), width=7, height=9)
+
+
+
+###What proportion of tokens in docs in Dem-led cities are assigned to topic X, for all X
+
+#Which topic is a word most likely to be assigned to?
+topicnames <- unique(select(df.words.dem, topic))
+topicnames$tokenfreq_dem <- table(apply(dem.topic.words, 2, which.max))
+topicnames$tokenfreq_rep <- table(apply(rep.topic.words, 2, which.max))
+
+#Strikingly, the #1 topic for Republicans includes 17660 tokens (more than half)
+#whereas the #1 topic for Democrats includes only 1324
+#the question is: is this a meaningful diffference, or just a result of the number of topics,
+#which at the moment is only 100
+
+#Create variable to appear as the title in the plot at the end ("topic_number (# tokens)")
+topicnames$topic_tokenfreq_dem <- str_c(topicnames$topic, " (", topicnames$tokenfreq_dem, " tokens)")
+topicnames$topic_tokenfreq_rep <- str_c(topicnames$topic, " (", topicnames$tokenfreq_rep, " tokens)")
+
+#reorder so the topics with the most words are on top
+topic.order.dem <- arrange(topicnames, -tokenfreq_dem)
+topic.order.rep <- arrange(topicnames, -tokenfreq_rep)
+
+#get only the top five of topics are in the plot
+df.words.dem5 <- df.words.dem[df.words.dem$topic%in%topic.order.dem$topic[1:5],]
+df.words.rep5 <- df.words.rep[df.words.rep$topic%in%topic.order.rep$topic[1:5],]
+#include variable with topic title created above
+df.words.dem5$topics <- topic.order.dem$topic_tokenfreq_dem[as.numeric(match(df.words.dem5$topic, topic.order.dem$topic))]
+df.words.rep5$topics <- topic.order.rep$topic_tokenfreq_rep[as.numeric(match(df.words.rep5$topic, topic.order.rep$topic))]
+#include variable with token number in topic, to sort by
+df.words.dem5$tokenfreq <- topic.order.dem$tokenfreq_dem[as.numeric(match(df.words.dem5$topic, topic.order.dem$topic))]
+df.words.rep5$tokenfreq <- topic.order.rep$tokenfreq_rep[as.numeric(match(df.words.rep5$topic, topic.order.rep$topic))]
+#sort by token number
+df.words.dem5 <- df.words.dem5[order(df.words.dem5$tokenfreq, decreasing = T),]
+df.words.rep5 <- df.words.rep5[order(df.words.rep5$tokenfreq, decreasing = T),]
+#change topics (i.e. the title variable) to a factor,
+#whose levels are in the order in which they appear in the data frame
+#this is done with mutate (dplyr); at the end, unique() is necessary because the topics appear multiple times
+df.words.dem5 <- mutate(df.words.dem5, topics = factor(topics, unique(topics)))
+df.words.rep5 <- mutate(df.words.rep5, topics = factor(topics, unique(topics)))
+
+#Plot word-topic probabilities
+plotWTP_dem <- df.words.dem5 %>% ggplot(aes(words, weights, fill = topics)) +
+  geom_bar(stat = "identity", show.legend = FALSE) +
+  facet_wrap(~ topics, scales = "free", ncol = 1) +
+  coord_flip() +
+  labs(title = "Democrat")
+plotWTP_rep <- df.words.rep5 %>% ggplot(aes(words, weights, fill = topics)) +
+  geom_bar(stat = "identity", show.legend = FALSE) +
+  facet_wrap(~ topics, scales = "free", ncol = 1) +
+  coord_flip() +
+  labs(title = "Republican")
+
+#arrange both plots next to each other
+plotWTP_dem_rep <- plot_grid(plotWTP_dem, plotWTP_rep)
+plotWTP_dem_rep
+
+#save
+ggsave(plotWTP_dem_rep, file = str_c("./paper/figures/wtp_", corpus, "_dem_rep_order.pdf"), width=7, height=9)
