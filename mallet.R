@@ -217,19 +217,21 @@ topic.order <- group_by(df.words.dem, topic) %>%
   arrange(-meanweights) %>%
   select(topic)
 
+#save objects
+#df.words.dem3 <- df.words.dem
+#df.words.rep3 <- df.words.rep
+
 #keep only the top 5 (of the Democrats, for both parties)
-df.words.dem <- df.words.dem[df.words.dem$topic%in%topic.order$topic[1:5],]
-df.words.rep <- df.words.rep[df.words.rep$topic%in%topic.order$topic[1:5],]
-
-
+df.words.dem2 <- df.words.dem[df.words.dem$topic%in%topic.order$topic[1:5],]
+df.words.rep2 <- df.words.rep[df.words.rep$topic%in%topic.order$topic[1:5],]
 
 #Plot word-topic probabilities
-plotWTP_dem <- df.words.dem %>% ggplot(aes(words, weights, fill = factor(topic))) +
+plotWTP_dem <- df.words.dem2 %>% ggplot(aes(words, weights, fill = factor(topic))) +
   geom_bar(stat = "identity", show.legend = FALSE) +
   facet_wrap(~ topic, scales = "free", ncol = 1) +
   coord_flip() +
   labs(title = "Democrat")
-plotWTP_rep <- df.words.rep %>% ggplot(aes(words, weights, fill = factor(topic))) +
+plotWTP_rep <- df.words.rep2 %>% ggplot(aes(words, weights, fill = factor(topic))) +
   geom_bar(stat = "identity", show.legend = FALSE) +
   facet_wrap(~ topic, scales = "free", ncol = 1) +
   coord_flip() +
@@ -241,3 +243,39 @@ plotWTP_dem_rep
 
 #save
 ggsave(plotWTP_dem_rep, file = str_c("./paper/figures/wtp_", corpus, "_dem_rep.pdf"), width=7, height=9)
+
+
+
+#Sort topics by the ratio of the mean prevalence of the first ten words between Dems and Reps
+df.words.dem3 <- group_by(df.words.dem, topic) %>% 
+  summarise(meanweights = mean(weights))
+
+df.words.rep3 <- group_by(df.words.rep, topic) %>% 
+  summarise(meanweights = mean(weights))
+
+df.words.compare <- cbind(df.words.dem3, df.words.rep3$meanweights)
+df.words.compare$ratio <- df.words.compare$meanweights/df.words.compare$`df.words.rep3$meanweights`
+
+df.words.compare <- df.words.compare[order(df.words.compare$ratio),]
+
+df.words.dem4 <- df.words.dem[df.words.dem$topic%in%df.words.compare$topic[1:5],]
+df.words.rep4 <- df.words.rep[df.words.rep$topic%in%df.words.compare$topic[1:5],]
+
+#Plot word-topic probabilities
+plotWTP_dem <- df.words.dem4 %>% ggplot(aes(words, weights, fill = factor(topic))) +
+  geom_bar(stat = "identity", show.legend = FALSE) +
+  facet_wrap(~ topic, scales = "free", ncol = 1) +
+  coord_flip() +
+  labs(title = "Democrat")
+plotWTP_rep <- df.words.rep4 %>% ggplot(aes(words, weights, fill = factor(topic))) +
+  geom_bar(stat = "identity", show.legend = FALSE) +
+  facet_wrap(~ topic, scales = "free", ncol = 1) +
+  coord_flip() +
+  labs(title = "Republican")
+
+#arrange both plots next to each other
+plotWTP_dem_rep <- plot_grid(plotWTP_dem, plotWTP_rep)
+plotWTP_dem_rep
+
+#save
+ggsave(plotWTP_dem_rep, file = str_c("./paper/figures/wtp_", corpus, "_dem_rep_large_differences.pdf"), width=7, height=9)
