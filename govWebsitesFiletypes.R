@@ -35,7 +35,8 @@ filetypes_all <- merge(filetypes_all, filetypes_after, by = "Filetype")
 
 filetypes_all <- filetypes_all[order(filetypes_all$current, decreasing = T),]
 
-print(xtable(filetypes_all, caption="The most common file types in scraped websites"), include.rownames = F)
+filetypes <- print(xtable(filetypes_all, caption="The most common file types in scraped websites"), include.rownames = F)
+write.table(filetypes, file = "paper/tables/filetypes.tex")
 
 filesfolders <- function(wd){
 
@@ -92,4 +93,5 @@ URLs <- subset(URLs, select = c("foldername", "control_change"))
 filesfolders_all2 <- merge(filesfolders_all, URLs, by.x = "Website", by.y = "foldername")
 filesfolders_all2 <- filesfolders_all2[order(filesfolders_all2$control_change),]
 
-print(xtable(filesfolders_all2, caption="Number of files and size of websites"), include.rownames = F)
+filenums <- print(xtable(filesfolders_all2, caption="Number of files and size of websites"), include.rownames = F)
+write.table(filenums, file = "paper/tables/filenumbers.tex")

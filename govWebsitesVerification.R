@@ -9,16 +9,19 @@ require(stringr)
 require(stringi)
 
 #read in the data created by the python scripts
-results1 <- read.table("results/results1.txt")
-results2 <- read.table("results/results2.txt")
-results3 <- read.table("results/results3.txt")
-results4 <- read.table("results/results4.txt")
-results5 <- read.table("results/results5.txt")
-results6 <- read.table("results/results6.txt")
+#results1 <- read.table("results/results1.txt")
+#results2 <- read.table("results/results2.txt")
+#results3 <- read.table("results/results3.txt")
+#results4 <- read.table("results/results4.txt")
+#results5 <- read.table("results/results5.txt")
+#results6 <- read.table("results/results6.txt")
 
 #crete one data frame
-result <- rbind(results1,results2,results3,results4,results5,results6)
-rm(results1,results2,results3,results4,results5,results6)
+#result <- rbind(results1,results2,results3,results4,results5,results6)
+#rm(results1,results2,results3,results4,results5,results6)
+
+#the same, with only one file
+result <- read.table("data/verified_sites.txt")
 
 #read in original RSA file
 data <- read.csv("data/current-full.csv")

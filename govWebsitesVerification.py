@@ -45,7 +45,7 @@ for i in range(sys.argv[1],sys.argv[2]): #sum(1 for line in open('data/current-f
         sitelink = "Error"
         siteslist.append(sitelink)
 
-outfile = open("results/results1.txt", 'w')
+outfile = open("data/verified_sites.txt", 'w')
 for item in siteslist:
     outfile.write("%s\n" % item)
 outfile.close()

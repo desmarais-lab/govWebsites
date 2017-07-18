@@ -1,26 +1,26 @@
 #verify which .gov websites actually work
 #by opening each in a webdriver-controlled browser
 #and recording the url it redirects to
-verify:
+data/verified_sites.txt: data/current-full.csv
 	python2 govWebsitesVerification.py 1 5647
 
 #same as above, but run 3 webdrivers at the same time; faster
 #depending on fast internet connection, 6 should be possible too
 #THIS MAY NOT WORK FROM THE MAKEFILE :(
-verify_parallel:
-	python2 govWebsitesVerification.py 1 901 &	python2 govWebsitesVerification.py 901 1801 &	python2 govWebsitesVerification.py 1801 2701
-	python2 govWebsitesVerification.py 2701 3601 &	python2 govWebsitesVerification.py 3601 4501 &	python2 govWebsitesVerification.py 4501 5647
+#verify_parallel:
+#	python2 govWebsitesVerification.py 1 901 &	python2 govWebsitesVerification.py 901 1801 &	python2 govWebsitesVerification.py 1801 2701
+#	python2 govWebsitesVerification.py 2701 3601 &	python2 govWebsitesVerification.py 3601 4501 &	python2 govWebsitesVerification.py 4501 5647
 
 #assembles the output from the python scripts into a data frame and makes some corrections by hand
-verify_correct:
+data/govWebsitesVerified.Rdata: data/verified_sites.txt data/current-full.csv
 	R CMD BATCH govWebsitesVerification.R
 
 #merge with census data; important file where a LOT gets done, partially by hand
-merge_census:
+data/govWebsitesVerifiedCensus.Rdata: data/sub-est2015_all.csv data/govWebsitesVerified.Rdata
 	R CMD BATCH govWebsitesCensusMerge.R
 
 #uses the matched GSA/Census data to produce states/population breakdown with ggplot
-coverage:
+paper/figures/coverage_states.pdf: data/govWebsitesVerifiedCensus.Rdata data/sub-est2015_all.csv
 	R CMD BATCH govWebsitesCoverage.R
 
 #Use Ruby package (run from within R) to scrape 10 randomly selected
@@ -30,19 +30,12 @@ coverage:
 #wayback_downloader:
 #	R CMD BATCH internetarchive_webarchive.R
 
-#produce Latex tables with filetypes of websites
-#also produce Latex table of number of files and size of sites
-check_filetypes:
-	R CMD BATCH govWebsitesFiletpyes.R
-
-#get top term frequencies
-ttf:
-	R CMD BATCH termFrequencies.R
-
 #read in election data from indiana (downloaded from their website)
 #then download the gov. websites from the wayback machine
-indiana:
-	R CMD BATCH govWebsitesIndiana2015.R
+#!!!!!!!!!!!!!!!!!
+#OLD
+#indiana:
+#	R CMD BATCH govWebsitesIndiana2015.R
 
 #download Indianapolis website, then try out topic models
 ### OUTDATED, and not worth the trouble
@@ -51,8 +44,10 @@ indiana:
 
 #check filetypes of documents
 #not actually limited to Indy any more
-indianapolis_filetypes:
-	R CMD BATCH govWebsitesIndianapolisFiletypes.R
+#!!!!!!!!!!!!!!!!!
+#OLD
+#indianapolis_filetypes:
+#	R CMD BATCH govWebsitesIndianapolisFiletypes.R
 
 #scrape snapshot dates from the WaybackMachine 'calendar' and plot them
 #given what we know about the wayback machine now, this doesnt actually make sense any more
@@ -60,16 +55,24 @@ indianapolis_filetypes:
 #	R CMD BATCH govWebsitesSnapshotsDates.R
 
 #scrape Louisiana website URLs from Wikipedia
-scrapeLouisianaURLs:
+data/LouisianaWebsiteURLs.rdata:
 	R CMD BATCH scrapeLousianaWebsites.R
 
 #scrape Indiana website URLs from Wikipedia
-scrapeIndianaURLs:
+data/indianaWebsiteURLs.rdata:
 	R CMD BATCH scrapeIndianaWebsites.R
 
 #combine the URLs from different sources
-combineURLs:
+data/URLs_IN.rdata: data/louisianaWebsiteURLs.rdata data/indianaWebsiteURLs.rdata data/govWebsitesVerifiedCensus.Rdata data/indianaElections2015.rdata data/LEAP_Louisiana_All_Offices_neumann.xlsx
 	R CMD BATCH combineURLs.R
+
+#produce Latex tables with filetypes of websites
+#also produce Latex table of number of files and size of sites
+#produces latex code, no files
+#currently table 1 and 2
+#paper/tables/filetypes.tex
+filetypes.tex filenumbers.tex: data/URLs_IN.rdata
+	R CMD BATCH govWebsitesFiletpyes.R
 
 #scrape URLs from Google, UNFINISHED
 #scrapeLousianaURLsGoogle:
@@ -90,12 +93,18 @@ convertEverything:
 	./websites/batchconversion.sh
 
 #2. Kenneth Benoits readtext package for R
-convertEverythingR:
-	R CMD BATCH readtext.R
+#convertEverythingR:
+#	R CMD BATCH readtext.R
 
 #only one of the above is necessary
 
 #use Mallet,
 #this will also call the hunspell spellchecking
-mallet:
+#the hunspell spellchecking takes a long time (i.e. 14 hours on 6 cores)
+paper/figures/wtp_current_dem_rep.pdf: data/URLs_IN.rdata
 	R CMD BATCH mallet.R
+
+
+#compile Latex
+#paper/manuscript.pdf:
+#	latexmk -pdf -quiet -c paper/manuscript
