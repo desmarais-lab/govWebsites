@@ -106,5 +106,8 @@ paper/figures/wtp_current_dem_rep.pdf: data/URLs_IN.rdata
 
 
 #compile Latex
-#paper/manuscript.pdf:
-#	latexmk -pdf -quiet -c paper/manuscript
+# -c option cleans up nonessential results except pdf
+manuscript.pdf:
+	cd paper; \
+	latexmk -quiet -pdf manuscript; \
+	latexmk -c
