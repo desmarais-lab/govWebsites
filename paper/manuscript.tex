@@ -503,7 +503,7 @@ Furthermore, if we only investigate cities in which control of government change
 	\includegraphics[width=\linewidth]{figures/doctopics_density.pdf}
 \end{figure}
 
-Figure \ref{doctopics_density}
+Figure \ref{doctopics_density} plots the densities of topic weights across documents, where each line represents a topic. Distributions with lower peaks near zero and flatter bodies indicate a topic that is present to varying degrees in multiple documents. This shape appears to be more common in documents from Republican cities. By contrast, a distribution with a high peak near zero and a very long tail is indicative of a topic that only appears in one specific document. This appears to be more common for documents in Democratic cities. The substantive conclusion then is that Democrats appear to be more prone to dedicating individual documents to one specific purpose, whereas Republicans produce general-purpose documents more often.
 
 %topicweights density
 \begin{figure}[!ht]
@@ -513,12 +513,29 @@ Figure \ref{doctopics_density}
 	\includegraphics[width=\linewidth]{figures/topicweights_density.pdf}
 \end{figure}
 
-Figure \ref{topicweights_density}
+An alternative way to consider topic weights is to aggregate them across documents, in this case through their median or mean. Figure \ref{topicweights_density} shows this distribution of topic weights across topics. Most topics have a very low weight - meaning that they do not appear in a lot of documents. When aggregating across documents via the mean, this effect is more pronounced for Republicans, suggesting that most topics do not feature frequently (or even at all) in their documents. Democrats on the other hand appear to have a wider spectrum of topics from which they chose - supporting the hypothesis of Democrats as a 'big tent' party. However, this effect is reversed when using the median instead of the mean to aggregate across documents. Now, the the distribution has a higher peak and lower tail for Democrats. The cause for this stark divergence appears to lie in the fact the mean and median differ enormously - for the range displayed here, the mean is about a hundred times greater. Evidently, extremely large weights (i.e. some documents fitting specific topics perfectly) distort the picture. The median document is a better representation of the corpus as a whole, but the results do not fit our hypothesis. Their are however more consistent with figure \ref{topicweights_density}.
+
+%word topic probabilities for topics with big differences
+\begin{figure}[!ht]
+	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
+	\caption{Word-topic probabilities for topics with big partisan differences}
+	\label{plotWTP_bigdiffs}
+	\includegraphics[width=\linewidth]{figures/plotWTP_bigdiffs.pdf}
+\end{figure}
+
+
+%word topic probabilities for topics with big differences
+\begin{figure}[!ht]
+	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
+	\caption{Word-topic probabilities for topics with big partisan differences}
+	\label{doctopics_density_bigdiffs}
+	\includegraphics[width=\linewidth]{figures/doctopics_density_bigdiffs.pdf}
+\end{figure}
 
 \newpage
 
-%\bibliographystyle{apsr} % apsr stopped working for me
-\bibliographystyle{plainnat}
+\bibliographystyle{apsr} % apsr stopped working for me
+%\bibliographystyle{plainnat}
 \bibliography{ref}
 
 \end{document}
