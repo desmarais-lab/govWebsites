@@ -515,6 +515,19 @@ Figure \ref{doctopics_density} plots the densities of topic weights across docum
 
 An alternative way to consider topic weights is to aggregate them across documents, in this case through their median or mean. Figure \ref{topicweights_density} shows this distribution of topic weights across topics. Most topics have a very low weight - meaning that they do not appear in a lot of documents. When aggregating across documents via the mean, this effect is more pronounced for Republicans, suggesting that most topics do not feature frequently (or even at all) in their documents. Democrats on the other hand appear to have a wider spectrum of topics from which they chose - supporting the hypothesis of Democrats as a 'big tent' party. However, this effect is reversed when using the median instead of the mean to aggregate across documents. Now, the the distribution has a higher peak and lower tail for Democrats. The cause for this stark divergence appears to lie in the fact the mean and median differ enormously - for the range displayed here, the mean is about a hundred times greater. Evidently, extremely large weights (i.e. some documents fitting specific topics perfectly) distort the picture. The median document is a better representation of the corpus as a whole, but the results do not fit our hypothesis. Their are however more consistent with figure \ref{topicweights_density}.
 
+
+Topics for which there are stark differences in their distribution across documents between Democrats and Republicans are of particular interest to us. To detect these topics, we take the absolute difference of the median document topic weights, and arrange them as a histogram, see figure \ref{diffsize}. For the most part, differences are small. For a few topics however, a contrasts emerges.
+
+%size of the differences
+\begin{figure}[!ht]
+	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
+	\caption{Word-topic probabilities for topics with big partisan differences}
+	\label{diffsize}
+	\includegraphics[width=\linewidth]{figures/diffsize.pdf}
+\end{figure}
+
+Figure \ref{plotWTP_bigdiffs} displays the word-topic probabilities for the 10 topics with the largest partisan differences. Some of these, such as topic 82, with its focus on policing, safety and crime could be construed as politically charged. For the most part however, these topics focus on administrative matters.
+
 %word topic probabilities for topics with big differences
 \begin{figure}[!ht]
 	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
@@ -523,6 +536,7 @@ An alternative way to consider topic weights is to aggregate them across documen
 	\includegraphics[width=\linewidth]{figures/plotWTP_bigdiffs.pdf}
 \end{figure}
 
+To further investigate the topics with large partisan differences, figure \ref{plotWTP_bigdiffs} shows densities of topic weights just like figure \ref{doctopics_density}, but reduced to only the topics with the largest differences. It appears that mere absolute differences between the medians (or some other measure of central tendency) obscures the fact that the distributions themselves are quite different.
 
 %word topic probabilities for topics with big differences
 \begin{figure}[!ht]
@@ -530,6 +544,16 @@ An alternative way to consider topic weights is to aggregate them across documen
 	\caption{Word-topic probabilities for topics with big partisan differences}
 	\label{doctopics_density_bigdiffs}
 	\includegraphics[width=\linewidth]{figures/doctopics_density_bigdiffs.pdf}
+\end{figure}
+
+To further investigate this issue, we look at the raw data itself - the document-topic matrices for Democrats and Republicans, displayed as heatmaps. Figure \ref{heatmaps_weights} shows that especially for Republicans (but also for Democrats, to a lesser extent), there appears to be extensive clustering for consecutive documents. Since the order of the documents in the corpus is dependent on the cities in which they appear in, it seems that topics are mere representation of city websites - each website `owns' a number of topics, that appear across all of its documents, and hardly anywhere else. One possible cause for this type of clustering is the fact that documents frequently share common words, for example pertaining to navigation on the site, or standard forms that are shared throughout all documents.
+
+%Heatmaps
+\begin{figure}[!ht]
+	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
+	\caption{Word-topic probabilities for topics with big partisan differences}
+	\label{heatmaps_weights}
+	\includegraphics[width=\linewidth]{figures/heatmaps_weights.png}
 \end{figure}
 
 \newpage

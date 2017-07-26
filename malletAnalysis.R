@@ -230,3 +230,28 @@ doc.topics.dens.plot.rep.g <- ggplot(doc.topics.dens.plot.rep, aes(x = value, co
 doc.topics.dens.plot.g <- plot_grid(doc.topics.dens.plot.dem.g, doc.topics.dens.plot.rep.g)
 doc.topics.dens.plot.g
 ggsave(doc.topics.dens.plot.g, file = str_c("./paper/figures/doctopics_density_bigdiffs.pdf"), width=10, height=6)
+
+
+
+##Heatmaps of Democratic/Republican matrix
+library(reshape2)
+
+democratic.melted <- melt(as.matrix(democratic))
+names(democratic.melted) <- c("Document", "Topic", "Weight")
+heatmap_democratic <- ggplot(democratic.melted, aes(x = Topic, y = Document, fill = Weight)) + 
+  geom_tile() + 
+  scale_y_reverse() +
+  theme(axis.text.x = element_blank()) +
+  ggtitle("Democratic")
+
+republican.melted <- melt(as.matrix(republican))
+names(republican.melted) <- c("Document", "Topic", "Weight")
+heatmap_republican <- ggplot(republican.melted, aes(x = Topic, y = Document, fill = Weight)) + 
+  geom_tile() + 
+  scale_y_reverse() +
+  theme(axis.text.x = element_blank()) +
+  ggtitle("Republican")
+
+heatmaps_g <- plot_grid(heatmap_democratic, heatmap_republican, nrow = 2)
+
+ggsave(heatmaps_g, file = str_c("./paper/figures/heatmaps_weights.png"), width=5, height=8)
