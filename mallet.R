@@ -80,6 +80,13 @@ d <- merge(d, URLs, by.x = "city", by.y = "foldername")
 d <- d[!d$doc=="",]
 d <- d[!d$doc==" ",]
 
+
+#################
+#setwd("/home/markus/govWebsites/websites2/websites_backup/html/")
+#a <- scan("index", what = "raw")
+#a <- readLines("index")
+
+
 save(d, file = "./rfiles/dd.Rdata")
 load(file = "./rfiles/dd.Rdata")
 
