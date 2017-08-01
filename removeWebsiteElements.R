@@ -34,7 +34,28 @@ save(b, file='rfiles/corenlp_ngrams_attica.rdata')
 #dtv2 <- generate_document_term_vectors('rfiles/corenlp_ngrams_attica.rdata', 
 #                                       data_type = "ngrams", 
 #                                       ngram_type = "3_grams")
-source("speadReaderFix.R")
+
+
+NGrams <- b
+
+
+document_term_vector_list <- vector(mode = "list",
+                                    length = length(NGrams))
+
+for (i in 1:length(NGrams)) {
+  #  if (ngram_type == "jk_filtered") {
+  #    document_term_vector_list[[i]] <- NGrams[[i]]$jk_filtered
+  #  } else if (ngram_type == "verb_filtered") {
+  #    document_term_vector_list[[i]] <- NGrams[[i]]$verb_filtered
+  #  } else if (ngram_type == "phrases") {
+  #    document_term_vector_list[[i]] <- NGrams[[i]]$phrases
+  #  } else {
+  num <- 3
+  index <- grep(num, names(NGrams[[i]]$ngrams))[1]
+  document_term_vector_list[[i]] <- NGrams[[i]]$ngrams[[index]]
+  #  }
+}
+
 
 dtm2 <- generate_document_term_matrix(document_term_vector_list)
 tf_idf2 <- tfidf(dtm2, colnames(dtm2))
