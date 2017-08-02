@@ -1,5 +1,6 @@
-options(java.parameters="-Xmx4g")   # optional, but more memory for Java helps
+options(java.parameters="-Xmx3g")   # optional, but more memory for Java helps
 library("dfrtopics")
+library("mallet")
 
 mallet.instances <- mallet.import(id.array = make.unique(d$Name),
                                   text.array = d$doc,

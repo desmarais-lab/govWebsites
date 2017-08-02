@@ -93,9 +93,14 @@ load(file = str_c("./rfiles/docs_", corpus, ".Rdata"))
 #remove documents where spellchecking failed
 d <- d[d$spell_fail==0,]
 
-#remove non-spellchecked text
+#remove non-spellchecked text and some other stuff
 d$doc <- d$doc2
 d <- select(d, -doc2)
+d$doc <- gsub("\\s+"," ", d$doc)
+d$doc <- str_trim(d$doc, side = "both")
+d <- d[d$doc!="",]
+d <- d[d$filename!="robots.txt",]
+save(d, file = "./rfiles/d.Rdata")
 
 #Stemming
 #d$doc2 <- stemDocument(d$doc)

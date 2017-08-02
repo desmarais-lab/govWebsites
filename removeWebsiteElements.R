@@ -3,29 +3,13 @@ library('stringr')
 library('SpeedReader')
 
 #load data
-corpus <- "current" #"current", "before", or "after"
-#Hunspell
-load(file = str_c("./rfiles/docs_", corpus, ".Rdata"))
-#remove documents where spellchecking failed
-d <- d[d$spell_fail==0,]
-#remove non-spellchecked text
-d$doc <- d$doc2
-d <- select(d, -doc2)
-
-d$doc <- gsub("\\s+"," ", d$doc)
-d$doc <- str_trim(d$doc, side = "both")
-
-d <- d[d$doc!="",]
-#d$docnum <- aggregate(city~Name, d, FUN=sum)
-
-#d_bu <- d
-
+load(file = str_c("./rfiles/d.Rdata"))
 
 #calculate tf-idf for the entire corpus, with words as tokens
-dtv <- generate_document_term_vectors(d$doc[d$Name=="Attica"], tokenization_method = 'RegEx')
-dtm <- generate_document_term_matrix(document_term_vector_list = dtv$document_term_vector_list,
-                                     document_term_count_list = dtv$document_term_count_list)
-tf_idf <- tfidf(dtm, colnames(dtm))
+dtv_corpus <- generate_document_term_vectors(d$doc, tokenization_method = 'RegEx')
+dtm_corpus <- generate_document_term_matrix(document_term_vector_list = dtv_corpus$document_term_vector_list,
+                                     document_term_count_list = dtv_corpus$document_term_count_list)
+tf_idf_corpus <- tfidf(dtm_corpus, colnames(dtm_corpus))
 #works!
 
 
@@ -62,6 +46,8 @@ for(k in 1:ncities){
   dtm2 <- generate_document_term_matrix(document_term_vector_list)
   tf_idf2 <- tfidf(dtm2, colnames(dtm2))
   tf_idf3 <- tf_idf2$tfidf_rankings
+  
+  #the decision for cutting off certain n-grams occurs here
   tf_idf3 <- tf_idf3[order(tf_idf3$idf),]
   tf_idf3 <- tf_idf3[tf_idf3$idf<1.5,]
   tf_idf3$term <- str_replace_all(tf_idf3$term, "_", " ")

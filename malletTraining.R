@@ -22,6 +22,7 @@ d <- select(d, -doc2)
 d$doc <- gsub("\\s+"," ", d$doc)
 d$doc <- str_trim(d$doc, side = "both")
 d <- d[d$doc!="",]
+d <- d[d$filename!="robots.txt",]
 
 #Import website text
 mallet.instances <- mallet.import(id.array = make.unique(d$folder),
