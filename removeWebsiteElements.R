@@ -16,9 +16,9 @@ d$doc <- gsub("\\s+"," ", d$doc)
 d$doc <- str_trim(d$doc, side = "both")
 
 d <- d[d$doc!="",]
-d$docnum <- aggregate(city~Name, d, FUN=sum)
+#d$docnum <- aggregate(city~Name, d, FUN=sum)
 
-d_bu <- d
+#d_bu <- d
 
 
 #calculate tf-idf for the entire corpus, with words as tokens
