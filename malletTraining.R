@@ -8,21 +8,8 @@ library('tm')
 library('dplyr')
 
 
-corpus <- "current" #"current", "before", or "after"
-
-#Hunspell
-load(file = str_c("./rfiles/docs_", corpus, ".Rdata"))
-
-#remove documents where spellchecking failed
-d <- d[d$spell_fail==0,]
-
-#remove non-spellchecked text and some other stuff
-d$doc <- d$doc2
-d <- select(d, -doc2)
-d$doc <- gsub("\\s+"," ", d$doc)
-d$doc <- str_trim(d$doc, side = "both")
-d <- d[d$doc!="",]
-d <- d[d$filename!="robots.txt",]
+#load data
+load(file = "./rfiles/d.Rdata")
 
 #Import website text
 mallet.instances <- mallet.import(id.array = make.unique(d$folder),

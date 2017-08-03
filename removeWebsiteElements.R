@@ -3,7 +3,7 @@ library('stringr')
 library('SpeedReader')
 
 #load data
-load(file = str_c("./rfiles/d.Rdata"))
+load(file = "./rfiles/d.Rdata")
 
 #calculate tf-idf for the entire corpus, with words as tokens
 dtv_corpus <- generate_document_term_vectors(d$doc, tokenization_method = 'RegEx')
