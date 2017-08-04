@@ -1,10 +1,11 @@
-options(java.parameters = "-Xmx10000m")
+options(java.parameters = "-Xmx5000m")
 
 library('SpeedReader')
 library('mallet')
 library('dplyr')
 library('tibble')
 library('stringr')
+library('ggplot2')
 
 #load data
 load(file = "./rfiles/d.Rdata")
@@ -51,4 +52,17 @@ for(j in 1:length(topicsizes)){
   
 }
 
-plot(coherence_values, topicsizes)
+save(coherence_values, file = "rfiles/coherence_20_50.rdata")
+
+coh <- as.tibble(unlist(coherence_values))
+coh$numtopic <- rep(as.character(topicsizes),
+                    topicsizes)
+
+p <- ggplot(coh, aes(numtopic, value)) + 
+  labs(title = "", x = "Number of topics", y = "Topic coherence") +
+  geom_boxplot() + 
+  stat_summary(fun.y = mean, colour = "red", geom = "line", aes(group = 1))  + 
+  stat_summary(fun.y = mean, colour = "red",  geom = "point")
+p
+
+ggsave(p, file = str_c("./paper/figures/coherence_numberoftopics.pdf"), width = 8, height = 5)
