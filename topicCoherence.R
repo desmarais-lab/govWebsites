@@ -1,3 +1,6 @@
+#DON'T RUN THIS ON A MACHINE WITH LESS THAN 12GB MEMORY
+
+
 options(java.parameters = "-Xmx5000m")
 
 library('SpeedReader')
@@ -22,7 +25,7 @@ mallet.instances <- mallet.import(id.array = make.unique(d$folder),
                                   stoplist.file = "./rfiles/stopwords.txt",
                                   token.regexp = "\\p{L}[\\p{L}\\p{P}]+\\p{L}")
 
-topicsizes <- seq(20, 50, by = 5)
+topicsizes <- seq(5, 50, by = 5)
 coherence_values <- vector(mode = "numeric", length = length(topicsizes))
 coherence_values <- list()
 
@@ -52,13 +55,16 @@ for(j in 1:length(topicsizes)){
   
 }
 
-save(coherence_values, file = "rfiles/coherence_20_50.rdata")
+save(coherence_values, file = "rfiles/coherence_5_50.rdata")
 
 coh <- as.tibble(unlist(coherence_values))
 coh$numtopic <- rep(as.character(topicsizes),
                     topicsizes)
+#make the number of topics a factor and sort it accordingly, 
+##otherwise ggplot might mess up the order
+coh$numtopic <- factor(coh$numtopic, levels = unique(coh$numtopic))
 
-p <- ggplot(coh, aes(numtopic, value)) + 
+p <- ggplot(coh, aes(factor(numtopic), value)) + 
   labs(title = "", x = "Number of topics", y = "Topic coherence") +
   geom_boxplot() + 
   stat_summary(fun.y = mean, colour = "red", geom = "line", aes(group = 1))  + 
