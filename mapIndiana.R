@@ -4,10 +4,11 @@ library("ggmap")
 library("mapdata")
 
 #load data
-load("rfiles/d.Rdata")
+load("rfiles/d_coords.Rdata")
 d <- d[!duplicated(d$Name),]
 d$latitude <- as.numeric(d$latitude)
 d$longitude <- as.numeric(d$longitude)
+d$winner[is.na(d$winner)==T] <- "NA"
 
 ## Indiana
 # get the map from Google maps
@@ -21,7 +22,7 @@ map1
 map2 <- map1 + 
   geom_point(data = d, aes(x = longitude, y = latitude, color = winner), size = 2) + 
   theme(legend.position = "none") + 
-  #scale_color_manual(values=c("blue", "red")) +
+  scale_color_manual(values=c("blue", "gray", "red")) +
   labs(x = "Longitude", y = "Latitude")
 map2
 

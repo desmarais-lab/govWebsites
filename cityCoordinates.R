@@ -18,8 +18,8 @@ get_link <- function(html_table, team){
 
 df$wiki_link <- sapply(df$City, function(x)get_link(mytable, x))
 
-
-df <- df[df$City%in%unique(d$Name),]
+#load("rfiles/d.Rdata")
+#df <- df[df$City%in%unique(d$Name),]
 
 
 #function to extract the links to the city websites
@@ -37,7 +37,7 @@ df$coords <- sapply(df$wiki_link, extractCoords)
 
 indianacities <- subset(df, select=c("City", "County", "wiki_link", "coords"))
 
-d <- merge(d, indianacities, by.x = "Name", by.y = "City")
+d <- merge(d, indianacities, by.x = "Name", by.y = "City", all = T)
 
 coords <- str_split_fixed(d$coords, "/", 3)[,3] %>% str_split_fixed(";", 2)
 d$latitude <- str_trim(coords[,1])
@@ -46,4 +46,4 @@ d$longitude <- str_trim(coords[,2])
 d <- subset(d, select=-coords)
 
 #save
-save(d, file="rfiles/d.Rdata")
+save(d, file="rfiles/d_coords.Rdata")
