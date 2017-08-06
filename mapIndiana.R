@@ -1,6 +1,7 @@
 library("dplyr")
 library("ggplot2")
 library("ggmap")
+library("mapdata")
 
 #load data
 load("rfiles/d.Rdata")
@@ -10,6 +11,7 @@ d$longitude <- as.numeric(d$longitude)
 
 ## Indiana
 # get the map from Google maps
+states <- map_data("state")
 indiana <- subset(states, region %in% c("indiana"))
 map1 <- ggplot(data = indiana) + 
   geom_polygon(aes(x = long, y = lat, group = group), fill = "papayawhip", color = "black") + 
@@ -19,7 +21,7 @@ map1
 map2 <- map1 + 
   geom_point(data = d, aes(x = longitude, y = latitude, color = winner), size = 2) + 
   theme(legend.position = "none") + 
-  scale_color_manual(values=c("blue", "red")) +
+  #scale_color_manual(values=c("blue", "red")) +
   labs(x = "Longitude", y = "Latitude")
 map2
 
