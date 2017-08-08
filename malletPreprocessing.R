@@ -1,7 +1,3 @@
-#This option has to be set BEFORE loading the rJava package (loaded by mallet)
-#Gives rJava about 4GB to work with
-#So far, I've only needed 2.3GB
-
 library('tibble')
 library('stringr')
 library('tools')
@@ -58,7 +54,7 @@ d$doc <- stripWhitespace(d$doc)
 d$doc <- iconv(d$doc, "latin1", "UTF-8")
 
 #Everything to lowercase
-d$doc <- tolower(d$doc)
+#d$doc <- tolower(d$doc)
 
 #extract city from directory
 d$city <- str_split_fixed(d$path, str_c(filepath, "/"), 2)[,2]
@@ -76,12 +72,11 @@ d <- merge(d, URLs, by.x = "city", by.y = "foldername")
 d <- d[!d$doc=="",]
 d <- d[!d$doc==" ",]
 
-
-#################
-#setwd("/home/markus/govWebsites/websites2/websites_backup/html/")
-#a <- scan("index", what = "raw")
-#a <- readLines("index")
-
+#remove extra whitespaces, trim, remove empty documents, remove robots.txt files
+d$doc <- gsub("\\s+"," ", d$doc)
+d$doc <- str_trim(d$doc, side = "both")
+d <- d[d$doc!="",]
+d <- d[d$filename!="robots.txt",]
 
 save(d, file = "./rfiles/dd.Rdata")
 load(file = "./rfiles/dd.Rdata")
@@ -93,13 +88,12 @@ load(file = str_c("./rfiles/docs_", corpus, ".Rdata"))
 #remove documents where spellchecking failed
 d <- d[d$spell_fail==0,]
 
+#Everything to lowercase
+d$doc <- tolower(d$doc)
+
 #remove non-spellchecked text and some other stuff
-d$doc <- d$doc2
-d <- select(d, -doc2)
-d$doc <- gsub("\\s+"," ", d$doc)
-d$doc <- str_trim(d$doc, side = "both")
-d <- d[d$doc!="",]
-d <- d[d$filename!="robots.txt",]
+#d$doc <- d$doc2
+#d <- select(d, -doc2)
 save(d, file = "./rfiles/d.Rdata")
 
 #Stemming
