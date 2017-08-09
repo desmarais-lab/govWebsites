@@ -24,7 +24,7 @@ mallet.instances <- mallet.import(id.array = make.unique(d$folder),
                                   stoplist.file = "./rfiles/stopwords.txt",
                                   token.regexp = "\\p{L}[\\p{L}\\p{P}]+\\p{L}")
 
-topicsizes <- seq(5, 50, by = 5)
+topicsizes <- seq(5, 100, by = 5)
 coherence_values <- list()
 
 for(j in 1:length(topicsizes)){
@@ -53,7 +53,7 @@ for(j in 1:length(topicsizes)){
   
 }
 
-save(coherence_values, file = "rfiles/coherence_5_50.rdata")
+save(coherence_values, file = "rfiles/coherence_5_100.rdata")
 
 coh <- as.tibble(unlist(coherence_values))
 coh$numtopic <- rep(as.character(topicsizes),
