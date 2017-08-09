@@ -46,3 +46,5 @@ Brazil <- tibble(tfidf = Brazil, token = names(Brazil))
 Att <- merge(Attica, a, by = "token")
 
 Att$tfidfRatio <- Att$tfidf.x/Att$tfidf.y
+
+Att$tfidfDiff <- Att$tfidf.y-Att$tfidf.x
