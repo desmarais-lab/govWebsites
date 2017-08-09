@@ -25,6 +25,8 @@ mallet.instances <- mallet.import(id.array = make.unique(d$folder),
                                   token.regexp = "\\p{L}[\\p{L}\\p{P}]+\\p{L}")
 
 topicsizes <- seq(5, 100, by = 5)
+topicsizes <- seq(150, 500, by = 50)
+topicsizes <- c(seq(5, 100, by = 5),seq(150, 500, by = 50))
 coherence_values <- list()
 
 for(j in 1:length(topicsizes)){
@@ -53,7 +55,7 @@ for(j in 1:length(topicsizes)){
   
 }
 
-save(coherence_values, file = "rfiles/coherence_5_100.rdata")
+save(coherence_values, file = "rfiles/coherence_5_500.rdata")
 
 coh <- as.tibble(unlist(coherence_values))
 coh$numtopic <- rep(as.character(topicsizes),
@@ -69,4 +71,4 @@ p <- ggplot(coh, aes(factor(numtopic), value)) +
   stat_summary(fun.y = mean, colour = "red",  geom = "point")
 p
 
-ggsave(p, file = str_c("./paper/figures/coherence_numberoftopics.pdf"), width = 8, height = 5)
+ggsave(p, file = str_c("./paper/figures/coherence_numberoftopics_5_500.pdf"), width = 8, height = 5)
