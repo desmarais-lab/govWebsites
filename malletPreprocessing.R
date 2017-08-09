@@ -78,22 +78,25 @@ d$doc <- str_trim(d$doc, side = "both")
 d <- d[d$doc!="",]
 d <- d[d$filename!="robots.txt",]
 
+#remove files that cause problems
+d <- d[d$filename!="indypotholeviewer.txt",]
+
+#save, for use with hunspell
 save(d, file = "./rfiles/dd.Rdata")
-load(file = "./rfiles/dd.Rdata")
 
 #Hunspell
-#source("hunspellParallel.R")
-load(file = str_c("./rfiles/docs_", corpus, ".Rdata"))
+source("hunspellParallel.R")
 
-#remove documents where spellchecking failed
-d <- d[d$spell_fail==0,]
+#reload the data after spellchecking
+load("rfiles/dd_spellchecked.Rdata")
 
 #Everything to lowercase
 d$doc <- tolower(d$doc)
 
+#Remove cities with only one document
+d <- d[d$Name%in%names(table(d$Name))[table(d$Name)>1],]
+
 #remove non-spellchecked text and some other stuff
-#d$doc <- d$doc2
-#d <- select(d, -doc2)
 save(d, file = "./rfiles/d.Rdata")
 
 #Stemming

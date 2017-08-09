@@ -1,7 +1,6 @@
 library("dplyr")
 library("ggplot2")
 library("ggmap")
-library("mapdata")
 
 #load data
 load("rfiles/d_coords.Rdata")
