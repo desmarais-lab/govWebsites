@@ -89,12 +89,13 @@ duplicatedLines <- function(k){
   #how many documents does the current city have?
   citylength <- as.numeric(citytable[citytableindex])
   #which indices belong to this city?
-  cityindices <- citystart:citylength
-  
+  cityindices <- citystart:(citystart+citylength-1)
+  #remove the one for this particular document
+  cityindices <- cityindices[cityindices!=k]
   #for each document, create the vector indicating the number of times a line occurs elsewhere
   b <- numeric(length = length(d$doc[[k]]))
   #loop over all other documents
-  for(i in cityindices[-k]){
+  for(i in cityindices){
     #check against one other document
     a <- match(d$doc[[k]], d$doc[[i]])
     #if there is a match, advance duplicate counter by one
