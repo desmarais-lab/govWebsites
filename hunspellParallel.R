@@ -12,7 +12,7 @@ ncores <- detectCores() - 1
 cl <- makeCluster(ncores, type = "FORK")
 
 #setwd("./websites/current")
-load(file = "./rfiles/dd.Rdata")
+#load(file = "./rfiles/dd.Rdata")
 
 #function to apply spellchecking
 #on each text, apply hunspell, and save the character vector of incorrect words
@@ -45,4 +45,4 @@ proc.time() - ptm
 stopCluster(cl)
 
 #save
-save(d, file = "rfiles/dd_spellchecked.Rdata")
+#save(d, file = "rfiles/dd_spellchecked.Rdata")
