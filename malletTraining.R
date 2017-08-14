@@ -27,7 +27,6 @@ topic.model$loadDocuments(mallet.instances)
 
 ## Get the vocabulary (i.e. list of all the words)
 vocabulary <- topic.model$getVocabulary()
-vocabulary
 
 ## word frequencies
 ## also contains a column with the total number of documents a word appears in
