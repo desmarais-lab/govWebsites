@@ -11,10 +11,8 @@ load(file = "./rfiles/d.Rdata")
 crps <- corpus(d$doc)
 dtm <- dfm(crps)
 
-dtm2 <- dtm[1:1000,]
-
 result <- FindTopicsNumber(
-  dtm2,
+  dtm,
   topics = seq(from = 10, to = 100, by = 10),
   metrics = c("Griffiths2004", "CaoJuan2009", "Arun2010", "Deveaud2014"),
   method = "Gibbs",
@@ -23,4 +21,8 @@ result <- FindTopicsNumber(
   verbose = TRUE
 )
 
+pdf("paper/figures/topicnumber_ldatuning.pdf")
 FindTopicsNumber_plot(result)
+dev.off()
+
+save.image("rfiles/topicmumber_ldatuning.Rdata")

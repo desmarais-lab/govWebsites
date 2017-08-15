@@ -31,7 +31,7 @@ vocabulary <- topic.model$getVocabulary()
 ## word frequencies
 ## also contains a column with the total number of documents a word appears in
 word.freqs <- mallet.word.freqs(topic.model)
-word.freqs[order(word.freqs$term.freq, decreasing = T),]
+#word.freqs[order(word.freqs$term.freq, decreasing = T),]
 
 ## Optimize hyperparameters every 20 iterations, 
 ##  after 50 burn-in iterations.

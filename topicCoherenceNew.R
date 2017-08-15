@@ -8,7 +8,7 @@ library('tibble')
 library('stringr')
 library('ggplot2')
 library('quanteda')
-source('topic_coherence2.R')
+source('functions/topic_coherence2.R')
 
 #load data
 load(file = "./rfiles/d.Rdata")

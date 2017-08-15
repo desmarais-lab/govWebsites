@@ -74,9 +74,6 @@ citynames <- d$Name
 ## how many times this line in the document occurs in other documents of this city
 docDuplicates <- list()
 
-# --- I didn't actually paralellize this, but it is written in a manner that is
-# ----- embarassingly parallel, so it would be easy to implement if required
-
 #function to count how many times a line also appears in other documents of the same city
 duplicatedLines <- function(k){
   
@@ -106,11 +103,11 @@ duplicatedLines <- function(k){
 }
 
 #Non-parallelized version
-#docDuplicates <- pbsapply(1:2000, duplicatedLines)
+#docDuplicates <- pbsapply(1:nrow(d), duplicatedLines)
 
 #Parallelized version
 library('parallel')
-cl <- makeForkCluster(10) #detectCores()-1
+cl <- makeForkCluster(11) #detectCores()-1
 docDuplicates <- pbsapply(1:nrow(d), duplicatedLines, cl = cl)
 stopCluster(cl)
 
