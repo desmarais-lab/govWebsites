@@ -169,6 +169,17 @@ d <- d[d$Name%in%names(table(d$Name))[table(d$Name)>1],]
 d <- d[d$doc!="character",]
 d <- d[!nchar(d$doc)<50,]
 
+#remove weird non-utf-8 characters
+## ... by removing anything that's not a regular word
+d$doc <- str_replace_all(d$doc, "[^0-9A-Za-z ]", "")
+d$doc <- gsub("\\s+"," ", d$doc)
+source("hunspellParallel.R")
+
+#remove individual letters
+individual_letters <- c("b","c","d","e","f","g","h","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z")
+d$doc <- removeWords(d$doc, individual_letters)
+d$doc <- gsub("\\s+"," ", d$doc)
+
 #save results
 save(d, file = "./rfiles/d_noduplicates2.Rdata")
 

@@ -26,6 +26,10 @@ hunRemove <- function(charstring){
   else{
     output <- charstring
   }
+  #in case everything is removed, make an empty string
+  if(identical(output, character(0))){
+    output <- ""
+  }
   return(output)
 }
 
