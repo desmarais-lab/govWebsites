@@ -11,6 +11,9 @@ library('dplyr')
 #load data
 load(file = "./rfiles/d.Rdata")
 
+#restrict dataset
+d <- d[d$extension=="html",]
+
 #Import website text
 mallet.instances <- mallet.import(id.array = make.unique(d$folder),
                                   text.array = d$doc,

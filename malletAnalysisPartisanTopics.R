@@ -5,13 +5,13 @@ source('functions/topic_order.R')
 source('functions/coherence_order.R')
 
 #How many of the topics with the highest differences should be displayed?
-n_topics <- 12
+n_topics <- 24
 #In order to consider only a restricted set of topics, enter a vector of their indices here
 #Otherwise, set to NULL
 limited_topics <- NULL
-important.topics <- important_topics()[1:50]
-coherent.topics <- coherence_order(d$doc)[1:50]
-limited_topics <- intersect(important.topics, coherent.topics)
+important.topics <- topic_order()
+coherent.topics <- coherence_order(d$doc)
+limited_topics <- intersect(important.topics[1:50], coherent.topics[1:50])
 
 ## FIND THE TOPICS WITH THE HIGHEST PROPORTIONAL DIFFERENCES
 
@@ -60,9 +60,9 @@ df.words$topic.num <- str_replace(df.words$topic, "Topic ", "")
 
 #Which party does the topic 'belong' to?
 ## (Measured by which party has more words in the documents for the topic)
-df.words$party <- NA
-df.words$party[df.words$topic.num %in% dem.topics] <- "Democratic"
-df.words$party[df.words$topic.num %in% rep.topics] <- "Republican"
+#df.words$party <- NA
+#df.words$party[df.words$topic.num %in% dem.topics] <- "Democratic"
+#df.words$party[df.words$topic.num %in% rep.topics] <- "Republican"
 
 #Merge in the proportion
 df.words <- merge(df.words, props, by.x = "topic.num", by.y = "topic", all.x = T)
@@ -74,7 +74,7 @@ df.words$topic <- str_c(df.words$topic, " (", round(df.words$prop.diff, 2), " ti
 # Word-topic-probability plot
 partisanTopics <- df.words %>% ggplot(aes(words, weights, group = factor(topic), fill = party)) +
   geom_bar(stat = "identity", show.legend = FALSE) +
-  facet_wrap(~ topic, scales = "free", ncol = 2) +
+  facet_wrap(~ topic, scales = "free", ncol = 4) +
   scale_y_continuous(breaks = scales::pretty_breaks(n = 3)) +
   coord_flip() +
   ylab("") + xlab("") +
@@ -83,3 +83,4 @@ partisanTopics
 
 #Save
 #ggsave(partisanTopics, file = "paper/figures/partisanTopics.pdf", width = 8, height = 9)
+#ggsave(partisanTopics, file = "paper/figures/partisanTopics_html_restricted_weights.pdf", width = 16, height = 9)

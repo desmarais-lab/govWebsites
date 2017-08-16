@@ -1,11 +1,12 @@
 #Function to return topics in order of their coherence
+library('quanteda')
 
 source("functions/topic_coherence2.R")
 
 coherence_order <- function(docvector, topicmodel = topic.model, topicwords = topic.words, only_indices = T){
 
-  crps <- quanteda::corpus(docvector)
-  dtm <- quanteda::dfm(crps)
+  crps <- corpus(docvector)
+  dtm <- dfm(crps)
   
   topic.words <- mallet::mallet.topic.words(topicmodel)
   df.words <- tibble::tibble()
