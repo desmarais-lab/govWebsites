@@ -16,17 +16,17 @@ limited_topics <- intersect(important.topics[1:50], coherent.topics[1:50])
 ## FIND THE TOPICS WITH THE HIGHEST PROPORTIONAL DIFFERENCES
 
 #doc-topic and topic-word matrices
-doc.topics <- mallet.doc.topics(topic.model, smoothed = T, normalized = T)
-topic.words <- mallet.topic.words(topic.model, smoothed = T, normalized = T)
+doc.topics <- mallet.doc.topics(topic.model, smoothed = F, normalized = F)
+topic.words <- mallet.topic.words(topic.model, smoothed = F, normalized = F)
 
 #Split document-topic matrix into Republican and Democratic parts
 republican <- doc.topics[which(d$winner == "Republican"),]
 democratic <- doc.topics[which(d$winner == "Democratic"),]
 
 #Democratic words per topic, as a proportion of Republican words per topic
-prop.dem <- colMeans(democratic)/colMeans(republican)
+prop.dem <- (colMeans(democratic)/sum(colMeans(democratic)))/(colMeans(republican)/sum(colMeans(republican)))
 #Republican words per topic, as a proportion of Democraticepublican words per topic
-prop.rep <- colMeans(republican)/colMeans(democratic)
+prop.rep <- (colMeans(republican)/sum(colMeans(republican)))/(colMeans(democratic)/sum(colMeans(democratic)))
 #Create an object in which each value is the proportion of the party which has a higher
 #value for this topic
 props <- prop.dem
@@ -35,6 +35,8 @@ props <- tibble(topic = 1:length(props), prop.diff = props)
 props$party <- NA
 props$party[prop.dem<1] <- "Republican"
 props$party[prop.dem>1] <- "Democratic"
+props$D <- round(colSums(democratic)/sum(colSums(democratic)), 3)
+props$R <- round(colSums(republican)/sum(colSums(republican)), 3)
 
 #Which topics are owned by which party?
 dem.topics <- which(prop.dem>1)
@@ -69,7 +71,10 @@ df.words <- merge(df.words, props, by.x = "topic.num", by.y = "topic", all.x = T
 
 #The name of the topic in the plot, consisting of its index and by how many times
 #more it appears for one party as opposed to the other
-df.words$topic <- str_c(df.words$topic, " (", round(df.words$prop.diff, 2), " times more)")
+#df.words$topic <- str_c(df.words$topic, " (", round(df.words$prop.diff, 2), " times more)")
+
+#Changed this to instead include the proportion of tokens written by Dems/Reps in this topic:
+df.words$topic <- str_c(df.words$topic, " (", "D", df.words$D, "/", "R", df.words$R, ")")
 
 # Word-topic-probability plot
 partisanTopics <- df.words %>% ggplot(aes(words, weights, group = factor(topic), fill = party)) +
@@ -83,4 +88,4 @@ partisanTopics
 
 #Save
 #ggsave(partisanTopics, file = "paper/figures/partisanTopics.pdf", width = 8, height = 9)
-#ggsave(partisanTopics, file = "paper/figures/partisanTopics_html_restricted_weights.pdf", width = 16, height = 9)
+#ggsave(partisanTopics, file = "paper/figures/partisanTopics_all_noweigts.pdf", width = 16, height = 9)
