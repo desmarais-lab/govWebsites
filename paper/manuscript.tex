@@ -247,6 +247,12 @@ We use the resulting list of websites to acccess their copies stored in the Inte
 \input{tables/filenumbers.tex}
 \end{landscape}
 
+For some cities, whose websites make heavy use of JavaScript, this method does not lead to satisfying results. Consequently we restricted our corpus to cities with at least 3 documents.
+
+\section{Preprocessing}
+
+The documents are read in line by line, converted to UTF-8 and then stripped of dates, punctuation, numbers and words connected by underscores. At this point, the documents of one city still closely resemble one another in the form of boilerplate content, be it website elements (i.e. "You are here", "Home", "Directory" etc.) in html documents, or commonly used forms or phrases in pdfs, doc and docx files. This is an issue, because it clusters documents around the cities from which they originate in a way that has nothing to do with their actual content. In other words, the signal would be drowned out by the noise. Consequently we remove this content as following: Each line of every document is compared to every line in every other document belonging to the same city. We count how many times each line is duplicated for that city. We remove any line occuring more than our chosen threshold of 10.\footnote{Empirically, lines tend to be duplicated either hundreds of times, or only once or twice, if at all.} This means that each document only retains the information that is particular about it.
+Preprocessing further includes setting every character to lowercase, as well as the removal of bullet points which frequently occur in html documents, extraneous whitespace, xml documents mislabeled as html files, and empty documents. Furthermore, some documents contain gibberish, often as a result of faulty or impartial OCR. To combat this problem, we employ two solutions. One, we use spellchecking, implemented through the hunspell R package, to remove all non-English words. However, hunspell does not cover everything, either because some tokens are not actual words (for example artifacts from defective encoding), or because random sequences of characters just so happen to form words that exist in a dictionary (for example "eh" or "duh"). Since we rely on a bag-of-words model in which syntax does not matter, we can ameliorate these problems by removing all text except for whitespaces and the characters that appear in the english alphabet. Since a lot of the nonsensical text tends to be quite repetitive, we also delete all documents in which the proportion of unique to total number of tokens is less than 0.15. Furthermore, hunspell does not spellcheck individual characters, so we remove all individual characters appearing as tokens except for "i" and "a". Since these pre-processing steps reduce documents which are largely unsuitable to only a few words of texts that don't make much sense, we also remove all remaining documents containing less than 50 tokens.
 
 \subsection{Indiana City Websites}
 
@@ -578,6 +584,14 @@ To further investigate this issue, we look at the raw data itself - the document
 	\caption{The most partisan topics. The number in parenthesis indicates how many times more the topic appears on average (measured through the number of words of the topic throughout the documents) in the respective party's corpus (indicated by the color).}
 	\label{partisan_topics}
 	\includegraphics[height=0.75\textheight]{figures/partisanTopics.pdf}
+\end{figure}
+
+%ldatuning
+\begin{figure}[!ht]
+	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
+	\caption{The optimal number of topics for our corpus. The measures of Griffths 2004 and Cao 2009 indicate the best number of topics at their minimum, whereas the measure of Arun 2010 points to the best value at its maximum.}
+	\label{ldatuning}
+	\includegraphics[height=0.75\textheight]{figures/topicnumber_ldatuning.pdf}
 \end{figure}
 
 \newpage
