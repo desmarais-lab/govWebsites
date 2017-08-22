@@ -3,6 +3,7 @@ library('cowplot')
 source('functions/mallet_helper_functions.R')
 source('functions/topic_order.R')
 source('functions/coherence_order.R')
+source('functions/comparing_proportions.R')
 
 #How many of the topics with the highest differences should be displayed?
 n_topics <- 24

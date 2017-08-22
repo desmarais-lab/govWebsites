@@ -101,8 +101,11 @@ convertEverything:
 #use Mallet,
 #this will also call the hunspell spellchecking
 #the hunspell spellchecking takes a long time (i.e. 14 hours on 6 cores)
-paper/figures/wtp_current_dem_rep.pdf: data/URLs_IN.rdata
-	R CMD BATCH mallet.R
+paper/figures/wtp_current_dem_rep.pdf: rfiles/d.Rdata
+	R CMD BATCH malletTraining.R
+
+paper/figures/partisanTopics_all.pdf: rfiles/d.Rdata
+	R CMD BATCH malletAnalysisPartisanTopics.R
 
 
 #compile Latex

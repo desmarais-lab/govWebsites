@@ -1,7 +1,7 @@
 library('stringr')
 
 #Example documents
-numdocs <- 10
+numdocs <- 100
 
 selectedTopics <- as.integer(unique(df.words$topic.num))
 

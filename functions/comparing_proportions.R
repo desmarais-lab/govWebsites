@@ -17,5 +17,24 @@ zcomparison <- function(Rep = republican, Dem = democratic){
 }
 
 
-#one-sided: pnorm(-abs(zcomparison()))
-#pval <- 2*pnorm(-abs(zcomparison()))
+#one-sided: 
+#pnorm(-abs(zcomparison()))
+#two-sided:
+#2*pnorm(-abs(zcomparison()))
+
+#with R's prop.test()
+
+#a <- numeric(length = 200)
+#for(i in 1:length(a)){
+#  a[i] <- prop.test(x = c(colSums(republican)[i], colSums(democratic)[i]), n = c(sum(colSums(republican)), sum(colSums(democratic))), correct = F)$p.value
+#  }
+#
+#
+#a2 <- pnorm(-abs(zcomparison()))
+#
+#identical(a,a2)
+#cor(a,a2)
+
+#The two methods don't produce identical results, 
+#but the Pearson's R correlation between the two is 0.9999999 with the continuity correction, 
+#and 1 without (but nevertheless not identical)

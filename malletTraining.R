@@ -21,7 +21,7 @@ mallet.instances <- mallet.import(id.array = make.unique(d$folder),
                                   token.regexp = "\\p{L}[\\p{L}\\p{P}]+\\p{L}")
 
 #Create a Mallet topic model trainer
-ntopics <- 100
+ntopics <- 200
 topic.model <- MalletLDA(num.topics = ntopics)
 
 ## Load our documents. We could also pass in the filename of a 
