@@ -37,6 +37,8 @@ props$party[prop.dem<1] <- "Republican"
 props$party[prop.dem>1] <- "Democratic"
 props$D <- round(colSums(democratic)/sum(colSums(democratic)), 3)
 props$R <- round(colSums(republican)/sum(colSums(republican)), 3)
+props$p <- 2*pnorm(-abs(zcomparison()))
+props$sig <- ifelse(props$p<=0.01, T, F)
 
 #Which topics are owned by which party?
 dem.topics <- which(prop.dem>1)
@@ -74,7 +76,7 @@ df.words <- merge(df.words, props, by.x = "topic.num", by.y = "topic", all.x = T
 #df.words$topic <- str_c(df.words$topic, " (", round(df.words$prop.diff, 2), " times more)")
 
 #Changed this to instead include the proportion of tokens written by Dems/Reps in this topic:
-df.words$topic <- str_c(df.words$topic, " (", "D", df.words$D, "/", "R", df.words$R, ")")
+df.words$topic <- str_c(df.words$topic, " (", "D", df.words$D, "/", "R", df.words$R, ifelse(df.words$sig==T, "*", ""), ")")
 
 # Word-topic-probability plot
 partisanTopics <- df.words %>% ggplot(aes(words, weights, group = factor(topic), fill = party)) +
@@ -83,7 +85,8 @@ partisanTopics <- df.words %>% ggplot(aes(words, weights, group = factor(topic),
   scale_y_continuous(breaks = scales::pretty_breaks(n = 3)) +
   coord_flip() +
   ylab("") + xlab("") +
-  scale_fill_manual(values = c("dodgerblue", "indianred"))
+  scale_fill_manual(values = c("dodgerblue", "indianred")) #+
+  #theme(strip.text.x = element_text(size = 8, colour = "orange"))
 partisanTopics
 
 #Save
