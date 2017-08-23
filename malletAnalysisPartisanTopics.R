@@ -1,4 +1,4 @@
-source('trainingMallet')
+source('malletTraining.R')
 
 library('ggplot2')
 library('cowplot')

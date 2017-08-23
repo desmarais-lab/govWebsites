@@ -57,6 +57,11 @@ if(wd=="govWebsites"){
   for(j in 1:ncol(B)){
     for(i in 1:nrow(B)){
       file.copy(from = B[i,j], to = create_foldersFull[j])
+      #if the name is index.txt, rename to make sure there are no overwrites
+      fname <- str_split(B[i,j], "/")[[1]][length(str_split(B[i,j], "/")[[1]])]
+      if(fname=="index.txt"){
+        file.rename(str_c(create_foldersFull[j],"/",fname), str_c(create_foldersFull[j], "/index", i, ".txt"))
+      }
       }
   }
   
@@ -95,6 +100,9 @@ if(wd=="govWebsites"){
   for(j in 1:ncol(A)){
     for(i in 1:nrow(A)){
       writeLines(D[i,j], str_c("./paper/exampleDocumentsCleaned/", create_folders[j], "/", E[i,j]))
+      if(E[i,j]=="index.txt"){
+        file.rename(str_c(create_foldersFull[j],"/",E[i,j]), str_c(create_foldersFull[j], "/index", i, ".txt"))
+      }
     }
   }
   

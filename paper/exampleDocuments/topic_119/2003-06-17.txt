@@ -1,0 +1,3985 @@
+Information Technology Board Meeting
+Tuesday, June 17, 2003
+Room 260 City/County Building
+9:30 AM
+1. Minutes
+• Approval of the May 20, 2003 meeting minutes (Exhibit A)
+2. Status Updates
+• CIO Report (Exhibit B)
+• ACS Report (Exhibit C)
+3. New Business
+• Other new business
+• Next scheduled meeting July___, 2003 room 260
+4. Adjourn
+Attachment: Approved Contracts Under $100,000
+
+IT Board Minutes
+Page 1
+EXHIBIT A
+INFORMATION TECHNOLOGY BOARD
+MEETING DATE:
+
+May 20, 2003
+
+MEETING LOCATION:
+
+Room 260, City-County Building
+
+MEMBERS PRESENT:
+
+Paul Ricketts, Marty Womacks, Kathy Davis, Doris Anne
+Sadler, William Matthews, Linda Enders and Mike
+Hineline
+
+PRESENTERS:
+
+John Nero-ACS
+Dave Gumbiner-ACS
+Kevin Ortell-ACS
+Ahmed Soliman-ISA
+Layne Young-ISA
+
+Marty Barnes-ACS
+Linda Kelsey-ACS
+Nadeen Biddinger-ISA
+Lori Kuhn-ISA
+
+AUDIENCE PRESENT:
+Monty Combs- Treasurer,
+Vivian Cage-DOA,
+Nate Hekje-OCC
+Andy Harris-Decatur,
+Joline Ohmart-Washington,
+Rick Maultra-Cable Agency,
+Linda Cofer-DEO,
+Andrew Swenson-DMD,
+Todd Tande-DPS,
+Tara Storey-DPW,
+Kyle Cox-DPW,
+Terry Nelson-Auditor,
+Lisa Bentley-Prosecutor’s Office,
+Frances Kelly-Coroners Office,
+Ron Cox-ACS,
+Neal Ginsberg-ACS,
+Tony Gibbens-ACS,
+Jim Nelson-ACS,
+Donald Coleman-Decatur,
+Mark Hauser-Sheriff,
+Ron Meadows-Sheriff,
+Paige Bova-Court Admin
+
+Ron Van Leer-ACS,
+Diana Turner-ISA,
+James Reno-IPD,
+Bob Clifford-Bond Bank,
+Larry Schultz-Forensic Services,
+Chuck White-Controller,
+Joni Romeril-Co. Assessor,
+Lisa K. Smith-Circuit Court,
+Vicki Jeffries-Guardian Home,
+Joe Finch-IPD,
+Mark Peterson-IMCBA,
+Bill Birkle-Warren,
+Suellen Hart-C/C Council,
+David Cook-MDPD,
+Louis Dezelan-IFD,
+Rosalie Hinton-DMD,
+Michael Williams-DPW,
+Charles Spears-Wayne Twp,
+Deborah Green-Purchasing,
+George Ayers-Internal Audit,
+John Crone-Internal Audit,
+Carolyn Schausten-ISA
+
+IT Board Minutes
+Page 2
+Mr. Ricketts called the meeting to order at 8:05 AM.
+Minutes
+Ms. Sadler motioned to approve the March 18, 2003 meeting minutes, Ms. Womacks
+seconded and the motion passed unanimously.
+ISA Operational Review Presentation
+Mr. Hineline thanked everyone for attending and introduced the topic of discussion.
+Overview of ACS Services- John Nero
+Information: Storing it, Moving it, Connecting it- Marty Barnes
+In response to Mr. Ricketts question regarding document imaging, the majority of the
+enterprise has been made aware of this option. Should a user want additional information
+on the document imaging process, they can contact ISA or ACS.
+Maintaining the Infrastructure- Marty Barnes
+Securing Our IT Assets- Marty Barnes
+Mr. Ricketts inquired if the authorities are notified when the network has been attacked.
+Mr. Barnes stated there is a process to deflect the attacks and the authorities are notified.
+Building Toward Service Continuity- Marty Barnes
+In response to Ms. Davis’ comment, each department is responsible for their own disaster
+recovery plan. ISA and ACS have the IPD Training Academy as the alternate facility
+should the C/C Building be uninhabitable.
+Ms. Enders asked if there is a set methodology for the internal departments to include in
+their plan. Mr. Hineline stated there is no set plan at this time. The challenge is which
+department receives which data at what time. Mr. Matthews suggested ISA conduct a
+business impact analysis to build business continuity into the overall plan.
+Ms. Woods (audience member) asked about the option of system redundancy compared
+to backing up the network on tapes. Mr. Barnes replied the cost of purchasing a system
+is much more expensive than the tapes are.
+Mr. Hineline stated ISA will work with the customers to get disaster recovery test
+information to them.
+Customer Support-Kevin Ortell
+Customer Alliances- Linda Kelsey
+Application Services- Dave Gumbiner
+
+IT Board Minutes
+Page 3
+Putting Technology To Work- John Nero
+Ms. Romeril asked if there were any quality control measures in place that prevents the
+project process from getting overloaded. In response, Mr. Hineline stated there is no
+direct means of measuring the progress of projects. Mr. Nero added the communication
+lines must remain open between everyone involved to maintain quality measures.
+Internet-Ahmed Soliman
+Mr. Ricketts inquired about Internet filters. Mr. Hineline stated the bandwidth continues
+to grow significantly. Certain filters have been turned on for sites that are not job related
+these filters have lowered the bandwidth use.
+Telephone Operations- Lori Kuhn
+Planning and Contract Administration- Nadeen Biddinger
+Geographic Information Services- Layne Young
+Wrap-up- Mike Hineline
+Adjourn
+Mr. Ricketts adjourned the meeting at 11:56 AM.
+Respectfully submitted,
+Carolyn Schausten
+
+2003 IT Operational Review
+
+2003 IT Operational Review
+Today’s Agenda
+
+City of Indianapolis/Marion County
+
+Overview Of ACS Services
+Information: Storing It; Moving It;
+Connecting It
+Maintaining The IT Infrastructure
+Securing Our IT Assets
+Building Towards Service Continuity
+Customer Support
+
+ISA and ACS
+Operational Review
+
+Customer Alliances
+Applications Services
+Putting Technology To Work
+Internet Group
+Telecommunications Team
+ISA Planners
+GIS Team
+
+May 20, 2003
+
+1
+
+2
+
+May 20, 2003
+
+May 20, 2003
+
+2003 IT Operational Review
+
+2003 IT Operational Review
+Overview of ACS Services
+
+Overview of ACS Services
+
+Administration Services
+
+Today’s Objectives
+Educate - Inform - Communicate
+Computing Technology - Information Technology
+Data - Information - Knowledge
+
+3
+
+Business Support Services
+Technical Services
+
+Over 100 Local Professionals Serving The City/County
+
+4
+
+May 20, 2003
+
+May 20, 2003
+
+2003 IT Operational Review
+
+2003 IT Operational Review
+
+Overview of ACS Services
+
+Overview of ACS Services
+
+Administration Services - Doug Patten
+
+Business Support Services - Ron Van Leer
+
+IT Contract Administration
+
+Customer Support – Managed By Kevin Ortell, This Area
+Includes Help Desk And Desktop Support Services.
+
+Accounts Payable
+
+•
+
+5
+May 20, 2003
+
+Personnel Support Services And ACS Corporate Interface
+Services.
+IT Procurement For The City/County Is Part Of A Multi-million
+Dollar “Pass-through” Operation
+•
+
+Such As PCs, Printers, Software, Etc.
+
+•
+
+ACS Business Relationships Savings Are Passed On To The City/County
+
+•
+
+No ACS Mark-up
+
+Over 100 Local Professionals Serving The City/County
+
+Customer Alliances – Managed By Linda Kelsey, This Area
+Provides Customer Advocacy And Support Through The
+Deployment Of Business Consultants And Technology
+Consultants.
+Applications Services – Managed By Dave Gumbiner, This Area
+Includes Application Development, Support And Maintenance
+Services.
+
+6
+
+Over 100 Local Professionals Serving The City/County
+
+May 20, 2003
+
+1
+
+2003 IT Operational Review
+
+2003 IT Operational Review
+
+Overview of ACS Services
+
+Overview of ACS Services
+
+Technical Services - Marty Barnes
+
+Technical Services, continued
+
+Operations/Systems – Managed By Joe Lex, This Area Is
+Responsible For Mainframe Production Support, Operating
+System And Printing Operations.
+
+Mid-range Engineers – Led By Paul Kelsey, This Group Supports
+The Mid-range And Internet Servers.
+Data Communications – Led By Ed Vargo, This Group Supports
+The City/County’s Data Network Which Includes Over 150
+Locations.
+
+Network & Security – Managed By Jim Effinger, This Area Is
+Responsible For IT Security, Novell File, Email & Print Services,
+Storage Access Network Support And NT/2000-based
+Applications Server Support.
+
+Over 100 Local Professionals Serving The City/County
+
+7
+May 20, 2003
+
+Over 100 Local Professionals Serving The City/County
+
+8
+May 20, 2003
+
+2003 IT Operational Review
+
+2003 IT Operational Review
+
+Up Next
+Information: Storing It; Moving It; Connecting It
+Maintaining The IT Infrastructure
+Securing Our IT Assets
+Building Toward Service Continuity
+
+Information
+
+BREAK
+
+Storing it – Moving it - Connecting it
+
+Customer Support
+Customer Alliances
+Application Services
+Putting Technology to Work
+
+9
+
+10
+
+May 20, 2003
+
+May 20, 2003
+
+2003 IT Operational Review
+Information: Storing It - Moving It - Connecting to It
+
+2003 IT Operational Review
+Information: Storing It - Moving It - Connecting to It
+
+Things Being Stored
+Email Messages
+Accounting Transactions
+Asset Information
+Personnel Records
+Important Documents
+Criminal Histories
+Training Materials
+
+11
+May 20, 2003
+
+How Much Storage Is In Use Today?
+In the Computer Room - 6.5 Terabytes
+On the Desktop - Another 64 Terabytes of Available Space
+
+Court Records
+Probation Records
+Tax Records
+Permitting Requests
+GIS Information
+Election Information
+Public Safety Records
+Consumer Complaints
+
+Information We Use Everyday
+Increases Our Effectiveness
+
+How Much Is That?
+1 Terabyte Is 1,000 Gigabytes
+50 Gigabytes Is About One Library Floor of Books on Shelves
+6.5 Terabytes Is the About Equal to Five City/County Building
+Towers, Filled With Shelved Library Books
+
+12
+May 20, 2003
+
+The Volume of Information Being Created
+and Shared Is Staggering
+
+2
+
+2003 IT Operational Review
+
+2003 IT Operational Review
+
+Information: Storing It - Moving It - Connecting to It
+
+Information: Storing It - Moving It - Connecting to It
+Demand for Stored Information Is Increasing Each Day:
+
+50 Gigabytes Is About
+One Library Floor Full Of
+Books On Shelves
+
+Document
+Imaging
+Services
+
+Document
+Imaging
+Services
+
+1996
+• Approximately 1/2 Terabyte
+
+File Services
+
+2003
+• Approximately 6.5 Terabytes Of
+Protected Storage
+
+File Services
+50 Gigabytes
+
+8000
+
+6.5 Terabytes Is About Equal To
+Five City/County Buildings Full
+Of Shelved Library Books
+
+Oracle
+Services
+
+Gigabytes
+
+Web and
+Other Services
+
+13
+
+Storage Growth
+
+Oracle
+
+50 Gigabytes
+
+GIS Services
+
+Mainframe
+
+Applications
+
+14
+May 20, 2003
+
+2003 IT Operational Review
+Information: Storing It - Moving It - Connecting to It
+
+2000
+1996
+
+2003
+
+Compounded Annual Growth Rate - 45%
+
+2003 IT Operational Review
+Information: Storing It - Moving It - Connecting to It
+
+Keeping Up - 1996 Through 2003
+
+Challenge
+
+20 Fold Increase In Storage
+20 Fold Increase In Processing Capacity
+20 Fold Increase In Bandwidth at the Desktop
+10,000 Times the Bandwidth on the CCB Backbone
+
+Storing It - Information Storage Utilization Management
+Moving It - Network Engineering and Management
+Processing It - Computing Capacity & Operations Management
+Securing It - Critical Information Subject to Compromise
+
+15
+
+4000
+
+0
+
+GroupWise
+Services
+
+May 20, 2003
+
+May 20, 2003
+
+6000
+
+Meeting the Increasing Demand for Information
+
+16
+May 20, 2003
+
+2003 IT Operational Review
+
+ACS Controlling Costs More Capacity at Fractional Unit Costs
+
+2003 IT Operational Review
+
+Information: Storing It - Moving It - Connecting to It
+
+More Email Accounts
+More Desktop Computers
+More Servers
+More Databases
+More Information
+More Web Sessions
+More Security
+
+17
+May 20, 2003
+
+ACS - Providing Our Client
+More Information & More Service
+
+Maintaining The
+Infrastructure
+
+18
+May 20, 2003
+
+3
+
+2003 IT Operational Review
+Maintaining the IT Infrastructure - The Rehabilitation Project
+
+2003 IT Operational Review
+Maintaining the IT Infrastructure - The Rehabilitation Project
+
+Rehabilitation Project - an Infrastructure Upgrade
+Drivers
+
+Technology Areas Addressed
+
+High Maintenance Costs
+Seriously Aging Technology
+Inefficient Direct Attached Storage
+
+Mainframe
+Web Services
+Midrange Computing - Oracle Data Base Services
+Storage - Mainframe, Midrange and Web
+
+Insufficient Oracle Capacity to Meet Expected Demands
+Inconsistent Engineering: Development, Testing and Production
+Environments
+Leverage Oracle Licensing Pricing Changes
+
+19
+May 20, 2003
+
+Opportunity :
+Lower Cost - Improve Service - Increase Capacity
+
+2003 IT Operational Review
+Maintaining the IT Infrastructure - The Rehabilitation Project
+
+Opportunity :
+Lower Cost - Improve Service - Increase Capacity
+
+20
+May 20, 2003
+
+2003 IT Operational Review
+Maintaining the IT Infrastructure - INTEL Computing
+
+Infrastructure Improvements:
+INTEL Computing:
+
+A New State of the Art IBM Z/800 64 Bit Processor
+Three Times the Former Midrange Capacity - Sun V880s
+
+Email Services
+
+Increased Processor Speeds Leveraging Oracle License Pricing
+
+File Sharing
+
+Development-Testing-Staging-Production Consistency
+
+Print Services
+
+Six Times the Former Web Capacity - Sun 280Rs
+
+Dedicated Application Services
+
+A New “Industrial Strength” Storage Array From EMC
+5TB of Raw Storage Expandable to 12TB Storage
+CPU-Storage Connections: High-bandwidth Fiber Optic Technology
+Overall Higher Performance, Reliability, Expandability, and Manageability
+
+21
+May 20, 2003
+
+Opportunity :
+Lower Cost - Improve Service - Increase Capacity
+
+22
+May 20, 2003
+
+2003 IT Operational Review
+
+Improving and Expanding Services
+Lowering Unit Costs
+
+2003 IT Operational Review
+
+Maintaining the IT Infrastructure - INTEL Computing
+INTEL Computing Improvements:
+Consolidated To A Simplified Management Architecture
+Standardized To A Single GroupWise Version
+
+Securing Our IT Assets
+
+Standardized To A Single Netware Operating System Version
+Implemented Clustered Services And Enterprise Storage
+Rehabilitated The Backup Systems, Tools And Processes
+Upgraded And Maintained Hardware
+
+23
+May 20, 2003
+
+Improving and Expanding Services
+Lowering Unit Costs
+
+24
+May 20, 2003
+
+4
+
+2003 IT Operational Review
+
+2003 IT Operational Review
+
+Securing Our IT Assets
+
+Securing Our IT Assets
+
+A Changing Environment:
+
+Indianapolis / Marion County - Open for Business:
+
+Information Technology Is a Growing Target:
+
+Indianapolis Promotes Public Access Via The Internet To
+Information Available On The City’s Web Site
+
+Employee Accidents,
+Internet Hackers,
+Disgruntled Employees,
+Business Partners
+
+The Challenge: Allow And Simplify All Legitimate Access To
+Information While At The Same Time Blocking All Threats.
+
+Protecting Assets
+Attention to Detail
+
+25
+May 20, 2003
+
+Protecting Assets
+Attention to Detail
+
+26
+May 20, 2003
+
+2003 IT Operational Review
+
+2003 IT Operational Review
+
+Securing Our IT Assets
+
+Securing Our IT Assets
+
+Information Assets are Under Attack:
+Nimbda Worm Infected 2.2 Million Computers In 3 Days
+
+Indianapolis / Marion County:
+
+SQL Slammer Worm Affected 75,000 Users In 10 Minutes
+
+1,000 Blocked Virus Attacks Via Email Per Week
+
+Kazaa (File Sharing Software User) Recently Compromised City
+Of Aspen Confidential Information
+
+SQL Slammer Worm Attacked And Entered The Enterprise
+
+Information US Military Personnel - Compromised
+
+Port Scans On The Firewall
+
+• Source Of Attack - ISU (No Damage - Machines Patched)
+• Someone Is Scanning The Enterprise Network Continuously
+With An Objective Find An Open And Exploitable Port
+
+Personal Information Of About 7,000 Patients At The Indiana
+University Center For Sleep Disorders
+
+50 Nimbda Code Red II And ISS Attacks Per Day Against
+City/County Web Servers
+
+The Symantec Survey: Attack Activity - Annual Growth 64%
+
+Protecting Assets
+Attention to Detail
+
+27
+May 20, 2003
+
+Protecting Assets
+Attention to Detail
+
+28
+May 20, 2003
+
+2003 IT Operational Review
+
+2003 IT Operational Review
+
+Securing Our IT Assets
+
+Securing Our IT Assets
+
+Attack Trends:
+Response:
+
+Trend 1: Automated Attack Tools
+Trend 2: Increasing Sophistication of Attack Tools
+Trend 3: Faster Discovery of Vulnerabilities
+Trend 4: Bypassing the Firewall
+Trend 5: Infrastructure Attacks
+Trend 6: Wireless Network Attacks
+
+29
+May 20, 2003
+
+Protecting Assets
+Attention to Detail
+
+Layered Defense System
+ACS Activities In Response
+Continued Diligence Is Required - Potential Next Steps
+
+30
+May 20, 2003
+
+Protecting Assets
+Attention to Detail
+
+5
+
+2003 IT Operational Review
+
+2003 IT Operational Review
+
+Securing Our IT Assets
+
+Securing Our IT Assets
+ACS Activities:
+
+Secured Castle
+
+City/County Network
+
+Access Controls
+
+Castle Laws
+
+Acceptable Use Policy
+
+Upgraded Network Firewall
+
+Tall Thick Impenetrable
+Walls
+
+Firewall
+
+Filtering And Monitoring Software
+
+Email Filter
+
+Enhanced Authentication Tools
+
+Moat - Draw Bridge
+
+Server And Desktop Antivirus System
+
+Intrusion Detection Instruments
+
+Network Intrusion Detection
+
+Network Intrusion Exercises
+
+Wireless Network Scanner
+
+Security Policy Reviews And Recommendations
+
+Castle Towers Allow Guards
+To See Intruders
+Small Narrow Windows
+Deter Intruders
+
+Controlled Internet Email Gateway
+
+Armored Guards
+Protecting Assets
+Attention to Detail
+
+31
+May 20, 2003
+
+2003 IT Operational Review
+
+2003 IT Operational Review
+
+Securing Our IT Assets
+
+Securing Our IT Assets
+Continued Diligence is Required - Potential Next Steps
+
+Continued Diligence is Required - Potential Next Steps
+
+Self Auditing:
+
+Posting Sentries:
+
+Wireless Access Point Scanner
+
+Host Based Intrusion Prevention Systems Installed On
+Public Access Servers
+
+33
+May 20, 2003
+
+Protecting Assets
+Attention to Detail
+
+32
+May 20, 2003
+
+Network Vulnerability Scanner
+
+Data Assurance Software
+
+Platform Software - Patch Management
+
+Event Correlation Software
+
+Web Application Vulnerability Scanning Software
+
+Protecting Assets
+Attention to Detail
+
+Protecting Assets
+Attention to Detail
+
+34
+May 20, 2003
+
+2003 IT Operational Review
+
+2003 IT Operational Review
+Building Toward Service Continuity
+
+Disasters Can Come in a Variety of Forms
+
+Building Toward
+Service Continuity
+
+35
+May 20, 2003
+
+Natural Disasters: Tornadoes, Floods
+Man Made: Fire, Water, Terrorism
+Critical Component Failures
+
+36
+May 20, 2003
+
+Ensuring the Recoverability of City/County Data
+
+6
+
+2003 IT Operational Review
+Building Toward Service Continuity
+
+2003 IT Operational Review
+Building Toward Service Continuity
+Capture And Store Critical Information In A Safe Location:
+
+Disaster Recovery:
+Data Files Are Backed Up On Tape
+
+Capture And Store Critical Information In A Safe Location
+
+These Tapes Resemble The 8 Track Audio Tapes In Size
+
+Recover Critical Data
+
+In Total 20,000 Tapes Are Used To Backup Data Files
+
+Make Critical Data Available For Use
+
+Approximately 1300 Are Stored (Rotated) In An Offsite Vault
+Offsite Storage Is Rotated / Supplemented Each Day
+
+37
+
+Ensuring the Recoverability of City/County Data
+
+May 20, 2003
+
+38
+May 20, 2003
+
+2003 IT Operational Review
+Building Toward Service Continuity
+
+Ensuring the Recoverability of City/County Data
+
+2003 IT Operational Review
+Building Toward Service Continuity
+
+Recover Critical Data
+
+Make Critical Data Available for Use by the Core Business Unit
+
+Plan - Execute - Evaluate
+Historically, Disaster Recovery Has Built in Assumptions
+
+Validate Recovery Processes
+Validate Access To Data From The Disaster Recovery Cold Site
+Two Disaster Recovery Tests Per Year
+Rotating Selection Of Applications
+
+39
+May 20, 2003
+
+Ensuring the Recoverability of City / County Data
+
+40
+May 20, 2003
+
+2003 IT Operational Review
+
+Ensuring the Recoverability of City / County Data
+
+2003 IT Operational Review
+Building Toward Service Continuity
+
+9/11/2001 Terrorist Attack Aftermath:
+Conducted an Evaluation of ACS - City/County Disaster
+Procedures
+Study Challenged Status Quo:
+• How Would Connectivity Be Restored To The Remote Locations If The City
+County Building Became Unusable ?
+• Should The City / County Re-evaluate Permanent Reliable Connections To
+The Disaster Recovery Facilities ?
+• Is The Infrastructure In Place To Support A Comprehensive City / County
+Service Continuity Plan?
+
+ACS Developed and Submitted a Technology Design
+Responsive To Continued Operations of Government
+Services
+41
+May 20, 2003
+
+42
+May 20, 2003
+
+Ensuring the Recoverability of City / County Data
+
+7
+
+2003 IT Operational Review
+Building Toward Service Continuity
+
+2003 IT Operational Review
+Building Toward Service Continuity
+Elements Of The Design:
+Connectivity To Remote Facilities From Two Locations
+
+ACS Has Worked With ISA And IPD To Establish IPD Training
+Academy As Alternate Facility - Large Space, Suitable For
+Occupancy By Critical Personnel
+
+Permanent Connection Between ACS Disaster Recovery
+Location And The City of Indianapolis / Marion County
+Self Healing SONET Ring Technology
+
+ACS Has Designed And ISA Has Approved A Hardened
+Connectivity Plan
+
+43
+May 20, 2003
+
+Ensuring the Recoverability of City / County Data
+
+44
+
+Ensuring the Recoverability of City / County Data
+
+May 20, 2003
+
+2003 IT Operational Review
+Building Toward Service Continuity
+
+2003 IT Operational Review
+Building Toward Service Continuity
+
+Is The Infrastructure In Place To Support A Comprehensive
+City/County Service Continuity Plan?
+
+45
+May 20, 2003
+
+Next Steps:
+
+Who Will Occupy The Space?
+
+Coordination of Comprehensive Business Continuity Plan
+
+What Business Operations Will Be Occurring?
+
+Identify Additional Business Continuity Sites
+
+What Information Will Be Required?
+
+Determine Information Requirements
+
+What Space Will Be Made Available?
+
+Invest in the Information Infrastructure - Within Financial
+Constraints
+
+Ensuring the Recoverability of City / County Data
+
+46
+
+Ensuring the Recoverability of City / County Data
+
+May 20, 2003
+
+2003 IT Operational Review
+
+2003 IT Operational Review
+Up Next
+Customer Support
+Customer Alliances
+Application Services
+Putting Technology to Work
+
+How About A Break?
+
+47
+May 20, 2003
+
+BREAK
+Internet
+Telephone Operations
+Planning and Contract Administration
+Geographic Information Systems
+
+48
+May 20, 2003
+
+8
+
+2003 IT Operational Review
+
+2003 IT Operational Review
+ACS Customer Support
+Who We Are…
+The ACS Customer Support Team Is Comprised Of Help Desk
+And Desktop Technicians Working Together To Provide An
+Effective Means For The City/County Departments And
+Agencies To Receive Assistance In Utilizing Information
+Technology.
+
+Customer Support
+
+The Initial Point Of Contact For All ISA/ACS Customers (5500+
+PCs And 6500 Customers) Desiring IT Services 24 Hours A
+Day, 7 Days Per Week.
+Our Team Is Made Up Of 3 Areas: Tier 1& Tier 2 (Help Desk),
+Tier 3 (Desktop Support), And The IMAC Services Team.
+49
+
+50
+
+May 20, 2003
+
+Helping To Maximize The Productive Use Of Technology
+
+May 20, 2003
+
+2003 IT Operational Review
+
+2003 IT Operational Review
+
+ACS Customer Support
+
+ACS Customer Support
+
+Helpdesk Tier 1 & Tier 2
+
+The Resource Balance
+Provide Support Via Phone, Email, And In Person
+
+Quantity
+Time to Answer
+Response/Resolution
+# of IMACs
+
+Logging, Tracking, And Routing Of Service And Security
+Requests
+Incident Routing To Desktop Support (Tier 3) And To Other
+ACS Entities (Technical Services, Applications, Security, Etc.)
+
+51
+
+Helping To Maximize The Productive Use Of Technology
+
+May 20, 2003
+
+Quality
+First Call Resolution
+Tech Web
+Customer Satisfaction
+
+52
+
+Helping To Maximize The Productive Use Of Technology
+
+May 20, 2003
+
+2003 IT Operational Review
+
+2003 IT Operational Review
+
+ACS Customer Support
+
+ACS Customer Support
+Problems Resolved On First Call
+July 2002 - March 2003
+Target is 80%
+
+Helpdesk Tier 1 & Tier 2 – Focus
+Time To Answer – How Fast We Answer Your Calls
+•
+
+Our Average Time To Answer A Call Is 22.3 Seconds And 88.9% Of All
+Calls Have Been Answered Under 60 Seconds
+
+85%
+84%
+
+First Call Resolution (FCR)
+
+83%
+
+A Help Desk Institute (HDI) Survey In 2002 Indicated That The Average
+FCR For Companies Was 70%. Gartner Group Indicated That 75% Is
+At The Upper End Of The Scale
+
+82%
+
+•
+
+FCR Means That The Customer’s Problem Has Been Solved Before
+They Hang Up The Phone
+
+79%
+
+•
+
+Since Amendment 59 Took Effect Our FCR Has Been 82.2%
+(SLA 80%)
+
+77%
+
+•
+
+81%
+80%
+78%
+Jul
+
+Aug Sep
+
+Oct
+
+Nov Dec
+
+Jan
+
+Feb
+
+Mar
+
+2002/2003
+53
+May 20, 2003
+
+Helping To Maximize The Productive Use Of Technology
+
+54
+May 20, 2003
+
+Helping To Maximize The Productive Use Of Technology
+
+9
+
+2003 IT Operational Review
+
+2003 IT Operational Review
+
+ACS Customer Support
+
+ACS Customer Support
+
+HELP DESK
+Problems and Quick Calls
+
+Helpdesk Tier 1 & Tier 2 – Continued
+ACS Customer Support Has Made A Number Of
+Changes Over The Last Year In An Effort To Provide
+Better Service Faster To Our Customers.
+
+Calls
+
+60,000
+40,000
+20,000
+0
+
+•
+•
+•
+•
+
+Problems
+Quick Calls
+2000
+
+2001
+
+2002
+
+2003*
+
+Year
+
+Tier 2
+TechWeb
+Remote Control
+HEAT Changes
+Business Process Automation Module (BPAM)
+I-HEAT
+HEAT Asset Tracker (HAT)
+
+* 2003 is projected based on actuals to date
+
+55
+May 20, 2003
+
+Helping To Maximize The Productive Use Of Technology
+
+56
+May 20, 2003
+
+2003 IT Operational Review
+
+Helping To Maximize The Productive Use Of Technology
+
+2003 IT Operational Review
+
+ACS Customer Support
+
+ACS Customer Support
+
+Your ACS Helpdesk Tier 1 & Tier 2 Staff Are:
+
+Tier 1
+Enrique Alleyne
+Jimmie Gonzalez
+Rob Hamilton
+Adam Kreinhop
+Mike McLeish
+Bill Neumann
+Lincoln Russell
+Corey Barnes
+Dan Sheldon
+Theresa Sisk
+Jason Young
+57
+May 20, 2003
+
+Desktop Support Tier 3
+
+Tier 2
+Jennifer Lawson
+Steve Sheldon
+
+Provide All Desktop Break/Fix Support For Any PC Problem Not
+Solved Over The Phone By Helpdesk
+Have Met Break/Fix SLA Since January 2002
+Have Implemented Captain Role To Handle The Technical
+Escalations, Oddities, Etc.
+
+Helping To Maximize The Productive Use Of Technology
+
+58
+May 20, 2003
+
+2003 IT Operational Review
+
+2003 IT Operational Review
+
+ACS Customer Support
+
+ACS Customer Support
+Desktop Support IMAC Services
+
+Your ACS Desktop Support Tier 3 Staff Are:
+Scott Edens – Captain
+Rick Hawley
+Dann Lowe
+Greg Mott
+Jim Neal
+
+Helping To Maximize The Productive Use Of Technology
+
+This Team Is Responsible For The Installation Of New Desktop
+Equipment, Changes To Desktop Configurations, Moving Of
+Desktop And Peripheral Equipment And Adding Hardware And
+Software To Existing Desktop Environments.
+
+Dave Roberts
+Ken Segall
+Bill Studer
+Paul Williamson - Captain
+
+IMACS (Installs, Moves, Adds, Changes) Volume Continues To
+Grow.
+• Increase In Customer And PCs (Building Authority, Warren Township, Etc)
+• Migration To Newer Hardware And Software Technology
+
+59
+May 20, 2003
+
+Helping To Maximize The Productive Use Of Technology
+
+60
+May 20, 2003
+
+Helping To Maximize The Productive Use Of Technology
+
+10
+
+2003 IT Operational Review
+
+2003 IT Operational Review
+
+ACS Customer Support
+
+ACS Customer Support
+Customer Service Focus
+
+Your ACS Desktop Support IMAC Services Staff Are:
+
+Customer Satisfaction Feedback
+•
+
+Kathy Frye – Captain
+Crystal Manningham
+Dale Nellis
+Ken Pearcy
+Kim Prewitt
+Darlene Wheatley
+
+•
+
+ISA Customer Call Back
+91.6% Satisfaction (SLA 80%)
+Orange Card/Online Survey
+Did You Get The Assistance You Needed?
+Was It Delivered In A Timely Manner?
+Was The Service Friendly And Helpful?
+
+2.96 Out Of 3
+2.89 Out Of 3
+2.98 Out Of 3
+
+Customer Of The Month Program
+•
+•
+
+61
+May 20, 2003
+
+Helping To Maximize The Productive Use Of Technology
+
+62
+May 20, 2003
+
+2003 IT Operational Review
+
+Lunch For Customer And A Guest Of Their Choice
+Computer Donated To Charity Of Their Choice for Customer of the Year
+
+Helping To Maximize The Productive Use Of Technology
+
+2003 IT Operational Review
+Why did we need the Business and Technology Consultants?
+
+Customer Alliances
+
+63
+
+64
+
+May 20, 2003
+
+May 20, 2003
+
+2003 IT Operational Review
+
+Applying Technology To Solve Business Problems
+
+2003 IT Operational Review
+
+ACS Business and Technology Consultants
+
+ACS Business and Technology Consultants
+Your ACS Technology Consultants Are:
+
+ACS Technology Consultants
+
+Cheryl Adair
+John Hudson
+Tracy Miller
+David Swain
+Randy Williams
+
+Assist Departments With Desktop Solutions To Meet Business
+Needs
+Assist Departments With Planning Internal And External Moves
+Coordinate Resolution Of Difficult Desktop Problems
+Develop Scopes Of Work And Project Plans For All Large
+Desktop Hardware And Software Implementations
+Coordinate Enterprise Projects With Departments Such As
+Server Moves Or Network Maintenance
+
+65
+May 20, 2003
+
+Applying Technology To Solve Business Problems
+
+66
+May 20, 2003
+
+Applying Technology To Solve Business Problems
+
+11
+
+2003 IT Operational Review
+
+2003 IT Operational Review
+
+ACS Business and Technology Consultants
+
+ACS Business and Technology Consultants
+
+ACS Business Consultants
+
+Your ACS Business Consultants Are:
+
+Manage Client Relationships
+Understand User Business Operations
+Understand How User’s Systems are Utilized
+Facilitate Inter-Agency Relationships
+Communicate User Needs For IT Services
+Communicate IT Service Resources To Users
+Assist The User In Solving Business Problems With Technology
+Communicate Specific System Issues To Users
+
+67
+
+Applying Technology To Solve Business Problems
+
+May 20, 2003
+
+Kathy Fluke
+Alberta Frees
+Jerica Hall
+Jill Snodgrass
+Jill Weirick
+
+68
+May 20, 2003
+
+2003 IT Operational Review
+
+2003 IT Operational Review
+Help Is As Near As Your Phone…..
+
+CUSTOMERS
+
+Help Desk
+Desktop
+Support
+
+Advocacy
+
+Advocacy
+
+Technology
+Consultants
+
+Mainframe
+Networks
+Servers
+Security
+
+cy
+
+Customer
+Support
+
+Technical
+Services
+
+Ad
+vo
+ca
+
+D
+Se irec
+rvi t
+ce
+s
+
+Customer
+Advocacy
+And
+Relations
+
+Business
+Consultants
+
+Applications
+Services
+Development
+Maintenance
+Support
+
+69
+May 20, 2003
+
+Applying Technology To Solve Business Problems
+
+Applying Technology To Solve Business Problems
+
+They Are Happy to Help
+70
+May 20, 2003
+
+2003 IT Operational Review
+
+Applying Technology To Solve Business Problems
+
+2003 IT Operational Review
+ACS Applications Services
+Amendment 59 Definition:
+ACS Will Pool The Applications Software Development And
+Maintenance Resources To Allow Flexible Allocation Of Application
+Development, Maintenance And Support Services.
+The Pooled Services Will Apply To All Platforms (Web,
+Client/Server, Mainframe, Etc.)
+
+Applications Services
+
+Maintenance Services Include General Support Activities Such As
+Answering Customer Questions, Production Coordination Efforts,
+And Other Application Support Functions.
+The Allocation Of The Pooled Resources Is Established By Priorities
+Determined By The IT Governance.
+
+71
+May 20, 2003
+
+72
+May 20, 2003
+
+Quality Applications for Your Business Needs
+Built to Order For You
+
+12
+
+2003 IT Operational Review
+ACS Applications Services
+
+2003 IT Operational Review
+ACS Applications Services
+Trends Since Amendment 59 Started
+
+Trends Since Amendment 59 Started
+
+Development Time Measured Against The AWP Pool of 10.5 FTE
+
+Maintenance/Support Vs Development
+
+Development By Month
+3,500
+
+Application Services
+Hours Breakdown - Maintentance vs. Development
+Since July 1, 2002
+
+2,500
+
+Hours
+
+Maintenance
+& Support
+48%
+
+HB1001 Anomaly
+
+3,000
+
+2,000
+1,500
+1,000
+
+Development
+52%
+
+500
+0
+Jul 2002
+
+Aug
+2002
+
+Sep
+2002
+
+Oct 2002
+
+Nov
+2002
+
+Dec
+2002
+
+Jan 2003
+
+Feb
+2003
+
+Mar
+2003
+
+Months
+
+Quality Applications for Your Business Needs
+Built to Order For You
+
+73
+May 20, 2003
+
+Quality Applications for Your Business Needs
+Built to Order For You
+
+74
+May 20, 2003
+
+2003 IT Operational Review
+
+2003 IT Operational Review
+
+ACS Applications Services
+
+ACS Applications Services
+
+Trends Since Amendment 59 Started
+Development, Maintenance & Support by Platform
+July 2002 - March 2003
+100%
+90%
+80%
+
+THE APPLICATIONS DEVELOPMENT PROCESS
+
+Percentage
+
+70%
+60%
+
+Maintenance
+Support
+Development
+
+50%
+40%
+30%
+20%
+10%
+0%
+3RD Party
+
+CS
+
+DBA
+
+MF
+
+WEB
+
+Group
+
+75
+May 20, 2003
+
+Quality Applications for Your Business Needs
+Built to Order For You
+
+Quality Applications for Your Business Needs
+Built to Order For You
+
+76
+May 20, 2003
+
+2003 IT Operational Review
+
+2003 IT Operational Review
+ACS Applications Services
+Controlling The Project
+
+Waterfall
+Project
+Process
+
+Project Requirements
+
+Project Scope
+
+Project Documents
+77
+May 20, 2003
+
+78
+May 20, 2003
+
+Quality Applications for Your Business Needs
+Built to Order For You
+
+13
+
+2003 IT Operational Review
+
+2003 IT Operational Review
+
+ACS Applications Services
+
+ACS Applications Services
+
+Ensuring Quality
+
+Project
+Tracking
+
+Project
+Planning
+
+THE RESULTS OF PROCESS
+
+Quality
+Assurance
+Configuration
+Management
+
+Requirements
+Quality Applications for Your Business Needs
+Built to Order For You
+
+79
+May 20, 2003
+
+Quality Applications for Your Business Needs
+Built to Order For You
+
+80
+May 20, 2003
+
+2003 IT Operational Review
+
+2003 IT Operational Review
+
+ACS Applications Services
+
+Recent Architecture
+Data Storage
+(direct attached)
+
+A Quality Product Delivered On-time and Within Budget
+Win/Tel
+
+Hardware Platform
+
+NT/2000
+
+UNIX
+
+Mainframe
+
+No Delivery SLA Has Been Missed Since July 2002
+No Post-implementation SLA Has Been Missed Since July 2002
+
+Development Platform
+
+One Project Has Missed SLA For Total Project Hours Since July
+2002
+
+User Interface
+
+Client/Server
+
+WEB
+
+Mainframe
+
+Desktop Client
+
+Browser
+
+3270
+
+USER
+
+Quality Applications for Your Business Needs
+Built to Order For You
+
+81
+May 20, 2003
+
+82
+May 20, 2003
+
+2003 IT Operational Review
+
+2003 IT Operational Review
+
+Current/Future Direction
+Storage Access Network
+
+Data Storage
+(direct attached)
+
+Hardware Platform
+
+Development Platform
+
+User Interface
+
+Win/Tel
+
+Client/Server
+
+NT/2000
+
+UNIX
+
+WEB
+
+Putting Technology To
+Work
+
+Mainframe
+
+Mainframe
+
+Advancing The Goals Of The City/County
+
+Common User Interface
+
+USER
+
+83
+May 20, 2003
+
+84
+May 20, 2003
+
+14
+
+2003 IT Operational Review
+City Initiatives
+
+County Initiatives
+
+2003 IT Operational Review
+Putting Technology to Work for the City/County
+Next Steps…
+
+Experience And Wisdom
+New Officials And Vision
+
+Establish Strategic Planning Forum
+Roll Up Our Sleeves and Work As Partners To Design And
+Implement The Enterprise Strategies That Will Enable Us
+to Do Remarkable Things For This Community
+
+New
+Expectations
+For Progress
+
+Link Information And Build Knowledge
+
+Enterprise Leadership
+
+Link Knowledge To Our Decisions, Our Services, And
+When Possible, Directly To Our Constituents
+
+Technology Leadership
+
+Let’s Begin Now And Weave This Strategic Partnership
+Into The Fabric Of Our Business
+
+Service
+Management
+
+Technology Infrastructure
+
+Security
+
+Engineering Consistency –
+Application Quality
+
+Service
+Continuity
+
+85
+
+Customer
+Advocacy
+
+New Levels Of
+Professionalism
+
+May 20, 2003
+
+86
+May 20, 2003
+
+2003 IT Operational Review
+
+2003 IT Operational Review
+Up Next
+Internet
+Telephone Operations
+Planning and Contract Administration
+Geographic Information Systems
+
+BREAK TIME
+
+87
+
+88
+
+May 20, 2003
+
+May 20, 2003
+
+2003 IT Operational Review
+
+2003 IT Operational Review
+Internet
+Web Projects 2002 - 2003
+Online Homeowner’s Deductions
+Worker’s Compensation Form
+Online Employment Application
+
+Internet
+
+IT Budget Questionnaire
+Animal Care And Control Web Site
+HR Performance Appraisal
+
+89
+May 20, 2003
+
+90
+May 20, 2003
+
+15
+
+2003 IT Operational Review
+Internet
+
+2003 IT Operational Review
+Internet
+
+Web Projects 2002 - 2003
+
+Web Projects 2002 - 2003
+
+IPD Sworn Employment Application
+
+Putting Education First Web Site
+
+Clerk’s Web Redesign
+
+Parks Finder
+
+Justice Agency Site Redesign
+
+List Server Web Interface
+
+Law Library Web Site
+
+Web Calendar
+
+Township Assessors Web Redesign
+
+Content Management
+
+Public Works Specifications And Manuals
+
+91
+
+92
+
+May 20, 2003
+
+May 20, 2003
+
+2003 IT Operational Review
+Internet
+
+2003 IT Operational Review
+Internet
+
+Online Homeowner’s Deduction
+
+IPD Applicant Screening
+
+Same Look And Feel Of Paper Form
+
+Integrates With Back Office Workflow
+
+Dynamic Validation
+
+Encrypted Data Submission To Secure
+Personal Data
+
+Online Submittal
+
+Used By Hundreds Of Applicants, Some Now
+In Training
+
+Electronic Signature
+
+93
+
+94
+
+May 20, 2003
+
+May 20, 2003
+
+2003 IT Operational Review
+Internet
+
+2003 IT Operational Review
+Internet
+List Server
+
+Parks Finder
+
+Ability To Directly Target Information To
+Constituents
+7 Email Lists And Growing
+Over 4000 Subscribers
+Simple Email Protocol
+Self-subscribe/Unsubscribe
+Security Features
+
+Powerful Search Engine Base
+Keyword And Advanced Search
+Characteristic Search By User-defined Criteria
+Indexed Search Results
+
+95
+May 20, 2003
+
+96
+May 20, 2003
+
+16
+
+2003 IT Operational Review
+Internet
+
+2003 IT Operational Review
+Internet
+
+Web Calendar
+
+Site Statistics
+
+50 + Calendars For Public Meetings
+
+Number Of Pages And Documents: 13,000 +
+
+Robust Database-driven Interface
+
+Monthly Hits: 5,000,000 +
+
+Subscribe Option For Email Notifications And
+Appointment Reminders
+
+Visitors Per Month: 80,000
+Number Of Departmental Web Sites: 65 +
+
+Public Input With Approval Process
+
+Number Of Web Authors: 96
+
+Remote Update Capabilities
+
+97
+
+98
+
+May 20, 2003
+
+May 20, 2003
+
+2003 IT Operational Review
+Internet
+
+2003 IT Operational Review
+Internet
+Content Management System Specifications
+
+Content Management System
+Major Focus Of Internet Staff For Some Time
+Content Accuracy And Integrity
+
+System Specifications:
+MS Content Management Server 2001
+OS: Windows 2000 Advanced Server
+DB: MS SQL Server 2000
+
+A Template Approach For Consistent Design
+Browser-based Authoring For Non-technical
+Users
+Publishing And Approval Workflow
+Improved Efficiency And Quality
+Reduced Time, Cost And Complexity
+
+99
+
+100
+
+May 20, 2003
+
+May 20, 2003
+
+2003 IT Operational Review
+Internet
+
+2003 IT Operational Review
+Internet
+Content Management System
+
+Content Management System
+
+System Architecture
+
+Network Architecture
+
+Templates
+Content
+
+Browsing Interface
+
+Authoring Interface
+
+(Multi-lingual Support)
+
+Web Server
+
+101
+
+102
+
+May 20, 2003
+
+May 20, 2003
+
+RDBMS Server
+
+Database
+SQL Server 2000
+
+Web Clipping
+
+17
+
+2003 IT Operational Review
+Internet
+
+2003 IT Operational Review
+Internet
+
+Content Management System Approval and
+Publishing Workflow
+
+Content Management System
+
+System
+Admin
+
+Author
+
+Creates user
+accounts and
+sets permissions
+
+Authoring: Create And Update Pages
+Editing: Edit And QC Pages
+Approval: Approve Pages For Publishing
+Publishing: Scheduled And On Demand
+
+Creates
+web pages
+
+Submit
+Declined
+
+Editor
+
+Designer
+Designs templates
+and graphic
+themes
+
+Edits and
+approves/
+declines pages
+
+Approved
+Declined
+
+Moderator
+
+Approves
+/declines
+pages
+
+Approved
+
+103
+
+104
+
+May 20, 2003
+
+May 20, 2003
+
+2003 IT Operational Review
+
+WWW
+
+2003 IT Operational Review
+
+Internet
+Content Management System Extended Features
+
+Dynamic Menus
+Press Release Automation
+Form Creator
+Printer-friendly Version
+“Email this Page” Feature
+
+Telephone Operations
+
+105
+May 20, 2003
+
+May 20, 2003
+
+2003 IT Operational Review
+Telephone Operations
+
+2003 IT Operational Review
+Telephone Operations
+New Installations Currently Underway
+
+Avaya Upgrades - G700 Intallation/S8700 Upgrade
+
+Installing IP600 Telephone System At Arrestee Processing
+Center
+
+Upgraded To Server Based Platform March 14th
+
+Installing 251 E. Ohio, Prosecutor Location
+
+Replacing All R300 Units With G700 Due To Faxing
+Over IP Issues
+
+Relocation DPW Customer Service Facility
+Reassigning IP600 From 233 McCrea And Reconfiguring For
+Probation Satellite Office
+Installed New G700 At Raytheon For IPD Remote Site
+Installed New G700 At Broad Ripple Park
+Installed New G700 At Election Service Center
+
+107
+
+108
+
+May 20, 2003
+
+May 20, 2003
+
+18
+
+2003 IT Operational Review
+Telephone Operations
+
+2003 IT Operational Review
+Telephone Operations
+
+Moves/ Adds/ Changes/ Trouble Tickets
+Reduced Trouble Calls 25% Versus Centrex
+Issues
+
+• 1001 Trouble Tickets In 2001
+• 756 Trouble Tickets In 2002
+
+Circuit Stability Issues For Some Sites
+
+Reduced Time Frames For Moves And Installs
+
+• SBC Rebuilt Facilities Into 3500 Lafayette Rd
+• We Are Meeting With SBC On Other Sites With
+Repetitive Failures
+
+• 5 Business Days For External Move On Previous Network
+• 1-2 Business Days For External Move On New Network, As Quick As 30
+Minutes If Emergency
+
+Added Control Of Trouble Related And Installation Requests
+Reduced Number Of Lines From Approximately 6200 To 5700
+Post Conversion
+
+109
+
+110
+
+May 20, 2003
+
+May 20, 2003
+
+2003 IT Operational Review
+
+2003 IT Operational Review
+
+Telephone Operations
+Future/Opportunities
+IP Telephones
+
+Planning and
+Contract
+Administration
+
+• Trial Site 1901 N Olney
+
+Meet Me Conference
+EC500 Extended Cellular Calling
+300,000 Completed Calls Per Busy Hour
+Disaster Recovery - SONET Ring Being Investigated
+
+111
+May 20, 2003
+
+May 20, 2003
+
+2003 IT Operational Review
+Planning and Contract Administration
+
+2003 IT Operational Review
+Planning and Contract Administration
+
+Enterprise Initiatives
+
+Contract Compliance and Monitoring
+
+Dell Contract—continued Refinement And
+Improvements, Price Negotiations
+
+Service Level Auditing, Monitoring And Periodic Modifications
+
+Employee Purchase Program
+
+Issue Resolution
+
+Master Lease Program
+
+Application Development Review And Reporting
+
+Document Management Guidelines And ROI
+
+Customer Satisfaction Follow Up
+
+Strategic Planning
+
+Quality Review
+
+Budget Development And Consulting
+
+Inventory And Disposal Process Monitoring
+
+RFP Development And Product Selection
+
+Monitoring Industry Trends In Sourcing
+
+Function Group Coordination
+Customer Consulting And Communications
+113
+
+114
+
+May 20, 2003
+
+May 20, 2003
+
+19
+
+2003 IT Operational Review
+Planning and Contract Administration
+
+2003 IT Operational Review
+Planning and Contract Administration
+
+Policy and Procedure Development
+“Getting the Word Out”
+
+Created And Adopted The Following:
+•
+•
+•
+•
+
+Awards And Recognition
+
+Privacy Statement
+Accessibility Statement
+Terms Of Use Statement
+Web Linking Policy And Procedures
+
+• Best Of The Web
+• Public Technologies, Inc. (PTI)
+• Digital Cities Recognition
+
+City Managers Training
+
+Enterprise Standards Adopted/Updated
+•
+•
+•
+•
+
+Desktops And Laptops (As Well As Minimum For Enterprise)
+Software
+Wireless
+Database And Development Platforms
+
+Coordination With Civicnet/Access Indiana Activities
+Face To Face
+
+Implemented Prioritization And Governance
+115
+
+116
+
+May 20, 2003
+
+May 20, 2003
+
+2003 IT Operational Review
+Planning and Contract Administration
+
+2003 IT Operational Review
+Planning and Contract Administration
+
+Keeping Up With and Assisting Our Peers
+
+Ongoing Efforts
+
+National Association Of Telecommunication Officers
+And Advisors (NATOA)
+
+Improved Alignment Of IT Solutions To Business Needs
+More Proactive Identification Of Potential Business Solutions
+
+Gartner Group Research And Participation
+Enhanced Access Board
+
+Better Annual Work Plan Coordination With Department Budgets
+
+Public Technologies, Inc.
+
+Increased Quality Of Service Focus
+
+Emergency Management Planning
+
+Stronger And Simpler SLA Compliance Monitoring
+
+County Job Classification Board
+
+More Business Continuity Planning Assistance
+
+Association Of Image And Information Management
+Coordination With State Of Indiana
+• Connectivity Planning With The State
+• State Courts JTAC Steering Committee
+• State IT Architecture Committee
+
+117
+May 20, 2003
+
+118
+May 20, 2003
+
+2003 IT Operational Review
+
+2003 IT Operational Review
+Geographic Information Systems
+GIS Achievements
+500 Desktop Users
+170 Data Layers
+Support 30 Divisions And Agencies Within The
+Enterprise
+
+Geographic Information
+Systems
+
+6 Web Services
+CIIPS Integration
+Snowfighter
+Color Aerial Photography
+
+120
+May 20, 2003
+
+May 20, 2003
+
+20
+
+2003 IT Operational Review
+Geographic Information Systems
+
+2003 IT Operational Review
+Geographic Information Systems
+
+GIS 2003
+
+GIS Web Applications
+New Architecture For Data And Web
+•
+•
+
+General Viewer
+
+SDE/Oracle
+ArcIMS 4.0.1
+
+Law Enforcement Incident Viewer
+Government Profile
+
+Master Address
+•
+
+Polling Place Locator
+
+Hansen Integration
+
+Field Data Collection (Tree Inventory)
+
+Wellfield Locator
+
+New Web Services (School Choice)
+
+Neighborhoods
+
+New Photography And LiDAR
+
+Other Map Services
+
+121
+
+122
+
+May 20, 2003
+
+May 20, 2003
+
+2003 IT Operational Review
+
+2003 IT Operational Review
+Geographic Information Systems
+Major Initiatives for 2003
+Vendor Transition
+Master Address – Enhanced Implementation
+Strategic Plan
+CIP
+CRM Integration
+GEM
+Internal Process Improvement – Data Distribution Policy
+
+123
+
+124
+
+May 20, 2003
+
+May 20, 2003
+
+2003 IT Operational Review
+Geographic Information Systems
+
+2003 IT Operational Review
+Geographic Information Systems
+Focus for the Future
+
+Imagine a tool…
+Select A Data Source
+
+Plan For Strategic Use Of GIS Technology
+
+Select A Date Range
+
+Model GIS Services For The Future
+
+Select A Geography
+
+Simplified Tools With Web Focus
+
+Get Your Result
+
+Delivering Real-time Data To The Enterprise
+•
+•
+
+You Don’t Have To Know GIS To Use GIS
+
+125
+
+126
+
+May 20, 2003
+
+May 20, 2003
+
+Operational Uses
+Enhanced Analysis
+
+21
+
+2003 IT Operational Review
+
+Wrap-up
+
+127
+May 20, 2003
+
+22
+
+EXHIBIT B – CIO Report
+May 2003
+Project Highlights
+o Worked with all City and County departments to complete the information
+gathering for 2004 budget work.
+o Continued activities for the Arrestee Processing Center as the implementation
+date in August draws near.
+o Efforts continue with the State on identifying improved connectivity solutions
+between the City-County Building and the State complex for the various
+applications that need high-speed connectivity.
+o Prepared an extensive Operational Review presentation for the IT Board and
+Departments.
+
+Planning Division Highlights
+Worked with GIS to refine their strategic planning effort.
+The Planning Staff, along with Internet and GIS worked on ISA’s City/County
+Strategic Plan to identify key initiatives, goals and mission.
+Continuing the RFP review for Council’s Ordinance Tracking project with
+modifications and scope change.
+Participated in an analysis of streaming video needs for Cable.
+Participated in discussions and review of proposals for Crystal Reports for
+Web Development.
+
+Telecommunications Division Highlights
+Completed the first phase of the Prosecutor move to 251 East Ohio Street.
+Completed installation of the equipment at the new APC (Alternative
+Processing Center), and are currently in the process of installing
+telephones.
+In the process of working to eliminate unnecessary Centrex lines that are
+no longer needed.
+
+CIO Report to IT Board
+
+Exhibit B
+
+Page 1 of 3
+
+Working on the Sonnet Ring, to be used for Emergency backup.
+Working on the Probation Department’s new satellite office on North
+Shadeland Avenue.
+
+Administrative Division Highlights
+.
+•
+•
+
+Continued work on Service Level auditing of the ACS contract in the areas of
+performance and application development
+Extensive compilation of information for the 2004 budget projections.
+
+Internet Division Highlights
+Completed the web site for Barrett Law
+Completed a self-subscription list server to e-mail weekly City an County job
+postings to recipients who subscribe.
+Completed system installation, configuration and training material for the
+Content Management Server. Currently working on bug fixes and graphic
+design.
+
+GIS Division Highlights
+Conducted workshops and interviews to develop the GIS Strategic Plan.
+Reviewed the draft plan and made modifications for presentation to the CIO.
+The LiDAR data collection mission was flown in April and May and is
+completed. Data has been received by IMAGIS and is being processed by
+the vendor. The data is being used to update the Digital Elevation Model for
+improving accuracy of the digital orthophotography, and for the creation of
+new 2 foot contours.
+Began work on a data collection tool for the sign inventory.
+
+CIO Comments
+
+CIO Report to IT Board
+
+Exhibit B
+
+Page 2 of 3
+
+IT Board Members,
+In the absence of the CIO, the “guest author” of this comment section must
+emphasize the focus of our office in the past month has been heavily
+administrative in gathering much-needed details for the upcoming budget cycle
+work for 2004.
+In addition, there was a lot of time spent working on the Strategic Planning efforts
+in order to give the City and County a strong document, not only to be tied to the
+budget dollars for next year, but to be used for requirements gathering as we
+move into the sourcing efforts in July.
+Gartner reports many organizations are placing increased importance on IT
+planning, particularly on project prioritization now that less funds are available
+and management leaders want to see a clear economic payoff from any IT
+investment. By planning carefully for the future, the City/County can set a sound
+direction and put ourselves in a better position to deal with unanticipated issues
+when they arrive.
+We hope to present the Strategic Planning results to you in July, to include the
+GIS Strategic Plan that has been crafted in the past few weeks.
+I look forward to answering any questions you may have about the information
+provided in this report.
+Nadeen Biddinger
+
+CIO Report to IT Board
+
+Exhibit B
+
+Page 3 of 3
+
+Monthly Highlights and Statistics
+May 2003
+From the Account
+Manager’s Desk
+The month of May was a busy
+yet informative month for many
+of our ACS customers. On May
+20th, ACS and ISA joined forces
+to present an IT Operational
+Review to the IT Board and invited all key customers
+and department heads to attend. In this session we
+covered many of the IT accomplishments which have
+occurred over the past several months, but more
+importantly, the stage was set for exciting things to
+come. ACS feels very strongly that more than ever
+before, the City/County is positioned to take advantage
+of current and future technological solutions as they are
+applied and leveraged to address the complex and
+pressing business needs of the local government
+environment.
+ACS management and our professional staff are
+genuinely excited about the promise of tomorrow and the
+things we feel we can do for our valued customers here
+at the City/County.
+
+XP Taking Hold
+ACS Technology Consultants are currently working with
+various City/County departments to test applications with
+Windows XP and Microsoft Office XP. They are assisting
+the departments develop plans for the testing. They are
+also assisting with problem resolution as the department
+works through the testing. Talk with your Technology
+Consultant if you are ready to begin this task in your
+department.
+
+DMD Says Goodbye to an Old Friend
+The server RCAANV1 located at 604 N Sherman was
+retired from service and the migration of data from that
+server to the SAN cluster environment was successful with
+no disruptions to the users. Customers at North Sherman
+now receive all email and data form the City-County
+building over the Gig fiber connection that was installed
+last year. This will address the storage needs for DMD at
+North Sherman and establish a common data drive for all
+DMD departments.
+
+Mid-Range Rehabilitation Status
+Head Start on the November Election
+Planning has begun for the November election. The first
+planning meeting was held on June 5, 2003. The
+primary focus of this meeting was to discuss automating
+the process of uploading Election Results to the Web.
+ISA and ACS will be working with ES&S, the County’s
+Election vendor, to outline the various options available
+to the Marion County Clerk and the Election Board.
+This information will be provided to them by June 20,
+2003. Monthly status meetings will be held through
+August, at which time meetings will be held more often
+as needed.
+
+Technology Ready for
+Summer Pool Fun
+ACS worked closely with
+Department of Parks and
+Recreation to get the pools
+ready to handle the Point of Sale (POS) application used
+to take money and produce receipts. This is a seasonal
+activity that requires ACS to provide resources to set up
+the machines. Everything was completed a week prior to
+the pools opening on Memorial Day.
+Monthly Highlights and Statistics
+May 2003
+
+This month, the Midrange Team has been working with the
+Business Consultants and the Applications Groups and has
+started the process of moving the Java applications from
+the Andretti server to either IMCWSL01 or IMCWSL02.
+Four applications have been moved, with 15 more to
+follow. The estimated completion date is June 19th.
+
+Network
+Continue
+
+Reliability
+
+Improvements
+
+ACS completed a project in which R300 VOIP (Voice
+Over IP) platforms were reconfigured and upgraded and
+UPS (uninterrupted power supply) services were installed
+for improved stability of the voice systems at the following
+locations:
+•
+•
+•
+•
+•
+•
+
+South Eastway Park
+Franklin Township Assessor
+Pike Township Assessor
+Garfield Park Family Center
+Garfield Park Pagoda
+Holliday Park
+
+Page 1
+
+Improving our Management of Storage
+During the last week of May, EMC was onsite to install
+the EMC Control Center Software. This software will
+provide greater control and monitoring than what is
+currently implemented. Control Center is the main
+Command/Control utility to manage the EMC
+Symmetrix, which is the facility that contains all storage
+for the mainframe and mid-range platforms. A
+component of Control Center called SAN Manager
+replaces the current ESN (Enterprise SAN Network)
+manager. In June, we will install DB Tuner, which is a
+specialized EMC product to monitor and control the
+storage space for the Oracle databases.
+
+IPD Training Academy Infrastructure
+Upgrade
+All internal wiring at the Training Academy has been
+brought up to minimum City/County wiring
+specifications. In addition, a second frame relay DS1
+circuit to relieve customer response time complaints until
+head-end re-engineering project can address the problem
+has been installed and is working. The extension from
+the SBC patch panel to the City/County equipment in
+room 108 has been established. All equipment has been
+received and will be installed in conjunction with the
+headend equipment on 6/21.
+
+WEB Server Migration Status
+The migration and testing of the applications to the new
+servers is underway and progressing very well. The status
+of the applications follows:
+Application
+OTIS
+Boards &
+Commissions
+CIIPS
+RFQ
+Service Request
+Security Request
+Permit Research
+Tax Sale
+Customer
+Satisfaction
+
+Devel
+X
+X
+
+Staging
+X
+X
+
+Prod
+
+X
+X
+X
+X
+X
+X
+X
+
+X
+X
+X
+X
+
+X
+
+X
+
+Again, these new servers provide City of
+Indianapolis/Marion County with a much more robust
+WEB environment that has consistent hardware and
+software from the development through production
+servers. These help us ensure that what was tested on the
+development server will work the same way on both the
+test and production servers.
+
+Monthly Highlights and Statistics
+May 2003
+
+Monthly Statistics from
+the Help Desk
+During the month of May, 4,305 calls
+were presented to the Help Desk of
+which 3,315 were handled by the
+daytime Help Desk and 752 were
+received by our after-hours operation. 238 calls were
+terminated before the Help Desk had a chance to answer
+the call. The average time to answer a customer’s call was
+22 seconds, and 90.4% of prime time calls were answered
+in less than 60 seconds
+Of those calls, 771 turned out to be technical problems.
+ACS closed 802 problem calls during the month and
+achieved a first call resolution of 83.9%. This means that
+83.9% of those who called with a problem had their issue
+resolved by the time they hung up the phone.
+ACS processed 339 security requests during the month. 94
+involved changes to security profiles, there were 51
+deletions of various access rights and 194 new access rights
+were granted. ACS also closed 401 service requests during
+the month.
+ACS technicians completed over 1,368 desktop moves,
+adds, changes, or installations during May. This volume is
+174% above the contractual maximum for daily activity.
+For the month of May, only 20 new desktops/laptops were
+installed. This was due in part to the backorder of 17” flatpanel monitors at Dell. During the last week of May, all
+requests with backordered monitors were beginning to
+arrive at ACS. The number of new installs is expected to
+increase for the month of June.
+
+Desktop Support Services
+The following procedures were put
+into effect in May 2003. Asset
+Management now provides installation
+follow-up reports to customers. When a new equipment
+install is complete, the lead Asset Manager notifies the
+department’s IT contact via email and attaches a
+spreadsheet outlining the install locations, asset tags and IP
+information. A paper copy of the spreadsheet is sent as
+well, in conjunction with the Asset Notification forms, for
+each piece of hardware. Furthermore, the asset notification
+process to the customer was further defined. Customers
+should have all necessary install paperwork within five
+business days of installation completion.
+Customer
+response to this new process continues to be very positive.
+ACS technicians completed a number of projects in May;
+including, the IMS rollout to all DPR Recreation Centers.
+This project encompassed 35 installs across 23 locations
+and was completed by May 15th. ACS Technicians installed
+
+Page 2
+
+45 copies of Microsoft Office XP across the nine
+Township Assessors offices and 140 copies of Microsoft
+Office in the Prosecutor’s office as they transition from
+Corel WordPerfect. These installations occurred with
+very few issues.
+
+completion of the final phase, Child Support Enforcement
+in early July. The first phase began on May 30th but the
+project actually began months ago with the planning, the
+network design and build out and the actual construction
+required to prepare the building for the Prosecutor’s staff.
+ACS will assist in the move by de-installing and reinstalling more than 350 PCs and printers.
+
+ACS Customer of the Month
+Our congratulations go to May’s Customer
+of the Month, Gary Coons with the
+Indianapolis Fire Department. Mr. Coons
+needed assistance from ACS in moving
+from his desktop computer to a laptop, ACS
+Technician Darlene Wheatley configured the machine to
+ensure it would meet his needs. Mr. Coons gave Darlene
+and ACS the following ratings: (Scale of 1 to 3 with 3
+being the highest)
+Did you get the assistance you needed? 3
+Was it delivered in a timely manner? 3
+Was the service friendly and helpful? 3
+Mr. Coon has been contacted about being named
+"Customer of the Month" for May and will be receiving
+lunch for two for his valuable feedback.
+
+On the Move
+The following customer relocations were
+completed or are currently in progress:
+
+Arrestee Processing Center (APC)
+A new site to be used for the purposes of processing City
+and County arrestees is currently under-going major
+remodeling. On-going construction is taking place. The
+fiber connection between the CCB and the APC was
+made operational; the network equipment was installed
+and operating at this time with a temporary power feed.
+User information has been requested for installation of
+workstations.
+DPW Customer Services
+Finalized and documented DPW Customer Service’s
+data/telephone drop location at 1375 West 16th Street
+and submitted this information to the communications
+group. Eric Jardina has informed us that the present
+occupants at 1375 West 16th Street will not be out of the
+building until June 16th (tentative). DPW wiring
+installation will be pushed back from June 2nd to the
+16th (tentative).
+Marion County Prosecutor has begun moving staff to
+their new facility at 251 E. Ohio. There will be a total of
+four moves taking place during the month of June with
+
+Monthly Highlights and Statistics
+May 2003
+
+Customer Service Cards Results
+ACS technicians distributed 771 customer satisfaction
+feedback cards during the month of May. 55 or 7.13% of
+them were actually completed and returned. This is a
+decrease in participation from April. The returned results
+continue to indicate a high level of customer satisfaction
+for the assistance received 2.95 on a scale of 1 to 3. Timely
+service rated a 2.80 and our technicians were deemed
+friendly and helpful judging from our 2.98 score.
+
+Looking Ahead to June
+ACS picked up a large number of disposals during May;
+231 items were removed from customer locations. Linda
+Yanes (City Purchasing) continues to work with ACS to
+move items from the City-County Building to the City’s
+warehouse. On May 12th and May 29th, a significant
+number of items were moved to the warehouse, freeing up
+room in the “bum room.” The next scheduled disposal
+pick-up is Thursday, June 12th.
+The Technical Services area identifies the following
+planned activities:
+•
+
+•
+•
+
+•
+
+Install spam (junk email) protection at the Internet
+email gateway. This is a growing problem with over
+10,000 unwanted emails entering the City/County
+email system every day. Spam protection will be
+implemented in a multi layered approach by applying
+different technologies used within the Symantec
+SMTP gateway. Blocking spam will have a positive
+business impact in the prevention of unwanted email
+from utilizing GroupWise email system resources.
+Upgraded all Novell servers from Support Pack 5 to
+Support Pack 6. This will fix minor known issues to
+ensure the continued stability within Novell NetWare.
+Continue testing and evaluating server based intrusion
+detection systems for recommendation. This will
+enhance the protection of web servers from various
+threats including password attacks, backdoor
+capability, memory application vulnerabilities and
+vandalism.
+Continued testing and evaluation of Novell NetWare
+6.0 for future implementation. This will give
+
+Page 3
+
+•
+•
+•
+
+employees web availability to their files and allow
+printing capability from a web browser.
+Complete the processing and printing of property
+tax bills.
+Completion of implementation of MCSD East rollcall site at Washington Square
+Complete installation of new satellite office for
+Probation at 2525 N Shadeland.
+
+ACS Spotlight
+These individuals are part of the
+ACS team responsible for delivering
+services to the City/County and we
+thought it would be beneficial to our
+customers to know a little bit more
+about them in their own words.
+Dan Needler, System Administrator
+Dan Needler has worked for ACS for five years. He
+began his career with ACS as a Tier 3 desktop
+technician. For a little more than a year, he has served as
+one of two of ACS' system administrators for EDM
+(enterprise document management). During his time as a
+system administrator, he has helped guide the document
+imaging pilot program from its inception to a production
+environment. His vision for EDM within the City of
+Indianapolis includes:
+(1) increasing the number of departments benefiting
+from document imaging,
+(2) fine-tuning the EDM setup to lower costs, and
+(3) to eventually implement a centralized scanning
+solution for departments whose needs/resources
+preclude them from dedicating time, space, and
+equipment to such an endeavor.
+Dan has a bachelor’s degree in computer technology
+from IUPUI and certifications that include CDIA
+(certified document imaging architect), CNA (certified
+NetWare administrator), MS Office Word 2000 Expert,
+and A+. Prior to his time at ACS, Dan was employed
+three years at Symphony Rehab working as a network
+specialist. When time permits, Dan participates in
+hobbies that include bicycling, archery, and aviation. He
+gets much satisfaction from spending time with his
+family—two children (boy and girl, 5 and 3) and wife (of
+8 years). He is an active, lifelong member of Christian
+Tabernacle Church where he serves as a lay minister,
+member of one choir and director of another. His goal in
+life is to make a difference.
+Mary Johnson, Lead Computer Operator
+Mary is an Indianapolis resident, mother of three (2
+daughters and one son), 8 grandchildren, and 1 great
+
+Monthly Highlights and Statistics
+May 2003
+
+granddaughter. She started with ISA on 11/03/1980 as a
+Keypunch Operator until keypunching became obsolete in
+the Data Processing world. From there she worked as the
+Receptionist plus I/O Clerk, distributing reports to all users
+developing a personal one on one relationship with them.
+As the department changed so did her positions. Mary
+continued with ISA as a Production Control Clerk, and
+then moved into a Computer Operators position, where she
+feels she finally found her niche. After the outsourcing of
+the Data Center to SCT, now ACS, Mary was able to
+access online courses that enhanced her skills and enabled
+her to continue as an improved and upgraded operator.
+Mary made the transition from SCT/ACS to her present
+position as a Lead Computer Operator.
+Mary likes cooking different recipes considered Soul Food,
+plus she has a fondness for gardening, vegetables and/or
+plants, but loves crocheting.
+
+From the Tech Bench
+How Much Memory is Enough?
+Computers depend on a small module
+or modules installed on the system
+board, called RAM or "memory", to
+function effectively. Its function is to provide a "space" for
+the computer to "think". Usually, the more memory a PC
+has, the better able it is to perform multiple tasks at the
+same time or to run programs which require larger amounts
+of memory. Early computers required 8 or 16 megabytes
+or RAM memory but with today's newer and faster
+computers, the more memory a PC has, the better it seems
+to work with "memory intensive" applications such as
+Windows XP or Microsoft Office XP.
+Recently, ISA approved Microsoft Windows XP as the
+standard operating system for computers within the City of
+Indianapolis/Marion County Enterprise. With the
+introduction of XP, many departments are either in the
+process of upgrading or will be upgrading to the new
+operating system. Managers should be aware of memory
+requirements for efficient operation of their PCs when they
+begin planning for acquisition of new equipment.
+Windows XP needs more memory than previous Windows
+versions; just how much is the question. Microsoft says
+you can install XP on a machine with 64 megabytes of
+RAM. Granted, XP will run on a PC with this much RAM
+memory but it will probably run slowly and "lock up"
+occasionally. We have PCs with 128 megabytes of RAM in
+our enterprise; XP runs on these systems but some
+applications may not open or will open slowly. A better
+guideline might be at 256 megabytes, a suitable level to
+handle most applications. If you have a number of
+applications open simultaneously, you may need more
+
+Page 4
+
+memory (512 MB or more) to keep your PC running
+smoothly.
+ISA has approved the Office XP Suite as the standard for
+Office applications, this change should also be
+considered when deciding memory requirements. As an
+example of the difference in memory usage for the
+Office XP Suite (Word, Excel, Access, etc.), Microsoft
+has published the following suggestions:
+Windows 98 Second Edition requires 24 MB of RAM
+plus an additional 8 MB of RAM for each Office
+program (such as Microsoft Word) running
+simultaneously. Example:
+Minimum
+Open Applications
+Windows 98
+with MS Word
+and MS Access
+
+Memory Required
+24MB
+32MB
+40MB
+
+Windows XP Professional requires 128 MB of RAM
+plus an additional 8 MB of RAM for each Office
+application (such as Microsoft Word) running
+simultaneously.
+Minimum
+Open Applications
+Windows XP
+plus MS Word
+and MS Access
+
+Monthly Highlights and Statistics
+May 2003
+
+Memory Required
+128MB
+136MB
+144MB
+
+Page 5
+
+SERVICE LEVEL DASHBOARD VIEW
+May 2003
+Service Level
+
+Description
+
+Targeted Levels
+
+Comments
+
+95% Within 60 seconds Prime Time
+
+Y
+
+90.4% - Average time to answer for the entire
+month was 22 seconds. ACS and ISA are
+discussing modifications to this SLA to more
+closely reflect desired outcomes and
+exception review of call data. A target of
+90% is currently being considered and had
+that been the SLA, the May target would have
+been met.
+
+Average under 60 seconds non-Prime
+Time
+
+G
+
+29.8 seconds average
+
+80% resolved on 1st call
+
+G
+
+Severity 1 - 98% within 15 minutes
+
+15 minutes
+
+G
+
+Response
+
+Severity 2 - 98% within 30 minutes
+
+30 minutes
+
+G
+
+Response
+
+Severity 3 - 90% within 2 hours
+
+2 hours
+
+G
+
+Response
+
+Severity 4 - 90% within 4 hours
+
+4 hours
+
+G
+
+Response
+
+Severity 5 - 90% within 8 hours
+
+8 hours
+
+G
+
+Resolution
+
+Severity 1 - 80% within 4 hours
+
+4 hours
+
+G
+
+Resolution
+
+Severity 2 - 80% within 8 hours
+
+8 hours
+
+G
+
+Resolution
+
+Severity 3 - 80% within 16 hours
+
+16 hours - excluding non-business
+hours (after 6 pm and before 6 am)
+
+G
+
+Time to Answer Help Desk
+
+1.1 Time To Answer
+
+1.2 First Call Resolution
+2.1 Level 2 Support
+Response
+
+ACS Monthly Status Report
+May 2003
+
+Helpdesk calls resolved on 1st call
+
+No Severity 1 calls were received.
+
+No Severity 1 calls were received.
+
+Page 6
+
+Service Level
+
+Description
+
+Targeted Levels
+
+Comments
+
+Resolution
+
+Severity 4 - 80% within 20 hours
+
+20 hours - excluding non-business
+hours (after 6 pm and before 6 am)
+
+G
+
+Resolution
+
+Severity 5 - 80% within 40 hours
+
+40 hours - excluding non-business
+hours (after 6 pm and before 6 am)
+
+G
+
+3.1 Adds, Moves, Changes
+
+Add, Moves, Changes
+Cascades
+
+92% within 5 business days of receipt
+of completed information from
+customer
+92% within 10 business days of
+receipt of completed information
+from customer
+
+G
+G
+
+92% within 10 business days of
+receipt of the equipment
+
+G
+
+4.1 Customer Satisfaction Semi-annual Survey
+
+3.0 rating or higher
+
+G
+
+4.2 Customer Satisfaction Closed Call Follow-up
+
+80% Satisfied problem was solved
+
+G
+
+5.1 Application Development
+Defect Rate - Post
+Implementation
+
+No critical defects, no major defects,
+no more than 3 minor defects per
+application program, no more than 3
+cosmetic defects per application
+program.
+
+G
+
+Cost Estimating
+
+Total hours for a project must not
+exceed estimate by more than 10%
+
+G
+
+Scheduling
+
+Deliverables/milestones for a project
+must be on schedule
+
+G
+
+PC Installations
+
+5.2 Application Development Cost Estimating & Scheduling
+
+6.2 Availability
+
+Online Availability
+
+G
+
+6.2 Response Time
+
+Online Response Time
+
+G
+
+7.0 Timely Processing of Service
+Requests
+
+Enter Service Requests into HEAT
+
+ACS Monthly Status Report
+May 2003
+
+Within 1 business
+
+G
+
+Page 7
+
+Service Level
+
+8.0 Asset Management
+
+9.0 Security
+
+Description
+
+Targeted Levels
+
+Comments
+
+Acknowledgement and personal contact
+with customer after service request is
+received
+
+Within 10 business days
+
+G
+
+Wiring Request/Specifications to
+Vendor
+
+95% within 5 days
+
+G
+
+Wiring Quote to Customer
+
+95% within 3 days
+
+G
+
+Wiring Order to Vendor
+
+95% within 2 days
+
+G
+
+Standard Quote
+
+95% within 3 days
+
+G
+
+Non-Standard Quote
+
+95% within 5 days
+
+G
+
+Order Placed after approval
+
+95% within 2 days
+
+G
+
+Accuracy of Data
+
+85% on existing data
+
+G
+
+Audit to be performed at customer discretion.
+
+Accuracy of Data
+
+98% on ACS entered data
+
+G
+
+Audit to be performed at customer discretion.
+
+Add new security or modify current
+security profile
+
+Within 2 business days of receipt
+
+G
+
+Delete security requests
+
+4 hours
+
+G
+
+Delete security requests - emergency
+
+30 minutes
+
+G
+
+LEGEND:
+A green (G) indicator means all performance goals of this service level were met in the month.
+A yellow (Y) indicator means all but one performance goal of this service level were met this month.
+A red (R) indicator means more than one performance goal of this service level was not met or, this service level received a yellow (Y) indicator for 2 or more consecutive months for the same reason.
+
+ACS Monthly Status Report
+May 2003
+
+Page 8
+
+IT Board
+
+Contracts approved for the IT Board by the Chief Information Officer
+
+Date Approved
+
+Dept.
+
+5/12/2003
+
+Internet
+
+5/2/2003
+
+DPW
+
+5/2/2003
+
+Probation
+
+5/1/2003
+
+Description
+Professional Services Agreement-Web and Graphic Design
+Svcs.
+
+Vendor
+
+Annual $
+Amount
+
+Total $
+Amount
+
+Funding Department or
+chargeback
+
+Descom, LLC
+
+----
+
+30,000.00
+
+ISA
+
+Frame Relayy Circuit to 1375 W. 16th (DPW
+( Customer Service)
+
+Ameritech
+
+6,240.00
+
+24,960.00
+
+ISA-Chargeback
+
+Ameritech
+
+6,840.00
+
+27,360.00
+
+ISA-Chargeback
+
+Internet
+
+Department)
+Addendum to MethodFactory Agreement for additional 90
+hours
+
+MethodFactory
+
+9,900.00
+
+9,900.00
+
+ISA
+
+4/29/2003
+
+City HR
+
+Amendment #71 City HR NT Application Server Support
+
+30,920.00
+
+42,156.00
+
+ISA-Chargeback
+
+4/23/2003
+
+GIS
+
+ACS
+Onsite Engineering &
+Environmental
+
+46,800.00
+
+46,800.00
+
+ISA
+
+4/14/2003
+
+GIS Data Entry Services
+Frame Relay Circuit to 5319 S. Emerson (Franklin Township
+Franklin Twnshp Assessor)
+
+4/3/2003
+
+Sheriff
+
+4/3/2003
+
+Parks
+
+Frame Relay Circuit to 10202 Washington St (Sheriff Dept.)
+Frame Relay Circuit to 1551 Broad Ripple Ave (Broad Ripple
+Admin)
+
+Ameritech
+
+6,240.00
+
+24,960.00
+
+ISA-Chargeback
+
+Ameritech
+
+5,040.00
+
+20,160.00
+
+ISA-Chargeback
+
+Ameritech
+
+5,640.00
+
+22,560.00
+
+ISA-Chargeback
+
+4/3/2003
+
+IPD
+
+Frame Relay Circuit to 752 E. Market (Arrestee Processing
+Cntr)
+
+Ameritech
+
+5,640.00
+
+22,560.00
+
+ISA-Chargeback
+
+3/24/2003
+
+ISA
+
+SBC DS3 Disaster Recovery circuit to sunguard
+
+SBC
+
+11,955.00
+
+59,475.00
+
+ISA
+
+3/24/2003
+
+ISA
+
+SBC OC 12 to OC 48 upgrade
+
+SBC
+
+85,099.00
+
+85,099.00
+
+ISA
+
+3/19/2003
+
+Sheriff
+
+Ameritech
+
+5,040.00
+
+20,160.00
+
+ISA-Chargeback
+
+3/19/2003
+
+Guardian Home Frame Relay Circuit to 5751 University Ave.(Guardian Home)
+
+3/19/2003
+
+IFD
+
+3/19/2003
+
+Fleet Svcs
+
+3/18/2003
+
+GIS
+
+2/23/2003
+
+Mayors Ofc
+
+2/21/2003
+2/20/2003
+2/19/2003
+1/28/2003
+
+Frame Relay Circuit to 532 Turtle Crk N. Drive(Sheriff Dept.)
+
+Ameritech
+
+5,640.00
+
+22,560.00
+
+ISA-Chargeback
+
+Frame Relay Circuit to 555 N. New Jersey (IFD HQ)
+
+Ameritech
+
+5,940.00
+
+23,760.00
+
+ISA-Chargeback
+
+Frame Relay Circuit to 1651 W. 30th St. (Fleet Services)
+
+Ameritech
+
+5,640.00
+
+22,560.00
+
+ISA-Chargeback
+
+PJN Consulting
+
+92,424.00
+
+92,424.00
+
+ISA
+
+Tier 1 innovations
+
+50,000.00
+
+50,000.00
+
+Mayors Office
+
+Ameritech
+
+5,940.00
+
+23,760.00
+
+ISA-Chargeback
+
+Ameritech
+InfoComm Systems,
+Inc
+
+5,640.00
+
+22,560.00
+
+ISA-Chargeback
+
+10,000.00
+
+10,000.00
+
+ISA
+
+ACS
+
+7,715.28
+
+15,669.56
+
+ISA-Chargeback
+
+Ameritech
+
+5,040.00
+
+10,080.00
+
+ISA-Chargeback
+
+ACS
+
+0.00
+
+54,000.00
+
+ISA-Chargeback
+
+Professional Services Agreement-Project Consulting
+CRM Initiative assistance
+
+Election Board Frame Relay Circuit to 68 N. Gale (Election Board Svc. Center)
+IPD
+
+Frame Relay Circuit to 6125 E. 21 st.(IPD E. Sub Station)
+
+ISA
+
+Professional Services Agreement-Network Consulting
+
+Warren Twnsp Amendment #69 Warren Twnshp Desktop/Network support
+
+1/23/2003
+
+IPD
+
+1/7/2003
+
+DMD
+
+Frame Relay Circuit to 901 N Post Rd (IPD Training Academy)
+Amendment # 68 DMD filenet and Indidocs subcontractor
+
+Notes
+
+Printed:
+
+Approval under the authority of the IT Board for contracts under $100,000
+
+IT Board-Attachment
+
+6/12/2003
+Page: 1 of 1
+
+
