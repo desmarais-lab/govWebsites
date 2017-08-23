@@ -1,3 +1,5 @@
+source('trainingMallet')
+
 library('ggplot2')
 library('cowplot')
 source('functions/mallet_helper_functions.R')

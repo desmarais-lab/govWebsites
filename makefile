@@ -98,15 +98,23 @@ convertEverything:
 
 #only one of the above is necessary
 
-#use Mallet,
+#Preprocessing for mallet
 #this will also call the hunspell spellchecking
 #the hunspell spellchecking takes a long time (i.e. 14 hours on 6 cores)
-paper/figures/wtp_current_dem_rep.pdf: rfiles/d.Rdata
-	R CMD BATCH malletTraining.R
+rfiles/d.Rdata:
+	R CMD BATCH malletPreprocessing
 
-paper/figures/partisanTopics_all.pdf: rfiles/d.Rdata
+#Train mallet
+#Note that this file doesn't generate any output,
+#and should therefore only used in conjunction with other files that source() it
+#malletTraining.R
+
+#Analyse which topics are partisan
+paper/figures/partisanTopics_all.pdf: rfiles/d.Rdata malletTraining.R
 	R CMD BATCH malletAnalysisPartisanTopics.R
 
+exampleDocuments: rfiles/d.Rdata malletTraining.R malletAnalysisPartisanTopics.R
+	R CMD BATCH exampleDocuments.R
 
 #compile Latex
 # -c option cleans up nonessential results except pdf
