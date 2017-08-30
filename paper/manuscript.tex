@@ -451,6 +451,9 @@ Another intervening factor is that for cities in Indiana, mayoral terms begin in
 
 Furthermore, if we only investigate cities in which control of government changes from one party to another, we may overestimate its effect. Not only does a transition in party control occur, but the person in charge also changes. Parties are fairly homogeneous, so that two mayors from the same party may have very different policy preferences and managerial styles. To remedy this problem, we [could] utilize matching, pairing our cases with similar cities in which the incumbent does not run for re-election, but party control stays the same nevertheless.
 
+%Justicifcation for Arun 2010 topic number measure
+In order to determine the optimal number of topics for our corpus, we utilize the measure developed by \cite{Arun2010}. In contrast to other approaches such as \cite{Cao2009} or \cite{Griffith2004}, this measure includes as much information about the model as possible by taking into account both the document-term matrix, as well as the word-topic matrix. We find 200 topics to be the best value (see figure \ref{ldatuning}).
+
 %One solution might be to rely on LDA models, but only to apply them to documents that were deleted, the strongest possible expression of a successor governments diverging policy preferences. This way, we could identify directly which issues are considered to be the most divisive.
 
 %There is also a possibility that city size is a determinant of the number of topics. Larger cities tend to have bigger websites, owing to a larger set of issues that need to be dealt with.

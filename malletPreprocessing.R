@@ -52,6 +52,7 @@ d$doc <- pbsapply(d$doc, iconv, "UTF-8", "UTF-8")
 date_words <- c("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday")
 date_words <- c(date_words, "January","February","March","April","May","June","July","August","September","October","November","December")
 date_words <- c(date_words, "Mon","Tue","Wed","Thu","Fri","Sat","Sun")
+date_words <- c(date_words, "am", "pm")
 date_words <- c(date_words, tolower(date_words))
 d$doc <- pbsapply(d$doc, removeWords, words = date_words)
 
@@ -129,7 +130,6 @@ d$doc <- as.character(pbsapply(1:nrow(d), cleanup))
 
 ### END OF INTERESTING STUFF
 
-
 d$xml <- str_detect(d$doc, "<?xml version=") #note which docs are xml
 d <- filter(d, d$xml==F) #Drop rows that are xml docs
 d <- select(d, -xml) #Drop xml variable
@@ -206,8 +206,19 @@ save(d, file = "./rfiles/d_noduplicates3.Rdata")
 #merge in original file extension
 d <- merge(d, d2, "path", all.x = T, all.y = F)
 
-#remove a few empty documents that ended up ine there at some point
+#remove a few empty documents that ended up in there at some point
 d <- d[is.na(d$ext)==F,]
+
+#save
+save(d, file = "./rfiles/d_backup.Rdata")
+
+#remove city names
+citynames <- unique(d$Name)
+citynames <- c(citynames, tolower(citynames))
+d$doc <- removeWords(d$doc, citynames)
+
+#removing token types that disproportionately occur in one city's corpus
+source('malletPreprocessingCityWords.R')
 
 #save
 save(d, file = "./rfiles/d.Rdata")
