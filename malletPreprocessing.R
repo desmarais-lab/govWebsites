@@ -211,6 +211,7 @@ d <- d[is.na(d$ext)==F,]
 
 #save
 save(d, file = "./rfiles/d_backup.Rdata")
+load("./rfiles/d_backup.Rdata")
 
 #remove city names
 citynames <- unique(d$Name)

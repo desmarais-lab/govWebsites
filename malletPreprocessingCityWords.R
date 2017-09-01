@@ -1,3 +1,5 @@
+library(quanteda)
+
 #create corpus
 crps <- corpus(d$doc)
 #set party docvar
@@ -30,7 +32,8 @@ for(i in 1:length(citynames)){
   #order
   tfComparison <- tfComparison[order(tfComparison$tfPCTDiff, decreasing = T),]
   #define threshold
-  threshold <- 0.001
+  #threshold <- 0.001
+  threshold <- tfComparison$tfPCTDiff[round(nrow(tfComparison)/10)] #delete top 20%
   #delete everything above
   delete <- tfComparison$wordCity[tfComparison$tfPCTDiff>threshold]
   

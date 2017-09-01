@@ -113,6 +113,7 @@ rfiles/d.Rdata:
 paper/figures/partisanTopics_all.pdf: rfiles/d.Rdata malletTraining.R
 	R CMD BATCH malletAnalysisPartisanTopics.R
 
+#find and write to file example docs typical for each topic
 exampleDocuments: rfiles/d.Rdata malletTraining.R malletAnalysisPartisanTopics.R
 	R CMD BATCH exampleDocuments.R
 
