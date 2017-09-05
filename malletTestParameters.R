@@ -1,5 +1,8 @@
 options(java.parameters = "-Xmx3000m")
 library('mallet')
+library('tidyr')
+library('ggplot2')
+source('functions/city_entropy.R')
 
 #load data
 load(file = "./rfiles/d.Rdata")
@@ -11,7 +14,7 @@ opt_it <- 20
 opt_burnin <- 50
 train_it <- seq(50, 500, length.out = ntests)
 
-entr <- numeric(ntests)
+entr <- list()
 
 for(i in 1:ntests){
 
@@ -28,6 +31,17 @@ for(i in 1:ntests){
   topic.model$maximize(10)
   
   #record mean entropy
-  entr[i] <- mean(city_entropy(mallet.doc.topics(topic.model, smoothed = F, normalized = F), d))
+  entr[[i]] <- city_entropy(mallet.doc.topics(topic.model, smoothed = F, normalized = F), d)
 
 }
+
+df <- data.frame(do.call(cbind, entr))
+names(df) <- as.character(train_it)
+df <- gather(df)
+
+p <- ggplot(df, aes(factor(key), value)) + 
+  labs(title = "", x = "Number of iterations", y = "Cross-city entropy") +
+  geom_boxplot() + 
+  stat_summary(fun.y = mean, colour = "red", geom = "line", aes(group = 1))  + 
+  stat_summary(fun.y = mean, colour = "red",  geom = "point")
+p
