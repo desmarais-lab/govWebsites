@@ -1,12 +1,6 @@
 options(java.parameters = "-Xmx3000m")
 
 library('mallet')
-library('tibble')
-library('stringr')
-library('tools')
-library('tm')
-library('dplyr')
-
 
 #load data
 load(file = "./rfiles/d.Rdata")
@@ -38,11 +32,11 @@ word.freqs <- mallet.word.freqs(topic.model)
 
 ## Optimize hyperparameters every 20 iterations, 
 ##  after 50 burn-in iterations.
-topic.model$setAlphaOptimization(20, 50)
+topic.model$setAlphaOptimization(10, 50)
 
 ## Now train a model. Note that hyperparameter optimization is on, by default.
 ##  We can specify the number of iterations. Here we'll use a large-ish round number.
-topic.model$train(200)
+topic.model$train(400)
 
 #R seems to be using about 2.3GB while training the model
 #takes about 5 minutes

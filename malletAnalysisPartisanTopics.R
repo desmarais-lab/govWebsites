@@ -1,11 +1,18 @@
 source('malletTraining.R')
 
+library('tibble')
+library('stringr')
 library('ggplot2')
 library('cowplot')
 source('functions/mallet_helper_functions.R')
 source('functions/topic_order.R')
 source('functions/coherence_order.R')
 source('functions/comparing_proportions.R')
+source('functions/city_entropy.R')
+
+#doc-topic and topic-word matrices
+doc.topics <- mallet.doc.topics(topic.model, smoothed = F, normalized = F)
+topic.words <- mallet.topic.words(topic.model, smoothed = F, normalized = F)
 
 #How many of the topics with the highest differences should be displayed?
 n_topics <- 24
@@ -14,13 +21,11 @@ n_topics <- 24
 limited_topics <- NULL
 important.topics <- topic_order()
 coherent.topics <- coherence_order(d$doc)
-limited_topics <- intersect(important.topics[1:50], coherent.topics[1:50])
+high.entropy.topics <- city_entropy_order(city_entropy(mallet.doc.topics(topic.model, smoothed = F, normalized = F), d))
+limited_topics <- intersect(important.topics[1:50], coherent.topics[1:50], high.entropy.topics[1:50])
+if(n_topics<length(limited_topics))n_topics <- length(limited_topics)
 
 ## FIND THE TOPICS WITH THE HIGHEST PROPORTIONAL DIFFERENCES
-
-#doc-topic and topic-word matrices
-doc.topics <- mallet.doc.topics(topic.model, smoothed = F, normalized = F)
-topic.words <- mallet.topic.words(topic.model, smoothed = F, normalized = F)
 
 #Split document-topic matrix into Republican and Democratic parts
 republican <- doc.topics[which(d$winner == "Republican"),]
@@ -53,8 +58,8 @@ if(is.null(limited_topics)==F){
 }
 topicnumbers <- props$topic[order(props$prop.diff, decreasing = T)][1:n_topics]
 #Get the same number of topics for both parties
-topicnumbers <- props$topic[order(props$prop.diff, decreasing = T)][props$party=="Democratic"][1:(n_topics/2)]
-topicnumbers <- c(topicnumbers,props$topic[order(props$prop.diff, decreasing = T)][props$party=="Republican"][1:(n_topics/2)])
+#topicnumbers <- props$topic[order(props$prop.diff, decreasing = T)][props$party=="Democratic"][1:(n_topics/2)]
+#topicnumbers <- c(topicnumbers,props$topic[order(props$prop.diff, decreasing = T)][props$party=="Republican"][1:(n_topics/2)])
 
 ## DISPLAY THE TOPICS WITH THE HIGHEST PROPORTIONAL DIFFERENCES
 

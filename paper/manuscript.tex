@@ -225,6 +225,8 @@ The General Services Administration (GSA) maintains all .gov addresses, and prov
 
 Here, we focus only on cities. As a first step, we use a webdriver-controlled browser (Firefox/Selenium/Geckodriver) to test whether all of the city websites actually work. Of the 2425 domains listed by the GSA as cities, 292 are not accessible. Furthermore, the .gov domain, as registered at the GSA, is frequently not the website a city actually uses. In many cases, these sites redirect to another address, sometimes not a .gov domain (in this case, we simply use this domain). We record these URLs, as they are required to retrieve the images websites stored in the Wayback Machine (WbM).
 
+$T_{1}+\beta_1$
+
 In order to provide an overview of our coverage (as not all cities, towns and villages use .gov addresses), we merge this list with U.S. Census data\footnote{http://www2.census.gov/programs-surveys/popest/datasets/2010-2015/cities/totals/sub-est2015\_all.csv}. Here, several limitations in the GSA data need to be accounted for: One, even though the GSA nominally separates websites of cities and counties, some of the domains categorized as cities actually belong to counties. The same is true for townships and boroughs. Ergo, we eliminate all websites belonging to these three types of entities by hand. Furthermore, the city name, as given by the GSA, refers to the city in which the domain is registered, which is not necessarily equivalent to the city the website serves. In many cases, a website of a larger city may be registered to one of its subdivisions (for example, the website of New York is registered to Brooklyn), or vice versa (for example, the website of Homecroftin, a small town within Indianapolis, is registered to the city as a whole). Consequently we fix mismatches between websites and cities manually. Finally, a number of cities are simply misspelled, which we also correct by hand.
 
 After the counties, townships and cities that cannot be matched to the Census data\footnote{There are five cities that are not contained in the Census data} and duplicate websites (some cities have more than one website) are removed, 1813 domains/cities remain.
@@ -596,6 +598,9 @@ To further investigate this issue, we look at the raw data itself - the document
 	\label{ldatuning}
 	\includegraphics[height=0.75\textheight]{figures/topicnumber_ldatuning.pdf}
 \end{figure}
+
+%Partisan top words
+\input{tables/partisanTopWords.tex}
 
 \newpage
 

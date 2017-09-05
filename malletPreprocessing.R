@@ -219,7 +219,11 @@ citynames <- c(citynames, tolower(citynames))
 d$doc <- removeWords(d$doc, citynames)
 
 #removing token types that disproportionately occur in one city's corpus
-source('malletPreprocessingCityWords.R')
+#source('malletPreprocessingCityWords.R')
+
+#there are still some documents that are exact duplicates of one another
+#remove all but one
+d <- d[!duplicated(d$doc)==T,]
 
 #save
 save(d, file = "./rfiles/d.Rdata")
