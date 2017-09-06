@@ -38,10 +38,13 @@ for(i in 1:ntests){
 df <- data.frame(do.call(cbind, entr))
 names(df) <- as.character(train_it)
 df <- gather(df)
+df$key <- factor(df$key, levels = unique(df$key))
 
-p <- ggplot(df, aes(factor(key), value)) + 
+p <- ggplot(df, aes(key, value)) + 
   labs(title = "", x = "Number of iterations", y = "Cross-city entropy") +
   geom_boxplot() + 
   stat_summary(fun.y = mean, colour = "red", geom = "line", aes(group = 1))  + 
   stat_summary(fun.y = mean, colour = "red",  geom = "point")
 p
+
+ggsave(p, file = "./paper/figures/iterations_entropy.pdf", width = 8, height = 5)
