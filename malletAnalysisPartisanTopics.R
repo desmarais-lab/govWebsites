@@ -19,11 +19,11 @@ n_topics <- 24
 #In order to consider only a restricted set of topics, enter a vector of their indices here
 #Otherwise, set to NULL
 limited_topics <- NULL
-important.topics <- topic_order()
-coherent.topics <- coherence_order(d$doc)
-high.entropy.topics <- city_entropy_order(city_entropy(mallet.doc.topics(topic.model, smoothed = F, normalized = F), d))
-limited_topics <- intersect(important.topics[1:50], coherent.topics[1:50], high.entropy.topics[1:50])
-if(n_topics<length(limited_topics))n_topics <- length(limited_topics)
+#important.topics <- topic_order()
+#coherent.topics <- coherence_order(d$doc)
+#high.entropy.topics <- city_entropy_order(city_entropy(mallet.doc.topics(topic.model, smoothed = F, normalized = F), d))
+#limited_topics <- intersect(important.topics[1:50], coherent.topics[1:50], high.entropy.topics[1:50])
+#if(n_topics<length(limited_topics))n_topics <- length(limited_topics)
 
 ## FIND THE TOPICS WITH THE HIGHEST PROPORTIONAL DIFFERENCES
 
