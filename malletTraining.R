@@ -9,6 +9,7 @@ load(file = "./rfiles/d.Rdata")
 #d <- d[d$extension=="html",]
 
 #Import website text
+#The stopwords file is purposefully empty; removing stopwords is already done in preprocessing
 mallet.instances <- mallet.import(id.array = make.unique(d$folder),
                                   text.array = d$doc,
                                   stoplist.file = "./rfiles/stopwords.txt",

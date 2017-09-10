@@ -225,5 +225,14 @@ d$doc <- removeWords(d$doc, citynames)
 #remove all but one
 d <- d[!duplicated(d$doc)==T,]
 
+#remove stopwords with quanteda
+stopwords()
+d$doc <- removeWords(d$doc, stopwords())
+
+#update information on tokens
+d$ntokens <- sapply(d$doc, countTokens)
+d$nuniquetokens <- sapply(d$doc, countUniqueTokens)
+d$tokenratio <- d$nuniquetokens/d$ntokens
+
 #save
 save(d, file = "./rfiles/d.Rdata")
