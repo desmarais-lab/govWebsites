@@ -29,7 +29,14 @@ table1 <- rbind(table1, c(ntokensD, ntokensR))
 source('malletAnalysisPartisanTopics.R')
 
 #Number of token assignments
-
+ntokenaD <- sum(democratic)
+ntokenaR <- sum(republican)
+table1 <- rbind(table1, c(ntokenaD, ntokenaR))
 
 #Number of topics
+ntopics <- table(props$party)
+table1 <- rbind(table1, ntopics)
 
+rownames(table1) <- c("Cities", "Documents", "Tokens", "Token assignments", "Topics")
+
+writeLines(print.xtable(xtable(table1, digits = 0)), 'paper/tables/descriptiveStatisticsPartisan.tex')
