@@ -8,7 +8,7 @@ source('functions/mallet_helper_functions.R')
 source('functions/topic_order.R')
 source('functions/coherence_order.R')
 source('functions/comparing_proportions.R')
-source('functions/city_entropy.R')
+source('functions/entropy.R')
 
 #doc-topic and topic-word matrices
 doc.topics <- mallet.doc.topics(topic.model, smoothed = F, normalized = F)
