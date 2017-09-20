@@ -514,6 +514,8 @@ In order to determine the optimal number of topics for our corpus, we utilize th
 	\includegraphics[width=\linewidth]{figures/doctopics_density.pdf}
 \end{figure}
 
+\subsubsection{LDA diagnostics}
+
 Figure \ref{doctopics_density} plots the densities of topic weights across documents, where each line represents a topic. Distributions with lower peaks near zero and flatter bodies indicate a topic that is present to varying degrees in multiple documents. This shape appears to be more common in documents from Republican cities. By contrast, a distribution with a high peak near zero and a very long tail is indicative of a topic that only appears in one specific document. This appears to be more common for documents in Democratic cities. The substantive conclusion then is that Democrats appear to be more prone to dedicating individual documents to one specific purpose, whereas Republicans produce general-purpose documents more often.
 
 %topicweights density
@@ -559,6 +561,14 @@ To further investigate the topics with large partisan differences, figure \ref{p
 
 To further investigate this issue, we look at the raw data itself - the document-topic matrices for Democrats and Republicans, displayed as heatmaps. Figure \ref{heatmaps_weights} shows that especially for Republicans (but also for Democrats, to a lesser extent), there appears to be extensive clustering for consecutive documents. Since the order of the documents in the corpus is dependent on the cities in which they appear in, it seems that topics are mere representation of city websites - each website `owns' a number of topics, that appear across all of its documents, and hardly anywhere else. One possible cause for this type of clustering is the fact that documents frequently share common words, for example pertaining to navigation on the site, or standard forms that are shared throughout all documents.
 
+\subsubsection{Structural topic model}
+An ostensibly intuitive solution to topics clustering into cities in LDA is to include dummies for the cities in a statistical model of topics. This is facilitated by the structural topic model, which uses metadata on the document to account for variation in topics \citep{Roberts2014}. However, figure \ref{stm_results} shows that if anything, the STM exacerbates the problem. Here, we plot the \textit{p-values} of the coefficients for each city as well as the party variable across each topic. Under normal circumstances, plotting the p-values, as opposed to the fitted values, does not make much sense, but here it serves a diagnostic purpose. The plot shows that the party variable is never statistically significant at any conceivable level of confidence, nor is it even close to. Interestingly the same is true for a number of the cities as well. The topics cluster heavily into only about half of the cities, which does not present an improvement over LDA at all.
+
+\subsubsection{Prediction with SVM}
+An alternative approach to the problem is to ignore topics entirely, and go straight to predicting documents that are much more likely to be included on websites belonging to one or the other party. Classic machine learning techniques such as Naive Bayes, Linear Discriminant Analysis, or SVM should be expected to fare well in this context. Here, we rely on SVM, through three different implementations. The SciKitLearn package in Python, the e1071 package as well as the mlr package (relying on the kernlab package) in R. Predicting based on the document-term matrix (either in its regular form, or as its tf-idf representation), and using five-fold cros-validation, SciKitLearn produces a predictive accuracy of at most 78\%. Parameter tuning did not lead to any improvements. The e1071 package in R, relying on the top 5000 features ranked through tf-idf fared slightly better, at 82 percent correctly predicted. Finally, the mlr/kernlab implementation (as well as the e1071 implementation through mlr) has not worked at all so far, resulting in stack overflow errors (which appears to be due to memory limitations in R).
+
+Another point worth noting is that \cite{Monroe2008} advise against using these types of methods in this context because they get the data generation process backwards: Our theory assumes that party leads to variation in writing, and yet we rely on the documents to predict party, in spite of the fact that we actually have perfect knowledge of it.
+
 %Heatmaps
 \begin{figure}[!ht]
 	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
@@ -597,6 +607,14 @@ To further investigate this issue, we look at the raw data itself - the document
 	\caption{The optimal number of topics for our corpus. The measures of Griffths 2004 and Cao 2009 indicate the best number of topics at their minimum, whereas the measure of Arun 2010 points to the best value at its maximum.}
 	\label{ldatuning}
 	\includegraphics[height=0.75\textheight]{figures/topicnumber_ldatuning.pdf}
+\end{figure}
+
+%stm results
+\begin{figure}[!ht]
+	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
+	\caption{Results from a structural topic model, displayed as the p-values for each variable for each topic. This would normally be somewhat nonsensical, but here it illustrates why the model does not work.}
+	\label{stm_results}
+	\includegraphics[width=1.1\linewidth]{figures/stm_results.pdf}
 \end{figure}
 
 %Partisan top words
