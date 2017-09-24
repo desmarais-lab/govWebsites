@@ -30,7 +30,7 @@ fs <- feature_selection(cgt,
                         rows_to_compare = c(4,1), #Democrat first so it gets colored blue
                         method = "informed Dirichlet")
 
-#make the plot
+#make the funnel plot
 #pdf('paper/figures/fightinWords.pdf', width = 8, height = 8) #shitty quality
 ppi <- 300
 png("paper/figures/fightinWords.png", width=8*ppi, height=8*ppi, res=ppi)
@@ -42,3 +42,12 @@ fightin_words_plot(fs,
                    size_terms_by_frequency = F,
                    right_margin = 6)
 dev.off()
+
+#make a table with the top 50 words
+library('xtable')
+zscoretable <- tibble::tibble(DemocraticWord = fs$Democratic_Democratic$term[1:50],
+                              DemocraticScore = fs$Democratic_Democratic$z_scores[1:50],
+                              RepublicanWord = fs$Republican_Republican$term[1:50],
+                              RepublicanScore = fs$Republican_Republican$z_scores[1:50])
+
+writeLines(print.xtable(xtable(zscoretable), include.rownames = F), con = 'paper/tables/fightinwords.tex')

@@ -565,11 +565,14 @@ To further investigate this issue, we look at the raw data itself - the document
 An ostensibly intuitive solution to topics clustering into cities in LDA is to include dummies for the cities in a statistical model of topics. This is facilitated by the structural topic model, which uses metadata on the document to account for variation in topics \citep{Roberts2014}. However, figure \ref{stm_results} shows that if anything, the STM exacerbates the problem. Here, we plot the \textit{p-values} of the coefficients for each city as well as the party variable across each topic. Under normal circumstances, plotting the p-values, as opposed to the fitted values, does not make much sense, but here it serves a diagnostic purpose. The plot shows that the party variable is never statistically significant at any conceivable level of confidence, nor is it even close to. Interestingly the same is true for a number of the cities as well. The topics cluster heavily into only about half of the cities, which does not present an improvement over LDA at all.
 
 \subsubsection{Prediction with SVM}
-An alternative approach to the problem is to ignore topics entirely, and go straight to predicting documents that are much more likely to be included on websites belonging to one or the other party. Classic machine learning techniques such as Naive Bayes, Linear Discriminant Analysis, or SVM should be expected to fare well in this context. Here, we rely on SVM, through three different implementations. The SciKitLearn package in Python, the e1071 package as well as the mlr package (relying on the kernlab package) in R. Predicting based on the document-term matrix (either in its regular form, or as its tf-idf representation), and using five-fold cros-validation, SciKitLearn produces a predictive accuracy of at most 78\%. Parameter tuning did not lead to any improvements. The e1071 package in R, relying on the top 5000 features ranked through tf-idf fared slightly better, at 82 percent correctly predicted. Finally, the mlr/kernlab implementation (as well as the e1071 implementation through mlr) has not worked at all so far, resulting in stack overflow errors (which appears to be due to memory limitations in R).
+An alternative approach to the problem is to ignore topics entirely, and go straight to predicting documents that are much more likely to be included on websites belonging to one or the other party. Classic machine learning techniques such as Naive Bayes, Linear Discriminant Analysis, or SVM should be expected to fare well in this context. Here, we rely on SVM, implemented with the SciKitLearn package in Python.\footnote{We also implemented SVM in R through the packages kernlab and e1071 in R. However, neither of these provide a regularized version of SVM (NOTE: at least that is what I am gathering from the stack overflow error), which prevents us from using all of the features contained in our data. Instead, we ranked the features according to tf-idf and selected the top 5000. These methods are also quite slow, and provide a maximum accuracy of 82\% in five-fold cross validation.} A grid search reveals the tf-idf representation of the document-term matrix to be better than pure word counts, unigrams to be superior to bi-grams, the application of an L2 penalty to be preferable to either L1 or elasticnet, and an alpha (a constant to multiply with the regularization parameter C) of 0.0005 to lead to the best results. Applying five-fold cross-validation to the (tf-idf) document-term matrix with the dimensions 16011x35000 leads to an average accuracy of 89\%.\footnote{Other methods used: Elastic-net in the glmnet package in R. Accuracy is 0.6924795 for in-sample prediction, so not worth bothering with.}
 
-Another point worth noting is that \cite{Monroe2008} advise against using these types of methods in this context because they get the data generation process backwards: Our theory assumes that party leads to variation in writing, and yet we rely on the documents to predict party, in spite of the fact that we actually have perfect knowledge of it.
+However, \cite{Monroe2008} advise against using these types of methods in this context because they get the data generation process backwards: Our theory assumes that party leads to variation in writing, and yet we rely on the documents to predict party, in spite of the fact that we actually have perfect knowledge of it.
 
-Other methods used: Elastic-net in the glmnet package in R. Accuracy is 0.6924795 for in-sample prediction, so not worth bothering with.
+\subsubsection{Informative Dirichlet model}
+Consequently we follow their recommendation to use the informative Dirichlet model they present in the paper \citep{Monroe2008}. This approach aims to account for the fact that some words naturally occur more than others by applying a Dirichlet prior based on the distribution of words in random text. Figure \ref{fightinwords} shows the top words for both Democrats and Republicans - and accomplishes, to some extent, the goal of \citep{Monroe2008} of banishing frequent words from this list and supplanting them by text with greater semantic, and in our case, partisan meaning. For Democrats, words related to public finances, such as 'fund', 'budget', or 'tax' are common - congruent with the party's greater willingness to raise and spend money publicly. Similarly, 'federal' 'funds' also appear among the Democratic top words. By contrast Republicans prefer to devote their attentions to purely local, and for the most part, logistic matters. 'Trees', 'water', 'street' and 'sign' appear on the list of Republican top words, suggesting that these mayors largely focus on city planning.
+
+These top words also show some degree of overlap with those determined by aggregating over topics in LDA.
 
 %Heatmaps
 \begin{figure}[!ht]
@@ -627,8 +630,16 @@ Other methods used: Elastic-net in the glmnet package in R. Accuracy is 0.692479
 	\includegraphics[width=\linewidth]{figures/fightinWords.png}
 \end{figure}
 
-%Partisan top words
+%Partisan top words - topic model
 \input{tables/partisanTopWords.tex}
+
+%Partisan top words - fightin words
+\input{tables/fightinwords.tex}
+
+%HOW TO DO THIS???
+%\begin{table}
+%	\input{tables/fightinwords.tex}
+%\end{table}
 
 %Some basic descriptive statistics of documents by party
 \input{tables/descriptiveStatisticsPartisan.tex}
