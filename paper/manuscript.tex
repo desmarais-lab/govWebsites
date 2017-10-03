@@ -119,13 +119,52 @@
 
 \begin{abstract}
 
-\noindent We explore the effect of transitions of power in municipal governments on the content of their websites. We hypothesize that when party control changes, city administrators modify the contents of their websites in order to fit the agenda of the new incumbent. To test this theory, we study cities in Indiana and Louisiana, two states in which all municipal elections are partisan and the parties of the candidates appear on the ballots. Snapshots of websites before and after transitions of power are acquired through the Wayback Machine. We apply statistical topic models based in latent dirichlet allocation, focusing on changes to the websites. We present results on both which topics see the greatest degree of change associated with transitions in city administrations, and how the topics modified differ with regard to political parties.
+Websites have become a prominent source of data for automated text analysis in political science. However, extant research lacks common standards and often glosses over the details on how such analyses are conducted, exposing itself to potential pitfalls associated with this process and making replication difficult. We develop a set of guidelines and procedures to be followed in order to produce valid results. In order to develop a valid research design, the appropriate selection of cases and URLs is crucial. For the acquisition of website data, we cover several scraping methods and difficulties that can arise in the process. Pre-processing is a common step in text analysis, but when websites are concerned, additional measures need to be taken in order to guard against potential sources of bias. Finally, we cover several methods of analysis and validation appropriate for this kind of data. These steps are illustrated through our creation and exploitation of a new and innovative dataset - the websites of local governments in Indiana and Louisiana. We show that if our methodology is followed appropriately, an association between mayoral partisanship and the content of their cities' websites becomes visible.
+
+%\noindent We explore the effect of transitions of power in municipal governments on the content of their websites. We hypothesize that when party control changes, city administrators modify the contents of their websites in order to fit the agenda of the new incumbent. To test this theory, we study cities in Indiana and Louisiana, two states in which all municipal elections are partisan and the parties of the candidates appear on the ballots. Snapshots of websites before and after transitions of power are acquired through the Wayback Machine. We apply statistical topic models based in latent dirichlet allocation, focusing on changes to the websites. We present results on both which topics see the greatest degree of change associated with transitions in city administrations, and how the topics modified differ with regard to political parties.
 
 \end{abstract}
 \thispagestyle{empty}
 % \doublespacing
 % Description of the possible challenges
 \section{Introduction}
+
+\subsection{New Research Design}
+The analysis of entire websites has become more prominent recently, especially in the the text-as-data movement. We see great promise in this development, especially as it pertains to the study of governmental branches and agencies, which are often resilient to being studied by other methods. However, this line of inquiry comes with a set of particular challenges and pitfalls researchers need to be mindful of. We offer solutions to these problems at the four stages of such an analysis.
+
+\begin{enumerate}
+	\item Design
+	\begin{enumerate}
+		\item Choosing the sample
+		\item Finding URLs
+		\item list of .gov websites
+		\item Finding supporting data
+	\end{enumerate}
+	\item Scraping
+		\begin{enumerate}
+			\item wget
+			\item headless browser/Selenium
+			\item Beautifulsoup/rvest
+			\item APIs (httr)
+			\item Wayback Machine
+		\end{enumerate}
+	\item Pre-processing
+		\begin{enumerate}
+			\item Determining document filetype
+			\item File conversion
+			\item Conventional preprocessing (lowercase, numbers, punctuation)
+			\item Stemming and lemmatization
+			\item spellchecking
+			\item Dealing with duplicate text \& html documents in particular
+		\end{enumerate}
+	\item Analysis
+		\begin{enumerate}
+			\item LDA
+			\item Other topic models (structural, author, dynamic -- maybe?)
+			\item SVM (+ other machine learning classifiers?)
+			\item Fightin Words
+		\end{enumerate}
+\end{enumerate}
 
 \section{Background}
 
@@ -219,6 +258,17 @@ There doesn't seem to be much literature on transitions of party control, if any
 \textbf{Why does the content of city websites matter?} According to \cite{Mayhew1974}, politicians engage in advertising, credit claiming and position taking in order to get re-elected. Official city websites allow mayors to do all three. Their offices frequently take a prominent position on the frontpage, and many websites also feature a picture of the candidate. In local politics, where campaign funds are low, this lends the incumbent a crucial advantage in becoming more well-known among her constituents. Furthermore, municipal politics gives incumbents clear and tangible achievements they can point to, such as completed infrastructure projects, the acquisition of federal or state funding, or the hosting of city-wide events. City websites present an opportunity for local officials to brandish these accomplishments. Finally, they also give mayors a platform from which they can advertise their political beliefs. On municipal websites, this may not manifest in the form of brazen partisanship, but more subtle avenues are available. As noted by \cite{Einstein2015a}, there are stark differences in the spending preferences of Democratic and Republican mayors. City websites can then be used to communicate the stance of a mayor on social or economic programs. Another advantage of websites with regard to communication is that unlike direct social interactions, officials have full control over them.
 
 In addition to the use of city websites for the politicians that control them, variance in content also matters  with regard to the people who visit them. Local residents likely rely on city websites to get news about events, hot-button political issues specific to their city, contact city officials or find out addresses or opening hours of city institutions. Visitors use city websites to look up local attractions, which are often described in great detail. Similarly, prospective residents looking to move, might rely on city websites to inform their decision on whether to relocate there. An inviting website emphasizing the city's receptiveness to new residents might make a real difference here. Finally, city websites frequently feature sections on business, but there is a lot of variance in this area: Some emphasize economic development, properties, or transportation, whereas others focus on undeveloped land and other business opportunities. Differences in websites likely say something about a city's economic profile, with potential repercussions for the political realm.
+
+\subsection*{Website Analysis}
+The literature making use of scraped websites clusters into a number of categories. One, and most pertinent to our own endeavors, the e-governance literature which discusses the online presence of governments from a usability and public service point of view. For the most part, research in this category develops a classification scheme to rate websites in terms of accessibility, ease-of-use and function, and then hand-codes a set of websites according to these criteria \citep{Urban2002,Armstrong2011,Feeney2017}. As an example, \cite{grimmelikhuijsen2012developing} study local government websites with the goal of uncovering how they aid the goal of transparency. To this end, they analyze a set of Dutch municipalities in which air quality had deteriorated. The authors test whether local governments provide citizens with information about potential complications and solutions associated with this issue. Like most e-government studies however, this publication does not make any use of automated text analysis.
+
+Websites have also played a major role in the field of media studies, as scholars have scraped and analyzed the online presence of newspapers, as well as the more diffuse world of online political blogs \citep{Adamic2005,Gentzkow2010}. \cite{Lin2011} provide a good example for a study which makes extensive use of automated content analysis - a necessity arising from its dataset of 66830 blog posts and 57221 online news articles. The authors estimate the political slant of these entities by counting the frequencies with which politicians of either side are mentioned and determine that blogs are generally more biased. Unfortunately for us, the authors don't go into the details of their text analysis, and offer no information on the acquisition and pre-processing of the data.
+
+Another well-known example fitting into this area of study is the set of studies conducted by King et al. \citep{KING2013,King2014,KING2017}, in which the authors study censorship by the country's government on its lively blogosphere. However, the authors also provide no information on how their data was collected ``our extensive engineering effort, which we do not detail here for obvious reasons [...]''.
+
+The websites of politicians and their parties have also fallen under scholarly scrutiny. Researchers have found that in order to identify the constituencies, motives and modes of communication of these actors, their websites can be very illuminating sources of information \citep{Druckman2009,Druckman2010,Cryer2017,Esterling2011,Esterling2011a,Norris2003,Therriault2010}. \cite{Druckman2009,Druckman2010} rely on the Mational Journal to find the websites, then hand-coded them. \cite{Cryer2017} provides fairly little information, but does mention the fact that she relied on Archive-it, the webservice of the Internet Archive we discussed recently. \cite{Esterling2011,Esterling2011a} rely on hand-coded data by the Congressional Management Foundation, a nonprofit organization which aims to assist Congress. \cite{Therriault2010} (a working paper) actually portends to use automated text analysis, and also has the most extensive overview of the associated methodology. However, the division of the website into sections (home page, topics, issues, details) is done by hand, and the actual analysis is incomplete. The author acquired the websites from the Library of Congress (which only collected them from legislators who actually consented, and Therriault notes that this causes nonrandom missingness).
+
+Importantly for us, research analyzing and improving the scraping, pre-processing and analysis methods of this literature is scarce. \cite{Eschenfelder2002} provide something of an overview of how how federal websites should be assessed from an e-governance point of view, but they largely focus on the substantive criteria that should be fulfilled, rather than the technical aspects of website acquisition and analysis.
 
 \section{Data}
 The General Services Administration (GSA) maintains all .gov addresses, and provides a complete\footnote{Domains used for testing and internal programs are excluded.} list of all such domains to the public through GitHub\footnote{https://github.com/GSA/data/tree/gh-pages/dotgov-domains}. This list is updated once per month - we rely on the version released on January 16, 2017. The data from the GSA contains the following variables: One, domain name, specifically, the all-uppercase version of domain and top-level domain (for example, 'ABERDEENMD.GOV'). Two, the type of government entity to which the domain is registered, such as city, county, federal agency, etc. Three, for federal agencies, the name is specfied. Finally, the city in which the domain is registered, is noted.
@@ -619,7 +669,7 @@ These top words also show some degree of overlap with those determined by aggreg
 	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
 	\caption{Results from a structural topic model, displayed as the p-values for each variable for each topic. This would normally be somewhat nonsensical, but here it illustrates why the model does not work.}
 	\label{stm_results}
-	\includegraphics[width=1.1\linewidth]{figures/stm_results.pdf}
+%	\includegraphics[width=1.1\linewidth]{figures/stm_results.pdf}
 \end{figure}
 
 %fightin words results
