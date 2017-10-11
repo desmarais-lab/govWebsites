@@ -37,8 +37,8 @@ louisiana$Website <- str_extract(louisiana$Website, "//(.*)") %>%
   str_replace_all("/", "")
 d <- merge(d, louisiana, by.x = "city", by.y = "Website")
 
-save(d, file = "rfiles/dLA.rdata")
-load("rfiles/dLA.rdata")
+save(d, file = "rfiles/dLA1.rdata")
+load("rfiles/dLA1.rdata")
 
 #Some preprocessing has to be done before cleaning, because otherwise dates mess it up:
 
@@ -213,7 +213,7 @@ save(d, file = "rfiles/dLA4.rdata")
 load("rfiles/dLA4.rdata")
 
 #merge in original file extension
-d <- merge(d, d2, "path", all.x = T, all.y = F)
+#d <- merge(d, d2, "path", all.x = T, all.y = F)
 
 #remove a few empty documents that ended up in there at some point
 d <- d[is.na(d$ext)==F,]
@@ -235,7 +235,7 @@ d$doc <- removeWords(d$doc, citynames)
 d <- d[!duplicated(d$doc)==T,]
 
 #remove stopwords with quanteda
-stopwords()
+#stopwords()
 d$doc <- removeWords(d$doc, stopwords())
 
 #update information on tokens
@@ -244,5 +244,5 @@ d$nuniquetokens <- sapply(d$doc, countUniqueTokens)
 d$tokenratio <- d$nuniquetokens/d$ntokens
 
 #save
-save(d, file = "rfiles/dLA6.rdata")
-load("rfiles/dLA6.rdata")
+save(d, file = "rfiles/dLA.rdata")
+load("rfiles/dLA.rdata")
