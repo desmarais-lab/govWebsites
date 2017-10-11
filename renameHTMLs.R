@@ -5,8 +5,11 @@ library('tools')
 library('tibble')
 library('stringr')
 library('dplyr')
+library('pbapply')
 
-filepath <- "./websites2/websites"
+state <- "LA" #IN or LA
+
+filepath <- str_c("./websites/scraping/", state, "/websites")
 
 ## Reading in the data
 f <- list.files(path = filepath, recursive = T) #create a list of all files in all subdirectories
@@ -25,13 +28,17 @@ d <- filter(d, filename != "")
 
 #we only care about files without ending
 d <- filter(d, ext == "")
-d$doc <- sapply(d$path, function(x){str_c(readLines(x)[1], sep = " ", collapse = " ")})
+library('parallel')
+cl <- makeForkCluster(detectCores()-1)
+d$doc <- pbsapply(d$path, function(x){str_c(readLines(x)[1], sep = " ", collapse = " ")}, cl = cl)
+stopCluster(cl)
 d$doc <- as.character(d$doc)
 
-#delete all files that are not htmls without an ending
-d$ext[d$doc=="<!DOCTYPE html>"] <- ".html"
-d <- filter(d, ext == ".html")
-d$newpath <- str_c(d$folder, d$filename, d$ext)
+#delete all files that are not htmls or pdfs without an ending from the data frame
+d$ext[str_detect(d$doc, regex("DOCTYPE html", ignore_case = T))] <- ".html"
+d$ext[str_detect(d$doc, regex("PDF", ignore_case = T))] <- ".pdf"
+d <- filter(d, ext != "")
+d$newpath <- str_c(d$folder, "/", d$filename, d$ext)
 
 #rename
 library('purrr')

@@ -54,6 +54,10 @@ paper/figures/coverage_states.pdf: data/govWebsitesVerifiedCensus.Rdata data/sub
 #snapshotsDates:
 #	R CMD BATCH govWebsitesSnapshotsDates.R
 
+#---------------------------------------------------------------------
+#Anything before this is not really relevant to the topic modeling etc.
+#---------------------------------------------------------------------
+
 #scrape Louisiana website URLs from Wikipedia
 data/LouisianaWebsiteURLs.rdata:
 	R CMD BATCH scrapeLousianaWebsites.R
@@ -63,8 +67,18 @@ data/indianaWebsiteURLs.rdata:
 	R CMD BATCH scrapeIndianaWebsites.R
 
 #combine the URLs from different sources
-data/URLs_IN.rdata: data/louisianaWebsiteURLs.rdata data/indianaWebsiteURLs.rdata data/govWebsitesVerifiedCensus.Rdata data/indianaElections2015.rdata data/LEAP_Louisiana_All_Offices_neumann.xlsx
-	R CMD BATCH combineURLs.R
+#data/URLs_IN.rdata: data/louisianaWebsiteURLs.rdata data/indianaWebsiteURLs.rdata data/govWebsitesVerifiedCensus.Rdata data/indianaElections2015.rdata data/LEAP_Louisiana_All_Offices_neumann.xlsx
+#	R CMD BATCH combineURLs.R
+## OLD
+
+#REPLACED BY:
+#Indiana: combine scraped election data with URLs
+data/URLs_IN.rdata: data/indianaWebsiteURLs.rdata data/govWebsitesVerifiedCensus.Rdata data/indianaElections2015.rdata
+	R CMD BATCH Indiana.R
+
+#Louisiana: combine Leap election data with URLs
+data/louisiana.rdata: data/louisianaWebsiteURLs.rdata data/govWebsitesVerifiedCensus.Rdata data/LEAP_Louisiana_All_Offices_neumann.xlsx
+	R CMD BATCH Louisiana.R
 
 #produce Latex tables with filetypes of websites
 #also produce Latex table of number of files and size of sites
@@ -78,6 +92,15 @@ filetypes.tex filenumbers.tex: data/URLs_IN.rdata
 #scrapeLousianaURLsGoogle:
 #	findLouisianaWebsites.py
 
+#Download websites with wget
+scrape: data/URLs_IN.rdata data/louisiana.rdata
+	R CMD BATCH wgetINLA.R
+
+
+#Rename files that are htmls or pdfs but don't have the appropriate ending
+rename:
+	Rscript renameHTMLs.R
+
 #TWO WAYS to parse the websites:
 #USE ONLY ONE
 
@@ -89,8 +112,20 @@ filetypes.tex filenumbers.tex: data/URLs_IN.rdata
 #docx2txt (https://www.archlinux.org/packages/community/any/docx2txt/)
 #pdftotext (contained in many Unix pdf readers such as poppler, or xpdf)
 #html2text (https://aur.archlinux.org/packages/html2text-with-utf8)
-convertEverything:
-	./websites/batchconversion.sh
+
+#Copy the conversion shell scripts to the folders
+copyScriptsLA:
+	cp ./shellscripts/{batchconversion.sh,batchconversion_doc.sh,batchconversion_docx.sh,batchconversion_pdf.sh,batchconversion_html.sh} ./websites/scraping/LA/
+
+copyScriptsIN:
+	cp ./shellscripts/{batchconversion.sh,batchconversion_doc.sh,batchconversion_docx.sh,batchconversion_pdf.sh,batchconversion_html.sh} ./websites/scraping/IN/
+
+#Convert doc/docx/pdf/html files to txt
+convertLA:
+	./websites/scraping/LA/batchconversion.sh
+
+convertIN:
+	./websites/scraping/IN/batchconversion.sh
 
 #2. Kenneth Benoits readtext package for R
 #convertEverythingR:
@@ -98,24 +133,18 @@ convertEverything:
 
 #only one of the above is necessary
 
-#Preprocessing for mallet
+#Preprocessing
+
+dLA.rdata:
+	Rscript malletPreprocessingLA.rdata
+
+d.rdata:
+	Rscript malletPreprocessing.rdata
+
 #this will also call the hunspell spellchecking
-#the hunspell spellchecking takes a long time (i.e. 14 hours on 6 cores)
-rfiles/d.Rdata:
-	R CMD BATCH malletPreprocessing
+paper/figures/wtp_current_dem_rep.pdf: data/URLs_IN.rdata
+	R CMD BATCH mallet.R
 
-#Train mallet
-#Note that this file doesn't generate any output,
-#and should therefore only used in conjunction with other files that source() it
-#malletTraining.R
-
-#Analyse which topics are partisan
-paper/figures/partisanTopics_all.pdf: rfiles/d.Rdata malletTraining.R
-	R CMD BATCH malletAnalysisPartisanTopics.R
-
-#find and write to file example docs typical for each topic
-exampleDocuments: rfiles/d.Rdata malletTraining.R malletAnalysisPartisanTopics.R
-	R CMD BATCH exampleDocuments.R
 
 #compile Latex
 # -c option cleans up nonessential results except pdf
