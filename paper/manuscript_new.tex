@@ -142,14 +142,14 @@ Running example: Why did we pick Indiana and Louisiana?
 
 Running example: Our URLs are partially from the General Services Administration (GSA), and partially from Wikipedia. The GSA data can easily downloaded from GitHub, but contains some errors. To at least verify which parts of it work, we open each url in an automatized browser, and test whether it leads to a valid website as well as record the URL it redirects to. An explanation of this process is provided in section \ref{selenium}. Scraping URLs from Wikipedia will be explained in section \ref{htmlparsing}.
 
-\textbf{Current scripts:}
+\textbf{Current scripts:} scrapeLousianaWebsites.R, scrapeIndianaWebsites.R (gets URls from Wikipedia), Indiana.R, Louisiana.R (combine Wikipedia and GSA URLs)
 
 %Wikipedia is also a good source for URLs, because it has lists of cities, most of which have
 
 \subsection{Supporting Data}
 In our case, this would be the Census and election data. However, this is incredibly case-dependent, so I am not sure whether this really needs its own section.
 
-\textbf{Current scripts}: cityCoordinates.R (scrapes city coordinates from Wikipedia), combineURLs.R (combines Census with GSA data)
+\textbf{Current scripts}: cityCoordinates.R (scrapes city coordinates from Wikipedia), mapIndiana.R, combineURLs.R (combines Census with GSA data)
 
 \section{Scraping Websites}
 \subsection{wget}
@@ -194,6 +194,8 @@ To provide an example, we could do what we planned to do, but just for one large
 
 The implementation of this whole part would be a bit of a problem, since we are currently using a Ruby package, and from what I can tell looking at its code, I am not sure if I have the engineering skills to translate it to R.
 
+\textbf{Current scripts}: internetarchive\_webarchive.R
+
 \section{Pre-processing}
 \subsection{Determining document filetype}
 Determining the format of a file is usually as simple as looking at its file ending. However, not all files scraped from websites actually have endings. Simply discarding these files would lead to a large and completely unnecessary reduction in the size of the corpus. Similarly, xml files are sometimes labeled as html, which, if parsed as such, will lead to the introduction of a set of words into the corpus that have absolutely nothing to do with a website's content. Consequently it is imperative to determine a document's type by reading in its first couple of lines and extracting the tag revealing its type. In our running example, this leads to an increase of the corpus by X\% for Indiana and Y\% for Louisiana.
@@ -215,28 +217,30 @@ Functions: wrapper for readtext
 
 \textbf{Package}: Wrapper for quanteda and/or tm package
 
-\textbf{Current scripts}: All of the preprocessing from section \ref{preprocessing_conventional} to \ref{preprocessing_duplicates} is currently done in malletPreprocessing.R (which doesn't require mallet anymore, so it's a bit of a misnomer).
+\textbf{Current scripts}: All of the preprocessing from section \ref{preprocessing_conventional} to \ref{preprocessing_duplicates} is currently done in malletPreprocessing.R and malletPreprocessingLA.R (which doesn't require mallet anymore, so it's a bit of a misnomer).
 
 \subsection{Stemming and/or lemmatization}
 We're currently not doing this and I am wondering if we will get spanked for it by reviewers.
 
 \subsection{Spellchecking}
 
-\textbf{Current scripts}: malletPreprocessing.R
+\textbf{Current scripts}: malletPreprocessing.R, malletPreprocessingLA.R, hunspellParallel.R
 
 \subsection{Dealing with duplicate text \& documents \& html documents in particular} \label{preprocessing_duplicates}
 
-\textbf{Current scripts}: malletPreprocessing.R
+\textbf{Current scripts}: malletPreprocessing.R, malletPreprocessingLA.R
 
 \section{Analysis}
 \subsection{LDA}
 
 Diagnostics: Topic coherence, optimal number of topics according to Arun et al. (2010).
 
-\textbf{Current scripts}: exampleDocuments.R
+\textbf{Current scripts}: exampleDocuments.R, topicCoherence.R, topicCoherenceNew.R, topicCoherenceTop10Topics.R, ldatuning.R (optimal number of topics), malletAnalysis.R, malletAnalysisDocumentEntropy.R, malletAnalysisHeatmap.R, malletAnalysisLA.R, malletAnalysisPartisanTopWords.R, malletAnalysisPartisanTopWordsLA.R, malletAnalysisPartisanTopics.R, malletAnalysisPartisanTopicsLA.R, malletTestParameters.R, malletTopWords.R, malletTraining.R
 
 \subsection{Other topic models}
 STM, could also mention author-topic and dynamic topic model.
+
+\textbf{Current scripts}: stmAnalysis.R
 
 \subsection{Machine Learning Classifiers (SVM)}
 Phil Schrodt and Glenn Palmer (+2 other people) wrote a whole paper on why SVM is good for text data, we should cite this here.
@@ -245,7 +249,7 @@ We can also mention l1/l2 penalty / elasticnet here.
 
 Since the scikitlearn implementations of SVM and elasticnet seem much better than the ones available for R, what do we do here, package-wise?
 
-\textbf{Current scripts}: svmSKLN.ipynb (Indiana), svmSKLNLA.ipynb (Louisiana), elasticNet.R (Indiana)
+\textbf{Current scripts}: svmSKLN.ipynb (Indiana), svmSKLNLA.ipynb (Louisiana), elasticNet.R (Indiana), elasticSKLN.ipynb (Indiana), predictPartisanDocuments.R, predictPartisanDocumentsMLR.R
 
 \subsection{Fightin' Words}
 Make a table comparing the top 50 words for Democrats/Republicans produced by LDA, SVM and Fightin' Words. Probably goes in the appendix.
