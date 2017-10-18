@@ -28,7 +28,7 @@ source('functions/feature_selection_fixed.R')
 
 #feature selection
 fs <- feature_selection(cgt, 
-                        rows_to_compare = c(4,1), #Democrat first so it gets colored blue
+                        rows_to_compare = c(1,4), #Democrat first so it gets colored blue
                         method = "informed Dirichlet")
 
 #make the funnel plot
