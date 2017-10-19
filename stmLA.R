@@ -7,9 +7,9 @@ library('stringr')
 load("rfiles/dLA.rdata")
 
 #get the data ready for preprocessing
-docsIN <- d$doc
+docsLA <- d$doc
 meta <- subset(d, select = c('City', 'winner'))
-processed <- textProcessor(docsIN, metadata = meta)
+processed <- textProcessor(docsLA, metadata = meta)
 out <- prepDocuments(processed$documents, processed$vocab, processed$meta)
 docs <- out$documents
 vocab <- out$vocab
@@ -33,7 +33,7 @@ prep <- estimateEffect(1:numtopics ~ winner, stmFit,
                        meta = out$meta, uncertainty = "Global")
 
 #save the results, since training takes some time
-save.image('rfiles/stmSession2.RData')
+save.image('rfiles/stmSessionLA_Party.RData')
 
 # Analyze results
 a <- summary(prep)
