@@ -50,4 +50,16 @@ zscoretable <- tibble::tibble(DemocraticWord = fs$Democratic_Democratic$term[1:5
                               RepublicanWord = fs$Republican_Republican$term[1:50],
                               RepublicanScore = fs$Republican_Republican$z_scores[1:50])
 
-writeLines(print.xtable(xtable(zscoretable), include.rownames = F), con = 'paper/tables/fightinwords.tex')
+xt <- xtable(zscoretable,
+             caption = "Top 50 democratic and Republican words (Indiana), according to the informed 
+             Dirichlet model of Monroe et al. (2008).",
+             label = "tabFightinIN")
+
+names(xt) <- c("Word (D)", "z-Score (D)", "Word (R)", "z-Score (R)")
+
+xt <- print.xtable(xt, 
+                   include.rownames = F,
+                   size = "\\fontsize{9pt}{10pt}\\selectfont")
+
+writeLines(xt, 
+           con = 'paper/tables/fightinwordsIN.tex')

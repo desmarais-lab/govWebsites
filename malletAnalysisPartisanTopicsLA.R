@@ -1,4 +1,4 @@
-source('malletTraining.R')
+source('malletTrainingLA.R')
 
 library('tibble')
 library('stringr')

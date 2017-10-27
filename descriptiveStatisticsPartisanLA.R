@@ -1,10 +1,10 @@
 #setwd("govWebsites")
 library('xtable')
 
-load('rfiles/d.Rdata')
+load('rfiles/dLA.rdata')
 
 #Number of cities per party
-ncities <- xtabs(~ Name + winner, d)
+ncities <- xtabs(~ City + winner, d)
 ncities[ncities!=0] <- 1
 ncities <- colSums(ncities)
 
@@ -16,7 +16,7 @@ table1 <- ncities
 #unique(d2$Name[is.na(d2$POPESTIMATE2015)==T])
 
 #Number of documents per party
-ndocs <- colSums(xtabs(~ Name + winner, d))
+ndocs <- colSums(xtabs(~ City + winner, d))
 
 table1 <- rbind(table1, ndocs)
 
@@ -26,7 +26,7 @@ ntokensR <- sum(d$ntokens[d$winner=="Republican"])
 
 table1 <- rbind(table1, c(ntokensD, ntokensR))
 
-source('malletAnalysisPartisanTopics.R')
+source('malletAnalysisPartisanTopicsLA.R')
 
 #Number of token assignments
 ntokenaD <- sum(democratic)
@@ -39,21 +39,15 @@ table1 <- rbind(table1, ntopics)
 
 rownames(table1) <- c("Cities", "Documents", "Tokens", "Token assignments", "Topics")
 
-writeLines(print.xtable(xtable(table1, digits = 0)), 'paper/tables/descriptiveStatisticsPartisan.tex')
-
 xt <- xtable(table1,
              digits = 0,
-             caption = "Top 50 Democratic and Republican words (Indiana), according to LDA. 
-             Topic ownership is determined by the ratio of Democratic to Republican tokens in 
-             it (both weighted by the total number of tokens per party). The instances of each 
-             token type are then summed across all topics owned by the party.",
-             label = "tabLDAIN")
+             caption = "Descriptive statistics for Louisiana. ``Tokens'' describes the number
+             of words in each party's documents, ``token assignments'' the tokens assigned
+             to each party in the topic model depending on the ratio of Democratic to Republican 
+             tokens in it (both weighted by the total number of tokens per party).",
+             label = "tabDescriptiveLA")
 
-names(xt) <- c("Word (D)", "Instances (D)", "Word (R)", "Instances (R)")
-
-xt <- print.xtable(xt, 
-                   include.rownames = F,
-                   size = "\\fontsize{9pt}{10pt}\\selectfont")
+xt <- print.xtable(xt)
 
 writeLines(xt, 
            con = 'paper/tables/descriptiveStatisticsPartisanLA.tex')

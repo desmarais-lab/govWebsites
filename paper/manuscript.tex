@@ -675,7 +675,7 @@ These top words also show some degree of overlap with those determined by aggreg
 %fightin words results
 \begin{figure}[!ht]
 	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
-	\caption{Top democratic and Republican words (Indiana), according to the informed Dirichlet model of Monroe et al. (2008).}
+	\caption{Top democratic and Republican words (Indiana), according to the informed Dirichlet model of Monroe et al. (2008). Ordering is top to bottom for Democrats, and vice versa for Republicans.}
 	\label{fightinwords}
 	\includegraphics[width=\linewidth]{figures/fightinWords.png}
 \end{figure}
@@ -683,30 +683,34 @@ These top words also show some degree of overlap with those determined by aggreg
 %fightin words results
 \begin{figure}[!ht]
 	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
-	\caption{Top democratic and Republican words (Louisiana), according to the informed Dirichlet model of Monroe et al. (2008).}
+	\caption{Top democratic and Republican words (Louisiana), according to the informed Dirichlet model of Monroe et al. (2008). Ordering is top to bottom for Democrats, and vice versa for Republicans.}
 	\label{fightinwordsLA}
 	\includegraphics[width=\linewidth]{figures/fightinWordsLA.png}
 \end{figure}
 
-%Partisan top words - topic model
-\input{tables/partisanTopWords.tex}
+%Partisan top words - topic model Indiana
+\input{tables/partisanTopWords.tex} %\ref{tabFightinIN}
 
-%Partisan top words - fightin words
-\input{tables/fightinwords.tex}
+%Partisan top words - topic model Louisiana
+\input{tables/partisanTopWordsLA.tex} %tabLDALA
 
-%Partisan top words - topic model
-\input{tables/partisanTopWordsLA.tex}
+%Partisan top words - fightin words Indiana
+\input{tables/fightinwordsIN.tex} %\ref{tabFightinIN}
 
-%Partisan top words - fightin words
-\input{tables/fightinwordsLA.tex}
+%Partisan top words - fightin words Louisiana
+\input{tables/fightinwordsLA.tex} %\ref{tabFightinLA}
 
-%HOW TO DO THIS???
-%\begin{table}
-%	\input{tables/fightinwords.tex}
-%\end{table}
+%Partisan top words - stm Indiana
+\input{tables/stmTopWordsIN.tex} %\ref{tabSTMLA}
+
+%Partisan top words - stm Louisiana
+\input{tables/stmTopWordsLA.tex} %\ref{tabSTMLA}
 
 %Some basic descriptive statistics of documents by party
-\input{tables/descriptiveStatisticsPartisan.tex}
+\input{tables/descriptiveStatisticsPartisanIN.tex}
+
+%Some basic descriptive statistics of documents by party
+\input{tables/descriptiveStatisticsPartisanLA.tex}
 
 \newpage
 
