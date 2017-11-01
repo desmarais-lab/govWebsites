@@ -72,21 +72,28 @@ d$doc <- pbsapply(d$doc, removeNumbers)
 save(d, file = "rfiles/dLA2.rdata")
 load("rfiles/dLA2.rdata")
 
+
 ### INTERESTING STUFF AFTER THIS
 
-citytable <- sapply(unique(d$City), function(x){length(d$doc[d$City==x])})
+library('hashmap')
+library('profvis')
+#library('pbapply')
+
+#remove cities with only 1 document (since that breaks the whole hashtable thing)
+d <- d[!d$City %in% names(table(d$City)[table(d$City)<2]),]
+
+#create a table of the number of documents for each city
+citytable <- table(d$City)
 citynames <- d$City
 
-#create a list to store the duplicated row indicies for each document in
-#ever list element is a numeric vector, and each element of this vector indicates
-## how many times this line in the document occurs in other documents of this city
-docDuplicates <- list()
-
-#function to count how many times a line also appears in other documents of the same city
-duplicatedLines <- function(k){
+#iterate over cities, creating a list for each
+#each of these lists contains one numerical vector for each document
+#each vector contains one element for each line in the document
+#each of these elements denominates the number of times that line occurs within the city
+proc_city <- function(j){
   
   #what's the name of the current city
-  cityname <- citynames[k]
+  cityname <- names(citytable)[j]
   #what is the index of the city in the list of cities
   citytableindex <- as.numeric(which(names(citytable)==cityname))
   #determine which row the city starts on
@@ -95,29 +102,58 @@ duplicatedLines <- function(k){
   citylength <- as.numeric(citytable[citytableindex])
   #which indices belong to this city?
   cityindices <- citystart:(citystart+citylength-1)
-  #remove the one for this particular document
-  cityindices <- cityindices[cityindices!=k]
-  #for each document, create the vector indicating the number of times a line occurs elsewhere
-  b <- numeric(length = length(d$doc[[k]]))
-  #loop over all other documents
-  for(i in cityindices){
-    #check against one other document
-    a <- match(d$doc[[k]], d$doc[[i]])
-    #if there is a match, advance duplicate counter by one
-    b[is.na(a)==F] <- b[is.na(a)==F]+1
+  
+  #---
+  #up until here, we basically just get the indices for the city within the data frame
+  #the next part is the hashmap
+  
+  #concatenate documents of the current city
+  lines <- unlist(d$doc[cityindices])
+  names(lines) <- 1:length(lines)
+  
+  #initialize a hashmap
+  #the key/value generated here doesn't matter, I never use it
+  HH <- hashmap('INIT', -1)
+  
+  #for each in the city's documents...
+  for(i in 1:length(lines)){
+    #look for the key and see if it already has a value (i.e. the count)
+    value <- HH[[lines[i]]]
+    if(is.na(value)) {
+      value = 1L #if not, make it 1
+    } else {
+      value = value + 1L #if yes, add 1
+    }
+    #then add the result back into the hashmap
+    HH$insert(lines[i], value)
+    
   }
-
-  return(b)
+  
+  #make a quick and dirty function to find the lines...
+  #... of one document and get the respective values from the hashmap
+  duplicateLinesHH <- function(k){
+    return(HH$find(d$doc[cityindices][[k]]))
+  }
+  
+  #do this for all the documents, creating a list of vectors
+  #one vector for each document
+  #each of which contains the number of times a line in that document is present in the city
+  docDuplicatesHH <- lapply(1:nrow(d[cityindices,]), duplicateLinesHH)
+  
+  return(docDuplicatesHH)
+  
 }
 
-#Non-parallelized version
-#docDuplicates <- pbsapply(1:nrow(d), duplicatedLines)
-
-#Parallelized version
+#iterate over all cities; parallelize
+#this creates a list of lists, one for each city
 library('parallel')
-cl <- makeForkCluster(detectCores()-1)
-docDuplicates <- pbsapply(1:nrow(d), duplicatedLines, cl = cl)
+cl <- makeForkCluster(11) #detectCores()-1
+docDuplicates <- pbsapply(1:length(citytable), proc_city, cl = cl)
 stopCluster(cl)
+
+#unlist only the outer list
+docDuplicates <- unlist(docDuplicates, recursive = F)
+
 
 #This takes about half a day (without parallelization), so back up the results
 save(docDuplicates, file = "rfiles/docDuplicatesLA.Rdata")
