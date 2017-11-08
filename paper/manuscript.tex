@@ -105,7 +105,7 @@
 \title{\vspace{-2cm} The effects of transitions of power on the contents of municipal government websites }
 
 
-\author{ Markus Neumann \and Bruce Desmarais \and Hanna Wallach} \date{\today}
+\author{ Markus Neumann \and Bruce Desmarais \and Hanna Wallach \and Fridolin Linder} \date{\today}
 
 
 
@@ -711,6 +711,30 @@ These top words also show some degree of overlap with those determined by aggreg
 
 %Some basic descriptive statistics of documents by party
 \input{tables/descriptiveStatisticsPartisanLA.tex}
+
+%fightin words results
+\begin{figure}[!ht]
+	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
+	\caption{Total number of lines retained at a given threshold for removing duplicated lines. For example, at x = 10, all lines occurring more than 10 times within a city's documents are removed.}
+	\label{linesCutoff}
+	\includegraphics[width=\linewidth]{figures/linesCutoffIN.pdf}
+\end{figure}
+
+%Clustering
+\begin{figure}[!ht]
+	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
+	\caption{Hierarchical clustering (Indiana).}
+	\label{hclustIN}
+	\includegraphics[width=\linewidth]{figures/clusteringIN.png}
+\end{figure}
+
+%Clustering
+\begin{figure}[!ht]
+	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
+	\caption{Hierarchical clustering (Louisiana).}
+	\label{hclustLA}
+	\includegraphics[width=\linewidth]{figures/clusteringLA.png}
+\end{figure}
 
 \newpage
 

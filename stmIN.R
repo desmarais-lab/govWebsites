@@ -29,91 +29,6 @@ stmFit <- stm(documents = out$documents, vocab = out$vocab,
               init.type = "Spectral")
 
 #Estimate effects from the model outputs
-prep <- estimateEffect(1:numtopics ~ winner, stmFit,
-                       meta = out$meta, uncertainty = "Global")
-
-#save the results, since training takes some time
-#the results are so large, we only retain the
-#objects necessary for the rest of the analysis
-rm(list = ls()[!ls()%in% c("stmFit", "prep", "out", "numtopics")])
-save.image('rfiles/stmSessionIN_Party.RData')
-load('rfiles/stmSessionIN_Party.RData')
-
-# Analyze results
-a <- summary(prep)
-
-#coefficient is in Republican direction
-coefs <- data.frame(topic = 1:60, coefficient = 0, pval = 0)
-for(i in 1:nrow(coefs)){
-  coefs$coefficient[i] <- a$tables[[i]][2]
-  coefs$pval[i] <- a$tables[[i]][8]
-}
-
-#order by coefficient size
-coefs <- coefs[order(coefs$coefficient, decreasing = T),]
-
-#only keep coefficients that are statistically significant at 95% level
-coefs <- coefs[coefs$pval<0.05,]
-
-#most Republican/Democratic topics, determined by coefficient size
-repTopics <- coefs$topic[1:5]
-demTopics <- coefs$topic[(nrow(coefs)-4):nrow(coefs)]
-
-#topicLabels
-repWords <- labelTopics(stmFit, n = 10)
-repWords <- repWords$prob[repTopics,]
-repWords <- as.vector(repWords)
-
-demWords <- labelTopics(stmFit, n = 10)
-demWords <- demWords$prob[demTopics,]
-demWords <- as.vector(demWords)
-
-library("xtable")
-
-xt <- data.frame(Democratic = demWords, Republican = repWords)
-
-xt <- xtable(xt,
-             caption = "Top 50 Democratic and Republican words (Indiana), according to STM. 
-             The words are the top words for the most Democratic/Republican topic, determined
-             by the size (and significance) of the coefficient of the party covariate.",
-             label = "tabSTMIN")
-
-xt <- print.xtable(xt, 
-                   include.rownames = F,
-                   size = "\\fontsize{9pt}{10pt}\\selectfont")
-
-writeLines(xt, 
-           con = 'paper/tables/stmTopWordsIN.tex')
-
-#reshape the results into a format that can be used with ggplot
-#ab <- lapply(a$tables, function(X){X[,4]})
-#abc <- do.call(cbind, ab)
-#abc <- as.data.frame(abc)
-#abc$Variable <- rownames(abc)
-#abc <- gather(abc, key = topic, value = pvalue, -Variable)
-#abc$Variable <- str_replace(abc$Variable, "Name", "")
-#abc$Variable <- str_replace(abc$Variable, "winnerRepublican", "_party (Republican)")
-
-#ggplot heatmap
-#ggplot(abc, aes(x = topic, y = as.factor(Variable), fill = pvalue)) + 
-#  geom_tile() +
-#  scale_y_discrete(limits = rev(levels(as.factor(abc$Variable)))) +
-#  theme(axis.text.x=element_blank()) +
-#  labs(x = "Topic", y = "Variable") +
-#  labs(fill='p-value')
-#ggsave("paper/figures/stm_results.pdf", width = 8, height = 6)
-
-
-
-#Credible interval
-
-#1. Take 1000 draws from the posterior
-#2. Decide on a level of confidence, here 1%
-#3. For each topic, from the 1000 estimated coefficients, take the ones
-## lying between its 0.005 and .995 quantile
-#4. If this range of values does not include 0, it the coefficient is statistically significant
-#5. Take the mean from these values to get the estimated coefficient?
-
 sims <- 1000
 
 #re-estimate the effects, this time do 1000 draws from the posterior
@@ -122,6 +37,13 @@ prep <- estimateEffect(formula = 1:numtopics ~ winner,
                        meta = out$meta, 
                        uncertainty = "Global",
                        nsims = sims)
+
+#save the results, since training takes some time
+#the results are so large, we only retain the
+#objects necessary for the rest of the analysis
+rm(list = ls()[!ls()%in% c("stmFit", "prep", "out", "numtopics")])
+save.image('rfiles/stmSessionIN_Party.RData')
+load('rfiles/stmSessionIN_Party.RData')
 
 #make a dataframe to store the results in
 df <- data.frame(coef = rep(0, numtopics), sig = rep(FALSE, numtopics),
@@ -155,19 +77,6 @@ for(j in 1:numtopics){
 
 #number of significant topics
 sum(df$sig)
-
-#Get the indices of the highest/lowest values
-#whichMinMax <- function(x, n = 5, minmax = "max"){
-#  dframe <- data.frame(x = x, ind = 1:length(x))
-#  if(minmax == "max"){
-#    dframe <- dframe[order(dframe$x, decreasing = T),]
-#    return(dframe$ind[1:n])
-#  }
-#  if(minmax == "min"){
-#    dframe <- dframe[order(dframe$x, decreasing = F),]
-#    return(dframe$ind[1:n])
-#  }
-#}
 
 #sort data frame by coefficient size
 df <- df[order(df$coef, decreasing = T),]
@@ -204,16 +113,37 @@ save.image('rfiles/stmIN.RData')
 
 library("xtable")
 
-xt <- xtable(xt,
-             caption = "Top 50 Democratic and Republican words (Indiana), according to STM. 
+strCaption <- "Top 50 Democratic and Republican words (Indiana), according to STM. 
              The words are the top words for the most Democratic/Republican topic, determined
-             by the size (and significance) of the coefficient of the party covariate.",
-             label = "tabSTMIN",
-             digits = 3)
+             by the size (and significance) of the coefficient of the party covariate."
 
-xt <- print.xtable(xt, 
-                   include.rownames = F,
-                   size = "\\fontsize{9pt}{10pt}\\selectfont")
+xt <- print(xtable(xt, digits = 3,#digits = c(0, 3, 0, 3, 1, 0, 6), # first zero "represents" row numbers which we skip later
+                   align = "lccr|ccr",  # align and put a vertical line (first "l" again represents column of row numbers)
+                   caption = strCaption, label = "tabSTMIN"),
+            size = "footnotesize", #Change size; useful for bigger tables "normalsize" "footnotesize"
+            include.rownames = FALSE, #Don't print rownames
+            include.colnames = FALSE, #We create them ourselves
+            caption.placement = "top", #"top", NULL
+            hline.after=NULL, #We don't need hline; we use booktabs
+            floating=TRUE, # whether \begin{Table} should be created (TRUE) or not (FALSE)
+            sanitize.text.function = force, # Important to treat content of first column as latex function
+            add.to.row = list(pos = list(-1,
+                                         seq(nTopWords, (nrow(xt)-nTopWords), by = nTopWords),
+                                         nrow(xt)),
+                              command = c(paste("\\toprule \n",  # NEW row
+                                                #"\\multicolumn{2}{c}{} & \\multicolumn{2}{c}{\\textbf{colLabel1}} & \\multicolumn{2}{c}{colLabel2} \\\\\n",
+                                                "\\multicolumn{3}{c}{\\textbf{Democratic}} & \\multicolumn{3}{c}{\\textbf{Republican}} \\\\\n",
+                                                "\\cmidrule(l){1-3} \\cmidrule(l){4-6}\n",
+                                                " Topic & Coefficient & Word & Topic & Coefficient & Word \\\\\n", # NEW row 
+                                                "\\midrule \n"
+                              ),
+                              paste("\\cmidrule(l){1-3} \\cmidrule(l){4-6}\n" # we may also use 'pos' and 'command' to add a midrule
+                              ),
+                              paste("\\bottomrule \n"  # paste is used as it is more flexible regarding adding lines
+                              )
+                              )
+            )
+)
 
 writeLines(xt, 
            con = 'paper/tables/stmTopWordsIN.tex')

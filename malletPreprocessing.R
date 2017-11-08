@@ -6,6 +6,9 @@ library('tm')
 library('dplyr')
 library('quanteda')
 library('hunspell')
+library('ggplot2')
+library('hashmap')
+library('profvis')
 
 corpus <- "current" #"current", "before", or "after"
 filepath <- str_c("./websites/", corpus)
@@ -65,14 +68,14 @@ d$doc <- pbsapply(d$doc, removePunctuation)
 #Remove numbers
 d$doc <- pbsapply(d$doc, removeNumbers)
 
-### INTERESTING STUFF AFTER THIS
-
-library('hashmap')
-library('profvis')
-#library('pbapply')
+## REMOVING DUPLICATE LINES:
 
 #remove cities with only 1 document (since that breaks the whole hashtable thing)
 d <- d[!d$Name %in% names(table(d$Name)[table(d$Name)<2]),]
+
+#save
+save(d, file = "rfiles/dIN2.rdata")
+load("rfiles/dIN2.rdata")
 
 #create a table of the number of documents for each city
 citytable <- table(d$Name)
@@ -198,18 +201,20 @@ docDuplicates <- unlist(docDuplicates, recursive = F)
 #NOT ANY MORE
 #Takes three minutes now (with parallelization, 15 without)
 
-save(docDuplicates, file = "rfiles/docDuplicates.Rdata")
-load("rfiles/docDuplicates.Rdata")
+save(docDuplicates, file = "rfiles/docDuplicatesHash.Rdata")
+load("rfiles/docDuplicatesHash.Rdata")
+#load("rfiles/dIN2.rdata")
 
 #function to decide whether a line in a document is kept
 #currently, this happens if it occurs no more than 10 times in other city docs
 #also concatenates the documents into character vectors (since they were lists of lines so far)
-cleanup <- function(i){
-  keep <- which(docDuplicates[[i]]<=10)
+cleanup <- function(i, k = 10){
+  keep <- which(docDuplicates[[i]]<=k)
   cleanedDoc <- str_c(d$doc[[i]][keep], collapse = " ")
   return(cleanedDoc)
 }
-#sapply said function (with a progress bar) on the whole corpus
+
+#use the function (with a progress bar) on the whole corpus
 d$doc <- as.character(pbsapply(1:nrow(d), cleanup))
 
 
@@ -255,7 +260,7 @@ d <- d[d$doc!="character",]
 d <- d[!nchar(d$doc)<50,]
 
 #save results
-save(d, file = "./rfiles/d_noduplicates2.Rdata")
+#save(d, file = "./rfiles/d_noduplicates2.Rdata")
 
 #remove weird non-utf-8 characters
 ## ... by removing anything that's not a regular word
@@ -286,17 +291,17 @@ d <- d[d$tokenratio>0.15,]
 d <- d[d$ntokens>50,]
 
 #save results
-save(d, file = "./rfiles/d_noduplicates3.Rdata")
+#save(d, file = "./rfiles/d_noduplicates3.Rdata")
 
 #merge in original file extension
-d <- merge(d, d2, "path", all.x = T, all.y = F)
+#d <- merge(d, d2, "path", all.x = T, all.y = F)
 
 #remove a few empty documents that ended up in there at some point
 d <- d[is.na(d$ext)==F,]
 
 #save
-save(d, file = "./rfiles/d_backup.Rdata")
-load("./rfiles/d_backup.Rdata")
+#save(d, file = "./rfiles/d_backup.Rdata")
+#load("./rfiles/d_backup.Rdata")
 
 #remove city names
 citynames <- unique(d$Name)
@@ -311,7 +316,7 @@ d$doc <- removeWords(d$doc, citynames)
 d <- d[!duplicated(d$doc)==T,]
 
 #remove stopwords with quanteda
-stopwords()
+#stopwords()
 d$doc <- removeWords(d$doc, stopwords())
 
 #update information on tokens

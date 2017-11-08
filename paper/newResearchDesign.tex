@@ -1,0 +1,270 @@
+\documentclass[11pt]{article}
+
+%==============Packages & Commands==============
+\usepackage{graphicx}
+\usepackage{fancyvrb}
+\usepackage{tikz}
+%%%<
+\usepackage{verbatim}
+%\usepackage[active,tightpage]{preview}
+%\PreviewEnvironment{tikzpicture}
+%\setlength\PreviewBorder{5pt}%
+
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+% \geometry{a4paper}                   		% ... or a4paper or a5paper or ...
+%\geometry{landscape}                		% Activat\usetikzlibrary{arrows}e for for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex
+\usepackage{amssymb}
+
+\usepackage[ruled,vlined]{algorithm2e}
+\usetikzlibrary{arrows}
+\usepackage{alltt}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage[longnamesfirst]{natbib} % For references
+\bibpunct{(}{)}{;}{a}{}{,} % Reference punctuation
+\usepackage{changepage}
+\usepackage{setspace}
+\usepackage{booktabs} % For tables
+\usepackage{rotating} % For sideways tables/figures
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{color}
+\usepackage{dcolumn}
+\usepackage{comment}
+%\usepackage{fullwidth}
+\newcolumntype{d}[1]{D{.}{\cdot}{#1}}
+\newcolumntype{.}{D{.}{.}{-1}}
+\newcolumntype{3}{D{.}{.}{3}}
+\newcolumntype{4}{D{.}{.}{4}}
+\newcolumntype{5}{D{.}{.}{5}}
+\usepackage{float}
+\usepackage[hyphens]{url}
+%\usepackage[margin = 1.25in]{geometry}
+%\usepackage[nolists,figuresfirst]{endfloat} % Figures and tables at the end
+\usepackage{subfig}
+\captionsetup[subfloat]{position = top, font = normalsize} % For sub-figure captions
+\usepackage{fancyhdr}
+%\makeatletter
+%\def\url@leostyle{%
+%  \@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small\ttfamily}}}
+%\makeatother
+%% Now actually use the newly defined style.
+\urlstyle{same}
+\usepackage{times}
+
+\usepackage{lscape}
+% \usepackage{mathptmx}
+%\usepackage[colorlinks = true,
+%						bookmarksopen = true,
+%						pagebackref = true,
+%						linkcolor = black,
+%						citecolor = black,
+% 					urlcolor = black]{hyperref}
+%\usepackage[all]{hypcap}
+%\urlstyle{same}
+\newcommand{\fnote}[1]{\footnote{\normalsize{#1}}} % 12 pt, double spaced footnotes
+\def\citeapos#1{\citeauthor{#1}'s (\citeyear{#1})}
+\def\citeaposs#1{\citeauthor{#1}' (\citeyear{#1})}
+\newcommand{\bm}[1]{\boldsymbol{#1}} %makes bold math symbols easier
+\newcommand{\R}{\textsf{R}\space} %R in textsf font
+\newcommand{\netinf}{\texttt{NetInf}\space} %R in textsf font
+\newcommand{\iid}{i.i.d} %shorthand for iid
+\newcommand{\cites}{{\bf \textcolor{red}{CITES}}} %shorthand for iid
+%\usepackage[compact]{titlesec}
+%\titlespacing{\section}{0pt}{*0}{*0}
+%\titlespacing{\subsection}{0pt}{*0}{*0}
+%\titlespacing{\subsubsection}{0pt}{*0}{*0}
+%\setlength{\parskip}{0pt}
+%\setlength{\parsep}{0pt}
+%\setlength{\bibsep}{2pt}
+%\renewcommand{\headrulewidth}{0pt}
+
+%\renewcommand{\figureplace}{ % This places [Insert Table X here] and [Insert Figure Y here] in the text
+%\begin{center}
+%[Insert \figurename~\thepostfig\ here]
+%\end{center}}
+%\renewcommand{\tableplace}{%
+%\begin{center}
+%[Insert \tablename~\theposttbl\ here]
+%\end{center}}
+
+\newcommand\independent{\protect\mathpalette{\protect\independenT}{\perp}}
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\Y}{\bm{\mathcal{Y}}}
+\newcommand{\bZ}{\bm{Z}}
+
+\usepackage[colorlinks = TRUE, urlcolor = black, linkcolor = black, citecolor = black, pdfstartview = FitV]{hyperref}
+
+
+%============Article Title, Authors==================
+\title{\vspace{-2cm} The effects of transitions of power on the contents of municipal government websites }
+
+
+\author{ Markus Neumann \and Bruce Desmarais \and Hanna Wallach} \date{\today}
+
+
+
+%===================Startup=======================
+\begin{document}
+\maketitle
+
+
+
+%=============Abstract & Keywords==================
+
+\begin{abstract}
+
+Websites have become a prominent source of data for automated text analysis in political science. However, extant research lacks common standards and often glosses over the details on how such analyses are conducted, exposing itself to potential pitfalls associated with this process and making replication difficult. We develop a set of guidelines and procedures to be followed in order to produce valid results. In order to develop a valid research design, the appropriate selection of cases and URLs is crucial. For the acquisition of website data, we cover several scraping methods and difficulties that can arise in the process. Pre-processing is a common step in text analysis, but when websites are concerned, additional measures need to be taken in order to guard against potential sources of bias. Finally, we cover several methods of analysis and validation appropriate for this kind of data. These steps are illustrated through our creation and exploitation of a new and innovative dataset - the websites of local governments in Indiana and Louisiana. We show that if our methodology is followed appropriately, an association between mayoral partisanship and the content of their cities' websites becomes visible.
+
+\end{abstract}
+\thispagestyle{empty}
+% \doublespacing
+% Description of the possible challenges
+\section{Introduction}
+
+The analysis of entire websites has become more prominent recently, especially in the the text-as-data movement. We see great promise in this development, especially as it pertains to the study of governmental branches and agencies, which are often resilient to being studied by other methods. However, this line of inquiry comes with a set of particular challenges and pitfalls researchers need to be mindful of. We offer solutions to these problems at the four stages of such an analysis.
+
+\newpage
+\tableofcontents
+\newpage
+\section{Research Design}
+
+\subsection{Sample Selection}
+
+Running example: Why did we pick Indiana and Louisiana?
+
+\subsection{Finding \& Verifying URLs}
+
+Running example: Our URLs are partially from the General Services Administration (GSA), and partially from Wikipedia. The GSA data can easily downloaded from GitHub, but contains some errors. To at least verify which parts of it work, we open each url in an automatized browser, and test whether it leads to a valid website as well as record the URL it redirects to. An explanation of this process is provided in section \ref{selenium}. Scraping URLs from Wikipedia will be explained in section \ref{htmlparsing}.
+
+\textbf{Current scripts:} scrapeLousianaWebsites.R, scrapeIndianaWebsites.R (gets URls from Wikipedia), Indiana.R, Louisiana.R (combine Wikipedia and GSA URLs)
+
+%Wikipedia is also a good source for URLs, because it has lists of cities, most of which have
+
+\subsection{Supporting Data}
+In our case, this would be the Census and election data. However, this is incredibly case-dependent, so I am not sure whether this really needs its own section.
+
+\textbf{Current scripts}: cityCoordinates.R (scrapes city coordinates from Wikipedia), mapIndiana.R, combineURLs.R (combines Census with GSA data)
+
+\section{Scraping Websites}
+\subsection{wget}
+
+wget arguments we are using, and thus might be worth discussing:
+
+-r, --recursive, specify recursive download
+
+-N, --timestamping, don't re-retrieve files unless newer than local; alternatively:
+
+-nc, --no-clobber, skip downloads that would download to existing files (overwriting them)
+
+-P,  --directory-prefix=PREFIX, save files to PREFIX/..
+
+-i, --input-file=FILE, download URLs found in local or external FILE
+
+robots=off, we are NOT doing this currently, but I feel we should at least explain it
+
+Functions: Do we write a wrapper for wget here?
+
+\textbf{Current scripts}: wgetINLA.R
+
+\subsection{Parsing HTML with rvest/beautifulsoup} \label{htmlparsing}
+
+Running example: scraping city URLs from Wikipedia.
+
+\subsection{Browser Automation with Selenium} \label{selenium}
+
+Running example: checking whether URLs from Wikipedia/, are valid, and/or whether they redirect somewhere else.
+
+Also very useful for scraping websites that have some kind of scraping protection (we don't do this, but the reader might want to).
+
+Functions: Note sure. There is an R implementation for selenium, but it is ridiculously difficult to install and still clearly inferior to the Python version.
+
+\textbf{Current scripts}: govWebsitesVerification.py
+
+\subsection{The Wayback Machine and other APIs}
+
+This is not part of our running example. However, other people might still be able to use the Wayback Machine for their research designs, so we should at least describe it, especially now that we know its downsides.
+
+To provide an example, we could do what we planned to do, but just for one large city, which has been scraped enough times by the WBM that it would be no problem. San Diego is currently the largest city with a Republican mayor, who got elected in 2014 (preceded by a Democrat), and there are enough snapshots around this time, so that would be one option. This would allow us to demonstrate how to use an API, which is possibly relevant to a lot of people (but then again, maybe not 100\% relevant since we are focusing on scraping websites).
+
+The implementation of this whole part would be a bit of a problem, since we are currently using a Ruby package, and from what I can tell looking at its code, I am not sure if I have the engineering skills to translate it to R.
+
+\textbf{Current scripts}: internetarchive\_webarchive.R
+
+\section{Pre-processing}
+\subsection{Determining document filetype}
+Determining the format of a file is usually as simple as looking at its file ending. However, not all files scraped from websites actually have endings. Simply discarding these files would lead to a large and completely unnecessary reduction in the size of the corpus. Similarly, xml files are sometimes labeled as html, which, if parsed as such, will lead to the introduction of a set of words into the corpus that have absolutely nothing to do with a website's content. Consequently it is imperative to determine a document's type by reading in its first couple of lines and extracting the tag revealing its type. In our running example, this leads to an increase of the corpus by X\% for Indiana and Y\% for Louisiana.
+
+Function to include in the package: Read in a document, do a grep on its first few lines for either ``doctype HTML'' or ''PDF''; then output the correct filetype, and if desired, change the file. Currently done in 'renameHTMLs.R'.
+
+Note: I've had some nasty problems with text not being encoded properly, or at least consistently. The readtext\footnote{\url{http://cdn.rawgit.com/kbenoit/readtext/master/inst/doc/readtext_vignette.html\#read-files-with-different-encodings}} package seems to have a way for dealing with that, which I haven't looked into so far, but considering the new research design, this might be worth it.
+
+\textbf{Current scripts}: detectOriginalExtensions.R, filetype\_before\_txt.R
+
+\subsection{File conversion}
+File conversion can either be done with various Unix packages, or Kenneth Benoit's readtext package. Currently, we are doing this with the former, using antiword, docx2txt, html2text and pdftotext (currently done with the shell script ``websites/batchconversion.sh'', which in turns calls four other shell scripts). If we are going to make an R package for our paper, it might be easier to do it with readtext instead. From what I can tell, readtext uses htmlTreeParse (XML package), pdftools (R package; but they previously used xpdf, which also relies on the same pdftotext we are using), antiword (which we are using too, but they are using the R wrapper for it) and xmlTreeParse for docx (XML package). I did try the readtext package at one point, and it lead to fairly comparable results, but I will need to do more testing if we do switch to it to make sure it doesn't mess anything up later.
+
+Functions: wrapper for readtext
+
+\textbf{Current scripts}: malletPreprocessing.R
+
+\subsection{Conventional preprocessing (lowercase, numbers, punctuation, stopwords)} \label{preprocessing_conventional}
+
+\textbf{Package}: Wrapper for quanteda and/or tm package
+
+\textbf{Current scripts}: All of the preprocessing from section \ref{preprocessing_conventional} to \ref{preprocessing_duplicates} is currently done in malletPreprocessing.R and malletPreprocessingLA.R (which doesn't require mallet anymore, so it's a bit of a misnomer).
+
+\subsection{Stemming and/or lemmatization}
+We're currently not doing this and I am wondering if we will get spanked for it by reviewers.
+
+\subsection{Spellchecking}
+
+\textbf{Current scripts}: malletPreprocessing.R, malletPreprocessingLA.R, hunspellParallel.R
+
+\subsection{Dealing with duplicate text \& documents \& html documents in particular} \label{preprocessing_duplicates}
+
+\textbf{Current scripts}: malletPreprocessing.R, malletPreprocessingLA.R
+
+\section{Analysis}
+\subsection{LDA}
+
+Diagnostics: Topic coherence, optimal number of topics according to Arun et al. (2010).
+
+\textbf{Current scripts}: exampleDocuments.R, topicCoherence.R, topicCoherenceNew.R, topicCoherenceTop10Topics.R, ldatuning.R (optimal number of topics), malletAnalysis.R, malletAnalysisDocumentEntropy.R, malletAnalysisHeatmap.R, malletAnalysisLA.R, malletAnalysisPartisanTopWords.R, malletAnalysisPartisanTopWordsLA.R, malletAnalysisPartisanTopics.R, malletAnalysisPartisanTopicsLA.R, malletTestParameters.R, malletTopWords.R, malletTraining.R
+
+\subsection{Other topic models}
+STM, could also mention author-topic and dynamic topic model.
+
+\textbf{Current scripts}: stmAnalysis.R
+
+\subsection{Machine Learning Classifiers (SVM)}
+Phil Schrodt and Glenn Palmer (+2 other people) wrote a whole paper on why SVM is good for text data, we should cite this here.
+
+We can also mention l1/l2 penalty / elasticnet here.
+
+Since the scikitlearn implementations of SVM and elasticnet seem much better than the ones available for R, what do we do here, package-wise?
+
+\textbf{Current scripts}: svmSKLN.ipynb (Indiana), svmSKLNLA.ipynb (Louisiana), elasticNet.R (Indiana), elasticSKLN.ipynb (Indiana), predictPartisanDocuments.R, predictPartisanDocumentsMLR.R
+
+\subsection{Fightin' Words}
+Make a table comparing the top 50 words for Democrats/Republicans produced by LDA, SVM and Fightin' Words. Probably goes in the appendix.
+
+\textbf{Package}: Wrapper for Matt's speedReader package.
+
+\textbf{Current scripts}: fightinWords.R, fightinWordsLA.R
+
+\subsection{Non-bag of words models}
+We're only using bag of words models, so do we focus only on them in this paper? Either way, we should at least point out that this would change some parts of these procedures, especially during preprocessing.
+
+\newpage
+
+\bibliographystyle{apsr} % apsr stopped working for me
+%\bibliographystyle{plainnat}
+%\bibliography{ref}
+
+\end{document}

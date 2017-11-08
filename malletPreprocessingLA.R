@@ -6,6 +6,8 @@ library('tm')
 library('dplyr')
 library('quanteda')
 library('hunspell')
+library('hashmap')
+library('profvis')
 
 filepath <- "./websites/scraping/LA/websites/"
 
@@ -68,19 +70,15 @@ d$doc <- pbsapply(d$doc, removePunctuation)
 #Remove numbers
 d$doc <- pbsapply(d$doc, removeNumbers)
 
-#save
-save(d, file = "rfiles/dLA2.rdata")
-load("rfiles/dLA2.rdata")
 
-
-### INTERESTING STUFF AFTER THIS
-
-library('hashmap')
-library('profvis')
-#library('pbapply')
+### REMOVING DUPLICATE LINES:
 
 #remove cities with only 1 document (since that breaks the whole hashtable thing)
 d <- d[!d$City %in% names(table(d$City)[table(d$City)<2]),]
+
+#save
+save(d, file = "rfiles/dLA2.rdata")
+load("rfiles/dLA2.rdata")
 
 #create a table of the number of documents for each city
 citytable <- table(d$City)
@@ -156,8 +154,8 @@ docDuplicates <- unlist(docDuplicates, recursive = F)
 
 
 #This takes about half a day (without parallelization), so back up the results
-save(docDuplicates, file = "rfiles/docDuplicatesLA.Rdata")
-load("rfiles/docDuplicatesLA.Rdata")
+save(docDuplicates, file = "rfiles/docDuplicatesLAHash.Rdata")
+load("rfiles/docDuplicatesLAHash.Rdata")
 
 #function to decide whether a line in a document is kept
 #currently, this happens if it occurs no more than 10 times in other city docs
@@ -213,8 +211,8 @@ d <- d[d$doc!="character",]
 d <- d[!nchar(d$doc)<50,]
 
 #save
-save(d, file = "rfiles/dLA3.rdata")
-load("rfiles/dLA3.rdata")
+#save(d, file = "rfiles/dLA3.rdata")
+#load("rfiles/dLA3.rdata")
 
 #remove weird non-utf-8 characters
 ## ... by removing anything that's not a regular word
@@ -245,8 +243,8 @@ d <- d[d$tokenratio>0.15,]
 d <- d[d$ntokens>50,]
 
 #save
-save(d, file = "rfiles/dLA4.rdata")
-load("rfiles/dLA4.rdata")
+#save(d, file = "rfiles/dLA4.rdata")
+#load("rfiles/dLA4.rdata")
 
 #merge in original file extension
 #d <- merge(d, d2, "path", all.x = T, all.y = F)
@@ -255,8 +253,8 @@ load("rfiles/dLA4.rdata")
 d <- d[is.na(d$ext)==F,]
 
 #save
-save(d, file = "rfiles/dLA5.rdata")
-load("rfiles/dLA5.rdata")
+#save(d, file = "rfiles/dLA5.rdata")
+#load("rfiles/dLA5.rdata")
 
 #remove city names
 citynames <- unique(d$City)
