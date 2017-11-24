@@ -1,57 +1,19 @@
-library("rio")
-library("dplyr")
-library("stringr")
+setwd("govWebsites")
 
-load(file="data/indianaWebsiteURLs.rdata")
-load(file="data/govWebsitesVerifiedCensus.Rdata")
+source("./functions/preprocessing.R")
 
-#Preparing the data for merge
+# Read in the data from txt files
+d <- readCityDocuments("./websites/current")
+# merge city coefficients (i.e. election data) with the documents
+d <- mergeCityCoefficients(d, "rfiles/city_coefficients_indiana.rds")
+# Do all the preprocessing that needs to be done before removing duplicate lines
+d <- preprocessing_1(d)
+# Find duplicate lines
+docDuplicates <- findDuplicates(d)
+# Use the counts of duplicate lines found above to remove them over a certain threshold
+d$doc <- as.character(pbsapply(1:nrow(d), removeDuplicates))
 
-#.gov website data
-data9 <- subset(data9, select=c("NAME","redirect","StateShort"))
-data9 <- subset(data9, StateShort=="IN")
-data9$NAME[data9$NAME=="15885"] <- "Indianapolis"
-data9$State <- data9$StateShort
-data9$StateShort <- NA
-data9$State_Name <- paste(data9$State, data9$NAME, sep="_")
-names(data9) <- c("Name", "Website", "Designation", "State", "State_Name")
+save.image("backups/d.rdata")
 
-#indiana URLs from Wikipedia
-indianaWebsiteUrls$State <- "IN"
-URLs <- indianaWebsiteUrls
-URLs$State_Name <- paste(URLs$State, URLs$Name, sep="_")
-
-#merge
-URLs <- merge(URLs, subset(data9, select=c("Website", "State_Name")), by="State_Name", all = T)
-#the .gov URL should be more reliable, so using that, if available
-URLs$Website.x[is.na(URLs$Website.y)==F] <- URLs$Website.y[is.na(URLs$Website.y)==F]
-URLs <- subset(URLs, select=-Website.y)
-names(URLs)[names(URLs)=="Website.x"] <- "Website"
-
-#remove irrelevant data
-rm(data9,indianaWebsiteUrls,louisianaWebsiteUrls) #remove objects that are no longer needed
-
-# Load Indiana election data
-load("data/indianaElections2015.rdata")
-
-mIN <- filter(mIN, Year==2015)
-
-URLs <- merge(URLs, mIN, by.x = "Name", by.y = "District", all.x = T)
-
-rm(mIN) #remove objects that are no longer needed
-
-URLs <- filter(URLs, Designation=="City") %>%
-  filter(is.na(Website)==F) %>%
-  filter(is.na(control_change)==F) %>%
-  filter(!Name%in%c("Decatur","Knox","Marion")) #remove few sites that are actually counties
-
-#remove /county/ from Tipton
-#unfortunately, wget and the ruby WBM downloader will still get both parts of the website
-#if I could stop this behavior, I should instead replace "/county/" with "/city/"
-URLs$Website[URLs$Name=="Tipton"] <- str_replace(URLs$Website[URLs$Name=="Tipton"], "/county/", "")
-
-#remove http//: or https//: as well as other forward slashes
-URLs$foldername <- str_extract(URLs$Website, "//(.*)") %>%
-  str_replace_all("/", "")
-
-save(URLs, file = "data/URLs_IN.rdata")
+# Do the rest of the preprocessing
+d <- preprocessing_2(d)
