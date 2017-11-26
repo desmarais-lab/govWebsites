@@ -620,7 +620,7 @@ An alternative approach to the problem is to ignore topics entirely, and go stra
 However, \cite{Monroe2008} advise against using these types of methods in this context because they get the data generation process backwards: Our theory assumes that party leads to variation in writing, and yet we rely on the documents to predict party, in spite of the fact that we actually have perfect knowledge of it.
 
 \subsubsection{Informative Dirichlet model}
-Consequently we follow their recommendation to use the informative Dirichlet model they present in the paper \citep{Monroe2008}. This approach aims to account for the fact that some words naturally occur more than others by applying a Dirichlet prior based on the distribution of words in random text. Figure \ref{fightinwords} shows the top words for both Democrats and Republicans - and accomplishes, to some extent, the goal of \citep{Monroe2008} of banishing frequent words from this list and supplanting them by text with greater semantic, and in our case, partisan meaning. For Democrats, words related to public finances, such as 'fund', 'budget', or 'tax' are common - congruent with the party's greater willingness to raise and spend money publicly. Similarly, 'federal' 'funds' also appear among the Democratic top words. By contrast Republicans prefer to devote their attentions to purely local, and for the most part, logistic matters. 'Trees', 'water', 'street' and 'sign' appear on the list of Republican top words, suggesting that these mayors largely focus on city planning.
+Consequently we follow their recommendation to use the informative Dirichlet model they present in the paper \citep{Monroe2008}. This approach aims to account for the fact that some words naturally occur more than others by applying a Dirichlet prior based on the distribution of words in random text. Figure \ref{fightinwordsIN} shows the top words for both Democrats and Republicans - and accomplishes, to some extent, the goal of \citep{Monroe2008} of banishing frequent words from this list and supplanting them by text with greater semantic, and in our case, partisan meaning. For Democrats, words related to public finances, such as 'fund', 'budget', or 'tax' are common - congruent with the party's greater willingness to raise and spend money publicly. Similarly, 'federal' 'funds' also appear among the Democratic top words. By contrast Republicans prefer to devote their attentions to purely local, and for the most part, logistic matters. 'Trees', 'water', 'street' and 'sign' appear on the list of Republican top words, suggesting that these mayors largely focus on city planning.
 
 These top words also show some degree of overlap with those determined by aggregating over topics in LDA.
 
@@ -676,8 +676,8 @@ These top words also show some degree of overlap with those determined by aggreg
 \begin{figure}[!ht]
 	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
 	\caption{Top democratic and Republican words (Indiana), according to the informed Dirichlet model of Monroe et al. (2008). Ordering is top to bottom for Democrats, and vice versa for Republicans.}
-	\label{fightinwords}
-	\includegraphics[width=\linewidth]{figures/fightinWords.png}
+	\label{fightinwordsIN}
+	\includegraphics[width=\linewidth]{figures/fightinWordsIN.png}
 \end{figure}
 
 %fightin words results

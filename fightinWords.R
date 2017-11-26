@@ -3,37 +3,43 @@ library('SpeedReader')
 
 #setwd('govWebsites')
 
-#load data
-load(file = "./rfiles/d.Rdata")
+# if no state data is loaded, default to Indiana
+if(exists("d")==F){
+  load(file = "./rfiles/d.Rdata")
+}
+
+if(exists("state")==F){
+  state <- "Indiana"
+}
+
+if(exists("stateAbb")==F){
+  stateAbb <- "IN"
+}
 
 #create corpus
 crps <- corpus(d$doc)
 
 #convert to dfm; then data frame
 dtm <- dfm(crps)
-dtm2 <- slam::as.simple_triplet_matrix(dtm)
+dtm <- slam::as.simple_triplet_matrix(dtm)
 
 #create contingency table
-
-d$party <- d$winner
-
-cgt <- contingency_table(d, dtm2, variables_to_use = c('winner', 'party'))
-
-#fix the feature selection function
-source('functions/feature_selection_fixed.R')
-
-#throws a complaint about tf-idf which isnt even selected
-#fs <- feature_selection(cgt, rows_to_compare = c(1,4))
+cgt <- contingency_table(d, dtm, variables_to_use = "Party")
 
 #feature selection
+#Democrat first so it gets colored blue
+party_order <- c(which(unique(d$Party)=="Democratic"),
+                 which(unique(d$Party)=="Republican"))
+
 fs <- feature_selection(cgt, 
-                        rows_to_compare = c(4,1), #Democrat first so it gets colored blue
+                        rows_to_compare = party_order,
                         method = "informed Dirichlet")
 
 #make the funnel plot
 #pdf('paper/figures/fightinWords.pdf', width = 8, height = 8) #shitty quality
 ppi <- 300
-png("paper/figures/fightinWords.png", width=8*ppi, height=8*ppi, res=ppi)
+png(paste0("paper/figures/fightinWords", stateAbb, ".png"), 
+    width=8*ppi, height=8*ppi, res=ppi)
 fightin_words_plot(fs, 
                    title = "", 
                    positive_category = 'Democrat', 
@@ -45,15 +51,15 @@ dev.off()
 
 #make a table with the top 50 words
 library('xtable')
-zscoretable <- tibble::tibble(DemocraticWord = fs$Democratic_Democratic$term[1:50],
-                              DemocraticScore = fs$Democratic_Democratic$z_scores[1:50],
-                              RepublicanWord = fs$Republican_Republican$term[1:50],
-                              RepublicanScore = fs$Republican_Republican$z_scores[1:50])
+zscoretable <- tibble::tibble(DemocraticWord = fs$Democratic$term[1:50],
+                              DemocraticScore = fs$Democratic$z_scores[1:50],
+                              RepublicanWord = fs$Republican$term[1:50],
+                              RepublicanScore = fs$Republican$z_scores[1:50])
 
 xt <- xtable(zscoretable,
-             caption = "Top 50 democratic and Republican words (Indiana), according to the informed 
-             Dirichlet model of Monroe et al. (2008).",
-             label = "tabFightinIN")
+             caption = paste0("Top 50 Democratic and Republican words (",
+                              state, "), according to the informed Dirichlet model of Monroe et al. (2008)."),
+             label = paste0("tabFightin", stateAbb))
 
 names(xt) <- c("Word (D)", "z-Score (D)", "Word (R)", "z-Score (R)")
 
@@ -62,4 +68,4 @@ xt <- print.xtable(xt,
                    size = "\\fontsize{9pt}{10pt}\\selectfont")
 
 writeLines(xt, 
-           con = 'paper/tables/fightinwordsIN.tex')
+           con = paste0("paper/tables/fightinwords", stateAbb, ".tex"))

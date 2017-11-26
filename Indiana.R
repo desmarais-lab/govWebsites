@@ -20,3 +20,25 @@ save.image("rfiles/backup_d.rdata")
 
 # Do the rest of the preprocessing
 d <- preprocessing_2(d)
+
+# ------------- #
+#      LDA      #
+# ------------- #
+
+source("malletTraining.R")
+
+# -----------------------#
+# Structural Topic Model #
+# -----------------------#
+
+source("stm.R")
+
+# ------------- #
+# Fightin Words #
+# ------------- #
+
+source("fightinWords.R")
+
+# ------------- #
+#  Clustering   #
+# ------------- #

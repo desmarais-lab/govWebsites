@@ -4,12 +4,23 @@ library('ggplot2')
 library('scales')
 library('stringr')
 
-load("rfiles/d.Rdata")
+# if no state data is loaded, default to Indiana
+if(exists("d")==F){
+  load(file = "./rfiles/d.Rdata")
+}
+
+if(exists("state")==F){
+  state <- "Indiana"
+}
+
+if(exists("stateAbb")==F){
+  stateAbb <- "IN"
+}
 
 #get the data ready for preprocessing
-docsIN <- d$doc
-meta <- subset(d, select = c('Name', 'winner'))
-processed <- textProcessor(docsIN, metadata = meta)
+docs <- d$doc
+meta <- subset(d, select = c('City', 'Party'))
+processed <- textProcessor(docs, metadata = meta)
 out <- prepDocuments(processed$documents, processed$vocab, processed$meta)
 docs <- out$documents
 vocab <- out$vocab
@@ -42,8 +53,8 @@ prep <- estimateEffect(formula = 1:numtopics ~ winner,
 #the results are so large, we only retain the
 #objects necessary for the rest of the analysis
 rm(list = ls()[!ls()%in% c("stmFit", "prep", "out", "numtopics")])
-save.image('rfiles/stmSessionIN_Party.RData')
-load('rfiles/stmSessionIN_Party.RData')
+save.image(paste0("rfiles/stmSession", stateAbb, ", _Party.rdata"))
+load(paste0("rfiles/stmSession", stateAbb, ", _Party.rdata"))
 
 #make a dataframe to store the results in
 df <- data.frame(coef = rep(0, numtopics), sig = rep(FALSE, numtopics),
@@ -106,30 +117,30 @@ colnames(demWords) <- round(df$coef[demTopics], 3)
 xtRep <- repWords
 xtDem <- demWords
 
-strCaptionRep <- "Top Republican topics and words (Indiana), according to STM. 
+strCaptionRep <- paste0("Top Republican topics and words (", state, "), according to STM. 
 The words are the top words for the most Democratic/Republican topic, determined
-by the size (and significance) of the coefficient (see table header) of the party covariate."
+by the size (and significance) of the coefficient (see table header) of the party covariate.")
 
-strCaptionDem <- "Top Democratic topics and words (Indiana), according to STM. 
+strCaptionDem <- paste0("Top Democratic topics and words (", state, "), according to STM. 
 The words are the top words for the most Democratic/Republican topic, determined
-by the size (and significance) of the coefficient (see table header) of the party covariate."
+by the size (and significance) of the coefficient (see table header) of the party covariate.")
 
 xtRep <- print(xtable(repWords,
                       digits = 3, 
                       caption = strCaptionRep, 
-                      label = "tabSTMINRep"),
+                      label = paste0("tabSTM", stateAbb, "Rep")),
                       #size = "footnotesize",
                       include.rownames = FALSE)
 
 xtDem <- print(xtable(demWords,
                       digits = 3, 
                       caption = strCaptionDem, 
-                      label = "tabSTMINDem"),
+                      label = paste0("tabSTM", stateAbb, "Dem")),
                       #size = "footnotesize",
                       include.rownames = FALSE)
 
-writeLines(xtRep, con = 'paper/tables/stmTopWordsINRep.tex')
-writeLines(xtDem, con = 'paper/tables/stmTopWordsINDem.tex')
+writeLines(xtRep, con = paste0('paper/tables/stmTopWords', stateAbb, 'Rep.tex'))
+writeLines(xtDem, con = paste0('paper/tables/stmTopWords', stateAbb, 'Dem.tex'))
 
 #save results
-save.image('rfiles/stmIN.RData')
+save.image(paste0('rfiles/stm', stateAbb, '.RData'))
