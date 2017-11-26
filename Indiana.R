@@ -1,5 +1,8 @@
 setwd("govWebsites")
 
+state <- "Indiana"
+stateAbb <- "IN"
+
 # ------------- #
 # Preprocessing #
 # ------------- #
@@ -16,16 +19,39 @@ docDuplicates <- findDuplicates(d)
 # Use the counts of duplicate lines found above to remove them over a certain threshold
 d$doc <- as.character(pbsapply(1:nrow(d), removeDuplicates))
 
-save.image("rfiles/backup_d.rdata")
+#save.image("rfiles/backup_d.rdata")
 
 # Do the rest of the preprocessing
 d <- preprocessing_2(d)
+
+save(d, file = paste0("rfiles/d_", stateAbb, ".rdata"))
+load(paste0("rfiles/d_", stateAbb, ".rdata"))
 
 # ------------- #
 #      LDA      #
 # ------------- #
 
-source("malletTraining.R")
+# Train LDA
+source("functions/malletTraining.R")
+
+# 6 (mostly diagnostic) figures:
+#Densities of topic weights for documents in Republican and Democratic cities.
+#\label{topicweights_density}
+# Densities of topic weights for documents in Republican and Democratic cities.
+#\label{doctopics_density}
+#Word-topic probabilities for topics with big partisan differences
+#\label{diffsize}
+#Word-topic probabilities for topics with big partisan differences
+#\label{plotWTP_bigdiffs}
+#Word-topic probabilities for topics with big partisan differences
+#\label{doctopics_density_bigdiffs}
+#Word-topic probabilities for topics with big partisan differences, across documents
+#\label{heatmaps_weights}
+source("malletAnalysis.R")
+
+#source("malletAnalysisPartisanTopicsLA.R")
+#source("malletAnalysisPartisanTopWordsLA.R")
+#source("descriptiveStatisticsPartisan.R")
 
 # -----------------------#
 # Structural Topic Model #
@@ -42,3 +68,5 @@ source("fightinWords.R")
 # ------------- #
 #  Clustering   #
 # ------------- #
+
+#source("hierarchicalClustering.R")

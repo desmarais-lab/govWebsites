@@ -255,11 +255,11 @@ preprocessing_2 <- function(d){
   #remove documents in which too many words are the same
   print("Removing documents in which too many words are the same.")
   countTokens <- function(doc){
-    doc <- tokenize(doc, simplify = T)
+    doc <- as.character(tokens(doc))
     l <- length(doc)
   }
   countUniqueTokens <- function(doc){
-    doc <- tokenize(doc, simplify = T)
+    doc <- as.character(tokens(doc))
     l <- length(unique(doc))
   }
   d$ntokens <- sapply(d$doc, countTokens)

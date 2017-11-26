@@ -1,4 +1,4 @@
-source("malletTrain.R")
+#source("malletTrain.R")
 
 options(java.parameters = "-Xmx3000m")
 
@@ -40,8 +40,8 @@ topic.words <- mallet.topic.words(topic.model, smoothed = T, normalized = T)
 
 ## Subset the matrix into two matrices, one containing
 # documents from Democratic cities, the other from Republican cities
-republican <- doc.topics[which(d$winner == "Republican"),]
-democratic <- doc.topics[which(d$winner == "Democratic"),]
+republican <- doc.topics[which(d$Party == "Republican"),]
+democratic <- doc.topics[which(d$Party == "Democratic"),]
 
 republican <- as.tibble(republican)
 democratic <- as.tibble(democratic)
@@ -79,7 +79,9 @@ topicweights_density2 <- ggplot(weights.tibble2, aes(weight, color = Party)) +
 #Plot them together
 topicweights_density3 <- plot_grid(topicweights_density, topicweights_density2)
 topicweights_density3
-ggsave(topicweights_density3, file = str_c("./paper/figures/topicweights_density.pdf"), width=9, height=5)
+ggsave(topicweights_density3, 
+       file = str_c("./paper/figures/topicweights_density_", stateAbb, ".pdf"), 
+       width=9, height=5)
 
 ## Plot the densities of weights across documents for each topic
 # i.e. each line is a topic
@@ -105,7 +107,9 @@ doc.topics.dens.plot.rep.g <- ggplot(doc.topics.dens.plot.rep, aes(x = value, gr
 doc.topics.dens.plot.g <- plot_grid(doc.topics.dens.plot.dem.g, doc.topics.dens.plot.rep.g)
 doc.topics.dens.plot.g
 
-ggsave(doc.topics.dens.plot.g, file = str_c("./paper/figures/doctopics_density.pdf"), width=9, height=7)
+ggsave(doc.topics.dens.plot.g, 
+       file = str_c("./paper/figures/doctopics_density_", stateAbb, ".pdf"),
+       width=9, height=7)
 
 ## The way I am reading this is that documents in Democratic cities are more clearly dedicated to one purpose,
 # as each topic has more very low values (i.e. most documents don't contain this topic), but also longer tails,
@@ -121,7 +125,7 @@ diffsize <- ggplot(topicdiffs, aes(diffs)) +
   geom_histogram(bins = 100) +
   labs(x = "Size of differences")
 diffsize
-ggsave(diffsize, file = str_c("./paper/figures/diffsize.pdf"), width=9, height=7)
+ggsave(diffsize, file = str_c("./paper/figures/diffsize_", stateAbb, ".pdf"), width=9, height=7)
 
 #get the biggest differences
 #>95th percentile
@@ -150,7 +154,9 @@ plotWTP_bigdiffs <- df.words %>% ggplot(aes(words, weights, fill = factor(topic)
   #labs(title="Word-topic probabilities - wget")
 plotWTP_bigdiffs
 
-ggsave(plotWTP_bigdiffs, file = str_c("./paper/figures/plotWTP_bigdiffs.pdf"), width=6, height=9)
+ggsave(plotWTP_bigdiffs, 
+       file = str_c("./paper/figures/plotWTP_bigdiffs_", stateAbb, ".pdf"), 
+       width=6, height=9)
 
 
 ## How do the topic weight density plots from above
@@ -173,7 +179,9 @@ doc.topics.dens.plot.rep.g <- ggplot(doc.topics.dens.plot.rep, aes(x = value, co
 
 doc.topics.dens.plot.g <- plot_grid(doc.topics.dens.plot.dem.g, doc.topics.dens.plot.rep.g)
 doc.topics.dens.plot.g
-ggsave(doc.topics.dens.plot.g, file = str_c("./paper/figures/doctopics_density_bigdiffs.pdf"), width=10, height=6)
+ggsave(doc.topics.dens.plot.g, 
+       file = str_c("./paper/figures/doctopics_density_bigdiffs_", stateAbb, ".pdf"), 
+       width=10, height=6)
 
 
 
@@ -198,4 +206,11 @@ heatmap_republican <- ggplot(republican.melted, aes(x = Topic, y = Document, fil
 
 heatmaps_g <- plot_grid(heatmap_democratic, heatmap_republican, nrow = 2)
 
-ggsave(heatmaps_g, file = str_c("./paper/figures/heatmaps_weights.png"), width=5, height=8)
+#ggsave(heatmaps_g, 
+#       file = str_c("./paper/figures/heatmaps_weights_", stateAbb, ".pdf"), 
+#       width=5, height=8)
+
+#save; plot takes up a lot of space as pdf, so save as png instead
+ggsave(heatmaps_g, 
+       file = str_c("./paper/figures/heatmaps_weights_", stateAbb, ".png"), 
+       width=5, height=8)

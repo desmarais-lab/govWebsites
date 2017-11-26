@@ -20,7 +20,7 @@ hunRemove <- function(charstring){
   charstring_split <- strsplit(charstring, " ")[[1]]
   errors <- unlist(hunspell(charstring_split))
   if(length(errors)>0){
-    output <- removeFeatures(tokenize(charstring), errors)
+    output <- tokens_remove(tokens(charstring), errors)
     output <- str_c(output[[1]], collapse = " ")
   }
   else{
