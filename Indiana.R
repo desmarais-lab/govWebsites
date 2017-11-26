@@ -1,7 +1,10 @@
 setwd("govWebsites")
 
-source("./functions/preprocessing.R")
+# ------------- #
+# Preprocessing #
+# ------------- #
 
+source("./functions/preprocessing.R")
 # Read in the data from txt files
 d <- readCityDocuments("./websites/current")
 # merge city coefficients (i.e. election data) with the documents
@@ -13,7 +16,7 @@ docDuplicates <- findDuplicates(d)
 # Use the counts of duplicate lines found above to remove them over a certain threshold
 d$doc <- as.character(pbsapply(1:nrow(d), removeDuplicates))
 
-save.image("backups/d.rdata")
+save.image("rfiles/backup_d.rdata")
 
 # Do the rest of the preprocessing
 d <- preprocessing_2(d)

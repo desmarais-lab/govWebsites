@@ -297,4 +297,7 @@ preprocessing_2 <- function(d){
   d$ntokens <- sapply(d$doc, countTokens)
   d$nuniquetokens <- sapply(d$doc, countUniqueTokens)
   d$tokenratio <- d$nuniquetokens/d$ntokens
+  
+  return(d)
+  
 }
