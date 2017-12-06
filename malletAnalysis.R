@@ -213,4 +213,4 @@ heatmaps_g <- plot_grid(heatmap_democratic, heatmap_republican, nrow = 2)
 #save; plot takes up a lot of space as pdf, so save as png instead
 ggsave(heatmaps_g, 
        file = str_c("./paper/figures/heatmaps_weights_", stateAbb, ".png"), 
-       width=5, height=8)
+       width=5, height=7.5)

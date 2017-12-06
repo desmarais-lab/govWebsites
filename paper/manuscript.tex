@@ -632,6 +632,16 @@ These top words also show some degree of overlap with those determined by aggreg
 	\includegraphics[width=\linewidth]{figures/heatmaps_weights_IN.png}
 \end{figure}
 
+%Heatmaps with no duplicate line removal (threshold set at 999999999)
+%also, since the duplicate line removal didn't get rid of as much crap,
+%it was necessary to remove non [A-Za-z] characters before hunspell
+\begin{figure}[!ht]
+	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
+	\caption{Word-topic probabilities for topics with big partisan differences, across documents (Indiana). No duplicate line removal.}
+	\label{heatmaps_weights}
+	\includegraphics[width=\linewidth]{figures/heatmaps_weights_noDuplicateRemoval_IN.png}
+\end{figure}
+
 %Number of topics vs. tophic coherence
 \begin{figure}[!ht]
 	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
@@ -748,12 +758,68 @@ These top words also show some degree of overlap with those determined by aggreg
 	\includegraphics[width=\linewidth]{figures/clusteringLA.png}
 \end{figure}
 
-%Clustering
+%Entropy by cutoff
 \begin{figure}[!ht]
 	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
 	\caption{Entropy (between cities, for each topic).}
 	\label{cutoffEntropy}
 	\includegraphics[width=\linewidth]{figures/CutoffCityEntropy.pdf}
+\end{figure}
+
+%Weighted entropy by cutoff
+\begin{figure}[!ht]
+	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
+	\caption{Weighted (multiplied by tokens assigned to the topic) entropy (between cities, for each topic).}
+	\label{cutoffEntropy}
+	\includegraphics[width=\linewidth]{figures/CutoffCityEntropyWeighted.pdf}
+\end{figure}
+
+%Clustering
+\begin{figure}[!ht]
+	\centering
+	\caption{Log number of city documents per cluster. Brighter tile colors indicate more documents. The color of the tile border indicates the city's party.}
+	\label{hclustCity10}
+	\includegraphics[width=\linewidth]{figures/heatmap_hclust_10.png}
+\end{figure}
+
+%Clustering
+\begin{figure}[!ht]
+	\centering
+	\caption{Log number of city documents per cluster. Brighter tile colors indicate more documents. The color of the tile border indicates the city's party.}
+	\label{hclustCity20}
+	\includegraphics[width=\linewidth]{figures/heatmap_hclust_20.png}
+\end{figure}
+
+%Clustering
+\begin{figure}[!ht]
+	\centering
+	\caption{Log number of city documents per cluster. Brighter tile colors indicate more documents. The color of the tile border indicates the city's party.}
+	\label{hclustCity30}
+	\includegraphics[width=\linewidth]{figures/heatmap_hclust_30.png}
+\end{figure}
+
+%Clustering
+\begin{figure}[!ht]
+	\centering
+	\caption{Log number of city documents per cluster. Brighter tile colors indicate more documents. The color of the tile border indicates the city's party.}
+	\label{hclustCity40}
+	\includegraphics[width=\linewidth]{figures/heatmap_hclust_40.png}
+\end{figure}
+
+%Clustering
+\begin{figure}[!ht]
+	\centering
+	\caption{Log number of city documents per cluster. Brighter tile colors indicate more documents. The color of the tile border indicates the city's party.}
+	\label{hclustCity50}
+	\includegraphics[width=\linewidth]{figures/heatmap_hclust_50.png}
+\end{figure}
+
+%Clustering
+\begin{figure}[!ht]
+	\centering
+	\caption{Log number of city documents per cluster. Brighter tile colors indicate more documents. The color of the tile border indicates the city's party.}
+	\label{hclustCity100}
+	\includegraphics[height = 1.2\textheight]{figures/heatmap_hclust_100.png}
 \end{figure}
 
 \newpage

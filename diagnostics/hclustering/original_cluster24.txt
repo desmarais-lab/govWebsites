@@ -1,0 +1,305 @@
+
+ ======================== South Bend ======================== Democratic ======================== 
+ ======================== South Bend ======================== Democratic ======================== 
+ ======================== South Bend ======================== Democratic ======================== 
+
+
+
+
+
+
+
+
+
+
+    * Downtown_South_Bend
+    * Visit_South_Bend
+    * Airport
+    * In_The_Bend
+    * Library
+    * Schools
+City_of_South_Bend,_Indiana
+    * Residents
+          o 311
+          o Household
+                # Absentee_and_Early_Voting
+                # Birth_Certificates
+                # Marriage_Licenses
+                # Newsletters
+                # Online_Payments
+                # Pet_Licensing_&amp;_Adoption
+                # Property_Taxes
+                # Report_Graffiti
+                # Utilities
+                # Trash_Removal_&amp;_Recycling
+                # Voter_Registration_&amp;_Polling_Places
+          o New_to_the_Bend?
+                # Buses_&amp;_Routes
+                # Pet_Licensing_&amp;_Adoption
+                # Public_Libraries
+                # Public_Schools
+                # Relocation_Information
+                # South_Bend_Post_Offices
+                # Trash_Removal_&amp;_Recycling
+                # Utilities
+                # Vehicle_Registration_&amp;_Licensing
+                # Voter_Registration_&amp;_Polling_Places
+          o Parks_&amp;_Rec
+                # Bike_South_Bend
+                # Peregrine_Falcon_Webcam
+                # Potawatomi_Zoo
+                # South_Bend_Parks_&amp;_Recreation
+                # St._Joseph_County_Parks
+          o Arts_&amp;_Culture
+          o Education
+          o Neighborhoods
+                # Neighborhoods_By_Geography
+                # Neighborhood_Videos
+                # Neighborhood_Improvement_Programs
+                # Neighborhood_Resources_Connection
+                # SELL_South_Bend_Certified_Realtors
+          o Transportation
+                # Airport_Info
+                # Bike_South_Bend
+                # Bus_Lines
+                # Interstate_Info
+                # Maps
+                # TRANSPO_Busses_&amp;_Routes
+                # Railway_Info
+                # Taxi_Service
+          o Employment
+    * Business
+          o Starting_a_Business
+                # Business_Toolkit
+                # Chamber_of_Commerce
+                # Great_Location
+                # Right_Taxes_&amp;_Incentives
+                # Strong_Workforce
+          o Licenses_&amp;_Permits
+                # Business_Licenses
+                # Contractor_Licenses
+                # Food_Truck_Licenses_&amp;_Check-In
+                # Lawn_Parking_Permit
+                # Scrap_Metal_Recycling_Operations
+                # St._Joseph_County_Health_Department
+                # Taxicab_Licenses_&amp;_Inspections
+          o Economic_Resources
+          o City_Bids
+                # Diversity_&amp;_Inclusion_Program
+                # Construction_Bids
+                # RFP,_Vehicle,_Equipment_&amp;_Miscellaneous_Bids
+          o Information_Center
+                # Business_FAQ's
+                # Business_Toolkit
+                # Interactive_Mapping_-_GIS
+                # Municipal_Code
+    * My_Government
+          o Mayor's_Office
+                # About_the_Mayor
+                # Contact_the_Mayor
+                # Mayor's_Office_Scheduling
+                # Executive_Staff
+                # Executive_Orders
+                # Budget
+                # News_Releases
+                # Programs_and_Initiatives
+                # Speeches
+          o Common_Council
+                # Council_Members
+                # Council_District_Lookup_&amp;_Map
+                # Council_Committees
+                # Council_Attendance_&amp;_Voting_Records
+                # Council_Brochures_&amp;_Applications
+                # Meeting_Broadcast_&amp;_Archive
+                # Meeting_Notices,_Agendas_&amp;_Minutes
+                # News_Releases
+                # Official_Council_Documents
+                # Reports
+                # Rules_&amp;_Procedures
+                # Municipal_Code
+                # Standard_Operating_Procedures
+          o City_Clerk
+                # About_the_Clerk
+                # Responsibilities_of_the_City_Clerk
+                # Municipal_Code
+                # Ordinance_Violations_Bureau
+                # Amnesty_Day
+                # Clerk_Distribution_List_(Opt-In)
+                # Staff
+          o Departments
+                # Administration_&amp;_Finance
+                # Building
+                # Code_Enforcement
+                # Community_Investment
+                # Fire
+                # Legal
+                # Parks_&amp;_Recreation
+                # Police
+                # Public_Works
+          o Public_Meetings
+          o Boards_&amp;_Commissions
+                # Board_of_Public_Safety
+                # Board_of_Public_Works
+                # Minority_&amp;_Women_Business_Enterprise_Diversity_Board
+                # Other_Boards_&amp;_Commissions
+                # Parks_&amp;_Recreation_Board
+                # Redevelopment_Authority
+                # Redevelopment_Commission
+          o City_Venues
+                # Century_Center
+                # Four_Winds_Field
+                # Morris_Performing_Arts_Center
+                # Palais_Royale
+          o Online_Tools
+                # Employee_Intranet_(City_Employees)
+                # City_Employees
+                # Contact_Us
+                # Document_Archive
+                # File_Service_Request_or_Concern
+                # Interactive_Mapping_-_GIS
+                # Municipal_Code
+                # Online_Payments
+                # Open_Data
+                # Ticket_Appeal
+    * Visitors
+          o Football_Weekends
+          o Parks_&amp;_Recreation
+                # Potawatomi_Zoo
+                # South_Bend_Parks_&amp;_Recreation
+                # St._Joseph_County_Parks
+          o Museums
+          o Arts_&amp;_Culture
+          o Shows_&amp;_Concerts
+          o Shopping_&amp;_Dining
+          o Sports
+    * Students
+          o City_Internships
+          o Elections_&amp;_Voting
+          o Are_You_Graduating?
+          o Transportation
+                # Transpo
+          o Youth_Task_Force
+    * Values
+***** You are here *****
+   1. Home â€º
+   2. My_Government â€º
+   3. Departments â€º
+   4. Public_Works â€º
+   5. Divisions â€º
+   6. Utilities â€º
+   7. Water_Works â€º
+    * Administration_&amp;_Finance
+    * Building
+    * Code_Enforcement
+    * Community_Investment
+    * Fire
+    * Legal
+    * Parks_&amp;_Recreation
+    * Police
+    * Public_Works
+          o Divisions
+                # Sustainability
+                # Streets_&amp;_Sewers
+                # Engineering
+                # Utilities
+                      # Water_Works
+                            # Customer_Service
+                            # Customer_Service_Survey
+                            # E-Notification_Paperless_Billing
+                            # FAQ_-_Water_Works
+                            # Pay_Utilities_Online
+                            # Rates_&amp;_Billing
+                            # Rules_&amp;_Regulations
+                            # Shut-Offs
+                            # Start_Service
+                            # Water_Quality
+                      # Waste_Water
+                      # Organic_Resources
+                # Solid_Waste
+                # Central_Services
+          o Applications_&amp;_Forms
+          o Board_of_Public_Works
+          o Combined_Sewer_Overflow_-_CSO
+          o FAQ_-_Public_Works
+          o Public_Works_Staff
+****** Shut-Offs ******
+
+***** What to do if your waterÂ has beenÂ shut off *****
+    * Once water service has been disconnectedÂ for non-payment, the entire
+      past-due balance must be paid before water service will be restored.
+          o Pay_Online.
+          o Pay over the phone at 574-235-9236 and selectÂ Option 1.
+          o Pay at theÂ Customer_Service_OfficeÂ located atÂ 125 West Colfax
+            Avenue in downtown South Bend.
+          o Checks will not be accepted to restore services.Â 
+    * If payment is made over the phone or online, please call 311 to schedule
+      restoration of water service.
+          o Water service may be restored same-day if scheduledÂ by:
+                # 4:30 PM on the day services were disconnected, or
+                # 3:00 PM on any other day.
+                # If payment is not received by the times listed above,
+                  restoration of water service will be scheduled for the next
+                  business day.
+                # Hours areÂ subject to service availability and will vary in
+                  the summer months.
+    * An_adult_must_be_present_at_the_location_in_order_for_water_service_to_be
+      restored.
+          o â€‹Homeowners may sign a waiver of liability if they do not wish to
+            be present at the location when water service is restored.
+                # The waiver_is_available_for_download* or at our Customer
+                  Service Office.
+                # The waiver must be returned in person to our Customer Service
+                  Office to schedule restoration of water service.
+                # If faxing or emailing the waiver to the Customer Service
+                  Office, it must be notarized.
+                      # Office fax number: 574-235-5645
+                      # Office email: Â waterworks@southbendin.gov
+[City_Seal_of_South_Bend,_Indiana]
+    * Residents
+          o 311
+          o Household
+          o New_to_the_Bend?
+          o Parks_&amp;_Rec
+          o Arts_&amp;_Culture
+          o Education
+          o Neighborhoods
+          o Transportation
+          o Employment
+    * Business
+          o Starting_a_Business
+          o Licenses_&amp;_Permits
+          o Economic_Resources
+          o City_Bids
+          o Information_Center
+    * My_Government
+          o Mayor's_Office
+          o Common_Council
+          o City_Clerk
+          o Departments
+          o Public_Meetings
+          o Boards_&amp;_Commissions
+          o City_Venues
+          o Online_Tools
+    * Visitors
+          o Football_Weekends
+          o Parks_&amp;_Recreation
+          o Museums
+          o Arts_&amp;_Culture
+          o Shows_&amp;_Concerts
+          o Shopping_&amp;_Dining
+          o Sports
+    * Students
+          o City_Internships
+          o Elections_&amp;_Voting
+          o Are_You_Graduating?
+          o Transportation
+          o Youth_Task_Force
+    * Values
+    * Twitter
+    * YouTube
+    * Facebook
+Printer-friendly_versionSend_by_email
+[btn-sitefeedback.png]
+Privacy_Policy | Terms_of_Use | ADA | Title_VI | © 2017 City of South Bend,
+Indiana
+
