@@ -21,3 +21,15 @@ committee meeting - zoning, sites, homes, etc.
 long document about land classification
 alcohol & police
 updates, for example on roads closing etc.
+
+#----------------------------------------------
+
+cluster 60 contains terms.txt
+
+Elkhart, Huntingburg, Jasper, Martinsville, New Haven, Tipton, Winchester all have basically the same terms of use (minus some opening hours, address, etc. which get removed with duplicate line removal)
+
+same with cluster 59, which is privacy.txt
+
+apart from martinsville (which is from http://mediaryte.com/, who also did Attica and Frankfort), all of these city websites are from eGov Strategies LLC{http://www.egovstrategies.com/} which is seated in Indianapolis
+
+about half of the documents in cluster 38 were about historical buildings and districts

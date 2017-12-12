@@ -1,0 +1,22 @@
+
+ ======================== Bloomington ======================== Democratic ======================== 
+ ======================== Bloomington ======================== Democratic ======================== 
+ ======================== Bloomington ======================== Democratic ======================== 
+
+
+
+
+
+****** Welcome to our Public Alpha! ******
+This website is a work in progress, and is subject to change. We welcome public
+feedback as we make progress.
+Provide_feedback_and_learn_more Back_to_current_website
+[City_of_Bloomington,_Indiana]
+
+Address [address             ] Search
+My Bloomington provides local information related to a given street address.
+Enter your address to learn more about:
+    * City services available
+    * Elected officials
+    * Related GIS attributes and data sets
+
