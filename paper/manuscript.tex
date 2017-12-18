@@ -135,7 +135,7 @@ Though there exists a variety of software tools that are designed to automatical
 Government websites provide information about how public policies shape the lives of local residents, and how local residents can engage with government to shape public policy. As such, government websites reflect both the results of, and inputs to, the political leadership in the city. In our illustrative application we explore the ways in which the contents of city government websites differ on the basis of the partisanship of the city's elected executive. A substantial body of research has found that the partisanship of the mayor affects city governance along multiple dimensions, including [CITE], [CITE], [CITE]. Furthermore, recent media coverage of changes to government websites that follow transitions in party control suggest that changes in web content are salient government actions, as perceived by the general public [CITE]. We study whether significant differences between city governments based on mayoral partisanship are reflected in the contents of city websites.
 
 
-\section{Background}
+\section{Background: The Study of Government Websites}
 
 \cite{grimmelikhuijsen2010transparency} run an experiment in which citizens are exposed to randomly selected levels of information about local government council minutes. They find a negative relationship between the information level and perceptions of competence in the local government. This raises an interesting question regarding whether citizens or more likely to participate when they perceive competence or when they perceive incompetence.
 
@@ -152,7 +152,6 @@ Government websites provide information about how public policies shape the live
 
 In addition to the use of city websites for the politicians that control them, variance in content also matters  with regard to the people who visit them. Local residents likely rely on city websites to get news about events, hot-button political issues specific to their city, contact city officials or find out addresses or opening hours of city institutions. Visitors use city websites to look up local attractions, which are often described in great detail. Similarly, prospective residents looking to move, might rely on city websites to inform their decision on whether to relocate there. An inviting website emphasizing the city's receptiveness to new residents might make a real difference here. Finally, city websites frequently feature sections on business, but there is a lot of variance in this area: Some emphasize economic development, properties, or transportation, whereas others focus on undeveloped land and other business opportunities. Differences in websites likely say something about a city's economic profile, with potential repercussions for the political realm.
 
-\subsection*{Website Analysis}
 The literature making use of scraped websites clusters into a number of categories. One, and most pertinent to our own endeavors, the e-governance literature which discusses the online presence of governments from a usability and public service point of view. For the most part, research in this category develops a classification scheme to rate websites in terms of accessibility, ease-of-use and function, and then hand-codes a set of websites according to these criteria \citep{Urban2002,Armstrong2011,Feeney2017}. As an example, \cite{grimmelikhuijsen2012developing} study local government websites with the goal of uncovering how they aid the goal of transparency. To this end, they analyze a set of Dutch municipalities in which air quality had deteriorated. The authors test whether local governments provide citizens with information about potential complications and solutions associated with this issue. Like most e-government studies however, this publication does not make any use of automated text analysis.
 
 Websites have also played a major role in the field of media studies, as scholars have scraped and analyzed the online presence of newspapers, as well as the more diffuse world of online political blogs \citep{Adamic2005,Gentzkow2010}. \cite{Lin2011} provide a good example for a study which makes extensive use of automated content analysis - a necessity arising from its dataset of 66830 blog posts and 57221 online news articles. The authors estimate the political slant of these entities by counting the frequencies with which politicians of either side are mentioned and determine that blogs are generally more biased. Unfortunately for us, the authors don't go into the details of their text analysis, and offer no information on the acquisition and pre-processing of the data.
@@ -164,7 +163,7 @@ The websites of politicians and their parties have also fallen under scholarly s
 Importantly for us, research analyzing and improving the scraping, pre-processing and analysis methods of this literature is scarce. \cite{Eschenfelder2002} provide something of an overview of how how federal websites should be assessed from an e-governance point of view, but they largely focus on the substantive criteria that should be fulfilled, rather than the technical aspects of website acquisition and analysis.
 
 
-\section{Running Application}
+\section{Running Application: Party Differences in Municipal Websites}
 
 
 \begin{landscape}
@@ -246,7 +245,7 @@ Importantly for us, research analyzing and improving the scraping, pre-processin
 There doesn't seem to be much literature on transitions of party control, if anything, that question is mostly phrased with regard to political representation. However, if we want to tie our paper to a larger theory, we could go with dynamic representation. Under dynamic representation, policy-makers are responsive to trends in citizens opinions, which mainly manifest/become apparent through election results, especially when incumbents are voted out of office. This fits our topic quite well. Also, of the few papers that do exist on the effects of partisan transitions, virtually all use regression discontinuity designs.
 
 
-\section{Data}
+\subsection{Data}
 The General Services Administration (GSA) maintains all .gov addresses, and provides a complete\footnote{Domains used for testing and internal programs are excluded.} list of all such domains to the public through GitHub\footnote{https://github.com/GSA/data/tree/gh-pages/dotgov-domains}. This list is updated once per month - we rely on the version released on January 16, 2017. The data from the GSA contains the following variables: One, domain name, specifically, the all-uppercase version of domain and top-level domain (for example, 'ABERDEENMD.GOV'). Two, the type of government entity to which the domain is registered, such as city, county, federal agency, etc. Three, for federal agencies, the name is specfied. Finally, the city in which the domain is registered, is noted.
 
 Here, we focus only on cities. As a first step, we use a webdriver-controlled browser (Firefox/Selenium/Geckodriver) to test whether all of the city websites actually work. Of the 2425 domains listed by the GSA as cities, 292 are not accessible. Furthermore, the .gov domain, as registered at the GSA, is frequently not the website a city actually uses. In many cases, these sites redirect to another address, sometimes not a .gov domain (in this case, we simply use this domain). We record these URLs, as they are required to retrieve the images websites stored in the Wayback Machine (WbM).
@@ -269,21 +268,6 @@ We use the resulting list of websites to acccess their copies stored in the Inte
 
 <Note: We have not actually done this last step for all websites (however, the R script which runs the Ruby package is already set up to do so once we need to). Instead 10 websites were randomly sampled from an older version of the GSA list, which still contained counties and townships, which is why one of the 10 websites is from Dutchess County, NY.>
 
-\input{tables/filetypes.tex}
-
-\begin{landscape}
-\input{tables/filenumbers.tex}
-\end{landscape}
-
-For some cities, whose websites make heavy use of JavaScript, this method does not lead to satisfying results. Consequently we restricted our corpus to cities with at least 3 documents.
-
-\section{Preprocessing}
-
-The documents are read in line by line, converted to UTF-8 and then stripped of dates, punctuation, numbers and words connected by underscores. At this point, the documents of one city still closely resemble one another in the form of boilerplate content, be it website elements (i.e. "You are here", "Home", "Directory" etc.) in html documents, or commonly used forms or phrases in pdfs, doc and docx files. This is an issue, because it clusters documents around the cities from which they originate in a way that has nothing to do with their actual content. In other words, the signal would be drowned out by the noise. Consequently we remove this content as following: Each line of every document is compared to every line in every other document belonging to the same city. We count how many times each line is duplicated for that city. We remove any line occuring more than our chosen threshold of 10.\footnote{Empirically, lines tend to be duplicated either hundreds of times, or only once or twice, if at all.} This means that each document only retains the information that is particular about it.
-Preprocessing further includes setting every character to lowercase, as well as the removal of bullet points which frequently occur in html documents, extraneous whitespace, xml documents mislabeled as html files, and empty documents. Furthermore, some documents contain gibberish, often as a result of faulty or impartial OCR. To combat this problem, we employ two solutions. One, we use spellchecking, implemented through the hunspell R package, to remove all non-English words. However, hunspell does not cover everything, either because some tokens are not actual words (for example artifacts from defective encoding), or because random sequences of characters just so happen to form words that exist in a dictionary (for example "eh" or "duh"). Since we rely on a bag-of-words model in which syntax does not matter, we can ameliorate these problems by removing all text except for whitespaces and the characters that appear in the english alphabet. Since a lot of the nonsensical text tends to be quite repetitive, we also delete all documents in which the proportion of unique to total number of tokens is less than 0.15. Furthermore, hunspell does not spellcheck individual characters, so we remove all individual characters appearing as tokens except for "i" and "a". Since these pre-processing steps reduce documents which are largely unsuitable to only a few words of texts that don't make much sense, we also remove all remaining documents containing less than 50 tokens.
-
-\subsection{Indiana City Websites}
-
 It would be fine to focus on Indiana as a case. First, we need to answer some preliminary questions about the data.
 
 \begin{enumerate}
@@ -304,157 +288,35 @@ It would be fine to focus on Indiana as a case. First, we need to answer some pr
 	
 \end{enumerate}
 
-% latex table generated in R 3.3.3 by xtable 1.8-2 package
-% Wed Mar 22 11:32:43 2017
-%\begin{table}[ht]
-%	\centering
-%	\begin{tabular}{lrrlrrl}
-%		\hline
-%		City & DemVotes & RepVotes & Winner & Change & Pop15 & url \\ 
-%		\hline
-%		Attica &  & 187 & Republican & 0 & 3117 & https://attica-in.gov/ \\ 
-%		Connersville & 1005 & 995 & Democratic & 1 & 13010 & http://connersvillecommunity.com/ \\ 
-%		Frankfort &  & 1748 & Republican & 0 & 16060 & http://frankfort-in.gov/ \\ 
-%		Huntingburg & 447 & 793 & Republican & 0 & 6035 & http://www.huntingburg-in.gov/ \\ 
-%		Indianapolis & 92830 & 56661 & Democratic & 1 & 862781 & http://www.indy.gov \\ 
-%		Lake Station & 1483 & 227 & Democratic & 0 & 12054 & http://www.lakestation-in.gov/ \\ 
-%		Linton & 785 & 692 & Democratic & 0 & 5284 & http://www.linton-in.gov/ \\ 
-%		Madison & 1192 & 1915 & Republican & 0 & 12040 & http://www.madison-in.gov/ \\ 
-%		Mitchell & 229 & 495 & Republican & 1 & 4252 & http://mitchell-in.com/ \\ 
-%		Monticello & 0 &  & Democratic & 0 & 5322 & http://www.monticelloin.gov/ \\ 
-%		North Vernon & 679 & 697 & Republican & 1 & 6619 & http://www.northvernon-in.gov/ \\ 
-%		Richmond & 3421 & 2731 & Democratic & 0 & 35854 & http://www.richmondindiana.gov/ \\ 
-%		Rockport & 286 & 272 & Democratic & 1 & 2223 & http://www.cityofrockport-in.gov/ \\ 
-%		South Bend & 8515 & 2074 & Democratic & 0 & 101516 & https://www.southbendin.gov/ \\ 
-%		Union City & 338 & 440 & Republican & 0 & 3447 & http://www.unioncity-in.gov/ \\ 
-%		Winchester & 606 & 524 & Democratic & 1 & 4769 & http://www.winchester-in.gov/ \\ 
-%		\hline
-%	\end{tabular}
-%	\caption{} 
-%\end{table}
 
-\subsection{Research Design}
 
-\begin{table}[ht]
-	\centering
-	\begin{tabular}{llr}
-		\hline
-		Variable & Unit & Source \\
-		\hline
-		Population size & 1000 people & Census \\
-		Population growth last 5 years & Percent & Census \\
-		Type of economy (agriculture/industry/services) & ? & Census \\
-		Economic performance (GDP?) & \$ & Census \\
-		Party of mayor before election & Rep/Dem/(Ind) & in.gov/sos/elections/ \\
-		Party of mayor after election & Rep/Dem/(Ind) & in.gov/sos/elections/ \\
-		Change of party control & 0/1 & in.gov/sos/elections/ \\
-		Presidential vote 2012 in county & Percent Rep & ? (but I have the data) \\
-		Unemployment rate & Percent & Census \\
-		Broadband speed & Avg. Mbps DL & broadbandmap.gov \\
-		\hline
-	\end{tabular}
-	\caption{List of covariates} 
-\end{table}
+\input{tables/filetypes.tex}
+
+\begin{landscape}
+\input{tables/filenumbers.tex}
+\end{landscape}
+
+For some cities, whose websites make heavy use of JavaScript, this method does not lead to satisfying results. Consequently we restricted our corpus to cities with at least 3 documents.
+
+
+\section{The Web to Text Pipeline}
+
+In the methodological pipeline from native website files to text data that is appropriate for comparative analysis we address two methodological challenges. First, though they contain significant amounts of text, websites are not comprised of clean plain text files. Rather, the files available at websites are of multiple types, including HTML, PDF, word processor, plain text, and image files. The first step in the methodological pipeline is aimed simply at extracting clean plain text from this heterogeneous file base. The second step in our methodological pipeline is to process the text to remove boilerplate language---language that is effective at differentiating one website from another, but is uninformative regarding policy or process differences between governments. We describe these methodological steps in this section.
+
+\subsection{Site to Text Conversion}
+
+The documents are read in line by line, converted to UTF-8 and then stripped of dates, punctuation, numbers and words connected by underscores. At this point, the documents of one city still closely resemble one another in the form of boilerplate content, be it website elements (i.e. "You are here", "Home", "Directory" etc.) in html documents, or commonly used forms or phrases in pdfs, doc and docx files. This is an issue, because it clusters documents around the cities from which they originate in a way that has nothing to do with their actual content. In other words, the signal would be drowned out by the noise. 
+Preprocessing further includes setting every character to lowercase, as well as the removal of bullet points which frequently occur in html documents, extraneous whitespace, xml documents mislabeled as html files, and empty documents. Furthermore, some documents contain gibberish, often as a result of faulty or impartial OCR. To combat this problem, we employ two solutions. One, we use spellchecking, implemented through the hunspell R package, to remove all non-English words. However, hunspell does not cover everything, either because some tokens are not actual words (for example artifacts from defective encoding), or because random sequences of characters just so happen to form words that exist in a dictionary (for example "eh" or "duh"). Since we rely on a bag-of-words model in which syntax does not matter, we can ameliorate these problems by removing all text except for whitespaces and the characters that appear in the english alphabet. Since a lot of the nonsensical text tends to be quite repetitive, we also delete all documents in which the proportion of unique to total number of tokens is less than 0.15. Furthermore, hunspell does not spellcheck individual characters, so we remove all individual characters appearing as tokens except for "i" and "a". Since these pre-processing steps reduce documents which are largely unsuitable to only a few words of texts that don't make much sense, we also remove all remaining documents containing less than 50 tokens.
+
+\subsection{Boilerplate Removal}
+
+Consequently we remove this content as following: Each line of every document is compared to every line in every other document belonging to the same city. We count how many times each line is duplicated for that city. We remove any line occuring more than our chosen threshold of 10.\footnote{Empirically, lines tend to be duplicated either hundreds of times, or only once or twice, if at all.} This means that each document only retains the information that is particular about it.
 
 
 
-\begin{enumerate}
-\item Corpus:
-\begin{enumerate}
-\item Last snapshots before the election (November 3, 2015 in Indiana; tbd. in Louisiana (probably February))
-\item First snapshot that is at least 2 months after the new government's inauguration (which is in January for Indiana, May for Louisiana)
-\end{enumerate}
-\item Preprocessing:
-\begin{enumerate}
-\item restrict corpus to:
-\begin{enumerate}
-\item documents belonging to cities in which a change of power occurred
-\item documents that were added, deleted or changed between the two snapshots
-\end{enumerate}
-\item words to lowercase
-\item remove punctuation
-\item stemming (Porter stemming algorithm?)
-\item Remove stop words (regular list of stop words is enough, since we use an asymmetric prior)
-\end{enumerate}
-\item Apply Grimmer's expressed agenda model to the corpus
-\begin{enumerate}
-\item Asymmetric prior
-\item Each document can have only one topic (in contrast to the author-topic model)
-\item Cities $i = 1,..., n = 15$
-\item Topic $k(k = 1,..., K )$
-\item Documents $j(j = 1,...,D_i)$ from city i
-\item Party covariate in the prior, where the deleted and unmodified documents are coded as from the first, and the added and modified documents from the second party
-\end{enumerate}
-\item Results
-\begin{enumerate}
-\item Label topics using Grimmer's automatic cluster labeling method, based on most commonly used words in documents belonging to topic
-\item Evaluate topics
-\end{enumerate}
-\end{enumerate}
 
-Validation:
+\section{Bag-of-Words Text Analysis}
 
-\begin{itemize}
-\item Do the above for cities in which no change of power occurred.
-\item Check whether there is higher than average turnover around the new year by comparing changes to non-election years (and also Louisiana, where elections are later).
-\item Check how long documents stay on websites on average. Use websites with a lot of snapshots for this (these exist for both small and large cities).
-\end{itemize}
-
-Problem with using this model: Grimmer's expressed agenda model uses Senators as the actors. Senators is also who he is substantively interested in. For us, the equivalent to Senators is cities. However, we care about parties, not cities.
-
-\subsection{Survival model}
-The existence of individual documents on municipal government websites can be though of as a survival process. No document stays on a website forever, and it appears to be a reasonable assumption that as documents get older and thus less relevant, they get replaced. The factors determining the steepness of the survival curve are the topic - fire safety regulations likely stay up longer than a bulletin on the annual spring banquet - and the change of party control after an election.
-
-\begin{quote}
-\textit{H1}: The older a document, the more likely it is to be removed.
-\end{quote}
-
-$S(t)$ has a downward slope. Admittedly, this is almost impossible not to be true. Also, test proportional, rising and falling hazard models.
-
-\begin{quote}
-\textit{H2}: Documents pertaining to administrative matters are less likely to be removed.
-\end{quote}
-
-Introduce a categorical variable for the top 10(?) topics. A negative coefficient for administrative topics would support this hypothesis.
-
-\begin{quote}
-\textit{H3}: Documents introduced by the opposing party are more likely to be removed.
-\end{quote}
-
-Introduce two variables into the survival model: One variable indicating which party has introduced a document, and a time-varying variable describing which party is currently in government. The hypothesis is tested through an interaction term between the two.
-
-\begin{quote}
-\textit{H4a}: Democrats are more likely to remove documents with topics pertaining to private enterprise, private schools.
-\end{quote}
-
-Interaction term between party in power and categorical topic variable.
-
-\begin{quote}
-\textit{H4b}: Republicans are more likely to remove documents with topics pertaining to social justice, equality, taxes, public schools, etc.
-\end{quote}
-
-Interaction term between party in power and categorical topic variable.
-
-\begin{quote}
-\textit{H5}: In line with their commitment to small government, Republicans are more likely than Democrats to remove documents.
-\end{quote}
-
-Party in power variable.\\
-
-
-This model will take up a lot of degrees of freedom. The rarity of snapshots for some cities might be a problem. Documents being changed and being removed can be modeled as competing risks.
-
-
-\begin{equation} 
-\label{eq1}
-\begin{split}
-Y & = \text{Party that introduced the document} \\
- & + \text{Party that is currently in power} \\
- & + \text{Topic 1, topic 2, ..., topic k} \\
- & + \text{Party that is currently in power} \times \text{Topic 1, topic 2, ..., topic k} \\
- & + \text{Days since start of mayoral term (control)}
-\end{split}
-\end{equation}
 
 \subsection{Topic modeling}
 Note: this chapter is mostly a wordy and less coherent version of the above.
@@ -590,12 +452,14 @@ To further investigate this issue, we look at the raw data itself - the document
 \subsubsection{Structural topic model}
 An ostensibly intuitive solution to topics clustering into cities in LDA is to include dummies for the cities in a statistical model of topics. This is facilitated by the structural topic model, which uses metadata on the document to account for variation in topics \citep{Roberts2014}. However, figure \ref{stm_results} shows that if anything, the STM exacerbates the problem. Here, we plot the \textit{p-values} of the coefficients for each city as well as the party variable across each topic. Under normal circumstances, plotting the p-values, as opposed to the fitted values, does not make much sense, but here it serves a diagnostic purpose. The plot shows that the party variable is never statistically significant at any conceivable level of confidence, nor is it even close to. Interestingly the same is true for a number of the cities as well. The topics cluster heavily into only about half of the cities, which does not present an improvement over LDA at all.
 
-\subsubsection{Prediction with SVM}
-An alternative approach to the problem is to ignore topics entirely, and go straight to predicting documents that are much more likely to be included on websites belonging to one or the other party. Classic machine learning techniques such as Naive Bayes, Linear Discriminant Analysis, or SVM should be expected to fare well in this context. Here, we rely on SVM, implemented with the SciKitLearn package in Python.\footnote{We also implemented SVM in R through the packages kernlab and e1071 in R. However, neither of these provide a regularized version of SVM (NOTE: at least that is what I am gathering from the stack overflow error), which prevents us from using all of the features contained in our data. Instead, we ranked the features according to tf-idf and selected the top 5000. These methods are also quite slow, and provide a maximum accuracy of 82\% in five-fold cross validation.} A grid search reveals the tf-idf representation of the document-term matrix to be better than pure word counts, unigrams to be superior to bi-grams, the application of an L2 penalty to be preferable to either L1 or elasticnet, and an alpha (a constant to multiply with the regularization parameter C) of 0.0005 to lead to the best results. Applying five-fold cross-validation to the (tf-idf) document-term matrix with the dimensions 16011x35000 leads to an average accuracy of 89\%.\footnote{Other methods used: Elastic-net in the glmnet package in R. Accuracy is 0.6924795 for in-sample prediction, so not worth bothering with.}
+%\subsubsection{Prediction with SVM}
+%An alternative approach to the problem is to ignore topics entirely, and go straight to predicting documents that are much more likely to be included on websites belonging to one or the other party. Classic machine learning techniques such as Naive Bayes, Linear Discriminant Analysis, or SVM should be expected to fare well in this context. Here, we rely on SVM, implemented with the SciKitLearn package in Python.\footnote{We also implemented SVM in R through the packages kernlab and e1071 in R. However, neither of these provide a regularized version of SVM (NOTE: at least that is what I am gathering from the stack overflow error), which prevents us from using all of the features contained in our data. Instead, we ranked the features according to tf-idf and selected the top 5000. These methods are also quite slow, and provide a maximum accuracy of 82\% in five-fold cross validation.} A grid search reveals the tf-idf representation of the document-term matrix to be better than pure word counts, unigrams to be superior to bi-grams, the application of an L2 penalty to be preferable to either L1 or elasticnet, and an alpha (a constant to multiply with the regularization parameter C) of 0.0005 to lead to the best results. Applying five-fold cross-validation to the (tf-idf) document-term matrix with the dimensions 16011x35000 leads to an average accuracy of 89\%.\footnote{Other methods used: Elastic-net in the glmnet package in R. Accuracy is 0.6924795 for in-sample prediction, so not worth bothering with.}
 
+%However, \cite{Monroe2008} advise against using these types of methods in this context because they get the data generation process backwards: Our theory assumes that party leads to variation in writing, and yet we rely on the documents to predict party, in spite of the fact that we actually have perfect knowledge of it.
+
+\subsection{Informative Dirichlet model}
 However, \cite{Monroe2008} advise against using these types of methods in this context because they get the data generation process backwards: Our theory assumes that party leads to variation in writing, and yet we rely on the documents to predict party, in spite of the fact that we actually have perfect knowledge of it.
 
-\subsubsection{Informative Dirichlet model}
 Consequently we follow their recommendation to use the informative Dirichlet model they present in the paper \citep{Monroe2008}. This approach aims to account for the fact that some words naturally occur more than others by applying a Dirichlet prior based on the distribution of words in random text. Figure \ref{fightinwordsIN} shows the top words for both Democrats and Republicans - and accomplishes, to some extent, the goal of \citep{Monroe2008} of banishing frequent words from this list and supplanting them by text with greater semantic, and in our case, partisan meaning. For Democrats, words related to public finances, such as 'fund', 'budget', or 'tax' are common - congruent with the party's greater willingness to raise and spend money publicly. Similarly, 'federal' 'funds' also appear among the Democratic top words. By contrast Republicans prefer to devote their attentions to purely local, and for the most part, logistic matters. 'Trees', 'water', 'street' and 'sign' appear on the list of Republican top words, suggesting that these mayors largely focus on city planning.
 
 These top words also show some degree of overlap with those determined by aggregating over topics in LDA.
@@ -798,6 +662,12 @@ These top words also show some degree of overlap with those determined by aggreg
 	\includegraphics[height = 1.2\textheight]{figures/heatmap_hclust_100.png}
 \end{figure}
 
+
+\section{Conclusion}
+
+We have developed a methodological pipleine for automatically gathering and preparing government websites for comparative analysis. This methodology holds the potential to vastly scale up the data collection efforts underpinning the rapidly growing body of research that is focused on government website analysis. Through an application to the analysis of municipal websites in Indiana and Louisiana, we show how our pipeline is capable of gathering corpora that shed light on the forms and functions of local government.
+
+
 \newpage
 
 \bibliographystyle{apsr} % apsr stopped working for me
@@ -847,6 +717,159 @@ These top words also show some degree of overlap with those determined by aggreg
 
 
 
+
+
+% latex table generated in R 3.3.3 by xtable 1.8-2 package
+% Wed Mar 22 11:32:43 2017
+%\begin{table}[ht]
+%	\centering
+%	\begin{tabular}{lrrlrrl}
+%		\hline
+%		City & DemVotes & RepVotes & Winner & Change & Pop15 & url \\ 
+%		\hline
+%		Attica &  & 187 & Republican & 0 & 3117 & https://attica-in.gov/ \\ 
+%		Connersville & 1005 & 995 & Democratic & 1 & 13010 & http://connersvillecommunity.com/ \\ 
+%		Frankfort &  & 1748 & Republican & 0 & 16060 & http://frankfort-in.gov/ \\ 
+%		Huntingburg & 447 & 793 & Republican & 0 & 6035 & http://www.huntingburg-in.gov/ \\ 
+%		Indianapolis & 92830 & 56661 & Democratic & 1 & 862781 & http://www.indy.gov \\ 
+%		Lake Station & 1483 & 227 & Democratic & 0 & 12054 & http://www.lakestation-in.gov/ \\ 
+%		Linton & 785 & 692 & Democratic & 0 & 5284 & http://www.linton-in.gov/ \\ 
+%		Madison & 1192 & 1915 & Republican & 0 & 12040 & http://www.madison-in.gov/ \\ 
+%		Mitchell & 229 & 495 & Republican & 1 & 4252 & http://mitchell-in.com/ \\ 
+%		Monticello & 0 &  & Democratic & 0 & 5322 & http://www.monticelloin.gov/ \\ 
+%		North Vernon & 679 & 697 & Republican & 1 & 6619 & http://www.northvernon-in.gov/ \\ 
+%		Richmond & 3421 & 2731 & Democratic & 0 & 35854 & http://www.richmondindiana.gov/ \\ 
+%		Rockport & 286 & 272 & Democratic & 1 & 2223 & http://www.cityofrockport-in.gov/ \\ 
+%		South Bend & 8515 & 2074 & Democratic & 0 & 101516 & https://www.southbendin.gov/ \\ 
+%		Union City & 338 & 440 & Republican & 0 & 3447 & http://www.unioncity-in.gov/ \\ 
+%		Winchester & 606 & 524 & Democratic & 1 & 4769 & http://www.winchester-in.gov/ \\ 
+%		\hline
+%	\end{tabular}
+%	\caption{} 
+%\end{table}
+
+\subsection{Research Design}
+
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{llr}
+		\hline
+		Variable & Unit & Source \\
+		\hline
+		Population size & 1000 people & Census \\
+		Population growth last 5 years & Percent & Census \\
+		Type of economy (agriculture/industry/services) & ? & Census \\
+		Economic performance (GDP?) & \$ & Census \\
+		Party of mayor before election & Rep/Dem/(Ind) & in.gov/sos/elections/ \\
+		Party of mayor after election & Rep/Dem/(Ind) & in.gov/sos/elections/ \\
+		Change of party control & 0/1 & in.gov/sos/elections/ \\
+		Presidential vote 2012 in county & Percent Rep & ? (but I have the data) \\
+		Unemployment rate & Percent & Census \\
+		Broadband speed & Avg. Mbps DL & broadbandmap.gov \\
+		\hline
+	\end{tabular}
+	\caption{List of covariates} 
+\end{table}
+
+
+
+\begin{enumerate}
+\item Corpus:
+\begin{enumerate}
+\item Last snapshots before the election (November 3, 2015 in Indiana; tbd. in Louisiana (probably February))
+\item First snapshot that is at least 2 months after the new government's inauguration (which is in January for Indiana, May for Louisiana)
+\end{enumerate}
+\item Preprocessing:
+\begin{enumerate}
+\item restrict corpus to:
+\begin{enumerate}
+\item documents belonging to cities in which a change of power occurred
+\item documents that were added, deleted or changed between the two snapshots
+\end{enumerate}
+\item words to lowercase
+\item remove punctuation
+\item stemming (Porter stemming algorithm?)
+\item Remove stop words (regular list of stop words is enough, since we use an asymmetric prior)
+\end{enumerate}
+\item Apply Grimmer's expressed agenda model to the corpus
+\begin{enumerate}
+\item Asymmetric prior
+\item Each document can have only one topic (in contrast to the author-topic model)
+\item Cities $i = 1,..., n = 15$
+\item Topic $k(k = 1,..., K )$
+\item Documents $j(j = 1,...,D_i)$ from city i
+\item Party covariate in the prior, where the deleted and unmodified documents are coded as from the first, and the added and modified documents from the second party
+\end{enumerate}
+\item Results
+\begin{enumerate}
+\item Label topics using Grimmer's automatic cluster labeling method, based on most commonly used words in documents belonging to topic
+\item Evaluate topics
+\end{enumerate}
+\end{enumerate}
+
+Validation:
+
+\begin{itemize}
+\item Do the above for cities in which no change of power occurred.
+\item Check whether there is higher than average turnover around the new year by comparing changes to non-election years (and also Louisiana, where elections are later).
+\item Check how long documents stay on websites on average. Use websites with a lot of snapshots for this (these exist for both small and large cities).
+\end{itemize}
+
+Problem with using this model: Grimmer's expressed agenda model uses Senators as the actors. Senators is also who he is substantively interested in. For us, the equivalent to Senators is cities. However, we care about parties, not cities.
+
+\subsection{Survival model}
+The existence of individual documents on municipal government websites can be though of as a survival process. No document stays on a website forever, and it appears to be a reasonable assumption that as documents get older and thus less relevant, they get replaced. The factors determining the steepness of the survival curve are the topic - fire safety regulations likely stay up longer than a bulletin on the annual spring banquet - and the change of party control after an election.
+
+\begin{quote}
+\textit{H1}: The older a document, the more likely it is to be removed.
+\end{quote}
+
+$S(t)$ has a downward slope. Admittedly, this is almost impossible not to be true. Also, test proportional, rising and falling hazard models.
+
+\begin{quote}
+\textit{H2}: Documents pertaining to administrative matters are less likely to be removed.
+\end{quote}
+
+Introduce a categorical variable for the top 10(?) topics. A negative coefficient for administrative topics would support this hypothesis.
+
+\begin{quote}
+\textit{H3}: Documents introduced by the opposing party are more likely to be removed.
+\end{quote}
+
+Introduce two variables into the survival model: One variable indicating which party has introduced a document, and a time-varying variable describing which party is currently in government. The hypothesis is tested through an interaction term between the two.
+
+\begin{quote}
+\textit{H4a}: Democrats are more likely to remove documents with topics pertaining to private enterprise, private schools.
+\end{quote}
+
+Interaction term between party in power and categorical topic variable.
+
+\begin{quote}
+\textit{H4b}: Republicans are more likely to remove documents with topics pertaining to social justice, equality, taxes, public schools, etc.
+\end{quote}
+
+Interaction term between party in power and categorical topic variable.
+
+\begin{quote}
+\textit{H5}: In line with their commitment to small government, Republicans are more likely than Democrats to remove documents.
+\end{quote}
+
+Party in power variable.\\
+
+
+This model will take up a lot of degrees of freedom. The rarity of snapshots for some cities might be a problem. Documents being changed and being removed can be modeled as competing risks.
+
+
+\begin{equation} 
+\label{eq1}
+\begin{split}
+Y & = \text{Party that introduced the document} \\
+ & + \text{Party that is currently in power} \\
+ & + \text{Topic 1, topic 2, ..., topic k} \\
+ & + \text{Party that is currently in power} \times \text{Topic 1, topic 2, ..., topic k} \\
+ & + \text{Days since start of mayoral term (control)}
+\end{split}
+\end{equation}
 
 
 
