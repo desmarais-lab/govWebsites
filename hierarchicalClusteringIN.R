@@ -51,17 +51,21 @@ entropy <- function(freqs){
 # =============================================================================
 
 #explore what the documents cluster into if k = 10
-nclust <- 32
-groups$labels <- 1:nrow(d)
+nclust <- 100
+groups$labels <- d$Name
 test <- cutree(groups, k = nclust)
 test.names <- names(test)
-cluster.categories <- data.frame(cluster = test, category = test.names)
+cluster.categories <- data.frame(cluster = test, category = test.names, ind = 1:length(test.names))
 #test2 <- xtabs(~ category + cluster, data = cluster.categories)
+
+diag.files <- list.files("diagnostics/hclustering", full.names = T)
+diag.files <- diag.files[diag.files!="diagnostics/hclustering/_comments.txt"]
+file.remove(diag.files)
 
 #for each cluster
 for(i in 1:nclust){
 
-clust.indices <- cluster.categories$category[cluster.categories$cluster==i]
+clust.indices <- cluster.categories$ind[cluster.categories$cluster==i]
   
 ind <- sample(clust.indices, ifelse(length(clust.indices)>=10, 10, length(clust.indices)))
 
@@ -95,6 +99,10 @@ for(j in 1:length(ind)){
   
   
 }}
+
+#For testing purposes
+#look at the d dataframea only for the documents in a specific cluster
+#d_test = d[cluster.categories$ind[cluster.categories$cluster==59],]
 
 # =============================================================================
 

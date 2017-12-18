@@ -9,7 +9,7 @@ d$latitude <- as.numeric(d$latitude)
 d$longitude <- as.numeric(d$longitude)
 d$winner[is.na(d$winner)==T] <- "NA"
 
-## Indiana
+## Louisiana
 # get the map from Google maps
 states <- map_data("state")
 louisiana <- subset(states, region %in% c("louisiana"))
@@ -22,7 +22,8 @@ map2 <- map1 +
   geom_point(data = d, aes(x = longitude, y = latitude, color = winner), size = 2) + 
   theme(legend.position = "none") + 
   scale_color_manual(values=c("blue", "gray", "red")) +
-  labs(x = "Longitude", y = "Latitude")
+  labs(x = "Longitude", y = "Latitude") +
+  theme_void() + theme(legend.position = "none")
 map2
 
-ggsave(filename = "paper/figures/louisiana_map.pdf", plot = map2, width = 5, height = 8)
+ggsave(filename = "paper/figures/louisiana_map.pdf", plot = map2, width = 5, height = 5)

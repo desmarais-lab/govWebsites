@@ -1,5 +1,0 @@
-\beamer@sectionintoc {1}{Introduction}{1}{0}{1}
-\beamer@sectionintoc {2}{Data Collection}{3}{0}{2}
-\beamer@sectionintoc {3}{Preprocessing}{4}{0}{3}
-\beamer@sectionintoc {4}{Analysis}{8}{0}{4}
-\beamer@sectionintoc {5}{Conclusion}{11}{0}{5}

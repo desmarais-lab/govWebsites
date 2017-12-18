@@ -22,7 +22,8 @@ map2 <- map1 +
   geom_point(data = d, aes(x = longitude, y = latitude, color = winner), size = 2) + 
   theme(legend.position = "none") + 
   scale_color_manual(values=c("blue", "gray", "red")) +
-  labs(x = "Longitude", y = "Latitude")
+  labs(x = "Longitude", y = "Latitude") + 
+  theme_void() + theme(legend.position = "none")
 map2
 
 ggsave(filename = "paper/figures/indiana_map.pdf", plot = map2, width = 5, height = 8)
