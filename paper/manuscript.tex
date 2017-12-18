@@ -128,42 +128,12 @@ A local government's website is a standard and general source of information for
 % Description of the possible challenges
 \section{Introduction}
 
-\subsection{New Research Design}
-The analysis of entire websites has become more prominent recently, especially in the the text-as-data movement. We see great promise in this development, especially as it pertains to the study of governmental branches and agencies, which are often resilient to being studied by other methods. However, this line of inquiry comes with a set of particular challenges and pitfalls researchers need to be mindful of. We offer solutions to these problems at the four stages of such an analysis.
+Local governments convey voluminous information about all aspects of their policymaking, policy implementation, and public deliberation, via their official websites. The vital role of official websites in connecting the government and the governed has motivated a wave of research on the contents of government websites [CITE]. Despite the potential for automated scraping of website contents, the conventional approach to data collection in projects focused on government websites involves manual content extraction from each website in the dataset. Though highly accurate, the manual approach to data collection is costly, and cannot be scaled to capture even a fraction of the volume of content available on government websites. In this paper we present a methodological pipeline that can be used to automatically scrape government websites in order to build datasets that can be used for text analysis. We provide an illustrative application in which we explore the ways in which the textual contents on city government websites in Indiana and Louisiana correlate with the partisanship of the city mayor.
 
-\begin{enumerate}
-	\item Design
-	\begin{enumerate}
-		\item Choosing the sample
-		\item Finding URLs
-		\item list of .gov websites
-		\item Finding supporting data
-	\end{enumerate}
-	\item Scraping
-		\begin{enumerate}
-			\item wget
-			\item headless browser/Selenium
-			\item Beautifulsoup/rvest
-			\item APIs (httr)
-			\item Wayback Machine
-		\end{enumerate}
-	\item Pre-processing
-		\begin{enumerate}
-			\item Determining document filetype
-			\item File conversion
-			\item Conventional preprocessing (lowercase, numbers, punctuation)
-			\item Stemming and lemmatization
-			\item spellchecking
-			\item Dealing with duplicate text \& html documents in particular
-		\end{enumerate}
-	\item Analysis
-		\begin{enumerate}
-			\item LDA
-			\item Other topic models (structural, author, dynamic -- maybe?)
-			\item SVM (+ other machine learning classifiers?)
-			\item Fightin Words
-		\end{enumerate}
-\end{enumerate}
+Though there exists a variety of software tools that are designed to automatically scrape all of the files available at a website [CITE], raw website downloads have to be processed significantly before the files are adequately prepared for text analysis. We describe and provide solutions to two central challenges in automatically gathering and analyzing website textual contents. First, plain text must be extracted from the files. This involves purging the files of syntax in HTML and other programming languages, and discarding any other character encoding errors that result from reading the files. This challenge would arise in any context in which researchers sought to study the textual contents of websites, and is not unique to comparative analysis of government websites. The second challenge we address in our methodological pipeline is, however, specific to the research objective of comparing websites on the basis of a common lexicon. For any two governments, the textual signatures that most dramatically differentiate the textual contents of their websites consist of what we can call ``boilerplate'' text---header, footer, or other titling text that is designed to identify the website as being associated with a specific government entity (e.g., ``Welcome to the city of Santa Cruz'', ``The City of Los Angeles welcomes you''). This boilerplate text is replicated across many files that are associated with a government's website, but it provides little information regarding the form and/or function of the government. The second methodological innovation we offer in our pipeline is designed to minimize the impact of this boilerplate text on the comparative analysis of government website content. 
+
+Government websites provide information about how public policies shape the lives of local residents, and how local residents can engage with government to shape public policy. As such, government websites reflect both the results of, and inputs to, the political leadership in the city. In our illustrative application we explore the ways in which the contents of city government websites differ on the basis of the partisanship of the city's elected executive. A substantial body of research has found that the partisanship of the mayor affects city governance along multiple dimensions, including [CITE], [CITE], [CITE]. We study whether significant differences between city governments based on mayoral partisanship are reflected in the contents of city websites.
+
 
 \section{Background}
 
@@ -828,3 +798,56 @@ These top words also show some degree of overlap with those determined by aggreg
 \bibliography{ref}
 
 \end{document}
+
+
+
+
+
+\begin{enumerate}
+	\item Design
+	\begin{enumerate}
+		\item Choosing the sample
+		\item Finding URLs
+		\item list of .gov websites
+		\item Finding supporting data
+	\end{enumerate}
+	\item Scraping
+		\begin{enumerate}
+			\item wget
+			\item headless browser/Selenium
+			\item Beautifulsoup/rvest
+			\item APIs (httr)
+			\item Wayback Machine
+		\end{enumerate}
+	\item Pre-processing
+		\begin{enumerate}
+			\item Determining document filetype
+			\item File conversion
+			\item Conventional preprocessing (lowercase, numbers, punctuation)
+			\item Stemming and lemmatization
+			\item spellchecking
+			\item Dealing with duplicate text \& html documents in particular
+		\end{enumerate}
+	\item Analysis
+		\begin{enumerate}
+			\item LDA
+			\item Other topic models (structural, author, dynamic -- maybe?)
+			\item SVM (+ other machine learning classifiers?)
+			\item Fightin Words
+		\end{enumerate}
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
