@@ -6,11 +6,12 @@
 \usepackage{graphicx}
 %\usepackage{draftwatermark}
 \usepackage{tikz}
+\usepackage{colortbl}
 \usepackage{subfigure}
 %\usetheme{Amsterdam}
 \usecolortheme{default}
-\title[]{The effects of transitions of power on the contents of
-	municipal government websites}
+\title[]{Government websites as data: A methodological pipeline for
+collection, processing, and text analysis}
 \author{Markus Neumann \\ Fridolin Linder \\ Bruce Desmarais}
 \institute{The Pennsylvania State University}
 \date{January 6, 2018}
@@ -23,7 +24,7 @@
 	\hbox{%
 		\begin{beamercolorbox}[wd=.1\paperwidth,ht=2.5ex,dp=1.125ex,%
 			leftskip=.3cm,rightskip=.3cm,center]{title in head/foot}%
-			{\usebeamerfont{author in head/foot}\usebeamercolor[fg]{author in head/foot}}%\insertframenumber/\inserttotalframenumber}%
+			{\usebeamerfont{author in head/foot}\usebeamercolor[fg]{author in head/foot}}{\insertframenumber}%/\inserttotalframenumber}%
 		\end{beamercolorbox}%
 		\begin{beamercolorbox}[wd=.75\paperwidth,ht=2.5ex,dp=1.125ex,%
 			leftskip=.3cm,rightskip=.3cm plus1fil,center]{title in head/foot}%
@@ -68,7 +69,11 @@
 }
 \end{frame}
 
-\begin{frame}{Government Websites}
+\begin{frame}{Example Website}
+	\includegraphics[width = \linewidth]{arcadia_water.png}
+\end{frame}
+
+\begin{frame}{Local Government Websites}
 \linespread{1.5}
 {\large
 	\begin{itemize}
@@ -81,25 +86,25 @@
 	}
 \end{frame}
 
-\begin{frame}{Maps}
+\begin{frame}{Data Overview}
 \begin{figure}
 	\hfill
-	\subfigure{\includegraphics[width=5cm, height = .7\textheight]{../figures/louisiana_map.pdf}}
-	\hfill
 	\subfigure{\includegraphics[width=5cm, height = .7\textheight]{../figures/indiana_map.pdf}}
+	\hfill
+	\subfigure{\includegraphics[width=5cm, height = .7\textheight]{../figures/louisiana_map.pdf}}
 \end{figure}
 \end{frame}
 
 \begin{frame}{The Pipeline}
-	\textbf{Data Collection} \hspace{2mm} --> \hspace{2mm} \textbf{Preprocessing} \hspace{2mm} --> \hspace{2mm} \textbf{Analysis}
+	\textbf{Data Collection} \hspace{2mm} $\rightarrow$ \hspace{2mm} \textbf{Preprocessing} \hspace{2mm} $\rightarrow$ \hspace{2mm} \textbf{Analysis}
 \begin{columns}
 	\column{0.33\textwidth}
 	%Data Collection
 	\vspace{5mm}
 	\begin{itemize}
-		\item Scraping URLs
-		\item Browser automation to verify URLs
-		\item Download sites with wget
+		\item Identify URLs
+		\item Verify URLs (browser automation)
+		\item Download websites
 		\item Determine file type
 		\item Convert to txt
 	\end{itemize}		
@@ -109,61 +114,61 @@
 	\begin{itemize}
 		\item Remove punctuation, dates, etc.
 		\item To lowercase
-		\item Duplicate content removal
+		\item Boilerplate removal
 		\item Spellchecking
-		\item Lemmatization
+		\item Lemmatization \\ (city \& cities = city)
 	\end{itemize}
 	\column{0.33\textwidth}
 	%Analysis
 	\vspace{5mm}
 	\begin{itemize}
-		\item Hierarchical clustering
+		%\item Hierarchical clustering
 		\item Fightin' Words
-		\item Topic models
-		\begin{itemize}
-			\item LDA
-			\item STM
-		\end{itemize}
+		\item Structural topic model
+		%\begin{itemize}
+		%	\item LDA
+		%	\item STM
+		%\end{itemize}
 	\end{itemize}
 \end{columns}
 \end{frame}
 
 \begin{frame}{The Pipeline}
-\textbf{Data Collection} \hspace{2mm} --> \hspace{2mm} \textbf{Preprocessing} \hspace{2mm} --> \hspace{2mm} \textbf{Analysis}
-\begin{columns}
-	\column{0.33\textwidth}
-	%Data Collection
-	\vspace{5mm}
-	\begin{itemize}
-		\item Scraping URLs
-		\item Browser automation to verify URLs
-		\item Download sites with wget
-		\item Determine file type
-		\item Convert to txt
-	\end{itemize}		
-	\column{0.33\textwidth}
-	%Preprocessing
-	\vspace{5mm}
-	\begin{itemize}
-		\item Remove punctuation, dates, etc.
-		\item To lowercase
-		\item \textbf{Duplicate content removal}
-		\item Spellchecking
-		\item Lemmatization
-	\end{itemize}
-	\column{0.33\textwidth}
-	%Analysis
-	\vspace{5mm}
-	\begin{itemize}
-		\item Hierarchical clustering
-		\item Fightin' Words
-		\item Topic models
+	\textbf{Data Collection} \hspace{2mm} $\rightarrow$ \hspace{2mm} \textbf{Preprocessing} \hspace{2mm} $\rightarrow$ \hspace{2mm} \textbf{Analysis}
+	\begin{columns}
+		\column{0.33\textwidth}
+		%Data Collection
+		\vspace{5mm}
 		\begin{itemize}
-			\item LDA
-			\item STM
+			\item Identify URLs
+			\item Verify URLs (browser automation)
+			\item Download websites
+			\item Determine file type
+			\item Convert to txt
+		\end{itemize}		
+		\column{0.33\textwidth}
+		%Preprocessing
+		\vspace{5mm}
+		\begin{itemize}
+			\item Remove punctuation, dates, etc.
+			\item To lowercase
+			\item \textbf{Boilerplate removal}
+			\item Spellchecking
+			\item Lemmatization \\ (city \& cities = city)
 		\end{itemize}
-	\end{itemize}
-\end{columns}
+		\column{0.33\textwidth}
+		%Analysis
+		\vspace{5mm}
+		\begin{itemize}
+			%\item Hierarchical clustering
+			\item Fightin' Words
+			\item Structural topic model
+			%\begin{itemize}
+			%	\item LDA
+			%	\item STM
+			%\end{itemize}
+		\end{itemize}
+	\end{columns}
 \end{frame}
 
 \section{Preprocessing}
@@ -177,71 +182,67 @@
 %\end{itemize}
 %\end{frame}
 
-\begin{frame}{Duplicate Content Removal}
+\begin{frame}{Boilerplate Removal}
 \includegraphics[width = \linewidth]{arcadia_water.png}
 \end{frame}
 
-\begin{frame}{Duplicate Content Removal}
+\begin{frame}{Boilerplate Removal}
 \includegraphics[width = \linewidth]{duplicateLines.png}
 \end{frame}
 
-\begin{frame}{Duplicate Content Removal}
+\begin{frame}{Boilerplate Removal}
 	\includegraphics[width = \linewidth]{duplicateLineRemoval.png}
 \end{frame}
 
-\begin{frame}{Duplicate Content Removal}
+\begin{frame}{Boilerplate Removal}
 \begin{itemize}
 	\item Within each city, there is a lot of shared text
-	\begin{itemize}
-		\item Boilerplate
-		\item Website elements
-	\end{itemize}
 	\item If not removed, the text clusters into cities
 \end{itemize}
 \begin{itemize}
 	\item Solution: Compare each line in each document to every other line in every document of that city
 	\item Count duplicates
 	\item Remove a line if it is duplicated within a city above some threshold
-	\item Hash tables for computational efficiency
+	\item Fast \& efficient implementation
 \end{itemize}
 \end{frame}
 
 \begin{frame}{The Pipeline}
-\textbf{Data Collection} \hspace{2mm} --> \hspace{2mm} \textbf{Preprocessing} \hspace{2mm} --> \hspace{2mm} \textbf{Analysis}
-\begin{columns}
-	\column{0.33\textwidth}
-	%Data Collection
-	\vspace{5mm}
-	\begin{itemize}
-		\item Scraping URLs
-		\item Browser automation to verify URLs
-		\item Download sites with wget
-		\item Determine file type
-		\item Convert to txt
-	\end{itemize}		
-	\column{0.33\textwidth}
-	%Preprocessing
-	\vspace{5mm}
-	\begin{itemize}
-		\item Remove punctuation, dates, etc.
-		\item To lowercase
-		\item Duplicate content removal
-		\item Spellchecking
-		\item Lemmatization
-	\end{itemize}
-	\column{0.33\textwidth}
-	%Analysis
-	\vspace{5mm}
-	\begin{itemize}
-		\item Hierarchical clustering
-		\item Fightin' Words
-		\item Topic models
+	\textbf{Data Collection} \hspace{2mm} $\rightarrow$ \hspace{2mm} \textbf{Preprocessing} \hspace{2mm} $\rightarrow$ \hspace{2mm} \textbf{Analysis}
+	\begin{columns}
+		\column{0.33\textwidth}
+		%Data Collection
+		\vspace{5mm}
 		\begin{itemize}
-			\item LDA
-			\item STM
+			\item Identify URLs
+			\item Verify URLs (browser automation)
+			\item Download websites
+			\item Determine file type
+			\item Convert to txt
+		\end{itemize}		
+		\column{0.33\textwidth}
+		%Preprocessing
+		\vspace{5mm}
+		\begin{itemize}
+			\item Remove punctuation, dates, etc.
+			\item To lowercase
+			\item Boilerplate removal
+			\item Spellchecking
+			\item Lemmatization \\ (city \& cities = city)
 		\end{itemize}
-	\end{itemize}
-\end{columns}
+		\column{0.33\textwidth}
+		%Analysis
+		\vspace{5mm}
+		\begin{itemize}
+			%\item Hierarchical clustering
+			\item Fightin' Words
+			\item Structural topic model
+			%\begin{itemize}
+			%	\item LDA
+			%	\item STM
+			%\end{itemize}
+		\end{itemize}
+	\end{columns}
 \end{frame}
 
 %\begin{frame}{Other preprocessing}
@@ -261,25 +262,27 @@
 %\end{frame}
 
 \section{Analysis}
-\begin{frame}{Hierarchical Clustering}
-\centering
-\includegraphics[height=\textheight]{../figures/heatmap_hclust_40.png}
-\end{frame}
+%\begin{frame}{Hierarchical Clustering}
+%\centering
+%\includegraphics[height=\textheight]{../figures/heatmap_hclust_40.png}
+%\end{frame}
+
+%\begin{frame}{Fightin' Words}
+%\begin{figure}
+%	\hfill
+%	\subfigure{\includegraphics[width=5cm]{../figures/fightinWordsIN.png}}
+%	\hfill
+%	\subfigure{\includegraphics[width=5cm]{../figures/fightinWordsLA.png}}
+%\end{figure}
+%\end{frame}
 
 \begin{frame}{Fightin' Words}
-\begin{figure}
-	\hfill
-	\subfigure{\includegraphics[width=5cm]{../figures/fightinWordsIN.png}}
-	\hfill
-	\subfigure{\includegraphics[width=5cm]{../figures/fightinWordsLA.png}}
-\end{figure}
+	\input{fightinwordsIN.tex} %../tables/stmTopWordsINDem.tex
 \end{frame}
 
-\begin{frame}{Latent Dirichlet Allocation}
-
-\input{partisanTopWords.tex}
-
-\end{frame}
+%\begin{frame}{Latent Dirichlet Allocation}
+%\input{partisanTopWords.tex}
+%\end{frame}
 
 \begin{frame}{Structural Topic Model}
 \input{stmTopWordsINDem.tex} %../tables/stmTopWordsINDem.tex
@@ -291,15 +294,20 @@
 
 \section{Conclusion}
 \begin{frame}{Conclusion}
-%\linespread{1.5}
+\linespread{1.5}
 \large
 \begin{itemize}
-	\item Hierarchical clustering only creates 'topics' if content is VERY similar
-	\item Fightin words is extremely effective at forcing the text into two categories, but also somewhat limited
-	\item LDA is sensitive to preprocessing, but the most flexible
-	\item STM works too, but also very sensitive to duplicate content
+	%\item Hierarchical clustering only creates 'topics' if content is VERY similar
+	%\item Fightin words is extremely effective at forcing the text into two categories, but also somewhat limited
+	%\item LDA is sensitive to preprocessing, but the most flexible
+	%\item STM works too, but also very sensitive to duplicate content
+	\item Manual vs. automatic analysis of government websites
+	\item Our pipeline facilities scalable comparative analysis
+	
 	\vspace{5mm}
-	\item Democrats focus on raising and spending money, Republicans on infrastructure and basic utilities
+	\item Partisanship affects website content:
+	\item Democrats focus on raising and spending money
+	\item Republicans focus on infrastructure and utilities
 \end{itemize}
 \end{frame}
 
