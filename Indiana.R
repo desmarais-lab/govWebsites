@@ -9,7 +9,7 @@ stateAbb <- "IN"
 
 source("./functions/preprocessing.R")
 # Read in the data from txt files
-d <- readCityDocuments("./websites/current")
+d <- readCityDocuments("./websites/IN")
 # merge city coefficients (i.e. election data) with the documents
 d <- mergeCityCoefficients(d, "rfiles/city_coefficients_indiana.rds")
 # Do all the preprocessing that needs to be done before removing duplicate lines

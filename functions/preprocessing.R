@@ -170,13 +170,14 @@ proc_city <- function(j, citytable){
 # ... duplicated across that city
 
 library('parallel')
+source('functions/getCores.R')
 
 findDuplicates <- function(d){
 
   citytable <- table(d$City)
   #citynames <- d$City
   
-  cl <- makeForkCluster(detectCores()-1)
+  cl <- makeForkCluster(getCores(3500))
   docDuplicates <- pbsapply(1:length(citytable), proc_city, citytable, cl = cl)
   stopCluster(cl)
   
