@@ -16,7 +16,7 @@ d <- mergeCityCoefficients(d, "rfiles/city_coefficients_louisiana.rds")
 d <- preprocessing_1(d)
 # Find duplicate lines
 docDuplicates <- findDuplicates(d)
-save(docDuplicates, file = "rfiles/docDuplicatesLA.rdata")
+save(docDuplicates, file = paste0("rfiles/docDuplicates", stateAbb, ".rdata"))
 # Use the counts of duplicate lines found above to remove them over a certain threshold
 d$doc <- as.character(pbsapply(1:nrow(d), removeDuplicates))
 
@@ -26,6 +26,11 @@ d$doc <- as.character(pbsapply(1:nrow(d), removeDuplicates))
 d <- preprocessing_2(d)
 
 save(d, file = paste0("rfiles/d_", stateAbb, ".rdata"))
+#file.copy(paste0("rfiles/d_", stateAbb, ".rdata"), paste0("rfiles/d_", stateAbb, "_backup.rdata"))
+#load(paste0("rfiles/d_", stateAbb, ".rdata"))
+
+#lemmatization
+system(paste0("python3 lemmatization.py ", paste0("rfiles/d_", stateAbb, ".rdata")))
 load(paste0("rfiles/d_", stateAbb, ".rdata"))
 
 # ------------- #

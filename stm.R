@@ -20,7 +20,13 @@ if(exists("stateAbb")==F){
 #get the data ready for preprocessing
 docs <- d$doc
 meta <- subset(d, select = c('City', 'Party'))
-processed <- textProcessor(docs, metadata = meta)
+processed <- textProcessor(docs, metadata = meta, 
+                           lowercase = F,
+                           removestopwords = F, 
+                           removenumbers = F, 
+                           removepunctuation = F,
+                           stem = F, 
+                           wordLengths = c(1, Inf))
 out <- prepDocuments(processed$documents, processed$vocab, processed$meta)
 docs <- out$documents
 vocab <- out$vocab
@@ -28,22 +34,22 @@ meta <- out$meta
 
 #the stm package has its own preprocessing function
 out <- prepDocuments(processed$documents, processed$vocab,
-                     processed$meta, lower.thresh = 15)
+                     processed$meta, lower.thresh = 1)
 
 #Number of topics
 numtopics <- 60
 
 #Train the model
 stmFit <- stm(documents = out$documents, vocab = out$vocab,
-              K = numtopics, prevalence =~ winner,
-              max.em.its = 75, data = out$meta,
+              K = numtopics, prevalence =~ Party,
+              max.em.its = 200, data = out$meta,
               init.type = "Spectral")
 
 #Estimate effects from the model outputs
 sims <- 1000
 
 #re-estimate the effects, this time do 1000 draws from the posterior
-prep <- estimateEffect(formula = 1:numtopics ~ winner, 
+prep <- estimateEffect(formula = 1:numtopics ~ Party, 
                        stmobj = stmFit,
                        meta = out$meta, 
                        uncertainty = "Global",
