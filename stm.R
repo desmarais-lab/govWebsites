@@ -42,7 +42,7 @@ numtopics <- 60
 #Train the model
 stmFit <- stm(documents = out$documents, vocab = out$vocab,
               K = numtopics, prevalence =~ Party,
-              max.em.its = 200, data = out$meta,
+              max.em.its = 9999, data = out$meta,
               init.type = "Spectral")
 
 #Estimate effects from the model outputs
@@ -58,7 +58,7 @@ prep <- estimateEffect(formula = 1:numtopics ~ Party,
 #save the results, since training takes some time
 #the results are so large, we only retain the
 #objects necessary for the rest of the analysis
-rm(list = ls()[!ls()%in% c("stmFit", "prep", "out", "numtopics")])
+#rm(list = ls()[!ls()%in% c("stmFit", "prep", "out", "numtopics")])
 save.image(paste0("rfiles/stmSession", stateAbb, ", _Party.rdata"))
 load(paste0("rfiles/stmSession", stateAbb, ", _Party.rdata"))
 

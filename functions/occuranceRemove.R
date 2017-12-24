@@ -8,10 +8,10 @@ library(quanteda)
 
 dm <- corpus(d$doc)
 dm <- dfm(dm) 
-dm <- as.matrix(dm)
+dm <- slam::as.simple_triplet_matrix(dm)
 
 #binarize dtm
-dm <- ifelse(dm>0, 1, 0)
+dm$v <- ifelse(dm$v>0, 1, 0)
 #sum over documents -- i.e. in how many documents does a term occur
 dmColSums <- apply(dm, 2, sum)
 #choose the cutoff

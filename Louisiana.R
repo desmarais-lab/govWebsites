@@ -1,4 +1,4 @@
-setwd("govWebsites")
+#setwd("govWebsites")
 
 state <- "Louisiana"
 stateAbb <- "LA"
@@ -32,13 +32,17 @@ save(d, file = paste0("rfiles/d_", stateAbb, ".rdata"))
 #lemmatization
 system(paste0("python3 lemmatization.py ", paste0("rfiles/d_", stateAbb, ".rdata")))
 load(paste0("rfiles/d_", stateAbb, ".rdata"))
+#spacy puts -PRON- in place of pronouns since they can't be lemmatized
+#we don't really care about pronouns, so we just remove them
+d$doc <- str_replace_all(d$doc, "-PRON- ", "")
+save(d, file = paste0("rfiles/d_", stateAbb, ".rdata"))
 
 # ------------- #
 #      LDA      #
 # ------------- #
 
 # Train LDA
-source("functions/malletTraining.R")
+#source("functions/malletTraining.R")
 
 # 6 (mostly diagnostic) figures:
 #Densities of topic weights for documents in Republican and Democratic cities.
@@ -53,7 +57,7 @@ source("functions/malletTraining.R")
 #\label{doctopics_density_bigdiffs}
 #Word-topic probabilities for topics with big partisan differences, across documents
 #\label{heatmaps_weights}
-source("malletAnalysis.R")
+#source("malletAnalysis.R")
 
 #source("malletAnalysisPartisanTopicsLA.R")
 #source("malletAnalysisPartisanTopWordsLA.R")

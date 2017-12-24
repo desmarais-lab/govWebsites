@@ -304,6 +304,26 @@ preprocessing_2 <- function(d){
   #remove terms that occur in only 1 document
   source('functions/occuranceRemove.R')
   
+  #remove terms with less than 3 characters
+  tokenLenRemove <- function(charstring, lenCutoff = 3){
+    tokenObj <- tokens(charstring)
+    tokenObjChar <- as.character(tokenObj)
+    tokenLen <- nchar(tokenObjChar)
+    errors <- tokenObjChar[tokenLen<lenCutoff]
+    if(length(errors)>0){
+      output <- tokens_remove(tokens(charstring), errors)
+      output <- str_c(output[[1]], collapse = " ")
+    }
+    else{
+      output <- charstring
+    }
+    #in case everything is removed, make an empty string
+    if(identical(output, character(0))){
+      output <- ""
+    }
+    return(output)
+  }
+  
   return(d)
   
 }
