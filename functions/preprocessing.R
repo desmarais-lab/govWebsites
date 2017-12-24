@@ -197,10 +197,12 @@ removeDuplicates <- function(i, k = 10){
 #use the function (with a progress bar) on the whole corpus
 #d$doc <- as.character(pbsapply(1:nrow(d), removeDuplicates))
 
-library('hunspell')
+
 
 # Do all the preprocessing after removing duplicate lines
 preprocessing_2 <- function(d){
+  
+  library('hunspell')
   
   #Remove bullet points
   print("Removing bullet points:")
@@ -298,6 +300,9 @@ preprocessing_2 <- function(d){
   d$ntokens <- sapply(d$doc, countTokens)
   d$nuniquetokens <- sapply(d$doc, countUniqueTokens)
   d$tokenratio <- d$nuniquetokens/d$ntokens
+  
+  #remove terms that occur in only 1 document
+  source('functions/occuranceRemove.R')
   
   return(d)
   
