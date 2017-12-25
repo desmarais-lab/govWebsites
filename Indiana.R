@@ -16,6 +16,7 @@ d <- mergeCityCoefficients(d, "rfiles/city_coefficients_indiana.rds")
 d <- preprocessing_1(d)
 # Find duplicate lines
 docDuplicates <- findDuplicates(d)
+save(docDuplicates, file = paste0("rfiles/docDuplicates", stateAbb, ".rdata"))
 # Use the counts of duplicate lines found above to remove them over a certain threshold
 d$doc <- as.character(pbsapply(1:nrow(d), removeDuplicates))
 
@@ -25,14 +26,26 @@ d$doc <- as.character(pbsapply(1:nrow(d), removeDuplicates))
 d <- preprocessing_2(d)
 
 save(d, file = paste0("rfiles/d_", stateAbb, ".rdata"))
+#file.copy(paste0("rfiles/d_", stateAbb, ".rdata"), paste0("rfiles/d_", stateAbb, "_backup.rdata"))
+#load(paste0("rfiles/d_", stateAbb, ".rdata"))
+
+#lemmatization
+system(paste0("python3 lemmatization.py ", paste0("rfiles/d_", stateAbb, ".rdata")))
 load(paste0("rfiles/d_", stateAbb, ".rdata"))
+#spacy puts -PRON- in place of pronouns since they can't be lemmatized
+#we don't really care about pronouns, so we just remove them
+d$doc <- str_replace_all(d$doc, "-PRON- ", "")
+save(d, file = paste0("rfiles/d_", stateAbb, ".rdata"))
+
+# merge in city population
+source("mergeDocsWithCensusData.R")
 
 # ------------- #
 #      LDA      #
 # ------------- #
 
 # Train LDA
-source("functions/malletTraining.R")
+#source("functions/malletTraining.R")
 
 # 6 (mostly diagnostic) figures:
 #Densities of topic weights for documents in Republican and Democratic cities.
@@ -47,7 +60,7 @@ source("functions/malletTraining.R")
 #\label{doctopics_density_bigdiffs}
 #Word-topic probabilities for topics with big partisan differences, across documents
 #\label{heatmaps_weights}
-source("malletAnalysis.R")
+#source("malletAnalysis.R")
 
 #source("malletAnalysisPartisanTopicsLA.R")
 #source("malletAnalysisPartisanTopWordsLA.R")

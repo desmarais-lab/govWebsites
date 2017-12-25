@@ -34,8 +34,11 @@ system(paste0("python3 lemmatization.py ", paste0("rfiles/d_", stateAbb, ".rdata
 load(paste0("rfiles/d_", stateAbb, ".rdata"))
 #spacy puts -PRON- in place of pronouns since they can't be lemmatized
 #we don't really care about pronouns, so we just remove them
-d$doc <- str_replace_all(d$doc, "PRON ", "")
+d$doc <- str_replace_all(d$doc, "-PRON- ", "")
 save(d, file = paste0("rfiles/d_", stateAbb, ".rdata"))
+
+# merge in city population
+source("mergeDocsWithCensusData.R")
 
 # ------------- #
 #      LDA      #
