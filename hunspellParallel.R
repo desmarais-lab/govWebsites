@@ -4,12 +4,7 @@ library('parallel')
 library('quanteda')
 library('stringr')
 
-# Calculate the number of cores
-ncores <- detectCores() - 1
-# Initiate cluster
-# type="FORK" is necessary to load all the libraries
-# supposedly only works on Unix systems
-cl <- makeCluster(ncores, type = "FORK")
+
 
 #setwd("./websites/current")
 #load(file = "./rfiles/dd.Rdata")
@@ -36,11 +31,18 @@ hunRemove <- function(charstring){
 #for testing purposes, only spellcheck some of the documents
 #d <- d[1:10000,]
 
+# Calculate the number of cores
+ncores <- detectCores() - 1
+# Initiate cluster
+# type="FORK" is necessary to load all the libraries
+# supposedly only works on Unix systems
+cl <- makeCluster(ncores, type = "FORK")
+
 #check duration of running the spellchecking
-ptm <- proc.time()
+#ptm <- proc.time()
 #then use parSapply to use it on everything in parallel
 d$doc <- parSapply(cl, d$doc, FUN = hunRemove)
-proc.time() - ptm
+#proc.time() - ptm
 #On 6 cores (i.e. 12 threads, of which I used 11)
 #it ended up taking 95 seconds
 #previously it took about 24 hours
