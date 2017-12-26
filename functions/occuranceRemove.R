@@ -40,3 +40,5 @@ ncores <- detectCores() - 1
 cl <- makeCluster(ncores, type = "FORK")
 d$doc <- parSapply(cl, d$doc, FUN = occuranceRemove)
 stopCluster(cl)
+
+rm(dm)

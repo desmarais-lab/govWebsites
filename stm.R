@@ -41,7 +41,7 @@ numtopics <- 60
 
 #Train the model
 stmFit <- stm(documents = out$documents, vocab = out$vocab,
-              K = numtopics, prevalence =~ Party,
+              K = numtopics, prevalence =~ Party + POPESTIMATE,
               max.em.its = 9999, data = out$meta,
               init.type = "Spectral")
 
@@ -49,7 +49,7 @@ stmFit <- stm(documents = out$documents, vocab = out$vocab,
 sims <- 1000
 
 #re-estimate the effects, this time do 1000 draws from the posterior
-prep <- estimateEffect(formula = 1:numtopics ~ Party, 
+prep <- estimateEffect(formula = 1:numtopics ~ Party + POPESTIMATE, 
                        stmobj = stmFit,
                        meta = out$meta, 
                        uncertainty = "Global",

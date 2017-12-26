@@ -30,15 +30,30 @@ save(d, file = paste0("rfiles/d_", stateAbb, ".rdata"))
 #load(paste0("rfiles/d_", stateAbb, ".rdata"))
 
 #lemmatization
+#Note: due to memory constraints, it may be necessary to close R here, then run
+# python3 lemmatization.py rfiles/d_IN.rdata
+#from the console instead, open R again and continue on the next line (i.e. load)
+#but don't forget to set the following againa after restarting R
+#state <- "Indiana"
+#stateAbb <- "LA"
 system(paste0("python3 lemmatization.py ", paste0("rfiles/d_", stateAbb, ".rdata")))
 load(paste0("rfiles/d_", stateAbb, ".rdata"))
 #spacy puts -PRON- in place of pronouns since they can't be lemmatized
 #we don't really care about pronouns, so we just remove them
 d$doc <- str_replace_all(d$doc, "-PRON- ", "")
-save(d, file = paste0("rfiles/d_", stateAbb, ".rdata"))
+
+#Hunspell and removal of terms occuring in only one document
+#these were originally in preprocessing.R, but were not working correctly
+#functionally there is no nownside to them being here, it just doesn't look as nice
+source("hunspellParallel.R")
+source('functions/occuranceRemove.R')
 
 # merge in city population
 source("mergeDocsWithCensusData.R")
+names(d)[names(d)==paste0("POPESTIMATE", unique(d$Year))] <- "POPESTIMATE"
+
+#save the finished data frame
+save(d, file = paste0("rfiles/d_", stateAbb, ".rdata"))
 
 # ------------- #
 #      LDA      #
