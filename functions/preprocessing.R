@@ -230,7 +230,7 @@ preprocessing_2 <- function(d){
   
   #Hunspell
   #print("Use Hunspell spellchecking to remove non-English words:")
-  #source("hunspellParallel.R")
+  source("hunspellParallel.R")
   
   #Everything to lowercase
   print("Setting everything to lowercase.")
@@ -247,7 +247,7 @@ preprocessing_2 <- function(d){
   d$doc <- str_replace_all(d$doc, "[^0-9A-Za-z ]", "")
   d$doc <- gsub("\\s+"," ", d$doc)
   #print("Use Hunspell spellchecking to remove non-English words AGAIN:")
-  #source("hunspellParallel.R")
+  source("hunspellParallel.R")
   
   #remove individual letters
   print("Removing individual letters.")
@@ -302,7 +302,7 @@ preprocessing_2 <- function(d){
   d$tokenratio <- d$nuniquetokens/d$ntokens
   
   #remove terms that occur in only 1 document
-  #source('functions/occuranceRemove.R')
+  source('functions/occuranceRemove.R')
   
   #remove terms with less than 3 characters
   tokenLenRemove <- function(charstring, lenCutoff = 3){

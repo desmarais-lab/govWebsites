@@ -19,7 +19,7 @@ if(exists("stateAbb")==F){
 
 #get the data ready for preprocessing
 docs <- d$doc
-meta <- subset(d, select = c('City', 'Party'))
+meta <- subset(d, select = c('City', 'Party', 'POPESTIMATE'))
 processed <- textProcessor(docs, metadata = meta, 
                            lowercase = F,
                            removestopwords = F, 
