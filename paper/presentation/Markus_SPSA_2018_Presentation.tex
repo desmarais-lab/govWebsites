@@ -95,6 +95,11 @@ collection, processing, and text analysis}
 \end{figure}
 \end{frame}
 
+\begin{frame}{Data Overview}
+\input{descriptiveStatsIN.tex}
+\input{descriptiveStatsLA.tex}
+\end{frame}
+
 \begin{frame}{The Pipeline}
 	\textbf{Data Collection} \hspace{2mm} $\rightarrow$ \hspace{2mm} \textbf{Preprocessing} \hspace{2mm} $\rightarrow$ \hspace{2mm} \textbf{Analysis}
 \begin{columns}
@@ -276,19 +281,42 @@ collection, processing, and text analysis}
 %\end{figure}
 %\end{frame}
 
-\begin{frame}{Fightin' Words}
-	\input{fightinwordsIN.tex} %../tables/stmTopWordsINDem.tex
+\begin{frame}{Fightin' Words - Monroe et al. (2008)}
+\linespread{1.5}
+\begin{itemize}
+	\item Goal: Split words based on one binary variable (party)
+	\item Find the most Democratic and most Republican words
+	\item Problem: Text mostly consists of meaningless words
+	\item Solution: Set prior based on expected distribution of words in random text
+	\item Method provides a z-Score indicating the degree to which a word is preferred by one party
+	\item Very fast to compute
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Fightin' Words (Indiana)}
+	\input{fightinwordsIN.tex}
+%	\input{../tables/fightinwordsIN.tex}
 \end{frame}
 
 %\begin{frame}{Latent Dirichlet Allocation}
 %\input{partisanTopWords.tex}
 %\end{frame}
 
-\begin{frame}{Structural Topic Model}
+\begin{frame}{Structural Topic Model - Roberts et al. (2014)}
+\linespread{1.5}
+\begin{itemize}
+	\item Topic models find clusters of semantically related words in texts --> i.e. topics
+	\item As a clustering method, LDA doesn't explicitly allow for covariates (although post-hoc comparison is possible)
+	\item The structural topic model extends this approach to explicitly include (multiple) covariates
+	\item Our covariates: Party + City Population
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Structural Topic Model (Indiana)}
 \input{stmTopWordsINDem.tex} %../tables/stmTopWordsINDem.tex
 \end{frame}
 
-\begin{frame}{Structural Topic Model}
+\begin{frame}{Structural Topic Model (Indiana)}
 \input{stmTopWordsINRep.tex} %../tables/stmTopWordsINRep.tex
 \end{frame}
 

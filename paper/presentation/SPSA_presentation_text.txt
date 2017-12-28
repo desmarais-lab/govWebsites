@@ -1,0 +1,53 @@
+1,2
+Hello everyone, and welcome to this presentation on partisanship and the content of government websites. I am Markus Neumann, and I am co-authoring this paper with Fridolin Linder and Bruce Desmarais - all from Penn State. Now, after coming into power last year, the new administration provided us with some excellent examples for why this topic is relevant. The EPA  moved its content on climate change to a less prominent part of their website, and a lot of people feared that they would delete some evidence on it altogether. Similarly, the Census bureau has stopped displaying some data. And another example - that I'm sure you're all familiar with - illustrates just how controversial language can be, as the administration forbade the CDC from using a set of words.
+
+4
+In this paper, we are looking at local governments, as they and their websites have the greatest immediate relevance to most citizens. Unfortunately, a lot of local elections are nominally non-partisan, so it is difficult to find data on mayoral partisanship, even if the voters actually do know which party a candidate leans towards. Furthermore, even the states that do have largely partisan elections do not necessarily provide that data. Therefore we focus on two states in this paper: Indiana and Louisiana. Here, local elections are nominally partisan. However, there are still some exceptions, for example, in Indiana, only places with more than 2 thosand inhabitants can be a city, and only cities can have mayoral elections. Beyond that, of course not all cities have websites, especially the smaller ones.
+
+5
+So, here's an overview of cities - the blue and red dots are the ones for which we could get the partisanship of the mayor, AND we could actually find a website.
+
+5
+Now, content analyses of local government websites have been done before. In fact, the e-government literature focuses largely on that. But for the most part, these analyses have been based on hand-coded evidence. So what we want to do here, is to provide a pipeline from downloading the website content, pre-processing it and then using different methods of analysis to look at their text. Our paper is an illustration of how this works when applied to the specific example of partisanship and local governments in Indiana and Louisiana, but we will release an R package that implements this pipeline, and therefore give others the opportunity to do similar research.
+
+6
+Now, for the most part, these steps consist of procedures that have been applied in political science before. However, when dealing with this sort of government website data, there are a few things that need to be taken special care of. In the interest of time, I am only going to focus on one of them in this presentation -- and then tell you about the results we got at the end.
+
+7
+So, here's an example of the kind of content we're looking at in this paper. One of the pages of the website of the city of Arcadia focuses on saving water. And from a political science standpoint this is quite interesting, because it suggests that the city government puts at least some emphasis on environmentalist issues - which, we tend to think, is mostly a Democratic interest. However, not all of the content on this website is relevant - at the top, we've got all of these navigational elements which have nothing to do with the actual text. And this is still a fairly clean design - in other cases, we may have tables of content, city calendars, names of city officials mentioned everywhere, etc. This causes two problems. One, it "dilutes" the actual content of this page with stuff that doesn't actually belong there, and that makes it harder for automatic text analysis methods to tell what is actually going on. And two, it means that the text inadvertedly identifies the city, because these words -- "home", "government", "services" etc. then appear on every page of that city - and that can lead to some pretty weird clustering.
+
+So, we needed to devise a way for dealing with this. Now, if we only cared about one or two sites, the normal solution would be to write a parser for each. But we want something that works for a larger range of sites, and can also be put in a package so that other people can use it.
+
+8
+So here is what we did. Here, we're looking at the same site, but after its html file was converted to text. 
+
+9
+At the top, we've got all the stuff that appears on basically every page of that city's website, and at the bottom, we've got the stuff that's actually relevant. So we want to remove the former and keep the latter.
+
+10
+So in order to find and remove all of this boilerplate, we compare each line in a document to every other line, in every other document, of that city. Then we count how many times a line occurs within a city, and if that number is above a certain threshold, we simply remove it. And this process is then repeated for each city. Now, doing this sort of comparison is incredibly costly in terms of computational power, so we used a special method relying on hash tables, which brings down the processing time - at least for our corpus by a factor of about 60, to roughly 3 minutes.
+
+11
+So that was one of our main innovations we present in the paper. But now, let's look at what we get after all the scraping and all the pre-processing is done.
+
+12
+The simplest method of analysis that we got is hierarchical clustering. You start with your data as a tf-idf representation of a document-term matrix, choose the number of clusters that you want, and then each document gets put into one cluster, ideally together with other documents that have similar content. Then we look at where the documents of each city end up, the expectation being that documents of cities with similar partisanship - here denominated by the color of the square - get clustered together. However, we found that this relatively simple method of analysis is usually not able to do that, unless the documents really are EXTREMELY similar. That being said, we still got one interesting finding. We looked at the documents in clusters that were shared across multiple cities -- such as this one **point** -- and found that in some cases, they were all 'terms of service' or 'privacy notices'. Then we looked at those websites, and we found that they'd all been created by the same company. So while the hierarchical clustering didn't help us with our actual research question, it still revealed something interesting about the websites, so we feel that other researchers , depending on their interests, may find it very useful.
+
+13
+Next method, fightin' words - developed by Burt Monroe, Michael Colaresi and Kevin Quinn. The method is actually called informed dirichlet prior, but that's a little unwieldy, so we're going with fightin' words. Now what this does is to force the data into one binary category, in our case city partisanship. What we get is words that are preferentially used in documents from either Democrats or Republicans. For Democrats, there is a lot about money -- proposal, budget, tax, revenue, etc. and for Republicans, it has more to do with the basic process of running a city - i.e. water, streets, trees, sites, etc. So that is a clear finding that parties do in fact put different priorities on different topics, and emphasize that fact on the city websites.
+
+14
+Finally, we're going to look at the results from topic models. Here we've got more freedom than with fightin words, but this method is also a little more vulnerable to irregularities in the text. Therefore we really only got good results after we did the duplicate content removal I showed you earlier. Here we're looking at the most Democratic and Republican words, and we can again see stuff like fund, budget, tax on the Democratic side, and water, plan, area, building on the Republican one.
+
+15
+Now, this original implementation of topic models - latent dirichlet allocation - doesn't explicitly take covariates like partisanship into account, so we only get to present it like this after some data munging. For a method that was actually developed by political scientists - Margaret Roberts and colleagues - we are finally going to look at structural topic models, which explicitly include covariates in this scheme.
+
+16
+Here, we're looking at the most Democratic topics, and we can again see stuff like federal, grant, budget, etc., and zoning, construction, road block, etc. in the most Republican topics.
+
+17
+So, to wrap this up: hierarchical clustering has its uses, but only if there are extremely similar documents. Fightin words is very effective, but somewhat restricted because it can only include one binary variable. Topic models are more flexible, but also a little vulnerable to whatever is going on in the data. That being said the same is true for structural topic models, but they might have the advantage of being a little more intuitive to political scientists.
+
+However, all of the last three methods did lead us to one common finding: Democratic city websites talk more about raising and spending money, whereas Republicans prefer to focus on basic stuff like infrastucture, buildings, and utilities. Ergo, partisanship does appear to affect the content of local government websites.
+
+That's it, thank you for your attention.
