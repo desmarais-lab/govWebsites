@@ -306,11 +306,11 @@ In the methodological pipeline from native website files to text data that is ap
 \subsection{Site to Text Conversion}
 
 The documents are read in line by line, converted to UTF-8 and then stripped of dates, punctuation, numbers and words connected by underscores. At this point, the documents of one city still closely resemble one another in the form of boilerplate content, be it website elements (i.e. "You are here", "Home", "Directory" etc.) in html documents, or commonly used forms or phrases in pdfs, doc and docx files. This is an issue, because it clusters documents around the cities from which they originate in a way that has nothing to do with their actual content. In other words, the signal would be drowned out by the noise. 
-Preprocessing further includes setting every character to lowercase, as well as the removal of bullet points which frequently occur in html documents, extraneous whitespace, xml documents mislabeled as html files, and empty documents. Furthermore, some documents contain gibberish, often as a result of faulty or impartial OCR. To combat this problem, we employ two solutions. One, we use spellchecking, implemented through the hunspell R package, to remove all non-English words. However, hunspell does not cover everything, either because some tokens are not actual words (for example artifacts from defective encoding), or because random sequences of characters just so happen to form words that exist in a dictionary (for example "eh" or "duh"). Since we rely on a bag-of-words model in which syntax does not matter, we can ameliorate these problems by removing all text except for whitespaces and the characters that appear in the english alphabet. Since a lot of the nonsensical text tends to be quite repetitive, we also delete all documents in which the proportion of unique to total number of tokens is less than 0.15. Furthermore, hunspell does not spellcheck individual characters, so we remove all individual characters appearing as tokens except for "i" and "a". Since these pre-processing steps reduce documents which are largely unsuitable to only a few words of texts that don't make much sense, we also remove all remaining documents containing less than 50 tokens.
+Preprocessing further includes setting every character to lowercase, as well as the removal of bullet points which frequently occur in html documents, extraneous whitespace, xml documents mislabeled as html files, and empty documents. Furthermore, some documents contain gibberish, often as a result of faulty or impartial OCR. To combat this problem, we employ two solutions. One, we use spellchecking, implemented through the hunspell R package, to remove all non-English words. However, hunspell does not cover everything, either because some tokens are not actual words (for example artifacts from defective encoding), or because random sequences of characters just so happen to form words that exist in a dictionary (for example "eh" or "duh"). Since we rely on a bag-of-words model in which syntax does not matter, we can ameliorate these problems by removing all text except for whitespaces and the characters that appear in the english alphabet. Since a lot of the nonsensical text tends to be quite repetitive, we also delete all documents in which the proportion of unique to total number of tokens is less than 0.15. Furthermore, hunspell does not spellcheck individual characters or two-character words, so we remove these token types entirely (none of these words are of any substantive relevance to our research question). Since these pre-processing steps reduce documents which are largely unsuitable to only a few words of texts that don't make much sense, we also remove all remaining documents containing less than 50 tokens. Finally, to remove words that are extremely rare (which also has the advantage of eliminating any remaining oddities) and thus add nothing substantive to our models while increasing their computational cost, we also discard any token types that occur in only one document.
 
 \subsection{Boilerplate Removal}
 
-Consequently we remove this content as following: Each line of every document is compared to every line in every other document belonging to the same city. We count how many times each line is duplicated for that city. We remove any line occuring more than our chosen threshold of 10.\footnote{Empirically, lines tend to be duplicated either hundreds of times, or only once or twice, if at all.} This means that each document only retains the information that is particular about it.
+Consequently we remove this content as following: Each line of every document is compared to every line in every other document belonging to the same city. We count how many times each line is duplicated for that city. We remove any line occuring more than our chosen threshold of 10.\footnote{Empirically, lines tend to be duplicated either hundreds of times, or only once or twice, if at all.} This means that each document only retains the information that is particular about it. We implement this algorithm through hash tables, which reduces the computational complexity from O($N^2$) to O($N$).
 
 
 
@@ -449,20 +449,52 @@ To further investigate the topics with large partisan differences, figure \ref{p
 
 To further investigate this issue, we look at the raw data itself - the document-topic matrices for Democrats and Republicans, displayed as heatmaps. Figure \ref{heatmaps_weights} shows that especially for Republicans (but also for Democrats, to a lesser extent), there appears to be extensive clustering for consecutive documents. Since the order of the documents in the corpus is dependent on the cities in which they appear in, it seems that topics are mere representation of city websites - each website `owns' a number of topics, that appear across all of its documents, and hardly anywhere else. One possible cause for this type of clustering is the fact that documents frequently share common words, for example pertaining to navigation on the site, or standard forms that are shared throughout all documents.
 
+\subsection{Informative Dirichlet model}
+However, \cite{Monroe2008} advise against using these types of methods in this context because they get the data generation process backwards: Our theory assumes that party leads to variation in writing, and yet we rely on the documents to predict party, in spite of the fact that we actually have perfect knowledge of it.
+
+Consequently we follow their recommendation to use the informative Dirichlet model they present in the paper \citep{Monroe2008}. This approach aims to account for the fact that some words naturally occur more than others by applying a Dirichlet prior based on the distribution of words in random text. Table \ref{tabFightinIN} shows the top words for both Democrats and Republicans - and accomplishes, to some extent, the goal of \citep{Monroe2008} of banishing frequent words from this list and supplanting them by text with greater semantic, and in our case, partisan meaning. 
+
+In Indiana, Democrats exhibit a preference for words related to public finance, such as 'fund', 'budget', or 'tax', indicative of a greater willingness to emphasize the city's efforts to raise and spend money. This finding is consistent with \citep{Einstein2015}, who show that Democratic mayors tend to favor greater spending. Beyond the focus on public finance, the words preferably used by Democrats do not fall into any particularly congruent categories, and largely sort into various areas related to city administration - i.e. `council', `services', `budget', `committee', `contract', etc. If there is theme around the words preferred by Republicans, it seems to center around city planning - street, fire, water, building, construction, park. These words suggest that the hands-off approach favored by Republicans results in a focus on supporting infrastructure and logistics.
+
+%Partisan top words - fightin words Indiana
+\input{tables/fightinwordsIN.tex} %\ref{tabFightinIN}
+
+For Lousiana, the results (see table \ref{tabFightinLA}) are less coherent. Only one of the finance-related terms appears again for Democrats - specifically `fund', although `rate' might also be used in a financial context. Beyond that, some focus on a `historic' `'district of a city seems evident, as is the use of some words - `infrastructure', `water', `building' that were used for Republicans in Indiana. Conversely, Republicans are now missing these words, and their preferred terms generally do not seem to follow any particular theme.
+
+%Partisan top words - fightin words Louisiana
+\input{tables/fightinwordsLA.tex} %\ref{tabFightinLA}
+
+The weakness of the fightin' words method is evident here, as a list of words does not necessarily provide sufficient information to glean preferred topics from. This is especially the case when the texts are spread across a broad number of issue-areas, with little semantic similarity. In \citep{Monroe2008}, the authors focus on the fairly constrained corpus of U.S. Senate speeches with respect to abortion - our context, by comparison, is far more eclectic.
+
 \subsubsection{Structural topic model}
-An ostensibly intuitive solution to topics clustering into cities in LDA is to include dummies for the cities in a statistical model of topics. This is facilitated by the structural topic model, which uses metadata on the document to account for variation in topics \citep{Roberts2014}. However, figure \ref{stm_results} shows that if anything, the STM exacerbates the problem. Here, we plot the \textit{p-values} of the coefficients for each city as well as the party variable across each topic. Under normal circumstances, plotting the p-values, as opposed to the fitted values, does not make much sense, but here it serves a diagnostic purpose. The plot shows that the party variable is never statistically significant at any conceivable level of confidence, nor is it even close to. Interestingly the same is true for a number of the cities as well. The topics cluster heavily into only about half of the cities, which does not present an improvement over LDA at all.
+A more powerful approach with the capacity of addressing this problem is the use of topic models. This class of clustering methods relies on the co-occurrence of words within documents to form a set of semantically coherent topics. In order to compare the degree to which Republicans and Democrats prefer specific topics, we rely on the structural topic model, developed by \citep{Roberts2014}. Theoretically, the most widely-used form of topic model, latent dirichlet allocation, can also be used to test for the impact of a single covariate through a post-hoc comparison, but the structural topic model allows for multiple covariates, and also produced more meaningful topics in our experiments.
+
+We use 60 topics - the number recommended by the authors for medium- to large-sized corpora, and party as well as city population (the literature frequently emphasizes city size as a determinant of the issues it faces - see, for example, \cite{Guillamon2013}) as covariates. The results are shown in tables \ref{tabSTMINRep} to \ref{tabSTMLADem}. The coefficients in the table headers describe the size of the party covariate on a given topic. In order to test statistical significance, we calculated credible intervals - the topics shown here are all significant at the 0.1\% level.
+
+In Indiana, some of the topics associated with Democrats - one related to education, one to recycling  - clearly seem to match the party brand. Interestingly enough, Democrats also `own' the topic related to law enforcement, which might be somewhat unexpected given Republicans' usual focus on law and order \citep{Gerber2011a}. However, this kind of finding is not entirely without precedent in the literature (see \citep{Einstein2015}). Similar to the informed dirichlet model, the structural topic model also finds the emphasis on construction and infrastructure by Republicans - in table \ref{tabSTMINRep}, topics 2, 7 and 8 clearly focus on these issues.\footnote{The first Repuiblican topic in Indiana (library, stream, obj, etc.) is likely an artifact from incorrectly converted html, and since it presumably only happens only in one Republican city, the topic is classified as very Republican.}
+
+When comparing Indiana to Louisiana, it appears that the Democratic emphasis on law enforcement is robust. Furthermore, as with the fightin' words approach, some smaller degree of focus on money (see topic 1) is still evident. For Republicans, topics 2 to 4 seem to be, once again about infrastructure and utilities, pointing to a certain degree of robustness in these results, as well as the emergence of a trend. The results produced by the structural topic model are not flawless, but the two parties do seem to have somewhat consistent themes on which they focus on in both states. Furthermore, in comparison to the fightin' words approach, the ability of the structural topic model to form coherent topics is quite evident and helpful in the interpretation of the results.
+
+%An ostensibly intuitive solution to topics clustering into cities in LDA is to include dummies for the cities in a statistical model of topics. This is facilitated by the structural topic model, which uses metadata on the document to account for variation in topics \citep{Roberts2014}. However, figure \ref{stm_results} shows that if anything, the STM exacerbates the problem. Here, we plot the \textit{p-values} of the coefficients for each city as well as the party variable across each topic. Under normal circumstances, plotting the p-values, as opposed to the fitted values, does not make much sense, but here it serves a diagnostic purpose. The plot shows that the party variable is never statistically significant at any conceivable level of confidence, nor is it even close to. Interestingly the same is true for a number of the cities as well. The topics cluster heavily into only about half of the cities, which does not present an improvement over LDA at all.
+
+%Partisan top words - stm Louisiana -- Rep
+\input{tables/stmTopWordsINRep.tex} %\ref{tabSTMINRep}
+
+%Partisan top words - stm Louisiana -- Dem
+\input{tables/stmTopWordsINDem.tex} %\ref{tabSTMLADem}
+
+%Partisan top words - stm Louisiana -- Rep
+\input{tables/stmTopWordsLARep.tex} %\ref{tabSTMLARep}
+
+%Partisan top words - stm Louisiana -- Dem
+\input{tables/stmTopWordsLADem.tex} %\ref{tabSTMLADem}
 
 %\subsubsection{Prediction with SVM}
 %An alternative approach to the problem is to ignore topics entirely, and go straight to predicting documents that are much more likely to be included on websites belonging to one or the other party. Classic machine learning techniques such as Naive Bayes, Linear Discriminant Analysis, or SVM should be expected to fare well in this context. Here, we rely on SVM, implemented with the SciKitLearn package in Python.\footnote{We also implemented SVM in R through the packages kernlab and e1071 in R. However, neither of these provide a regularized version of SVM (NOTE: at least that is what I am gathering from the stack overflow error), which prevents us from using all of the features contained in our data. Instead, we ranked the features according to tf-idf and selected the top 5000. These methods are also quite slow, and provide a maximum accuracy of 82\% in five-fold cross validation.} A grid search reveals the tf-idf representation of the document-term matrix to be better than pure word counts, unigrams to be superior to bi-grams, the application of an L2 penalty to be preferable to either L1 or elasticnet, and an alpha (a constant to multiply with the regularization parameter C) of 0.0005 to lead to the best results. Applying five-fold cross-validation to the (tf-idf) document-term matrix with the dimensions 16011x35000 leads to an average accuracy of 89\%.\footnote{Other methods used: Elastic-net in the glmnet package in R. Accuracy is 0.6924795 for in-sample prediction, so not worth bothering with.}
 
 %However, \cite{Monroe2008} advise against using these types of methods in this context because they get the data generation process backwards: Our theory assumes that party leads to variation in writing, and yet we rely on the documents to predict party, in spite of the fact that we actually have perfect knowledge of it.
 
-\subsection{Informative Dirichlet model}
-However, \cite{Monroe2008} advise against using these types of methods in this context because they get the data generation process backwards: Our theory assumes that party leads to variation in writing, and yet we rely on the documents to predict party, in spite of the fact that we actually have perfect knowledge of it.
 
-Consequently we follow their recommendation to use the informative Dirichlet model they present in the paper \citep{Monroe2008}. This approach aims to account for the fact that some words naturally occur more than others by applying a Dirichlet prior based on the distribution of words in random text. Figure \ref{fightinwordsIN} shows the top words for both Democrats and Republicans - and accomplishes, to some extent, the goal of \citep{Monroe2008} of banishing frequent words from this list and supplanting them by text with greater semantic, and in our case, partisan meaning. For Democrats, words related to public finances, such as 'fund', 'budget', or 'tax' are common - congruent with the party's greater willingness to raise and spend money publicly. Similarly, 'federal' 'funds' also appear among the Democratic top words. By contrast Republicans prefer to devote their attentions to purely local, and for the most part, logistic matters. 'Trees', 'water', 'street' and 'sign' appear on the list of Republican top words, suggesting that these mayors largely focus on city planning.
-
-These top words also show some degree of overlap with those determined by aggregating over topics in LDA.
 
 %Heatmaps
 \begin{figure}[!ht]
@@ -544,29 +576,12 @@ These top words also show some degree of overlap with those determined by aggreg
 %Partisan top words - topic model Louisiana
 \input{tables/partisanTopWordsLA.tex} %tabLDALA
 
-%Partisan top words - fightin words Indiana
-\input{tables/fightinwordsIN.tex} %\ref{tabFightinIN}
-
-%Partisan top words - fightin words Louisiana
-\input{tables/fightinwordsLA.tex} %\ref{tabFightinLA}
-
 %Partisan top words - stm Indiana
 %\input{tables/stmTopWordsIN.tex} %\ref{tabSTMLA}
 
 %Partisan top words - stm Louisiana
 %\input{tables/stmTopWordsLA.tex} %\ref{tabSTMLA}
 
-%Partisan top words - stm Louisiana -- Rep
-\input{tables/stmTopWordsINRep.tex} %\ref{tabSTMINRep}
-
-%Partisan top words - stm Louisiana -- Dem
-\input{tables/stmTopWordsINDem.tex} %\ref{tabSTMLADem}
-
-%Partisan top words - stm Louisiana -- Rep
-\input{tables/stmTopWordsLARep.tex} %\ref{tabSTMLARep}
-
-%Partisan top words - stm Louisiana -- Dem
-\input{tables/stmTopWordsLADem.tex} %\ref{tabSTMLADem}
 
 %Some basic descriptive statistics of documents by party
 \input{tables/descriptiveStatisticsPartisanIN.tex}
@@ -665,7 +680,7 @@ These top words also show some degree of overlap with those determined by aggreg
 
 \section{Conclusion}
 
-We have developed a methodological pipleine for automatically gathering and preparing government websites for comparative analysis. This methodology holds the potential to vastly scale up the data collection efforts underpinning the rapidly growing body of research that is focused on government website analysis. Through an application to the analysis of municipal websites in Indiana and Louisiana, we show how our pipeline is capable of gathering corpora that shed light on the forms and functions of local government.
+We have developed a methodological pipeline for automatically gathering and preparing government websites for comparative analysis. This methodology holds the potential to vastly scale up the data collection efforts underpinning the rapidly growing body of research that is focused on government website analysis. Through an application to the analysis of municipal websites in Indiana and Louisiana, we show how our pipeline is capable of gathering corpora that shed light on the forms and functions of local government.
 
 
 \newpage

@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2017)
+This is BibTeX, Version 0.99d (TeX Live 2017/Arch Linux)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: manuscript.aux
 The style file: apsr.bst
@@ -7,45 +7,45 @@ Warning--I didn't find a database entry for "Arun2010"
 Warning--I didn't find a database entry for "Cao2009"
 Warning--I didn't find a database entry for "Griffith2004"
 Warning--empty note in Esterling2011
-You've used 35 entries,
+You've used 38 entries,
             2874 wiz_defined-function locations,
-            892 strings with 12027 characters,
-and the built_in function-call counts, 187821 in all, are:
-= -- 31094
-> -- 2234
+            911 strings with 12541 characters,
+and the built_in function-call counts, 205132 in all, are:
+= -- 33987
+> -- 2425
 < -- 0
-+ -- 14873
-- -- 775
-* -- 16366
-:= -- 36914
-add.period$ -- 141
-call.type$ -- 35
-change.case$ -- 455
-chr.to.int$ -- 35
-cite$ -- 36
-duplicate$ -- 597
-empty$ -- 1245
-format.name$ -- 813
-if$ -- 33879
++ -- 16257
+- -- 841
+* -- 17873
+:= -- 40307
+add.period$ -- 153
+call.type$ -- 38
+change.case$ -- 494
+chr.to.int$ -- 38
+cite$ -- 39
+duplicate$ -- 646
+empty$ -- 1353
+format.name$ -- 879
+if$ -- 37006
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 35
-newline$ -- 155
-num.names$ -- 416
-pop$ -- 118
+missing$ -- 38
+newline$ -- 167
+num.names$ -- 454
+pop$ -- 128
 preamble$ -- 1
-purify$ -- 525
+purify$ -- 570
 quote$ -- 0
-skip$ -- 568
+skip$ -- 614
 stack$ -- 0
-substring$ -- 44379
-swap$ -- 141
-text.length$ -- 490
+substring$ -- 48510
+swap$ -- 151
+text.length$ -- 532
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 138
+type$ -- 150
 warning$ -- 1
-while$ -- 853
+while$ -- 930
 width$ -- 0
-write$ -- 504
+write$ -- 545
 (There were 4 warnings)
