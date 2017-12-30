@@ -11,49 +11,52 @@ Unfortunately, a lot of local elections are nominally non-partisan, so it is dif
 To illustrate that fact, here's a map of all the cities in Indiana and Louisiana, where the blue and red dots are the ones for which we could get the partisanship of the mayor, AND we could actually find a website.
 
 6
-Now, content analyses of local government websites have been done before. In fact, the e-government literature focuses largely on that. But for the most part, these analyses have been based on hand-coded evidence. So what we want to do here, is to provide a pipeline from downloading the website content, pre-processing it and then using different methods of analysis to look at their text. Our paper is an illustration of how this works when applied to the specific example of partisanship and local governments in Indiana and Louisiana, but we will release an R package that implements this pipeline, and therefore give others the opportunity to do similar research.
+Now, content analyses of local government websites have been done before. In fact, the e-government literature focuses largely on that. But for the most part, these analyses have been based on hand-coded evidence. 
 
 7
-Now, for the most part, these steps consist of procedures that have been applied in political science before. However, when dealing with this sort of government website data, there are a few things that need to be taken special care of. In the interest of time, I am only going to focus on one of them in this presentation -- and then tell you about the results we got at the end.
+So what we want to do here, is to provide a pipeline from downloading the website content, pre-processing it and then using different methods of analysis to look at their text. Our paper is an illustration of how this works when applied to the specific example of partisanship and local governments in Indiana and Louisiana, but we will release an R package that implements this pipeline, and therefore give others the opportunity to do similar research.
 
 8
+Now, for the most part, these steps consist of procedures that have been applied in political science before. However, when dealing with this sort of government website data, there are a few things that need to be taken special care of. In the interest of time, I am only going to focus on one of them in this presentation -- and then tell you about the results we got at the end.
+
+9
 So, back to the example I showed you earlier. Not all of the content on this website is actually relevant - at the top, we've got all of these navigational elements which have nothing to do with the actual text. And this is still a fairly clean design - in other cases, we may have tables of content, city calendars, names of city officials mentioned everywhere, etc. This causes two problems. One, it "dilutes" the actual content of this page with stuff that doesn't really belong there, and that makes it harder for automatic text analysis methods to tell us what is actually going on. And two, it means that the text inadvertedly identifies the city, because these words -- "home", "government", "services" etc. then appear on every page of that city - and that causes the results to just cluster around cities.
 
 So, we needed to devise a way for dealing with this. Now, if we only cared about one or two sites, the normal solution would be to write a parser for each. But we want something that works for a larger range of sites, and can also be put in a package so that other people can use it.
 
-9
+10
 So here is what we did. Here, we're looking at the same site, but after its html file was converted to text. 
 
-10
+11
 At the top, we've got all the stuff that appears on basically every page of that city's website, and at the bottom, we've got the stuff that's actually relevant. So we want to remove the former and keep the latter.
 
-11
+12
 So in order to find and remove all of this boilerplate, we compare each line in a document to every other line, in every other document, of that city. Then we count how many times a line occurs within a city, and if that number is above a certain threshold, we simply remove it. And this process is then repeated for each city. Now, doing this sort of comparison is usually very costly, but we managed to come up with a fast and efficient implementation.
 
-12
+13
 So that was one of our main innovations we present in the paper. But now, let's look at what we get after all the scraping and all the pre-processing is done.
 
-13
+14
 Here is an overview of all of the documents for these two states. We have 33 cities in Indiana, 18 in Louisiana, 17 and 8 thousand documents. The vocabulary contains about 20 thousand words, and we've got a total of about 9 million token instances in IN, and 4 million in LA. We have more data on Democrats - despite the fact that the number of cities is almost the same, but it is not too imbalanced.
 
-14
+15
 We explored a range of different methods of analysis, and we are going to show you two here. First, fightin' words - developed by Burt Monroe, Michael Colaresi and Kevin Quinn. The method is actually called informed dirichlet prior, but that's a little unwieldy, so we're going with fightin' words. Now what this does is to force the data into one binary category, in our case city partisanship - but it ALSO accounts for the fact that some words are inherently used more frequently. So if we didn't do this, we might for example find that the word 'the' is preferentially used by Democrats, which is of course absolutely useless information. However, the use of a dirichlet prior solves that problem. What we get is words that are preferentially used in documents from either Democrats or Republicans. 
 
-15
+16
 Looking at the results, we see that for Democrats, there is a lot about money -- proposal, budget, tax, revenue, etc. and for Republicans, it has more to do with the basic process of running a city - i.e. water, streets, trees, sites, etc. So that is a clear finding that parties do in fact put different priorities on different topics, and emphasize that fact on the city websites.
 
-16
+17
 Now, the fightin' words method is very effective at what it does, especially for this particular purpose. However, it is also somewhat limited because it only gives us one ordered list of words for each party, and does not provide us with the chance to take other covariates into account. A topic model is a bit more powerful, because it has the potential to reveal which broader topics are preferably shown by each party. And to explicitly incorporate partisanshop into the model, we rely on structural topic models, developed by Margaret Roberts and colleagues. Compared regular topic models (called LDA) this method allows us to see how multiple covariates interact with the clusters of semantically related words - or topics - that we find in these documents.
 
 For the time being, our covariates of interest are party - the concept we're interested in - and, because a reasonable hypothesis might be that larger cities deal with different problems, city population.
 
-17
+18
 So let's look at the results for party, specifically Democrats. These are the most Democratic topics. We see topics like higher education, again the focus on economic development, enivironmentalism, and again the funds, grants, etc., this time in relation to housing.
 
-18
+19
 For republicans, as anove, the basic functions city government - planning, construction, infrastrucuture, seem more important.
 
-17
+20
 So, to wrap this up: So far, most analyses of city and government websites have relied on hand-coding all the data. We are providing a pipeline to other researchers that makes it much easier to carry this out automatically, and this pipeline can be scaled to large document collections.
 
 As far as our own working example is concerned, we can conclude that there are some differences between the parties - Democrats seem to focus on actively spending money to improve their communities, whereas Republican mayors seem to present their cities more as facilitators for projects of their citizens - which is also in line with what previous literature, for example relying on surveys on mayors has found.
