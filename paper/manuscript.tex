@@ -119,7 +119,7 @@
 
 \begin{abstract}
 
-A local government's website is a standard and general source of information for citizens and other community stakeholders. Accordingly, government websites have become prominent sources of data for a variety of research agendas in public administration, public policy, and political science. Existing research has relied on manual methods of website data collection of processing. Reliance on manual collection and processing limits the scale and scope of website content analysis.  We develop a methodological pipeline that researchers can followed in order to gather, process, and analyze website content with established text analysis techniques. First, for the acquisition of website data, we cover approaches to automated scraping methods. Second, pre-processing is a particularly vital step in text analysis, but when websites are concerned, additional measures need to be taken in order to guard against potential sources of bias. We propose a new method for dealing with the kind of duplicated content that is commonly found in government websites. Finally, we illustrate methods of text analysis using automatically gathered and pre-processed website content. We illustrate our methodological pipeline through a new and innovative dataset---the websites of local governments in Indiana and Louisiana. We build upon recent research that analyzes how change and variation in the partisan control of government relates to content made available on the government's website. We explore the association between mayoral partisanship and the content of city websites.
+A local government's website is a standard and general source of information for citizens and other community stakeholders. Accordingly, government websites have become prominent sources of data for a variety of research agendas in public administration, public policy, and political science. Existing research has relied on manual methods of website data collection and processing. Reliance on manual collection and processing limits the scale and scope of website content analysis.  We develop a methodological pipeline that researchers can follow in order to gather, process, and analyze website content with established text analysis techniques. First, for the acquisition of website data, we cover approaches to automated scraping methods. Second, pre-processing is a particularly vital step in text analysis, but when websites are concerned, additional measures need to be taken in order to guard against potential sources of bias. We propose a new method for dealing with the kind of duplicated content that is commonly found in government websites. Finally, we illustrate methods of text analysis using automatically gathered and pre-processed website content. We illustrate our methodological pipeline through a new and innovative dataset---the websites of municipal governments in Indiana and Louisiana. We build upon recent research that analyzes how change and variation in the partisan control of government relates to content made available on the government's website. We explore the association between mayoral partisanship and the content of city websites.
 %\noindent We explore the effect of transitions of power in municipal governments on the content of their websites. We hypothesize that when party control changes, city administrators modify the contents of their websites in order to fit the agenda of the new incumbent. To test this theory, we study cities in Indiana and Louisiana, two states in which all municipal elections are partisan and the parties of the candidates appear on the ballots. Snapshots of websites before and after transitions of power are acquired through the Wayback Machine. We apply statistical topic models based in latent dirichlet allocation, focusing on changes to the websites. We present results on both which topics see the greatest degree of change associated with transitions in city administrations, and how the topics modified differ with regard to political parties.
 
 \end{abstract}
@@ -135,20 +135,10 @@ Though there exists a variety of software tools that are designed to automatical
 Government websites provide information about how public policies shape the lives of local residents, and how local residents can engage with government to shape public policy. As such, government websites reflect both the results of, and inputs to, the political leadership in the city. In our illustrative application we explore the ways in which the contents of city government websites differ on the basis of the partisanship of the city's elected executive. A substantial body of research has found that the partisanship of the mayor affects city governance along multiple dimensions, including city budget priorities \citep{de2016mayoral}, policies affecting inequality in cities \citep{einstein2016mayors}, and framing of criminal justice policy \citep{marion2013mayor}. Furthermore, recent media coverage of changes to government websites that follow transitions in party control suggest that changes in web content are salient government actions, as perceived by the general public \citep{sharfstein2017science,kirby2017trump,duarte2017deniable} . We study whether significant differences between city governments based on mayoral partisanship are reflected in the contents of city websites.
 
 
-\section{Background: The Study of Government Websites}
+\section{The Significance of Government Website Content}
+% \cite{grimmelikhuijsen2012developing} conduct an enormously relevant study. Insofar as we analyze what predicts openness of government websites, we will be replicating and building upon this study. They focus on Dutch municipal websites, and their approach is fairly limited in scope and highly manual (which we can compliment). For example, one of the dependent variables ``Decision-making transparency,'' is measured ``using a discrete (1/0) indicator for whether the underlying principles or reasons for local air pollution policies were given on the Web site.'' 
 
-\cite{grimmelikhuijsen2010transparency} run an experiment in which citizens are exposed to randomly selected levels of information about local government council minutes. They find a negative relationship between the information level and perceptions of competence in the local government. This raises an interesting question regarding whether citizens or more likely to participate when they perceive competence or when they perceive incompetence.
-
-\cite{wang2005evaluating} present a widely cited `model' for evaluating the accessibility of information on government websites. This is an important paper with which we should be familiar at a very detailed level as we use archived web content to assess the volume/accessibility of information provided by local governments.
-
-\cite{osman2014cobra} is less relevant, but they develop a multi-item measure to predict the level of citizen satisfaction with e-government services. 
-
-
-\cite{grimmelikhuijsen2012developing} conduct an enormously relevant study. Insofar as we analyze what predicts openness of government websites, we will be replicating and building upon this study. They focus on Dutch municipal websites, and their approach is fairly limited in scope and highly manual (which we can compliment). For example, one of the dependent variables ``Decision-making transparency,'' is measured ``using a discrete (1/0) indicator for whether the underlying principles or reasons for local air pollution policies were given on the Web site.'' 
-
-
-
-\textbf{Why does the content of city websites matter?} According to \cite{Mayhew1974}, politicians engage in advertising, credit claiming and position taking in order to get re-elected. Official city websites allow mayors to do all three. Their offices frequently take a prominent position on the frontpage, and many websites also feature a picture of the candidate. In local politics, where campaign funds are low, this lends the incumbent a crucial advantage in becoming more well-known among her constituents. Furthermore, municipal politics gives incumbents clear and tangible achievements they can point to, such as completed infrastructure projects, the acquisition of federal or state funding, or the hosting of city-wide events. City websites present an opportunity for local officials to brandish these accomplishments. Finally, they also give mayors a platform from which they can advertise their political beliefs. On municipal websites, this may not manifest in the form of brazen partisanship, but more subtle avenues are available. As noted by \cite{einstein2016mayors}, there are stark differences in the spending preferences of Democratic and Republican mayors. City websites can then be used to communicate the stance of a mayor on social or economic programs. Another advantage of websites with regard to communication is that unlike direct social interactions, officials have full control over them.
+ According to \cite{Mayhew1974}, politicians engage in advertising, credit claiming and position taking in order to get re-elected. Official city websites allow mayors to do all three. Their offices frequently take a prominent position on the frontpage, and many websites also feature a picture of the candidate. In local politics, where campaign funds are low, this lends the incumbent a crucial advantage in becoming more well-known among her constituents. Furthermore, municipal politics gives incumbents clear and tangible achievements they can point to, such as completed infrastructure projects, the acquisition of federal or state funding, or the hosting of city-wide events. City websites present an opportunity for local officials to brandish these accomplishments. Finally, they also give mayors a platform from which they can advertise their political beliefs. On municipal websites, this may not manifest in the form of brazen partisanship, but more subtle avenues are available. As noted by \cite{einstein2016mayors}, there are stark differences in the spending preferences of Democratic and Republican mayors. City websites can then be used to communicate the stance of a mayor on social or economic programs. Another advantage of websites with regard to communication is that unlike direct social interactions, officials have full control over them.
 
 In addition to the use of city websites for the politicians that control them, variance in content also matters  with regard to the people who visit them. Local residents likely rely on city websites to get news about events, hot-button political issues specific to their city, contact city officials or find out addresses or opening hours of city institutions. Visitors use city websites to look up local attractions, which are often described in great detail. Similarly, prospective residents looking to move, might rely on city websites to inform their decision on whether to relocate there. An inviting website emphasizing the city's receptiveness to new residents might make a real difference here. Finally, city websites frequently feature sections on business, but there is a lot of variance in this area: Some emphasize economic development, properties, or transportation, whereas others focus on undeveloped land and other business opportunities. Differences in websites likely say something about a city's economic profile, with potential repercussions for the political realm.
 
@@ -163,132 +153,14 @@ The websites of politicians and their parties have also fallen under scholarly s
 Importantly for us, research analyzing and improving the scraping, pre-processing and analysis methods of this literature is scarce. \cite{Eschenfelder2002} provide something of an overview of how how federal websites should be assessed from an e-governance point of view, but they largely focus on the substantive criteria that should be fulfilled, rather than the technical aspects of website acquisition and analysis.
 
 
-\section{Running Application: Party Differences in Municipal Websites}
 
 
-\begin{landscape}
-\begin{table}[htbp]
-	%\caption{}
-	\begin{tabular}{|p{2cm}|c|p{3cm}|p{12cm}|l|}
-		\hline
-		Names & Year & Journal & Findings & Important? \\ \hline
-		Benedictis-Kessner, Justin De
-		Warshaw, Christopher & 2016 & JOP* & Regression discontinuity design. Democratic mayors spend more (but it is unclear on what, not the typical Democratic issue-areas), issue more debt, pay more interest & Yes \\ \hline
-		Caughey, Devin
-		Warshaw, Christopher
-		Xu, Yiqing & 2015 & Working Paper & Regression discontinuity design. Partisan composition of state governments affects state policy liberalism (composite index for the areas of social welfare, taxation, labor, civil rights, women’s rights, moral legislation, family planning, environment). & Somewhat \\ \hline
-		Einstein, Katherine Levine
-		Kogan, Vladimir & 2015 & Urban Affairs Review & Cities with more Democratic citizens spend more; more progressive (rather than regressive) forms of taxation; pursue intergov. aid more; spend more on police, fire, parks \& recreation & Somewhat \\ \hline
-		Einstein, Katherine Levine
-		Glick, David M. & 2015 & Working Paper & Survey of 72 mayors. Unlike Republican mayors, roughly half of Democrats seem to agree that cities should aim to reduce inequality. Democratic mayors also seem to favor redistribution to accomplish that goal. & Somewhat \\ \hline
-		Kiewiet, D Roderick
-		Mccubbins, Mathew D & 2014 & Annual Review & City budgets have been severeley constrained since the Great Recession. Spending has thus decreased in general. Lack of funds means that there is not much discretion for partisanship. & Somewhat \\ \hline
-		Tausanovitch, Chris
-		Warshaw, Christopher & 2014 & APSR* & Cities are responsive (taxes, expenditures, regressiveness of taxation) to citizens' conservatism/liberalism. Partisan elections do not make cities more or less responsive. & Yes \\ \hline
-		Guillamón, Ma Dolores
-		Bastida, Francisco
-		Benito, Bernardino & 2013 & European Journal of Law and Economics & Police spending in Spain. Conservative parties spend more on police. Spending is higher before elections. Also contains a useful overview of the literature. & Yes \\ \hline
-	\end{tabular}
-	\label{}
-\end{table}
-\end{landscape}
+\section{Data}
+In this section we introduce the data we use in our application---the analysis of municipal websites in Louisiana and Indiana. The General Services Administration (GSA) maintains all .gov addresses, and provides a complete\footnote{Domains used for testing and internal programs are excluded.} list of all such domains to the public through GitHub\footnote{https://github.com/GSA/data/tree/gh-pages/dotgov-domains}. This list is updated once per month - we rely on the version released on January 16, 2017. The data from the GSA contains the following variables: One, domain name, specifically, the all-uppercase version of domain and top-level domain (for example, 'ABERDEENMD.GOV'). Two, the type of government entity to which the domain is registered, such as city, county, federal agency, etc. Three, for federal agencies, the name is specfied. Finally, the city in which the domain is registered, is noted.
 
-\begin{landscape}
-	\begin{table}[htbp]
-		%\caption{}
-		\begin{tabular}{|p{2cm}|c|p{3cm}|p{12cm}|l|}
-			\hline
-			Names & Year & Journal & Findings & Important? \\ \hline
-			Gerber, Elisabeth R. & 2013 & Cityscape & Partisanship of both citizens and elected city officials separately affect climate policy. & Yes \\ \hline
-			Solé-Ollé, Albert
-			Viladecans-Marsal, Elisabet & 2013 & Journal of Urban Economics & Spanish cities. The authors "employ a regression discontinuity design to document that cities controlled by left-wing parties convert much less land from rural to urban uses than is the case in similar cities con- trolled by the right". Partisanship might also affect housing construction and price growth. & Yes \\ \hline
-			Gerber, Elisabeth R.
-			Hopkins, Daniel J. & 2011 & AJPS & Regression discontinuity design. Democratic mayors spend less on public safety. All other policy areas (including taxation) are unaffected. & Yes \\ \hline
-			Trounstine, Jessica & 2010 & Annual Review & Race and ethnicity in local elections (not relevant to us). Partisan elections have higher turnout; non-partisan elections still tend to have some partisanship in them because voters learn about party of candidates from media. Non-partisan elections favor Republicans/upper class. Mixed evidence for whether partisanship of mayor is important for policy. & Somewhat \\ \hline
-			Palus, Christine Kelleher & 2010 & State and Local Government Review & Ideology (liberal/conservative) of citizen is well represented by gov. spending in five areas: (1) community development, housing, and conservation, (2) health and human services, (3) culture, the arts, and recreation, (4) environmental programs, and (5) transportation. & Somewhat \\ \hline
-			Ferreira, Fernando
-			Gyourko, Joseph & 2009 & The Quarterly Journal of Economics & Regression discontinuity design. Null results for spending and city gov. size with regard to mayor partisanship. & Yes \\ \hline
-			Ansolabehere, Stephen
-			Snyder, James M. & 2006 & Scandinavian Journal of Economics & Despite the journal, this is about the U.S. The important finding (for us) is the fact that counties whose government is controlled by the same party as the state government, receive more funding (county's share of state transfers, normalized by county pop.) from the state. & Somewhat \\ \hline
-			Murphy, Russell D. & 2002 & Annual Review & Not useful. Too philosophical; mostly cites papers written a hundred years ago. Also exclusively about larger cities. & No \\ \hline
-		\end{tabular}
-		\label{}
-	\end{table}
-\end{landscape}
-
-\begin{landscape}
-	\begin{table}[htbp]
-		%\caption{}
-		\begin{tabular}{|p{2cm}|c|p{3cm}|p{12cm}|l|}
-			\hline
-			Names & Year & Journal & Findings & Important? \\ \hline
-			Armstrong, Cory L. & 2011 & Government Information Quarterly & Comparison of county and school board websites in Florida (where the two align) with regard to transparency (presence or absence of public records). Manual content analysis (undergrads told to look around for 15 minutes). School board websites, more professional websites, and websites in Republican-dominated counties are found to be more transparent. & Yes \\ \hline
-			Cegarra-Navarro, Juan
-			Pachón, José
-			Cegarra, José & 2012 & International Journal of Information Management & Survey of Spanish municipal government officials (specifically, the city website managers). Respondents are asked about the features of their websites, the level of civic engagement and the size of their municipality. More sophisticated websites are correlated with greater civic engagement and greater use of e-government functions. & Yes \\ \hline
-			Dolson, Jordan
-			Young, Robert & 2012 & Canadian Journal of Urban Research & Determinants of website content. Three categories: e-content (city information on website), e-participation, social media use. Tables on page 15 show frequencies of these categories across sites, and might be useful to inform our topics. Larger cities have better websites. Population growth and immigration are also tested, but the findings are somewhat inconclusive. & Yes \\ \hline
-			Feeney, Mary K.
-			Brown, Adrian & 2017 & Government Information Quarterly & 500 U.S. city websites at two points in time (2010-2014). Count model of website features regarding information, e-services, utilities, transparency and civic engagement. Having a larger population leads to more features. Relying on a website contractor leads to more information and transparency. The authors say that mayor-councils are negatively correlated with website sophistication, but their regression tables state the opposite. & Yes \\ \hline
-			Kaylor, Charles
-			Deshazo, Randy
-			Van Eck, David & 2001 & Government Information Quarterly & Model of best practices of e-government. Table 1 lists a number of possible ways this manifests, could be useful for our theory. & Somewhat \\ \hline
-			Ansolabehere, Stephen
-			Urban, Florian & 2002 & Cities & Websites of 20 major cities across the world. Is website content correlated with city characteristics? Not particularly systematic, and the findings are inconclusive. & Somewhat \\ \hline
-			Jeffres, Leo W.
-			Lin, Carolyn A. & 2006 & Journal of Computer-Mediated Communication & 50 largest metropolitan areas in the U.S. Features include information about city, opportunities for citizen feedback, galleries of photos, links, etc.  Purely descriptive analysis, doesn't contain anything that isn't covered in any of the other aricles. & No \\ \hline
-		\end{tabular}
-		\label{}
-	\end{table}
-\end{landscape}
-
-There doesn't seem to be much literature on transitions of party control, if anything, that question is mostly phrased with regard to political representation. However, if we want to tie our paper to a larger theory, we could go with dynamic representation. Under dynamic representation, policy-makers are responsive to trends in citizens opinions, which mainly manifest/become apparent through election results, especially when incumbents are voted out of office. This fits our topic quite well. Also, of the few papers that do exist on the effects of partisan transitions, virtually all use regression discontinuity designs.
-
-
-\subsection{Data}
-The General Services Administration (GSA) maintains all .gov addresses, and provides a complete\footnote{Domains used for testing and internal programs are excluded.} list of all such domains to the public through GitHub\footnote{https://github.com/GSA/data/tree/gh-pages/dotgov-domains}. This list is updated once per month - we rely on the version released on January 16, 2017. The data from the GSA contains the following variables: One, domain name, specifically, the all-uppercase version of domain and top-level domain (for example, 'ABERDEENMD.GOV'). Two, the type of government entity to which the domain is registered, such as city, county, federal agency, etc. Three, for federal agencies, the name is specfied. Finally, the city in which the domain is registered, is noted.
-
-Here, we focus only on cities. As a first step, we use a webdriver-controlled browser (Firefox/Selenium/Geckodriver) to test whether all of the city websites actually work. Of the 2425 domains listed by the GSA as cities, 292 are not accessible. Furthermore, the .gov domain, as registered at the GSA, is frequently not the website a city actually uses. In many cases, these sites redirect to another address, sometimes not a .gov domain (in this case, we simply use this domain). We record these URLs, as they are required to retrieve the images websites stored in the Wayback Machine (WbM).
-
-$T_{1}+\beta_1$
+Here, we focus only on cities. As a first step, we use a webdriver-controlled browser (Firefox/Selenium/Geckodriver) to test whether all of the city websites actually work. Of the 2425 domains listed by the GSA as cities, 292 are not accessible. Furthermore, the .gov domain, as registered at the GSA, is frequently not the website a city actually uses. In many cases, these sites redirect to another address, sometimes not a .gov domain (in this case, we simply use this domain). We record these URLs.
 
 In order to provide an overview of our coverage (as not all cities, towns and villages use .gov addresses), we merge this list with U.S. Census data\footnote{http://www2.census.gov/programs-surveys/popest/datasets/2010-2015/cities/totals/sub-est2015\_all.csv}. Here, several limitations in the GSA data need to be accounted for: One, even though the GSA nominally separates websites of cities and counties, some of the domains categorized as cities actually belong to counties. The same is true for townships and boroughs. Ergo, we eliminate all websites belonging to these three types of entities by hand. Furthermore, the city name, as given by the GSA, refers to the city in which the domain is registered, which is not necessarily equivalent to the city the website serves. In many cases, a website of a larger city may be registered to one of its subdivisions (for example, the website of New York is registered to Brooklyn), or vice versa (for example, the website of Homecroftin, a small town within Indianapolis, is registered to the city as a whole). Consequently we fix mismatches between websites and cities manually. Finally, a number of cities are simply misspelled, which we also correct by hand.
-
-After the counties, townships and cities that cannot be matched to the Census data\footnote{There are five cities that are not contained in the Census data} and duplicate websites (some cities have more than one website) are removed, 1813 domains/cities remain.
-
-These cities contain 90,616,865 people, and thus about 28\% of the U.S. population (see figure 1).
-
-\begin{figure}[!ht]
-	\centering
-	\caption{Percentage of state population covered.}
-	\includegraphics[width=0.9\linewidth,height=0.9\textheight]{figures/coverage_states.pdf}
-\end{figure}
-
-We use the resulting list of websites to acccess their copies stored in the Internet Archive's Wayback Machine. To this end, we rely on the Ruby Gem 'Wayback Machine Downloader'\footnote{https://github.com/hartator/wayback-machine-downloader} (WbMD). We supply the URL that each .gov website redirects to to the WbMD, which then downloads every file present in the WbM from a snapshot in October 2016, or, if not available, as soon as possible after this point.
-
-<Note: We have not actually done this last step for all websites (however, the R script which runs the Ruby package is already set up to do so once we need to). Instead 10 websites were randomly sampled from an older version of the GSA list, which still contained counties and townships, which is why one of the 10 websites is from Dutchess County, NY.>
-
-It would be fine to focus on Indiana as a case. First, we need to answer some preliminary questions about the data.
-
-\begin{enumerate}
-
-\item For what percentage and number of IN cities can we find data from the WBM?
-\item For how many election cycles can we find political leadership data for these matched cities?
-\item In what number and percentage of cities is the local leadership majority Republican? 
-\item Relatedly, in a typical election cycle, for how many cities do we see a transition in party leadership (i.e., a shift from majority D (R) to majority (R) D). 
-
-\end{enumerate}
-
-\begin{enumerate}
-	
-	\item 30 cities, with a combined population of 1,180,435. However, since only cities (as opposed to towns and villages) hold mayoral elections, only 16 of these, with a combined population of 1,094,383 can be matched to the election data.
-	\item 2015, 2011, 2007, 2003.
-	\item Of the 16 cities, 7 have Republican mayors after the 2015 elections.
-	\item In 6 cases, a shift of party control occurs, with 4 of these being Republican --> Democratic. 
-	
-\end{enumerate}
-
-
 
 \input{tables/filetypes.tex}
 
@@ -317,137 +189,8 @@ As noted above, city websites contain a large amount of text that is uninformati
 
 \section{Bag-of-Words Text Analysis}
 
+We illustrate the analysis of municipal website content using bag-of-words (BoW) methods. BoW methods are methods of text analysis that do not take into account the sequence or placement of words in text---just the presence and frequency of words. 
 
-\subsection{Topic modeling}
-Note: this chapter is mostly a wordy and less coherent version of the above.
-
-We hypothesize that a change in leadership from one party to the other will lead to a change in website content because the two parties have different agendas. Democrats have a predilection towards policies that promote social and economic equality, whereas Republicans like to emphasize small government as well as law and order. Documents uploaded to city websites are expected to be a reflection of these preferences.
-
-The Latent Dirichlet Allocation (LDA) \citep{Blei2003} is the most commonly used topic model. However, it is unable to account for the existence of two parties with very different policy agendas, translating to different preferred topics. There are two types of extensions to the LDA that fit our subject much better - the structural topic model, and the author-topic model.
-
-The structural topic model, developed by \cite{Roberts2016a} allows researchers to model a corpus as a function of metadata associated with its documents. Specifically, topic prevalence (the proportion of a document made up by a topic) and topical content (the rate at which words figure into a topic) are contingent on a set of covariates. In our case, the two most important covariates are (1) city and (2) authoring party (operationalized by whether a document was present before a change of power, or introduced afterwards). Furthermore, the population size of the city should be a predictor for both the number and kind of problems it faces, which thus need to be addressed on its website. Furthermore, city size also serves as an estimate for the budget and technical capacities of its staff in charge of maintaining the website\footnote{Although this relationship is not exactly deterministic - when looking through .gov websites manually, I've noticed that a lot of websites of (presumably wealthy)  towns of only a few thousand citizens often have extremely well-kept websites}.  Further demographic as well as economic data might also be useful to differentiate cities from one another. If we model the differences between cities properly, we might not have to/should not include city as a (categorical) variable, because it would probably interfere with these more meaningful covariates.
-
-The author-topic model \citep{Rosen-Zvi2004} would allow us to capture the fact that different authors have different topical preferences. Unfortunately, we have two types of 'authors' - cities, and parties. Given the largely divergent administrative needs of different types of cities, we would likely have to treat cities as the author. This would require us to capture the partisan authorship of different documents entirely on the basis of sub-sets of the website data - changed, added, or deleted documents. (Note: In the papers on author-topic models, the intention is often to analyze scientific articles. These articles are often co-authored. Would it be possible to have BOTH cities and parties as authors, so that a specific version of a website would then be 'co-authored' by its city and party?)
-
-The critical element in this analysis is to accurately attribute authorship of documents to either party. Despite possible changes to websites due to a leadership transition, large parts of the content carry over. This means that unless the successor government decides to delete everything, some of the existing documents will be preserved, and in the model, also attributed to the new 'author'. But the reverse is not possible, because the predecessor government can't choose to retain documents from the future. {\em  This is a very important point for municipal websites. We should investigate the possibility of modeling only the changes---documents that change, documents that are deleted, and documents that are added. }
-
-Labeling newly added documents after a change of power is quite simple. As far as older documents are concerned, we would have to operate under the assumption that the incumbent didn't keep his or her successor's document's on the website for four years.\footnote{Probably a safe assumption. However, we could, and probably should test how long documents tend to stay on a city website. Simple descriptive statistics (for example density plots) on the length of existance should likely be sufficient. If we want to be really fancy about it, we could create a duration model, with document topics as features. This would allow us to measure whether some documents tend to remain longer based on their topic (i.e. fire regulations are probably going to stay up longer than notes on a specific council meeting).} One problem here is the fact that the incumbent would have all the administrative topics assigned to them, simply because they have to have those on their website.
-
-If we really do end up getting swamped with administrative terms in our topic models (and it does kind of look like that at the moment), we might be able to separate the signal from the noise by running a preparatory LDA once and using its results to create a new, corpus-specific list of stop words. After that, we run the actual model. This way, politically charged terms and topics, which likely are not as common, but present nevertheless, should be able to rise to the surface. It might be possible to refine this process by running an exploratory model on website data from cities in which party control never changes, and the incumbent always wins by large margins. 'Safe' cities like this should have fairly homogeneous populations, with little need for the incumbent to play politics on the municipal website. Hence, these websites should be filled with purely administrative content.
-
-The use of asymmetric priors \citep{Wallach2009} over the document topic distribution - i.e. the assumption that some topics, such as administrative content, are inherently more common - may be a more elegant way of dealing with this issue.
-
-Another intervening factor is that for cities in Indiana, mayoral terms begin in January. Since a lot of clerical and administrative tasks tend to be year-specific, work tends to pile up around the new year. Thus it is possible that a spike in newly added documents is not due to a change in party control, but owed to a seasonal increase in activity. We can test for this by comparing election years to non-election years. Furthermore, since in Louisiana, mayors take office in May, we have another point of comparison.
-
-Furthermore, if we only investigate cities in which control of government changes from one party to another, we may overestimate its effect. Not only does a transition in party control occur, but the person in charge also changes. Parties are fairly homogeneous, so that two mayors from the same party may have very different policy preferences and managerial styles. To remedy this problem, we [could] utilize matching, pairing our cases with similar cities in which the incumbent does not run for re-election, but party control stays the same nevertheless.
-
-%Justicifcation for Arun 2010 topic number measure
-In order to determine the optimal number of topics for our corpus, we utilize the measure developed by \cite{Arun2010}. In contrast to other approaches such as \cite{Cao2009} or \cite{Griffith2004}, this measure includes as much information about the model as possible by taking into account both the document-term matrix, as well as the word-topic matrix. We find 200 topics to be the best value (see figure \ref{ldatuning}).
-
-%One solution might be to rely on LDA models, but only to apply them to documents that were deleted, the strongest possible expression of a successor governments diverging policy preferences. This way, we could identify directly which issues are considered to be the most divisive.
-
-%There is also a possibility that city size is a determinant of the number of topics. Larger cities tend to have bigger websites, owing to a larger set of issues that need to be dealt with.
-
-%Traditional author models that rely on lexical or syntactic differences may also be of use. Parties and their voters are associated with specific educational backgrounds, which may in turn be associated with specific writing styles. However, it seems likely that personal rather than partisan authorship is playing an even larger role here.
-
-%another feasible way of modeling the way in which websites receive a makeover when party control of the mayorship changes. As noted by \citep{Rosen-Zvi2004}, LDA can be considered a special case of the author-topic model, ''where each document has one unique author''. Here, a city website would be a collection of documents, each of which originates entirely from either Democratic or Republican leadership. In a way, this captures the data-generating process more closely.
-
-%Even so, neither the author-topic model nor the LDA model are a perfect fit for the structure of city government websites. One assumes that multiple authors write one document. This may be appropriate for the original purpose of author-topic models, scientific papers, which have multiple authors. This is not as good of a fit for city governments however. Using the LDA instead deals with this problem, but it also assumes that one document has multiple topics. For city government websites, this may be an erroneous assumption, because in many cases, each of these files appears to have one very specific purpose - agricultural, parks and recreation, smoke detectors, and so on.+
-
-%\footnote{This may be wrong in some cases, as they might be leftovers from yet another predecessor government. If the WaybackMachine data reaches back far enough, we might be able to identify and include only the documents that were added since the previous election.}, and the new documents as stemming from party 2. The number of topics \textit{j} would be set to at least three, where one topic would (hopefully) be reserved for purely administrative, non-partisan issues so that the other two (or more) would resolve to party-specific policy issues. Ideally, the result would then show significant differences in the probabilities of authors being assigned to partisan topics.
-
-\begin{figure}[!ht]
-	\centering
-	\caption{Dates of Wayback Machine snapshots. The vertical lines are municipal elections.}
-	\label{snapshots}
-	\includegraphics[width=\linewidth]{figures/Snapshots.pdf}
-\end{figure}
-
-
-\begin{figure}[!ht]
-	\centering
-	%\caption{Population coverage}
-	\includegraphics[width=\linewidth]{figures/wtp_current.pdf}
-\end{figure}
-
-\begin{figure}[!ht]
-	\centering
-	%\caption{Population coverage}
-	\includegraphics[width=\linewidth]{figures/wtp_current_dem_rep.pdf}
-\end{figure}
-
-%\begin{figure}[!ht]
-%	\centering
-	%\caption{Population coverage}
-%	\includegraphics[width=\linewidth]{figures/wtp_before.pdf}
-%\end{figure}
-
-%\begin{figure}[!ht]
-%	\centering
-	%\caption{Population coverage}
-%	\includegraphics[width=\linewidth]{figures/wtp_after.pdf}
-%\end{figure}
-
-\begin{figure}[!ht]
-	\centering
-	%\caption{Population coverage}
-	\includegraphics[width=\linewidth]{figures/wtp_current_dem_rep_order.pdf}
-\end{figure}
-
-%topicweights density
-\begin{figure}[!ht]
-	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
-	\caption{Densities of topic weights for documents in Republican and Democratic cities (Indiana).}
-	\label{doctopics_density}
-	\includegraphics[width=\linewidth]{figures/doctopics_density_IN.pdf}
-\end{figure}
-
-\subsubsection{LDA diagnostics}
-
-Figure \ref{doctopics_density} plots the densities of topic weights across documents, where each line represents a topic. Distributions with lower peaks near zero and flatter bodies indicate a topic that is present to varying degrees in multiple documents. This shape appears to be more common in documents from Republican cities. By contrast, a distribution with a high peak near zero and a very long tail is indicative of a topic that only appears in one specific document. This appears to be more common for documents in Democratic cities. The substantive conclusion then is that Democrats appear to be more prone to dedicating individual documents to one specific purpose, whereas Republicans produce general-purpose documents more often.
-
-%topicweights density
-\begin{figure}[!ht]
-	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
-	\caption{Densities of topic weights for documents in Republican and Democratic cities (Indiana).}
-	\label{topicweights_density}
-	\includegraphics[width=\linewidth]{figures/topicweights_density_IN.pdf}
-\end{figure}
-
-An alternative way to consider topic weights is to aggregate them across documents, in this case through their median or mean. Figure \ref{topicweights_density} shows this distribution of topic weights across topics. Most topics have a very low weight - meaning that they do not appear in a lot of documents. When aggregating across documents via the mean, this effect is more pronounced for Republicans, suggesting that most topics do not feature frequently (or even at all) in their documents. Democrats on the other hand appear to have a wider spectrum of topics from which they chose - supporting the hypothesis of Democrats as a 'big tent' party. However, this effect is reversed when using the median instead of the mean to aggregate across documents. Now, the the distribution has a higher peak and lower tail for Democrats. The cause for this stark divergence appears to lie in the fact the mean and median differ enormously - for the range displayed here, the mean is about a hundred times greater. Evidently, extremely large weights (i.e. some documents fitting specific topics perfectly) distort the picture. The median document is a better representation of the corpus as a whole, but the results do not fit our hypothesis. Their are however more consistent with figure \ref{topicweights_density}.
-
-
-Topics for which there are stark differences in their distribution across documents between Democrats and Republicans are of particular interest to us. To detect these topics, we take the absolute difference of the median document topic weights, and arrange them as a histogram, see figure \ref{diffsize}. For the most part, differences are small. For a few topics however, a contrasts emerges.
-
-%size of the differences
-\begin{figure}[!ht]
-	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
-	\caption{Word-topic probabilities for topics with big partisan differences (Indiana).}
-	\label{diffsize}
-	\includegraphics[width=\linewidth]{figures/diffsize_IN.pdf}
-\end{figure}
-
-Figure \ref{plotWTP_bigdiffs} displays the word-topic probabilities for the 10 topics with the largest partisan differences. Some of these, such as topic 82, with its focus on policing, safety and crime could be construed as politically charged. For the most part however, these topics focus on administrative matters.
-
-%word topic probabilities for topics with big differences
-\begin{figure}[!ht]
-	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
-	\caption{Word-topic probabilities for topics with big partisan differences}
-	\label{plotWTP_bigdiffs}
-	\includegraphics[width=\linewidth]{figures/plotWTP_bigdiffs_IN.pdf}
-\end{figure}
-
-To further investigate the topics with large partisan differences, figure \ref{plotWTP_bigdiffs} shows densities of topic weights just like figure \ref{doctopics_density}, but reduced to only the topics with the largest differences. It appears that mere absolute differences between the medians (or some other measure of central tendency) obscures the fact that the distributions themselves are quite different.
-
-%word topic probabilities for topics with big differences
-\begin{figure}[!ht]
-	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
-	\caption{Word-topic probabilities for topics with big partisan differences}
-	\label{doctopics_density_bigdiffs}
-	\includegraphics[width=\linewidth]{figures/doctopics_density_bigdiffs_IN.pdf}
-\end{figure}
-
-To further investigate this issue, we look at the raw data itself - the document-topic matrices for Democrats and Republicans, displayed as heatmaps. Figure \ref{heatmaps_weights} shows that especially for Republicans (but also for Democrats, to a lesser extent), there appears to be extensive clustering for consecutive documents. Since the order of the documents in the corpus is dependent on the cities in which they appear in, it seems that topics are mere representation of city websites - each website `owns' a number of topics, that appear across all of its documents, and hardly anywhere else. One possible cause for this type of clustering is the fact that documents frequently share common words, for example pertaining to navigation on the site, or standard forms that are shared throughout all documents.
 
 \subsection{Informative Dirichlet model}
 %However, \cite{Monroe2008} advise against using these types of methods in this context because they get the data generation process backwards: Our theory assumes that party leads to variation in writing, and yet we rely on the documents to predict party, in spite of the fact that we actually have perfect knowledge of it.
@@ -497,78 +240,32 @@ When comparing Indiana to Louisiana, it appears that the Democratic emphasis on 
 
 
 %Heatmaps
-\begin{figure}[!ht]
+\begin{figure}[htp]
 	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
 	\caption{Word-topic probabilities for topics with big partisan differences, across documents (Indiana).}
 	\label{heatmaps_weights}
-	\includegraphics[width=\linewidth]{figures/heatmaps_weights_IN.png}
+	\includegraphics[width=0.8\linewidth]{figures/heatmaps_weights_IN.png}
 \end{figure}
 
-%Heatmaps with no duplicate line removal (threshold set at 999999999)
-%also, since the duplicate line removal didn't get rid of as much crap,
-%it was necessary to remove non [A-Za-z] characters before hunspell
-\begin{figure}[!ht]
-	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
-	\caption{Word-topic probabilities for topics with big partisan differences, across documents (Indiana). No duplicate line removal.}
-	\label{heatmaps_weights}
-	%\includegraphics[width=\linewidth]{figures/heatmaps_weights_noDuplicateRemoval_IN.png}
-\end{figure}
 
-%Number of topics vs. tophic coherence
-\begin{figure}[!ht]
-	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
-	\caption{Topic coherence, varying the number of topics. The red line represents the mean topic coherence for each number of topics.}
-	\label{numtopics_coherence}
-	\includegraphics[width=\linewidth]{figures/coherence_numberoftopics.pdf}
-\end{figure}
 
 %Indiana map
-\begin{figure}[!ht]
+\begin{figure}[htp]
 	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
 	\caption{Cities in the corpus, by partisanship of mayor.}
 	\label{indiana_map}
 	\includegraphics[height=0.75\textheight]{figures/indiana_map.pdf}
 \end{figure}
 
-%partisan topics
-\begin{figure}[!ht]
-	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
-	\caption{The most partisan topics. The number in parenthesis indicates how many times more the topic appears on average (measured through the number of words of the topic throughout the documents) in the respective party's corpus (indicated by the color).}
-	\label{partisan_topics}
-	\includegraphics[height=0.75\textheight]{figures/partisanTopics.pdf}
-\end{figure}
-
-%ldatuning
-\begin{figure}[!ht]
-	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
-	\caption{The optimal number of topics for our corpus. The measures of Griffths 2004 and Cao 2009 indicate the best number of topics at their minimum, whereas the measure of Arun 2010 points to the best value at its maximum.}
-	\label{ldatuning}
-	\includegraphics[height=0.75\textheight]{figures/topicnumber_ldatuning.pdf}
-\end{figure}
-
 %stm results
-\begin{figure}[!ht]
+\begin{figure}[htp]
 	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
 	\caption{Results from a structural topic model, displayed as the p-values for each variable for each topic. This would normally be somewhat nonsensical, but here it illustrates why the model does not work.}
 	\label{stm_results}
 %	\includegraphics[width=1.1\linewidth]{figures/stm_results.pdf}
 \end{figure}
 
-%fightin words results
-\begin{figure}[!ht]
-	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
-	\caption{Top democratic and Republican words (Indiana), according to the informed Dirichlet model of Monroe et al. (2008). Ordering is top to bottom for Democrats, and vice versa for Republicans.}
-	\label{fightinwordsIN}
-	\includegraphics[width=\linewidth]{figures/fightinWordsIN.png}
-\end{figure}
 
-%fightin words results
-\begin{figure}[!ht]
-	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
-	\caption{Top democratic and Republican words (Louisiana), according to the informed Dirichlet model of Monroe et al. (2008). Ordering is top to bottom for Democrats, and vice versa for Republicans.}
-	\label{fightinwordsLA}
-	\includegraphics[width=\linewidth]{figures/fightinWordsLA.png}
-\end{figure}
 
 %Partisan top words - topic model Indiana
 \input{tables/partisanTopWords.tex} %\ref{tabFightinIN}
@@ -590,97 +287,22 @@ When comparing Indiana to Louisiana, it appears that the Democratic emphasis on 
 \input{tables/descriptiveStatisticsPartisanLA.tex}
 
 %fightin words results
-\begin{figure}[!ht]
+\begin{figure}[htp]
 	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
-	\caption{Total number of lines retained at a given threshold for removing duplicated lines. For example, at x = 10, all lines occurring more than 10 times within a city's documents are removed.}
-	\label{linesCutoff}
 	\includegraphics[width=\linewidth]{figures/linesCutoffIN.pdf}
+		\caption{Total number of lines retained at a given threshold for removing duplicated lines. For example, at x = 10, all lines occurring more than 10 times within a city's documents are removed.}
+	\label{linesCutoff}
 \end{figure}
 
-%Clustering
-\begin{figure}[!ht]
-	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
-	\caption{Hierarchical clustering (Indiana).}
-	\label{hclustIN}
-	\includegraphics[width=\linewidth]{figures/clusteringIN.png}
-\end{figure}
 
-%Clustering
-\begin{figure}[!ht]
-	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
-	\caption{Hierarchical clustering (Louisiana).}
-	\label{hclustLA}
-	\includegraphics[width=\linewidth]{figures/clusteringLA.png}
-\end{figure}
 
-%Entropy by cutoff
-\begin{figure}[!ht]
-	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
-	\caption{Entropy (between cities, for each topic).}
-	\label{cutoffEntropy}
-	\includegraphics[width=\linewidth]{figures/CutoffCityEntropy.pdf}
-\end{figure}
-
-%Weighted entropy by cutoff
-\begin{figure}[!ht]
-	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
-	\caption{Weighted (multiplied by tokens assigned to the topic) entropy (between cities, for each topic).}
-	\label{cutoffEntropy}
-	%\includegraphics[width=\linewidth]{figures/CutoffCityEntropyWeighted.pdf}
-\end{figure}
-
-%Clustering
-\begin{figure}[!ht]
-	\centering
-	\caption{Log number of city documents per cluster. Brighter tile colors indicate more documents. The color of the tile border indicates the city's party.}
-	\label{hclustCity10}
-	\includegraphics[width=\linewidth]{figures/heatmap_hclust_10.png}
-\end{figure}
-
-%Clustering
-\begin{figure}[!ht]
-	\centering
-	\caption{Log number of city documents per cluster. Brighter tile colors indicate more documents. The color of the tile border indicates the city's party.}
-	\label{hclustCity20}
-	\includegraphics[width=\linewidth]{figures/heatmap_hclust_20.png}
-\end{figure}
-
-%Clustering
-\begin{figure}[!ht]
-	\centering
-	\caption{Log number of city documents per cluster. Brighter tile colors indicate more documents. The color of the tile border indicates the city's party.}
-	\label{hclustCity30}
-	\includegraphics[width=\linewidth]{figures/heatmap_hclust_30.png}
-\end{figure}
-
-%Clustering
-\begin{figure}[!ht]
-	\centering
-	\caption{Log number of city documents per cluster. Brighter tile colors indicate more documents. The color of the tile border indicates the city's party.}
-	\label{hclustCity40}
-	\includegraphics[width=\linewidth]{figures/heatmap_hclust_40.png}
-\end{figure}
-
-%Clustering
-\begin{figure}[!ht]
-	\centering
-	\caption{Log number of city documents per cluster. Brighter tile colors indicate more documents. The color of the tile border indicates the city's party.}
-	\label{hclustCity50}
-	\includegraphics[width=\linewidth]{figures/heatmap_hclust_50.png}
-\end{figure}
-
-%Clustering
-\begin{figure}[!ht]
-	\centering
-	\caption{Log number of city documents per cluster. Brighter tile colors indicate more documents. The color of the tile border indicates the city's party.}
-	\label{hclustCity100}
-	\includegraphics[height = 1.2\textheight]{figures/heatmap_hclust_100.png}
-\end{figure}
 
 
 \section{Conclusion}
 
 We have developed a methodological pipeline for automatically gathering and preparing government websites for comparative analysis. This methodology holds the potential to vastly scale up the data collection efforts underpinning the rapidly growing body of research that is focused on government website analysis. Through an application to the analysis of municipal websites in Indiana and Louisiana, we show how our pipeline is capable of gathering corpora that shed light on the forms and functions of local government.
+
+
 
 
 \newpage
@@ -886,6 +508,125 @@ Y & = \text{Party that introduced the document} \\
 \end{split}
 \end{equation}
 
+
+
+
+
+After the counties, townships and cities that cannot be matched to the Census data\footnote{There are five cities that are not contained in the Census data} and duplicate websites (some cities have more than one website) are removed, 1813 domains/cities remain.
+
+These cities contain 90,616,865 people, and thus about 28\% of the U.S. population (see figure 1).
+
+\begin{figure}[htp]
+	\centering
+	\caption{Percentage of state population covered.}
+	\includegraphics[width=0.9\linewidth,height=0.9\textheight]{figures/coverage_states.pdf}
+\end{figure}
+
+We use the resulting list of websites to acccess their copies stored in the Internet Archive's Wayback Machine. To this end, we rely on the Ruby Gem 'Wayback Machine Downloader'\footnote{https://github.com/hartator/wayback-machine-downloader} (WbMD). We supply the URL that each .gov website redirects to to the WbMD, which then downloads every file present in the WbM from a snapshot in October 2016, or, if not available, as soon as possible after this point.
+
+<Note: We have not actually done this last step for all websites (however, the R script which runs the Ruby package is already set up to do so once we need to). Instead 10 websites were randomly sampled from an older version of the GSA list, which still contained counties and townships, which is why one of the 10 websites is from Dutchess County, NY.>
+
+It would be fine to focus on Indiana as a case. First, we need to answer some preliminary questions about the data.
+
+\begin{enumerate}
+
+\item For what percentage and number of IN cities can we find data from the WBM?
+\item For how many election cycles can we find political leadership data for these matched cities?
+\item In what number and percentage of cities is the local leadership majority Republican? 
+\item Relatedly, in a typical election cycle, for how many cities do we see a transition in party leadership (i.e., a shift from majority D (R) to majority (R) D). 
+
+\end{enumerate}
+
+\begin{enumerate}
+	
+	\item 30 cities, with a combined population of 1,180,435. However, since only cities (as opposed to towns and villages) hold mayoral elections, only 16 of these, with a combined population of 1,094,383 can be matched to the election data.
+	\item 2015, 2011, 2007, 2003.
+	\item Of the 16 cities, 7 have Republican mayors after the 2015 elections.
+	\item In 6 cases, a shift of party control occurs, with 4 of these being Republican --> Democratic. 
+	
+\end{enumerate}
+
+
+
+
+\section{Running Application: Party Differences in Municipal Websites}
+
+
+\begin{landscape}
+\begin{table}[htbp]
+	%\caption{}
+	\begin{tabular}{|p{2cm}|c|p{3cm}|p{12cm}|l|}
+		\hline
+		Names & Year & Journal & Findings & Important? \\ \hline
+		Benedictis-Kessner, Justin De
+		Warshaw, Christopher & 2016 & JOP* & Regression discontinuity design. Democratic mayors spend more (but it is unclear on what, not the typical Democratic issue-areas), issue more debt, pay more interest & Yes \\ \hline
+		Caughey, Devin
+		Warshaw, Christopher
+		Xu, Yiqing & 2015 & Working Paper & Regression discontinuity design. Partisan composition of state governments affects state policy liberalism (composite index for the areas of social welfare, taxation, labor, civil rights, women’s rights, moral legislation, family planning, environment). & Somewhat \\ \hline
+		Einstein, Katherine Levine
+		Kogan, Vladimir & 2015 & Urban Affairs Review & Cities with more Democratic citizens spend more; more progressive (rather than regressive) forms of taxation; pursue intergov. aid more; spend more on police, fire, parks \& recreation & Somewhat \\ \hline
+		Einstein, Katherine Levine
+		Glick, David M. & 2015 & Working Paper & Survey of 72 mayors. Unlike Republican mayors, roughly half of Democrats seem to agree that cities should aim to reduce inequality. Democratic mayors also seem to favor redistribution to accomplish that goal. & Somewhat \\ \hline
+		Kiewiet, D Roderick
+		Mccubbins, Mathew D & 2014 & Annual Review & City budgets have been severeley constrained since the Great Recession. Spending has thus decreased in general. Lack of funds means that there is not much discretion for partisanship. & Somewhat \\ \hline
+		Tausanovitch, Chris
+		Warshaw, Christopher & 2014 & APSR* & Cities are responsive (taxes, expenditures, regressiveness of taxation) to citizens' conservatism/liberalism. Partisan elections do not make cities more or less responsive. & Yes \\ \hline
+		Guillamón, Ma Dolores
+		Bastida, Francisco
+		Benito, Bernardino & 2013 & European Journal of Law and Economics & Police spending in Spain. Conservative parties spend more on police. Spending is higher before elections. Also contains a useful overview of the literature. & Yes \\ \hline
+	\end{tabular}
+	\label{}
+\end{table}
+\end{landscape}
+
+\begin{landscape}
+	\begin{table}[htbp]
+		%\caption{}
+		\begin{tabular}{|p{2cm}|c|p{3cm}|p{12cm}|l|}
+			\hline
+			Names & Year & Journal & Findings & Important? \\ \hline
+			Gerber, Elisabeth R. & 2013 & Cityscape & Partisanship of both citizens and elected city officials separately affect climate policy. & Yes \\ \hline
+			Solé-Ollé, Albert
+			Viladecans-Marsal, Elisabet & 2013 & Journal of Urban Economics & Spanish cities. The authors "employ a regression discontinuity design to document that cities controlled by left-wing parties convert much less land from rural to urban uses than is the case in similar cities con- trolled by the right". Partisanship might also affect housing construction and price growth. & Yes \\ \hline
+			Gerber, Elisabeth R.
+			Hopkins, Daniel J. & 2011 & AJPS & Regression discontinuity design. Democratic mayors spend less on public safety. All other policy areas (including taxation) are unaffected. & Yes \\ \hline
+			Trounstine, Jessica & 2010 & Annual Review & Race and ethnicity in local elections (not relevant to us). Partisan elections have higher turnout; non-partisan elections still tend to have some partisanship in them because voters learn about party of candidates from media. Non-partisan elections favor Republicans/upper class. Mixed evidence for whether partisanship of mayor is important for policy. & Somewhat \\ \hline
+			Palus, Christine Kelleher & 2010 & State and Local Government Review & Ideology (liberal/conservative) of citizen is well represented by gov. spending in five areas: (1) community development, housing, and conservation, (2) health and human services, (3) culture, the arts, and recreation, (4) environmental programs, and (5) transportation. & Somewhat \\ \hline
+			Ferreira, Fernando
+			Gyourko, Joseph & 2009 & The Quarterly Journal of Economics & Regression discontinuity design. Null results for spending and city gov. size with regard to mayor partisanship. & Yes \\ \hline
+			Ansolabehere, Stephen
+			Snyder, James M. & 2006 & Scandinavian Journal of Economics & Despite the journal, this is about the U.S. The important finding (for us) is the fact that counties whose government is controlled by the same party as the state government, receive more funding (county's share of state transfers, normalized by county pop.) from the state. & Somewhat \\ \hline
+			Murphy, Russell D. & 2002 & Annual Review & Not useful. Too philosophical; mostly cites papers written a hundred years ago. Also exclusively about larger cities. & No \\ \hline
+		\end{tabular}
+		\label{}
+	\end{table}
+\end{landscape}
+
+\begin{landscape}
+	\begin{table}[htbp]
+		%\caption{}
+		\begin{tabular}{|p{2cm}|c|p{3cm}|p{12cm}|l|}
+			\hline
+			Names & Year & Journal & Findings & Important? \\ \hline
+			Armstrong, Cory L. & 2011 & Government Information Quarterly & Comparison of county and school board websites in Florida (where the two align) with regard to transparency (presence or absence of public records). Manual content analysis (undergrads told to look around for 15 minutes). School board websites, more professional websites, and websites in Republican-dominated counties are found to be more transparent. & Yes \\ \hline
+			Cegarra-Navarro, Juan
+			Pachón, José
+			Cegarra, José & 2012 & International Journal of Information Management & Survey of Spanish municipal government officials (specifically, the city website managers). Respondents are asked about the features of their websites, the level of civic engagement and the size of their municipality. More sophisticated websites are correlated with greater civic engagement and greater use of e-government functions. & Yes \\ \hline
+			Dolson, Jordan
+			Young, Robert & 2012 & Canadian Journal of Urban Research & Determinants of website content. Three categories: e-content (city information on website), e-participation, social media use. Tables on page 15 show frequencies of these categories across sites, and might be useful to inform our topics. Larger cities have better websites. Population growth and immigration are also tested, but the findings are somewhat inconclusive. & Yes \\ \hline
+			Feeney, Mary K.
+			Brown, Adrian & 2017 & Government Information Quarterly & 500 U.S. city websites at two points in time (2010-2014). Count model of website features regarding information, e-services, utilities, transparency and civic engagement. Having a larger population leads to more features. Relying on a website contractor leads to more information and transparency. The authors say that mayor-councils are negatively correlated with website sophistication, but their regression tables state the opposite. & Yes \\ \hline
+			Kaylor, Charles
+			Deshazo, Randy
+			Van Eck, David & 2001 & Government Information Quarterly & Model of best practices of e-government. Table 1 lists a number of possible ways this manifests, could be useful for our theory. & Somewhat \\ \hline
+			Ansolabehere, Stephen
+			Urban, Florian & 2002 & Cities & Websites of 20 major cities across the world. Is website content correlated with city characteristics? Not particularly systematic, and the findings are inconclusive. & Somewhat \\ \hline
+			Jeffres, Leo W.
+			Lin, Carolyn A. & 2006 & Journal of Computer-Mediated Communication & 50 largest metropolitan areas in the U.S. Features include information about city, opportunities for citizen feedback, galleries of photos, links, etc.  Purely descriptive analysis, doesn't contain anything that isn't covered in any of the other aricles. & No \\ \hline
+		\end{tabular}
+		\label{}
+	\end{table}
+\end{landscape}
 
 
 
