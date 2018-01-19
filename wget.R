@@ -27,10 +27,10 @@ wget <- function(URLs, sites.dir){
 # Example: mayors
 
 #load URLs
-load("rfiles/mayors.rdata")
+#load("rfiles/mayors.rdata")
 
 #use wget function created above
-wget(mayors$website, "./websites/mayors")
+#wget(mayors$website, "./websites/mayors")
 
 
 #testing
