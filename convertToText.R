@@ -11,11 +11,12 @@ convertToText <- function(path, newfolder = paste0(path, "TXT")){
   filename <- str_split(f, "\\/(?=[^\\/]+$)", simplify = T)[,2]
   
   #store objects in tibble
-  d <- tibble(path = str_c(path, f, sep = "/"), 
+  d <- data.frame(path = str_c(path, f, sep = "/"), 
               folder = str_c(path, folder, sep = "/"),
               filename,
-              ext)
-  d <- filter(d, filename != "")
+              ext,
+              stringsAsFactors = F)
+  d <- subset(d, filename != "")
   
   #new files
   

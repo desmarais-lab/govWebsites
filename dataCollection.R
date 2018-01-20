@@ -16,5 +16,8 @@ wget(mayors$website, "./websites/mayors")
 #this is necessary because readtext determines file type by extension
 fixExtensions("./websites/mayors")
 
+#some websites have linux invalid filenames, fix them
+fixFileNames("./websites/mayors")
+
 #use the readtext package to convert everything to text (in a new folder)
 convertToText("./websites/mayors", "./websites/mayorsTXT")

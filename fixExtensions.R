@@ -18,6 +18,11 @@ firstLine <- function(path){
   first.line <- ""
   while(first.line == ""){
     i <- i+1
+    #some files just can't be read at all
+    #break after reading the first 10 lines to make sure it doesn't try forever
+    if(i>10){
+      break
+    }
     first.line <- readLines(path, n=i)
     # in case a file is completely empty
     if(length(first.line)==0){
@@ -34,7 +39,7 @@ firstLine <- function(path){
 #fix file extensions
 fixExtensions <- function(path, fixPDF = T, fixHTML = T, fixXML = T, fixEMPTY = T){
   
-  f <- list.files(path = filepath, recursive = T) #create a list of all files in all subdirectories
+  f <- list.files(path, recursive = T) #create a list of all files in all subdirectories
   
   #file types
   ext <- file_ext(f) #get file extension
@@ -42,8 +47,8 @@ fixExtensions <- function(path, fixPDF = T, fixHTML = T, fixXML = T, fixEMPTY = 
   filename <- str_split(f, "\\/(?=[^\\/]+$)", simplify = T)[,2]
   
   #store objects in tibble
-  d <- tibble(path = str_c(filepath, f, sep = "/"), 
-              folder = str_c(filepath, folder, sep = "/"),
+  d <- tibble(path = str_c(path, f, sep = "/"), 
+              folder = str_c(path, folder, sep = "/"),
               filename,
               ext)
   d <- filter(d, filename != "")
@@ -98,3 +103,13 @@ fixExtensions <- function(path, fixPDF = T, fixHTML = T, fixXML = T, fixEMPTY = 
 }
 
 #fixExtensions("./websites/mayors")
+
+fixFileNames <- function(path){
+  f <- list.files(path, recursive = T)
+  invalid_file_names <- f[which(str_detect(f, "\\["))]
+  fixed_file_names <- str_replace_all(invalid_file_names, "[\\[\\]]", "")
+  invalid_file_names <- paste0(path, "/", invalid_file_names)
+  fixed_file_names <- paste0(path, "/", fixed_file_names)
+  purrr::map2(invalid_file_names, 
+              fixed_file_names, file.rename)
+}
