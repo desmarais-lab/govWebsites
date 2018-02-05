@@ -9,7 +9,11 @@ library('pbapply')
 # Function: fixExtensions
 # Purpose: given a folder, find the correct extension for each html and pdf file
 
-
+#some files just can't be fixed so it might be better to just remove them
+findInvalidFiles <- function(files){
+  invalid_file_names <- f[which(str_detect(files, "[^A-Za-z0-9\\.\\/\\=\\-\\+\\_\\?\\%\\&\\(\\)\\@\\s\\;]"))]
+  return(invalid_file_names)
+}
 
 # get the first non-empty line of a file
 firstLine <- function(path){
@@ -40,6 +44,8 @@ firstLine <- function(path){
 fixExtensions <- function(path, fixPDF = T, fixHTML = T, fixXML = T, fixEMPTY = T){
   
   f <- list.files(path, recursive = T) #create a list of all files in all subdirectories
+  #ignore files whose names can't be read
+  f <- f[!f%in%findInvalidFiles(f)]
   
   #file types
   ext <- file_ext(f) #get file extension
@@ -113,3 +119,5 @@ fixFileNames <- function(path){
   purrr::map2(invalid_file_names, 
               fixed_file_names, file.rename)
 }
+
+

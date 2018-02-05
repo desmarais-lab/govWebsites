@@ -16,8 +16,18 @@ wget <- function(URLs, sites.dir){
   #set new wd
   setwd(sites.dir)
   
+  
+  #specific file types can be rejected from wget using -R
+  #or only specific file types can be accepted using -A
+  #here, we do the former
+  #the file types have to be surrounded by '' AND they have to be separated by commas
+  #correct use for multiple file types looks like this: -R ''*.css', '*.js''
+  filetype.remove <- paste("'*.flv'","'*.mov'","'*.swf'","'*.xml'","'*.js'","'*.css'","'*.zip'","'*.gz'","'*.rar'","'*.7z'","'*.tgz'","'*.tar'","'*.z'","'*.gzip'","'*.bzip'","'*.tar'","'*.mp3'","'*.mp4'","'*.aac'","'*.wav'","'*.au'","'*.wmv'","'*.avi'","'*.mpg'","'*.mpeg'","'*.xls'","'*.xlsx'","'*.ppt'","'*.pptx'","'*.jpg'","'*.jpeg'","'*.png'","'*.gif'","'*.psd'","'*.ico'","'*.bmp'","'*.odt'","'*.ods'","'*.odp'","'*.odb'","'*.odg'","'*.odf'", sep = ", ")
+  
   #scrape
-  system("<urls.txt xargs -n 1 -P 8 -I % wget -r -N -P ./ %")
+  wget <- paste0("<urls.txt xargs -n 1 -P 12 -I % wget -r -N -R '", filetype.remove, "' -P ./ %")
+  
+  system(wget)
   
   #<urls.txt passes the file to xargs
   #xargs -n 1 -P 8 starts 8 parallel processes
