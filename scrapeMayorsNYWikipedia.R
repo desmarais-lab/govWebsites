@@ -63,3 +63,14 @@ data2 <- merge(data, df, by.x = "Municipality", by.y = "City")
 data2$strdist <- stringdist::stringdist(data2$`Filer Name`, data2$mayor, method="jaccard")
 data2$strdist2 <- stringdist::stringdist(data2$`Filer Name`, data2$mayor, method="cosine")
 data2$strdist2 <- stringdist::stringdist(data2$`Filer Name`, data2$mayor, method="soundex")
+
+
+#change filer names for better matches
+
+del <- c("FOR MAYOR", "MAYOR", "FRIENDS OF", "[0-9]", "COMMITTEE TO ELECT", "FOR")
+
+filer <- data2$`Filer Name`
+
+library(stringr)
+
+str_replace(filer, paste0(del, collapse = "|"), "")
