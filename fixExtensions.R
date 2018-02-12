@@ -11,7 +11,7 @@ library('pbapply')
 
 #some files just can't be fixed so it might be better to just remove them
 findInvalidFiles <- function(files){
-  invalid_file_names <- f[which(str_detect(files, "[^A-Za-z0-9\\.\\/\\=\\-\\+\\_\\?\\%\\&\\(\\)\\@\\s\\;]"))]
+  invalid_file_names <- files[which(str_detect(files, "[^A-Za-z0-9\\.\\/\\=\\-\\+\\_\\?\\%\\&\\(\\)\\@\\s\\;]"))]
   return(invalid_file_names)
 }
 
@@ -53,10 +53,16 @@ fixExtensions <- function(path, fixPDF = T, fixHTML = T, fixXML = T, fixEMPTY = 
   filename <- str_split(f, "\\/(?=[^\\/]+$)", simplify = T)[,2]
   
   #store objects in tibble
-  d <- tibble(path = str_c(path, f, sep = "/"), 
-              folder = str_c(path, folder, sep = "/"),
+  
+  path_folder <- str_c(path, folder, sep = "/")
+  
+  d <- tibble::tibble(path = str_c(path, f, sep = "/"), 
+              #WHY DOES THIS NOT WORK ASDPHDIASHFDJKFNDJN
+              #folder = (str_c(path, folder, sep = "/")),
+              folder = path_folder,
               filename,
               ext)
+  
   d <- filter(d, filename != "")
   
   #read in the first line of each document
@@ -80,7 +86,7 @@ fixExtensions <- function(path, fixPDF = T, fixHTML = T, fixXML = T, fixEMPTY = 
   
   #create the new file names, with the new extensions
   dConflict$newpath <- str_c(dConflict$folder, "/", 
-                             str_replace(dConflict$filename, paste0(".", dConflict$ext), ""),
+                             str_replace(dConflict$filename, paste0("\\.", dConflict$ext), ""),
                              paste0(".", dConflict$newext))
   #the above step messed up files that are not supposed to have an extension
   dConflict$newpath[dConflict$newext==""] <- str_replace(dConflict$newpath[dConflict$newext==""], "\\.$", "")
