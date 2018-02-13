@@ -76,7 +76,7 @@ fixExtensions <- function(path, fixPDF = T, fixHTML = T, fixXML = T, fixEMPTY = 
   #delete all files that are not htmls or pdfs without an ending from the data frame
   d$newext <- ""
   d$newext[str_detect(d$doc, regex("DOCTYPE html", ignore_case = T))] <- "html"
-  d$newext[str_detect(d$doc, regex("PDF", ignore_case = T))] <- "pdf"
+  d$newext[str_detect(d$doc, regex("%PDF-", ignore_case = T))] <- "pdf"
   d$newext[str_detect(d$doc, regex("xml version", ignore_case = T))] <- "xml"
   
   dConflict <- d[d$ext!=d$newext,]
