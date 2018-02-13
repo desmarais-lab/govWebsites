@@ -310,6 +310,18 @@ Using the same methods as described for our main corpus, we have gathered these 
 	\label{groundtruth}
 \end{figure}
 
+%ground truth test
+\begin{figure}[htp]
+	\centering % Using \begin{figure*} makes the figure take up the entire width of the page
+	\includegraphics[width=\linewidth]{figures/groundtruth_bs_bigcities_corrplot.png}
+	\caption{Ground truth test. The values are cosine similarities between a pair of document collections (top 100 mayors vs. IN and LA).}
+	\label{groundtruth}
+\end{figure}
+
+%Ground truth test between top100 mayors and IN + LA; with bootstrapped confidence bounds
+% label: groundtruth_bootstrapped
+\input{tables/groundtruth_bootstrapped.tex}
+
 
 \section{Conclusion}
 

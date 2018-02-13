@@ -25,7 +25,7 @@ convertToText <- function(path, newfolder = paste0(path, "TXT")){
   
   #create new folder
   d$newfolder <- str_replace(d$folder, path, newfolder)
-  pbsapply(d$newfolder, dir.create, recursive = T)
+  pbsapply(d$newfolder, dir.create, showWarnings = F, recursive = T)
   
   #create new filename
   newfilename <- str_replace(d$filename, str_c(d$ext, "$"), "txt")

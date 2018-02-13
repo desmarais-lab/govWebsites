@@ -73,4 +73,25 @@ filer <- data2$`Filer Name`
 
 library(stringr)
 
-str_replace(filer, paste0(del, collapse = "|"), "")
+data2$filer_name <- data2$`Filer Name`
+
+
+data2$cand_num <- 1:nrow(data2)
+
+
+data2$wiki_link['/wiki/Oswego_County,_New_York'] <- "/wiki/Oswego,_New_York"
+
+#ambiguous: 123,124, picked 123
+#175, 176, picked 175 because donation
+
+#mayors_numL <- list(10,16,19,21,NA,31,43,48,NA,NA,62,NA,71,83,NA,85,88,94,99,105,NA,110,123,NA,128,134,135,141,147,NA,162,NA,170,175,181,187,192,195,200,209,NA,220,NA,226,235,240,259,269,277,289,290,293,305)
+mayors_num <- c(10,16,19,21,NA,31,43,48,NA,NA,62,NA,71,83,NA,85,88,94,99,105,NA,110,123,NA,128,134,135,141,147,NA,162,NA,170,175,181,187,192,195,200,209,NA,220,NA,226,235,240,259,269,277,289,290,293,305)
+
+data <- data.frame(city = unique(data2$Municipality), wiki = unique(data2$wiki_link))
+data$REP <- data2$REP[mayors_num]
+data$DEM <- data2$DEM[mayors_num]
+data$NEITHER <- data2$NEITHER[mayors_num]
+data$mayor <- data2$mayor[mayors_num]
+
+table(data$DEM)
+table(data$REP)
