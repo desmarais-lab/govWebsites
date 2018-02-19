@@ -82,7 +82,7 @@ citylink <- read_html(link) %>% html_nodes(".url .text") %>% html_attr("href")
 
 
 #page link
-link <- str_c("https://en.wikipedia.org/wiki/Bainbridge_Island,_Washington")
+link <- str_c("https://en.wikipedia.org/wiki/Lake_Stevens,_Washington")
 #read the page html
 page <- read_html(link)
 #get all the tables on the page
@@ -103,7 +103,7 @@ findTableElement <- function(pageTables, element){
     #string to store the result in
     tableResult <- ""
     #turn the current table into a dataframe
-    tableDF <- pageTables[[i]] %>% html_table(fill=T)
+    try(tableDF <- pageTables[[i]] %>% html_table(fill=T))
     #does the current table contain the element we are looking for?
     test <- any(str_detect(tableDF[,1], element))
     test <- ifelse(is.na(test)==T, F, test)
@@ -212,6 +212,8 @@ extractWebsite <- function(pageHTML){
 df$mayor <- NA
 df$CityWebsite <- NA
 
+#Note: the 89th fails
+
 for(i in 1:nrow(df)){
   
   #page link
@@ -239,3 +241,36 @@ for(i in 1:nrow(df)){
   df$CityWebsite[i] <- cityWebsiteURL
   
 }
+
+df$mayor[89] <- "John Spencer"
+df$CityWebsite[89] <- "http://www.lakestevenswa.gov/"
+
+df2 <- df
+
+#fix some errors
+df$mayor <- str_replace_all(df$mayor, "c\"", "")
+df$mayor <- str_replace_all(df$mayor, "\"", "")
+df$mayor <- str_replace_all(df$mayor, "\\((.*?)\\)", "")
+df$mayor <- str_replace_all(df$mayor, "\\[(.*?)\\]", "")
+df$mayor <- str_replace_all(df$mayor, "\\[", "")
+df$mayor <- str_replace_all(df$mayor, "\\]", "")
+df$mayor <- str_replace_all(df$mayor, "\\(", "")
+df$mayor <- str_replace_all(df$mayor, "\\)", "")
+df$mayor <- str_replace_all(df$mayor, "[0-9]", "")
+df$mayor <- str_replace_all(df$mayor, "Nonpartisan", "")
+df$mayor <- str_replace_all(df$mayor, "Non-partisan", "")
+df$mayor <- str_replace_all(df$mayor, "Libertarian", "")
+df$mayor <- str_replace_all(df$mayor, "-elected", "")
+df$mayor <- str_replace_all(df$mayor, "Elected November", "")
+
+#fix the cases where two names got scraped (always the deputy mayor, or something)
+#so the first of the two is always correct
+dfCheck <- df[str_detect(df$mayor, ","),]
+ind <- which(str_detect(df$mayor, ","))
+for(i in 1:nrow(dfCheck)){
+  dfCheck$mayor[i] <- str_split(dfCheck$mayor[i], ",")[[1]][1]
+}
+dfCheck$mayor[dfCheck$wiki_link=="/wiki/Federal_Way,_Washington"] <- "Jim Ferrell"
+df[ind,] <- dfCheck
+
+save(df, file = "rfiles/WA_city_URLs.rdata")
