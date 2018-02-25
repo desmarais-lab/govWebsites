@@ -64,3 +64,9 @@ df$CityWebsite[str_detect(df$CityWebsite, "https://web.archive.org")] <- ""
 df$CityWebsite[str_detect(df$CityWebsite, "#cite_note-City_info-1")] <- ""
 
 save(df, file = "rfiles/OR_city_URLs.rdata")
+
+
+df <- df[df$CityWebsite!="",]
+df <- df[df$mayor!="",]
+
+writeLines(df$mayor, "data/OR_mayors.txt")
