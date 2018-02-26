@@ -68,5 +68,6 @@ save(df, file = "rfiles/OR_city_URLs.rdata")
 
 df <- df[df$CityWebsite!="",]
 df <- df[df$mayor!="",]
+df$mayor <- str_trim(df$mayor)
 
 writeLines(df$mayor, "data/OR_mayors.txt")
