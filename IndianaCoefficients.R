@@ -2,7 +2,7 @@ library("rio")
 library("dplyr")
 library("stringr")
 
-load(file="data/indianaWebsiteURLs.rdata")
+load(file="data/indianaWebsiteURLs2.rdata")
 load(file="data/govWebsitesVerifiedCensus.Rdata")
 
 #Preparing the data for merge
@@ -29,7 +29,7 @@ URLs <- subset(URLs, select=-Website.y)
 names(URLs)[names(URLs)=="Website.x"] <- "Website"
 
 #remove irrelevant data
-rm(data9,indianaWebsiteUrls,louisianaWebsiteUrls) #remove objects that are no longer needed
+rm(data9,indianaWebsiteUrls) #remove objects that are no longer needed
 
 # Load Indiana election data
 load("data/indianaElections2015.rdata")
@@ -48,10 +48,17 @@ URLs <- filter(URLs, Designation=="City") %>%
 #remove /county/ from Tipton
 #unfortunately, wget and the ruby WBM downloader will still get both parts of the website
 #if I could stop this behavior, I should instead replace "/county/" with "/city/"
-URLs$Website[URLs$Name=="Tipton"] <- str_replace(URLs$Website[URLs$Name=="Tipton"], "/county/", "")
+#URLs$Website[URLs$Name=="Tipton"] <- str_replace(URLs$Website[URLs$Name=="Tipton"], "/county/", "")
+#-- note: in the latest version of the scraped URLs, this doesn't seem necessary any more
 
-#remove http//: or https//: as well as other forward slashes
+#get the base URL
+URLs$Website <- str_extract(URLs$Website, "^.+?[^\\/:](?=[?\\/]|$)")
+
+#get foldername with http//: or https//: as well as other forward slashes removed
 URLs$foldername <- str_extract(URLs$Website, "//(.*)") %>%
   str_replace_all("/", "")
 
-save(URLs, file = "data/URLs_IN.rdata")
+URLs_IN <- URLs
+
+#save the results
+save(URLs_IN, file = "data/URLs_IN.rdata")
