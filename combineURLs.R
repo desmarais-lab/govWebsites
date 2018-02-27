@@ -2,8 +2,8 @@ library("rio")
 library("dplyr")
 library("stringr")
 
-load(file="data/louisianaWebsiteURLs.rdata")
-load(file="data/indianaWebsiteURLs.rdata")
+load(file="data/louisianaWebsiteURLs2.rdata")
+load(file="data/indianaWebsiteURLs2.rdata")
 load(file="data/govWebsitesVerifiedCensus.Rdata")
 
 #Preparing the data for merge
