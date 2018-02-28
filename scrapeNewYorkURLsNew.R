@@ -85,5 +85,26 @@ newyorkWebsiteUrls$wikiPartisanship[newyorkWebsiteUrls$City=="Salamanca"] <- "D"
 newyorkWebsiteUrls$wikiMayor[newyorkWebsiteUrls$wikiMayor==""] <- NA
 newyorkWebsiteUrls$wikiCityWebsite[newyorkWebsiteUrls$wikiCityWebsite==""] <- NA
 
+#merge in the campaign finance partisanship
+load("rfiles/NYmayorsMerged.rdata")
+mayors_num <- c(10,16,19,21,NA,31,43,48,NA,NA,62,NA,71,83,NA,85,88,94,99,105,NA,110,123,NA,128,134,135,141,147,NA,162,NA,170,175,181,187,192,195,200,209,NA,220,NA,226,235,240,259,269,277,289,290,293,305)
+data <- data.frame(city = unique(data2$Municipality), wiki = unique(data2$wiki_link))
+data$REP <- data2$REP[mayors_num]
+data$DEM <- data2$DEM[mayors_num]
+data$NEITHER <- data2$NEITHER[mayors_num]
+names(data) <- c("City", "wiki", "REP", "DEM", "NEITHER")
+data$financePartisanship[data$REP==T] <- "R"
+data$financePartisanship[data$DEM==T] <- "D"
+data$financePartisanship[data$NEITHER==T] <- "Neither"
+data <- subset(data, select = c("City", "financePartisanship"))
+newyorkWebsiteUrls <- merge(newyorkWebsiteUrls, data, by = "City", all = T)
+
+#combine the two partisanship measures
+newyorkWebsiteUrls$Party <- newyorkWebsiteUrls$wikiPartisanship
+newyorkWebsiteUrls$Party[!newyorkWebsiteUrls$Party%in%c("D","R") & newyorkWebsiteUrls$financePartisanship%in%c("D","R")] <- newyorkWebsiteUrls$financePartisanship[!newyorkWebsiteUrls$Party%in%c("D","R") & newyorkWebsiteUrls$financePartisanship%in%c("D","R")]
+
+#city website of Port Jervis was wrong
+newyorkWebsiteUrls$wikiCityWebsite[newyorkWebsiteUrls$City=="Port Jervis"] <- "http://portjervisny.org"
+
 #save
 save(newyorkWebsiteUrls, file="data/newyorkWebsiteURLs2.rdata")
