@@ -73,9 +73,9 @@ leap <- leap[leap$winner!="Unknown",]
 
 
 ## Load website URLs from Wikipedia
-load(file="data/louisianaWebsiteURLs.rdata")
+load(file="data/louisianaWebsiteURLs2.rdata")
 
-## Load website URLs from Wikipedia
+## Load GSA .gov websites data
 load(file="data/govWebsitesVerifiedCensus.Rdata")
 data9 <- subset(data9, select=c("NAME","redirect","StateShort"))
 data9 <- subset(data9, StateShort%in%c("LA"))
@@ -96,7 +96,8 @@ names(louisiana)[names(louisiana)=="Website.x"] <- "Website"
 
 #merge with website data
 louisiana <- select(louisiana, -Designation)
-louisiana <- merge(leap, louisiana, by.x ="City", by.y ="Name", all.x = T, all.y = F)
+louisiana <- louisiana[louisiana$Website!="",]
+louisiana <- merge(louisiana, leap, by.x ="Name", by.y ="City")
 
 #remove cities without a website
 louisiana <- louisiana[is.na(louisiana$Website)==F,]
@@ -105,11 +106,16 @@ louisiana <- louisiana[is.na(louisiana$Website)==F,]
 louisiana$Website[louisiana$Website=="http://www.JonesboroLA.org"] <- "http://www.jonesborola.org"
 louisiana$Website[louisiana$Website=="http://www.cityofmarksville.com/home.html"] <- "http://www.cityofmarksville.com"
 louisiana$Website[louisiana$Website=="http://www.ci.monroe.la.us/"] <- "https://monroela.us/"
-
+louisiana <- louisiana[louisiana$Name!="Albany",]
 #However, Marksville and Monroe can't be scraped with wget anyway
 
-#19 Democratic cities, 11 Republican ones
+#get the base URL
+louisiana$Website <- str_extract(louisiana$Website, "^.+?[^\\/:](?=[?\\/]|$)")
+
+#25 Democratic cities, 18 Republican ones
 table(louisiana$winner)
 
+URLs_LA <- louisiana
+
 #save
-save(louisiana, file = "data/louisiana.rdata")
+save(URLs_LA, file = "data/URLs_LA.rdata")
