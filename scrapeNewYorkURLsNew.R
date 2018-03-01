@@ -63,10 +63,7 @@ newyorkWebsiteUrls <- df
 names(newyorkWebsiteUrls) <- c("City", "wikiCounty", "wikiPopulation", "wikiIncorporationDate", "wiki_link", "wikiMayor", "wikiCityWebsite", "wikiPartisanship")
 
 #remove sites pointing to the wayback machine
-newyorkWebsiteUrls$Website[str_detect(newyorkWebsiteUrls$wikiCityWebsite, "https://web.archive.org")] <- ""
-
-#get the base URL
-newyorkWebsiteUrls$wikiCityWebsite <- str_extract(newyorkWebsiteUrls$wikiCityWebsite, "^.+?[^\\/:](?=[?\\/]|$)")
+newyorkWebsiteUrls$wikiCityWebsite[str_detect(newyorkWebsiteUrls$wikiCityWebsite, "https://web.archive.org")] <- ""
 
 #corrections to mayor names:
 newyorkWebsiteUrls$wikiMayor[newyorkWebsiteUrls$City=="Cohoes"] <- "Shawn Morse"
@@ -81,9 +78,8 @@ newyorkWebsiteUrls$wikiMayor[newyorkWebsiteUrls$City=="Salamanca"] <- "Michael R
 # coding him as a Democrat
 newyorkWebsiteUrls$wikiPartisanship[newyorkWebsiteUrls$City=="Salamanca"] <- "D"
 
-#code empty mayors and websites as NA
-newyorkWebsiteUrls$wikiMayor[newyorkWebsiteUrls$wikiMayor==""] <- NA
-newyorkWebsiteUrls$wikiCityWebsite[newyorkWebsiteUrls$wikiCityWebsite==""] <- NA
+#city website of Port Jervis was wrong
+newyorkWebsiteUrls$wikiCityWebsite[newyorkWebsiteUrls$City=="Port Jervis"] <- "http://portjervisny.org"
 
 #merge in the campaign finance partisanship
 load("rfiles/NYmayorsMerged.rdata")
@@ -99,12 +95,5 @@ data$financePartisanship[data$NEITHER==T] <- "Neither"
 data <- subset(data, select = c("City", "financePartisanship"))
 newyorkWebsiteUrls <- merge(newyorkWebsiteUrls, data, by = "City", all = T)
 
-#combine the two partisanship measures
-newyorkWebsiteUrls$Party <- newyorkWebsiteUrls$wikiPartisanship
-newyorkWebsiteUrls$Party[!newyorkWebsiteUrls$Party%in%c("D","R") & newyorkWebsiteUrls$financePartisanship%in%c("D","R")] <- newyorkWebsiteUrls$financePartisanship[!newyorkWebsiteUrls$Party%in%c("D","R") & newyorkWebsiteUrls$financePartisanship%in%c("D","R")]
-
-#city website of Port Jervis was wrong
-newyorkWebsiteUrls$wikiCityWebsite[newyorkWebsiteUrls$City=="Port Jervis"] <- "http://portjervisny.org"
-
 #save
-save(newyorkWebsiteUrls, file="data/newyorkWebsiteURLs2.rdata")
+save(newyorkWebsiteUrls, file="rfiles/newyorkWebsiteURLs.rdata")
