@@ -8,8 +8,12 @@ load("rfiles/indianaWebsiteURLs.rdata")
 load("rfiles/louisianaWebsiteURLs.rdata")
 
 #Load New York website data
+#(file is created in scrapeNewYorkURLsNew.R)
+load("rfiles/newyorkWebsiteURLs.rdata")
 
 #Load Washington website data
+#(file is created in scrapeWashingtonURLsNew.R)
+load("rfiles/washingtonWebsiteURLs.rdata")
 
 #Load 100 largest cities website data
 load("./rfiles/campaign_websites.rdata")

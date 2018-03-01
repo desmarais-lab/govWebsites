@@ -1,3 +1,15 @@
+# Purpose of the script:
+## 1. Scrape URLs and partisanship of mayor from Wikipedia
+## 2. merge in partisanship from campaign finance data
+## 3. some data munging to get everything ready to be processed in mergeStatesURLs.R
+
+#Required files:
+## functions/scrapeCityUrlsMayors.R
+## rfiles/NYmayorsMerged.rdata
+
+#Created files:
+## rfiles/newyorkWebsiteURLs.rdata
+
 source('functions/scrapeCityUrlsMayors.R')
 
 #extract the links to the cities' wikipedia pages
