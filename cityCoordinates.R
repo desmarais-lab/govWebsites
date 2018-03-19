@@ -18,4 +18,11 @@ coords <- str_split_fixed(websiteUrls$coords, "/", 3)[,3] %>% str_split_fixed(";
 websiteUrls$latitude <- str_trim(coords[,1])
 websiteUrls$longitude <- str_trim(coords[,2])
 
+#change to numeric
+websiteUrls$latitude <- as.numeric(websiteUrls$latitude)
+#fix an error where a coordinate contained "(Virginia Beach)"
+websiteUrls$longitude <- gsub("\\s\\((.*?)\\)", "", websiteUrls$longitude)
+websiteUrls$longitude <- gsub("[^0-9\\-\\.]", "", websiteUrls$longitude)
+websiteUrls$longitude <- as.numeric(as.character(websiteUrls$longitude))
+
 save(websiteUrls, file = "rfiles/allURLs.rdata")
