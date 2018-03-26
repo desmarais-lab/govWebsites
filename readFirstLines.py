@@ -11,12 +11,14 @@ results2 = [x for x in results if not r.match(x)]
 
 tt = []
 firstlines = []
+filepaths = []
 for file in results2:
     start_time = time.time()
     for line in file:
         firstline = open(file, encoding = "ISO-8859-1").readline().rstrip()
         if firstline != "":
             firstlines.append(firstline)
+            filepaths.append(file)
             break
     tt.append(time.time() - start_time)
 
@@ -29,6 +31,6 @@ thefile.close()
 
 #write file paths
 thefile = open('data/filepaths.txt', 'w')
-for item in results2:
+for item in filepaths:
   thefile.write("%s\n" % item)
 thefile.close()
