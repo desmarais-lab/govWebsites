@@ -1,7 +1,13 @@
+# This document creates a list of all the files that were downloaded with wget
+# and then merges it with the city metadata
+# the resultant citydocs.rdata file should be used as input for convertToText.R
+# the resultant city-specific rdata files will then further be processed in preprocessingPart2.R
+
 #setwd("govWebsites")
 
-library(stringr)
-library(urltools) #used toget the domain from each url
+library('stringr')
+library('urltools') #used toget the domain from each url
+library('tools')
 
 # ---- #
 
@@ -18,10 +24,46 @@ websiteUrls$urls_verified[websiteUrls$urls_verified=="www.unioncity-in.gov"] <- 
 
 # ---- #
 
-#load the document paths
-load("rfiles/doc_chunks/docnames.rdata")
+path <- "/home/mneumann/hd2/govWebsites"
 
-#extract city from directory
+f <- list.files(path, recursive = T) #create a list of all files in all subdirectories
+f <- f[!stringr::str_detect(f, "[^\\x00-\\x7F]")]
+
+#file types
+ext <- file_ext(f) #get file extension
+folder <- str_split(f, "\\/(?=[^\\/]+$)", simplify = T)[,1]
+filename <- str_split(f, "\\/(?=[^\\/]+$)", simplify = T)[,2]
+
+#store objects in a data frame
+d <- data.frame(path = str_c(path, f, sep = "/"), 
+                folder = str_c(path, folder, sep = "/"),
+                filename,
+                ext,
+                stringsAsFactors = F)
+d <- subset(d, filename != "")
+
+#new files
+
+#only txt, pdf, html, doc, or docx
+d <- d[d$ext %in% c('txt', 'pdf', 'html', 'doc', 'docx'),]
+
+#remove some files that crash readtext
+#everything in this folder causes some problems
+d <- d[-which(str_detect(d$path, "/home/mneumann/hd2/govWebsites/bloomington.in.gov/trades/parcel/(.*?).pdf")),]
+
+d$path <- str_replace_all(d$path, "\\[", "\\\\[")
+d$path <- str_replace_all(d$path, "\\]", "\\\\]")
+
+#save
+d$iter <- 1:nrow(d)
+save(d, file = "rfiles/docnames.rdata")
+
+# ---- #
+
+#load the document paths
+#load("rfiles/doc_chunks/docnames.rdata")
+
+#function to extract city from directory
 extractCity <- function(path){
   
   city <- str_replace(path, "/home/mneumann/hd2/govWebsites/", "")
@@ -42,18 +84,18 @@ rm(citytable)
 cities <- unique(d$city)
 
 #which chunk file is a given document in?
-ab <- list()
-chunk_size <- 10000
-for (i in seq(1, nrow(d), chunk_size)) {
-  seq_size <- chunk_size
-  if ((i + seq_size) > nrow(d)) seq_size <- nrow(d) - i + 1
-  ab[[i]] <- paste0("rfiles/doc_chunks/parsedtexts_", i, "_", (i+seq_size-1), ".rdata")
-}
-ab <- do.call(c, ab)
-ab[length(ab)] <- "rfiles/doc_chunks/parsedtexts_1520001_1528747.rdata"
-abc <- rep(ab, each = 10000)
-d$parsedtextfile <- abc[1:nrow(d)]
-rm(ab, abc, i, seq_size, chunk_size)
+# ab <- list()
+# chunk_size <- 10000
+# for (i in seq(1, nrow(d), chunk_size)) {
+#   seq_size <- chunk_size
+#   if ((i + seq_size) > nrow(d)) seq_size <- nrow(d) - i + 1
+#   ab[[i]] <- paste0("rfiles/doc_chunks/parsedtexts_", i, "_", (i+seq_size-1), ".rdata")
+# }
+# ab <- do.call(c, ab)
+# ab[length(ab)] <- "rfiles/doc_chunks/parsedtexts_1520001_1528747.rdata"
+# abc <- rep(ab, each = 10000)
+# d$parsedtextfile <- abc[1:nrow(d)]
+# rm(ab, abc, i, seq_size, chunk_size)
 
 # ---- #
 
