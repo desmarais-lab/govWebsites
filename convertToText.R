@@ -23,15 +23,15 @@ convertToText <- function(paths, website_id){
       b$path <- paths[j]
       #record the website id
       #b$website_id <- website_id
+      
+      return(b)
+      
     })
-    
-    #the foreach loop returns a 1x4 data.frame for each text
-    return(as.data.frame(b))
-    
+
   }
   
   #kick the data frames out of the list that don't have three columns
-  broken <- -which(unlist(lapply(a, length))!=4)
+  broken <- -which(unlist(lapply(a, length))!=3)
   if(length(broken)!=0){
     a <- a[broken]
   }
@@ -49,7 +49,7 @@ cities <- unique(d$State_City)
 #iterate through each city, based on that vector
 #and read in and convert to text all of its documents
 #using the function above
-for (i in 1:length(cities)){
+for (i in 31:length(cities)){
   d_city <- d[d$State_City==cities[i],]
   convertToText(d_city$path, cities[i])
 }

@@ -102,6 +102,7 @@ proc_city <- function(df){
   #lines <- unlist(d$doc[cityindices])
   lines <- unlist(str_split(df$doc, "\n"))
   names(lines) <- 1:length(lines)
+  #lines <- gsub("\\s+"," ", lines)
   
   #initialize a hashmap
   #the key/value generated here doesn't matter, I never use it
