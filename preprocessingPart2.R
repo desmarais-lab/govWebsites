@@ -4,37 +4,24 @@
 # -------------------
 
 library('stringr')
-source("./functions/preprocessingChunked.R")
 
 # ----
 
-f <- list.files("rfiles/city_chunks_unprocessed" ,full.names = T)
+f <- list.files("rfiles/city_chunks_unprocessed", full.names = T)
+f_file <- list.files("rfiles/city_chunks_unprocessed")
 
 #loop over cities
 for(city in 1:length(f)){
   
-  load(f[i])
+  load(f[city])
+  a <- a[!a$text=="",]
+  a <- a[!a$text==" ",]
   
-  # Do all the preprocessing that needs to be done before removing duplicate lines
-  names(a)[names(a)=="text"] <- "doc"
-  d <- preprocessing_1(a)
-  rm(a)
+  source("preprocessingQuanteda.R")
+  a <- a[!a$text=="",]
   
-  #d$doc2 <- d$doc
-  #d$doc <- d$doc2
+  save(a, file = paste("rfiles/city_chunks_processed/", f_file[city], sep = ""))
   
-  # Find duplicate lines
-  docDuplicates <- proc_city(d)
-  # Use the counts of duplicate lines found above to remove them over a certain threshold
-  d$doc <- as.character(pbsapply(1:nrow(d), removeDuplicates, 5))
-  # Do the rest of the preprocessing
-  d <- preprocessing_2(d)
-  
-  #once the city's documents are fully preprocessed
-  #merge them with the metadata
-  #and save to a file
-  d <- subset(d, select = c(iter, doc))
-  d <- merge(d, d_meta, by = "iter")
-  save(d, file = paste("rfiles/city_chunks_processed/", d$State_City[1], ".rdata", sep = ""))
+  rm(list = ls()[!ls()%in%c("city", "f", "f_file")])
   
 }
