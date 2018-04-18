@@ -80,11 +80,14 @@ tooShort <- uniquetokens[nchar(uniquetokens)<3]
 
 #get words that are not in an english dictionary
 library('hunspell')
-library('parallel')
-ncores <- detectCores() - 1
-cl <- makeForkCluster(ncores)
-spellingErrors <- parSapply(cl, uniquetokens, FUN = hunspell_check)
-stopCluster(cl)
+# library('parallel')
+# ncores <- detectCores() - 1
+# cl <- makeForkCluster(ncores)
+# spellingErrors <- parSapply(cl, uniquetokens, FUN = hunspell_check)
+# stopCluster(cl)
+#non-parallelized version:
+spellingErrors <- sapply(uniquetokens, hunspell_check)
+
 spellingErrors <- names(spellingErrors)[spellingErrors==F]
 #Note that this also tends to get rid of the proper nouns because they are not capitalized anymore
 #this suits us just fine
