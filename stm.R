@@ -4,22 +4,15 @@ library('ggplot2')
 library('scales')
 library('stringr')
 
-# if no state data is loaded, default to Indiana
-if(exists("d")==F){
-  load(file = "./rfiles/d.Rdata")
-}
+load(file = "./rfiles/websiteMetadata.rdata")
+load(file = "rfiles/allDocuments.rdata")
 
-if(exists("state")==F){
-  state <- "Indiana"
-}
-
-if(exists("stateAbb")==F){
-  stateAbb <- "IN"
-}
+d <- merge(d, websiteMeta, by.x = "city", by.y = "State_City")
+d <- subset(d, State %in% c("Indiana", "Louisiana", "New York", "California", "Washington", "Texas"))
 
 #get the data ready for preprocessing
-docs <- d$doc
-meta <- subset(d, select = c('City', 'Party', 'POPESTIMATE'))
+docs <- d$text
+meta <- subset(d, select = c(city, party, State, B01001_001E, B19013_001E))
 processed <- textProcessor(docs, metadata = meta, 
                            lowercase = F,
                            removestopwords = F, 
@@ -27,21 +20,14 @@ processed <- textProcessor(docs, metadata = meta,
                            removepunctuation = F,
                            stem = F, 
                            wordLengths = c(1, Inf))
-out <- prepDocuments(processed$documents, processed$vocab, processed$meta)
-docs <- out$documents
-vocab <- out$vocab
-meta <- out$meta
-
-#the stm package has its own preprocessing function
-out <- prepDocuments(processed$documents, processed$vocab,
-                     processed$meta, lower.thresh = 1)
+out <- prepDocuments(processed$documents, processed$vocab, processed$meta, lower.thresh = NULL)
 
 #Number of topics
 numtopics <- 60
 
 #Train the model
 stmFit <- stm(documents = out$documents, vocab = out$vocab,
-              K = numtopics, prevalence =~ Party + POPESTIMATE,
+              K = numtopics, prevalence =~ party + State + B01001_001E + B19013_001E,
               max.em.its = 9999, data = out$meta,
               init.type = "Spectral")
 
@@ -49,7 +35,7 @@ stmFit <- stm(documents = out$documents, vocab = out$vocab,
 sims <- 1000
 
 #re-estimate the effects, this time do 1000 draws from the posterior
-prep <- estimateEffect(formula = 1:numtopics ~ Party + POPESTIMATE, 
+prep <- estimateEffect(formula = 1:numtopics ~ party + State + B01001_001E + B19013_001E, 
                        stmobj = stmFit,
                        meta = out$meta, 
                        uncertainty = "Global",
@@ -59,8 +45,8 @@ prep <- estimateEffect(formula = 1:numtopics ~ Party + POPESTIMATE,
 #the results are so large, we only retain the
 #objects necessary for the rest of the analysis
 #rm(list = ls()[!ls()%in% c("stmFit", "prep", "out", "numtopics")])
-save.image(paste0("rfiles/stmSession", stateAbb, ", _Party.rdata"))
-load(paste0("rfiles/stmSession", stateAbb, ", _Party.rdata"))
+save.image("rfiles/stmSession2, _Party.rdata")
+load("rfiles/stmSession2, _Party.rdata")
 
 #make a dataframe to store the results in
 df <- data.frame(coef = rep(0, numtopics), sig = rep(FALSE, numtopics),
@@ -123,30 +109,30 @@ colnames(demWords) <- round(df$coef[demTopics], 3)
 xtRep <- repWords
 xtDem <- demWords
 
-strCaptionRep <- paste0("Top Republican topics and words (", state, "), according to STM. 
+strCaptionRep <- "Top Republican topics and words, according to STM. 
 The words are the top words for the most Democratic/Republican topic, determined
-by the size (and significance) of the coefficient (see table header) of the party covariate.")
+by the size (and significance) of the coefficient (see table header) of the party covariate."
 
-strCaptionDem <- paste0("Top Democratic topics and words (", state, "), according to STM. 
+strCaptionDem <- "Top Democratic topics and words, according to STM. 
 The words are the top words for the most Democratic/Republican topic, determined
-by the size (and significance) of the coefficient (see table header) of the party covariate.")
+by the size (and significance) of the coefficient (see table header) of the party covariate."
 
 xtRep <- print(xtable(repWords,
                       digits = 3, 
                       caption = strCaptionRep, 
-                      label = paste0("tabSTM", stateAbb, "Rep")),
+                      label = paste0("tabSTM_Rep")),
                       #size = "footnotesize",
                       include.rownames = FALSE)
 
 xtDem <- print(xtable(demWords,
                       digits = 3, 
                       caption = strCaptionDem, 
-                      label = paste0("tabSTM", stateAbb, "Dem")),
+                      label = paste0("tabSTM_Dem")),
                       #size = "footnotesize",
                       include.rownames = FALSE)
 
-writeLines(xtRep, con = paste0('paper/tables/stmTopWords', stateAbb, 'Rep.tex'))
-writeLines(xtDem, con = paste0('paper/tables/stmTopWords', stateAbb, 'Dem.tex'))
+writeLines(xtRep, con = paste0('paper/tables/stmTopWords_Rep.tex'))
+writeLines(xtDem, con = paste0('paper/tables/stmTopWords_Dem.tex'))
 
 #save results
-save.image(paste0('rfiles/stm', stateAbb, '.RData'))
+save.image(paste0('rfiles/stm.rdata'))
