@@ -35,6 +35,7 @@
 \usepackage{color}
 \usepackage{dcolumn}
 \usepackage{comment}
+\usepackage{xcolor, colortbl}
 %\usepackage{fullwidth}
 \newcolumntype{d}[1]{D{.}{\cdot}{#1}}
 \newcolumntype{.}{D{.}{.}{-1}}
@@ -321,6 +322,9 @@ Using the same methods as described for our main corpus, we have gathered these 
 %Ground truth test between top100 mayors and IN + LA; with bootstrapped confidence bounds
 % label: groundtruth_bootstrapped
 \input{tables/groundtruth_bootstrapped.tex}
+
+
+\input{tables/stmTopWords.tex} %\ref{tabSTMtopwords}
 
 
 \section{Conclusion}
