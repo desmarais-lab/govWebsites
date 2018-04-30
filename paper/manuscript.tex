@@ -185,8 +185,23 @@ Preprocessing further includes setting every character to lowercase, as well as 
 \subsection{Boilerplate Removal}\label{boilerplate}
 As noted above, city websites contain a large amount of text that is uninformative for its actual content and therefore a hindrance to correct analysis by automatic text processing methods. Consequently we remove this content as following: Each line of every document is compared to every line in every other document belonging to the same city. We count how many times each line is duplicated for that city. We remove any line occuring more than our chosen threshold of 10.\footnote{Empirically, lines tend to be duplicated either hundreds of times, or only once or twice, if at all.} This means that each document only retains the information that is particular about it. We implement this algorithm through hash tables, which reduces the computational complexity from O($N^2$) to O($N$). Before this step is taken, we remove numbers and dates from the documents because they frequently make lines unique, despite the fact that they are virtually the same (for example different days on a city calendar).
 
+\subsection*{Boilerplate Classification}
 
+In order to determine whether a line should be discarded, we train a simple classifier. We sampled 100 lines from documents from Anchorage, Alaska - 20 of which ocurred 1-4, 5-9, 10-19, 20-39 and over 40 times within the city\footnote{For the paper, we should increase the sample size sample lines from more than just one city. But I don't want to go through the effort of doing all this hand-coding until we're actually sure if and how we are going to use this.}. These lines were hand-coded as either substantively useful or useless. Then we trained a logit model with this usefulness measure as the dependent variable. The independent variables were: (1) number of times the line was duplicated within the city, (2) length of the line, in characters, (3) number of tokens in the line, and (4) the average keyness of the terms in the line. The purpose of these covariates is as following:
 
+The length of the line and the number of tokens are a way to find lines consisting of only a word or two. This is highly predictive of lines which are used as website headers and navigational elements, which are of of zero substantive interest to us. These terms also happen to be fairly common, which causes them to be overweighted by the topic model.
+
+To directly address the latter problem, a measure for the number of times a line is duplicated within a city is included. Many lines occur hundreds or even thousands of times on a single website, and therefore are terms that are highly predictive of the website, which causes the topic model to create topics that are highly correlated with cities.
+
+Finally, the keyness measure: This indicator shows whether a term occurs disproportionally frequently in one document collection, compared to another. In our case, this would be one city's documents, compared to all others. Mathematically, this is a simple chi-square test, asserting whether the frequency of a word in a city is greater than its expected count, as determined by its count in all other documents, and the number of tokens in the city. The variable used in the model is the chi-square value of this test for each word (which varies and is therefore calculated individually for each city).\footnote{Or alternatively, the log of the absolute chi-square value, after which the previously negative values are made negative again.}
+
+A regression table for this model can be found in table 3. The associated accuracy in 5-fold cross-validation is 0.8325. The cross-validation accuracy of a simplified model with only the number of characters as a covariate is 0.825 (table 4). A model with the four covariates described above as well as interaction terms between each of them yields an accuracy of 0.885 (table 5).
+
+\input{tables/boilerplateClassifier1.tex}
+\input{tables/boilerplateClassifier2.tex}
+\input{tables/boilerplateClassifier3.tex}
+
+Although not implemented yet, the idea is to use this classifier to flag and remove all lines that are not classified as substantively useful (if we want to be cautious, we could choose to only do that for lines that are classified as, for example, having a 60\% chance (or some other number greater than 50\%) of not being substantively useful).
 
 \section{Bag-of-Words Text Analysis}
 
