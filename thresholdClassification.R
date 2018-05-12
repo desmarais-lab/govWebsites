@@ -85,9 +85,25 @@ crossval_results <- list()
 for(i in 1:5){
   m1 <- glm(substantive ~ textlength + realDuplicate + ntokens + lineKeyness, data = results3[results3$folds!=i,])
   #summary(m1)
-  crossval_results[[i]] <- mean((predict(m1, results3[results3$folds!=i,])>0.5)==results3$substantive[results3$folds!=i])
+  #percent correctly predicted
+  pcp <- mean((predict(m1, results3[results3$folds!=i,])>=0.5)==results3$substantive[results3$folds!=i])
+  #true positives
+  tp <- length(which(which(predict(m1, results3[results3$folds!=i,])>=0.5)%in%which(results3$substantive[results3$folds!=i])))
+  #false positives
+  fp <- length(which(which(predict(m1, results3[results3$folds!=i,])>=0.5)%in%which(results3$substantive[results3$folds!=i])==F))
+  #false negatives
+  fn <- length(which(which(predict(m1, results3[results3$folds!=i,])<0.5)%in%which(results3$substantive[results3$folds!=i])))
+  #precision
+  prec <- tp/(tp+fp)
+  #recall
+  rec <- tp/(tp+fn)
+  #f1 score
+  f1 <- 2*((prec*rec)/(prec+rec))
+  #add to results list
+  crossval_results[[i]] <- c(pcp, prec, rec, f1)
+  names(crossval_results[[i]]) <- c("pcp", "prec", "rec", "f1")
 }
-mean(unlist(crossval_results))
+apply(do.call(rbind, crossval_results), 2, mean)
 stargazer(m1)
 writeLines(stargazer(m1), "paper/tables/boilerplateClassifier1.tex")
 
@@ -95,19 +111,49 @@ writeLines(stargazer(m1), "paper/tables/boilerplateClassifier1.tex")
 crossval_results <- list()
 for(i in 1:5){
   m2 <- glm(substantive ~ textlength, data = results3[results3$folds!=i,])
-  #summary(m1)
-  crossval_results[[i]] <- mean((predict(m2, results3[results3$folds!=i,])>0.5)==results3$substantive[results3$folds!=i])
+  #percent correctly predicted
+  pcp <- mean((predict(m2, results3[results3$folds!=i,])>=0.5)==results3$substantive[results3$folds!=i])
+  #true positives
+  tp <- length(which(which(predict(m2, results3[results3$folds!=i,])>=0.5)%in%which(results3$substantive[results3$folds!=i])))
+  #false positives
+  fp <- length(which(which(predict(m2, results3[results3$folds!=i,])>=0.5)%in%which(results3$substantive[results3$folds!=i])==F))
+  #false negatives
+  fn <- length(which(which(predict(m2, results3[results3$folds!=i,])<0.5)%in%which(results3$substantive[results3$folds!=i])))
+  #precision
+  prec <- tp/(tp+fp)
+  #recall
+  rec <- tp/(tp+fn)
+  #f1 score
+  f1 <- 2*((prec*rec)/(prec+rec))
+  #add to results list
+  crossval_results[[i]] <- c(pcp, prec, rec, f1)
+  names(crossval_results[[i]]) <- c("pcp", "prec", "rec", "f1")
 }
-mean(unlist(crossval_results))
+apply(do.call(rbind, crossval_results), 2, mean)
 stargazer(m2)
 writeLines(stargazer(m2), "paper/tables/boilerplateClassifier2.tex")
 
 crossval_results <- list()
 for(i in 1:5){
   m3 <- glm(substantive ~ textlength + realDuplicate + ntokens + lineKeyness + textlength*realDuplicate + textlength*ntokens + textlength*lineKeyness + realDuplicate*ntokens + realDuplicate*lineKeyness + ntokens*lineKeyness, data = results3[results3$folds!=i,])
-  #summary(m1)
-  crossval_results[[i]] <- mean((predict(m3, results3[results3$folds!=i,])>0.5)==results3$substantive[results3$folds!=i])
+  #percent correctly predicted
+  pcp <- mean((predict(m3, results3[results3$folds!=i,])>=0.5)==results3$substantive[results3$folds!=i])
+  #true positives
+  tp <- length(which(which(predict(m3, results3[results3$folds!=i,])>=0.5)%in%which(results3$substantive[results3$folds!=i])))
+  #false positives
+  fp <- length(which(which(predict(m3, results3[results3$folds!=i,])>=0.5)%in%which(results3$substantive[results3$folds!=i])==F))
+  #false negatives
+  fn <- length(which(which(predict(m3, results3[results3$folds!=i,])<0.5)%in%which(results3$substantive[results3$folds!=i])))
+  #precision
+  prec <- tp/(tp+fp)
+  #recall
+  rec <- tp/(tp+fn)
+  #f1 score
+  f1 <- 2*((prec*rec)/(prec+rec))
+  #add to results list
+  crossval_results[[i]] <- c(pcp, prec, rec, f1)
+  names(crossval_results[[i]]) <- c("pcp", "prec", "rec", "f1")
 }
-mean(unlist(crossval_results))
+apply(do.call(rbind, crossval_results), 2, mean)
 writeLines(stargazer(m3), "paper/tables/boilerplateClassifier3.tex")
 
