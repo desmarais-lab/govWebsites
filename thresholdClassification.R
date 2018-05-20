@@ -1,23 +1,79 @@
-testDF <- data.frame(linesRemove)
+# -------------------
+# PREPROCESSING
+# iterate over cities
+# -------------------
 
-test1_4 <- as.character(sample(test$linesRemove[test$Freq>=1 & test$Freq<=4], 100, F))
-test5_9 <- as.character(sample(test$linesRemove[test$Freq>=5 & test$Freq<=9], 100, F))
-test10_19 <- as.character(sample(test$linesRemove[test$Freq>=10 & test$Freq<=19], 100, F))
-test20_39 <- as.character(sample(test$linesRemove[test$Freq>=20 & test$Freq<=39], 100, F))
-test40 <- as.character(sample(test$linesRemove[test$Freq>=40], 100, F))
+library('stringr')
 
-test <- c(test1_4, test5_9, test10_19, test20_39, test40)
-test <- tibble::tibble(text = test, number = rep(c("1-4", "5-9", "10-19", "20-39", "40plus"), each = 100))
+# ----
 
-test.ind <- sample(c(1:500), 500, F)
+f <- list.files("rfiles/city_chunks_unprocessed", full.names = T)
+f_file <- list.files("rfiles/city_chunks_unprocessed")
 
-test.text <- test$text[test.ind]
-test.number <- test$number[test.ind]
-test.text <- as.data.frame(test.text)
+selected_cities <- c("rfiles/city_chunks_unprocessed/Indiana_Indianapolis.rdata",
+                     "rfiles/city_chunks_unprocessed/Louisiana_Shreveport.rdata",
+                     "rfiles/city_chunks_unprocessed/New York_New York City.rdata",
+                     "rfiles/city_chunks_unprocessed/California_Los Angeles.rdata",
+                     "rfiles/city_chunks_unprocessed/Washington_Seattle.rdata")
 
-test.text$class <- NA
+selected_cities <- which(f%in%selected_cities)
+f <- f[selected_cities]
+f_file <- f_file[selected_cities]
+testDF <- list()
+#loop over cities
+for(city in 1:length(f)){
+  
+  load(f[city])
+  a <- a[!a$text=="",]
+  a <- a[!a$text==" ",]
+  
+  #Seattle has some very large GIS maps which quanteda doesn't like at all
+  if(city==5){
+    gisWebplots <- which(str_detect(a$path, "\\/home\\/mneumann\\/hd2\\/govWebsites\\/www.seattle.gov\\/dpd\\/Research\\/gis\\/webplots\\/*"))
+    a <- a[-gisWebplots,]
+  }
+  
+  source(textConnection(readLines("preprocessingQuanteda.R")[1:47]))
+  #source("preprocessingQuanteda.R")
+  testDF[[city]] <- data.frame(linesRemove)
+  
+}
 
-test.text.class <- c(F,T,T,F,T,F,F,F,T,T,F,F,T,F,F,F,T,F,F,F,F,F,F,F,F,F,T,F,T,F,F,F,T,T,F,F,F,T,F,F,F,F,F,T,T,T,T,F,F,T,T,F,T,F,T,F,F,T,T,F,F,T,T,F,T,F,T,F,T,T,T,T,T,T,T,T,F,T,F,F,T,F,T,F,F,F,F,T,F,T,T,T,T,F,T,T,F,T,T,T)
+save.image("rfiles/classifierTrainingData.rdata")
+load("rfiles/classifierTrainingData.rdata")
+set.seed(123)
+training <- list()
+for(i in 1:length(f)){
+  test <- testDF[[i]]
+  
+  # test1_4 <- as.character(sample(test$linesRemove[test$Freq>=1 & test$Freq<=4], 20, F))
+  # test5_9 <- as.character(sample(test$linesRemove[test$Freq>=5 & test$Freq<=9], 20, F))
+  # test10_19 <- as.character(sample(test$linesRemove[test$Freq>=10 & test$Freq<=19], 20, F))
+  # test20_39 <- as.character(sample(test$linesRemove[test$Freq>=20 & test$Freq<=39], 20, F))
+  # test40 <- as.character(sample(test$linesRemove[test$Freq>=40], 20, F))
+  # 
+  # test <- c(test1_4, test5_9, test10_19, test20_39, test40)
+  # test <- tibble::tibble(text = test, number = rep(c("1-4", "5-9", "10-19", "20-39", "40plus"), each = 100))
+  # 
+  # test.ind <- sample(c(1:500), 500, F)
+  # 
+  # test.text <- test$text[test.ind]
+  # test.number <- test$number[test.ind]
+  # test.text <- as.data.frame(test.text)
+  
+  test.ind <- sample(c(1:nrow(test)), 100, F)
+  test <- test[test.ind,]
+  test$ind <- test.ind
+  test$city <- str_replace(f_file[i], ".rdata", "")
+  test$class <- NA
+  training[[i]] <- test
+}
+training <- do.call(rbind, training)
+
+write.csv(training, "data/classifierTrainingDataUncoded.csv")
+
+
+#test.text.class <- c(F,T,T,F,T,F,F,F,T,T,F,F,T,F,F,F,T,F,F,F,F,F,F,F,F,F,T,F,T,F,F,F,T,T,F,F,F,T,F,F,F,F,F,T,T,T,T,F,F,T,T,F,T,F,T,F,F,T,T,F,F,T,T,F,T,F,T,F,T,T,T,T,T,T,T,T,F,T,F,F,T,F,T,F,F,F,F,T,F,T,T,T,T,F,T,T,F,T,T,T)
 
 library(ggplot2)
 
@@ -36,7 +92,7 @@ results3 <- results3[,1:3]
 results3$text <- as.character(test.text$test.text[1:100])
 results3$realDuplicate <- NA
 for(i in 1:100){
-results3$realDuplicate[i] <- testDF$Freq[which(results3$text[i]==testDF$linesRemove)]
+  results3$realDuplicate[i] <- testDF$Freq[which(results3$text[i]==testDF$linesRemove)]
 }
 
 m1 <- glm(substantive ~ textlength + realDuplicate + textlength*realDuplicate, data = results3[1:70,])
