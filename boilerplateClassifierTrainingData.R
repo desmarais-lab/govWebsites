@@ -75,6 +75,8 @@ for(city in 1:length(f)){
   
 }
 
-#citySamplesConc <- do.call(rbind, citySamples)
+citySamplesConc <- do.call(rbind, citySamples)
 
 save.image("rfiles/classifierTrainingDataNew.rdata")
+
+write.csv(citySamplesConc, "data/classifierTrainingDataUncoded.csv")
