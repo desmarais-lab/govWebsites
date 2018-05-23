@@ -36,6 +36,11 @@ for(city in 1:length(f)){
   
   #remove empty lines
   linesTable <- linesTable[linesTable$linesRemove!="",]
+  
+  #record the total number of lines per city
+  lineInfo <- paste(str_replace(f_file[city], ".rdata", ""), sum(linesTable$Freq), length(linesTable$Freq), sep = ",")
+  write.table(lineInfo, file = "data/cityLines.txt", append = T, col.names = F, row.names = F, quote = F)
+
   #create the variable to be coded
   linesTable$class <- 0
   #include the city name

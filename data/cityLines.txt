@@ -1,0 +1,5 @@
+California_Los Angeles,36296,3609
+Indiana_Indianapolis,2662713,862495
+Louisiana_Shreveport,1248808,473273
+New York_New York City,17151011,4104247
+Washington_Seattle,18357432,5286435
