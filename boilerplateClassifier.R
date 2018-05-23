@@ -166,6 +166,16 @@ xt <- print.xtable(xtable(metrics_mRF,
 writeLines(xt, 
            con = "paper/tables/boilerplateClassifierRFMetrics.tex")
 
+#Comparison
+# metrics_mRFTab <- metrics_mRF
+# metrics_mRFTab <- cbind(metrics_mRFTab,metrics_mRF)
+# names(metrics_mRFTab) <- c("IPW", "Prob", "No Weight")
+# xt <- print.xtable(xtable(metrics_mRFTab,
+#                           caption = "Performance metrics for random forest boilerplate classifier, with either Inverse Probability Weights (IPW), probabilty (of being in the training sample) (prob), or no weighting."),
+#                    include.rownames = T)
+# writeLines(xt,
+#            con = "paper/tables/boilerplateClassifierRFMetrics.tex")
+
 # export variable importance as a latex table
 varimp <- varImp(mRF)$importance
 varimp <- data.frame(Feature = rownames(varimp), Importance = round(varimp$Overall, 1))
