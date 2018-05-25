@@ -12,7 +12,7 @@ rm(tks)
 names(trainingData) <- c("id", "text", "freq", "class", "city", "prob", "medianDocMidDist", "nchars", "nwords")
 #
 
-# Classifier
+# Logit Classifier
 
 #new model
 trainingData$folds <- sample(rep(1:5, 100), 500, replace = F)
@@ -120,7 +120,7 @@ trainingDataRF$class <- as.factor(trainingDataRF$class)
 
 crossval_results <- list()
 for(i in 1:5){
-
+  
   mRF <- train(class ~ freq + medianDocMidDist + nchars + nwords, 
                data = trainingDataRF[trainingData$folds!=i,], 
                method = "ranger",
@@ -138,13 +138,15 @@ for(i in 1:5){
   pred0id <- which(predClasses==0)
   
   #percent correctly predicted
-  pcp <- mean(as.logical(predClasses==1) == as.logical(trainingData$class[trainingData$folds==i]==1))
+  true_weight <- sum(trainingDataRF$ipw_scaled[trainingData$folds==i][as.logical(predClasses==1) == as.logical(trainingData$class[trainingData$folds==i]==1)])
+  false_weight <- sum(trainingDataRF$ipw_scaled[trainingData$folds==i][as.logical(predClasses==1) != as.logical(trainingData$class[trainingData$folds==i]==1)])
+  pcp <- true_weight/(true_weight+false_weight)
   #true positives
-  tp <- length(which(pred1id%in%true1id))
+  tp <- sum(trainingDataRF$ipw_scaled[trainingData$folds==i][which(pred1id%in%true1id)])
   #false positives
-  fp <- length(which(pred1id%in%true0id))
+  fp <- sum(trainingDataRF$ipw_scaled[trainingData$folds==i][which(pred1id%in%true0id)])
   #false negatives
-  fn <- length(which(pred0id%in%true1id))
+  fn <- sum(trainingDataRF$ipw_scaled[trainingData$folds==i][which(pred0id%in%true1id)])
   #precision
   prec <- tp/(tp+fp)
   #recall
@@ -156,12 +158,12 @@ for(i in 1:5){
   names(crossval_results[[i]]) <- c("pcp", "prec", "rec", "f1")
 }
 
-# export metrix as a latex table
 metrics_mRF <- data.frame(round(apply(do.call(rbind, crossval_results), 2, mean), 3))
 names(metrics_mRF) <- "Value"
 rownames(metrics_mRF) <- c("Percent Correctly Predicted", "Precision", "Recall", "F1-Score")
 xt <- print.xtable(xtable(metrics_mRF,
-                          caption = "Performance metrics for random forest boilerplate classifier, with IPW weighting."),
+                          label = "randomForest",
+                          caption = "Performance metrics for random forest boilerplate classifier, with inverse probability weights."),
                    include.rownames = T)
 writeLines(xt, 
            con = "paper/tables/boilerplateClassifierRFMetrics.tex")
@@ -181,7 +183,10 @@ varimp <- varImp(mRF)$importance
 varimp <- data.frame(Feature = rownames(varimp), Importance = round(varimp$Overall, 1))
 varimp <- varimp[order(varimp$Importance, decreasing  = T),]
 xt <- print.xtable(xtable(varimp,
+                          label = "randomForestVarimp",
                           caption = "Variable importance for random forest boilerplate classifier, with IPW weighting."),
                    include.rownames = F)
 writeLines(xt, 
            con = "paper/tables/boilerplateClassifierRFImportance.tex")
+
+save(mRF, file = "rfiles/boilerplateClassifierWeights.rdata")
