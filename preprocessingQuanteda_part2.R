@@ -6,7 +6,7 @@ testDataTextTable <- data.frame(table(testData$text), stringsAsFactors = F)
 testDataTextTable$Var1 <- as.character(testDataTextTable$Var1)
 testData$lineID <- 1:nrow(testData)
 testData <- merge(testData, testDataTextTable, by.x = "text", by.y = "Var1", all.x = T)
-rm(testDataTextTable)
+rm(testDataTextTable, tt3)
 testData <- testData[order(testData$lineID),]
 
 #create the variables necessary to create the variables used in the classifier
@@ -35,7 +35,23 @@ names(testData)[names(testData)=="Freq"] <- "freq"
 #load the weights from the random forest
 load('rfiles/boilerplateClassifierWeights.rdata')
 
-testData$predictedClass <- predict(mRF, testData)
+if(nrow(testData)<=10000){
+  testData$predictedClass <- predict(mRF, testData)
+}else{
+  chunks <- seq(0,nrow(testData), 10000)
+  chunks <- c(chunks, nrow(testData))
+  
+  #start_time <- Sys.time()
+  testResults <- list()
+  for(i in 1:(length(chunks)-1)){
+    testData2 <- testData[(chunks[i]+1):chunks[i+1],]
+    testResults[[i]] <- predict(mRF, testData2)
+  }
+  #end_time <- Sys.time()
+  #end_time - start_time
+  testResults <- unlist(testResults)
+  testData$predictedClass <- testResults
+}
 
 testDataClassified <- testData[testData$predictedClass==0,]
 
