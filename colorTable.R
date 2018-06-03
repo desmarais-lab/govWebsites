@@ -20,10 +20,10 @@ cellcolors <- lapply(df$coef, function(x) paste0("\\cellcolor{", f(x), "}"))
 cellcolors[which(df$sig==F)] <- "\\cellcolor{white}"
 topwords3 <- apply(topwords[,1:7], 2, function(x)paste(cellcolors, x, sep = ""))
 
-xtTopwords <- print(xtable(topwords3), 
+xtTopwords <- print(xtable(topwords3, caption = "Top words from a structural topic model with 60 topics and FREX scoring. Based on data preprocessed with the classifier. Colors depict partisanship based on coefficient size. White cells are non-significant topics."), 
       sanitize.text.function = identity,
       label = "tabSTMtopwords",
-      size = "footnotesize",
+      size = "scriptsize",
       include.rownames = FALSE)
 
-writeLines(xtTopwords, con = 'paper/tables/stmTopWords.tex')
+writeLines(xtTopwords, con = 'paper/tables/stmTopWords2.tex')
