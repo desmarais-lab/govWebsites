@@ -65,12 +65,16 @@ topwords3 <- cbind(1:nrow(topwords3), topwords3)
 #add topic number of topics column
 topicWordMatrix <- do.call(rbind, stmFit$beta$logbeta)
 tokenTopicAssignments <- apply(topicWordMatrix, 2, which.max)
-topwords3$ntokens <- as.vector(table(aaac))
+topwords3$ntokens <- as.vector(table(tokenTopicAssignments))
+topwords3$ntokens <- paste0("\\mybar{", topwords3$ntokens, "}")
 
 names(topwords3) <- c("Topic", paste("Top Word", 1:7), "Tokens assigned")
 
 #order by coefficient
 topwords3 <- topwords3[order(df$coef, decreasing = T),]
+
+#remove the last topic
+topwords3 <- topwords3[,-8]
 
 xtTopwords <- print(xtable(topwords3, caption = "Top words from a structural topic model with 60 topics and FREX scoring. Colors depict partisanship based on coefficient size. White cells are non-significant topics. Based on data preprocessed with the classifier."), 
                     sanitize.text.function = identity,
@@ -78,4 +82,10 @@ xtTopwords <- print(xtable(topwords3, caption = "Top words from a structural top
                     size = "scriptsize",
                     include.rownames = FALSE)
 
+xtTopwords <- str_replace(xtTopwords, "rlllllll", "rllllllll")
+xtTopwords <- str_replace(xtTopwords, "& Tokens assigned", "& \\\\multicolumn{2}{c}{Tokens assigned}")
+xtTopwords <- str_replace(xtTopwords, "\nTopic &", "\n \\\\# &")
+
+
 writeLines(xtTopwords, con = 'paper/tables/stmTopWords2.tex')
+

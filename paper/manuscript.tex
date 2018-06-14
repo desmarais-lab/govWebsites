@@ -35,7 +35,16 @@
 \usepackage{color}
 \usepackage{dcolumn}
 \usepackage{comment}
+\usepackage{pgf}
 \usepackage{xcolor, colortbl}
+\usepackage{array}
+
+\def\mybar#1{%%
+	#1 & {\color{red}\pgfmathsetlengthmacro\x{#1*0.006mm}\rule{\x}{4pt}}}
+
+%\pgfmathsetlengthmacro\x{#1^0.1mm}
+%\show\x -> 25.0pt
+
 %\usepackage{fullwidth}
 \newcolumntype{d}[1]{D{.}{\cdot}{#1}}
 \newcolumntype{.}{D{.}{.}{-1}}
