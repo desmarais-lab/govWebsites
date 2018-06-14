@@ -57,6 +57,20 @@ topwords2 <- as.data.frame(topwords[,1:7])
 cellcolors <- lapply(df$coef, function(x) paste0("\\cellcolor{", f(x), "}"))
 cellcolors[which(df$sig==F)] <- "\\cellcolor{white}"
 topwords3 <- apply(topwords[,1:7], 2, function(x)paste(cellcolors, x, sep = ""))
+topwords3 <- as.data.frame(topwords3)
+
+#add topic column
+topwords3 <- cbind(1:nrow(topwords3), topwords3)
+
+#add topic number of topics column
+topicWordMatrix <- do.call(rbind, stmFit$beta$logbeta)
+tokenTopicAssignments <- apply(topicWordMatrix, 2, which.max)
+topwords3$ntokens <- as.vector(table(aaac))
+
+names(topwords3) <- c("Topic", paste("Top Word", 1:7), "Tokens assigned")
+
+#order by coefficient
+topwords3 <- topwords3[order(df$coef, decreasing = T),]
 
 xtTopwords <- print(xtable(topwords3, caption = "Top words from a structural topic model with 60 topics and FREX scoring. Colors depict partisanship based on coefficient size. White cells are non-significant topics. Based on data preprocessed with the classifier."), 
                     sanitize.text.function = identity,
