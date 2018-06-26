@@ -234,23 +234,6 @@ This classifier is then used to flag and remove all lines that are not classifie
 
 We illustrate the analysis of municipal website content using bag-of-words (BoW) methods. BoW methods are methods of text analysis that do not take into account the sequence or placement of words in text---just the presence and frequency of words. As noted by \cite{GrimmerStewart2013}, for most applications, bag-of-words approaches have been found to be more than sufficient. Furthermore, there is reason to believe that city government websites are a particularly `safe' case for bag-of-words methods due to their informative, manner-of-fact based language. It is extremely unlikely for these pages to feature ambiguous language such as an abundance of negation or even sarcasm.
 
-\subsection{Informative Dirichlet model}
-%However, \cite{Monroe2008} advise against using these types of methods in this context because they get the data generation process backwards: Our theory assumes that party leads to variation in writing, and yet we rely on the documents to predict party, in spite of the fact that we actually have perfect knowledge of it.
-
-For the analysis of the data, we present two approaches, the first being the informative dirichlet model developed by \citep{Monroe2008}. This approach aims to account for the fact that some words naturally occur more than others by applying a Dirichlet prior based on the distribution of words in random text. Table \ref{tabFightinIN} shows the top words for both Democrats and Republicans - and accomplishes, to some extent, the goal of \citep{Monroe2008} of banishing frequent words from this list and supplanting them with text with greater semantic, and in our case, partisan meaning. 
-
-In Indiana, Democrats exhibit a preference for words related to public finance, such as 'fund', 'budget', or 'tax', indicative of a greater willingness to emphasize the city's efforts to raise and spend money. This finding is consistent with \citep{Einstein2015}, who show that Democratic mayors tend to favor greater spending. Beyond the focus on public finance, the words preferably used by Democrats do not fall into any particularly congruent categories, and largely sort into various areas related to city administration - i.e. `council', `services', `budget', `committee', `contract', etc. If there is theme around the words preferred by Republicans, it seems to center around city planning - street, fire, water, building, construction, park. These words suggest that the hands-off approach favored by Republicans results in a focus on supporting infrastructure and logistics.
-
-%Partisan top words - fightin words Indiana
-\input{tables/fightinwordsIN.tex} %\ref{tabFightinIN}
-
-For Lousiana, the results (see table \ref{tabFightinLA}) are less coherent. Only one of the finance-related terms appears again for Democrats - specifically `fund', although `rate' might also be used in a financial context. Beyond that, some focus on a `historic' `'district of a city seems evident, as is the use of some words - `infrastructure', `water', `building' that were used for Republicans in Indiana. Conversely, Republicans are now missing these words, and their preferred terms generally do not seem to follow any particular theme.
-
-%Partisan top words - fightin words Louisiana
-\input{tables/fightinwordsLA.tex} %\ref{tabFightinLA}
-
-The weakness of the fightin' words method is evident here, as a list of words does not necessarily provide sufficient information to glean preferred topics from. This is especially the case when the texts are spread across a broad number of issue-areas, with little semantic similarity. In \citep{Monroe2008}, the authors focus on the fairly constrained corpus of U.S. Senate speeches with respect to abortion - our context, by comparison, is far more eclectic.
-
 \subsubsection{Structural topic model}
 A more powerful approach with the capacity of addressing this problem is the use of topic models. This class of clustering methods relies on the co-occurrence of words within documents to form a set of semantically coherent topics. In order to compare the degree to which Republicans and Democrats prefer specific topics, we rely on the structural topic model, developed by \citep{Roberts2014}. Theoretically, the most widely-used form of topic model, latent dirichlet allocation, can also be used to test for the impact of a single covariate through a post-hoc comparison, but the structural topic model allows for multiple covariates, and also produced more meaningful topics in our experiments.
 
@@ -730,7 +713,22 @@ It would be fine to focus on Indiana as a case. First, we need to answer some pr
 	\end{table}
 \end{landscape}
 
+\subsection{Informative Dirichlet model}
+%However, \cite{Monroe2008} advise against using these types of methods in this context because they get the data generation process backwards: Our theory assumes that party leads to variation in writing, and yet we rely on the documents to predict party, in spite of the fact that we actually have perfect knowledge of it.
 
+For the analysis of the data, we present two approaches, the first being the informative dirichlet model developed by \citep{Monroe2008}. This approach aims to account for the fact that some words naturally occur more than others by applying a Dirichlet prior based on the distribution of words in random text. Table \ref{tabFightinIN} shows the top words for both Democrats and Republicans - and accomplishes, to some extent, the goal of \citep{Monroe2008} of banishing frequent words from this list and supplanting them with text with greater semantic, and in our case, partisan meaning. 
+
+In Indiana, Democrats exhibit a preference for words related to public finance, such as 'fund', 'budget', or 'tax', indicative of a greater willingness to emphasize the city's efforts to raise and spend money. This finding is consistent with \citep{Einstein2015}, who show that Democratic mayors tend to favor greater spending. Beyond the focus on public finance, the words preferably used by Democrats do not fall into any particularly congruent categories, and largely sort into various areas related to city administration - i.e. `council', `services', `budget', `committee', `contract', etc. If there is theme around the words preferred by Republicans, it seems to center around city planning - street, fire, water, building, construction, park. These words suggest that the hands-off approach favored by Republicans results in a focus on supporting infrastructure and logistics.
+
+%Partisan top words - fightin words Indiana
+\input{tables/fightinwordsIN.tex} %\ref{tabFightinIN}
+
+For Lousiana, the results (see table \ref{tabFightinLA}) are less coherent. Only one of the finance-related terms appears again for Democrats - specifically `fund', although `rate' might also be used in a financial context. Beyond that, some focus on a `historic' `'district of a city seems evident, as is the use of some words - `infrastructure', `water', `building' that were used for Republicans in Indiana. Conversely, Republicans are now missing these words, and their preferred terms generally do not seem to follow any particular theme.
+
+%Partisan top words - fightin words Louisiana
+\input{tables/fightinwordsLA.tex} %\ref{tabFightinLA}
+
+The weakness of the fightin' words method is evident here, as a list of words does not necessarily provide sufficient information to glean preferred topics from. This is especially the case when the texts are spread across a broad number of issue-areas, with little semantic similarity. In \citep{Monroe2008}, the authors focus on the fairly constrained corpus of U.S. Senate speeches with respect to abortion - our context, by comparison, is far more eclectic.
 
 
 
