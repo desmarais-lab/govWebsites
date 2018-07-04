@@ -235,13 +235,21 @@ This classifier is then used to flag and remove all lines that are not classifie
 We illustrate the analysis of municipal website content using bag-of-words (BoW) methods. BoW methods are methods of text analysis that do not take into account the sequence or placement of words in text---just the presence and frequency of words. As noted by \cite{GrimmerStewart2013}, for most applications, bag-of-words approaches have been found to be more than sufficient. Furthermore, there is reason to believe that city government websites are a particularly `safe' case for bag-of-words methods due to their informative, manner-of-fact based language. It is extremely unlikely for these pages to feature ambiguous language such as an abundance of negation or even sarcasm.
 
 \subsubsection{Structural topic model}
-A more powerful approach with the capacity of addressing this problem is the use of topic models. This class of clustering methods relies on the co-occurrence of words within documents to form a set of semantically coherent topics. In order to compare the degree to which Republicans and Democrats prefer specific topics, we rely on the structural topic model, developed by \citep{Roberts2014}. Theoretically, the most widely-used form of topic model, latent dirichlet allocation, can also be used to test for the impact of a single covariate through a post-hoc comparison, but the structural topic model allows for multiple covariates, and also produced more meaningful topics in our experiments.
+A powerful and frequently used approach within the family of BoW methods is the use of topic models. This class of clustering methods relies on the co-occurrence of words within documents to form a set of semantically coherent topics. In order to compare the degree to which Republicans and Democrats prefer specific topics, we rely on the structural topic model, developed by \citep{Roberts2014}. Theoretically, the most widely-used form of topic model, latent dirichlet allocation, can also be used to test for the impact of a single covariate through a post-hoc comparison, but the structural topic model allows for multiple covariates, and also produced more meaningful topics in our experiments.
 
-We use 60 topics - the number recommended by the authors for medium- to large-sized corpora, and party as well as city population (the literature frequently emphasizes city size as a determinant of the issues it faces - see, for example, \cite{Guillamon2013}) as covariates. The results are shown in tables \ref{tabSTMINRep} to \ref{tabSTMLADem}. The coefficients in the table headers describe the size of the party covariate on a given topic. In order to test statistical significance, we calculated credible intervals - the topics shown here are all significant at the 0.1\% level.
+We use 60 topics - the number recommended by the authors for medium- to large-sized corpora. Since our corpus is at the larger end of that spectrum, the appendix also contains the results of a model with 120 topics, which corroborates the findings of the one presented here. We use four covariates: First, \textit{party}, to test our main hypothesis. Second, \textit{city population}, which the literature frequently emphasizes as a determinant of the issues a city faces (see, for example, \cite{Guillamon2013}). Third, we control for wealth by relying on \textit{median income} as a covariate. Fourth and finally, we include a \textit{state} variable.
 
-In Indiana, some of the topics associated with Democrats - one related to education, one to recycling  - clearly seem to match the party brand. Interestingly enough, Democrats also `own' the topic related to law enforcement, which might be somewhat unexpected given Republicans' usual focus on law and order \citep{Gerber2011a}. However, this kind of finding is not entirely without precedent in the literature (see \citep{Einstein2015}). Similar to the informed dirichlet model, the structural topic model also finds the emphasis on construction and infrastructure by Republicans - in table \ref{tabSTMINRep}, topics 2, 7 and 8 clearly focus on these issues.\footnote{The first Repuiblican topic in Indiana (library, stream, obj, etc.) is likely an artifact from incorrectly converted html, and since it presumably only happens only in one Republican city, the topic is classified as very Republican.}
+The results are shown in table \ref{stmResultsTable}. The rows of the table are sorted so that the most Republican topics (marked by a deeper red color) appear at the top, and the most Democratic ones (blue) at the bottom. The topics that are entirely white are not statistically significant for the party covariate. In order to test statistical significance, we calculated credible intervals - the threshold chosen here is the 1\% level.
 
-When comparing Indiana to Louisiana, it appears that the Democratic emphasis on law enforcement is robust. Furthermore, as with the fightin' words approach, some smaller degree of focus on money (see topic 1) is still evident. For Republicans, topics 2 to 4 seem to be, once again about infrastructure and utilities, pointing to a certain degree of robustness in these results, as well as the emergence of a trend. The results produced by the structural topic model are not flawless, but the two parties do seem to have somewhat consistent themes on which they focus on in both states. Furthermore, in comparison to the fightin' words approach, the ability of the structural topic model to form coherent topics is quite evident and helpful in the interpretation of the results.
+Many of the topics associated with Democrats - one related to education, one to recycling  - clearly seem to match the party brand. For example, topic 44 on affordable housing clearly resonates with the Democratic party's appeal to low-income voters. Similarly, employee rights are represented in topic 46. Democrats also exhibit a strong preference for words related to public finances, such as topic 22 ('budget', 'revenue', 'expenditure') as well as topic 17 ('debt', 'bond', 'financial'). We hypothesize that this is indicative of a greater willingness to emphasize the city's efforts to raise and spend money. This finding is consistent with \citep{Einstein2015}, who show that Democratic mayors tend to favor greater spending. Democrats are the party of big government, and this clearly also shows at the city level. A second, conistent Democratic focus appears to be law enforcement: The most Democratic topic, 57 ('robbery', 'homicide', 'sergeant') (a comparable topic is also the most Democratic topic in the model with 120 topics in tables \ref{stmResultsTable120_1} and \ref{stmResultsTable120_2} of the Appendix) depicts Democrats' complicated relationship with law enforcement - a finding that is not entirely without precedent in the literature (see \citep{Einstein2015}). Finally, Democrats also focus more on the deliberative process of good governance, as topics 29 ('election', 'agenda', 'committee') and 37 ('audit', 'procedure', 'oversight') attest to.
+
+Republicans, meanwhile, live up to their reputation as the party of small government. Many topics prevalent in Republican cities focus on the bare essentials. Basic utilities such as energy (topic 7), fire protection (topic 33), drinking water (51) and garbage removal (topic 49) are ubiquitous here. Similarly, protecting citizens from natural disasters is a focus in topics 1 ('storm', 'runoff', 'drainage') and 20 ('snow', 'hurricane', 'tornado') is an important issue.
+
+
+
+%Interestingly enough, Democrats also `own' the topic related to law enforcement, which might be somewhat unexpected given Republicans' usual focus on law and order \citep{Gerber2011a}. However, this kind of finding is not entirely without precedent in the literature (see \citep{Einstein2015}). Similar to the informed dirichlet model, the structural topic model also finds the emphasis on construction and infrastructure by Republicans - in table \ref{tabSTMINRep}, topics 2, 7 and 8 clearly focus on these issues.\footnote{The first Repuiblican topic in Indiana (library, stream, obj, etc.) is likely an artifact from incorrectly converted html, and since it presumably only happens only in one Republican city, the topic is classified as very Republican.}
+
+%When comparing Indiana to Louisiana, it appears that the Democratic emphasis on law enforcement is robust. Furthermore, as with the fightin' words approach, some smaller degree of focus on money (see topic 1) is still evident. For Republicans, topics 2 to 4 seem to be, once again about infrastructure and utilities, pointing to a certain degree of robustness in these results, as well as the emergence of a trend. The results produced by the structural topic model are not flawless, but the two parties do seem to have somewhat consistent themes on which they focus on in both states. Furthermore, in comparison to the fightin' words approach, the ability of the structural topic model to form coherent topics is quite evident and helpful in the interpretation of the results.
 
 %An ostensibly intuitive solution to topics clustering into cities in LDA is to include dummies for the cities in a statistical model of topics. This is facilitated by the structural topic model, which uses metadata on the document to account for variation in topics \citep{Roberts2014}. However, figure \ref{stm_results} shows that if anything, the STM exacerbates the problem. Here, we plot the \textit{p-values} of the coefficients for each city as well as the party variable across each topic. Under normal circumstances, plotting the p-values, as opposed to the fitted values, does not make much sense, but here it serves a diagnostic purpose. The plot shows that the party variable is never statistically significant at any conceivable level of confidence, nor is it even close to. Interestingly the same is true for a number of the cities as well. The topics cluster heavily into only about half of the cities, which does not present an improvement over LDA at all.
 
@@ -357,11 +365,11 @@ When comparing Indiana to Louisiana, it appears that the Democratic emphasis on 
 
 \section{Conclusion}
 
-We have developed a methodological pipeline for automatically gathering and preparing government websites for comparative analysis. This methodology holds the potential to vastly scale up the data collection efforts underpinning the rapidly growing body of research that is focused on government website analysis. Through an application to the analysis of municipal websites in Indiana and Louisiana, we show how our pipeline is capable of gathering corpora that shed light on the forms and functions of local government.
+We have developed a methodological pipeline for automatically gathering and preparing government websites for comparative analysis. This methodology holds the potential to vastly scale up the data collection efforts underpinning the rapidly growing body of research that is focused on government website analysis. Through an application to the analysis of municipal websites in six different states, we show how our pipeline is capable of gathering corpora that shed light on the forms and functions of local government.
 
 
 \input{tables/urlSummary.tex}
-\input{tables/stateUrlSummary.tex}
+%\input{tables/stateUrlSummary.tex}
 
 \newpage
 
@@ -396,339 +404,353 @@ We have developed a methodological pipeline for automatically gathering and prep
 	\includegraphics[width=\linewidth]{figures/boilerplateBeforeAfterNchars.pdf}
 \end{figure}
 
+\begin{figure}[htp]
+	\centering
+	\caption{Five largest topic effects for the population covariate. The fact that the population and epidemiology topics are positively correlated with city size is indicative of the model's validity.}
+	\label{stmEffectPop}
+	\includegraphics[width=\linewidth]{figures/stm_effect_pop.pdf}
+\end{figure}
+
+\begin{figure}[htp]
+	\centering
+	\caption{Five largest topic effects for the median income covariate. The fact that the crime topic is most prevalent in poorer cities, good governance is the most positively correlated with income is indicative of the model's validity.}
+	\label{stmEffectIncome}
+	\includegraphics[width=\linewidth]{figures/stm_effect_income.pdf}
+\end{figure}
+
 \end{document}
 
 
 
 
 
-\begin{enumerate}
-	\item Design
-	\begin{enumerate}
-		\item Choosing the sample
-		\item Finding URLs
-		\item list of .gov websites
-		\item Finding supporting data
-	\end{enumerate}
-	\item Scraping
-		\begin{enumerate}
-			\item wget
-			\item headless browser/Selenium
-			\item Beautifulsoup/rvest
-			\item APIs (httr)
-			\item Wayback Machine
-		\end{enumerate}
-	\item Pre-processing
-		\begin{enumerate}
-			\item Determining document filetype
-			\item File conversion
-			\item Conventional preprocessing (lowercase, numbers, punctuation)
-			\item Stemming and lemmatization
-			\item spellchecking
-			\item Dealing with duplicate text \& html documents in particular
-		\end{enumerate}
-	\item Analysis
-		\begin{enumerate}
-			\item LDA
-			\item Other topic models (structural, author, dynamic -- maybe?)
-			\item SVM (+ other machine learning classifiers?)
-			\item Fightin Words
-		\end{enumerate}
-\end{enumerate}
-
-
-
-
-
-
-% latex table generated in R 3.3.3 by xtable 1.8-2 package
-% Wed Mar 22 11:32:43 2017
+%\begin{enumerate}
+%	\item Design
+%	\begin{enumerate}
+%		\item Choosing the sample
+%		\item Finding URLs
+%		\item list of .gov websites
+%		\item Finding supporting data
+%	\end{enumerate}
+%	\item Scraping
+%		\begin{enumerate}
+%			\item wget
+%			\item headless browser/Selenium
+%			\item Beautifulsoup/rvest
+%			\item APIs (httr)
+%			\item Wayback Machine
+%		\end{enumerate}
+%	\item Pre-processing
+%		\begin{enumerate}
+%			\item Determining document filetype
+%			\item File conversion
+%			\item Conventional preprocessing (lowercase, numbers, punctuation)
+%			\item Stemming and lemmatization
+%			\item spellchecking
+%			\item Dealing with duplicate text \& html documents in particular
+%		\end{enumerate}
+%	\item Analysis
+%		\begin{enumerate}
+%			\item LDA
+%			\item Other topic models (structural, author, dynamic -- maybe?)
+%			\item SVM (+ other machine learning classifiers?)
+%			\item Fightin Words
+%		\end{enumerate}
+%\end{enumerate}
+%
+%
+%
+%
+%
+%
+%% latex table generated in R 3.3.3 by xtable 1.8-2 package
+%% Wed Mar 22 11:32:43 2017
+%%\begin{table}[ht]
+%%	\centering
+%%	\begin{tabular}{lrrlrrl}
+%%		\hline
+%%		City & DemVotes & RepVotes & Winner & Change & Pop15 & url \\ 
+%%		\hline
+%%		Attica &  & 187 & Republican & 0 & 3117 & https://attica-in.gov/ \\ 
+%%		Connersville & 1005 & 995 & Democratic & 1 & 13010 & http://connersvillecommunity.com/ \\ 
+%%		Frankfort &  & 1748 & Republican & 0 & 16060 & http://frankfort-in.gov/ \\ 
+%%		Huntingburg & 447 & 793 & Republican & 0 & 6035 & http://www.huntingburg-in.gov/ \\ 
+%%		Indianapolis & 92830 & 56661 & Democratic & 1 & 862781 & http://www.indy.gov \\ 
+%%		Lake Station & 1483 & 227 & Democratic & 0 & 12054 & http://www.lakestation-in.gov/ \\ 
+%%		Linton & 785 & 692 & Democratic & 0 & 5284 & http://www.linton-in.gov/ \\ 
+%%		Madison & 1192 & 1915 & Republican & 0 & 12040 & http://www.madison-in.gov/ \\ 
+%%		Mitchell & 229 & 495 & Republican & 1 & 4252 & http://mitchell-in.com/ \\ 
+%%		Monticello & 0 &  & Democratic & 0 & 5322 & http://www.monticelloin.gov/ \\ 
+%%		North Vernon & 679 & 697 & Republican & 1 & 6619 & http://www.northvernon-in.gov/ \\ 
+%%		Richmond & 3421 & 2731 & Democratic & 0 & 35854 & http://www.richmondindiana.gov/ \\ 
+%%		Rockport & 286 & 272 & Democratic & 1 & 2223 & http://www.cityofrockport-in.gov/ \\ 
+%%		South Bend & 8515 & 2074 & Democratic & 0 & 101516 & https://www.southbendin.gov/ \\ 
+%%		Union City & 338 & 440 & Republican & 0 & 3447 & http://www.unioncity-in.gov/ \\ 
+%%		Winchester & 606 & 524 & Democratic & 1 & 4769 & http://www.winchester-in.gov/ \\ 
+%%		\hline
+%%	\end{tabular}
+%%	\caption{} 
+%%\end{table}
+%
+%\subsection{Research Design}
+%
 %\begin{table}[ht]
 %	\centering
-%	\begin{tabular}{lrrlrrl}
+%	\begin{tabular}{llr}
 %		\hline
-%		City & DemVotes & RepVotes & Winner & Change & Pop15 & url \\ 
+%		Variable & Unit & Source \\
 %		\hline
-%		Attica &  & 187 & Republican & 0 & 3117 & https://attica-in.gov/ \\ 
-%		Connersville & 1005 & 995 & Democratic & 1 & 13010 & http://connersvillecommunity.com/ \\ 
-%		Frankfort &  & 1748 & Republican & 0 & 16060 & http://frankfort-in.gov/ \\ 
-%		Huntingburg & 447 & 793 & Republican & 0 & 6035 & http://www.huntingburg-in.gov/ \\ 
-%		Indianapolis & 92830 & 56661 & Democratic & 1 & 862781 & http://www.indy.gov \\ 
-%		Lake Station & 1483 & 227 & Democratic & 0 & 12054 & http://www.lakestation-in.gov/ \\ 
-%		Linton & 785 & 692 & Democratic & 0 & 5284 & http://www.linton-in.gov/ \\ 
-%		Madison & 1192 & 1915 & Republican & 0 & 12040 & http://www.madison-in.gov/ \\ 
-%		Mitchell & 229 & 495 & Republican & 1 & 4252 & http://mitchell-in.com/ \\ 
-%		Monticello & 0 &  & Democratic & 0 & 5322 & http://www.monticelloin.gov/ \\ 
-%		North Vernon & 679 & 697 & Republican & 1 & 6619 & http://www.northvernon-in.gov/ \\ 
-%		Richmond & 3421 & 2731 & Democratic & 0 & 35854 & http://www.richmondindiana.gov/ \\ 
-%		Rockport & 286 & 272 & Democratic & 1 & 2223 & http://www.cityofrockport-in.gov/ \\ 
-%		South Bend & 8515 & 2074 & Democratic & 0 & 101516 & https://www.southbendin.gov/ \\ 
-%		Union City & 338 & 440 & Republican & 0 & 3447 & http://www.unioncity-in.gov/ \\ 
-%		Winchester & 606 & 524 & Democratic & 1 & 4769 & http://www.winchester-in.gov/ \\ 
+%		Population size & 1000 people & Census \\
+%		Population growth last 5 years & Percent & Census \\
+%		Type of economy (agriculture/industry/services) & ? & Census \\
+%		Economic performance (GDP?) & \$ & Census \\
+%		Party of mayor before election & Rep/Dem/(Ind) & in.gov/sos/elections/ \\
+%		Party of mayor after election & Rep/Dem/(Ind) & in.gov/sos/elections/ \\
+%		Change of party control & 0/1 & in.gov/sos/elections/ \\
+%		Presidential vote 2012 in county & Percent Rep & ? (but I have the data) \\
+%		Unemployment rate & Percent & Census \\
+%		Broadband speed & Avg. Mbps DL & broadbandmap.gov \\
 %		\hline
 %	\end{tabular}
-%	\caption{} 
+%	\caption{List of covariates} 
 %\end{table}
-
-\subsection{Research Design}
-
-\begin{table}[ht]
-	\centering
-	\begin{tabular}{llr}
-		\hline
-		Variable & Unit & Source \\
-		\hline
-		Population size & 1000 people & Census \\
-		Population growth last 5 years & Percent & Census \\
-		Type of economy (agriculture/industry/services) & ? & Census \\
-		Economic performance (GDP?) & \$ & Census \\
-		Party of mayor before election & Rep/Dem/(Ind) & in.gov/sos/elections/ \\
-		Party of mayor after election & Rep/Dem/(Ind) & in.gov/sos/elections/ \\
-		Change of party control & 0/1 & in.gov/sos/elections/ \\
-		Presidential vote 2012 in county & Percent Rep & ? (but I have the data) \\
-		Unemployment rate & Percent & Census \\
-		Broadband speed & Avg. Mbps DL & broadbandmap.gov \\
-		\hline
-	\end{tabular}
-	\caption{List of covariates} 
-\end{table}
-
-
-
-\begin{enumerate}
-\item Corpus:
-\begin{enumerate}
-\item Last snapshots before the election (November 3, 2015 in Indiana; tbd. in Louisiana (probably February))
-\item First snapshot that is at least 2 months after the new government's inauguration (which is in January for Indiana, May for Louisiana)
-\end{enumerate}
-\item Preprocessing:
-\begin{enumerate}
-\item restrict corpus to:
-\begin{enumerate}
-\item documents belonging to cities in which a change of power occurred
-\item documents that were added, deleted or changed between the two snapshots
-\end{enumerate}
-\item words to lowercase
-\item remove punctuation
-\item stemming (Porter stemming algorithm?)
-\item Remove stop words (regular list of stop words is enough, since we use an asymmetric prior)
-\end{enumerate}
-\item Apply Grimmer's expressed agenda model to the corpus
-\begin{enumerate}
-\item Asymmetric prior
-\item Each document can have only one topic (in contrast to the author-topic model)
-\item Cities $i = 1,..., n = 15$
-\item Topic $k(k = 1,..., K )$
-\item Documents $j(j = 1,...,D_i)$ from city i
-\item Party covariate in the prior, where the deleted and unmodified documents are coded as from the first, and the added and modified documents from the second party
-\end{enumerate}
-\item Results
-\begin{enumerate}
-\item Label topics using Grimmer's automatic cluster labeling method, based on most commonly used words in documents belonging to topic
-\item Evaluate topics
-\end{enumerate}
-\end{enumerate}
-
-Validation:
-
-\begin{itemize}
-\item Do the above for cities in which no change of power occurred.
-\item Check whether there is higher than average turnover around the new year by comparing changes to non-election years (and also Louisiana, where elections are later).
-\item Check how long documents stay on websites on average. Use websites with a lot of snapshots for this (these exist for both small and large cities).
-\end{itemize}
-
-Problem with using this model: Grimmer's expressed agenda model uses Senators as the actors. Senators is also who he is substantively interested in. For us, the equivalent to Senators is cities. However, we care about parties, not cities.
-
-\subsection{Survival model}
-The existence of individual documents on municipal government websites can be though of as a survival process. No document stays on a website forever, and it appears to be a reasonable assumption that as documents get older and thus less relevant, they get replaced. The factors determining the steepness of the survival curve are the topic - fire safety regulations likely stay up longer than a bulletin on the annual spring banquet - and the change of party control after an election.
-
-\begin{quote}
-\textit{H1}: The older a document, the more likely it is to be removed.
-\end{quote}
-
-$S(t)$ has a downward slope. Admittedly, this is almost impossible not to be true. Also, test proportional, rising and falling hazard models.
-
-\begin{quote}
-\textit{H2}: Documents pertaining to administrative matters are less likely to be removed.
-\end{quote}
-
-Introduce a categorical variable for the top 10(?) topics. A negative coefficient for administrative topics would support this hypothesis.
-
-\begin{quote}
-\textit{H3}: Documents introduced by the opposing party are more likely to be removed.
-\end{quote}
-
-Introduce two variables into the survival model: One variable indicating which party has introduced a document, and a time-varying variable describing which party is currently in government. The hypothesis is tested through an interaction term between the two.
-
-\begin{quote}
-\textit{H4a}: Democrats are more likely to remove documents with topics pertaining to private enterprise, private schools.
-\end{quote}
-
-Interaction term between party in power and categorical topic variable.
-
-\begin{quote}
-\textit{H4b}: Republicans are more likely to remove documents with topics pertaining to social justice, equality, taxes, public schools, etc.
-\end{quote}
-
-Interaction term between party in power and categorical topic variable.
-
-\begin{quote}
-\textit{H5}: In line with their commitment to small government, Republicans are more likely than Democrats to remove documents.
-\end{quote}
-
-Party in power variable.\\
-
-
-This model will take up a lot of degrees of freedom. The rarity of snapshots for some cities might be a problem. Documents being changed and being removed can be modeled as competing risks.
-
-
-\begin{equation} 
-\label{eq1}
-\begin{split}
-Y & = \text{Party that introduced the document} \\
- & + \text{Party that is currently in power} \\
- & + \text{Topic 1, topic 2, ..., topic k} \\
- & + \text{Party that is currently in power} \times \text{Topic 1, topic 2, ..., topic k} \\
- & + \text{Days since start of mayoral term (control)}
-\end{split}
-\end{equation}
-
-
-
-
-
-After the counties, townships and cities that cannot be matched to the Census data\footnote{There are five cities that are not contained in the Census data} and duplicate websites (some cities have more than one website) are removed, 1813 domains/cities remain.
-
-These cities contain 90,616,865 people, and thus about 28\% of the U.S. population (see figure 1).
-
-\begin{figure}[htp]
-	\centering
-	\caption{Percentage of state population covered.}
-	\includegraphics[width=0.9\linewidth,height=0.9\textheight]{figures/coverage_states.pdf}
-\end{figure}
-
-We use the resulting list of websites to acccess their copies stored in the Internet Archive's Wayback Machine. To this end, we rely on the Ruby Gem 'Wayback Machine Downloader'\footnote{https://github.com/hartator/wayback-machine-downloader} (WbMD). We supply the URL that each .gov website redirects to to the WbMD, which then downloads every file present in the WbM from a snapshot in October 2016, or, if not available, as soon as possible after this point.
-
-<Note: We have not actually done this last step for all websites (however, the R script which runs the Ruby package is already set up to do so once we need to). Instead 10 websites were randomly sampled from an older version of the GSA list, which still contained counties and townships, which is why one of the 10 websites is from Dutchess County, NY.>
-
-It would be fine to focus on Indiana as a case. First, we need to answer some preliminary questions about the data.
-
-\begin{enumerate}
-
-\item For what percentage and number of IN cities can we find data from the WBM?
-\item For how many election cycles can we find political leadership data for these matched cities?
-\item In what number and percentage of cities is the local leadership majority Republican? 
-\item Relatedly, in a typical election cycle, for how many cities do we see a transition in party leadership (i.e., a shift from majority D (R) to majority (R) D). 
-
-\end{enumerate}
-
-\begin{enumerate}
-	
-	\item 30 cities, with a combined population of 1,180,435. However, since only cities (as opposed to towns and villages) hold mayoral elections, only 16 of these, with a combined population of 1,094,383 can be matched to the election data.
-	\item 2015, 2011, 2007, 2003.
-	\item Of the 16 cities, 7 have Republican mayors after the 2015 elections.
-	\item In 6 cases, a shift of party control occurs, with 4 of these being Republican --> Democratic. 
-	
-\end{enumerate}
-
-
-
-
-\section{Running Application: Party Differences in Municipal Websites}
-
-
-\begin{landscape}
-\begin{table}[htbp]
-	%\caption{}
-	\begin{tabular}{|p{2cm}|c|p{3cm}|p{12cm}|l|}
-		\hline
-		Names & Year & Journal & Findings & Important? \\ \hline
-		Benedictis-Kessner, Justin De
-		Warshaw, Christopher & 2016 & JOP* & Regression discontinuity design. Democratic mayors spend more (but it is unclear on what, not the typical Democratic issue-areas), issue more debt, pay more interest & Yes \\ \hline
-		Caughey, Devin
-		Warshaw, Christopher
-		Xu, Yiqing & 2015 & Working Paper & Regression discontinuity design. Partisan composition of state governments affects state policy liberalism (composite index for the areas of social welfare, taxation, labor, civil rights, women’s rights, moral legislation, family planning, environment). & Somewhat \\ \hline
-		Einstein, Katherine Levine
-		Kogan, Vladimir & 2015 & Urban Affairs Review & Cities with more Democratic citizens spend more; more progressive (rather than regressive) forms of taxation; pursue intergov. aid more; spend more on police, fire, parks \& recreation & Somewhat \\ \hline
-		Einstein, Katherine Levine
-		Glick, David M. & 2015 & Working Paper & Survey of 72 mayors. Unlike Republican mayors, roughly half of Democrats seem to agree that cities should aim to reduce inequality. Democratic mayors also seem to favor redistribution to accomplish that goal. & Somewhat \\ \hline
-		Kiewiet, D Roderick
-		Mccubbins, Mathew D & 2014 & Annual Review & City budgets have been severeley constrained since the Great Recession. Spending has thus decreased in general. Lack of funds means that there is not much discretion for partisanship. & Somewhat \\ \hline
-		Tausanovitch, Chris
-		Warshaw, Christopher & 2014 & APSR* & Cities are responsive (taxes, expenditures, regressiveness of taxation) to citizens' conservatism/liberalism. Partisan elections do not make cities more or less responsive. & Yes \\ \hline
-		Guillamón, Ma Dolores
-		Bastida, Francisco
-		Benito, Bernardino & 2013 & European Journal of Law and Economics & Police spending in Spain. Conservative parties spend more on police. Spending is higher before elections. Also contains a useful overview of the literature. & Yes \\ \hline
-	\end{tabular}
-	\label{}
-\end{table}
-\end{landscape}
-
-\begin{landscape}
-	\begin{table}[htbp]
-		%\caption{}
-		\begin{tabular}{|p{2cm}|c|p{3cm}|p{12cm}|l|}
-			\hline
-			Names & Year & Journal & Findings & Important? \\ \hline
-			Gerber, Elisabeth R. & 2013 & Cityscape & Partisanship of both citizens and elected city officials separately affect climate policy. & Yes \\ \hline
-			Solé-Ollé, Albert
-			Viladecans-Marsal, Elisabet & 2013 & Journal of Urban Economics & Spanish cities. The authors "employ a regression discontinuity design to document that cities controlled by left-wing parties convert much less land from rural to urban uses than is the case in similar cities con- trolled by the right". Partisanship might also affect housing construction and price growth. & Yes \\ \hline
-			Gerber, Elisabeth R.
-			Hopkins, Daniel J. & 2011 & AJPS & Regression discontinuity design. Democratic mayors spend less on public safety. All other policy areas (including taxation) are unaffected. & Yes \\ \hline
-			Trounstine, Jessica & 2010 & Annual Review & Race and ethnicity in local elections (not relevant to us). Partisan elections have higher turnout; non-partisan elections still tend to have some partisanship in them because voters learn about party of candidates from media. Non-partisan elections favor Republicans/upper class. Mixed evidence for whether partisanship of mayor is important for policy. & Somewhat \\ \hline
-			Palus, Christine Kelleher & 2010 & State and Local Government Review & Ideology (liberal/conservative) of citizen is well represented by gov. spending in five areas: (1) community development, housing, and conservation, (2) health and human services, (3) culture, the arts, and recreation, (4) environmental programs, and (5) transportation. & Somewhat \\ \hline
-			Ferreira, Fernando
-			Gyourko, Joseph & 2009 & The Quarterly Journal of Economics & Regression discontinuity design. Null results for spending and city gov. size with regard to mayor partisanship. & Yes \\ \hline
-			Ansolabehere, Stephen
-			Snyder, James M. & 2006 & Scandinavian Journal of Economics & Despite the journal, this is about the U.S. The important finding (for us) is the fact that counties whose government is controlled by the same party as the state government, receive more funding (county's share of state transfers, normalized by county pop.) from the state. & Somewhat \\ \hline
-			Murphy, Russell D. & 2002 & Annual Review & Not useful. Too philosophical; mostly cites papers written a hundred years ago. Also exclusively about larger cities. & No \\ \hline
-		\end{tabular}
-		\label{}
-	\end{table}
-\end{landscape}
-
-\begin{landscape}
-	\begin{table}[htbp]
-		%\caption{}
-		\begin{tabular}{|p{2cm}|c|p{3cm}|p{12cm}|l|}
-			\hline
-			Names & Year & Journal & Findings & Important? \\ \hline
-			Armstrong, Cory L. & 2011 & Government Information Quarterly & Comparison of county and school board websites in Florida (where the two align) with regard to transparency (presence or absence of public records). Manual content analysis (undergrads told to look around for 15 minutes). School board websites, more professional websites, and websites in Republican-dominated counties are found to be more transparent. & Yes \\ \hline
-			Cegarra-Navarro, Juan
-			Pachón, José
-			Cegarra, José & 2012 & International Journal of Information Management & Survey of Spanish municipal government officials (specifically, the city website managers). Respondents are asked about the features of their websites, the level of civic engagement and the size of their municipality. More sophisticated websites are correlated with greater civic engagement and greater use of e-government functions. & Yes \\ \hline
-			Dolson, Jordan
-			Young, Robert & 2012 & Canadian Journal of Urban Research & Determinants of website content. Three categories: e-content (city information on website), e-participation, social media use. Tables on page 15 show frequencies of these categories across sites, and might be useful to inform our topics. Larger cities have better websites. Population growth and immigration are also tested, but the findings are somewhat inconclusive. & Yes \\ \hline
-			Feeney, Mary K.
-			Brown, Adrian & 2017 & Government Information Quarterly & 500 U.S. city websites at two points in time (2010-2014). Count model of website features regarding information, e-services, utilities, transparency and civic engagement. Having a larger population leads to more features. Relying on a website contractor leads to more information and transparency. The authors say that mayor-councils are negatively correlated with website sophistication, but their regression tables state the opposite. & Yes \\ \hline
-			Kaylor, Charles
-			Deshazo, Randy
-			Van Eck, David & 2001 & Government Information Quarterly & Model of best practices of e-government. Table 1 lists a number of possible ways this manifests, could be useful for our theory. & Somewhat \\ \hline
-			Ansolabehere, Stephen
-			Urban, Florian & 2002 & Cities & Websites of 20 major cities across the world. Is website content correlated with city characteristics? Not particularly systematic, and the findings are inconclusive. & Somewhat \\ \hline
-			Jeffres, Leo W.
-			Lin, Carolyn A. & 2006 & Journal of Computer-Mediated Communication & 50 largest metropolitan areas in the U.S. Features include information about city, opportunities for citizen feedback, galleries of photos, links, etc.  Purely descriptive analysis, doesn't contain anything that isn't covered in any of the other aricles. & No \\ \hline
-		\end{tabular}
-		\label{}
-	\end{table}
-\end{landscape}
-
-\subsection{Informative Dirichlet model}
-%However, \cite{Monroe2008} advise against using these types of methods in this context because they get the data generation process backwards: Our theory assumes that party leads to variation in writing, and yet we rely on the documents to predict party, in spite of the fact that we actually have perfect knowledge of it.
-
-For the analysis of the data, we present two approaches, the first being the informative dirichlet model developed by \citep{Monroe2008}. This approach aims to account for the fact that some words naturally occur more than others by applying a Dirichlet prior based on the distribution of words in random text. Table \ref{tabFightinIN} shows the top words for both Democrats and Republicans - and accomplishes, to some extent, the goal of \citep{Monroe2008} of banishing frequent words from this list and supplanting them with text with greater semantic, and in our case, partisan meaning. 
-
-In Indiana, Democrats exhibit a preference for words related to public finance, such as 'fund', 'budget', or 'tax', indicative of a greater willingness to emphasize the city's efforts to raise and spend money. This finding is consistent with \citep{Einstein2015}, who show that Democratic mayors tend to favor greater spending. Beyond the focus on public finance, the words preferably used by Democrats do not fall into any particularly congruent categories, and largely sort into various areas related to city administration - i.e. `council', `services', `budget', `committee', `contract', etc. If there is theme around the words preferred by Republicans, it seems to center around city planning - street, fire, water, building, construction, park. These words suggest that the hands-off approach favored by Republicans results in a focus on supporting infrastructure and logistics.
-
-%Partisan top words - fightin words Indiana
-\input{tables/fightinwordsIN.tex} %\ref{tabFightinIN}
-
-For Lousiana, the results (see table \ref{tabFightinLA}) are less coherent. Only one of the finance-related terms appears again for Democrats - specifically `fund', although `rate' might also be used in a financial context. Beyond that, some focus on a `historic' `'district of a city seems evident, as is the use of some words - `infrastructure', `water', `building' that were used for Republicans in Indiana. Conversely, Republicans are now missing these words, and their preferred terms generally do not seem to follow any particular theme.
-
-%Partisan top words - fightin words Louisiana
-\input{tables/fightinwordsLA.tex} %\ref{tabFightinLA}
-
-The weakness of the fightin' words method is evident here, as a list of words does not necessarily provide sufficient information to glean preferred topics from. This is especially the case when the texts are spread across a broad number of issue-areas, with little semantic similarity. In \citep{Monroe2008}, the authors focus on the fairly constrained corpus of U.S. Senate speeches with respect to abortion - our context, by comparison, is far more eclectic.
+%
+%
+%
+%\begin{enumerate}
+%\item Corpus:
+%\begin{enumerate}
+%\item Last snapshots before the election (November 3, 2015 in Indiana; tbd. in Louisiana (probably February))
+%\item First snapshot that is at least 2 months after the new government's inauguration (which is in January for Indiana, May for Louisiana)
+%\end{enumerate}
+%\item Preprocessing:
+%\begin{enumerate}
+%\item restrict corpus to:
+%\begin{enumerate}
+%\item documents belonging to cities in which a change of power occurred
+%\item documents that were added, deleted or changed between the two snapshots
+%\end{enumerate}
+%\item words to lowercase
+%\item remove punctuation
+%\item stemming (Porter stemming algorithm?)
+%\item Remove stop words (regular list of stop words is enough, since we use an asymmetric prior)
+%\end{enumerate}
+%\item Apply Grimmer's expressed agenda model to the corpus
+%\begin{enumerate}
+%\item Asymmetric prior
+%\item Each document can have only one topic (in contrast to the author-topic model)
+%\item Cities $i = 1,..., n = 15$
+%\item Topic $k(k = 1,..., K )$
+%\item Documents $j(j = 1,...,D_i)$ from city i
+%\item Party covariate in the prior, where the deleted and unmodified documents are coded as from the first, and the added and modified documents from the second party
+%\end{enumerate}
+%\item Results
+%\begin{enumerate}
+%\item Label topics using Grimmer's automatic cluster labeling method, based on most commonly used words in documents belonging to topic
+%\item Evaluate topics
+%\end{enumerate}
+%\end{enumerate}
+%
+%Validation:
+%
+%\begin{itemize}
+%\item Do the above for cities in which no change of power occurred.
+%\item Check whether there is higher than average turnover around the new year by comparing changes to non-election years (and also Louisiana, where elections are later).
+%\item Check how long documents stay on websites on average. Use websites with a lot of snapshots for this (these exist for both small and large cities).
+%\end{itemize}
+%
+%Problem with using this model: Grimmer's expressed agenda model uses Senators as the actors. Senators is also who he is substantively interested in. For us, the equivalent to Senators is cities. However, we care about parties, not cities.
+%
+%\subsection{Survival model}
+%The existence of individual documents on municipal government websites can be though of as a survival process. No document stays on a website forever, and it appears to be a reasonable assumption that as documents get older and thus less relevant, they get replaced. The factors determining the steepness of the survival curve are the topic - fire safety regulations likely stay up longer than a bulletin on the annual spring banquet - and the change of party control after an election.
+%
+%\begin{quote}
+%\textit{H1}: The older a document, the more likely it is to be removed.
+%\end{quote}
+%
+%$S(t)$ has a downward slope. Admittedly, this is almost impossible not to be true. Also, test proportional, rising and falling hazard models.
+%
+%\begin{quote}
+%\textit{H2}: Documents pertaining to administrative matters are less likely to be removed.
+%\end{quote}
+%
+%Introduce a categorical variable for the top 10(?) topics. A negative coefficient for administrative topics would support this hypothesis.
+%
+%\begin{quote}
+%\textit{H3}: Documents introduced by the opposing party are more likely to be removed.
+%\end{quote}
+%
+%Introduce two variables into the survival model: One variable indicating which party has introduced a document, and a time-varying variable describing which party is currently in government. The hypothesis is tested through an interaction term between the two.
+%
+%\begin{quote}
+%\textit{H4a}: Democrats are more likely to remove documents with topics pertaining to private enterprise, private schools.
+%\end{quote}
+%
+%Interaction term between party in power and categorical topic variable.
+%
+%\begin{quote}
+%\textit{H4b}: Republicans are more likely to remove documents with topics pertaining to social justice, equality, taxes, public schools, etc.
+%\end{quote}
+%
+%Interaction term between party in power and categorical topic variable.
+%
+%\begin{quote}
+%\textit{H5}: In line with their commitment to small government, Republicans are more likely than Democrats to remove documents.
+%\end{quote}
+%
+%Party in power variable.\\
+%
+%
+%This model will take up a lot of degrees of freedom. The rarity of snapshots for some cities might be a problem. Documents being changed and being removed can be modeled as competing risks.
+%
+%
+%\begin{equation} 
+%\label{eq1}
+%\begin{split}
+%Y & = \text{Party that introduced the document} \\
+% & + \text{Party that is currently in power} \\
+% & + \text{Topic 1, topic 2, ..., topic k} \\
+% & + \text{Party that is currently in power} \times \text{Topic 1, topic 2, ..., topic k} \\
+% & + \text{Days since start of mayoral term (control)}
+%\end{split}
+%\end{equation}
+%
+%
+%
+%
+%
+%After the counties, townships and cities that cannot be matched to the Census data\footnote{There are five cities that are not contained in the Census data} and duplicate websites (some cities have more than one website) are removed, 1813 domains/cities remain.
+%
+%These cities contain 90,616,865 people, and thus about 28\% of the U.S. population (see figure 1).
+%
+%\begin{figure}[htp]
+%	\centering
+%	\caption{Percentage of state population covered.}
+%	\includegraphics[width=0.9\linewidth,height=0.9\textheight]{figures/coverage_states.pdf}
+%\end{figure}
+%
+%We use the resulting list of websites to acccess their copies stored in the Internet Archive's Wayback Machine. To this end, we rely on the Ruby Gem 'Wayback Machine Downloader'\footnote{https://github.com/hartator/wayback-machine-downloader} (WbMD). We supply the URL that each .gov website redirects to to the WbMD, which then downloads every file present in the WbM from a snapshot in October 2016, or, if not available, as soon as possible after this point.
+%
+%<Note: We have not actually done this last step for all websites (however, the R script which runs the Ruby package is already set up to do so once we need to). Instead 10 websites were randomly sampled from an older version of the GSA list, which still contained counties and townships, which is why one of the 10 websites is from Dutchess County, NY.>
+%
+%It would be fine to focus on Indiana as a case. First, we need to answer some preliminary questions about the data.
+%
+%\begin{enumerate}
+%
+%\item For what percentage and number of IN cities can we find data from the WBM?
+%\item For how many election cycles can we find political leadership data for these matched cities?
+%\item In what number and percentage of cities is the local leadership majority Republican? 
+%\item Relatedly, in a typical election cycle, for how many cities do we see a transition in party leadership (i.e., a shift from majority D (R) to majority (R) D). 
+%
+%\end{enumerate}
+%
+%\begin{enumerate}
+%	
+%	\item 30 cities, with a combined population of 1,180,435. However, since only cities (as opposed to towns and villages) hold mayoral elections, only 16 of these, with a combined population of 1,094,383 can be matched to the election data.
+%	\item 2015, 2011, 2007, 2003.
+%	\item Of the 16 cities, 7 have Republican mayors after the 2015 elections.
+%	\item In 6 cases, a shift of party control occurs, with 4 of these being Republican --> Democratic. 
+%	
+%\end{enumerate}
+%
+%
+%
+%
+%\section{Running Application: Party Differences in Municipal Websites}
+%
+%
+%\begin{landscape}
+%\begin{table}[htbp]
+%	%\caption{}
+%	\begin{tabular}{|p{2cm}|c|p{3cm}|p{12cm}|l|}
+%		\hline
+%		Names & Year & Journal & Findings & Important? \\ \hline
+%		Benedictis-Kessner, Justin De
+%		Warshaw, Christopher & 2016 & JOP* & Regression discontinuity design. Democratic mayors spend more (but it is unclear on what, not the typical Democratic issue-areas), issue more debt, pay more interest & Yes \\ \hline
+%		Caughey, Devin
+%		Warshaw, Christopher
+%		Xu, Yiqing & 2015 & Working Paper & Regression discontinuity design. Partisan composition of state governments affects state policy liberalism (composite index for the areas of social welfare, taxation, labor, civil rights, women’s rights, moral legislation, family planning, environment). & Somewhat \\ \hline
+%		Einstein, Katherine Levine
+%		Kogan, Vladimir & 2015 & Urban Affairs Review & Cities with more Democratic citizens spend more; more progressive (rather than regressive) forms of taxation; pursue intergov. aid more; spend more on police, fire, parks \& recreation & Somewhat \\ \hline
+%		Einstein, Katherine Levine
+%		Glick, David M. & 2015 & Working Paper & Survey of 72 mayors. Unlike Republican mayors, roughly half of Democrats seem to agree that cities should aim to reduce inequality. Democratic mayors also seem to favor redistribution to accomplish that goal. & Somewhat \\ \hline
+%		Kiewiet, D Roderick
+%		Mccubbins, Mathew D & 2014 & Annual Review & City budgets have been severeley constrained since the Great Recession. Spending has thus decreased in general. Lack of funds means that there is not much discretion for partisanship. & Somewhat \\ \hline
+%		Tausanovitch, Chris
+%		Warshaw, Christopher & 2014 & APSR* & Cities are responsive (taxes, expenditures, regressiveness of taxation) to citizens' conservatism/liberalism. Partisan elections do not make cities more or less responsive. & Yes \\ \hline
+%		Guillamón, Ma Dolores
+%		Bastida, Francisco
+%		Benito, Bernardino & 2013 & European Journal of Law and Economics & Police spending in Spain. Conservative parties spend more on police. Spending is higher before elections. Also contains a useful overview of the literature. & Yes \\ \hline
+%	\end{tabular}
+%	\label{}
+%\end{table}
+%\end{landscape}
+%
+%\begin{landscape}
+%	\begin{table}[htbp]
+%		%\caption{}
+%		\begin{tabular}{|p{2cm}|c|p{3cm}|p{12cm}|l|}
+%			\hline
+%			Names & Year & Journal & Findings & Important? \\ \hline
+%			Gerber, Elisabeth R. & 2013 & Cityscape & Partisanship of both citizens and elected city officials separately affect climate policy. & Yes \\ \hline
+%			Solé-Ollé, Albert
+%			Viladecans-Marsal, Elisabet & 2013 & Journal of Urban Economics & Spanish cities. The authors "employ a regression discontinuity design to document that cities controlled by left-wing parties convert much less land from rural to urban uses than is the case in similar cities con- trolled by the right". Partisanship might also affect housing construction and price growth. & Yes \\ \hline
+%			Gerber, Elisabeth R.
+%			Hopkins, Daniel J. & 2011 & AJPS & Regression discontinuity design. Democratic mayors spend less on public safety. All other policy areas (including taxation) are unaffected. & Yes \\ \hline
+%			Trounstine, Jessica & 2010 & Annual Review & Race and ethnicity in local elections (not relevant to us). Partisan elections have higher turnout; non-partisan elections still tend to have some partisanship in them because voters learn about party of candidates from media. Non-partisan elections favor Republicans/upper class. Mixed evidence for whether partisanship of mayor is important for policy. & Somewhat \\ \hline
+%			Palus, Christine Kelleher & 2010 & State and Local Government Review & Ideology (liberal/conservative) of citizen is well represented by gov. spending in five areas: (1) community development, housing, and conservation, (2) health and human services, (3) culture, the arts, and recreation, (4) environmental programs, and (5) transportation. & Somewhat \\ \hline
+%			Ferreira, Fernando
+%			Gyourko, Joseph & 2009 & The Quarterly Journal of Economics & Regression discontinuity design. Null results for spending and city gov. size with regard to mayor partisanship. & Yes \\ \hline
+%			Ansolabehere, Stephen
+%			Snyder, James M. & 2006 & Scandinavian Journal of Economics & Despite the journal, this is about the U.S. The important finding (for us) is the fact that counties whose government is controlled by the same party as the state government, receive more funding (county's share of state transfers, normalized by county pop.) from the state. & Somewhat \\ \hline
+%			Murphy, Russell D. & 2002 & Annual Review & Not useful. Too philosophical; mostly cites papers written a hundred years ago. Also exclusively about larger cities. & No \\ \hline
+%		\end{tabular}
+%		\label{}
+%	\end{table}
+%\end{landscape}
+%
+%\begin{landscape}
+%	\begin{table}[htbp]
+%		%\caption{}
+%		\begin{tabular}{|p{2cm}|c|p{3cm}|p{12cm}|l|}
+%			\hline
+%			Names & Year & Journal & Findings & Important? \\ \hline
+%			Armstrong, Cory L. & 2011 & Government Information Quarterly & Comparison of county and school board websites in Florida (where the two align) with regard to transparency (presence or absence of public records). Manual content analysis (undergrads told to look around for 15 minutes). School board websites, more professional websites, and websites in Republican-dominated counties are found to be more transparent. & Yes \\ \hline
+%			Cegarra-Navarro, Juan
+%			Pachón, José
+%			Cegarra, José & 2012 & International Journal of Information Management & Survey of Spanish municipal government officials (specifically, the city website managers). Respondents are asked about the features of their websites, the level of civic engagement and the size of their municipality. More sophisticated websites are correlated with greater civic engagement and greater use of e-government functions. & Yes \\ \hline
+%			Dolson, Jordan
+%			Young, Robert & 2012 & Canadian Journal of Urban Research & Determinants of website content. Three categories: e-content (city information on website), e-participation, social media use. Tables on page 15 show frequencies of these categories across sites, and might be useful to inform our topics. Larger cities have better websites. Population growth and immigration are also tested, but the findings are somewhat inconclusive. & Yes \\ \hline
+%			Feeney, Mary K.
+%			Brown, Adrian & 2017 & Government Information Quarterly & 500 U.S. city websites at two points in time (2010-2014). Count model of website features regarding information, e-services, utilities, transparency and civic engagement. Having a larger population leads to more features. Relying on a website contractor leads to more information and transparency. The authors say that mayor-councils are negatively correlated with website sophistication, but their regression tables state the opposite. & Yes \\ \hline
+%			Kaylor, Charles
+%			Deshazo, Randy
+%			Van Eck, David & 2001 & Government Information Quarterly & Model of best practices of e-government. Table 1 lists a number of possible ways this manifests, could be useful for our theory. & Somewhat \\ \hline
+%			Ansolabehere, Stephen
+%			Urban, Florian & 2002 & Cities & Websites of 20 major cities across the world. Is website content correlated with city characteristics? Not particularly systematic, and the findings are inconclusive. & Somewhat \\ \hline
+%			Jeffres, Leo W.
+%			Lin, Carolyn A. & 2006 & Journal of Computer-Mediated Communication & 50 largest metropolitan areas in the U.S. Features include information about city, opportunities for citizen feedback, galleries of photos, links, etc.  Purely descriptive analysis, doesn't contain anything that isn't covered in any of the other aricles. & No \\ \hline
+%		\end{tabular}
+%		\label{}
+%	\end{table}
+%\end{landscape}
+%
+%\subsection{Informative Dirichlet model}
+%%However, \cite{Monroe2008} advise against using these types of methods in this context because they get the data generation process backwards: Our theory assumes that party leads to variation in writing, and yet we rely on the documents to predict party, in spite of the fact that we actually have perfect knowledge of it.
+%
+%For the analysis of the data, we present two approaches, the first being the informative dirichlet model developed by \citep{Monroe2008}. This approach aims to account for the fact that some words naturally occur more than others by applying a Dirichlet prior based on the distribution of words in random text. Table \ref{tabFightinIN} shows the top words for both Democrats and Republicans - and accomplishes, to some extent, the goal of \citep{Monroe2008} of banishing frequent words from this list and supplanting them with text with greater semantic, and in our case, partisan meaning. 
+%
+%In Indiana, Democrats exhibit a preference for words related to public finance, such as 'fund', 'budget', or 'tax', indicative of a greater willingness to emphasize the city's efforts to raise and spend money. This finding is consistent with \citep{Einstein2015}, who show that Democratic mayors tend to favor greater spending. Beyond the focus on public finance, the words preferably used by Democrats do not fall into any particularly congruent categories, and largely sort into various areas related to city administration - i.e. `council', `services', `budget', `committee', `contract', etc. If there is theme around the words preferred by Republicans, it seems to center around city planning - street, fire, water, building, construction, park. These words suggest that the hands-off approach favored by Republicans results in a focus on supporting infrastructure and logistics.
+%
+%%Partisan top words - fightin words Indiana
+%\input{tables/fightinwordsIN.tex} %\ref{tabFightinIN}
+%
+%For Lousiana, the results (see table \ref{tabFightinLA}) are less coherent. Only one of the finance-related terms appears again for Democrats - specifically `fund', although `rate' might also be used in a financial context. Beyond that, some focus on a `historic' `'district of a city seems evident, as is the use of some words - `infrastructure', `water', `building' that were used for Republicans in Indiana. Conversely, Republicans are now missing these words, and their preferred terms generally do not seem to follow any particular theme.
+%
+%%Partisan top words - fightin words Louisiana
+%\input{tables/fightinwordsLA.tex} %\ref{tabFightinLA}
+%
+%The weakness of the fightin' words method is evident here, as a list of words does not necessarily provide sufficient information to glean preferred topics from. This is especially the case when the texts are spread across a broad number of issue-areas, with little semantic similarity. In \citep{Monroe2008}, the authors focus on the fairly constrained corpus of U.S. Senate speeches with respect to abortion - our context, by comparison, is far more eclectic.
 
 
 
