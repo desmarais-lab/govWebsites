@@ -136,6 +136,7 @@ A local government's website is arguably the most important general source of in
 \thispagestyle{empty}
 % \doublespacing
 % Description of the possible challenges
+\doublespacing
 \section{Introduction}
 
 Local governments convey voluminous information about all aspects of their policymaking, policy implementation, and public deliberation, via their official websites. The vital role of official websites in connecting the government and the governed has motivated a wave of research on the contents of government websites \citep[e.g.,][]{grimmelikhuijsen2010transparency,wang2005evaluating,osman2014cobra}. Despite the potential for automated scraping of website contents, the conventional approach to data collection in projects focused on government websites involves manual content extraction from each website in the dataset. Though highly accurate, the manual approach to data collection is costly, and cannot be scaled to capture even a fraction of the volume of content available on government websites. In this paper we present a methodological pipeline that can be used to automatically scrape government websites in order to build datasets that can be used for text analysis. We provide an illustrative application in which we explore the ways in which the textual contents on city government websites in six American states (IN, LA, NY, WA, CA and TX) correlate with the partisanship of the city mayor.
@@ -184,7 +185,7 @@ To test whether the websites we found actually work, we use a webdriver-controll
 The partisanship of each city is coded in different ways, depending on the state. For Indiana, where elections are nominally partisan, this information is accessible through the state government's website\footnote{\url{http://www.in.gov/apps/sos/election/general/general2015?page=office&countyID=1&officeID=32&districtID=-1&candidate=}}. For Louisiana, we received data on the outcomes of mayoral elections from the LEAP project\footnote{\url{http://www.leap-elections.org/}}. For the other states, where mayoral elections are not nominally partisan (but the partisanship of the mayor is still well-known), we employed different means: For New York and Washington, we searched the state campaign finance websites, and recorded candidates who received money from party committees. For California and Texas, where our data consists of major cities, partisanship information was acquired from Ballotpedia\footnote{\url{https://ballotpedia.org/List_of_current_mayors_of_the_top_100_cities_in_the_United_States}}. Finally, we also scraped mayoral partisanship from the cities' Wikipedia pages. When compared to the other data sources above, (and manual searches in case of conflicts) this method once again proved to be very reliable, and added additional cases to our dataset even for Indiana and Louisiana. Generally speaking, we found data scraped from Wikipedia, aided by manual corrections in case of missing or conflicting data, to be more reliable than data from governmental sources.
 
 Information on other covariates (population and median household income - from the American Community Survey 5) was acquired through the API of the U.S. Census Bureau\footnote{\url{https://www.census.gov/data/developers/data-sets.html}}.
-
+\input{tables/tabCitiesStatesParties.tex}
 
 
 \input{tables/filetypes.tex}
@@ -228,7 +229,32 @@ We rely on random forests as a classifier, which offer slightly better performan
 \input{tables/boilerplateClassifierRFMetrics.tex}
 %\input{tables/boilerplateClassifierRFImportance.tex}
 
-This classifier is then used to flag and remove all lines that are not classified as substantively useful. The effect of this process on the corpus is illustrated with the corpus of Anchorage, AK (i.e. a city that isn't part of our sample used in the analysis) as an example in figures \ref{boilerplate_before_after1} to \ref{boilerplate_before_after4} in the appendix. Before the lines identified by the classifier as boilerplate are removed, lines with very few characters and words are the most common. After the removal, the distribution looks more like what it should be - lines of medium length now occur more frequently than extremely short ones (see figures \ref{boilerplate_before_after1} and \ref{boilerplate_before_after2}). Furthermore, lines that are duplicated only a few times rather than dozens, hundreds or even thousands are now more common (see figure \ref{boilerplate_before_after3}). Finally, the position of the line within the documents is not as important to the random forest, and this also shows in the results. However, this feature still has a positive effect, as lines at either end of the document are a bit less common now (see figure \ref{boilerplate_before_after4}). After all the preprocessing is set and done, our corpus consists of 259,099 documents.
+This classifier is then used to flag and remove all lines that are not classified as substantively useful. The effect of this process on the corpus is illustrated with the corpus of Anchorage, AK (i.e. a city that isn't part of our sample used in the analysis) as an example in Figures \ref{boilerplate_before_after1} to \ref{boilerplate_before_after4}. Before the lines identified by the classifier as boilerplate are removed, lines with very few characters and words are the most common. After the removal, the distribution looks more like what it should be - lines of medium length now occur more frequently than extremely short ones (see figures \ref{boilerplate_before_after1} and \ref{boilerplate_before_after2}). Furthermore, lines that are duplicated only a few times rather than dozens, hundreds or even thousands are now more common (see figure \ref{boilerplate_before_after3}). Finally, the position of the line within the documents is not as important to the random forest, and this also shows in the results. However, this feature still has a positive effect, as lines at either end of the document are a bit less common now (see figure \ref{boilerplate_before_after4}). After all the preprocessing is set and done, our corpus consists of 259,099 documents.
+
+\begin{figure}[htp]
+	\centering
+	\caption{Effects of the boilerplate classifier on the corpus of the city of Anchorage, AK.}
+	\label{boilerplate_before_after1}
+	\includegraphics[width=\linewidth]{figures/boilerplateBeforeAfterNwords.pdf}
+\end{figure}
+\begin{figure}[htp]
+	\centering
+	\caption{Effects of the boilerplate classifier on the corpus of the city of Anchorage, AK.}
+	\label{boilerplate_before_after2}
+	\includegraphics[width=\linewidth]{figures/boilerplateBeforeAfterFreq.pdf}
+\end{figure}
+\begin{figure}[htp]
+	\centering
+	\caption{Effects of the boilerplate classifier on the corpus of the city of Anchorage, AK.}
+	\label{boilerplate_before_after3}
+	\includegraphics[width=\linewidth]{figures/boilerplateBeforeAfterMedianDocMidDist.pdf}
+\end{figure}
+\begin{figure}[htp]
+	\centering
+	\caption{Effects of the boilerplate classifier on the corpus of the city of Anchorage, AK.}
+	\label{boilerplate_before_after4}
+	\includegraphics[width=\linewidth]{figures/boilerplateBeforeAfterNchars.pdf}
+\end{figure}
 
 \section{Bag-of-Words Text Analysis}
 
@@ -368,7 +394,7 @@ Republicans, meanwhile, live up to their reputation as the party of small govern
 We have developed a methodological pipeline for automatically gathering and preparing government websites for comparative analysis. This methodology holds the potential to vastly scale up the data collection efforts underpinning the rapidly growing body of research that is focused on government website analysis. Through an application to the analysis of municipal websites in six different states, we show how our pipeline is capable of gathering corpora that shed light on the forms and functions of local government.
 
 
-\input{tables/tabCitiesStatesParties.tex}
+%\input{tables/tabCitiesStatesParties.tex}
 %\input{tables/stateUrlSummary.tex}
 
 \newpage
@@ -379,30 +405,7 @@ We have developed a methodological pipeline for automatically gathering and prep
 
 \newpage
 \section*{Appendix}
-\begin{figure}[htp]
-	\centering
-	\caption{Effects of the boilerplate classifier on the corpus of the city of Anchorage, AK.}
-	\label{boilerplate_before_after1}
-	\includegraphics[width=\linewidth]{figures/boilerplateBeforeAfterNwords.pdf}
-\end{figure}
-\begin{figure}[htp]
-	\centering
-	\caption{Effects of the boilerplate classifier on the corpus of the city of Anchorage, AK.}
-	\label{boilerplate_before_after2}
-	\includegraphics[width=\linewidth]{figures/boilerplateBeforeAfterFreq.pdf}
-\end{figure}
-\begin{figure}[htp]
-	\centering
-	\caption{Effects of the boilerplate classifier on the corpus of the city of Anchorage, AK.}
-	\label{boilerplate_before_after3}
-	\includegraphics[width=\linewidth]{figures/boilerplateBeforeAfterMedianDocMidDist.pdf}
-\end{figure}
-\begin{figure}[htp]
-	\centering
-	\caption{Effects of the boilerplate classifier on the corpus of the city of Anchorage, AK.}
-	\label{boilerplate_before_after4}
-	\includegraphics[width=\linewidth]{figures/boilerplateBeforeAfterNchars.pdf}
-\end{figure}
+
 
 \begin{figure}[htp]
 	\centering
