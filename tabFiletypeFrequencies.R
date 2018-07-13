@@ -7,7 +7,7 @@ library(xtable)
 source_lines <- function(file, lines){
   source(textConnection(readLines(file)[lines]))
 }
-source_lines(inferFiletype, c(21,66))
+source_lines("inferFiletype.R", c(21,66))
 
 #create tables of filetype frequencies
 filetypes_after <- data.frame(sort(table(magicResults$extensions), decreasing = T), stringsAsFactors = F)
