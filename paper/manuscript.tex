@@ -223,7 +223,6 @@ In order to determine whether a line should be discarded, we train a classifier 
 
 These 500 lines were then hand-coded as either substantively informative or not [@markus, how many were coded as boilerplate?]. We then trained a number of different classifiers with this informativeness measure as the dependent variable. The independent variables we use are: (1) number of times the line was duplicated within the city, (2) the length of the line, in characters, (3) the number of tokens in the line, and (4) the median distance from the document midpoint to the position of the line itself. The purpose of these covariates is as follows:
 
-% BRUCE HERE
 \begin{itemize}
 \item {\bf Line length:} The length of the line and the number of tokens are ways to find lines consisting of only a word or two. This is highly predictive of lines which are used as website headers and navigational elements, which are of of zero substantive interest to us, but are very effective at differentiating cities. These terms also happen to be fairly common, which causes them to be overweighted by the topic model.
 
@@ -269,6 +268,8 @@ We rely on a random forest as the final classifier, which offers slightly better
 \end{figure}
 
 \section{Bag-of-Words Text Analysis}
+
+% BRUCE HERE
 
 We illustrate the analysis of municipal website content using bag-of-words (BoW) methods. BoW methods are methods of text analysis that do not take into account the sequence or placement of words in text---just the presence and frequency of words. As noted by \cite{GrimmerStewart2013}, for most applications, bag-of-words approaches have been found to be more than sufficient. Furthermore, there is reason to believe that city government websites are a particularly `safe' case for bag-of-words methods due to their informative, manner-of-fact based language. It is extremely unlikely for these pages to feature ambiguous language such as an abundance of negation or even sarcasm.
 
