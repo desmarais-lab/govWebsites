@@ -42,7 +42,7 @@ filetypes_before_after <- filetypes_before_after[order(filetypes_before_after$Oc
 filetypes_before_after <- rbind(filetypes_before_after, c("TOTAL", sum(filetypes_before_after$Occurances.x), sum(filetypes_before_after$Occurances.y)))
 
 #rename columns
-names(filetypes_before_after) <- c("Filetype", "Occurances After", "Occurances After")
+names(filetypes_before_after) <- c("Filetype", "Occurances Before", "Occurances After")
 
 ###
 
