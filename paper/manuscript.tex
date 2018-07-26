@@ -285,7 +285,7 @@ The structural topic model is implemented in the R package \texttt{STM} \citep{s
 \subsubsection{Structural topic model results}
 
 
-The results are shown in table \ref{stmResultsTable}. The rows of the table are sorted so that the most Republican topics (marked by a deeper red color) appear at the top, and the most Democratic ones (blue) at the bottom [@markus, would you please add a sentence indicating how we measured how R/D a topic was (e.g., the magnitude of the coefficient)?]. The topics that are entirely white have 90\% credible intervals on the effect of mayoral party that include zero. 
+The results are shown in table \ref{stmResultsTable}. The rows of the table are sorted so that the most Republican topics (marked by a deeper red color) appear at the top, and the most Democratic ones (blue) at the bottom [@markus, would you please add a sentence indicating how we measured how R/D a topic was (e.g., the magnitude of the coefficient)?]. The topics that are entirely white have 90\% credible intervals on the effect of mayoral party that include zero.  [@markus, do the results from the stm package allow us to say anything about whether the overall fit of the model improved from adding party? if so, can we mention that?].
 
 Many of the topics associated with Democrats fit with what we understand to be national party priorities [@markus, please reference topic numbers in the next two sentences]. Topic [@markus] is related to education. Topic [@markus]  is related to recycling. Topic 44, on affordable housing, clearly resonates with the Democratic party's appeal to low-income voters. Similarly, employee rights are represented in Topic 46. Democrats also exhibit a strong preference for words related to public finances, such as Topic 22 ('budget', 'revenue', 'expenditure') as well as Topic 17 ('debt', 'bond', 'financial'). We suspect that the association of Democratic mayors with finance-related terms is indicative of a greater willingness to emphasize the city's efforts to raise and spend money. This finding is consistent with \citep{Einstein2015}, who show that Democratic mayors tend to favor greater spending. A second, consistent Democratic focus appears to be law enforcement: The most Democratic topic, 57 ('robbery', 'homicide', 'sergeant') (a comparable topic is also the most Democratic topic in the model with 120 topics in tables \ref{stmResultsTable120_1} and \ref{stmResultsTable120_2} of the Appendix) depicts Democrats' complicated relationship with law enforcement---a finding that is not entirely without precedent in the literature (see \citep{Einstein2015}). [@markus, would you please elaborate on why this is "complicated"]. Finally, Democrats also focus more on the deliberative process of policymaking, as topics 29 ('election', 'agenda', 'committee'), 39 ( `comment', `draft', `review'), 50 (`aye', `absent', `nay'), and 37 ('audit', 'procedure', 'oversight') attest to.  This openness regarding the policy process on behalf of cities with Democratic mayors fits with the findings of \citet{grimmelikhuijsen2012developing}, which are that left-wing local governments exhibit greater transparency via website content.
 
@@ -406,14 +406,14 @@ City websites with Republican mayors, meanwhile, exhibit a pronounced focus on t
 
 
 \input{tables/stmTopWords2.tex} %\ref{tabSTMtopwords2}
-\input{tables/stmTopWords120.tex}
-\input{tables/stmTopWords120_2.tex}
 
 \section{Conclusion}
 
 % BRUCE HERE
 
-We have developed a methodological pipeline for automatically gathering and preparing government websites for comparative analysis. This methodology holds the potential to vastly scale up the data collection efforts underpinning the rapidly growing body of research that is focused on government website analysis. Through an application to the analysis of municipal websites in six different states, we show how our pipeline is capable of gathering corpora that shed light on the forms and functions of local government.
+We have developed a methodological pipeline for automatically gathering and preparing government websites for comparative content analysis. This methodology holds the potential to vastly scale up the data collection efforts underpinning the growing body of research that is focused on government website analysis. The methods involved in the pipeline include checking the integrity of the site addresses, extracting english language from website contents, identifying document types, and removing boilerplate language. Through an application to the analysis of municipal websites in six different states, we show how our pipeline is capable of gathering corpora that shed light on the forms and functions of local government. We find that government website contents is associated with the partisanship of the mayor in ways that would be expected based on the parties' national priorities and past research on the effects of mayoral partisanship on city governments.
+
+We offer several contributions that will be valuable in future research endeavors. First, the data collected in the current study can be used for comparative analysis of US city website contents. Second, the pipeline we present can be used as a set of procedures to follow in gathering large scale datasets of textual contents from other samples of governments. Third, our findings regarding the effects of mayoral partisanship on city website contents advance the literature on the role of partisan leadership in local government, and reinforce the finding of \citet{gerber2011mayors} that the effects of mayoral partisanship can be best observed through the analysis of domains of government (e.g., website contents) that are not heavily constrained by state or national governments.
 
 
 %\input{tables/tabCitiesStatesParties.tex}
@@ -427,6 +427,10 @@ We have developed a methodological pipeline for automatically gathering and prep
 
 \newpage
 \section*{Appendix}
+
+
+\input{tables/stmTopWords120.tex}
+\input{tables/stmTopWords120_2.tex}
 
 
 \begin{figure}[htp]
