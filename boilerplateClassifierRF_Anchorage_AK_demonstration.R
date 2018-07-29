@@ -109,10 +109,13 @@ rm(testDataAfter, testDataBefore, testDataBeforeAfter)
 predictedProbabilities <- predict(mRF, testData, type = "prob")
 predictedProbabilities$Text <- testData$text
 names(predictedProbabilities)[1:2] <- c("Substantive", "Boilerplate")
-predictedProbabilities <- predictedProbabilities[order(predictedProbabilities$Boilerplate),]
-#Put the 10 examples with the lowest and highest probabilities in a table
-tabBoilerplateIllustration <- predictedProbabilities[1:10,]
-tabBoilerplateIllustration <- rbind(tabBoilerplateIllustration, predictedProbabilities[(nrow(predictedProbabilities)-9):nrow(predictedProbabilities),])
+predictedProbabilities <- predictedProbabilities[order(predictedProbabilities$Boilerplate, decreasing = T),]
+#Put the 10 examples with the highest probabilities in a table
+tabBoilerplateIllustration <- predictedProbabilities
+tabBoilerplateIllustration <- tabBoilerplateIllustration[!duplicated(tabBoilerplateIllustration$Text),]
+tabBoilerplateIllustration <- tabBoilerplateIllustration[1:10,]
+#uncomment the next line to also add the 10 lowest
+#tabBoilerplateIllustration <- rbind(tabBoilerplateIllustration, predictedProbabilities[(nrow(predictedProbabilities)-9):nrow(predictedProbabilities),])
 #switch around the variables so the text comes first
 tabBoilerplateIllustration <- data.frame(Line = substring(tabBoilerplateIllustration$Text, 1, 50),
                                          Substantive = tabBoilerplateIllustration$Substantive,
@@ -120,7 +123,7 @@ tabBoilerplateIllustration <- data.frame(Line = substring(tabBoilerplateIllustra
 
 xtTabBoilerplateIllustration <- print(xtable(tabBoilerplateIllustration,
                                              digits = 2,
-                                             caption = "Lines (or the first 50 characters of a line) in the corpus of Anchorage, AK, with the 10 highest and lowed probabilities of being classified as boilerplate."), 
+                                             caption = "Lines (or the first 50 characters of a line) in the corpus of Anchorage, AK, with the 10 highest probabilities of being classified as boilerplate."), 
                                       label = "tabBoilerplateIllustration",
                                       size = "small",
                                       include.rownames = FALSE)
