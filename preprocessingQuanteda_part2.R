@@ -1,3 +1,5 @@
+set.seed(1)
+
 tt3 <- unlist(tt2)
 
 #create the new X'
@@ -53,28 +55,10 @@ if(nrow(testData)<=10000){
   testData$predictedClass <- testResults
 }
 
-testDataClassified <- testData[testData$predictedClass==0,]
+#remove the lines predicted to be boilerplate by the classifier
+testDataClassified <- testData[testData$predictedClass=="substantive",]
 
-# # Illustrate the impact of the boilerplate removal
-# library(ggplot2)
-# 
-# testDataBefore <- subset(testData, select = c(freq, medianDocMidDist, nchars, nwords))
-# testDataAfter <- subset(testDataClassified, select = c(freq, medianDocMidDist, nchars, nwords))
-# testDataBefore$`Boilerplate Removal` <- "Before"
-# testDataAfter$`Boilerplate Removal` <- "After"
-# testDataBeforeAfter <- rbind(testDataBefore, testDataAfter)
-# 
-# ggplot(testDataBeforeAfter, aes(x = freq, color = `Boilerplate Removal`)) + geom_density() + xlim(0, 1000)
-# ggsave("paper/figures/boilerplateBeforeAfterFreq.pdf")
-# ggplot(testDataBeforeAfter, aes(x = medianDocMidDist, color = `Boilerplate Removal`)) + geom_density()
-# ggsave("paper/figures/boilerplateBeforeAfterMedianDocMidDist.pdf")
-# ggplot(testDataBeforeAfter, aes(x = nchars, color = `Boilerplate Removal`)) + geom_density()
-# ggsave("paper/figures/boilerplateBeforeAfterNchars.pdf")
-# ggplot(testDataBeforeAfter, aes(x = nwords, color = `Boilerplate Removal`)) + geom_density()
-# ggsave("paper/figures/boilerplateBeforeAfterNwords.pdf")
-#
-# rm(testData, testDataAfter, testDataBefore, testDataBeforeAfter)
-
+#paste the strings back together
 tt22 <- aggregate(testDataClassified$text, by = list(testDataClassified$docID), FUN = paste, collapse = " ")
 
 # do the rest of the preprocessing
