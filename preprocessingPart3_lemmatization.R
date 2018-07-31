@@ -15,6 +15,8 @@ f_file <- list.files("rfiles/city_chunks_part2_classifier_processed")
 
 for(city in 1:length(f)){
   
+  set.seed(1)
+  
   load(f[city])
   
   parsedtxt <- spacy_parse(a$text, pos = F, tag = F, lemma = T, entity = F, dependency = F)
