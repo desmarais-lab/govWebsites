@@ -1,6 +1,8 @@
 library(stm)
 
-load("rfiles/stmSession_sim.rdata")
+set.seed(1)
+
+load("rfiles/stmSession_sim_60.rdata")
 
 #make a dataframe to store the results in
 df <- data.frame(coef = rep(0, numtopics), sig = rep(FALSE, numtopics),
