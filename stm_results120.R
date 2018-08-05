@@ -2,7 +2,7 @@ library(stm)
 
 set.seed(1)
 
-load("rfiles/stmSession_sim_60.rdata")
+load("rfiles/stmSession_sim_120.rdata")
 
 #make a dataframe to store the results in
 df <- data.frame(coef = rep(0, numtopics), sig = rep(FALSE, numtopics),
@@ -17,21 +17,21 @@ conf_lower <- 0 + conf_level
 conf_upper <- 1 - conf_level
 
 for(j in 1:numtopics){
-
+  
   coefs <- list()
-
+  
   for(i in 1:sims){
     coefs[[i]] <- prep$parameters[[j]][[i]]$est[2]
   }
-
+  
   coefs <- do.call(c, coefs)
   coefs <- quantile(coefs, c(conf_lower, conf_upper))
-
+  
   df$lower[j] <- coefs[1]
   df$upper[j] <- coefs[2]
   df$sig[j] <- all(coefs>0) | all(coefs<0)
   df$coef[j] <- mean(coefs)
-
+  
 }
 
 #number of significant topics
@@ -78,9 +78,9 @@ topwords3 <- topwords3[order(df$coef, decreasing = T),]
 #remove the last topic
 topwords3 <- topwords3[,-8]
 
-xtTopwords <- print(xtable(topwords3, caption = "Top words from a structural topic model with 60 topics and FREX scoring. Colors depict partisanship based on coefficient size. White cells are non-significant topics."), 
+xtTopwords <- print(xtable(topwords3[1:60,], caption = "Top words from a structural topic model with 120 topics (first 60 topics displayed here) and FREX scoring. Colors depict partisanship based on coefficient size. White cells are non-significant topics."), 
                     sanitize.text.function = identity,
-                    label = "tabSTMtopwords60",
+                    label = "tabSTMtopwords2",
                     size = "scriptsize",
                     include.rownames = FALSE)
 
@@ -88,6 +88,16 @@ xtTopwords <- str_replace(xtTopwords, "rlllllll", "rllllllll")
 xtTopwords <- str_replace(xtTopwords, "& Tokens assigned", "& \\\\multicolumn{2}{c}{Tokens assigned}")
 xtTopwords <- str_replace(xtTopwords, "\nTopic &", "\n \\\\# &")
 
+writeLines(xtTopwords, con = 'paper/tables/stmTopWords120.tex')
 
-writeLines(xtTopwords, con = 'paper/tables/stmTopWords60.tex')
+xtTopwords <- print(xtable(topwords3[60:120,], caption = "Top words from a structural topic model with 120 topics (second 60 topics displayed here) and FREX scoring. Colors depict partisanship based on coefficient size. White cells are non-significant topics."), 
+                    sanitize.text.function = identity,
+                    label = "tabSTMtopwords2",
+                    size = "scriptsize",
+                    include.rownames = FALSE)
 
+xtTopwords <- str_replace(xtTopwords, "rlllllll", "rllllllll")
+xtTopwords <- str_replace(xtTopwords, "& Tokens assigned", "& \\\\multicolumn{2}{c}{Tokens assigned}")
+xtTopwords <- str_replace(xtTopwords, "\nTopic &", "\n \\\\# &")
+
+writeLines(xtTopwords, con = 'paper/tables/stmTopWords120_2.tex')
