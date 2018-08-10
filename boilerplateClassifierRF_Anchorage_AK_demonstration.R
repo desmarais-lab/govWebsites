@@ -123,8 +123,8 @@ tabBoilerplateIllustration <- data.frame(Line = substring(tabBoilerplateIllustra
 
 xtTabBoilerplateIllustration <- print(xtable(tabBoilerplateIllustration,
                                              digits = 2,
-                                             caption = "Lines (or the first 50 characters of a line) in the corpus of Anchorage, AK, with the 10 highest probabilities of being classified as boilerplate."), 
-                                      label = "tabBoilerplateIllustration",
+                                             caption = "Lines (or the first 50 characters of a line) in the corpus of Anchorage, AK, with the 10 highest probabilities of being classified as boilerplate.",
+                                             label = "tabBoilerplateIllustration"),
                                       size = "small",
                                       include.rownames = FALSE)
 
