@@ -78,9 +78,9 @@ topwords3 <- topwords3[order(df$coef, decreasing = T),]
 #remove the last topic
 topwords3 <- topwords3[,-8]
 
-xtTopwords <- print(xtable(topwords3, caption = "Top words from a structural topic model with 60 topics and FREX scoring. Colors depict partisanship based on coefficient size. White cells are non-significant topics."), 
+xtTopwords <- print(xtable(topwords3, caption = "Top words from a structural topic model with 60 topics and FREX scoring. Colors depict partisanship based on coefficient size. White cells are non-significant topics.",
+                           label = "tabSTMtopwords60"), 
                     sanitize.text.function = identity,
-                    label = "tabSTMtopwords60",
                     size = "scriptsize",
                     include.rownames = FALSE)
 

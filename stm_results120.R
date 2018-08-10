@@ -78,9 +78,9 @@ topwords3 <- topwords3[order(df$coef, decreasing = T),]
 #remove the last topic
 topwords3 <- topwords3[,-8]
 
-xtTopwords <- print(xtable(topwords3[1:60,], caption = "Top words from a structural topic model with 120 topics (first 60 topics displayed here) and FREX scoring. Colors depict partisanship based on coefficient size. White cells are non-significant topics."), 
+xtTopwords <- print(xtable(topwords3[1:60,], caption = "Top words from a structural topic model with 120 topics (first 60 topics displayed here) and FREX scoring. Colors depict partisanship based on coefficient size. White cells are non-significant topics.", 
+                           label = "tabSTMtopwords120_1"), 
                     sanitize.text.function = identity,
-                    label = "tabSTMtopwords2",
                     size = "scriptsize",
                     include.rownames = FALSE)
 
@@ -88,11 +88,11 @@ xtTopwords <- str_replace(xtTopwords, "rlllllll", "rllllllll")
 xtTopwords <- str_replace(xtTopwords, "& Tokens assigned", "& \\\\multicolumn{2}{c}{Tokens assigned}")
 xtTopwords <- str_replace(xtTopwords, "\nTopic &", "\n \\\\# &")
 
-writeLines(xtTopwords, con = 'paper/tables/stmTopWords120.tex')
+writeLines(xtTopwords, con = 'paper/tables/stmTopWords120_1.tex')
 
-xtTopwords <- print(xtable(topwords3[60:120,], caption = "Top words from a structural topic model with 120 topics (second 60 topics displayed here) and FREX scoring. Colors depict partisanship based on coefficient size. White cells are non-significant topics."), 
+xtTopwords <- print(xtable(topwords3[61:120,], caption = "Top words from a structural topic model with 120 topics (second 60 topics displayed here) and FREX scoring. Colors depict partisanship based on coefficient size. White cells are non-significant topics.", 
+                           label = "tabSTMtopwords120_2"), 
                     sanitize.text.function = identity,
-                    label = "tabSTMtopwords2",
                     size = "scriptsize",
                     include.rownames = FALSE)
 
