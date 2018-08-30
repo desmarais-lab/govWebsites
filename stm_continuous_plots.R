@@ -1,5 +1,6 @@
 rm(list = ls())
-load("rfiles/stmSession_sim.rdata")
+set.seed(1)
+load("rfiles/stmSession_sim_60.rdata")
 rm(list = ls()[!ls()%in%c("stmFit", "prep")])
 
 #population
