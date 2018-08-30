@@ -4,45 +4,45 @@ The top-level auxiliary file: manuscript.aux
 The style file: apsr.bst
 Database file #1: ref.bib
 Warning--empty note in Esterling2011
-You've used 46 entries,
+You've used 47 entries,
             2874 wiz_defined-function locations,
-            933 strings with 13986 characters,
-and the built_in function-call counts, 238609 in all, are:
-= -- 39663
-> -- 2630
+            938 strings with 14194 characters,
+and the built_in function-call counts, 249131 in all, are:
+= -- 41442
+> -- 2755
 < -- 0
-+ -- 18911
-- -- 922
-* -- 20686
-:= -- 46999
-add.period$ -- 186
-call.type$ -- 46
-change.case$ -- 598
-chr.to.int$ -- 46
-cite$ -- 47
-duplicate$ -- 744
-empty$ -- 1554
-format.name$ -- 974
-if$ -- 43008
++ -- 19801
+- -- 964
+* -- 21647
+:= -- 48999
+add.period$ -- 190
+call.type$ -- 47
+change.case$ -- 611
+chr.to.int$ -- 47
+cite$ -- 48
+duplicate$ -- 759
+empty$ -- 1590
+format.name$ -- 1019
+if$ -- 44907
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 39
-newline$ -- 206
-num.names$ -- 530
-pop$ -- 182
+missing$ -- 40
+newline$ -- 210
+num.names$ -- 541
+pop$ -- 184
 preamble$ -- 1
-purify$ -- 690
+purify$ -- 705
 quote$ -- 0
-skip$ -- 682
+skip$ -- 696
 stack$ -- 0
-substring$ -- 56531
-swap$ -- 155
-text.length$ -- 644
+substring$ -- 59136
+swap$ -- 157
+text.length$ -- 658
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 182
+type$ -- 186
 warning$ -- 1
-while$ -- 1098
+while$ -- 1121
 width$ -- 0
-write$ -- 649
+write$ -- 664
 (There was 1 warning)
