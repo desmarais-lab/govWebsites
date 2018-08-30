@@ -94,13 +94,13 @@ testDataBefore$`Boilerplate Removal` <- "Before"
 testDataAfter$`Boilerplate Removal` <- "After"
 testDataBeforeAfter <- rbind(testDataBefore, testDataAfter)
 
-ggplot(testDataBeforeAfter, aes(x = freq, color = `Boilerplate Removal`)) + geom_density() + xlim(0, 1000)
+ggplot(testDataBeforeAfter, aes(x = freq, color = `Boilerplate Removal`)) + geom_density() + xlim(0, 1000) + labs(x = "Line Frequency in the City", y = "Density")
 ggsave("paper/figures/boilerplateBeforeAfterFreq.pdf")
-ggplot(testDataBeforeAfter, aes(x = medianDocMidDist, color = `Boilerplate Removal`)) + geom_density()
+ggplot(testDataBeforeAfter, aes(x = medianDocMidDist, color = `Boilerplate Removal`)) + geom_density()  + labs(x = "Median Distance to the Document Midpoint", y = "Density")
 ggsave("paper/figures/boilerplateBeforeAfterMedianDocMidDist.pdf")
-ggplot(testDataBeforeAfter, aes(x = nchars, color = `Boilerplate Removal`)) + geom_density()
+ggplot(testDataBeforeAfter, aes(x = nchars, color = `Boilerplate Removal`)) + geom_density()  + labs(x = "Line Length (Number of Characters)", y = "Density")
 ggsave("paper/figures/boilerplateBeforeAfterNchars.pdf")
-ggplot(testDataBeforeAfter, aes(x = nwords, color = `Boilerplate Removal`)) + geom_density()
+ggplot(testDataBeforeAfter, aes(x = nwords, color = `Boilerplate Removal`)) + geom_density()  + labs(x = "Line Length (Number of Words)", y = "Density")
 ggsave("paper/figures/boilerplateBeforeAfterNwords.pdf")
 
 rm(testDataAfter, testDataBefore, testDataBeforeAfter)
