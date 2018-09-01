@@ -280,6 +280,9 @@ We illustrate the analysis of municipal website content by studying differences 
 
 %BoW methods are methods of text analysis that do not take into account the sequence or placement of words in text---just the presence and frequency of words. As noted by \cite{GrimmerStewart2013}, for most applications, bag-of-words approaches have been found to be more than sufficient. Furthermore, there is reason to believe that city government websites are a particularly `safe' case for bag-of-words methods due to their informative, manner-of-fact based language. It is extremely unlikely for these pages to feature ambiguous language such as an abundance of negation or even sarcasm.
 
+
+\input{tables/tabBoilerplateIllustration.tex}
+
 \subsubsection{Analytical approach: Structural topic modeling}
 In order to analyze content differences between government websites based on mayoral partisanship, we draw upon a recently-developed class of text-as-data methods, the structural topic model, developed by \citet{Roberts2014}. Building on the conception of ``topics'' in Latent Dirichlet Allocation, in the structural topic model a topic is a multinomial distribution defined on the word types in the dictionary.  Each word occurrence in a document is attributed with a single topic label. The word topic assignments are also drawn from a multinomial distribution. The log-odds of the topic probabilities in each document-specific multinomial distribution over topics are drawn from a multivariate normal distribution in which the topic-specific means are determined by a linear regression function that associates document-attributed covariates with topics. For example, in the context of municipal website content, the structural topic model can be used to estimate a regression coefficient that defines the linear relationship between the log-odds of the municipality's population and the log-odds of each topic. For our primary empirical investigation, the structural topic model provides with a tool with which to estimate the relationship between the party of the city's mayor and the prevalence of each topic we estimate. A topic interpreted through post-hoc analysis of the collective meaning of the most likely words to be drawn from the multinomial distribution defined by the respective topic.\footnote{The ``Fightin' Words'' methodology developed by \citet{Monroe2008} could also be used to analyze word-frequency differences between cities based on mayors' partisanship, but we elected to use the structural topic model since, unlike ``Fightin' Words'' , the structural topic model enables us to adjust for several other features through multiple regression.}
 
@@ -450,7 +453,6 @@ We offer several contributions that will be valuable in future research endeavor
     %\includegraphics[width=\linewidth]{figures/stm_effect_income.pdf}
 %\end{figure}
 
-\input{tables/tabBoilerplateIllustration.tex}
 
 \end{document}
 
