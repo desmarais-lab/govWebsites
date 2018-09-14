@@ -19,12 +19,12 @@
 \usepackage[scaled=0.92]{inconsolata}
 \usepackage[libertine]{newtxmath}
 \usepackage{geometry}
-\geometry{paperwidth=32in,paperheight=40in,margin=3cm}
+\geometry{paperwidth=32in,paperheight=40in,margin=2cm}
 \usepackage{multicol}
 \usepackage{mwe}
 
 \author[mvn5218@psu.edu]{Markus Neumann}
-\title{Government websites as data: A methodological pipeline with application to the websites of municipalities in the United States \\ \vspace{10mm} \small{Markus Neumann,  Fridolin Linder,  Bruce Desmarais \\ Department of Political Science - Penn State University}}
+\title{Government websites as data: A methodological pipeline with application to the websites of municipalities in the United States \\ \vspace{10mm} \small{Markus Neumann (mvn5218@psu.edu),  Fridolin Linder (flinder@gmail.com),  Bruce Desmarais (brucedesmarais@psu.edu) \\ Department of Political Science - Penn State University}}
 \institute{The Pennsylvania State University}
 % Optional foot image
 %\footimage{\includegraphics[width=4cm]{IMG_1934.jpg}}
@@ -38,57 +38,74 @@
 \begin{column}{.4\textwidth}
 
 \begin{block}{Overview}
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{eriemayor.png}
+    %\caption{Caption}
+    %\label{fig:my_label}
+\end{figure}
 \begin{itemize}
-\item Websites of local governments are an important source of information for citizens
-\item Extant research of government websites has largely relied on manual coding
-\item We develop a methodological pipeline for the automated analysis of government websites
-\item We demonstrate the use of this pipeline on the websites of 234 municipal websites in CA, IN, LA, NY, TX and WA. 
-\item We show that content varies with the partisanship of the mayor.
+\item Government websites contain important information
+\item Research has largely relied on manual coding
+\item Our contribution: pipeline for automated analysis
+\item Application: websites of partisan municipalities
 \end{itemize}
 \end{block}
 
 \begin{block}{Data Collection}
 \begin{itemize}
-\item Scraping city URLs from Wikipedia and the General Services Administration, which keeps a list of all .gov addresses
-\item Verification of which websites actually work through an automated browser
-\item Downloading the websites through \texttt{wget}
-\item Information on mayoral partisanship from state websites, the LEAP project, Ballotpedia and Wikipedia
-%\item 234 Websites in CA, IN, LA, NY, TX and WA.
+\item City URLs are scraped from Wikipedia and the GSA
 \end{itemize}
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{us_map_resized.png}
+    %\caption{Caption}
+    %\label{fig:my_label}
+\end{figure}
+%\include{tabCitiesStatesParties.tex}
 \end{block}
 
 \begin{block}{Site to Text Conversion}
+\input{tabFiletypeFrequencies.tex}
 \begin{itemize}
-\item The file endings from open data sources such as governmental websites are sometimes wrong. This causes problems when converting to text.
-\item We use file signatures to identify the correct type before conversion with \texttt{readtext}.
-\item Used file types: Html, xml, pdf, doc, docx, txt
-\item Everything is converted to .txt
-\item Preprocessing: Lowercase; removal of punctuation, numbers, dates, etc.; spellchecking/Removal of non-English words; Lemmatization
-\end{itemize}
-\end{block}
-
-\begin{block}{Boilerplate Removal}
-\begin{itemize}
-\item Websites contain a lot of text that is not substantively interesting
-\item This text is often repeated on each page of a site - for example website elements such as ``You are here'', ''Home'', or the names of city officials and offices.
-\item If this content is not removed, the tool of analysis will associate specific patterns of boilerplate with the respective cities
-\item Problem: how to remove boilerplate content without dropping useful information?
-\end{itemize}
-\end{block}
-
-\begin{block}{Boilerplate Classifier}
-\begin{itemize}
-\item Solution: Train a classifier (random forest) on manually annotated lines of website content. A line can be flagged as either substantively useful or boilerplate.
-\item The classifier relies on the following features:
-\begin{itemize}
-\item Line length (number of words & characters)
-\item Number of line duplications within a website
-\item Line position in the document (median distance of a line to the document midpoint)
-\end{itemize}
+\item The file endings from city websites are sometimes wrong
+\item We use file signatures to identify the correct type
+\item Preprocessing: lowercase; removal of punctuation, numbers, dates, etc.; removal of non-English words; lemmatization
 \end{itemize}
 \end{block}
 
 \end{column}
+\begin{column}{.6\textwidth}
+\begin{block}{Boilerplate Removal}
+\begin{itemize}
+\item Websites contain a lot repetitive and uninformative content
+\end{itemize}
+\begin{figure}
+    \centering
+    \includegraphics[width=.8\linewidth]{arcadia_water_TADA_rect.png}
+    %\caption{Caption}
+    %\label{fig:my_label}
+\end{figure}
+\begin{itemize}
+\item A classifier (random forest) is trained to identify and remove boilerplate lines
+\end{itemize}
+\begin{minipage}{\textwidth}
+  \begin{minipage}[b]{0.49\textwidth}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.85\linewidth]{boilerplateBeforeAfterNwords.pdf}
+        %\caption{Caption}
+        %\label{fig:my_label}
+    \end{figure}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.49\textwidth}
+    \input{boilerplateClassifierRFMetrics.tex}
+    \end{minipage}
+  \end{minipage}
+\end{block}
+
+
 
 %\begin{column}{.63\textwidth}
 %\begin{block}{Additional Preprocessing}
@@ -102,7 +119,7 @@
 
 %%%% 2nd Column
 
-\begin{column}{.6\textwidth}
+
 
 %\begin{column}{.23\textwidth}
 
@@ -142,9 +159,9 @@
 
 \begin{block}{Conclusion}
 \begin{itemize}
-\item Cities with Republican mayors provide more information about basic utilities such as water, energy, fire safety, or  natural disaster protection.
-\item Cities with Democratic mayors provide more information about policy deliberation, crime control, or public housing.
-\item These findings call into question the commonly held notion that politics at the municipal level is largely non-partisan.
+\item Republican cities feature information on basic utilities and protection from natural disasters
+\item Democratic cities feature information on policy deliberation, crime control and city budgeting
+\item Politics at the municipal level is not entirely non-partisan
 \item We plan to implement the pipeline in an R package
 \end{itemize}
 \end{block}
