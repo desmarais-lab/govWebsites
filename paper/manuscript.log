@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  1 SEP 2018 16:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  28 SEP 2018 05:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1223,7 +1223,7 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
 
-<figures/eriemayor.png, id=101, 1156.32pt x 607.26875pt>
+<figures/eriemayor.png, id=103, 1156.32pt x 607.26875pt>
 File: figures/eriemayor.png Graphic file (type png)
 
 <use figures/eriemayor.png>
@@ -1244,65 +1244,65 @@ neral / general2015 ? page = o^^^ce & countyID = 1 & o^^^ceID = 32 & districtID
 [8] (./tables/tabCitiesStatesParties.tex) [9]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 206.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 207.
  [10]
-(./tables/tabFiletypeFrequencies.tex) [11] [12] [13]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 234.
+(./tables/tabFiletypeFrequencies.tex) [11] [12] [13] [14]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 237.
 
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 234.
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 234.
- [14]
-(./tables/boilerplateClassifierRFMetrics.tex) [15]
-<figures/boilerplateBeforeAfterNwords.pdf, id=303, 554.07pt x 404.51125pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 237.
+
+(./tables/boilerplateClassifierRFMetrics.tex) [15] [16]
+<figures/boilerplateBeforeAfterNwords.pdf, id=320, 554.07pt x 404.51125pt>
 File: figures/boilerplateBeforeAfterNwords.pdf Graphic file (type pdf)
 
 <use figures/boilerplateBeforeAfterNwords.pdf>
 Package pdftex.def Info: figures/boilerplateBeforeAfterNwords.pdf used on input
- line 256.
+ line 259.
 (pdftex.def)             Requested size: 430.00462pt x 313.93738pt.
 
-<figures/boilerplateBeforeAfterNchars.pdf, id=304, 554.07pt x 404.51125pt>
+<figures/boilerplateBeforeAfterNchars.pdf, id=321, 554.07pt x 404.51125pt>
 File: figures/boilerplateBeforeAfterNchars.pdf Graphic file (type pdf)
 
 <use figures/boilerplateBeforeAfterNchars.pdf>
 Package pdftex.def Info: figures/boilerplateBeforeAfterNchars.pdf used on input
- line 262.
+ line 265.
 (pdftex.def)             Requested size: 430.00462pt x 313.93738pt.
 
-<figures/boilerplateBeforeAfterFreq.pdf, id=305, 554.07pt x 404.51125pt>
+<figures/boilerplateBeforeAfterFreq.pdf, id=322, 554.07pt x 404.51125pt>
 File: figures/boilerplateBeforeAfterFreq.pdf Graphic file (type pdf)
 
 <use figures/boilerplateBeforeAfterFreq.pdf>
 Package pdftex.def Info: figures/boilerplateBeforeAfterFreq.pdf used on input l
-ine 268.
+ine 271.
 (pdftex.def)             Requested size: 430.00462pt x 313.93738pt.
 
-<figures/boilerplateBeforeAfterMedianDocMidDist.pdf, id=306, 554.07pt x 404.511
+<figures/boilerplateBeforeAfterMedianDocMidDist.pdf, id=323, 554.07pt x 404.511
 25pt>
 File: figures/boilerplateBeforeAfterMedianDocMidDist.pdf Graphic file (type pdf
 )
  <use figures/boilerplateBeforeAfterMedianDocMidDist.pdf>
 Package pdftex.def Info: figures/boilerplateBeforeAfterMedianDocMidDist.pdf use
-d on input line 274.
+d on input line 277.
 (pdftex.def)             Requested size: 430.00462pt x 313.93738pt.
- [16] [17 <./figures/boilerplateBeforeAfterNwords.pdf>] [18 <./figures/boilerpl
-ateBeforeAfterNchars.pdf>] [19 <./figures/boilerplateBeforeAfterFreq.pdf>] [20 
-<./figures/boilerplateBeforeAfterMedianDocMidDist.pdf>] (./tables/tabBoilerplat
-eIllustration.tex)
+ [17 <./figures/boilerplateBeforeAfterNwords.pdf>] [18 <./figures/boilerplateBe
+foreAfterNchars.pdf>] [19 <./figures/boilerplateBeforeAfterFreq.pdf>] [20 <./fi
+gures/boilerplateBeforeAfterMedianDocMidDist.pdf>] (./tables/tabBoilerplateIllu
+stration.tex)
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 286.
+(hyperref)                than one, level fixed on input line 289.
 
-[21] [22] [23] <figures/us_map.pdf, id=407, 578.16pt x 433.62pt>
+[21] [22] [23] <figures/us_map.pdf, id=413, 578.16pt x 433.62pt>
 File: figures/us_map.pdf Graphic file (type pdf)
 
 <use figures/us_map.pdf>
-Package pdftex.def Info: figures/us_map.pdf used on input line 340.
+Package pdftex.def Info: figures/us_map.pdf used on input line 343.
 (pdftex.def)             Requested size: 430.00462pt x 322.50143pt.
  (./tables/stmTopWords60.tex
 Overfull \hbox (46.53773pt too wide) in paragraph at lines 6--73
@@ -1312,7 +1312,7 @@ Overfull \hbox (46.53773pt too wide) in paragraph at lines 6--73
 
 LaTeX Warning: Float too large for page by 61.42249pt on input line 75.
 
-) [24] [25 <./figures/us_map.pdf>] [26] (./manuscript.bbl
+) [24 <./figures/us_map.pdf>] [25] (./manuscript.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 16--20
 \T1/ptm/b/n/10.95 URL: \T1/ptm/m/it/10.95 http://www.pewresearch.org/fact-tank/
 2017/01/13/republicans-more-likely-than-
@@ -1325,21 +1325,21 @@ cfm?reqid=70&stepnum=11&AreaTypeKeyGdp=1&GeoFipsGdp=XX&ClassKeyGdp=naics&Compon
 entKey=1000&IndustryKey=1&YearGdp=2017&YearGdpBegin=-
  []
 
-[27]
+[26]
 Overfull \hbox (129.42834pt too wide) in paragraph at lines 91--96
 \T1/ptm/b/n/10.95 URL: \T1/ptm/m/it/10.95 http://www.sciencedirect.com/science/
 article/pii/S0740624X97900186%5Cnpapers2://publication/doi/10.1016/S0740-
  []
 
-[28] [29] [30]
-Overfull \hbox (970.9485pt too wide) in paragraph at lines 256--260
+[27] [28] [29]
+Overfull \hbox (970.9485pt too wide) in paragraph at lines 268--272
 \T1/ptm/b/n/10.95 URL: \T1/ptm/m/it/10.95 http://poseidon01.ssrn.com/delivery.p
 hp?ID=5881250961130801011070071091041011210350310770540170130651150290770271031
 0208602908111810710600210401900411202807902210909612400608608705908300200808306
 900307709111805405806212107011710711007101302306601809400908 
  []
 
-[31]) [32] (./tables/stmTopWords120_1.tex
+[30]) [31] (./tables/stmTopWords120_1.tex
 Overfull \hbox (18.58565pt too wide) in paragraph at lines 6--73
  [][] 
  []
@@ -1360,51 +1360,41 @@ LaTeX Warning: Float too large for page by 75.02249pt on input line 75.
 Package caption Warning: Unused \captionsetup[subfloat] on input line 59.
 See the caption package documentation for explanation.
 
-[33]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 457.
- [34] [35] [36]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 457.
+[32]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 459.
+ [33] [34] [35]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 459.
  (./manuscript.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 457.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 457.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 459.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 459.
 Package rerunfilecheck Info: File `manuscript.out' has not changed.
 (rerunfilecheck)             Checksum: 65C2D071D8CAA140AB364783063715B2;718.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 457.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 459.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 21368 strings out of 492995
- 389499 string characters out of 6132704
- 607158 words of memory out of 5000000
- 24358 multiletter control sequences out of 15000+600000
+ 21375 strings out of 492995
+ 389699 string characters out of 6132704
+ 607262 words of memory out of 5000000
+ 24366 multiletter control sequences out of 15000+600000
  49846 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,10n,54p,2845b,9336s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{table.caption.14} has been referenc
-ed but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.11} has been referenced but does not 
-exist, replaced by a fixed one
-
-{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
-live/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texl
-ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texliv
-e/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
-/2017/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2017/te
-xmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2017/texmf-dist/f
-onts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1
-/urw/times/utmri8a.pfb>
-Output written on manuscript.pdf (36 pages, 740155 bytes).
+{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc
+}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
+usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
+sr/local/texlive/2017/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local
+/texlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2
+017/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-
+dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on manuscript.pdf (35 pages, 747433 bytes).
 PDF statistics:
- 529 PDF objects out of 1000 (max. 8388607)
- 466 compressed objects within 5 object streams
- 122 named destinations out of 1000 (max. 500000)
+ 530 PDF objects out of 1000 (max. 8388607)
+ 468 compressed objects within 5 object streams
+ 121 named destinations out of 1000 (max. 500000)
  123 words of extra memory for PDF output out of 10000 (max. 10000000)
 
