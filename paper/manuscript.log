@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.22)  28 SEP 2018 14:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.22)  28 SEP 2018 14:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1215,66 +1215,66 @@ neral / general2015 ? page = o^^^ce & countyID = 1 & o^^^ceID = 32 & districtID
 
 (./tables/tabCitiesStatesParties.tex) [9] [10]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 206.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 199.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 207.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 200.
  [11]
 (./tables/tabFiletypeFrequencies.tex) [12] [13] [14]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 237.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 230.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 237.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 230.
  [15]
 (./tables/boilerplateClassifierRFMetrics.tex) [16]
-<figures/boilerplateBeforeAfterNwords.pdf, id=319, 554.07pt x 404.51125pt>
+<figures/boilerplateBeforeAfterNwords.pdf, id=318, 554.07pt x 404.51125pt>
 File: figures/boilerplateBeforeAfterNwords.pdf Graphic file (type pdf)
 
 <use figures/boilerplateBeforeAfterNwords.pdf>
 Package pdftex.def Info: figures/boilerplateBeforeAfterNwords.pdf used on input
- line 259.
+ line 252.
 (pdftex.def)             Requested size: 430.00462pt x 313.93738pt.
 
-<figures/boilerplateBeforeAfterNchars.pdf, id=320, 554.07pt x 404.51125pt>
+<figures/boilerplateBeforeAfterNchars.pdf, id=319, 554.07pt x 404.51125pt>
 File: figures/boilerplateBeforeAfterNchars.pdf Graphic file (type pdf)
 
 <use figures/boilerplateBeforeAfterNchars.pdf>
 Package pdftex.def Info: figures/boilerplateBeforeAfterNchars.pdf used on input
- line 265.
+ line 258.
 (pdftex.def)             Requested size: 430.00462pt x 313.93738pt.
- [17 <./figures/boilerplateBeforeAfterNwords.pdf>]
-<figures/boilerplateBeforeAfterFreq.pdf, id=333, 554.07pt x 404.51125pt>
+
+<figures/boilerplateBeforeAfterFreq.pdf, id=320, 554.07pt x 404.51125pt>
 File: figures/boilerplateBeforeAfterFreq.pdf Graphic file (type pdf)
 
 <use figures/boilerplateBeforeAfterFreq.pdf>
 Package pdftex.def Info: figures/boilerplateBeforeAfterFreq.pdf used on input l
-ine 271.
+ine 264.
 (pdftex.def)             Requested size: 430.00462pt x 313.93738pt.
 
-<figures/boilerplateBeforeAfterMedianDocMidDist.pdf, id=334, 554.07pt x 404.511
+<figures/boilerplateBeforeAfterMedianDocMidDist.pdf, id=321, 554.07pt x 404.511
 25pt>
 File: figures/boilerplateBeforeAfterMedianDocMidDist.pdf Graphic file (type pdf
 )
  <use figures/boilerplateBeforeAfterMedianDocMidDist.pdf>
 Package pdftex.def Info: figures/boilerplateBeforeAfterMedianDocMidDist.pdf use
-d on input line 277.
+d on input line 270.
 (pdftex.def)             Requested size: 430.00462pt x 313.93738pt.
- [18 <./figures/boilerplateBeforeAfterNchars.pdf>] [19 <./figures/boilerplateBe
-foreAfterFreq.pdf>] [20 <./figures/boilerplateBeforeAfterMedianDocMidDist.pdf>]
-
-(./tables/tabBoilerplateIllustration.tex)
+ [17] [18 <./figures/boilerplateBeforeAfterNwords.pdf>] [19 <./figures/boilerpl
+ateBeforeAfterNchars.pdf>] [20 <./figures/boilerplateBeforeAfterFreq.pdf>] [21 
+<./figures/boilerplateBeforeAfterMedianDocMidDist.pdf>] (./tables/tabBoilerplat
+eIllustration.tex)
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 289.
+(hyperref)                than one, level fixed on input line 282.
 
-[21] [22] [23] <figures/us_map.pdf, id=415, 578.16pt x 433.62pt>
+[22] [23] [24] <figures/us_map.pdf, id=423, 578.16pt x 433.62pt>
 File: figures/us_map.pdf Graphic file (type pdf)
 
 <use figures/us_map.pdf>
-Package pdftex.def Info: figures/us_map.pdf used on input line 343.
+Package pdftex.def Info: figures/us_map.pdf used on input line 336.
 (pdftex.def)             Requested size: 430.00462pt x 322.50143pt.
  (./tables/stmTopWords60.tex
 Overfull \hbox (46.53773pt too wide) in paragraph at lines 6--73
@@ -1284,7 +1284,7 @@ Overfull \hbox (46.53773pt too wide) in paragraph at lines 6--73
 
 LaTeX Warning: Float too large for page by 61.42249pt on input line 75.
 
-) [24 <./figures/us_map.pdf>] [25] (./manuscript.bbl
+) [25 <./figures/us_map.pdf>] [26] (./manuscript.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 16--20
 \T1/ptm/b/n/10.95 URL: \T1/ptm/m/it/10.95 http://www.pewresearch.org/fact-tank/
 2017/01/13/republicans-more-likely-than-
@@ -1297,21 +1297,21 @@ cfm?reqid=70&stepnum=11&AreaTypeKeyGdp=1&GeoFipsGdp=XX&ClassKeyGdp=naics&Compon
 entKey=1000&IndustryKey=1&YearGdp=2017&YearGdpBegin=-
  []
 
-[26]
+[27]
 Overfull \hbox (129.42834pt too wide) in paragraph at lines 91--96
 \T1/ptm/b/n/10.95 URL: \T1/ptm/m/it/10.95 http://www.sciencedirect.com/science/
 article/pii/S0740624X97900186%5Cnpapers2://publication/doi/10.1016/S0740-
  []
 
-[27] [28] [29]
-Overfull \hbox (970.9485pt too wide) in paragraph at lines 268--272
+[28] [29] [30] [31]
+Overfull \hbox (970.9485pt too wide) in paragraph at lines 274--278
 \T1/ptm/b/n/10.95 URL: \T1/ptm/m/it/10.95 http://poseidon01.ssrn.com/delivery.p
 hp?ID=5881250961130801011070071091041011210350310770540170130651150290770271031
 0208602908111810710600210401900411202807902210909612400608608705908300200808306
 900307709111805405806212107011710711007101302306601809400908 
  []
 
-[30]) [31] (./tables/stmTopWords120_1.tex
+) [32] (./tables/stmTopWords120_1.tex
 Overfull \hbox (18.58565pt too wide) in paragraph at lines 6--73
  [][] 
  []
@@ -1332,22 +1332,22 @@ LaTeX Warning: Float too large for page by 75.02249pt on input line 75.
 Package caption Warning: Unused \captionsetup[subfloat] on input line 59.
 See the caption package documentation for explanation.
 
-[32]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 459.
- [33] [34] [35]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 459.
+[33]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 452.
+ [34] [35] [36]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 452.
  (./manuscript.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 459.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 459.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 452.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 452.
 Package rerunfilecheck Info: File `manuscript.out' has not changed.
 (rerunfilecheck)             Checksum: 65C2D071D8CAA140AB364783063715B2;718.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 459.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 452.
  ) 
 Here is how much of TeX's memory you used:
- 21302 strings out of 494953
- 387000 string characters out of 6180977
- 585647 words of memory out of 5000000
- 24024 multiletter control sequences out of 15000+600000
+ 21308 strings out of 494953
+ 387094 string characters out of 6180977
+ 585651 words of memory out of 5000000
+ 24028 multiletter control sequences out of 15000+600000
  49846 words of font info for 82 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  55i,10n,54p,2845b,516s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1358,10 +1358,10 @@ fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/tim
 es/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on manuscript.pdf (35 pages, 749269 bytes).
+Output written on manuscript.pdf (36 pages, 750087 bytes).
 PDF statistics:
- 532 PDF objects out of 1000 (max. 8388607)
- 470 compressed objects within 5 object streams
- 122 named destinations out of 1000 (max. 500000)
+ 537 PDF objects out of 1000 (max. 8388607)
+ 474 compressed objects within 5 object streams
+ 124 named destinations out of 1000 (max. 500000)
  123 words of extra memory for PDF output out of 10000 (max. 10000000)
 
