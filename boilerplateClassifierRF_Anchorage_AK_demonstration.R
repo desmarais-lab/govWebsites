@@ -113,17 +113,19 @@ predictedProbabilities <- predictedProbabilities[order(predictedProbabilities$Bo
 #Put the 10 examples with the highest probabilities in a table
 tabBoilerplateIllustration <- predictedProbabilities
 tabBoilerplateIllustration <- tabBoilerplateIllustration[!duplicated(tabBoilerplateIllustration$Text),]
-tabBoilerplateIllustration <- tabBoilerplateIllustration[1:10,]
-#uncomment the next line to also add the 10 lowest
-#tabBoilerplateIllustration <- rbind(tabBoilerplateIllustration, predictedProbabilities[(nrow(predictedProbabilities)-9):nrow(predictedProbabilities),])
-#switch around the variables so the text comes first
-tabBoilerplateIllustration <- data.frame(Line = substring(tabBoilerplateIllustration$Text, 1, 50),
-                                         Substantive = tabBoilerplateIllustration$Substantive,
-                                         Boilerplate = tabBoilerplateIllustration$Boilerplate)
+#the top ~14k are all probability = 1, so get only these
+tabBoilerplateIllustration <- tabBoilerplateIllustration[tabBoilerplateIllustration$Boilerplate==1,]
+#re-set the random seed so this is easily re-doable without having to re-do all of the above
+set.seed(1)
+#make a table with the lines and their probabilities
+#the probabilities are all 1, so just setting them like this here for ease of use
+tabBoilerplateIllustration <- data.frame(tabBoilerplateIllustration[sample(1:nrow(tabBoilerplateIllustration), size = 15),])
+tabBoilerplateIllustration <- subset(tabBoilerplateIllustration, select = -Substantive)
+names(tabBoilerplateIllustration)[1] <- "Boilerplate Probability"
 
 xtTabBoilerplateIllustration <- print(xtable(tabBoilerplateIllustration,
                                              digits = 2,
-                                             caption = "Lines (or the first 50 characters of a line) in the corpus of Anchorage, AK, with the 10 highest probabilities of being classified as boilerplate.",
+                                             caption = "Lines in the corpus of Anchorage, AK, with a probability of 1 of being classified as boilerplate. This table illustrates that lines which get classified as boilerplate largely consist of irrelevant nonsense which needs to be removed.",
                                              label = "tabBoilerplateIllustration"),
                                       size = "small",
                                       include.rownames = FALSE)
