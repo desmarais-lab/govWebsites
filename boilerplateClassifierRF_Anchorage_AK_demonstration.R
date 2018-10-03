@@ -94,6 +94,8 @@ testDataBefore$`Boilerplate Removal` <- "Before"
 testDataAfter$`Boilerplate Removal` <- "After"
 testDataBeforeAfter <- rbind(testDataBefore, testDataAfter)
 
+save.image("rfiles/AnchorageDemoImg.rdata")
+
 ggplot(testDataBeforeAfter, aes(x = log(freq), color = `Boilerplate Removal`)) + geom_density(adjust=5) + labs(x = "Log Line Frequency in the City", y = "Density")
 ggsave("paper/figures/boilerplateBeforeAfterFreq.pdf")
 ggplot(testDataBeforeAfter, aes(x = medianDocMidDist, color = `Boilerplate Removal`)) + geom_density()  + labs(x = "Median Distance to the Document Midpoint", y = "Density")
@@ -110,22 +112,21 @@ predictedProbabilities <- predict(mRF, testData, type = "prob")
 predictedProbabilities$Text <- testData$text
 names(predictedProbabilities)[1:2] <- c("Substantive", "Boilerplate")
 predictedProbabilities <- predictedProbabilities[order(predictedProbabilities$Boilerplate, decreasing = T),]
-#Put the 10 examples with the highest probabilities in a table
-tabBoilerplateIllustration <- predictedProbabilities
-tabBoilerplateIllustration <- tabBoilerplateIllustration[!duplicated(tabBoilerplateIllustration$Text),]
-#the top ~14k are all probability = 1, so get only these
-tabBoilerplateIllustration <- tabBoilerplateIllustration[tabBoilerplateIllustration$Boilerplate==1,]
-#re-set the random seed so this is easily re-doable without having to re-do all of the above
-set.seed(1)
-#make a table with the lines and their probabilities
-#the probabilities are all 1, so just setting them like this here for ease of use
-tabBoilerplateIllustration <- data.frame(tabBoilerplateIllustration[sample(1:nrow(tabBoilerplateIllustration), size = 15),])
-tabBoilerplateIllustration <- subset(tabBoilerplateIllustration, select = -Substantive)
-names(tabBoilerplateIllustration)[1] <- "Boilerplate Probability"
+#predicted probabilities of the lines that occur the most
+testData4 <- subset(testData, select = c(text, freq))
+testData4 <- testData4[order(testData4$freq, decreasing = T),]
+testData4 <- testData4[!duplicated(testData4$text),]
+testData4 <- testData4[1:20,]
 
-xtTabBoilerplateIllustration <- print(xtable(tabBoilerplateIllustration,
+tabBoilerplateDemo <- merge(predictedProbabilities, testData4, by.x = "Text", by.y = "text")
+tabBoilerplateDemo <- tabBoilerplateDemo[!duplicated(tabBoilerplateDemo$Text),]
+tabBoilerplateDemo <- tabBoilerplateDemo[order(tabBoilerplateDemo$Boilerplate, decreasing = T),]
+tabBoilerplateDemo <- subset(tabBoilerplateDemo, select = -Substantive)
+names(tabBoilerplateDemo) <- c("Line", "Boilerplate Probability", "Line Frequency")
+
+xtTabBoilerplateIllustration <- print(xtable(tabBoilerplateDemo,
                                              digits = 2,
-                                             caption = "Lines in the corpus of Anchorage, AK, with a probability of 1 of being classified as boilerplate. This table illustrates that lines which get classified as boilerplate largely consist of irrelevant nonsense which needs to be removed.",
+                                             caption = "The 20 most frequent lines in the corpus of Anchorage, AK, sorted according to the probability with which the classifier identifies them as boilerplate. This table illustrates that the boilerplate classifier correctly flags and removes interpretable but unimportant content which would otherwise have a disproportionate impact on the topic model.",
                                              label = "tabBoilerplateIllustration"),
                                       size = "small",
                                       include.rownames = FALSE)
