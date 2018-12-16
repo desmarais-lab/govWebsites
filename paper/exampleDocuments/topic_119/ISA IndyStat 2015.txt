@@ -1,0 +1,666 @@
+Information Services
+Agency
+IndyStat
+July 10, 2015
+
+Information Services Agency
+The Information Services Agency (ISA) provides Information Technology (IT) for
+the City of Indianapolis – Marion County. Working together with the entire
+enterprise, ISA provides solutions and support for new and existing
+infrastructures as it relates to networking, hardware, web development,
+applications and Geographic Information Systems (GIS).
+
+• ISA is comprised of five key departments:
+–
+–
+–
+–
+–
+
+Office of the CIO
+Administration and Finance
+Business Services
+Application Services
+Infrastructure Services
+
+• The Information Services Agency (ISA) is governed through the Information
+Technology Board per City-County Ordinance.
+
+Organizational Chart
+
+Recent Initiatives Completed
+• Improve Operational Efficiencies and Reduce Cost
+–
+–
+–
+–
+–
+–
+–
+–
+–
+
+ERP: Cash Management Module (iNovah)
+Retirement of Mainframe Usage
+False Alarm Tracking & Reporting Application Launch
+2012, 2013 and 2014 PC Refresh
+Enterprise Device Selection
+Office 365 Email Upgrade
+Network Performance Assessment
+Web Filtering Replacement
+Firewall Replacement
+
+Recent Initiatives Completed
+• Improve Customer Service
+–
+–
+
+ISA 2015 Chargeback Design and Implementation
+Request Indy Upgrade and Launch
+
+• Improve Quality of Service
+–
+–
+–
+–
+–
+
+Voter Information Portal Application Enhancements
+Marion County Assessor Property Card Portal
+City/County Building Bandwidth Increase
+Enterprise WiFi Assessment (Private & Public)
+Migration to Windows 7
+
+Active Enterprise Initiatives
+•
+•
+•
+•
+•
+•
+•
+•
+•
+
+IT Strategic Plan, Roadmap & Governance Model
+IT Policies & Procedures Manual
+eCommerce RFP: Contract Negotiations
+Security Assessment
+Office 365 and Lync Rollout
+Enterprise Network Upgrade
+NetScaler Replacement
+Secondary Site Relocation (Post Rd to Eastgate)
+5 Internal Technical Projects to Drive Efficiencies &
+Performance
+
+Intentionally Left Blank
+
+2014 Budgeted to Actual Expenses*
+Personnel : $2.0 Million / $3.1 Million = 66.2% spent
+Operating : $28.4 Million / $28.8 Million = 98.4% spent
+Actual Operating $
+
+Actual Personnel $
+
+Budget Operating $
+
+Budget Personnel $
+
+$35,000,000
+$30,000,000
+$25,000,000
+$20,000,000
+$15,000,000
+
+$10,000,000
+$5,000,000
+$0
+Jan
+
+Feb
+
+Mar
+
+Apr
+
+May
+
+Jun
+
+Jul
+
+Aug
+
+Sep
+
+* Numbers reflect sum of expenses, encumbrances, and encumbrance reqs
+
+Oct
+
+Nov
+
+Dec
+
+2015 Budgeted to Actual YTD Expenses*
+Personnel : $1.2 Million / $3.2 Million = 36.1% spent
+Operating : $24.0 Million / $27.7 Million = 86.6% spent
+Actual Operating $
+
+Actual Personnel $
+
+Budget Operating $
+
+Budget Personnel $
+
+$40,000,000
+$35,000,000
+$30,000,000
+$25,000,000
+$20,000,000
+$15,000,000
+$10,000,000
+$5,000,000
+$0
+Jan
+
+Feb
+
+Mar
+
+Apr
+
+May
+
+Jun
+
+Jul
+
+Aug
+
+Sep
+
+* Numbers reflect sum of expenses, encumbrances, and encumbrance reqs
+
+Oct
+
+Nov
+
+Dec
+
+2014 Budgeted to Actual Revenues
+Internal: $29.6 Million / $30.6 Million = 96.7% collected
+External: $700K / $812K = 86.2% collected
+Internal Revenue $
+
+External Revenue $
+
+Budget Revenue $
+
+$35,000,000
+$30,000,000
+
+$25,000,000
+$20,000,000
+
+$15,000,000
+$10,000,000
+$5,000,000
+$0
+Jan
+
+Feb
+
+Mar
+
+Apr
+
+May
+
+Jun
+
+Jul
+
+Aug
+
+Sep
+
+Oct
+
+Nov
+
+Dec
+
+2015 Budgeted to Actual YTD Revenues
+Internal: $0.3 Million / $27.2 Million = 10.6% collected
+External: $57K / $539K = 1.1% collected
+Internal Revenue $
+
+External Revenue $
+
+Budget Revenue $
+
+$30,000,000
+$25,000,000
+$20,000,000
+$15,000,000
+$10,000,000
+$5,000,000
+$0
+Jan
+
+Feb
+
+Mar
+
+Apr
+
+May
+
+Jun
+
+Jul
+
+Aug
+
+Sep
+
+Oct
+
+Nov
+
+Dec
+
+2014 MBE/WBE/VBE Spend
+MBE:
+WBE:
+VBE:
+
+$1,445,180
+$7,491,586
+$64,503
+
+(9.13%)
+(47.31%)
+(0.41%)
+
+2014 - YTD MBE %
+
+2014 - YTD WBE %
+
+2014 -YTD VBE %
+
+MBE Goal
+
+WBE Goal
+
+VBE Goal
+
+2014 - YTD Competitive $
+60.00%
+
+$18,000,000
+$16,000,000
+
+50.00%
+
+$14,000,000
+
+40.00%
+
+$12,000,000
+$10,000,000
+
+30.00%
+
+$8,000,000
+
+20.00%
+
+$6,000,000
+$4,000,000
+
+10.00%
+
+$2,000,000
+
+0.00%
+
+$0
+Jan
+
+Feb
+
+Mar
+
+Apr
+
+May
+
+Jun
+
+Jul
+
+Aug
+
+Sep
+
+Oct
+
+Nov
+
+Dec
+
+2015 MBE/WBE/VBE/DOBE YTD Spend
+YTD MBE:
+YTD WBE:
+YTD VBE:
+YTD DOBE:
+
+$540,236
+$3,011,588
+$96,548
+$0
+
+(8.1%)
+(45.1%)
+(3.2%)
+(0.0%)
+
+2015 - YTD MBE %
+
+2015 - YTD WBE %
+
+2015 -YTD VBE %
+
+MBE Goal
+
+WBE Goal
+
+VBE Goal
+
+2015 - YTD Competitive $
+
+DOBE Goal
+
+2015 -YTD DOBE %
+
+60.00%
+
+$8,000,000
+$7,000,000
+
+50.00%
+
+$6,000,000
+40.00%
+
+$5,000,000
+
+30.00%
+
+$4,000,000
+
+$3,000,000
+
+20.00%
+
+$2,000,000
+
+10.00%
+
+$1,000,000
+
+0.00%
+
+$0
+
+Jan
+
+Feb
+
+Mar
+
+Apr
+
+May
+
+Jun
+
+Jul
+
+Aug
+
+Sep
+
+Oct
+
+Nov
+
+Dec
+
+Service Desk Contacts (#)
+Service Desk Contacts up 16% [Jan – Jun 2014 vs.
+Jan – Jun 2015]
+2015 Helpdesk Contacts
+2013 Helpdesk Contacts
+2011 Helpdesk Contacts
+
+2014 Service Desk Contacts
+2012 Helpdesk Contacts
+2010 Helpdesk Contacts
+
+# Service Desk Contacts
+
+7000
+6000
+5000
+4000
+3000
+2000
+1000
+0
+Jan
+
+Feb
+
+Mar
+
+Apr
+
+May
+
+Jun
+
+Jul
+
+Aug
+
+Sep
+
+Oct
+
+Nov
+
+Dec
+
+2015 Service Desk Contacts by Type
+
+# Service Desk Contacts
+
+2015 Service Desk Contacts
+7000
+
+Calls
+
+Email
+
+Portal
+
+6000
+5000
+4000
+
+3000
+2000
+1000
+0
+Jan
+
+Feb
+
+Mar
+
+Apr
+
+May
+
+Jun
+
+2015 Customer Satisfaction Data
+400
+
+2015 Customer Satisfaction Surveys
+
+# Positive Surveys
+
+# Negative Surveys
+
+350
+
+# Surveys
+
+300
+250
+200
+150
+100
+50
+0
+Jan
+
+Feb
+
+Mar
+
+Apr
+
+May
+
+First Call Resolution (%)
+Industry benchmark = 65%
+2015 First Call Resolution
+
+2014 First Call Resolution
+
+2013 First Call Resolution
+
+2012 First Call Resolution
+
+2011 First Call Resolution
+
+2010 First Call Resolution
+
+2015 Goal ( > 85%)
+94%
+First Call Resolution (%)
+
+92%
+90%
+88%
+86%
+84%
+82%
+80%
+78%
+76%
+Jan
+
+Feb
+
+Mar
+
+Apr
+
+May
+
+Jun
+
+Jul
+
+Aug
+
+Sep
+
+Oct
+
+Nov
+
+Dec
+
+Indygov.biz
+
+2015 INDYGOV.Biz Transactions (#)
+
+2014 INDYGOV.Biz Transactions (#)
+
+2015 INDYGOV.Biz Revenue Share ($)
+
+2014 INDYGOV.Biz Revenue Share ($)
+
+2013 INDYGOV.Biz Revenue Share ($)
+
+2013 INDYGOV.Biz Transactions (#)
+
+70,000
+
+$80,000
+
+60,000
+
+$70,000
+$60,000
+
+50,000
+
+$50,000
+
+40,000
+
+$40,000
+
+30,000
+
+$30,000
+
+20,000
+
+$20,000
+
+10,000
+
+$10,000
+
+0
+
+$0
+Jan
+
+Feb Mar Apr May Jun
+
+Jul
+
+Aug Sep
+
+Oct Nov Dec
+
+Revenue Share
+
+# Transactions
+
+Transactions down 73% [Jan – May 2014 v. Jan – May 2015]
+Revenue share down 100% [Jan – May 2014 v. Jan – May 2015]
+
+Next ISA IndyStat:
+Nov 2015
+
+

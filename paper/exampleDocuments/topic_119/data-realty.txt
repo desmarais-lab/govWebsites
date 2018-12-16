@@ -1,0 +1,283 @@
+
+
+
+
+
+
+
+
+
+    * Downtown_South_Bend
+    * Visit_South_Bend
+    * Airport
+    * In_The_Bend
+    * Library
+    * Schools
+City_of_South_Bend,_Indiana
+    * Residents
+          o 311
+          o Household
+                # Absentee_and_Early_Voting
+                # Birth_Certificates
+                # Marriage_Licenses
+                # Newsletters
+                # Online_Payments
+                # Pet_Licensing_&amp;_Adoption
+                # Property_Taxes
+                # Report_Graffiti
+                # Utilities
+                # Trash_Removal_&amp;_Recycling
+                # Voter_Registration_&amp;_Polling_Places
+          o New_to_the_Bend?
+                # Buses_&amp;_Routes
+                # Pet_Licensing_&amp;_Adoption
+                # Public_Libraries
+                # Public_Schools
+                # Relocation_Information
+                # South_Bend_Post_Offices
+                # Trash_Removal_&amp;_Recycling
+                # Utilities
+                # Vehicle_Registration_&amp;_Licensing
+                # Voter_Registration_&amp;_Polling_Places
+          o Parks_&amp;_Rec
+                # Bike_South_Bend
+                # Peregrine_Falcon_Webcam
+                # Potawatomi_Zoo
+                # South_Bend_Parks_&amp;_Recreation
+                # St._Joseph_County_Parks
+          o Arts_&amp;_Culture
+          o Education
+          o Neighborhoods
+                # Neighborhoods_By_Geography
+                # Neighborhood_Videos
+                # Neighborhood_Improvement_Programs
+                # Neighborhood_Resources_Connection
+                # SELL_South_Bend_Certified_Realtors
+          o Transportation
+                # Airport_Info
+                # Bike_South_Bend
+                # Bus_Lines
+                # Interstate_Info
+                # Maps
+                # TRANSPO_Busses_&amp;_Routes
+                # Railway_Info
+                # Taxi_Service
+          o Employment
+    * Business
+          o Starting_a_Business
+                # Business_Toolkit
+                # Chamber_of_Commerce
+                # Great_Location
+                # Right_Taxes_&amp;_Incentives
+                # Strong_Workforce
+          o Licenses_&amp;_Permits
+                # Business_Licenses
+                # Contractor_Licenses
+                # Food_Truck_Licenses_&amp;_Check-In
+                # Lawn_Parking_Permit
+                # Scrap_Metal_Recycling_Operations
+                # St._Joseph_County_Health_Department
+                # Taxicab_Licenses_&amp;_Inspections
+          o Economic_Resources
+          o City_Bids
+                # Diversity_&amp;_Inclusion_Program
+                # Construction_Bids
+                # RFP,_Vehicle,_Equipment_&amp;_Miscellaneous_Bids
+          o Information_Center
+                # Business_FAQ's
+                # Business_Toolkit
+                # Interactive_Mapping_-_GIS
+                # Municipal_Code
+    * My_Government
+          o Mayor's_Office
+                # About_the_Mayor
+                # Contact_the_Mayor
+                # Mayor's_Office_Scheduling
+                # Executive_Staff
+                # Executive_Orders
+                # Budget
+                # News_Releases
+                # Programs_and_Initiatives
+                # Speeches
+          o Common_Council
+                # Council_Members
+                # Council_District_Lookup_&amp;_Map
+                # Council_Committees
+                # Council_Attendance_&amp;_Voting_Records
+                # Council_Brochures_&amp;_Applications
+                # Meeting_Broadcast_&amp;_Archive
+                # Meeting_Notices,_Agendas_&amp;_Minutes
+                # News_Releases
+                # Official_Council_Documents
+                # Reports
+                # Rules_&amp;_Procedures
+                # Municipal_Code
+                # Standard_Operating_Procedures
+          o City_Clerk
+                # About_the_Clerk
+                # Responsibilities_of_the_City_Clerk
+                # Municipal_Code
+                # Ordinance_Violations_Bureau
+                # Amnesty_Day
+                # Clerk_Distribution_List_(Opt-In)
+                # Staff
+          o Departments
+                # Administration_&amp;_Finance
+                # Building
+                # Code_Enforcement
+                # Community_Investment
+                # Fire
+                # Legal
+                # Parks_&amp;_Recreation
+                # Police
+                # Public_Works
+          o Public_Meetings
+          o Boards_&amp;_Commissions
+                # Board_of_Public_Safety
+                # Board_of_Public_Works
+                # Minority_&amp;_Women_Business_Enterprise_Diversity_Board
+                # Other_Boards_&amp;_Commissions
+                # Parks_&amp;_Recreation_Board
+                # Redevelopment_Authority
+                # Redevelopment_Commission
+          o City_Venues
+                # Century_Center
+                # Four_Winds_Field
+                # Morris_Performing_Arts_Center
+                # Palais_Royale
+          o Online_Tools
+                # Employee_Intranet_(City_Employees)
+                # City_Employees
+                # Contact_Us
+                # Document_Archive
+                # File_Service_Request_or_Concern
+                # Interactive_Mapping_-_GIS
+                # Municipal_Code
+                # Online_Payments
+                # Open_Data
+                # Ticket_Appeal
+    * Visitors
+          o Football_Weekends
+          o Parks_&amp;_Recreation
+                # Potawatomi_Zoo
+                # South_Bend_Parks_&amp;_Recreation
+                # St._Joseph_County_Parks
+          o Museums
+          o Arts_&amp;_Culture
+          o Shows_&amp;_Concerts
+          o Shopping_&amp;_Dining
+          o Sports
+    * Students
+          o City_Internships
+          o Elections_&amp;_Voting
+          o Are_You_Graduating?
+          o Transportation
+                # Transpo
+          o Youth_Task_Force
+    * Values
+***** You are here *****
+   1. Home ›
+   2. My_Government ›
+   3. Departments ›
+   4. Community_Investment ›
+   5. Redevelopment ›
+   6. Ignition_Park ›
+   7. Tenants ›
+    * Administration_&amp;_Finance
+    * Building
+    * Code_Enforcement
+    * Community_Investment
+          o Teams
+          o Programs_&amp;_Services
+          o Redevelopment
+                # Development_Area_Map
+                # Redevelopment_Commission
+                # Technology_Parks
+                # Ignition_Park
+                      # Available_Sites
+                      # Local_Incentives
+                      # State_Incentives
+                      # Tenants
+                            # Aunalytics
+                            # Data_Realty
+                            # HeadQuarters_at_Ignition_Park
+                            # MicroIntegration
+                            # Notre_Dame_Turbomachinery_Laboratory
+          o Plans,_Studies_&amp;_Public_Documents
+          o Staff
+          o FAQ_-_Community_Investment
+    * Fire
+    * Legal
+    * Parks_&amp;_Recreation
+    * Police
+    * Public_Works
+****** Data Realty ******
+
+Data Realty is a data management company operating data centers that
+specializes in providing data solutions that allow companies to discover
+actionable insights from disparate data sources. There are plenty of facilities
+that can simply store your data, but Data Realty helps bring data to life by
+uncovering opportunities. Because they anticipated the need for businesses to
+better analyze their data, their data centers and data management platforms are
+designed in collaboration with world-renowned data scientists specifically for
+the creation of new, unique data sets to be used for analysis. Data Realty help
+clients realize a "Return on Data," where a former cost center is transformed
+into a revenue-generator.
+www.data-realty.com
+[https://southbendin2.sharepoint.com/sites/webcontent/_layouts/15/
+guestaccess.aspx?guestaccesstoken=VYVF2obQZmMh7hzT%2fbiACXGC445mhHg%2bzJya60AJfr4%3d&amp;docid=04a55ffcf9dea4518bd0bbb0ebe4d87f0&amp;rev=1]​​​
+[https://southbendin2.sharepoint.com/sites/webcontent/_layouts/15/
+guestaccess.aspx?guestaccesstoken=OoeNMFjoXTa2RsV0zwnxVbjhrzxY8ncep85ABKy4ptw%3d&amp;docid=02c2223147de14c53a70095641b2ffab8&amp;rev=1]​​​
+[https://southbendin2.sharepoint.com/sites/webcontent/_layouts/15/
+guestaccess.aspx?guestaccesstoken=R3owdKH%2bhRYWCfo%2bDqG8Qvm7vuIShCFEAV0NwcjXIpc%3d&amp;docid=0fb481a99fa10409895d69536fdd59f77&amp;rev=1]​​​
+[https://southbendin2.sharepoint.com/sites/webcontent/_layouts/15/
+guestaccess.aspx?guestaccesstoken=LpPMWL6DEeF4vxY5uPdH0NY732yiCeX6AA8GUp8oVPE%3d&amp;docid=0d2bc8151f3ef4adb957b10ef757f6e58&amp;rev=1]​​​
+[City_Seal_of_South_Bend,_Indiana]
+    * Residents
+          o 311
+          o Household
+          o New_to_the_Bend?
+          o Parks_&amp;_Rec
+          o Arts_&amp;_Culture
+          o Education
+          o Neighborhoods
+          o Transportation
+          o Employment
+    * Business
+          o Starting_a_Business
+          o Licenses_&amp;_Permits
+          o Economic_Resources
+          o City_Bids
+          o Information_Center
+    * My_Government
+          o Mayor's_Office
+          o Common_Council
+          o City_Clerk
+          o Departments
+          o Public_Meetings
+          o Boards_&amp;_Commissions
+          o City_Venues
+          o Online_Tools
+    * Visitors
+          o Football_Weekends
+          o Parks_&amp;_Recreation
+          o Museums
+          o Arts_&amp;_Culture
+          o Shows_&amp;_Concerts
+          o Shopping_&amp;_Dining
+          o Sports
+    * Students
+          o City_Internships
+          o Elections_&amp;_Voting
+          o Are_You_Graduating?
+          o Transportation
+          o Youth_Task_Force
+    * Values
+    * Twitter
+    * YouTube
+    * Facebook
+Printer-friendly_versionSend_by_email
+[btn-sitefeedback.png]
+Privacy_Policy | Terms_of_Use | ADA | Title_VI | � 2017 City of South Bend,
+Indiana
+

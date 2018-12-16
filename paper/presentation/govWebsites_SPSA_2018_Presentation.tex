@@ -1,0 +1,359 @@
+\documentclass[12pt]{beamer}
+\setbeamertemplate{navigation symbols}{}
+%\usepackage[latin1]{inputenc}
+\usepackage{pgfplots}
+\usepackage{adjustbox}
+\usepackage{graphicx}
+%\usepackage{draftwatermark}
+\usepackage{tikz}
+\usepackage{colortbl}
+\usepackage{subfigure}
+%\usetheme{Amsterdam}
+\usecolortheme{default}
+\title[]{Government websites as data: A methodological pipeline for
+collection, processing, and text analysis}
+\author{Markus Neumann \\ Fridolin Linder \\ Bruce Desmarais}
+\institute{The Pennsylvania State University}
+\date{January 6, 2018}
+
+\makeatletter
+\defbeamertemplate*{footline}{myminiframes theme}
+{%
+	\begin{beamercolorbox}[colsep=1.5pt]{upper separation line foot}
+	\end{beamercolorbox}
+	\hbox{%
+		\begin{beamercolorbox}[wd=.1\paperwidth,ht=2.5ex,dp=1.125ex,%
+			leftskip=.3cm,rightskip=.3cm,center]{title in head/foot}%
+			{\usebeamerfont{author in head/foot}\usebeamercolor[fg]{author in head/foot}}{\insertframenumber}%/\inserttotalframenumber}%
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.75\paperwidth,ht=2.5ex,dp=1.125ex,%
+			leftskip=.3cm,rightskip=.3cm plus1fil,center]{title in head/foot}%
+			\leavevmode{\usebeamerfont{title in head/foot}\insertshorttitle}%
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.15\paperwidth,ht=2.5ex,dp=1.125ex,%
+			leftskip=.3cm,rightskip=.3cm plus1fil,center]{title in head/foot}%
+			{\usebeamerfont{author in head/foot}\usebeamercolor[fg]{author in head/foot}}%\insertshortauthor}
+		\end{beamercolorbox}%
+	}%
+	\begin{beamercolorbox}[colsep=1.5pt]{lower separation line foot}
+	\end{beamercolorbox}
+}
+\makeatother
+
+\begin{document}
+
+\section{Introduction}
+\begin{frame}
+\titlepage
+\end{frame}
+
+%\begin{frame}{Spot the difference}
+%\begin{figure}
+%	\hfill
+%	\subfigure{\includegraphics[width=5cm]{Images/Clinton_Rally_cr.jpg}}
+%	\hfill
+%	\subfigure{\includegraphics[width=5cm]{Images/Trump_Rally_cr.jpg}}
+%\end{figure}
+%\end{frame}
+
+\begin{frame}{Government Websites}
+\linespread{1.5}
+{\large
+	\begin{itemize}
+		\item Content of government websites is an important source of information \& transparency
+		\item After coming into power, the Trump administration  has made some controversial changes to the websites of federal agencies
+		\item Website content is political
+		\item Partisanship of city government is expected to have an effect
+	\end{itemize}
+	
+}
+\end{frame}
+
+\begin{frame}{Example Website}
+	\includegraphics[width = \linewidth]{arcadia_water.png}
+\end{frame}
+
+\begin{frame}{Local Government Websites}
+\linespread{1.5}
+{\large
+	\begin{itemize}
+		\item Most local (i.e. mayoral) elections are non-partisan
+		\item Few states have exclusively partisan local elections
+		\item Data for these elections can be difficult to find
+		\item We selected Indiana and Louisiana
+	\end{itemize}
+	
+	}
+\end{frame}
+
+\begin{frame}{Data Overview}
+\begin{figure}
+	\hfill
+	\subfigure{\includegraphics[width=5cm, height = .7\textheight]{../figures/indiana_map.pdf}}
+	\hfill
+	\subfigure{\includegraphics[width=5cm, height = .7\textheight]{../figures/louisiana_map.pdf}}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Literature}
+\linespread{1.5}
+{\large
+	\begin{itemize}
+		\item Extant literature largely focuses on e-government and transparency, for example:
+		\begin{itemize}
+			\item Wang, Bretschneider and Gant (2005)
+			\item Grimmelikhuijsen \& Welch (2012)
+			\item Dolson \& Young (2012)
+			\item Feeney \& Brown (2017)
+		\end{itemize}
+		\item All of these papers rely on manual website coding
+	\end{itemize}
+	
+}
+\end{frame}
+
+\begin{frame}{The Pipeline}
+	\textbf{Data Collection} \hspace{2mm} $\rightarrow$ \hspace{2mm} \textbf{Preprocessing} \hspace{2mm} $\rightarrow$ \hspace{2mm} \textbf{Analysis}
+\begin{columns}
+	\column{0.33\textwidth}
+	%Data Collection
+	\vspace{5mm}
+	\begin{itemize}
+		\item Identify URLs
+		\item Verify URLs (browser automation)
+		\item Download websites
+		\item Determine file type
+		\item Convert to txt
+	\end{itemize}		
+	\column{0.33\textwidth}
+	%Preprocessing
+	\vspace{5mm}
+	\begin{itemize}
+		\item Remove punctuation, dates, etc.
+		\item To lowercase
+		\item Boilerplate removal
+		\item Spellchecking
+		\item Lemmatization \\ (city \& cities = city)
+	\end{itemize}
+	\column{0.33\textwidth}
+	%Analysis
+	\vspace{5mm}
+	\begin{itemize}
+		%\item Hierarchical clustering
+		\item Fightin' Words
+		\item Structural topic model
+		%\begin{itemize}
+		%	\item LDA
+		%	\item STM
+		%\end{itemize}
+	\end{itemize}
+\end{columns}
+\end{frame}
+
+\begin{frame}{The Pipeline}
+	\textbf{Data Collection} \hspace{2mm} $\rightarrow$ \hspace{2mm} \textbf{Preprocessing} \hspace{2mm} $\rightarrow$ \hspace{2mm} \textbf{Analysis}
+	\begin{columns}
+		\column{0.33\textwidth}
+		%Data Collection
+		\vspace{5mm}
+		\begin{itemize}
+			\item Identify URLs
+			\item Verify URLs (browser automation)
+			\item Download websites
+			\item Determine file type
+			\item Convert to txt
+		\end{itemize}		
+		\column{0.33\textwidth}
+		%Preprocessing
+		\vspace{5mm}
+		\begin{itemize}
+			\item Remove punctuation, dates, etc.
+			\item To lowercase
+			\item \textbf{Boilerplate removal}
+			\item Spellchecking
+			\item Lemmatization \\ (city \& cities = city)
+		\end{itemize}
+		\column{0.33\textwidth}
+		%Analysis
+		\vspace{5mm}
+		\begin{itemize}
+			%\item Hierarchical clustering
+			\item Fightin' Words
+			\item Structural topic model
+			%\begin{itemize}
+			%	\item LDA
+			%	\item STM
+			%\end{itemize}
+		\end{itemize}
+	\end{columns}
+\end{frame}
+
+\section{Preprocessing}
+
+%\begin{frame}{Document filetype \& conversion}
+%\begin{itemize}
+%	\item Websites contain a number of different filetypes
+%	\item txt, pdf, html, doc and docx are useable
+%	\item convert everything to txt
+%	\item the file ENDING does not always 
+%\end{itemize}
+%\end{frame}
+
+\begin{frame}{Boilerplate Removal}
+\includegraphics[width = \linewidth]{arcadia_water.png}
+\end{frame}
+
+\begin{frame}{Boilerplate Removal}
+\includegraphics[width = \linewidth]{duplicateLines.png}
+\end{frame}
+
+\begin{frame}{Boilerplate Removal}
+	\includegraphics[width = \linewidth]{duplicateLineRemoval.png}
+\end{frame}
+
+\begin{frame}{Boilerplate Removal}
+\begin{itemize}
+	\item Within each city, there is a lot of shared text
+	\item If not removed, the text clusters into cities
+\end{itemize}
+\begin{itemize}
+	\item Solution: Compare each line in each document to every other line in every document of that city
+	\item Count duplicates
+	\item Remove a line if it is duplicated within a city above some threshold
+	\item Fast \& efficient implementation
+\end{itemize}
+\end{frame}
+
+\begin{frame}{The Pipeline}
+	\textbf{Data Collection} \hspace{2mm} $\rightarrow$ \hspace{2mm} \textbf{Preprocessing} \hspace{2mm} $\rightarrow$ \hspace{2mm} \textbf{Analysis}
+	\begin{columns}
+		\column{0.33\textwidth}
+		%Data Collection
+		\vspace{5mm}
+		\begin{itemize}
+			\item Identify URLs
+			\item Verify URLs (browser automation)
+			\item Download websites
+			\item Determine file type
+			\item Convert to txt
+		\end{itemize}		
+		\column{0.33\textwidth}
+		%Preprocessing
+		\vspace{5mm}
+		\begin{itemize}
+			\item Remove punctuation, dates, etc.
+			\item To lowercase
+			\item Boilerplate removal
+			\item Spellchecking
+			\item Lemmatization \\ (city \& cities = city)
+		\end{itemize}
+		\column{0.33\textwidth}
+		%Analysis
+		\vspace{5mm}
+		\begin{itemize}
+			%\item Hierarchical clustering
+			\item Fightin' Words
+			\item Structural topic model
+			%\begin{itemize}
+			%	\item LDA
+			%	\item STM
+			%\end{itemize}
+		\end{itemize}
+	\end{columns}
+\end{frame}
+
+%\begin{frame}{Other preprocessing}
+%\begin{itemize}
+%	\item Remove:
+%	\begin{itemize}
+%		\item Dates
+%		\item Numbers
+%		\item Punctuation
+%		\item Words not recognized by an English dictionary
+%		\item Stopwords
+%		\item Documents with too few unique words
+%	\end{itemize}
+%\item Set to lowercase
+%\item Lemmatization
+%\end{itemize}
+%\end{frame}
+
+\begin{frame}{Data Overview}
+\input{descriptiveStatsIN.tex}
+\input{descriptiveStatsLA.tex}
+\end{frame}
+
+\section{Analysis}
+%\begin{frame}{Hierarchical Clustering}
+%\centering
+%\includegraphics[height=\textheight]{../figures/heatmap_hclust_40.png}
+%\end{frame}
+
+%\begin{frame}{Fightin' Words}
+%\begin{figure}
+%	\hfill
+%	\subfigure{\includegraphics[width=5cm]{../figures/fightinWordsIN.png}}
+%	\hfill
+%	\subfigure{\includegraphics[width=5cm]{../figures/fightinWordsLA.png}}
+%\end{figure}
+%\end{frame}
+
+\begin{frame}{Fightin' Words - Monroe et al. (2008)}
+\linespread{1.5}
+\begin{itemize}
+	\item Goal: Split words based on one binary variable (party)
+	\item Find the most Democratic and most Republican words
+	\item Problem: Text mostly consists of meaningless words
+	\item Solution: Set prior based on expected distribution of words in random text
+	\item Method provides a z-Score indicating the degree to which a word is preferred by one party
+	\item Very fast to compute
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Fightin' Words (Indiana)}
+	\input{fightinwordsIN.tex}
+%	\input{../tables/fightinwordsIN.tex}
+\end{frame}
+
+%\begin{frame}{Latent Dirichlet Allocation}
+%\input{partisanTopWords.tex}
+%\end{frame}
+
+\begin{frame}{Structural Topic Model - Roberts et al. (2014)}
+\linespread{1.5}
+\begin{itemize}
+	\item Topic models find clusters of semantically related words in texts --> i.e. topics
+	\item As a clustering method, LDA doesn't explicitly allow for covariates (although post-hoc comparison is possible)
+	\item The structural topic model extends this approach to explicitly include (multiple) covariates
+	\item Our covariates: Party + City Population
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Structural Topic Model (Indiana)}
+\input{stmTopWordsINDem.tex} %../tables/stmTopWordsINDem.tex
+\end{frame}
+
+\begin{frame}{Structural Topic Model (Indiana)}
+\input{stmTopWordsINRep.tex} %../tables/stmTopWordsINRep.tex
+\end{frame}
+
+\section{Conclusion}
+\begin{frame}{Conclusion}
+\linespread{1.5}
+\large
+\begin{itemize}
+	%\item Hierarchical clustering only creates 'topics' if content is VERY similar
+	%\item Fightin words is extremely effective at forcing the text into two categories, but also somewhat limited
+	%\item LDA is sensitive to preprocessing, but the most flexible
+	%\item STM works too, but also very sensitive to duplicate content
+	\item Manual vs. automatic analysis of government websites
+	\item Our pipeline facilities scalable comparative analysis
+	
+	\vspace{5mm}
+	\item Partisanship affects website content:
+	\item Democrats focus on raising and spending money
+	\item Republicans focus on infrastructure and utilities
+\end{itemize}
+\end{frame}
+
+\end{document}

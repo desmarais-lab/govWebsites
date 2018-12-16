@@ -1,0 +1,4175 @@
+Information Technology Board Meeting
+Wednesday August 18, 2004
+C/C Room 260
+9:00 AM
+Minutes
+• Approval of the July 15, 2004 meeting minutes (Exhibit A)
+Status Updates
+• ACS Report (Exhibit B)
+• JTAC Project Update (Exhibit C)
+• Enhanced Access Review Committee Report (Exhibit D)
+• Sourcing Solution Update
+Discussion Items
+• Public Hearing on award of Information Technology Outsourcing Contract
+Action Items
+•
+•
+•
+
+Award of Information Technology Outsourcing Contract (Resolution 04-20)
+ISA 2005 Budget Submission (Resolution 04-18)
+ISA 2005 Budget Reduction (Resolution 04-19)
+
+New Business
+• The next scheduled IT Board meeting on Tuesday, September 21 at 9:30 AM in
+room 260
+Adjourn
+Attachment: Contracts < 25,000
+
+EXHIBIT A
+INFORMATION TECHNOLOGY BOARD MEETING
+MEETING DATE:
+
+July 15, 2004
+
+MEETING LOCATION:
+
+City County Building, Room 260
+
+MEMBERS PRESENT:
+
+Major John Ball, Robert Clifford, Linda Enders, Thomas
+Inui, Paul Ricketts, Doris Anne Sadler, Marty Womacks,
+and Judge James Payne
+
+STAFF PRESENT:
+
+Bob Geis, Dave Mockert, Nadeen Biddinger, Jim Ruddell,
+Dan Pavey, Diana Turner, Bruce Turner, Lori Kuhn, Shawn
+McTush, Giesla Schepers, Chuck Carufel, Rick Petrecca,
+Jennifer Ruby, Dave Rutherford, Kyle Cox - ISA, Jill
+Weirick, Kevin Ortell, Heather Guntrum, Kathy Fluke,
+Alberta Frees-ACS; Paul Belch – Corporation Council; Ron
+Meadows-MCSD, Jim Flynn- MCJA, Greg Hall- EMPD,
+Monty Combs, Greg Jordan- County Treasurer
+
+VISITORS PRESENT:
+
+Jim Lingvai- SAIC, Jim Ammeen, Steve Tuchman- Lewis &
+Kappes, Mark Kotyuk, Rose Scannell, Cathy Adduci,
+Denise McKahan, Mark Simmermon- Unisys, Denise
+Alkire- L-3, Marv Thornberry- DAI, Rick HammondWoolpert, Sam LeStourgeon- IBM, Linda Lindenbusch,
+Arleen Acton- Indiana Interactive
+
+Executive Session
+On July 15, 2004, the Information Technology Board met in executive session to discuss
+confidential records pursuant to state statute in accordance with I.C. 5-14-1.5-6.1(b)(7).
+No subject matter was discussed in the executive session other than the confidential
+records.
+The chairman called the meeting to order at 11:05 AM.
+Minutes
+Major Ball moved to approve the June 22, 2004 minutes. Ms. Womacks seconded and
+the motion was unanimously approved.
+Status Updates
+ACS Monthly Report
+John Nero stated the ACS report would stand as submitted in the board packet.
+JTAC Report
+Jim Flynn stated the JTAC report would stand as submitted in the board packet.
+
+Enhanced Access Review Committee Report
+Greg Jordan stated the Enhanced Access Report would stand as submitted in the board
+packet.
+Sourcing Solution Update
+Mr. Mockert indicated best and final offers have been received from Northrop Grumman,
+and Unisys. He advised a schedule is in place to discuss the Statements of Work as
+well as the Terms and Conditions of the contract. The negotiations are to be completed,
+and a contract ready for authorization, by the August 17 board meeting. One change in
+the schedule has occurred—the Service Area Three award will be made at the
+September 21 board meeting.
+Mr. Mockert extended his appreciation to the ISA staff for their dedication, and their
+willingness to invest time to the process.
+.
+Action Items
+ISA 2004 Budget Reduction (Resolution 04-14)
+Diana Turner briefly spoke to the board concerning this resolution. Ms. Womacks
+moved to approve the motion, Mr. Clifford seconded, and the motion passed
+unanimously.
+Gartner Service Renewal (Resolution 04-15)
+Mr. Mockert described the benefits of the relationship with Gartner, outlining the many
+areas in which ISA is aided by the firm’s knowledge.
+Mr. Ricketts inquired about the length of the agreement, and if there was an increase in
+cost. Mr. Mockert clarified it was a two year contract, and there was no increase in cost.
+He explained the cost of the contract is shared in part by Indianapolis Public Schools,
+and the City of Lafayette.
+There being no further questions, Ms. Enders moved to approve the resolution, Ms.
+Sadler seconded, and it passed unanimously
+Aerotech Service Agreement Amendment (Resolution 04-16)
+Mr. Carufel addressed the board describing the nature of the relationship with Aerotek,
+and the work performed by its contract employees. Mr. Ricketts asked for clarification
+whether a second contract employee was being added. Mr. Carufel explained a second
+employee had been added and that the resolution merely sought funding for the rest of
+2004.
+Ms. Womacks asked if this was a budgeted item and Mr. Mockert confirmed the funding.
+Ms. Enders moved to approve the resolution, Ms. Womacks seconded, and the motion
+was approved unanimously.
+Legal Consulting Services for Negotiation of IT Outsourcing Contract (Resolution 04-17)
+
+Mr. Mockert addressed the board regarding the legal assistance provided by
+Lewis and Kappes in outsourcing process. Mr. Ricketts asked if there were
+budgeted funds to cover this expense, and Mr. Mockert confirmed the funding.
+Mr. Clifford moved for approval, Dr. Inui seconded and the motion carried
+unanimously.
+
+There being no further business, Major Ball moved to adjourn, Mr. Clifford seconded and
+the meeting adjourned at 11:22 A.M.
+Respectfully submitted,
+Bob Geis
+
+Exhibit B
+
+Monthly Highlights and Statistics
+July 2004
+From the Account
+Manager’s Desk
+Continuing the cyclical patterns of
+the last few years, July was a slow
+month. However, of particular note is the completion of
+some critical interfaces to the new CRM system.
+Additionally, ACS began the development of a new
+Administration System for the Public Defender’s office.
+In August the City/County will announce the award of
+the IT Outsourcing contract. At that time ACS will
+begin work with the new vendor and ISA to develop a
+services transition plan. Our goal and commitment will
+be to not only assist in a smooth and transparent
+transition of services, but to maintain the high level of
+services the City/County has come to expect from ACS
+over the last several years.
+
+By ensuring proper legal addressing, staff will be able to
+build histories by address in order to better troubleshoot
+and resolve issues as well as keep neighborhoods better
+informed using CRM, Hansen, Tidemark and Animal
+Control data.
+This project completes a major hurdle in the City’s race
+to provide excellent customer service to its constituents.
+The MAC, DPW, DMD, Animal Control, ISA and ACS
+can be proud of their outstanding teamwork in achieving
+this success.
+
+Constituent Relationship Management
+(CRM) Continues to Grow
+We reported last month that the Mayor's Action Center
+(MAC) implemented their new CRM Siebel application
+on June 21st.
+Plans were in place to implement
+interfaces with Hansen, Tidemark and Chameleon in
+July. Now, we are happy to report all are successfully
+complete!
+The Hansen/Siebel interface was
+implemented on July 7th, the Tidemark/Siebel interface
+was implemented on July 12th, and the Chameleon/Siebel
+interface was implemented on July 13th. This means that
+the MAC, DPW, DMD and Animal Control are sharing
+information automatically through their software
+applications improving efficiency and accuracy for all
+parties involved.
+In 2003 there were 42,418 requests received by DPW
+from the MAC. Over 40,000 (95%) of these contained
+incompatible addresses, which required almost 1,700
+DPW staff hours for manual verification. The need for
+manual address verification on these requests has been
+eliminated via the Hansen/Master Address/CRM
+integration.
+Both DPW and Parks will benefit from improved
+mapping abilities within GIS, saving staff hours in
+producing maps. A pre-Hansen/Master Address/CRM
+map required approximately 12 staff hours to complete
+whereas a post-Hansen/Master Address/CRM map
+requires approximately 1 hour to complete.
+
+Monthly Highlights and Statistics
+July 2004
+
+As reported in last month’s issue, the Mayor’s Action Center
+literally “threw the switch” to begin using the new CRM
+system. Of course, ACS Business Consultants Jill Weirick and
+Kathy Fluke coordinated the acceptance testing.
+
+Public Defender to Get New
+Administration System
+ACS subcontractor Sterling Creek Software has begun
+development on this project. As of the end of July, they
+had completed the general architecture design (including
+the Windows Framework implementation), migration of
+the existing Access data to Oracle and the development
+of the stored procedure framework. They are currently
+working is on the development of report framework and
+security model.
+The development and testing of the Direct Payment
+Voucher form is almost complete. This is the most
+complex form and a majority of the code supporting it
+will be used as a template for the remaining forms.
+
+Page 1
+
+The primary driver for the City/County head end reengineering project was to ensure the continuing
+viability of all connections for the City/County Wide
+Area Network (WAN) in response to growth in the
+number of remote locations served. As a secondary
+benefit, the re-engineering provided solid
+connectivity to the IPD Training Academy which
+serves as an alternate business continuity site for
+City /County employees in the event of a disaster
+that would prevent access or use of the City/County
+Building.
+
+The client has identified additional requirements which
+include: a change in telephone operations file format and
+a new form to process and track encumbrance document
+reference numbers in vouchers.
+In addition, Public Defender Administration will start
+using ADPICS for purchase orders in January 2005. A
+project status and review meeting is scheduled for the
+August 4, 2004. Sterling will demonstrate what has been
+completed at that time as well as discuss upcoming tasks
+and deliverables.
+
+This project minimized circuit and hardware costs,
+as well as administrative overhead by reducing the
+number of devices that must be purchased and
+managed at the core facility. Additionally, it eased
+problem identification, isolation, and resolution by
+minimizing the complexity and number of
+components required to facilitate communication
+between all locations.
+
+Applications Service Request Summary
+The Application Services group continued to focus
+heavily on Maintenance and Support requests during the
+month of May.
+A total of 42 Application Services
+requests were closed during the month, while 57 new
+requests were opened. A table showing the breakdown
+of these tickets follows:
+HEAT Category
+Service Requests
+APPSR
+APPDEVEL
+APPMDD
+APPSEC
+Total
+Development/TBD
+MAINTCS
+MAINTDBA
+MAINTMF
+MAINTWEB
+Total Maintenance
+Total Service
+Requests
+Problem Calls
+PRBCS
+PRBDBA
+PRBMF
+PRBWEB
+Total Problem
+Calls
+Grand Total
+
+Opened
+
+Closed
+
+Balance
+
+1
+0
+0
+11
+
+0
+2
+1
+12
+
+27
+25
+7
+1
+
+12
+
+15
+
+60
+
+10
+10
+6
+2
+28
+
+14
+5
+9
+3
+31
+
+12
+15
+10
+2
+39
+
+40
+
+46
+
+99
+
+12
+2
+3
+3
+
+19
+1
+3
+5
+
+5
+2
+15
+1
+
+20
+
+28
+
+23
+
+60
+
+74
+
+122
+
+Major Technical
+Project Updates
+The following projects were
+addressed during the month and
+their current status is presented.
+Improved Infrastructure and Processes
+•
+
+Head End Re-engineering Project Completed
+
+Monthly Highlights and Statistics
+July 2004
+
+In addition to the above benefits realized by this reengineering, the City/County redundant core, which
+was previously located within the City/County
+Building, was re-located to the alternate facility.
+This was done to provide isolation from
+environmental (flood, fire, power outage, and Acts
+of God) and malicious events (biohazard infection,
+terrorist threats, etc.), thereby, increasing the
+resilience of the network infrastructure.
+Also, as part of the design, steps were taken to
+isolate all non-City/County agencies requiring
+connectivity to the City/County Enterprise by
+consolidating them onto an “external agency” head
+end, which in turn was re-directed to force them
+through the Enterprise firewall.
+•
+
+The Parks Department expanded its facility and
+services at the Municipal Park site located at 1831
+Lafayette Road. The ACS Communications team
+facilitated the acquisition of a new high-speed DS1
+data circuit with Voice Over IP (VOIP) capabilities,
+replacing an older, much slower DS0 frame relay
+circuit, and installed a new router and switch along
+with adding new data and phone wiring for the
+expansion. The upgrade to the infrastructure
+provides faster connection speed to the City/County
+network, greater reliability as well as potential for
+future growth.
+
+Mainframe Support Efforts
+The ACS Mainframe Systems team removed the data
+files associated with the obsolete OS/390 operating
+system from the EMC storage devices. The removal of
+
+Page 2
+
+this software returned six DASD volumes to the online
+storage pool allowing that storage to be used for future
+data storage purposes and for future upgrades to the
+operating system software environment, freeing up
+valuable City/County storage resources.
+The ACS Systems group successfully implemented
+Network Print Facility (NPF) procedures into the
+mainframe environment during the month of July. NPF
+imposes proactive measures in the production of
+mainframe reports on network laser printers. Periodic
+monitoring by NPF identifies printing failures before
+being noticed by customers and allows for the resolution
+of those failures. This monitoring provides improved
+reliability in the production of reports to network
+printers. Significant reduction in NPF error recovery
+processing time translates into improvement in
+processing performance by NPF.
+Security Improvement Efforts
+On July 13, 2004, Microsoft released new critical
+security patches due to known vulnerabilities. The ACS
+server team downloaded these patches and tested them
+via the Novell Application Launcher (NAL) on
+designated City/County desktops. Over the course of a
+week, testing of the updates proved successful and the
+patches were then installed via the NAL to all
+City/County desktops. This effort is part of the
+continuing commitment by ACS to prevent attacks on
+the City/County network.
+Server Improvement Efforts
+The ACS server team successfully completed the
+migration of all City/County Novell print queues from
+server IMCIS9 to server IMCIS1 during the month of
+July. Migration to the new server provides faster
+processing and more memory. This consolidates all
+City/County Building print queues onto one server,
+simplifying administrative efforts and concludes the
+upgrade of all Novell Servers to version 6.0.
+The ACS server team successfully completed a ninemonth project of upgrading all Novell servers from
+version 5.1 operating system to 6.0. NetWare 6 delivers
+higher availability and security with file storage,
+printing, directory services, email and database resources
+that can be accessed as one network across the
+City/County’s Intranet and public Internet. The upgrade
+provides solutions that simplify administration
+responsibilities while at the same time increasing the
+efficiency of the end user. Several new products that are
+included with NetWare 6 help end users synchronize and
+access their files from any location with the
+
+Monthly Highlights and Statistics
+July 2004
+
+implementation of NetStorage, accessed from a web
+browser via the web site http://mydata.indygov.org.
+In response to a request by the Marion County Public
+Defender Agency, the ACS server team successfully
+replaced the Public Defender’s In/Out database with a
+new Gatekeeper application. The new SQL database
+replaces an older Microsoft Access database and
+provides greater performance capabilities for the end
+user.
+As a prerequisite for the upgrade to NetWare 6.5, the
+ACS server team completed an upgrade of the Novell
+eDirectory from version 8.7.0.3 to version 8.7.3.1. This
+upgrade also fixes administration issues that have been
+known to cause problems in the City/County enterprise.
+Novell eDirectory is the central database for
+administrating security for local, wireless, Internet VPN
+(Virtual Private Network) and web sites using
+authenticating
+and
+accessing
+permissions
+for
+City/County programs and files. The upgrade provides
+greater reliability and stability for the eDirectory
+services.
+
+Monthly Statistics from
+the Help Desk
+During the month of July, 4,592
+calls were presented to the Help
+Desk of which 3,530 were handled
+by the daytime Help Desk and 848
+were received by our after-hours operation. 214 calls
+were terminated before the Help Desk had a chance to
+answer the call. The average time to answer a customer’s
+call was 21 seconds, and 91.6% of prime time calls were
+answered in less than 60 seconds
+Of those calls, 626 turned out to be technical problems.
+ACS closed 639 problem calls during the month and
+achieved a first call resolution of 87.9%. This means that
+87.9% of those who called with a problem had their issue
+resolved by the time they hung up the phone.
+ACS processed 469 security requests during the month.
+226 involved changes to security profiles, there were 71
+deletions of various access rights and 172 new access
+rights were granted. ACS also closed 203 service
+requests during the month.
+ACS technicians completed 862 desktop moves, adds,
+changes, or installations during July. This volume is
+52.0% above the contractual maximum for daily activity.
+For the month of July, 188 new desktops computers and
+laptops were setup and delivered to various customers
+
+Page 3
+
+throughout the enterprise. Included in this number was a
+project for The Marion County Sheriffs Department
+which purchased 146 Dell D600 laptops for use by
+officers in the field.
+
+•
+
+ACS Customer of the Month
+Our congratulations go to July’s Customer
+of the Month, Correctional Officer John
+Livingston with the Marion County Sheriffs
+Department. Officer Livingston was having
+problems with his PC giving error messages
+and ACS Technician Bill Studer was able to assist
+Officer Livingston in correcting this problem. ACS
+received the following ratings: (Scale of 1 to 3 with 3
+being the highest)
+
+•
+
+Did you get the assistance you needed? 3
+Was it delivered in a timely manner? 3
+Was the service friendly and helpful? 3
+Officer Livingston has been contacted about being
+named "Customer of the Month" for July and will be
+receiving lunch for two for his valuable feedback.
+
+Server Group
+•
+
+Customer Service Cards Results
+ACS technicians distributed 626 customer satisfaction
+feedback cards during the month of July. 69 or 11% of
+them were actually completed and returned. This is a
+increase in participation from June. The returned results
+continue to indicate a high level of customer satisfaction
+for the assistance received a 2.97 on a scale of 1 to 3.
+Timely service rated a 2.82 and our technicians were
+deemed friendly and helpful judging from our 2.94 score.
+
+The Customer Support area is planning the following
+activities:
+•
+
+ACS has begun the installation of the 200 desktop
+computers for the Indianapolis Police Department
+and have 187 completed to date. ACS expects this
+project to be completed by August 20th.
+
+The Technical Services area identifies the following
+planned activities:
+Network Communications
+•
+
+Conversion of network connections to the new OC3
+will continue in August for the “external” sites that
+have access to the City County network.
+
+Monthly Highlights and Statistics
+July 2004
+
+The ACS server team will begin the upgrade of
+NetWare to version 6.5. The latest version has been
+proven to be a very stable and feature-rich
+environment with improvements from previous
+releases of NetWare. Improvements include Open
+Source Support and NetWare Virtual Office for
+NetStorage. The project begins in August and will
+continue for several months to complete the upgrade
+on the thirty-five Novell servers.
+
+Mid-range group
+•
+
+Looking Ahead to August
+
+The ACS Communications Group has new WAN
+links and/or new remote sites currently underway at
+several sites. The Drug Treatment Court is
+considering a move to a new location and we are
+awaiting their decision of which site they will
+choose. They may be able to use existing fiber
+communications infrastructure if they choose to
+move into the 251 E. Ohio St. building. The Public
+Defender’s offices at the Juvenile Center are to be
+moved pending City-County Council approval to a
+new site and walk-throughs at that site have already
+been conducted. Both of these sites will require new
+data and voice wiring, along with new network
+equipment planning and installation.
+We await
+funding approval on both sites.
+IFD Fire Prevention is moving from their existing
+location to The Julia Carson government center at
+300 E. Fall Creek Blvd. Network communications
+will have SBC install a new frame relay circuit, and
+is coordinating with vendors for data and voice
+cabling installation, and required network hardware.
+
+There are several software upgrades that will take
+place in the existing SAN for the Sun environment.
+Those upgrades include the following:
+o EMC Support Matrix - This software allows for
+better reporting to the EMC customer support
+staff in resolving issues.
+o EMC Control Center to 5.2 - The current
+version, 5.1.1 needs to resolve minor issues.
+o EMC StorageScope to 5.2 - This software needs
+to be upgraded at the time that EMC Control
+Center is upgraded because they rely upon each
+other.
+o EMC PowerPath to 4.2 - This software is
+running on the Oracle servers to allow
+redundant connectivity between the servers
+using 2 HBAs and the EMC Symmetrix storage.
+In addition, the upgrade will add volume
+management not previously available.
+
+Page 4
+
+Mainframe activities
+•
+•
+•
+•
+
+Configure and activate the newly configured OSA
+adapters in the Production LPAR
+Configure and activate the HSC tape silo
+management software into the Production LPAR
+Complete work on the Property and Payroll runbooks
+Perform Disaster Recovery test
+
+From the Tech Bench
+It's easy to change the routing
+order of a message or task you
+are creating. Simply drag the
+names to the desired order. To
+create a routed mail message or
+task, open an item> click
+Actions > click Routing Slip.
+The Quick Info feature gives you additional information
+about GroupWise users. As you type a name in the To
+box or click names in the Address Book, Quick Info
+displays the user's department, fax number, and more.
+You can print your calendar in HTML format. Click File
+> click Print Calendar > click the Options tab > check
+the Print to an HTML File check box > click Print.
+You can use Preview to view different Print Calendar
+formats and options. Click File > Print Calendar > select
+the desired options on the Form, Content, and Options
+tabs > click Preview. When you are satisfied with the
+calendar, click Print.
+You can quickly delete and purge selected items from
+your mailbox without sending them to the Trash. Select
+an item (or multiple items using Ctrl+click or
+Shift+click) > click Edit > click Delete and Empty.
+You can print address labels from the GroupWise
+Address Book. Open the Address Book > select the
+user(s) > click Print > click the Form tab > click Labels.
+You can choose which fields to display, preview the
+labels, and finally print them.
+You can print a list of individual users' personal
+information. Open the Address Book > select the users
+you want to print information for > click Print > click the
+Form tab > click List. You can choose which fields to
+display, preview the list, and finally print it.
+
+Monthly Highlights and Statistics
+July 2004
+
+Page 5
+
+SERVICE LEVEL DASHBOARD VIEW
+July 2004
+Service Level
+
+Description
+Time to Answer Help Desk
+
+Comments
+
+90% Within 60 seconds Prime Time
+
+G
+
+Average under 60 seconds non-Prime
+Time
+
+G
+
+80% resolved on 1st call
+
+G
+
+Severity 1 - 98% within 15 minutes
+
+15 minutes
+
+G
+
+Response
+
+Severity 2 - 98% within 30 minutes
+
+30 minutes
+
+G
+
+Response
+
+Severity 3 - 90% within 2 hours
+
+2 hours
+
+G
+
+Response
+
+Severity 4 - 90% within 4 hours
+
+4 hours
+
+G
+
+Response
+
+Severity 5 - 90% within 8 hours
+
+8 hours
+
+G
+
+Resolution
+
+Severity 1 - 80% within 4 hours
+
+4 hours
+
+G
+
+Resolution
+
+Severity 2 - 80% within 8 hours
+
+8 hours
+
+G
+
+Resolution
+
+Severity 3 - 80% within 16 hours
+
+16 hours - excluding non-business
+hours (after 6 pm and before 6 am)
+
+G
+
+Resolution
+
+Severity 4 - 80% within 20 hours
+
+20 hours - excluding non-business
+hours (after 6 pm and before 6 am)
+
+G
+
+Resolution
+
+Severity 5 - 80% within 40 hours
+
+40 hours - excluding non-business
+hours (after 6 pm and before 6 am)
+
+G
+
+1.1 Time To Answer
+
+1.2 First Call Resolution
+2.1 Level 2 Support
+Response
+
+ACS Monthly Status Report
+July 2004
+
+Targeted Levels
+
+Helpdesk calls resolved on 1st call
+
+Average time to answer was 21 seconds.
+
+Page 6
+
+Service Level
+3.1 Adds, Moves, Changes
+
+Description
+Add, Moves, Changes
+Cascades
+
+Targeted Levels
+92% within 5 business days of receipt
+of completed information from
+customer
+92% within 10 business days of
+receipt of completed information
+from customer
+
+Comments
+G
+G
+
+92% within 10 business days of
+receipt of the equipment
+
+G
+
+4.1 Customer Satisfaction Semi-annual Survey
+
+3.0 rating or higher
+
+G
+
+4.2 Customer Satisfaction Closed Call Follow-up
+
+80% Satisfied problem was solved
+
+G
+
+5.1 Application Development
+Defect Rate - Post
+Implementation
+
+No critical defects, no major defects,
+no more than 3 minor defects per
+application program, no more than 3
+cosmetic defects per application
+program.
+
+G
+
+Cost Estimating
+
+Total hours for a project must not
+exceed estimate by more than 10%
+
+G
+
+Scheduling
+
+Deliverables/milestones for a project
+must be on schedule
+
+G
+
+PC Installations
+
+5.2 Application Development Cost Estimating & Scheduling
+
+6.2 Availability
+
+Online Availability
+
+G
+
+6.2 Response Time
+
+Online Response Time
+
+G
+
+7.0 Timely Processing of Service
+Requests
+
+Enter Service Requests into HEAT
+
+Within 1 business
+
+G
+
+Acknowledgement and personal contact
+with customer after service request is
+received
+
+Within 10 business days
+
+G
+
+Wiring Request/Specifications to
+Vendor
+
+95% within 5 days
+
+G
+
+ACS Monthly Status Report
+July 2004
+
+Page 7
+
+Service Level
+
+8.0 Asset Management
+
+9.0 Security
+
+Description
+
+Targeted Levels
+
+Comments
+
+Wiring Quote to Customer
+
+95% within 3 days
+
+G
+
+Wiring Order to Vendor
+
+95% within 2 days
+
+G
+
+Standard Quote
+
+95% within 3 days
+
+G
+
+Non-Standard Quote
+
+95% within 5 days
+
+Y
+
+Order Placed after approval
+
+95% within 2 days
+
+G
+
+Accuracy of Data
+
+85% on existing data
+
+G
+
+Audit to be performed at customer discretion.
+
+Accuracy of Data
+
+98% on ACS entered data
+
+G
+
+Audit to be performed at customer discretion.
+
+Y
+
+97.2% performance; 13 out of 469 calls were
+missed. Out of those 13, 11 were due to the
+Help Desk not assigning the call to security in
+a timely fashion. To correct this we have
+implemented internal service levels for the
+Help Desk and enhanced the queue
+monitoring process.
+
+Add new security or modify current
+security profile, delete security requests
+
+Varies depending on type of request,
+98% performance on all requests
+
+89.5% performance; 2 of 19 requests were
+delivered beyond the 5 day service level.
+
+LEGEND:
+A green (G) indicator means all performance goals of this service level were met in the month.
+A yellow (Y) indicator means all but one performance goal of this service level were met this month.
+A red (R) indicator means more than one performance goal of this service level was not met or, this service level received a yellow (Y) indicator for 2 or more consecutive months for the same reason.
+
+ACS Monthly Status Report
+July 2004
+
+Page 8
+
+Exhibit C
+
+Marion County Judicial Case
+Management System
+Implementation
+Mark Renner – MC Superior Court
+Melinda Haag – MC Justice Agency
+Donna Lush – MC Clerks and Prosecutor
+
+Agenda
+z
+z
+
+8/16/2004
+
+Marion County Project Progress
+Q&A
+
+2
+
+1
+
+Marion County Project Progress
+Information
+
+Status
+
+CIR – Case Information Report
+Contains all information on the Case,
+13 Sections with 174 Data Elements
+
+All XML Content and Load files were completed
+by Aug 7th, 2004
+
+CAR – Case Activity Report
+Contains CCS information on the
+Case
+
+All XML Content and Load files were completed
+by Aug 7th, 2004
+
+CFR – Case Financial Report
+Contains all Financial information
+[Summary and Detail Level ] on the
+Case
+
+The conversion team is continuing to work with
+Donna Lush and the Clerk’s off to refine and
+develop this report
+NEXT – Design and develop report
+
+8/16/2004
+
+3
+
+Progress – continued
+QV (Business Scenario Testing)
+•
+
+Three (3) members of the DAI technical staff are participating on the
+JTAC/CA UAT test planning team with JTAC and CA. They are
+working to create test cases and test scripts for financial business
+processes.
+
+Reports
+•
+
+Report developers are now connected to the CMS reports data base
+at JTAC. They are working to create a report development
+environment using Visual Studio and Microsoft SQL Report
+Services.
+
+Note: Marion County is responsible for designing and implementing all county and state
+level reports for the CMS. The current Marion County reports are being used as the
+starting point for the design.
+
+8/16/2004
+
+4
+
+2
+
+Progress - Continued
+User Acceptance Testing (UAT)
+• User Acceptance training and testing has been delayed. The CMS
+application is not yet ready. CA and JTAC are working to develop a
+new project timeline. Marion County project leaders are working
+closely with this effort. Our desire is to be able to report to project
+stakeholders a date we think CA and JTAC can meet. Additionally
+JTAC staff has reorganized to better serve the project.
+Project Planning
+z Marion County CMS project leaders continue to have planning
+discussions regarding data conversion and implementation for Criminal
+Cases.
+
+8/16/2004
+
+5
+
+Questions & Answers
+
+Mark Renner
+Melinda Haag
+Donna Lush
+
+8/16/2004
+
+6
+
+3
+
+Exhibit D
+
+ENHANCED ACCESS REVIEW COMMITTEE / IT BOARD
+CIVICNET DIRECTOR'S REPORT
+July 2004
+
+1
+
+CONTENTS
+
+CIVICNET HIGHLIGHTS
+
+3
+
+PROJECT REPORT
+Active Project Status
+
+4
+
+Pending/On Hold Project Status
+
+6
+
+CIVICNET PERFORMANCE
+CivicNet Financial Statement
+
+7
+
+Civicnet Adjusted Gross Revenue History
+
+8
+
+Transaction Summary Information and History
+
+9
+
+Transaction Activity Detail
+
+10
+
+Subscription Information
+
+12
+
+IN CLOSING
+Closing Statement
+
+12
+
+2
+
+CIVICNET HIGHLIGHTS
+Reminder:
+Financial data is now being reported on a one-month delay. This means that
+financials for July 2004 will be detailed in the report distributed in September.
+
+The CivicNet team has made significant progress in development
+and deployment of services for projects with our city/county
+agency partners.
+
+July at a Glance
+
+Transactions ...............................30,609
+Subscribers...................................2,382
+
+The Marion County Court staff and Marion County Clerk’s
+office have submitted the completed court surveys. The
+CivicNet marketing department is evaluating the surveys and
+will present the findings along with recommendations to the
+Enhanced Access Review Committee at the August meeting.
+CivicNet is making great progress working with the Division of
+Compliance to deploy the online Completion Compliance
+service and online Inspection Requests for all permit types.
+During the month of July, plumbing permits was the first permit
+type to deploy the two new enhanced services. Continuing
+throughout the month of July, CivicNet deployed online
+Completion Compliance and Inspection Requests for electric al
+permits and heating and cooling permits. Notices were sent to
+all current CivicNet permitting customers and links are available
+on the CivicNet permitting pages with information on the new
+service enhancements and the associated $1.00 price increase.
+The Bid Package download application will be given to the
+Purchasing Division for testing during the first week of August.
+This service will allow interested parties to download bid
+package specifications that are free of charge, and will replace
+the current system of faxing, copying and mailing the multiple
+requests for bid package information. The Purchasing Division
+has historically absorbed processing costs for bid package
+distribution.
+Development has begun on the Division of Compliance online
+general contractor license renewals. This project is expected to
+save thousands of staff hours each year, eliminate the manual
+data-entry process for license renewals, and get licenses into
+contractors’ hands up to six weeks earlier. Reminder postcards
+will replace the current license renewal forms that are mailed to
+contractors. Posters will be produced for display in the agency
+lobby to notify customers of the new service, and a link to the
+information will be provided from the CivicNet permitting page.
+
+Statutory Funds Collected......$233,961
+
+Project Highlights
+
+Completion Cards: Plumbing, Heating
+& Cooling and Electrical ... Completed
+
+Inspection Requests: Plumbing, Heating
+& Cooling and Electrical .... Completed
+
+Bid Package Download..................Test
+
+General Contractor License Renewal
+........................................ Development
+
+Marketing
+Court Services Survey .........................
+..............................Evaluating Results
+Permitting letter for PLM, HTG and
+ELE customers… ............... Completed
+
+3
+
+ACTIVE PROJECTS 2004
+PROJECT
+Over-the-Counter
+Credit Card System
+
+AGENCY
+Division of
+Compliance
+
+NOTES
+STATUS
+Provide credit card processing. Deployed Deployment
+1/16/04
+
+DATE
+07/30/04
+
+Instant Access
+Accident Reports
+
+IPD/MCSD
+
+Add credit card feature to Accident
+Reports. Deployed 1/26/04
+
+Deployment
+
+07/30/04
+
+Sewer Permit
+migration/new look
+
+Division of
+Compliance
+
+Upgrade application and implement new Deployment
+look. Deployed 02/02/04
+
+07/30/04
+
+Traffic Ticket Upgrade Clerk’s Office Upgrade traffic ticket service to to prevent Deployment
+duplicate payments and identify tickets
+older than 2000. Deployed 2/2/04
+
+07/30/04
+
+LCH Rewrite
+
+IPD
+
+Application being written in Java; with
+updated interface. Deployed 2/10/04
+
+Deployment
+
+07/30/04
+
+Electrical Permit
+migration/new look
+
+Division of
+Compliance
+
+Upgrade application and implement new Deployment
+look. Deployed 2/10/04
+
+07/30/04
+
+Over the Counter
+credit card - fees
+lowered
+
+Internal
+
+Rewrite of application to recognize lower Deployment
+credit procssing fees. Deployed 2/11/04
+
+07/30/04
+
+Right of Way Permit
+migration/new look
+
+Division of
+Compliance
+
+Upgrade application and implement new Deployment
+look. Deployed 03/08/04
+
+07/30/04
+
+Master Permit
+migration/new look
+
+Division of
+Compliance
+
+Upgrade application and implement new Deployment
+look. Deployed 04/26/04
+
+07/30/04
+
+Free Marriage Records Clerk’s Office Remove subscription requirement for
+searches. Deployed 5/17/04
+
+Deployment
+
+07/30/04
+
+Incident Report
+Upgrade
+
+Deployment
+
+07/30/04
+
+Provide credit card processing for online Deployment
+class reservation. Deployed 5/31/04
+
+07/30/04
+
+Internal
+
+Check Out Application Wayne
+Township
+
+Upgrade IPD & MCSD incident reports
+for Web services. Deployed 5/19/04
+
+4
+
+PROJECT
+AGENCY
+Master Permit Upgrade Division of
+Compliance
+Completion Cards
+Division of
+Online & Inspection Compliance
+Request - Plumbing
+
+NOTES
+Upgrade Master Permits to allow for pdf
+and tif file uploads. Deployed 6/28/04
+File completion card online with
+notification of acceptance w/update in
+Tidemark. Provide online request for
+permit inspection Deployed 7/6/04.
+File completion card online with
+notification of acceptance w/update in
+Tidemark. Provide online request for
+permit inspection Deployed 7/20/04.
+File completion card online with
+notification of acceptance w/update in
+Tidemark. Provide online request for
+permit inspection Deployed 7/23/04.
+File completion card online with
+notification of acceptance w/update in
+Tidemark. Provide online request for
+permit inspection.
+File completion card online with
+notification of acceptance w/update in
+Tidemark. Provide online request for
+permit inspection.
+File completion card online wit h
+notification of acceptance w/update in
+Tidemark. Provide online request for
+permit inspection.
+File completion card online with
+notification of acceptance w/update in
+Tidemark. Provide online request for
+permit inspection.
+Provide online information for bids where
+bid package information is free.
+
+STATUS
+Deployment
+
+DATE
+07/30/04
+
+Deployment
+
+07/30/04
+
+Deployment
+
+07/30/04
+
+Deployment
+
+07/30/04
+
+Testing
+
+07/30/04
+
+Redesign navigation of homepage for
+easier use
+
+Testing
+
+07/30/04
+
+Completion Cards
+Online & Inspection
+Request - Electrical
+
+Division of
+Compliance
+
+Completion Cards
+Online & Inspection
+Request – Heating &
+Cooling
+Completion Cards
+Online & Inspection
+Request - Structural
+
+Division of
+Compliance
+
+Completion Cards
+Online & Inspection
+Request - Master
+
+Division of
+Compliance
+
+Completion Cards
+Online & Inspection
+Request - Sewer
+
+Division of
+Compliance
+
+Completion Cards
+Online & Inspection
+Request – Right-ofWay
+Bid Package
+Download
+
+Division of
+Compliance
+
+CivicNet homepage
+new look
+
+Internal
+
+JJISS Expansion
+
+Juvenile JusticeExpand JJISS to remaining 6 township
+schools, Speedway and Beech Grove
+
+Development 07/30/04
+
+JJISS Expansion
+
+Juvenile JusticeExpand JJISS to remaining 6 township
+schools, Speedway and Beech Grove
+
+Development 07/30/04
+
+License Renewal
+
+Division of
+Compliance
+
+Online license renewal for General
+Contractors Licenses
+
+Requirements 07/30/04
+
+Online property tax payments.
+
+Requirements 07/30/04
+
+Division of
+Compliance
+
+Controller’s
+Office
+
+Property Tax PaymentsTreasurer’s
+Office
+
+Development 07/30/04
+
+Development 07/30/04
+
+Development 07/30/04
+
+Development 07/30/04
+
+5
+
+PENDING/ON - HOLD PROJECTS
+PROJECT
+Homeowner’s Permits
+Online
+Oversize/Overweight
+Permits
+
+AGENCY
+Division of
+Compliance
+Division of
+Compliane
+
+NOTES
+Allow homeowners to obtain permits
+online.
+Provide online request and approval for
+permit
+
+STATUS DATE
+TBD
+07/30/04
+TBD
+
+07/30/04
+
+Special Event Permit
+
+Controller’s
+Office
+
+Online permit request and approval.
+
+TBD
+
+07/30/04
+
+Recorded Document Look
+up/Retrieval
+
+Recorder’s
+Office
+
+Service Re. Approved 3/13/03. Agency
+agreements pending
+
+On Hold 07/30/04
+
+Permit Expiration
+Notification
+Downloadable 911 Call
+Recordings
+
+Division of
+Compliance
+MECA
+
+TBD
+
+Online Child Support
+Payments
+
+Clerk’s Office
+
+Provide notification to contractors on
+expiration of open permits
+Initial requirements gathered. Internal
+depencies to determine project going
+forward
+Provide 24 hour service for online
+payments via credit card
+
+07/30/04
+
+On Hold 07/30/04
+On Hold 07/30/04
+
+MCSD Real Estate List Sold MCSD
+List of properties sold from each month On Hold 07/30/04
+properties
+foreclosure list
+Tax Sale
+Auditor’s Office Provide tax sale property information and TBD
+07/30/04
+procedures online
+
+6
+
+CIVICNET FINANCIALS – JUNE 2004*
+
+June 2003
+
+June 2004
+
+YTD 2004
+
+Revenues
+Cost of Revenues
+Adjusted Gross Revenue
+
+$75,551
+$12,797
+$62,754
+
+$102,731
+$15,309
+$87,422
+
+$543,952
+$76,064
+$467,888
+
+Operating Expenses
+Net Income/Loss – Before Taxes
+
+$30,399
+$32,355
+
+$30,671
+$56,751
+
+$182,667
+$285,221
+
+Income Tax (Fed.,State,Deferred)
+
+$12,054
+
+$33,419
+
+$110,446
+
+Net Income/Loss
+
+$20,301
+
+$23,332
+
+$174,775
+
+$1,255
+
+$1,748
+
+$9,358
+
+Enhanced Access Revenue Share
+
+PLEASE NOTE:
+* Financial data is not available as early in the month as other stats, and is now reported on a one-month delay.
+June 2004 financials are included in this report; financials for July 2004 will be reported in September.
+
+7
+
+CIVICNET ADJUSTED GR OSS REVENUE HISTORY
+Jan
+
+Feb
+
+Mar
+
+Apr
+
+May
+
+Jun
+
+2004
+
+61779
+
+60322
+
+85436
+
+87365
+
+85564
+
+87422
+
+prior month %
+change
+
+10.2%
+
+-2.4%
+
+41.6%
+
+2.3%
+
+-2.1%
+
+2.2%
+
+prior year %
+change (2003)
+
+Jul
+
+Aug
+
+Sep
+
+Oct
+
+Nov
+
+Dec
+
+40%
+
+28.0%
+
+60.2%
+
+62.7%
+
+54.2%
+
+39.3%
+
+2003
+
+44161
+
+47125
+
+53343
+
+53698
+
+55494
+
+62754
+
+65480
+
+60696
+
+60846
+
+66538
+
+54416
+
+56071
+
+prior year %
+change (2001)
+2002
+
+17%
+37810
+
+27%
+37099
+
+29%
+41497
+
+12%
+48140
+
+7%
+52101
+
+29%
+48679
+
+24%
+52719
+
+5%
+57629
+
+15%
+52825
+
+8%
+61769
+
+7%
+50747
+
+37%
+40915
+
+CivicNet Adjusted Gross Revenue
+(Gross Revenue Less Cost of Revenue)
+100000
+80000
+2004
+
+60000
+
+2003
+40000
+
+2002
+
+20000
+0
+Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
+
+8
+
+2004 TRANSACTIONS
+Jan
+
+Feb
+
+Mar
+
+Apr
+
+May
+
+Jun
+
+Jul
+
+21486
+
+21660
+
+31264
+
+32215
+
+31009
+
+31785
+
+30609
+
+prior month %
+change
+
+3.3%
+
+0.8%
+
+44.3%
+
+3.0%
+
+-3.7%
+
+2.5%
+
+-3.7%
+
+prior year %
+change (2003)
+
+34.4%
+
+46.2%
+
+62.0%
+
+65.5%
+
+57.0%
+
+38.5%
+
+31.6%
+
+2003
+
+15987
+
+14816
+
+19295
+
+19467
+
+19756
+
+22950
+
+prior year %
+change (2001)
+2002
+
+9%
+14718
+
+5%
+14165
+
+29%
+15011
+
+11%
+17597
+
+11%
+17819
+
+31%
+17474
+
+2004
+
+Aug
+
+Sep
+
+Oct
+
+Nov
+
+Dec
+
+23251
+
+21562
+
+22554
+
+24294
+
+21052
+
+20803
+
+23%
+18890
+
+6%
+20407
+
+20%
+18801
+
+9%
+22387
+
+15%
+18247
+
+38%
+15056
+
+CivicNet Transactions
+35000
+30000
+25000
+2004
+
+20000
+
+2003
+15000
+
+2002
+
+10000
+5000
+0
+Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
+
+CIVICNET TRANSACTION HISTORY
+1997
+January
+February
+March
+April
+May
+June
+July
+August
+September
+October
+November
+December
+4,813
+Totals
+4,813
+Growth from prev. year
+
+1998
+3,880
+3,608
+3,154
+5,502
+5,503
+6,125
+7,529
+6,875
+6,412
+7,539
+7,437
+6,375
+69,939
+1353.1%
+
+1999
+6,239
+7,507
+9,523
+10,009
+9,918
+10,482
+11,277
+12,264
+13,676
+13,628
+15,109
+12,656
+132,288
+89.1%
+
+2000
+12,613
+12,819
+14,964
+13,543
+15,481
+15,803
+17,306
+19,269
+17,116
+17,437
+18,021
+13,776
+188,148
+42.2%
+
+2001
+17,543
+15,835
+18,233
+17,089
+18,057
+15,191
+15,544
+19,114
+14,513
+18,627
+18,974
+12,248
+200,968
+6.8%
+
+2002
+14,718
+14,165
+15,038
+17,597
+17,819
+17,474
+18,890
+20,407
+18,801
+22,387
+18,247
+15,056
+210,599
+4.8%
+
+2003
+15,987
+14,816
+19,295
+19,467
+19,756
+22,950
+23,251
+21,585
+22,554
+24,294
+21,052
+20,803
+245,810
+16.7%
+
+2004
+21,486
+21,660
+31,264
+32,215
+31,009
+31,785
+30,609
+
+200,028
+
+9
+
+2004 TRANSACTIONS ~ ACTIVITY DETAIL
+June-04
+
+2004 ACTIVITY
+
+Fee
+
+Trans
+
+Name Search Sub
+
+$2.00
+
+10717
+
+Name Search CC
+
+$3.06
+
+Case Summary Sub
+
+$5.00
+
+Case Summary CC
+
+$6.12
+
+Party Booking Sub
+Party Booking CC
+
+Ci/Co Rev
+
+July-04
+Ci/Co Rev
+
+Year -To-Date
+
+CN Rev
+
+Trans
+
+CN Rev
+
+$0.00
+
+$21,434.00
+
+10464
+
+$0.00
+
+$20,928.00
+
+440
+
+$0.00
+
+$1,346.40
+
+364
+
+$0.00
+
+1876
+
+$0.00
+
+$9,380.00
+
+1809
+
+$0.00
+
+172
+
+$0.00
+
+$1,052.64
+
+123
+
+$5.00
+
+221
+
+$0.00
+
+$1,105.00
+
+$6.12
+
+21
+
+$0.00
+
+$128.52
+
+13447
+
+$0.00
+
+Trans
+
+Ci/Co Rev
+
+CN Rev
+
+Criminal Court Services
+
+Total
+
+72492
+
+$0.00
+
+$144,984.00
+
+$1,113.84
+
+1944
+
+$0.00
+
+$5,948.64
+
+$9,045.00
+
+13591
+
+$0.00
+
+$67,955.00
+
+$0.00
+
+$752.76
+
+1006
+
+$0.00
+
+$6,156.72
+
+292
+
+$0.00
+
+$1,460.00
+
+1342
+
+$0.00
+
+$6,710.00
+
+21
+
+$0.00
+
+$128.52
+
+138
+
+$0.00
+
+$844.56
+
+$34,446.56
+
+13073
+
+$0.00
+
+$33,428.12
+
+90513
+
+$0.00
+
+$232,598.92
+
+Civil Court Services
+Case Summary Sub
+
+$5.00
+
+2631
+
+$0.00
+
+$13,155.00
+
+2339
+
+$0.00
+
+$11,695.00
+
+14922
+
+$0.00
+
+$74,610.00
+
+Case Summary CC
+
+$6.12
+
+228
+
+$0.00
+
+$1,395.36
+
+246
+
+$0.00
+
+$1,505.52
+
+1667
+
+$0.00
+
+$10,202.04
+
+Judgments Sub
+
+$3.00
+
+564
+
+$0.00
+
+$1,692.00
+
+470
+
+$0.00
+
+$1,410.00
+
+3091
+
+$0.00
+
+$9,273.00
+
+Judgments CC
+
+$4.08
+
+33
+
+$0.00
+
+$134.64
+
+30
+
+$0.00
+
+$122.40
+
+240
+
+$0.00
+
+$979.20
+
+Marriage-post
+
+$2.00
+
+0
+
+$0.00
+
+$0.00
+
+0
+
+$0.00
+
+$0.00
+
+115
+
+$0.00
+
+$230.00
+
+Marriage-pre
+
+$2.00
+
+0
+
+$0.00
+
+$0.00
+
+0
+
+$0.00
+
+$0.00
+
+85
+
+$0.00
+
+$170.00
+
+Summons
+
+$1.00
+
+639
+
+$0.00
+
+$639.00
+
+1307
+
+$0.00
+
+$1,307.00
+
+4271
+
+$0.00
+
+$4,271.00
+
+Tax Warrant
+
+$1.00
+
+1364
+
+$0.00
+
+$1,364.00
+
+1520
+
+$0.00
+
+$1,520.00
+
+8313
+
+$0.00
+
+$8,313.00
+
+Tax Satisfaction
+
+$1.00
+
+597
+
+$0.00
+
+$597.00
+
+702
+
+$0.00
+
+$702.00
+
+3836
+
+$0.00
+
+$3,836.00
+
+Traffic Tickets
+
+varies
+
+375
+
+$50,631.80
+
+$1,395.10
+
+314
+
+$37,640.50
+
+$1,073.09
+
+2610
+
+$313,127.80
+
+$8,941.70
+
+Clerk's Office OTC System CC
+
+varies
+
+244
+
+$38,731.40
+
+$1,021.47
+
+240
+
+$39,218.40
+
+$1,028.15
+
+1632
+
+$263,192.30
+
+$7,399.01
+
+6675
+
+$89,363.20
+
+$21,393.57
+
+7168
+
+$76,858.90
+
+$20,363.16
+
+40510
+
+$576,320.10
+
+$127,079.97
+
+Total
+Permit Services
+ROW
+
+$3 & $1
+
+598
+
+$21,761.00
+
+$855.00
+
+562
+
+$21,656.20
+
+$783.00
+
+3663
+
+$202,450.20
+
+$6,010.00
+
+Electrical
+
+$3.00
+
+232
+
+$14,762.68
+
+$696.00
+
+184
+
+$11,158.59
+
+$642.00
+
+1443
+
+$87,701.76
+
+$4,419.00
+
+Heating & Cooling
+
+$3.00
+
+394
+
+$10,588.68
+
+$1,182.00
+
+335
+
+$9,647.60
+
+$1,142.00
+
+2164
+
+$61,727.95
+
+$6,629.00
+
+Plumbing
+
+$3.00
+
+201
+
+$6,832.87
+
+$603.00
+
+170
+
+$7,295.18
+
+$644.00
+
+1092
+
+$37,452.27
+
+$3,410.00
+
+Sewer
+
+$3.00
+
+163
+
+$11,775.00
+
+$489.00
+
+123
+
+$8,925.00
+
+$369.00
+
+1107
+
+$78,900.00
+
+$3,321.00
+
+Electrical self-c tags
+
+$3.00
+
+7
+
+$1,284.00
+
+$21.00
+
+25
+
+$5,195.00
+
+$75.00
+
+71
+
+$15,371.00
+
+$213.00
+
+Structural
+
+$3.00
+
+11
+
+$1,880.52
+
+$33.00
+
+11
+
+$1,397.83
+
+$33.00
+
+55
+
+$43.81
+
+$165.00
+
+$10.00
+
+54
+
+$20,075.21
+
+$540.00
+
+34
+
+$12,509.73
+
+$340.00
+
+276
+
+$113,735.08
+
+$3,440.00
+
+Master
+Div. of Compliance OTC System CC
+Total
+
+varies
+
+196
+
+$35,537.62
+
+$910.69
+
+202
+
+$37,704.79
+
+$940.43
+
+861
+
+$142,807.14
+
+$3,707.66
+
+1856
+
+$124,497.58
+
+$5,329.69
+
+1646
+
+$115,489.92
+
+$4,968.43
+
+10344
+
+$675,794.87
+
+$29,458.12
+
+Continued on next page…
+
+10
+
+Property Information
+Property Records
+
+$3.00
+
+5081
+
+$0.00
+
+$15,243.00
+
+4421
+
+$0.00
+
+$13,263.00
+
+29858
+
+$0.00
+
+$89,574.00
+
+Prop Records CC
+
+$4.08
+
+391
+
+$0.00
+
+$1,595.28
+
+365
+
+$0.00
+
+$1,489.20
+
+2324
+
+$0.00
+
+$9,481.92
+
+Prop Owner History
+
+$1.00
+
+737
+
+$0.00
+
+$737.00
+
+794
+
+$0.00
+
+$794.00
+
+4832
+
+$0.00
+
+$4,832.00
+
+Prop Owner Hx CC
+
+$2.04
+
+119
+
+$0.00
+
+$242.76
+
+109
+
+$0.00
+
+$222.36
+
+729
+
+$0.00
+
+$1,487.16
+
+Parcel History
+
+$1.00
+
+174
+
+$0.00
+
+$174.00
+
+146
+
+$0.00
+
+$146.00
+
+821
+
+$0.00
+
+$821.00
+
+Parcel Hx CC
+MCSD Sale - Big
+MCSD Sale - Small
+MCSD Sale - Big CC
+MCSD Sale - Small CC
+
+$2.04
+
+33
+
+$0.00
+
+$67.32
+
+28
+
+$0.00
+
+$57.12
+
+156
+
+$0.00
+
+$318.24
+
+$13.00
+
+10
+
+$100.00
+
+$30.00
+
+12
+
+$120.00
+
+$36.00
+
+81
+
+$810.00
+
+$243.00
+
+$3.00
+
+9
+
+$18.00
+
+$9.00
+
+7
+
+$14.00
+
+$7.00
+
+71
+
+$142.00
+
+$71.00
+
+$14.28
+
+64
+
+$640.00
+
+$261.12
+
+73
+
+$730.00
+
+$297.84
+
+427
+
+$4,270.00
+
+$1,742.16
+
+$4.08
+Total
+
+23
+
+$46.00
+
+$47.84
+
+11
+
+$22.00
+
+$22.88
+
+126
+
+$252.00
+
+$262.08
+
+6641
+
+$804.00
+
+$18,407.32
+
+5966
+
+$886.00
+
+$16,335.40
+
+39425
+
+$5,474.00
+
+$108,832.56
+$5,290.00
+
+Police/Sheriff Reports
+LCH Name
+
+$15.00
+
+323
+
+$3,230.00
+
+$1,615.00
+
+116
+
+$1,160.00
+
+$580.00
+
+1058
+
+$10,580.00
+
+LCH Report
+
+$15.00
+
+0
+
+$0.00
+
+$0.00
+
+0
+
+$0.00
+
+$0.00
+
+29
+
+$290.00
+
+$145.00
+
+Incident-IPD
+
+$6.00
+
+327
+
+$1,635.00
+
+$327.00
+
+291
+
+$1,455.00
+
+$291.00
+
+2497
+
+$12,485.00
+
+$2,497.00
+
+Incident-IPD CC
+
+$7.14
+
+67
+
+$335.00
+
+$143.38
+
+64
+
+$320.00
+
+$136.96
+
+319
+
+$0.00
+
+$682.66
+
+Incident-MCSD
+
+$6.00
+
+285
+
+$1,425.00
+
+$285.00
+
+202
+
+$1,010.00
+
+$202.00
+
+2045
+
+$10,225.00
+
+$2,045.00
+
+Incident-MCSD CC
+
+$7.14
+
+62
+
+$310.00
+
+$132.68
+
+52
+
+$260.00
+
+$111.28
+
+298
+
+$0.00
+
+$637.72
+
+IPD OTC System CC
+
+varies
+
+194
+
+$16,737.00
+
+$531.60
+
+218
+
+$17,923.00
+
+$580.82
+
+1245
+
+$103,256.00
+
+$3,607.14
+
+Accident - Sub
+
+$6.00
+
+1454
+
+$7,270.00
+
+$1,454.00
+
+1349
+
+$6,745.00
+
+$1,349.00
+
+8779
+
+$43,895.00
+
+$8,779.00
+
+Accident - IPD CC
+
+$7.14
+
+45
+
+$225.00
+
+$96.30
+
+45
+
+$225.00
+
+$96.30
+
+195
+
+$975.00
+
+$403.62
+
+Accident -MCSD CC
+
+$7.14
+
+25
+
+$125.00
+
+$53.50
+
+25
+
+$125.00
+
+$53.50
+
+106
+
+$530.00
+
+$210.88
+
+2782
+
+$31,292.00
+
+$4,638.46
+
+2362
+
+$29,223.00
+
+$3,400.86
+
+16545
+
+$185,191.00
+
+$24,272.02
+
+263
+
+$5,365.00
+
+$375.56
+
+283
+
+$4,643.19
+
+$389.31
+
+1934
+
+$36,105.69
+
+$2,702.58
+
+263
+
+$5,365.00
+
+$375.56
+
+283
+
+$4,643.19
+
+$389.31
+
+1934
+
+$36,105.69
+
+$2,702.58
+
+varies
+
+1
+
+$23.51
+
+$1.49
+
+1
+
+$8.80
+
+$1.20
+
+4
+
+$276.41
+
+$8.59
+
+varies
+
+117
+
+$5,583.00
+
+$231.00
+
+107
+
+$5,630.00
+
+$221.74
+
+729
+
+$36,089.00
+
+$1,544.16
+
+118
+
+$5,606.51
+
+$232.49
+
+108
+
+$5,638.80
+
+$222.94
+
+733
+
+$36,365.41
+
+$1,552.75
+
+Total
+Office Corp Counsel
+Parking Tickets
+
+varies
+Total
+
+Animal Care & Control
+ACCD Online Donations
+ACCD OTC System CC
+Total
+Miscellaneous Services
+Wayne Twp EMS Training Registration
+
+varies
+
+2
+
+$575.00
+
+$13.27
+
+1
+
+$145.00
+
+0
+
+3
+
+$720.00
+
+$13.27
+
+Wayne Twp OTC System CC
+
+varies
+
+1
+
+$704.87
+
+$15.12
+
+2
+
+$1,076.42
+
+$23.57
+
+21
+
+$6,601.07
+
+$168.91
+
+$0.00
+
+$5,537.00
+
+$0.00
+
+$0.00
+
+$0.00
+
+$32,703.00
+
+31785
+
+$258,208.16
+
+$90,389.04
+
+30609
+
+$233,961.23
+
+$79,131.79
+
+200028
+
+$1,522,572.14
+
+$559,382.10
+
+Subscription Revenue
+New/Renewal
+
+varies
+Grand Totals
+
+Note: Shaded Ci/Co Revenue line items are not accounted as gross revenue by Civicnet
+
+11
+
+2004 SUBSCRIPTION TOTALS/HISTORY
+Jan
+
+Feb
+
+Mar
+
+Apr
+
+May
+
+Jun
+
+Jul
+
+2004
+
+2191
+
+2232
+
+2294
+
+2335
+
+2344
+
+2342
+
+2382
+
+prior month %
+change
+
+2.3%
+
+1.9%
+
+2.8%
+
+1.8%
+
+0.4%
+
+-0.1%
+
+1.7%
+
+14.3%
+
+16.6%
+
+18.1%
+
+18.8%
+
+18.0%
+
+15.4%
+
+16.4%
+
+1917
+
+1915
+
+1943
+
+1965
+
+1987
+
+2029
+
+19%
+1610
+
+5.4%
+1642
+
+5.4%
+1679
+
+2.7%
+1698
+
+4.1%
+1720
+
+3.7%
+1764
+
+prior year %
+change (2003)
+2003
+prior year %
+change (2001)
+2002
+
+Aug
+
+Sep
+
+Oct
+
+Nov
+
+Dec
+
+2046
+
+2081
+
+2044
+
+2097
+
+2114
+
+2141
+
+2.8%
+1754
+
+3.6%
+1770
+
+2.3%
+1798
+
+2.5%
+1800
+
+3.6%
+1802
+
+1.8%
+1869
+
+CivicNet Subscriptions
+3000
+2500
+2000
+
+2004
+
+1500
+
+2003
+2002
+
+1000
+500
+0
+Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
+
+IN CLOSING
+Please don’t hesitate to contact me regarding the Director’s Report. Comments and questions are always
+welcome!
+Respectfully submitted,
+Laura Lindenbusch
+Director
+233-2381
+laura@civicnet.net
+
+12
+
+RESOLUTION #04-20
+INFORMATION TECHNOLOGY BOARD
+Resolution Awarding Information Technology Outsourcing Services Contract in Service
+Areas 1 and 2 to Northrop Grumman Information Services, Inc.
+WHEREAS, on March 16, 2004, ISA published a Request for Proposals (“RFP”) for
+Information Technology Outsourcing Services and established an RFP evaluation team
+consisting of a broad array of City and County employees:
+WHEREAS, ISA received a total of six (6) proposals in response to the RFP for Service Areas 1
+and 2;
+WHEREAS, the evaluation team reviewed each of the proposals in accordance with the criteria
+set forth in the RFP which consisted of: proposer viability and experience, project team
+organization staffing, technical and functional approach to the service areas, implementation
+approach and pricing;
+WHEREAS, following the evaluation team’s review of proposals, four (4) proposers were
+invited to make presentations;
+WHEREAS, the IT Board adopted a resolution on June 22, 2004, directing ISA to negotiate best
+and final offers with Unisys, Inc. and Northrop Grumman Information Technology, Inc;
+WHEREAS, ISA conducted concurrent negotiations with Unisys and Northrop Grumman from
+July 1, 2004, through August 10, 2004 resulting in a complete signed contract with both firms;
+WHEREAS, on August 11, 2004, the Information Services Agency, with the consensus of the
+RFP evaluation team, provided the IT Board with a recommendation in favor of Northrop
+Grumman; and
+WHEREAS, on August 18, 2004, the IT Board held a public hearing prior to the award of the
+contract
+NOW THEREFORE BE IT RESOLVED, the IT Board makes the following findings and
+authorizes ISA to take the following action:
+1)
+
+The IT Board finds that both Unisys and Northrop Grumman negotiated in good faith.
+
+2)
+
+The IT Board finds that the Information Technology Outsourcing Services contract for
+Service Areas 1 and 2 should be awarded to Northrop Grumman.
+
+3)
+
+The IT Board authorizes and directs Dave Mockert, Interim Chief Information Officer, to
+execute the Information Technology Outsourcing Services Contract with Northrop
+Grumman.
+
+37337-1
+
+_______________________________
+Paul Ricketts, Chairman
+Information Technology Board
+_______________________________
+Martha Womacks, Secretary
+Information Technology Board
+August 18, 2004
+
+37337-1
+
+Information Services Agency
+2005 Budget Presentation
+
+Information Technology Board
+August 18, 2004
+
+Dave Mockert
+Chief Information Officer
+(Interim)
+Nadeen Biddinger
+Deputy Director
+Diana Turner
+Deputy Director/CFO
+1
+
+ISA - The Agency
+
+ The Information Services Agency supports
+
+technology deployment across city, county,
+and township customers
+ Responsibility includes delivery of computer
+and telephone services
+ Agency is administered through the
+Information Technology Board
+ Located on 6 floors of the City/County
+Building
+
+2
+
+2005 Budget Impacts
+
+ ISA developed the 2005 Budget which reflects
+
+a $4.2 million dollar decrease
+
+ ISA’s goal for 2005 was to reduce operating
+
+expenses where possible and attempt to cover
+any increases from savings
+
+ The bulk of any net increase is driven by
+
+customer requirements
+
+3
+
+2005 Budget Summary
+
+ Overall decrease of 13.2% from 2004
+ No Supplemental Agency Requests
+ In 2005, ISA will implement a new contract
+
+with a sourcing provider
+
+4
+
+2005 Budget Discussion
+ Character 1 impacts
+ 27th pay removed from ISA’s budget
+ Intern funding removed in 2005
+ $600K increase for additional staff
+ Fringes increased for additional
+employees
+ Character 2 impacts
+ Remained at 2004 levels
+5
+
+2005 Budget Discussion
+ Character 3 impacts
+ Other Services and Charges ¾Reduced IMAGIS budget by $151K
+¾Reduced Enhanced Access budget by $15K
+¾Reduced Remodeling by $20K
+¾Decreased Building Rent & Security
+charges by $46K
+
+6
+
+2005 Budget Discussion
+ Character 3 – Sourcing impacts
+ Other Services and Charges –
+¾Reduction in GIS Consulting by $74K
+¾Reduction in Sourcing contract $3 million
+¾Reduction in Capital $1.5 million
+
+ Character 4 impacts
+ Remained at 2004 levels
+
+7
+
+Summary
+ For 2005, ISA has been able to reduce its
+
+budget by restructuring the outsourcing
+contract, consolidating some internal
+functions, and reviewing reductions in our
+capital expenditures
+ We anticipate these changes to allow us to
+continue operations during these
+challenging fiscal times but understand
+that in future years, significant capital
+expenditures may be required
+8
+
+Information Services Agency
+2005 Budget Presentation
+
+Questions
+
+9
+
+RESOLUTION #04-18
+INFORMATION TECHNOLOGY BOARD
+Board Resolution to Submit the 2005 Information Services Agency Budget
+WHEREAS, the Information Technology Board has reviewed the 2005 Information
+Services Agency budget request, and
+WHEREAS, the Information Technology Board agrees in principle to the budget
+request, and
+NOW THEREFORE BE IT RESOLVED, that the Information Technology Board
+recommends submission to the City/County Council of the 2005 Information Services
+Agency budget request of $27,942,590 and that the Board authorizes the Interim Chief
+Information Officer to make necessary technical changes to the budget during the
+appropriation hearings.
+
+______________________________
+Paul Ricketts, Chairman
+Information Technology Board
+
+________________________________
+Martha Womacks, Secretary
+Information Technology Board
+August 18, 2004
+
+RESOLUTION #04-19
+INFORMATION TECHNOLOGY BOARD
+Board Resolution to Approve reducing the Information Services Agency’s 2004
+Budget
+WHEREAS, the Information Services Agency has been in discussions with the City
+Controller and County Auditor offices concerning budget reductions during these fiscally
+challenging times, and
+WHEREAS, it has been agreed upon to reduce the Information Services Agency’s 2004
+budget by an additional Two Million Six Hundred Thousand Dollars ($2,600,000) to be
+equally divided between the City and County, and
+NOW THEREFORE BE IT RESOLVED, the Information Technology Board authorizes
+the Information Services Agency to reduce their 2004 budget by Two Million Six
+Hundred Thousand Dollars to the City Controller and County Auditor.
+
+_______________________________
+Paul Ricketts, Chairman
+Information Technology Board
+
+________________________________
+Martha Womacks, Secretary
+Information Technology Board
+August 18, 2004
+
+IT Board
+
+Contracts approved for the IT Board by the Chief Information Officer
+
+Vendor
+
+Annual $
+Amount
+
+Total $
+Amount
+
+Funding Department or
+chargeback
+
+RFP Consulting
+
+Premis
+
+25,000.00
+
+25,000.00
+
+ISA
+
+GIS Data Entry Services
+
+Aerotek
+
+46,800.00
+
+46,800.00
+
+ISA
+
+SBC
+
+79,824.00
+
+79,824.00
+
+ISA
+
+Date Approved
+
+Dept.
+
+Description
+
+1/21/2004
+
+ISA
+
+2/2/2004
+
+ISA
+
+2/20/2004
+
+ISA
+
+DS3 to Juvenile
+
+2/20/2004
+
+ISA
+
+Frame Relay for IPD
+
+SBC
+
+20,160.00
+
+20,160.00
+
+ISA
+
+2/20/2004
+
+ISA
+
+Head End - 200 E. Washington St.
+
+SBC
+
+30,008.64
+
+30,008.64
+
+ISA
+
+2/20/2004
+
+ISA
+
+Head End - 200 E. Washington St.
+
+SBC
+
+30,008.64
+
+30,008.64
+
+ISA
+
+2/20/2004
+
+ISA
+
+Sonet Ring to Post Rd.
+
+SBC
+
+30,008.64
+
+30,008.64
+
+ISA
+
+2/27/2004
+
+ISA
+
+DS1 for MCSD 700 N. High School Rd.
+
+SBC
+
+20,160.00
+
+20,160.00
+
+ISA
+
+3/25/2004
+
+ISA
+
+1st Admendment Master Professional services agreement
+
+Woolpert LLC
+
+24,986.00
+
+3/11/2004
+
+ISA
+
+DS1 for MCSD
+
+20,160.00
+
+20,160.00
+
+ISA
+
+4/26/2004
+
+ISA
+
+Professional Services Agreement
+
+SBC
+Premis Consulting
+Group
+
+43,240.00
+
+ISA
+
+5/5/2004
+
+ISA
+
+RFP Financial Evaluation
+
+Fruehman Group
+
+10,000.00
+
+10,000.00
+
+ISA
+
+5/14/2004
+
+ISA
+
+Washington Township Claim
+
+ACS
+
+935.88
+
+1,375.83
+
+5/18/2004
+
+ISA
+
+DS1 for IFD
+
+SBC
+
+20,160.00
+
+20,160.00
+
+ISA
+
+5/20/2004
+
+ISA
+
+DS1 for IPD Mounted Patrol
+
+SBC
+
+20,160.00
+
+20,160.00
+
+ISA
+
+5/18/2004
+
+ISA
+
+PRI Renewal Rates
+
+TImeWarner
+
+16,080.00
+
+48,240.00
+
+ISA
+
+5/25/2004
+
+ISA
+
+Municipal Gardens 1831 Lafayette Road
+
+SBC
+
+20,160.00
+
+20,160.00
+
+ISA
+
+6/15/2004
+
+ISA
+
+FRS-DS1 Christian Park, 4200 English Avenue
+
+SBC
+
+5,040.00
+
+20,160.00
+
+ISA
+
+6/29/2004
+
+ISA
+
+Public Defender Juvenile Division 2511 E. 46th. St.
+
+SBC
+
+20,160.00
+
+20,160.00
+
+ISA
+
+8/9/2004
+
+ISA
+
+IPD IDACS server support rsno4-74
+
+ACS
+
+14,957.88
+
+23,176.36
+
+ISA
+
+8/9/2004
+
+ISA
+
+Marion C. Sheriff Law library Vitual Machine RNS04-78
+
+ACS
+
+8,142.72
+
+10,741.52
+
+ISA
+
+8/9/2004
+
+ISA
+
+Marion Superior Court virtural machine RNSO4-79
+
+ACS
+
+9,596.96
+
+10,256.28
+
+ISA
+
+8/9/2004
+
+ISA
+
+ISA DHCP server RNS04-90
+
+ACS
+
+8,344.36
+
+9,039.89
+
+ISA
+
+Notes
+
+Paul Ricketts pre approved.
+
+Printed:
+
+Approval under the authority of the IT Board for contracts under $25,000
+
+IT Board-Attachment
+
+8/17/2004
+Page: 1 of 1
+
+
