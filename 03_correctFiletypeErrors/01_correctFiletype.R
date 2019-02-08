@@ -16,9 +16,10 @@ magicResults <- incant(fAbs)
 end.time <- Sys.time()
 time.taken <- end.time - start.time
 print(time.taken)
+#~9 hours
 
-save(magicResults, file = "rfiles/trueFileTypes.rdata")
-load("rfiles/trueFileTypes.rdata")
+save(magicResults, file = "out/trueFileTypes.rdata")
+load("out/trueFileTypes.rdata")
 
 library(tools)
 
