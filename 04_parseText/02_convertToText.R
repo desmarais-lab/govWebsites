@@ -39,17 +39,17 @@ convertToText <- function(paths, website_id){
   a <- do.call(rbind, a)
   
   #save the results to a website-specific rdata file
-  save(a, file = paste0("rfiles/city_chunks_unprocessed/", website_id, ".rdata"))
+  save(a, file = paste0("out/city_chunks_unprocessed/", website_id, ".rdata"))
   
 }
 
-load("rfiles/citydocs.rdata")
+load("out/citydocs.rdata")
 #character vector of State_City
 cities <- unique(d$State_City)
 #iterate through each city, based on that vector
 #and read in and convert to text all of its documents
 #using the function above
-for (i in 31:length(cities)){
+for (i in 1:length(cities)){
   d_city <- d[d$State_City==cities[i],]
   convertToText(d_city$path, cities[i])
 }
