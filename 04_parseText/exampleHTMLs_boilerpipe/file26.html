@@ -1,0 +1,634 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+<base href="http://www.cityofkokomo.org/americans_with_disabilities_(ada).php"/>
+	<meta charset="utf-8">
+	
+
+
+
+ 
+
+
+
+
+	<title>The City of Kokomo has created a plan to support and complete tasks that improve accessibility for residents with disabilities and meet the requirements of Americans with Disabilities Act ADA</title>
+
+
+
+	<meta name="keywords" content="ADA, Americans with Disabilities Act, Kokomo, disability, disabled,"/>
+
+
+
+	<meta name="description" content="The City of Kokomo has created a plan to support and complete tasks that improve accessibility for residents with disabilities and meet the requirements of Americans with Disabilities Act ADA . You can read the ADA Transition Plan plan by clicking here."/>
+
+
+	<meta name="author" content="Tom Gooden | @good3n">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	
+<!-- // BEG of /plugins/setup/setup.before_endhead.template_include.jsp \\ -->
+<!-- // BEG of /plugins/setup/setup.before_endhead.common_include.jsp \\ -->
+<link href="/revize/plugins/setup/css/revize.css" rel="stylesheet" type="text/css" />
+
+
+<!-- // BEG of setup.before_endhead.common javascript \\ -->
+<script type="text/javascript">
+
+<!-- // BEG of /plugins/general/general.revize_login.js \\ -->
+function revizelogin()
+{
+	var loginSpan = document.getElementById('revize-login');
+	//var loginSpan = document.getElementById('powered-by-revize-link');
+	if (!loginSpan) return;
+
+	var color,styleElement;
+	var selector1 = "#revize-login a";
+	var rule1 = "text-decoration:none !important;color:";
+	var selector2 = "#revize-login a:hover";
+	var rule2 = "text-decoration:underline !important";
+	if (document.all)
+	{
+		color = loginSpan.currentStyle.color;
+		styleElement = document.createStyleSheet();
+		styleElement.addRule(selector1 , rule1+color+' !important')
+		styleElement.addRule(selector2 , rule2)
+	}
+	else
+	{
+		color =  document.defaultView.getComputedStyle(loginSpan,'').getPropertyValue('color');
+		styleElement = document.createElement("style");
+		document.getElementsByTagName("head")[0].appendChild(styleElement);
+		styleElement = document.styleSheets[document.styleSheets.length-1];
+		styleElement.insertRule(selector1 + ' {' + rule1+color + ' !important}',0);
+		styleElement.insertRule(selector2 + ' {' + rule2 + '}',0);
+	}
+}
+if (typeof window.addEventListener != "undefined")
+	window.addEventListener("load", revizelogin, false);
+else if (typeof window.attachEvent != "undefined")
+	window.attachEvent("onload", revizelogin);
+<!-- \\ END of /plugins/general/general.revize_login.js // -->
+
+<!-- // BEG of /plugins/setup/setup.common_endhead.js \\ -->
+// Javascript included on all pages
+<!-- \\ END of /plugins/setup/setup.common_endhead.js // -->
+
+</script>
+<!-- \\ END of setup.before_endhead.common javascript // -->
+<!-- \\ END of /plugins/setup/setup.before_endhead.common_include.jsp // -->
+
+
+<!-- \\ END of /plugins/setup/setup.before_endhead.template_include.jsp // --><link rel="stylesheet" href="css/layout.css">
+
+	<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	
+	<link rel="shortcut icon" href="_images_/favicon.ico">
+	<link rel="apple-touch-icon" href="_images_/touch-icon-iphone.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="_images_/touch-icon-ipad.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="_images_/touch-icon-iphone4.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="_images_/touch-icon-ipad2.png">
+
+	<!--[if !IE]><!-->
+	<link rel="stylesheet" href="css/add2home.css">
+	<script src="js/add2home.js"></script>
+	<!--<![endif]-->
+
+<!--Script for Weather Starts-->
+<script src="js/jquery.simpleWeather.js" charset="utf-8"></script>
+<script type="text/javascript">
+		$(function() {			
+    $.simpleWeather({
+        zipcode: '46901',
+        unit: 'f',
+        success: function(weather) {			
+			var monthNames = [ "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December" ];
+			var dayNames= ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
+			
+			var newDate = new Date();
+			
+			$('#weather').append(dayNames[newDate.getDay()] + ",  " + monthNames[newDate.getMonth()] + ' ' + newDate.getDate() + ',  ' + newDate.getFullYear()+" "+weather.currently+', '+weather.temp+'&deg; '+weather.units.temp+ '<img width="75px" height="75px" src="'+weather.image+'" alt="weather">');
+			
+			
+        },
+        error: function(error) {
+            $("#weather").html('<p>'+error+'</p>');
+        }
+    });
+});
+	</script>
+<!--Script for Weather Ends-->
+
+
+ 
+
+</head>
+<body id="freeform">
+
+
+
+
+<script type="text/javascript"><!--//--><![CDATA[//><!--
+if (typeof(RZ) == 'undefined') RZ = {};
+if (!RZ.link) RZ.link = new Object();
+RZ.pagetype = 'template'
+RZ.baseurlprefix = '../../'
+RZ.baseurlpath = 'departments/engineering_and_traffic/'
+RZ.protocolRelativeRevizeBaseUrl='//cms4.revize.com'
+
+RZ.pagetemplatename = 'freeform'
+RZ.pagetemplateid = '1'
+RZ.pagemodule = 'links'
+RZ.pagemoduleid = '1'
+RZ.pagerecordid = '2426';
+
+RZ.pageid = 'links-2426';
+RZ.pageparentid = '2424';
+RZ.pagesectionid = '73';
+RZ.pagesectionname = 'engineering_and_traffic';
+RZ.pagesectionlevel = '2';
+RZ.pagesectionfolder = 'departments/engineering_and_traffic/';
+RZ.pagesectionfilter = 'sectionid=73';
+RZ.pagelinkfilter = 'linklevel=3 and linksectionid=73';
+RZ.pagelinklevel = '3';
+RZ.pagelinkid = '2426';
+RZ.pageidfield = '';
+
+RZ.isnewrecord = false;
+RZ.editmodule = '';
+RZ.editrecordid = '2426';
+RZ.editrecordversion = '';
+RZ.editversion = '';		//same as editrecordversion
+RZ.editaction = '';
+
+//----- Permission data
+RZ.page_roles = ''
+RZ.page_users = 'bousley|dcree|mhuffman|nscheblo|cjackson'
+RZ.page_key = 'freeform[2426]'
+RZ.parent_key = 'freeform[2424]'
+RZ.inherit_key = 'freeform[73]'
+RZ.workflowname = ''
+RZ.permissions_options = 'warningsOFF'
+RZ.permissions_module = 'webspace_page_permissions'
+RZ.webspace = 'kokomo'
+RZ.webspacedesc = "tinymce";
+
+RZ.featurespattern = '()';
+
+
+RZ.webspacelinksurl = ''
+RZ.webspacelinksurl = './webspace/links.html'
+RZ.workflowlist = ''
+RZ.revizeserverurl = 'http://cms4.revize.com/revize/kokomo';
+
+if (!RZ.nextseq) RZ.nextseq = {linknames:{},modules:{}};
+
+//----- Field values from webspace_config module
+RZ.webspace_config = new Object();
+RZ.webspace_config.admin_email = "";
+RZ.webspace_config.form_server = "revizeserver";
+RZ.webspace_config.form_technology = "jsp";
+RZ.webspace_config.formwizard_ftp_password = "";
+RZ.webspace_config.formwizard_ftp_port = "";
+RZ.webspace_config.formwizard_ftp_server = "";
+RZ.webspace_config.formwizard_ftp_user = "";
+RZ.webspace_config.formwizard_setup = "yes";
+RZ.webspace_config.formwizard_smtp_password = "gorevize";
+RZ.webspace_config.formwizard_smtp_server = "mail.revize.com";
+RZ.webspace_config.formwizard_smtp_user = "workflowuser@revize.com";
+RZ.webspace_config.google_analytics = "UA-113082943-1";
+RZ.webspace_config.home_pageid = "0";
+RZ.webspace_config.home_sectionid = "0";
+RZ.webspace_config.home_template = "home,index,sitemap";
+RZ.webspace_config.icon_email = "<img src=\"/revize/images/email_icon_yellow.gif\" width=\"16\" border=\"0\" height=\"17\" title=\"Request email notification when page changes\" alt=\"Request email notification when page changes\" style=\"\" />";
+RZ.webspace_config.image_maxheight = "600";
+RZ.webspace_config.image_maxwidth = "600";
+RZ.webspace_config.image_setup = "yes";
+RZ.webspace_config.livesite_url = "www.cityofkokomo.org";
+RZ.webspace_config.menu_links_module = "links";
+RZ.webspace_config.menu_newsection = "";
+RZ.webspace_config.menu_nexturl = "webspace_menu-editform.jsp";
+RZ.webspace_config.menu_sections_module = "sections";
+RZ.webspace_config.menu_system = "custom";
+RZ.webspace_config.menu_version = "1.00";
+RZ.webspace_config.rte_setup = "yes";
+RZ.webspace_config.to_email = "";
+RZ.webspace_config.use_folders = "1";
+
+RZ.isauthenticationactive = true
+RZ.warning = ""
+RZ.adminwinmsg = null
+
+RZ.channels = 'Production,revize';
+RZ.jsversion = 1.2//--><!]]></script>
+<script type="text/javascript" src="/revize/util/snippet_helper.js"></script>
+
+
+<!--[if lt IE 8]>
+	<div class="alert no-more-ie clearfix">
+		<div class="browser-icons clearfix">
+			<a href="https://www.google.com/intl/en/chrome/browser/"><img src="_images_/chrome.png" alt="chrome"></a>
+			<a href="http://www.mozilla.org/en-US/firefox/new/"><img src="_images_/firefox.png" alt="firefox"></a>
+			<a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie"><img src="_images_/ie.png" alt="ie"></a>
+			<a href="http://www.apple.com/safari/"><img src="_images_/safari.png" alt="safari"></a>
+		</div> 
+		 <span><b>ATTENTION! You are using an outdated browser</b>. For a better experience using our website, please upgrade to a modern browser by clicking on one of the icons to the right.</span>				
+	</div>
+<![endif]-->
+
+<div class="alertbtn">
+  
+  
+  
+  <script language="JavaScript" type="text/JavaScript">
+  RZ.module = 'alert';
+  RZ.recordid = '';
+  RZ.nexturl = "editforms/alert-editform.jsp";
+  RZ.popupwidth = '1050'; RZ.popupheight = '650'; RZ.popupscroll = 'yes';
+  RZ.img = '<img src="images/edit/edit_small.jpg" alt="Edit Small" border="0" />';
+  RZ.set = 'freeform.pageid=alert';
+  RZ.options = '';
+  if (typeof RZaction != 'undefined') RZaction('editform');
+  </script>
+</div>
+
+ 
+<div class="head">
+	<div class="head-swoosh"></div><!-- end head-swoosh -->	
+	<div class="container">
+		<div class="head-top">
+
+<!--Logo Area Starts-->			
+			<div class="logo eleven columns">				
+				<a href="./"><img src="_images_/logo.png" alt="Logo" /></a>
+			</div><!-- end logo -->
+<!--Logo Area Ends-->
+
+			<div class="head-right five columns">				
+				<div class="inner">
+
+<!--Search Area Starts-->
+					<div class="search five columns alpha">						
+						<form class="search-form" action="search.php">
+							<input name="q" placeholder="Search..." type="search">
+							<button></button>
+						</form>	
+					</div><!-- end search -->
+<!--Search Area Ends-->
+
+<!--Weather Area Starts-->
+					<div class="weather five columns omega">
+						<div class="weather-inner">						
+							<div id="weather"></div>
+						</div><!-- end weather-inner -->
+					</div><!-- end weather -->
+<!--Weather Area Ends-->
+
+				</div><!-- end inner -->
+			</div><!-- end head-right -->
+		</div><!-- end head-top -->
+
+<!--Top Navigation Area Starts-->
+		<div id="nav">
+			
+            
+<!-- // BEG of topnav_template v05-10-2011 \\ -->
+
+
+
+
+<!-- // BEG of  /plugins/menus/menus_topnav_list_include.jsp \\ --> 
+<ul id="toplevel" class="nav v2_05-23-2012">
+	<li class="menuLI level0 menuDisplay li-4"><a class="menuA level0 menuDisplay" href="index.php" target="_self">Home</a></li>
+	<li class="menuLI level0 menuDisplay li-38 children"><a class="menuA level0 menuDisplay" href="departments/index.php" target="_self">Departments</a>
+		<ul class="menuUL level1 menuHidden ul-50">
+			<li class="menuLI level1 menuHidden li-50"><a class="menuA level1 menuHidden" href="departments/airport/index.php" target="_self">Airport</a></li>
+			<li class="menuLI level1 menuHidden li-1198"><a class="menuA level1 menuHidden" href="departments/boards_and_commissions.php" target="_self">Boards and Commissions</a></li>
+			<li class="menuLI level1 menuHidden li-61"><a class="menuA level1 menuHidden" href="departments/central_equipment/index.php" target="_self">Central Equipment</a></li>
+			<li class="menuLI level1 menuHidden li-85"><a class="menuA level1 menuHidden" href="departments/crown_point_cemetery/index.php" target="_self">Crown Point Cemetery</a></li>
+			<li class="menuLI level1 menuHidden li-65"><a class="menuA level1 menuHidden" href="departments/development/index.php" target="_self">Development</a></li>
+			<li class="menuLI level1 menuHidden li-73"><a class="menuA level1 menuHidden" href="departments/engineering_and_traffic/index.php" target="_self">Engineering & Traffic</a></li>
+			<li class="menuLI level1 menuHidden li-75"><a class="menuA level1 menuHidden" href="departments/fire_department/index.php" target="_self">Fire Department</a></li>
+			<li class="menuLI level1 menuHidden li-797 children"><a class="menuA level1 menuHidden" href="departments/government_offices.php" target="_self">Government Offices ></a>
+				<ul class="menuUL level2 menuHidden ul-799">
+					<li class="menuLI level2 menuHidden li-799"><a class="menuA level2 menuHidden" href="departments/board_of_public_works/index.php" target="_self">Board of Public Works</a></li>
+					<li class="menuLI level2 menuHidden li-1074"><a class="menuA level2 menuHidden" href="departments/city_clerk/index.php" target="_self">City Clerk</a></li>
+					<li class="menuLI level2 menuHidden li-1158"><a class="menuA level2 menuHidden" href="departments/city_controllers_office.php" target="_self">City Controllers Office</a></li>
+					<li class="menuLI level2 menuHidden li-1075"><a class="menuA level2 menuHidden" href="departments/common_council/index.php" target="_self">Common Council</a></li>
+					<li class="menuLI level2 menuHidden li-1071"><a class="menuA level2 menuHidden" href="departments/mayor_s_office/index.php" target="_self">Mayor's Office</a></li>
+					<li class="menuLI level2 menuHidden li-800"><a class="menuA level2 menuHidden" href="departments/city_attorney_s_office/index.php" target="_self">Office of Corporation Counsel</a></li>
+					<li class="menuLI level2 menuHidden li-1076"><a class="menuA level2 menuHidden" href="departments/plan_commission/index.php" target="_self">Plan Commission</a></li>
+				</ul>
+			</li>
+			<li class="menuLI level1 menuHidden li-77"><a class="menuA level1 menuHidden" href="departments/human_resources/index.php" target="_self">Human Resources</a></li>
+			<li class="menuLI level1 menuHidden li-79"><a class="menuA level1 menuHidden" href="departments/inspection_services/index.php" target="_self">Inspection Services</a></li>
+			<li class="menuLI level1 menuHidden li-1233"><a class="menuA level1 menuHidden" href="departments/kgov2_-_streaming_media.php" target="_self">KGov2 - Streaming Media</a></li>
+			<li class="menuLI level1 menuHidden li-820"><a class="menuA level1 menuHidden" href="departments/parks_and_recreation_department.php" target="_self">Parks & Recreation</a></li>
+			<li class="menuLI level1 menuHidden li-87"><a class="menuA level1 menuHidden" href="departments/police_department/index.php" target="_self">Police Department</a></li>
+			<li class="menuLI level1 menuHidden li-91"><a class="menuA level1 menuHidden" href="departments/public_maintenance_and_refuse/index.php" target="_self">Public Maintenance & Refuse</a></li>
+			<li class="menuLI level1 menuHidden li-93"><a class="menuA level1 menuHidden" href="departments/senior_citizens_center/index.php" target="_self">Senior Citizens Center</a></li>
+			<li class="menuLI level1 menuHidden li-1371"><a class="menuA level1 menuHidden" href="residents/public_transportation_city_line_trolley.php" target="_self">Transportation</a></li>
+			<li class="menuLI level1 menuHidden li-95"><a class="menuA level1 menuHidden" href="departments/wastewater_treatment/index.php" target="_self">Wastewater Treatment</a></li>
+		</ul>
+	</li>
+	<li class="menuLI level0 menuDisplay li-40 children"><a class="menuA level0 menuDisplay" href="residents/index.php" target="_self">Residents</a>
+		<ul class="menuUL level1 menuHidden ul-658">
+			<li class="menuLI level1 menuHidden li-658"><a class="menuA level1 menuHidden" href="departments/annexation/index.php" target="_self">Annexation</a></li>
+			<li class="menuLI level1 menuHidden li-661"><a class="menuA level1 menuHidden" href="http://www.kgov2.com" target="_new">City Meeting Videos</a></li>
+			<li class="menuLI level1 menuHidden li-1373"><a class="menuA level1 menuHidden" href="calendar.php" target="_self">Community Calendar</a></li>
+			<li class="menuLI level1 menuHidden li-1678"><a class="menuA level1 menuHidden" href="http://www.kokomojackrabbits.com/" target="_new">Kokomo Jackrabbits Baseball</a></li>
+			<li class="menuLI level1 menuHidden li-314"><a class="menuA level1 menuHidden" href="residents/council_agendas_and_minutes/index.php" target="_self">Meeting Agendas and Minutes</a></li>
+			<li class="menuLI level1 menuHidden li-1136"><a class="menuA level1 menuHidden" href="residents/online_services_and_payments.php" target="_self">Online Services and Payments</a></li>
+			<li class="menuLI level1 menuHidden li-1134"><a class="menuA level1 menuHidden" href="departments/engineering_and_traffic/permits.php" target="_self">Permits</a></li>
+			<li class="menuLI level1 menuHidden li-1296"><a class="menuA level1 menuHidden" href="document_center/AUG.2016 CAL.pdf" target="_new">Senior Activities</a></li>
+			<li class="menuLI level1 menuHidden li-1126"><a class="menuA level1 menuHidden" href="residents/neighborhood_stabilization.php" target="_self">Neighborhood Stabilization</a></li>
+			<li class="menuLI level1 menuHidden li-1161"><a class="menuA level1 menuHidden" href="residents/public_transportation_city_line_trolley.php" target="_self">Public Transportation/City Line Trolley</a></li>
+		</ul>
+	</li>
+	<li class="menuLI level0 menuDisplay li-42 children"><a class="menuA level0 menuDisplay" href="businesses/index.php" target="_self">Businesses</a>
+		<ul class="menuUL level1 menuHidden ul-1084">
+			<li class="menuLI level1 menuHidden li-1084"><a class="menuA level1 menuHidden" href="departments/development/business_assistance_programs.php" target="_self">Business Assistance Programs</a></li>
+			<li class="menuLI level1 menuHidden li-1085"><a class="menuA level1 menuHidden" href="departments/development/revolving_loan_fund.php" target="_self">Revolving Loan Fund</a></li>
+			<li class="menuLI level1 menuHidden li-1103"><a class="menuA level1 menuHidden" href="departments/development/riverfront_district.php" target="_self">Riverfront District</a></li>
+			<li class="menuLI level1 menuHidden li-318"><a class="menuA level1 menuHidden" href="businesses/working_capital_loan_program/index.php" target="_self">Working Capital Loan Program</a></li>
+			<li class="menuLI level1 menuHidden li-1104"><a class="menuA level1 menuHidden" href="departments/development/tax_abatements.php" target="_self">Tax Abatements</a></li>
+			<li class="menuLI level1 menuHidden li-115"><a class="menuA level1 menuHidden" href="departments/plan_commission/index.php" target="_self">Planning & Zoning</a></li>
+			<li class="menuLI level1 menuHidden li-116"><a class="menuA level1 menuHidden" href="residents/permits/index.php" target="_self">Permits</a></li>
+		</ul>
+	</li>
+	<li class="menuLI level0 menuDisplay li-44 children"><a class="menuA level0 menuDisplay" href="visitors/index.php" target="_self">Visitors</a>
+		<ul class="menuUL level1 menuHidden ul-1163">
+			<li class="menuLI level1 menuHidden li-1163"><a class="menuA level1 menuHidden" href="calendar.php" target="_self">Community Calendar</a></li>
+			<li class="menuLI level1 menuHidden li-1159"><a class="menuA level1 menuHidden" href="departments/historical_sites_landmarks_and_museums.php" target="_self">Historical Sites, Landmarks, and Museums</a></li>
+			<li class="menuLI level1 menuHidden li-1127"><a class="menuA level1 menuHidden" href="departments/kokomo_beach.php" target="_self">Kokomo Beach Family Aquatic Center</a></li>
+			<li class="menuLI level1 menuHidden li-1679"><a class="menuA level1 menuHidden" href="http://www.kokomojackrabbits.com/" target="_new">Kokomo Jackrabbits Baseball</a></li>
+			<li class="menuLI level1 menuHidden li-2633"><a class="menuA level1 menuHidden" href="http://www.thisiskokomo.com" target="_new">www.ThisIsKokomo.com</a></li>
+			<li class="menuLI level1 menuHidden li-2634"><a class="menuA level1 menuHidden" href="http://www.visitkokomo.org" target="_new">www.VisitKokomo.org</a></li>
+		</ul>
+	</li>
+	<li class="menuLI level0 menuDisplay li-46 children"><a class="menuA level0 menuDisplay" href="how_do_i_(faq)/index.php" target="_self">How Do I? (FAQ)</a>
+		<ul class="menuUL level1 menuHidden ul-125">
+			<li class="menuLI level1 menuHidden li-125"><a class="menuA level1 menuHidden" href="residents/permits/index.php" target="_self">Apply for a Permit</a></li>
+			<li class="menuLI level1 menuHidden li-1131"><a class="menuA level1 menuHidden" href="how_do_i_(faq)/contact_a_specific_department.php" target="_self">Contact a Specific Department</a></li>
+			<li class="menuLI level1 menuHidden li-129"><a class="menuA level1 menuHidden" href="departments/city_attorney_s_office/how_to_file_tort_claim.php" target="_self">File a Tort Claim</a></li>
+			<li class="menuLI level1 menuHidden li-123"><a class="menuA level1 menuHidden" href="https://koko.govnow.com/" target="_new">Pay a Citation</a></li>
+			<li class="menuLI level1 menuHidden li-124"><a class="menuA level1 menuHidden" href="https://egoveast2.aspgov.com/kokoc2gcx/Index.jsp" target="_new">Pay my Wastewater Bill</a></li>
+			<li class="menuLI level1 menuHidden li-126"><a class="menuA level1 menuHidden" href="https://egoveast2.aspgov.com/kokoc2gcrs/Index.jsp" target="_new">Report a Nuisance</a></li>
+		</ul>
+	</li>
+</ul>
+<!-- \\ END of /plugins/menus/menus_topnav_list_include.jsp // -->
+
+<!-- \\ END of topnav_template // -->
+
+
+
+		</div><!-- end nav -->
+<!--Top Navigation Area Ends-->
+
+	</div><!-- end container -->
+</div><!-- end head -->
+
+<div class="bottom">
+	<div class="container">
+		<div class="watermark"></div><!-- end watermark -->		
+		<div class="inner clearfix">
+			<div class="sidebar four columns">
+
+<!--Left Navigation Area Starts-->
+				<div class="sidebar-inner">				
+                    <!-- start plugin: menus.leftnav-section -->
+
+                    <!-- // BEG of /plugins/menus/menus_section_filter.include.jsp \\ -->
+<!-- ...embedded link page: Published page and Menu Manager shows child links*aray*topnav** of recordid=73 -->
+<!--  revize_menu_filter: linkplacement=leftnav and linkparentid=73 -->
+<!-- \\ END of /plugins/menus/menus_section_filter.include.jsp // -->
+
+                    
+                    
+                    
+                    
+                    <script language="JavaScript" type="text/JavaScript">
+                    RZ.module = 'links';
+                    RZ.nexturl = "/revize/plugins/menus/webspace_menu-editlist.jsp?pageid=links-2426&"
+                             + "linksfilter=linkplacement=leftnav and linkparentid=73&"
+                             + "numberoflevels=2&"
+                             + "linkoptions=url,template,file&"
+                             + "linknewsection=*all*";
+                    RZ.img = '<img src="images/edit/edit_left_nav.jpg" alt="Edit Left Navigation" border="0" />';
+                    RZ.caption = '';
+                    RZ.set = "links.linkplacement=leftnav"
+                    RZ.options = '';
+                    if (typeof RZaction != 'undefined') RZaction('editlist');
+                    </script>
+                    
+                    
+<!-- // BEG of /plugins/menus/menus_section_list.include.jsp \\ --> <ul  id="toplevel" class="flyout v08-30-2012">
+	<li id="li-2440" class="menuLI level0 menuHidden"><a class="menuA level0 menuHidden" href="departments/engineering_and_traffic/current_plans_and_projects.php" target="_self" >Current Plans and Projects</a></li>
+	<li id="li-2442" class="menuLI level0 menuHidden"><a class="menuA level0 menuHidden" href="departments/engineering_and_traffic/neighborhood_organization_and_support.php" target="_self" >Neighborhood Organization and Support</a></li>
+	<li id="li-158" class="menuLI level0 menuHidden"><a class="menuA level0 menuHidden" href="departments/engineering_and_traffic/construction_standards.php" target="_self" >Construction Standards</a></li>
+	<li id="li-160" class="menuLI level0 menuHidden"><a class="menuA level0 menuHidden" href="departments/engineering_and_traffic/geographic_information_system_(gis).php" target="_self" >Maps and Data</a></li>
+	<li id="li-1133" class="menuLI level0 menuHidden children"><a class="menuA level0 menuHidden" href="departments/engineering_and_traffic/permits.php" target="_self" >Permits</a>
+		<ul id="ul-2549" class="menuUL level1 menuHidden">
+			<li id="li-2549" class="menuLI level1 menuHidden"><a class="menuA level1 menuHidden" href="departments/engineering_and_traffic/aerial_and_small_cell_permits.php" target="_self" >Aerial and small cell permits</a></li>
+		</ul>
+	</li>
+	<li id="li-1442" class="menuLI level0 menuHidden"><a class="menuA level0 menuHidden" href="departments/engineering_and_traffic/stormwater.php" target="_self" >Stormwater</a></li>
+	<li id="li-2411" class="menuLI level0 menuHidden children"><a class="menuA level0 menuHidden" href="departments/engineering_and_traffic/bikekokomo.php" target="_self" >Bike Kokomo</a>
+		<ul id="ul-2413" class="menuUL level1 menuHidden">
+			<li id="li-2413" class="menuLI level1 menuHidden"><a class="menuA level1 menuHidden" href="departments/engineering_and_traffic/bike_lane_and_trails_map.php" target="_self" >Bike Lane and Trails Map</a></li>
+			<li id="li-2415" class="menuLI level1 menuHidden"><a class="menuA level1 menuHidden" href="departments/engineering_and_traffic/safety_and_resources.php" target="_self" >Safety and Resources</a></li>
+			<li id="li-2417" class="menuLI level1 menuHidden"><a class="menuA level1 menuHidden" href="departments/engineering_and_traffic/news_and_events.php" target="_self" >News and Events</a></li>
+			<li id="li-2419" class="menuLI level1 menuHidden"><a class="menuA level1 menuHidden" href="departments/engineering_and_traffic/active_transportation_plan.php" target="_self" >Active Transportation Plan</a></li>
+		</ul>
+	</li>
+	<li id="li-2424" class="menuLI level0 menuSelectedParent first children"><a class="menuA level0 menuSelectedParent first" href="departments/engineering_and_traffic/ada_sidewalks_and_walkability.php" target="_self" >ADA, Sidewalks, & Walkability</a>
+		<ul id="ul-2426" class="menuUL level1 menuSelectedItem first">
+			<li id="li-2426" class="menuLI level1 menuSelectedItem first"><a class="menuA level1 menuSelectedItem first" href="departments/engineering_and_traffic/americans_with_disabilities_(ada).php" target="_self" >Americans With Disabilities Act (ADA)</a></li>
+			<li id="li-2428" class="menuLI level1 menuSelectedUncle"><a class="menuA level1 menuSelectedUncle" href="departments/engineering_and_traffic/title_vi.php" target="_self" >Title VI</a></li>
+			<li id="li-2431" class="menuLI level1 menuSelectedUncle"><a class="menuA level1 menuSelectedUncle" href="departments/engineering_and_traffic/complete_streets_policy.php" target="_self" >Complete Streets Policy</a></li>
+			<li id="li-2433" class="menuLI level1 menuSelectedUncle"><a class="menuA level1 menuSelectedUncle" href="departments/engineering_and_traffic/sidewalk_rehabilitation_program.php" target="_self" >Sidewalk Rehabilitation Program</a></li>
+		</ul>
+	</li>
+	<li id="li-2522" class="menuLI level0 menuHidden"><a class="menuA level0 menuHidden" href="departments/engineering_and_traffic/trails_initiative.php" target="_self" >Trails Initiative</a></li>
+</ul>
+<!-- \\ END of /plugins/menus/menus_section_list.include.jsp // -->
+                    <!-- end plugin: menus.leftnav-section -->
+                </div><!-- end sidebar-inner -->
+<!--Left Navigation Area Ends-->
+
+			</div><!-- end sidebar columns -->
+
+			<div class="entry twelve columns">				
+				<div class="entry-inner">
+
+<!--Breadcrumb Area Starts-->
+					<div class="breadcrumbs">					
+                      <p><a href="./">Home</a> <img src="_images_/arrow.png" alt="arrow">&nbsp;<a href="departments/engineering_and_traffic/../index.php">Departments</a> <img src="_images_/arrow.png" alt="arrow">&nbsp;<a href="departments/engineering_and_traffic/index.php">Engineering&nbsp;&&nbsp;Traffic</a> <img src="_images_/arrow.png" alt="arrow">&nbsp;<a href="departments/engineering_and_traffic/ada_sidewalks_and_walkability.php">ADA,&nbsp;Sidewalks,&nbsp;&&nbsp;Walkability</a> <img src="_images_/arrow.png" alt="arrow">&nbsp;Americans&nbsp;With&nbsp;Disabilities&nbsp;Act&nbsp;(ADA)</p>
+					</div><!-- end breadcrumbs -->
+<!--Breadcrumb Area Ends-->
+
+<!--Page Header Area Starts-->
+					 
+<!--Page Header Area Ends-->
+
+<!--Share Widget Area Starts-->
+					<div class="share-section">
+						<div class="pw-widget pw-size-small pw-counter-show">			
+							<a class="pw-button-facebook"></a>			
+							<a class="pw-button-twitter"></a>			
+							<a class="pw-button-email"></a>			
+							<a class="pw-button-post"></a>		
+						</div>
+						<script src="http://i.po.st/static/v3/post-widget.js#publisherKey=93knjm8ku379jj95d2sg&retina=true" type="text/javascript"></script>
+					</div><!-- end share-section -->
+<!--Share Widget Area Ends-->
+
+<!--Center Content Area Starts-->
+					<div class="post clearfix">
+					  <table border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td>
+                                  
+                                  
+                                  
+                                  <script language="JavaScript" type="text/JavaScript">
+                                  RZ.module = 'freeform';
+                                  RZ.recordid = '';
+                                  RZ.nexturl = "editforms/freeform-editform.jsp";
+                                  RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+                                  RZ.img = '<img src="images/edit/edit_center_area.jpg" alt="Edit Center Area" border="0" />';
+                                  RZ.set = "freeform.pageid=links-2426";
+                                  RZ.options = '';
+                                  if (typeof RZaction != 'undefined') RZaction('editform');
+                                  </script>
+                                  
+                                  
+                                  
+                                  
+                                  <!-- Revize Forward to Edit Form -->
+                                  <script language="JavaScript" type="text/JavaScript">
+                                  RZ.module = 'freeform';
+                                  RZ.recordid = '';
+                                  RZ.nexturl = "editforms/metadata-editform.jsp";
+                                  RZ.popupwidth = '1050'; RZ.popupheight = '650'; RZ.popupscroll = 'yes';
+                                  RZ.img = '<img src="images/edit/edit_metadata.jpg" alt="Edit Metadata" border="0" />';
+                                  RZ.set = "freeform.pageid=links-2426";
+                                  RZ.options = '';
+                                  if (typeof RZaction != 'undefined') RZaction('editform');
+                                  </script>
+                                  
+                                  
+                                  
+                                  
+                                  <script language="JavaScript" type="text/JavaScript">
+                                  RZ.nexturl = '';
+                                  RZ.img = '<img src="images/edit/permissions.jpg" alt="Permissions" border="0" />';
+                                  RZ.options = '';
+                                  if (typeof RZaction != 'undefined') RZaction('permissions');
+                                  </script>
+                                  </td>
+                            </tr>
+                        </table>
+                        <p>The City of Kokomo has created a plan to support and complete tasks that improve accessibility for residents with disabilities and meet the requirements of Americans with Disabilities Act (ADA). <br /><br />You can read the ADA Transition Plan plan by clicking <a href= "ADA Transition Plan Adopted 04192017.pdf" target="_blank"  >here</a>.<br /><br />Additionally,&nbsp;<br /><span>You can view the organizational chart by clicking&nbsp;</span><a href= "City of Kokomo ADA Title VI Organizational Chart.pdf" target="_blank"  >here</a><span>.&nbsp;</span><br /><span>You can view an example of the complaint log by clicking&nbsp;</span><a href= "City of Kokomo ADA Transition Plan Complaint Log.pdf" target="_blank"  >here</a><span>. <br /><br />For the complaints procedure please see the ADA transition plan or contact us&nbsp;765-456-7400 or detis@cityofkokomo.org or visit us the second floor of the city building at&nbsp;<span>100 S. Union St. Kokomo,&nbsp;IN&nbsp;46901.&nbsp;</span>The Engineering Department is happy to speak with you about complaints or suggestions or any issues you may be having. Additionally, the <a href= "departments/engineering_and_traffic/../human_resources/index.php">Human Resources Department</a>&nbsp;is available for any issue relating to Title VI or discrimination.&nbsp;<br /></span></p>
+<div><span style="font-family: Arial, HelveticaNeue, 'Helvetica Neue', Helvetica, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal;">&nbsp;</span></div> </div><!-- end post -->
+<!--Center Content Area Ends-->
+
+				</div><!-- end entry-inner -->
+			</div><!-- end entry -->
+		</div><!-- end inner -->
+	</div><!-- end container -->
+</div><!-- end bottom -->
+
+<div class="footer">
+	<div class="footer-swoosh"></div><!-- end footer-swoosh -->
+	<div class="container">
+		 
+        <script language="JavaScript" type="text/JavaScript">
+if (typeof RZlistbegin != 'undefined') RZlistbegin(3)
+</script>
+
+        
+         
+                               
+        
+        
+        
+        
+         
+                               
+        
+        
+        
+        
+        <script language="JavaScript" type="text/JavaScript">
+if (typeof RZlinktemplate != 'undefined') RZlinktemplate('links','','footernav')
+if (typeof RZ.nextseq != 'undefined') RZ.nextseq.linknames['footernav']={field:'linkseq',seq:'2.00'};
+</script>
+
+<!--Footer Navigation Area Starts-->	
+		<p>
+			<a href="index.php" target="_self">Home</a> / 
+				<a href="how_do_i_(faq)/contact_a_specific_department.php" target="_self">Contact Us</a>
+		</p>
+<!--Footer Navigation Area Ends-->
+
+<!--Copyright Area Starts-->
+		<p>Copyright &copy; 2017 | The City of Kokomo, Indiana | 100 S. Union St. Kokomo,&nbsp;IN&nbsp;46901</p>
+<!--Copyright Area Ends-->
+
+		<div class="revize">
+		  <!-- // BEG of /plugins/general/general.revize_login.include.jsp \\ -->
+<span id="revize-login" class="v06-11-2011"><span class="powered-by-revize">Powered By
+<a id="powered-by-revize-link" style="color:inherit;text-decoration:none"
+target="_blank" href="http://www.revize.com">Revize</a>
+</span><a id="revize-login-link" style="color:inherit;text-decoration:none"
+href="http://cms4.revize.com:80/revize/security/index.jsp?webspace=kokomo&filename=/departments/engineering_and_traffic/americans_with_disabilities_(ada).php">Login</a></span>
+<!-- \\ END of /plugins/general/general.revize_login.include.jsp // -->
+      </div>
+		<a href="./"><img src="_images_/seal.png" alt="Logo" /></a>
+	</div><!-- end container -->
+</div><!-- end footer -->
+
+<script src="js/jquery.flexslider.js"></script>
+<script src="js/jquery.carouFredSel-6.2.1-packed.js"></script>
+<script src="js/jquery.mousewheel.min.js"></script>
+<script src="js/jquery.touchSwipe.min.js"></script>
+<script src="js/jquery.transit.min.js"></script>
+<script src="js/jquery.ba-throttle-debounce.min.js"></script>
+<script src="js/smoothscroll.js"></script>
+<script src="js/scripts.js"></script>
+
+<!-- // BEG of /plugins/setup/setup.before_endbody.template_include.jsp \\ -->
+<!-- // BEG of /plugins/setup/setup.before_endbody.common_include.jsp \\ -->
+<!-- \\ END of /plugins/setup/setup.before_endhead.common_include.jsp // -->
+<!-- // BEG of google.analytics_before_endbody.template_include.jsp  \\ -->
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-113082943-1']);
+_gaq.push(['_trackPageview']);
+(function() { var ga = document.createElement('script'); ga.type = 'text/javascript';
+ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl'
+:'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<!-- \\ END of google.analytics_before_endbody.template_include.jsp // -->
+
+<!-- \\ END of /plugins/setup/setup.before_endbody.template_include.jsp // -->
+</body>
+</html>

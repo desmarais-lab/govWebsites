@@ -1,0 +1,593 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us" >
+<head>
+<meta name = "viewport" content = "width = 1100">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="Joomla! - Open Source Content Management" />
+	<title>City of Hialeah, Florida - Computer Workshops-Library Programs</title>
+	<link href="/templates/hialeah_events/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+	<link href="/media/com_eventbooking/assets/css/style.css" rel="stylesheet" type="text/css" />
+	<link href="/media/com_eventbooking/assets/css/themes/default.css" rel="stylesheet" type="text/css" />
+	<link href="http://www.hialeahfl.gov/media/com_eventbooking/assets/js/colorbox/colorbox.css" rel="stylesheet" type="text/css" />
+	<link href="/media/system/css/modal.css?f60e0a737401acc0b88705a342938111" rel="stylesheet" type="text/css" />
+	<link href="http://www.hialeahfl.gov/media/nextend/cache/css/static/6683d04e1805223e71d79e3678225c87.css" rel="stylesheet" type="text/css" />
+	<link href="/media/mod_languages/css/template.css?f60e0a737401acc0b88705a342938111" rel="stylesheet" type="text/css" />
+	<link href="/media/jui/css/chosen.css?f60e0a737401acc0b88705a342938111" rel="stylesheet" type="text/css" />
+	<link href="/modules/mod_universal_ajaxlivesearch/cache/117/cbd0760ae50db784916b0b1efdf68266.css" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400|Pacifico:400&amp;subset=latin" rel="stylesheet" type="text/css" />
+	<script type="application/json" class="joomla-script-options new">{"csrf.token":"d8c5cb613ef8581fbc8daa9550a43da6","system.paths":{"root":"","base":""}}</script>
+	<script src="/media/jui/js/jquery.min.js?f60e0a737401acc0b88705a342938111" type="text/javascript"></script>
+	<script src="/media/jui/js/jquery-noconflict.js?f60e0a737401acc0b88705a342938111" type="text/javascript"></script>
+	<script src="/media/jui/js/jquery-migrate.min.js?f60e0a737401acc0b88705a342938111" type="text/javascript"></script>
+	<script src="http://www.hialeahfl.gov/media/com_eventbooking/assets/js/noconflict.js" type="text/javascript"></script>
+	<script src="http://www.hialeahfl.gov/media/com_eventbooking/assets/js/colorbox/jquery.colorbox.min.js" type="text/javascript"></script>
+	<script src="/media/system/js/mootools-core.js?f60e0a737401acc0b88705a342938111" type="text/javascript"></script>
+	<script src="/media/system/js/core.js?f60e0a737401acc0b88705a342938111" type="text/javascript"></script>
+	<script src="/media/system/js/mootools-more.js?f60e0a737401acc0b88705a342938111" type="text/javascript"></script>
+	<script src="/media/system/js/modal.js?f60e0a737401acc0b88705a342938111" type="text/javascript"></script>
+	<script src="/media/jui/js/bootstrap.min.js?f60e0a737401acc0b88705a342938111" type="text/javascript"></script>
+	<script src="/media/jui/js/chosen.jquery.min.js?f60e0a737401acc0b88705a342938111" type="text/javascript"></script>
+	<script src="/modules/mod_universal_ajaxlivesearch/engine/dojo.js" type="text/javascript"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/dojo/1.6/dojo/dojo.xd.js" type="text/javascript"></script>
+	<script src="/modules/mod_universal_ajaxlivesearch/cache/117/3582936d71294e4b9e705c926f020662.js" type="text/javascript"></script>
+	<script src="http://www.hialeahfl.gov/media/nextend/cache/js/static/4da51a2b0b0d8d9ebb7f2e644494095e.js" type="text/javascript"></script>
+	<script type="text/javascript">
+Eb.jQuery(document).ready(function($){$(".eb-colorbox-map").colorbox({iframe: true, fastIframe:false, inline: false, width:"600px", height:"480px"});});
+		jQuery(function($) {
+			SqueezeBox.initialize({});
+			SqueezeBox.assign($('a.eb-modal').get(), {
+				parse: 'rel'
+			});
+		});
+
+		window.jModalClose = function () {
+			SqueezeBox.close();
+		};
+		
+		// Add extra modal close functionality for tinyMCE-based editors
+		document.onreadystatechange = function () {
+			if (document.readyState == 'interactive' && typeof tinyMCE != 'undefined' && tinyMCE)
+			{
+				if (typeof window.jModalClose_no_tinyMCE === 'undefined')
+				{	
+					window.jModalClose_no_tinyMCE = typeof(jModalClose) == 'function'  ?  jModalClose  :  false;
+					
+					jModalClose = function () {
+						if (window.jModalClose_no_tinyMCE) window.jModalClose_no_tinyMCE.apply(this, arguments);
+						tinyMCE.activeEditor.windowManager.close();
+					};
+				}
+		
+				if (typeof window.SqueezeBoxClose_no_tinyMCE === 'undefined')
+				{
+					if (typeof(SqueezeBox) == 'undefined')  SqueezeBox = {};
+					window.SqueezeBoxClose_no_tinyMCE = typeof(SqueezeBox.close) == 'function'  ?  SqueezeBox.close  :  false;
+		
+					SqueezeBox.close = function () {
+						if (window.SqueezeBoxClose_no_tinyMCE)  window.SqueezeBoxClose_no_tinyMCE.apply(this, arguments);
+						tinyMCE.activeEditor.windowManager.close();
+					};
+				}
+			}
+		};
+		
+		jQuery(function($) {
+			SqueezeBox.initialize({});
+			SqueezeBox.assign($('a.modal').get(), {
+				parse: 'rel'
+			});
+		});
+
+		window.jModalClose = function () {
+			SqueezeBox.close();
+		};
+		
+		// Add extra modal close functionality for tinyMCE-based editors
+		document.onreadystatechange = function () {
+			if (document.readyState == 'interactive' && typeof tinyMCE != 'undefined' && tinyMCE)
+			{
+				if (typeof window.jModalClose_no_tinyMCE === 'undefined')
+				{	
+					window.jModalClose_no_tinyMCE = typeof(jModalClose) == 'function'  ?  jModalClose  :  false;
+					
+					jModalClose = function () {
+						if (window.jModalClose_no_tinyMCE) window.jModalClose_no_tinyMCE.apply(this, arguments);
+						tinyMCE.activeEditor.windowManager.close();
+					};
+				}
+		
+				if (typeof window.SqueezeBoxClose_no_tinyMCE === 'undefined')
+				{
+					if (typeof(SqueezeBox) == 'undefined')  SqueezeBox = {};
+					window.SqueezeBoxClose_no_tinyMCE = typeof(SqueezeBox.close) == 'function'  ?  SqueezeBox.close  :  false;
+		
+					SqueezeBox.close = function () {
+						if (window.SqueezeBoxClose_no_tinyMCE)  window.SqueezeBoxClose_no_tinyMCE.apply(this, arguments);
+						tinyMCE.activeEditor.windowManager.close();
+					};
+				}
+			}
+		};
+		
+			window.addEvent('domready', function() {
+				SqueezeBox.initialize({});
+				SqueezeBox.assign($$('a.modalizer_link,a.modal,a.modalizer'), {
+					parse:'rel'
+				});
+			});
+		
+	jQuery(function ($) {
+		initChosen();
+		$("body").on("subform-row-add", initChosen);
+
+		function initChosen(event, container)
+		{
+			container = container || document;
+			$(container).find(".advancedSelect").chosen({"disable_search_threshold":10,"search_contains":true,"allow_single_deselect":true,"placeholder_text_multiple":"Type or select some options","placeholder_text_single":"Select an option","no_results_text":"No results match"});
+		}
+	});
+	
+	</script>
+	<script type="application/ld+json">
+{"@context":"http:\/\/schema.org","@type":"Organization","name":"City of Hialeah, Florida","url":"http:\/\/www.hialeahfl.gov\/"}
+	</script>
+	<meta property="og:title" content="Computer Workshops"/>
+	<meta property="og:url" content="http://www.hialeahfl.gov/index.php?option=com_eventbooking&view=event&id=22988&catid=4&Itemid=1067&lang=en"/>
+	<meta property="og:description" content="Computer Workshops"/>
+	<meta property="og:site_name" content="City of Hialeah, Florida"/>
+	<script type="text/javascript">
+  dojo.addOnLoad(function(){
+      document.search = new AJAXSearchsimple({
+        id : '117',
+        node : dojo.byId('offlajn-ajax-search117'),
+        searchForm : dojo.byId('search-form117'),
+        textBox : dojo.byId('search-area117'),
+        suggestBox : dojo.byId('suggestion-area117'),
+        searchButton : dojo.byId('ajax-search-button117'),
+        closeButton : dojo.byId('search-area-close117'),
+        searchCategories : dojo.byId('search-categories117'),
+        productsPerPlugin : 3,
+        dynamicResult : '0',
+        searchRsWidth : 260,
+        searchImageWidth : '60',
+        minChars : 2,
+        searchBoxCaption : 'Search...',
+        noResultsTitle : 'Results(0)',
+        noResults : 'No results found for the keyword!',
+        searchFormUrl : '/index.php',
+        enableScroll : '1',
+        showIntroText: '1',
+        scount: '5',
+        lang: 'en',
+        stext: 'No results found. Did you mean?',
+        moduleId : '117',
+        resultAlign : '0',
+        targetsearch: '3',
+        linktarget: '0',
+        keypressWait: '500',
+        catChooser : 0,
+        searchResult : 1,
+        seemoreEnabled : 1,
+        seemoreAfter : 30,
+        keywordSuggestion : '0',
+        seeMoreResults : 'See more results...',
+        resultsPerPage : '4',
+        resultsPadding : '10',
+        controllerPrev : 'PREV',
+        controllerNext : 'NEXT',
+        fullWidth : '1',
+        resultImageWidth : '60',
+        resultImageHeight : '60',
+        showCat : '1',
+        voicesearch : '0'
+      })
+    });</script>
+
+<link rel="stylesheet" href="/templates/system/css/system.css" type="text/css" />
+<link rel="stylesheet" href="/templates/system/css/general.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="http://www.hialeahfl.gov/templates/hialeah_events/css/template.css"/>
+<script>
+window.addEvent('domready', function() {
+var mainHeight = $('mainMaterials').getStyle('height').toInt();
+//alert (mainHeight);
+if (mainHeight > 300) {
+$('leftNav').setStyle('height', (mainHeight+60))
+}
+});
+</script>
+<script type="text/javascript" src="http://www.hialeahfl.gov/templates/hialeah_events/js/date.format.js"></script>
+
+
+<meta name="google-site-verification" content="" />
+
+<script type="text/javascript">
+ var _gaq = _gaq || [];
+ _gaq.push(['_setAccount', 'UA-36989184-1']);
+ _gaq.push(['_gat._anonymizeIp']);
+_gaq.push(['_trackPageview']);
+					
+ (function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+</script>
+
+</head>
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=826927300664363";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div id="container">
+<div id="navigation">
+<div id="mainNavigation">
+<ul class="nav menu">
+<li class="item-101 default"><a href="/index.php?option=com_content&amp;view=featured&amp;Itemid=101&amp;lang=en" >Home</a></li><li class="item-119 parent"><a href="/index.php?option=com_content&amp;view=article&amp;id=6&amp;Itemid=385&amp;lang=en" >About Hialeah</a></li><li class="item-121 parent"><a href="/index.php?option=com_content&amp;view=article&amp;id=14&amp;Itemid=386&amp;lang=en" >Government</a></li><li class="item-120 parent"><a href="/index.php?option=com_content&amp;view=article&amp;id=34&amp;Itemid=120&amp;lang=en" >Departments</a></li><li class="item-122 parent"><a href="/index.php?option=com_content&amp;view=article&amp;id=109&amp;Itemid=122&amp;lang=en" >Employees</a></li><li class="item-123"><a href="/index.php?option=com_eventbooking&amp;view=upcomingevents&amp;layout=timeline&amp;id=0&amp;Itemid=1066&amp;lang=en" >Calendar</a></li></ul>
+
+</div> <!--closes mainNavigation-->
+<div style="width:200px; height:20px; float:left; margin-top:12px">          
+<div id="offlajn-ajax-search117">
+  <div class="offlajn-ajax-search-container">
+     
+  <form id="search-form117" action="/index.php?option=com_search&amp;lang=en" method="get" onSubmit="return false;">
+    <div class="offlajn-ajax-search-inner">
+                <input type="text" name="searchword" id="search-area117" value="" autocomplete="off" />
+        <input type="text" name="searchwordsugg" id="suggestion-area117" value="" autocomplete="off" />
+        <input type="hidden" name="option" value="com_search" />
+              <div id="search-area-close117"></div>
+      <div id="ajax-search-button117"><div class="magnifier"></div></div>
+      <div class="ajax-clear"></div>
+    </div>
+  </form>
+  <div class="ajax-clear"></div>
+  </div>
+    </div>
+<div class="ajax-clear"></div>
+<svg style="position:absolute" height="0" width="0"><filter id="searchblur"><feGaussianBlur in="SourceGraphic" stdDeviation="3"/></filter></svg>
+No Images</div>
+<div id="languageSwitcher">
+<div class="mod-languages">
+
+	<form name="lang" method="post" action="http://www.hialeahfl.gov/index.php">
+	<select class="inputbox advancedSelect" onchange="document.location.replace(this.value);" >
+			<option dir="ltr" value="/index.php?option=com_eventbooking&amp;view=calendar&amp;default_month=0&amp;Itemid=1067&amp;lang=en" selected="selected">
+		English</option>
+			<option dir="ltr" value="/index.php?option=com_eventbooking&amp;view=calendar&amp;default_month=0&amp;Itemid=1067&amp;lang=es" >
+		Español</option>
+		</select>
+	</form>
+
+</div>
+
+</div>  <!--closes languageSwicher-->
+</div>  <!--closes navigation-->
+<div id="mainPhoto">
+<div class="random-image">
+	<img src="/images/headerImages/calendar/calendar.jpg" alt="calendar.jpg" width="940" height="270" /></div>
+
+</div>  <!--closes mainPhoto-->
+<div id="mainContent">
+<div id="leftNav"></div>  <!--closes leftNav-->
+<div id="secondaryNav">
+<ul class="nav menu">
+<li class="item-109"><a href="/index.php?option=com_content&amp;view=article&amp;id=115&amp;Itemid=109&amp;lang=en" >Make Payments</a></li><li class="item-110"><a href="/index.php?option=com_content&amp;view=article&amp;id=114&amp;Itemid=110&amp;lang=en" >Search Maps</a></li><li class="item-111"><a href="/index.php?option=com_content&amp;view=article&amp;id=116&amp;Itemid=111&amp;lang=en" >E-Mail Updates</a></li><li class="item-112"><a href="/index.php?option=com_content&amp;view=article&amp;id=129&amp;Itemid=112&amp;lang=en" >Media Gallery</a></li><li class="item-113"><a href="/index.php?option=com_content&amp;view=article&amp;id=107&amp;Itemid=113&amp;lang=en" >Report Problems</a></li></ul>
+
+</div>  <!--closes secondaryNav-->
+  <!--closes slideShow-->
+  <div style="width:100%; float:left;" class="eventCalendarBox">
+   <div class="calendarNav">
+   <ul class="nav menu">
+<li class="item-1066"><a href="/index.php?option=com_eventbooking&amp;view=upcomingevents&amp;layout=timeline&amp;id=0&amp;Itemid=1066&amp;lang=en" >Upcoming Events</a></li><li class="item-1067 current active"><a href="/index.php?option=com_eventbooking&amp;view=calendar&amp;default_month=0&amp;Itemid=1067&amp;lang=en" >Calendar</a></li></ul>
+
+   <div style="float:right; position:absolute; right:10px; top:5px; color:#ffffff;" id="clock"></div>
+   <script>
+	 function updateTime(){
+	 var currentTime = jQuery.now();
+	 var date = new Date(currentTime);
+	 	 jQuery('#clock').html(date.format('M jS, Y - g:i A'));
+	 	 	 }
+	 function currentTime() {
+	 setInterval(updateTime, 1000);
+	 }
+	 updateTime();
+	 currentTime();
+	 </script>
+   </div>
+ 
+  <div style="float:left; margin-left:45px; margin-top:5px; width:850px;">
+  <div id="system-message-container">
+	</div>
+
+<div id="eb-event-page" class="eb-container eb-event">
+	<div class="eb-box-heading clearfix">
+		<h1 class="eb-page-heading">
+			Computer Workshops		</h1>
+	</div>
+	<div id="eb-event-details" class="eb-description">
+		
+		<div class="eb-description-details clearfix">
+					</div>
+		<div id="eb-event-info" class="clearfix row-fluid">
+		<div id="eb-event-info-left" class="span8">
+			<h3 id="eb-event-properties-heading">
+				Details			</h3>
+            <div class="eb-description-details clearfix">
+			In these workshops you can learn how to create Microsoft Word documents, elaborate your Resume, and enhance your knowledge and skills in information search and retrieval using the Internet.		</div>
+			<table class="table table-bordered table-striped">
+				<tbody>
+					<tr>
+						<td style="width: 30%;">
+							<strong>Event Date</strong>
+						</td>
+						<td>
+							Jul 09, 2016 10:00 am						</td>
+					</tr>
+												<tr>
+								<td>
+									<strong>Event End Date</strong>
+								</td>
+								<td>
+									Jul 09, 2016 12:00 pm								</td>
+							</tr>
+													<tr>
+								<td>
+									<strong>Location</strong>
+								</td>
+								<td>
+																				<a href="/index.php?option=com_eventbooking&amp;view=map&amp;location_id=4&amp;tmpl=component&amp;format=html&amp;Itemid=1067&amp;lang=en" class="eb-colorbox-map" title="JFK Library">JFK Library</a>
+																		</td>
+							</tr>
+									</tbody>
+		</table>
+				</div>
+		<div id="eb-event-info-right" class="span4">
+					</div>
+	</div>
+	<div class="clearfix"></div>
+			<div class="eb-taskbar clearfix">
+			<ul>
+							</ul>
+		</div>
+		<div id="plugin_tab">
+		<ul class="nav nav-tabs">
+			<!-- Plugin support -->
+								<li class="active"><a href="#tab_1" data-toggle="tab">Location Map</a></li>
+									<li class=""><a href="#tab_2" data-toggle="tab">Comment</a></li>
+						</ul>
+		<!-- Plugin support -->
+		<div class="tab-content">
+								<div class="tab-pane active" id="tab_1">
+								<script type="text/javascript"
+		        src="http://maps.google.com/maps/api/js?sensor=false"></script>
+		<script type="text/javascript">
+			(function ($) {
+				$(document).ready(function () {
+					function initialize() {
+						var latlng = new google.maps.LatLng(25.866479, -80.286492);
+						var myOptions = {
+							zoom: 14,
+							center: latlng,
+							mapTypeId: google.maps.MapTypeId.ROADMAP
+						};
+						var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+
+						var marker = new google.maps.Marker({
+							position: latlng,
+							map: map,
+							title: "JFK Library"
+						});
+
+						var contentString = '<ul class="bubble"><li class="location_name"><h4>JFK Library</h4></li><li class="address">190 West 49th Street, Hialeah, FL 33012, USA, , , , </li><li class="address getdirection"><a href="http://maps.google.com/maps?f=d&daddr=25.866479,-80.286492(190 West 49th Street, Hialeah, FL 33012, USA, , , , )" target="_blank">[Get Directions]</li></ul>';
+						var infowindow = new google.maps.InfoWindow({
+							content: contentString,
+							//maxWidth: 20
+						});
+						google.maps.event.addListener(marker, 'click', function () {
+							infowindow.open(map, marker);
+						});
+						infowindow.open(map, marker);
+					}
+
+					initialize();
+				});
+			})(jQuery);
+		</script>
+		<div id="mapform">
+			<div id="map_canvas" style="width: 527px; height: 500px"></div>
+		</div>
+						</div>
+									<div class="tab-pane " id="tab_2">
+											</div>
+						</div>
+	</div>
+	</div>
+</div>
+				<div class="sharing clearfix" style="margin-top:20px;" >
+					<!-- FB -->
+					<div style="float:left;" id="rsep_fb_like">
+						<div id="fb-root"></div>
+						<script src="http://connect.facebook.net/en_US/all.js" type="text/javascript"></script>
+						<script type="text/javascript">
+							FB.init({appId: '340486642645761', status: true, cookie: true, xfbml: true});
+						</script>
+						<fb:like href="http://www.hialeahfl.gov/index.php?option=com_eventbooking&amp;view=event&amp;id=22988&amp;catid=4&amp;Itemid=1067&amp;lang=en" send="true" layout="button_count" width="150" show_faces="false"></fb:like>
+					</div>
+
+					<!-- Twitter -->
+					<div style="float:left;" id="rsep_twitter">
+						<a href="https://twitter.com/share" class="twitter-share-button" data-text="Computer Workshops http://www.hialeahfl.gov/index.php?option=com_eventbooking&amp;view=event&amp;id=22988&amp;catid=4&amp;Itemid=1067&amp;lang=en">Tweet</a>
+						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+					</div>
+
+					<!-- GPlus -->
+					<div style="float:left;" id="rsep_gplus">
+						<!-- Place this tag where you want the +1 button to render -->
+						<g:plusone size="medium"></g:plusone>
+
+						<!-- Place this render call where appropriate -->
+						<script type="text/javascript">
+							(function() {
+								var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+								po.src = 'https://apis.google.com/js/plusone.js';
+								var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+							})();
+						</script>
+					</div>
+				</div>
+			<form name="adminForm" id="adminForm" action="index.php" method="post">
+	<input type="hidden" name="option" value="com_eventbooking" />
+	<input type="hidden" name="task" value="" />
+	<input type="hidden" name="id" value="" />
+	<input type="hidden" name="Itemid" value="1067" />
+	<input type="hidden" name="d8c5cb613ef8581fbc8daa9550a43da6" value="1" /></form>
+
+<script language="javascript">
+	function cancelRegistration(registrantId) {
+		var form = document.adminForm ;
+		if (confirm("Do you want to cancel this registration ?")) {
+			form.task.value = 'registrant.cancel' ;
+			form.id.value = registrantId ;
+			form.submit() ;
+		}
+	}
+</script>
+<div style="clear: both;"></div>
+</div>
+</div>
+<div style="clear: both;"></div>
+ 
+
+<div style="width:900px; height:170px; margin-top:20px; margin-bottom:10px; float:left; margin-left:20px"><div class='ss2-align'><script type="text/javascript">
+    window['nextend-smart-slider-2-onresize'] = [];
+</script>
+
+<div id="nextend-smart-slider-2" class="nextend-slider-fadeload nextend-desktop " style="font-size: 12px;" data-allfontsize="12" data-desktopfontsize="12" data-tabletfontsize="16" data-phonefontsize="20">
+    <div class="smart-slider-border1" style="">
+        <div class="smart-slider-border2">
+            
+                            <div class="smart-slider-canvas smart-slider-slide-active smart-slider-bg-colored" style="">
+                                                            <div class="smart-slider-canvas-inner">
+                        <div class="smart-slider-layer" style="top: 0%; left: 0%; width: 18.223%; height: 100.625%; position: absolute; z-index: 1; display: block;" data-animation="slide" data-desktopleft="0%" data-desktoptop="0%" data-name="HIaleahTV" data-showdesktop="1" data-showtablet="1" data-showphone="1" data-layerbackgroundcolor="00000000" data-animationin="0" data-durationin="500" data-easingin="linear" data-delayin="0" data-parallaxin="0.45" data-playoutafter="0" data-animationout="0" data-durationout="500" data-easingout="linear" data-delayout="0" data-parallaxout="0.45" data-desktopwidth="18.223%" data-desktopheight="100.625%"><div >
+            <a href="/index.php?option=com_content&amp;view=article&amp;id=134&amp;Itemid=383&amp;lang=en" target="_self" style="display: block;background: none !important;">
+                <img id="nextend-smart-slider-2item1"  src="http://www.hialeahfl.gov/images/miniSlides/hialeahTV.png" data-desktop="http://www.hialeahfl.gov/images/miniSlides/hialeahTV.png"  style="display: block; max-width: 100%; ;width:100%;height:auto;" class=" " alt="Image not available" title="" />
+            </a>
+        </div></div><div class="smart-slider-layer" style="top: 0%; left: 20.443%; width: 18.223%; height: 100.625%; position: absolute; z-index: 2; display: block;" data-animation="slide" data-desktopleft="20.443%" data-desktoptop="0.000%" data-name="Calendar of Events" data-showdesktop="1" data-showtablet="1" data-showphone="1" data-layerbackgroundcolor="00000000" data-animationin="0" data-durationin="500" data-easingin="linear" data-delayin="0" data-parallaxin="0.45" data-playoutafter="0" data-animationout="0" data-durationout="500" data-easingout="linear" data-delayout="0" data-parallaxout="0.45" data-desktopwidth="18.223%" data-desktopheight="100.625%"><div >
+            <a href="/index.php?option=com_eventbooking&amp;view=upcomingevents&amp;layout=timeline&amp;id=0&amp;Itemid=1066&amp;lang=en" target="_self" style="display: block;background: none !important;">
+                <img id="nextend-smart-slider-2item2"  src="http://www.hialeahfl.gov/images/miniSlides/calendar.png" data-desktop="http://www.hialeahfl.gov/images/miniSlides/calendar.png"  style="display: block; max-width: 100%; ;width:100%;height:auto;" class=" " alt="Image not available" title="" />
+            </a>
+        </div></div><div class="smart-slider-layer" style="top: 0%; left: 40.886%; width: 18.223%; height: 100.625%; position: absolute; z-index: 3; display: block;" data-animation="slide" data-desktopleft="40.886%" data-desktoptop="0.000%" data-name="Job Opportunities" data-showdesktop="1" data-showtablet="1" data-showphone="1" data-layerbackgroundcolor="00000000" data-animationin="0" data-durationin="500" data-easingin="linear" data-delayin="0" data-parallaxin="0.45" data-playoutafter="0" data-animationout="0" data-durationout="500" data-easingout="linear" data-delayout="0" data-parallaxout="0.45" data-desktopwidth="18.223%" data-desktopheight="100.625%"><div >
+            <a href="/index.php?option=com_docman&amp;view=list&amp;slug=job-opportunities&amp;Itemid=520&amp;lang=en" target="_self" style="display: block;background: none !important;">
+                <img id="nextend-smart-slider-2item3"  src="http://www.hialeahfl.gov/images/miniSlides/jobOpportunities.png" data-desktop="http://www.hialeahfl.gov/images/miniSlides/jobOpportunities.png"  style="display: block; max-width: 100%; ;width:100%;height:auto;" class=" " alt="Image not available" title="" />
+            </a>
+        </div></div><div class="smart-slider-layer" style="top: 0%; left: 61.329%; width: 18.223%; height: 100.625%; position: absolute; z-index: 4; display: block;" data-animation="slide" data-desktopleft="61.329%" data-desktoptop="0.000%" data-name="Council Meetings" data-showdesktop="1" data-showtablet="1" data-showphone="1" data-layerbackgroundcolor="00000000" data-animationin="0" data-durationin="500" data-easingin="linear" data-delayin="0" data-parallaxin="0.45" data-playoutafter="0" data-animationout="0" data-durationout="500" data-easingout="linear" data-delayout="0" data-parallaxout="0.45" data-desktopwidth="18.223%" data-desktopheight="100.625%"><div >
+            <a href="/index.php?option=com_docman&amp;view=document&amp;slug=2016-council-meeting-calendar&amp;layout=default&amp;alias=4975-2016-council-meeting-calendar&amp;category_slug=office-of-the-city-clerk&amp;Itemid=226&amp;lang=en" target="_self" style="display: block;background: none !important;">
+                <img id="nextend-smart-slider-2item4"  src="http://www.hialeahfl.gov/images/miniSlides/councilMeetings.png" data-desktop="http://www.hialeahfl.gov/images/miniSlides/councilMeetings.png"  style="display: block; max-width: 100%; ;width:100%;height:auto;" class=" " alt="Image not available" title="" />
+            </a>
+        </div></div><div class="smart-slider-layer" style="top: 0%; left: 81.778%; width: 18.223%; height: 100.625%; position: absolute; z-index: 5; display: block;" data-animation="slide" data-desktopleft="81.778%" data-desktoptop="0.000%" data-name="Emergency Links" data-showdesktop="1" data-showtablet="1" data-showphone="1" data-layerbackgroundcolor="00000000" data-animationin="0" data-durationin="500" data-easingin="linear" data-delayin="0" data-parallaxin="0.45" data-playoutafter="0" data-animationout="0" data-durationout="500" data-easingout="linear" data-delayout="0" data-parallaxout="0.45" data-desktopwidth="18.223%" data-desktopheight="100.625%"><div >
+            <a href="/index.php?option=com_content&amp;view=article&amp;id=225&amp;Itemid=523&amp;lang=en" target="_self" style="display: block;background: none !important;">
+                <img id="nextend-smart-slider-2item5"  src="http://www.hialeahfl.gov/images/miniSlides/emergencyManagement.png" data-desktop="http://www.hialeahfl.gov/images/miniSlides/emergencyManagement.png"  style="display: block; max-width: 100%; ;width:100%;height:auto;" class=" " alt="Image not available" title="" />
+            </a>
+        </div></div>                    </div>
+                </div>
+                            <div class="smart-slider-canvas smart-slider-bg-colored" style="">
+                                                            <div class="smart-slider-canvas-inner">
+                        <div class="smart-slider-layer" style="top: 0%; left: 0%; width: 18.223%; height: 100.625%; position: absolute; z-index: 1; display: block;" data-animation="slide" data-desktopleft="0%" data-desktoptop="0%" data-name="HIaleahTV" data-showdesktop="1" data-showtablet="1" data-showphone="1" data-layerbackgroundcolor="00000000" data-animationin="0" data-durationin="500" data-easingin="linear" data-delayin="0" data-parallaxin="0.45" data-playoutafter="0" data-animationout="0" data-durationout="500" data-easingout="linear" data-delayout="0" data-parallaxout="0.45" data-desktopwidth="18.223%" data-desktopheight="100.625%"><div >
+            <a href="http://65.23.61.34/uhtbin/cgisirsi.exe/x/0/0/49" target="_blank" style="display: block;background: none !important;">
+                <img id="nextend-smart-slider-2item6"  src="http://www.hialeahfl.gov/images/miniSlides/libraryCatalog.png" data-desktop="http://www.hialeahfl.gov/images/miniSlides/libraryCatalog.png"  style="display: block; max-width: 100%; ;width:100%;height:auto;" class=" " alt="Image not available" title="" />
+            </a>
+        </div></div><div class="smart-slider-layer" style="top: 0%; left: 20.443%; width: 18.223%; height: 100.625%; position: absolute; z-index: 2; display: block;" data-animation="slide" data-desktopleft="20.443%" data-desktoptop="0.000%" data-name="Calendar of Events" data-showdesktop="1" data-showtablet="1" data-showphone="1" data-layerbackgroundcolor="00000000" data-animationin="0" data-durationin="500" data-easingin="linear" data-delayin="0" data-parallaxin="0.45" data-playoutafter="0" data-animationout="0" data-durationout="500" data-easingout="linear" data-delayout="0" data-parallaxout="0.45" data-desktopwidth="18.223%" data-desktopheight="100.625%"><div >
+            <a href="/index.php?option=com_jtagcalendar&amp;view=main&amp;Itemid=123&amp;lang=en" target="_self" style="display: block;background: none !important;">
+                <img id="nextend-smart-slider-2item7"  src="http://www.hialeahfl.gov/images/miniSlides/reportProblems.png" data-desktop="http://www.hialeahfl.gov/images/miniSlides/reportProblems.png"  style="display: block; max-width: 100%; ;width:100%;height:auto;" class=" " alt="Image not available" title="" />
+            </a>
+        </div></div><div class="smart-slider-layer" style="top: 0%; left: 40.886%; width: 18.223%; height: 100.625%; position: absolute; z-index: 3; display: block;" data-animation="slide" data-desktopleft="40.886%" data-desktoptop="0.000%" data-name="Job Opportunities" data-showdesktop="1" data-showtablet="1" data-showphone="1" data-layerbackgroundcolor="00000000" data-animationin="0" data-durationin="500" data-easingin="linear" data-delayin="0" data-parallaxin="0.45" data-playoutafter="0" data-animationout="0" data-durationout="500" data-easingout="linear" data-delayout="0" data-parallaxout="0.45" data-desktopwidth="18.223%" data-desktopheight="100.625%"><div >
+            <a href="/index.php?option=com_content&amp;view=article&amp;id=164&amp;Itemid=452&amp;lang=en" target="_self" style="display: block;background: none !important;">
+                <img id="nextend-smart-slider-2item8"  src="http://www.hialeahfl.gov/images/miniSlides/constructionUpdates.png" data-desktop="http://www.hialeahfl.gov/images/miniSlides/constructionUpdates.png"  style="display: block; max-width: 100%; ;width:100%;height:auto;" class=" " alt="Image not available" title="" />
+            </a>
+        </div></div><div class="smart-slider-layer" style="top: 0%; left: 61.329%; width: 18.223%; height: 100.625%; position: absolute; z-index: 4; display: block;" data-animation="slide" data-desktopleft="61.329%" data-desktoptop="0.000%" data-name="Council Meetings" data-showdesktop="1" data-showtablet="1" data-showphone="1" data-layerbackgroundcolor="00000000" data-animationin="0" data-durationin="500" data-easingin="linear" data-delayin="0" data-parallaxin="0.45" data-playoutafter="0" data-animationout="0" data-durationout="500" data-easingout="linear" data-delayout="0" data-parallaxout="0.45" data-desktopwidth="18.223%" data-desktopheight="100.625%"><div >
+            <a href="/index.php?option=com_content&amp;view=article&amp;id=141&amp;Itemid=409&amp;lang=en" target="_self" style="display: block;background: none !important;">
+                <img id="nextend-smart-slider-2item9"  src="http://www.hialeahfl.gov/images/miniSlides/transit.png" data-desktop="http://www.hialeahfl.gov/images/miniSlides/transit.png"  style="display: block; max-width: 100%; ;width:100%;height:auto;" class=" " alt="Image not available" title="" />
+            </a>
+        </div></div><div class="smart-slider-layer" style="top: 0%; left: 81.778%; width: 18.223%; height: 100.625%; position: absolute; z-index: 5; display: block;" data-animation="slide" data-desktopleft="81.778%" data-desktoptop="0.000%" data-name="Emergency Links" data-showdesktop="1" data-showtablet="1" data-showphone="1" data-layerbackgroundcolor="00000000" data-animationin="0" data-durationin="500" data-easingin="linear" data-delayin="0" data-parallaxin="0.45" data-playoutafter="0" data-animationout="0" data-durationout="500" data-easingout="linear" data-delayout="0" data-parallaxout="0.45" data-desktopwidth="18.223%" data-desktopheight="100.625%"><div >
+            <a href="/index.php?option=com_content&amp;view=article&amp;id=117&amp;Itemid=330&amp;lang=en" target="_self" style="display: block;background: none !important;">
+                <img id="nextend-smart-slider-2item10"  src="http://www.hialeahfl.gov/images/miniSlides/programsEvents.png" data-desktop="http://www.hialeahfl.gov/images/miniSlides/programsEvents.png"  style="display: block; max-width: 100%; ;width:100%;height:auto;" class=" " alt="Image not available" title="" />
+            </a>
+        </div></div>                    </div>
+                </div>
+                    </div>
+    </div>
+    <div onclick="njQuery('#nextend-smart-slider-2').smartslider('previous');" class="nextend-widget nextend-widget-always nextend-widget-display-desktop nextend-arrow-previous nextend-image nextend-image-previous nextend-image-previous-circle-button-cream" style="position: absolute;left:0px;top:40%;" ></div><div onclick="njQuery('#nextend-smart-slider-2').smartslider('next');" class="nextend-widget nextend-widget-always nextend-widget-display-desktop nextend-arrow-next nextend-image nextend-image-next nextend-image-next-circle-button-cream" style="position: absolute;right:0px;top:40%;" ></div></div>
+
+<script type="text/javascript">
+    njQuery(document).ready(function () {
+        njQuery('#nextend-smart-slider-2').smartslider({"translate3d":1,"playfirstlayer":0,"mainafterout":1,"inaftermain":1,"fadeonscroll":0,"autoplay":0,"autoplayConfig":{"duration":5000,"counter":0,"autoplayToSlide":0,"stopautoplay":{"click":1,"mouseenter":1,"slideplaying":1},"resumeautoplay":{"mouseleave":0,"slideplayed":1,"slidechanged":0}},"responsive":{"downscale":0,"upscale":0,"maxwidth":3000,"basedon":"combined","screenwidth":{"tablet":1024,"phone":640},"ratios":[1,1,0.7,0.5]},"controls":{"scroll":0,"touch":"0","keyboard":0},"blockrightclick":0,"lazyload":0,"lazyloadneighbor":0,"randomize":0,"type":"ssSimpleSlider","animation":["fade"],"animationSettings":{"duration":1000,"delay":0,"easing":"easeInOutQuint","parallax":1},"flux":[0,["bars","blocks"]],"touchanimation":"0"});
+    });
+</script>
+<div style="clear: both;"></div>
+</div></div>
+<br style="clear: both;" />
+</div>  <!--closes mainContent-->
+<div id="footer">
+<div id="citySeal"><a href="/index.php"><img src="/../../images/citySeal.jpg" width="199" height="190" /></a>
+</div>  <!--closes citySeal-->
+<div id="footerNavLeft"><ul class="nav menu">
+<li class="item-101 default"><a href="/index.php?option=com_content&amp;view=featured&amp;Itemid=101&amp;lang=en" >Home</a></li><li class="item-119 parent"><a href="/index.php?option=com_content&amp;view=article&amp;id=6&amp;Itemid=385&amp;lang=en" >About Hialeah</a></li><li class="item-121 parent"><a href="/index.php?option=com_content&amp;view=article&amp;id=14&amp;Itemid=386&amp;lang=en" >Government</a></li><li class="item-120 active parent"><a href="/index.php?option=com_content&amp;view=article&amp;id=34&amp;Itemid=120&amp;lang=en" >Departments</a></li><li class="item-122 parent"><a href="/index.php?option=com_content&amp;view=article&amp;id=109&amp;Itemid=122&amp;lang=en" >Employees</a></li><li class="item-123"><a href="/index.php?option=com_eventbooking&amp;view=upcomingevents&amp;layout=timeline&amp;id=0&amp;Itemid=1066&amp;lang=en" >Calendar</a></li></ul>
+</div><!--closes footerNavLeft-->
+<div id="footerDivider"></div><!--closes footerDivider-->
+<div id="footerNavRight"><ul class="nav menu">
+<li class="item-109"><a href="/index.php?option=com_content&amp;view=article&amp;id=115&amp;Itemid=109&amp;lang=en" >Make Payments</a></li><li class="item-110"><a href="/index.php?option=com_content&amp;view=article&amp;id=114&amp;Itemid=110&amp;lang=en" >Search Maps</a></li><li class="item-111"><a href="/index.php?option=com_content&amp;view=article&amp;id=116&amp;Itemid=111&amp;lang=en" >E-Mail Updates</a></li><li class="item-112"><a href="/index.php?option=com_content&amp;view=article&amp;id=129&amp;Itemid=112&amp;lang=en" >Media Gallery</a></li><li class="item-113"><a href="/index.php?option=com_content&amp;view=article&amp;id=107&amp;Itemid=113&amp;lang=en" >Report Problems</a></li></ul>
+</div><!--closes footerNavRight-->
+<div id="footerDivider"></div><!--closes footerDivider-->
+<div id="cityCopyright">
+© 2018 City of Hialeah, Florida. All rights reserved. <br />
+501 Palm Avenue, Hialeah, Florida 33010 &bull; 305-883-5800
+<br />
+<span style="font-size:10px; line-height:16px"><br />
+Under Florida Law, e-mail addresses are public records. If you do not want your<br />
+e-mail address released in response to a public-records request, do not send<br />
+electronic mail to this entity. Instead, contact this office by phone or in writing.<br /><br />
+<span style="font-size:14px;"><a href="/index.php?option=com_content&amp;view=article&amp;id=885&amp;Itemid=1260&amp;lang=en">ADA Notice</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;<a href="/index.php?option=com_content&amp;view=article&amp;id=885&amp;Itemid=1260&amp;lang=en">Non-Discrimination Policy</a></span>
+<br />
+</span>
+</div>
+</div>  <!--closes footer-->
+</div>  <!--closes container-->
+
+<script>
+jQuery(document).ready(function(e) {
+    jQuery('.facebookTab').css('color','#ffe60f');
+	
+	jQuery('.facebookTab').click(function() {
+		jQuery('.facebook').fadeIn('slow');
+		jQuery('.twitter').fadeOut('slow');
+		jQuery('.facebookTab').css('color','#ffe60f');
+		jQuery('.twitterTab').css('color','#FFFFFF');
+	});
+	
+	jQuery('.twitterTab').click(function() {
+		jQuery('.facebook').fadeOut('slow');
+		jQuery('.twitter').fadeIn('slow');
+		jQuery('.twitterTab').css('color','#ffe60f');
+		jQuery('.facebookTab').css('color','#FFFFFF');
+	});
+	
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36989184-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>
