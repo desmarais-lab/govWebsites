@@ -1,9 +1,12 @@
 options(java.parameters="-Xmx12g")
 library(boilerpipeR)
+set.seed(1)
 
 load("out/citydocs.rdata")
 d <- d[d$ext=="html",]
 
+#Function to extract the article text with boilerpipeR
+#Can fail if there is something wrong with the HTML, so wrapped in try()
 extractArticle <- function(filepath){
   try({
   content <- paste(readLines(filepath, warn = F), collapse="\n")
@@ -12,17 +15,28 @@ extractArticle <- function(filepath){
   })
 }
 
+#Apply the function
+#No parallelization, seems to work better without
 extracts <- list()
 for(i in 1:nrow(d)){
   extracts[[i]] <- extractArticle(d$path[i])
-  print(i)
+  #Do some occasional garbage collection to ensure that nothing breaks
   if(i%%1000 == 0) {
     gc()
+    print(i)
   }
 }
-save.image("out/boilerpipe_img.rdata")
+#put the results, along with ids, into a file
+extracts <- unlist(extracts)
+ids <- d$id
+results_html <- data.frame(text = extracts, id = ids, stringsAsFactors = F)
+
+#save the results
+save(results_html, file = "out/results_boilerpipe.rdata")
+#save.image("out/boilerpipe_img.rdata")
 
 #----
+# Somewhat unsuccessful attempts at parallelization
 
 # library('doParallel')
 # #register 11 parallel threads
@@ -45,5 +59,3 @@ save.image("out/boilerpipe_img.rdata")
 # stopCluster(cl)
 # 
 # test = pblapply(d_html$path[1:10000], extractArticle)
-
-
