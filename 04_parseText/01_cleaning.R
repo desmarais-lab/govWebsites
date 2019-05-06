@@ -23,11 +23,11 @@ websiteUrls$urls_verified[websiteUrls$urls_verified=="www.atticaonline.com"] <- 
 websiteUrls$urls_verified[websiteUrls$urls_verified=="www.unioncity-in.gov"] <- "unioncity-in.com"
 
 # ---- #
-
+#create a list of all files in all subdirectories
 path <- "/home/mneumann/hd2/govWebsites"
-
-f <- list.files(path, recursive = T) #create a list of all files in all subdirectories
-f <- f[!stringr::str_detect(f, "[^\\x00-\\x7F]")]
+f <- list.files(path, recursive = T)
+#kick out files with non-US-ASCII filenames
+f <- f[!str_detect(f, "[^\\x00-\\x7F]")]
 
 #file types
 ext <- file_ext(f) #get file extension
@@ -47,10 +47,15 @@ d <- subset(d, filename != "")
 #only txt, pdf, html, doc, or docx
 d <- d[d$ext %in% c('txt', 'pdf', 'html', 'doc', 'docx'),]
 
+#get the filesize
+d$filesize <- file.size(d$path)
+
 #remove some files that crash readtext
 #everything in this folder causes some problems
 d <- d[-which(str_detect(d$path, "/home/mneumann/hd2/govWebsites/bloomington.in.gov/trades/parcel/(.*?).pdf")),]
-
+#readtext needs square brackets to be escaped
+#some other r functions, like file.info or file.size need the exact opposite
+#so file.size was done before
 d$path <- str_replace_all(d$path, "\\[", "\\\\[")
 d$path <- str_replace_all(d$path, "\\]", "\\\\]")
 
@@ -117,11 +122,14 @@ rm(websiteUrls2, cities2, test)
 #do the actual merge
 d <- merge(d, websiteUrls, by.x = "city", by.y = "urls_verified", all = T)
 
-#cities that still need to be downloaded/fixed
+#cities that still haven't been downloaded/fixed
 todo <- d[is.na(d$path)==T,]
 
 #remove the above from the big data frame
 d <- d[is.na(d$path)==F,]
+
+#assign an id to each file
+d$id <- paste0("file", 1:nrow(d))
 
 save(d, file = "out/citydocs.rdata")
 save(todo, file = "out/citydocs_todo.rdata")
