@@ -2,7 +2,7 @@ install.packages("censusapi")
 library(censusapi)
 
 # Add key to .Renviron
-Sys.setenv(CENSUS_KEY="a7bf6f7b2b4796a05a13827bfe3d5c1b7dc78405")
+Sys.setenv(CENSUS_KEY="")
 # Check to see that the expected key is output in your R console
 Sys.getenv("CENSUS_KEY")
 
