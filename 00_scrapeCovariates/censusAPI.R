@@ -1,14 +1,12 @@
 #use the census API to get the covariates needed for the stm
-
-install.packages("censusapi")
 library(censusapi)
 
 # Add key to .Renviron
-Sys.setenv(CENSUS_KEY="a7bf6f7b2b4796a05a13827bfe3d5c1b7dc78405")
+Sys.setenv(CENSUS_KEY=readLines("censusAPI_Key.txt"))
 # Check to see that the expected key is output in your R console
 Sys.getenv("CENSUS_KEY")
 
-varsbds <- listCensusMetadata(name="acs5", vintage = 2015, type = "v")
+varsbds <- listCensusMetadata(name="acs/acs5", vintage = 2015, type = "v")
 
 #Variables:
 
@@ -52,18 +50,16 @@ variables <- c("NAME", "B01001_001E", "B01001_002E", "B01001A_001E", "B01001B_00
                "B15003_002E", "B15003_017E", "B15003_018E", "B15003_022E",
                "B15003_023E", "B15003_025E", "B25077_001E")
 
-acs5 <- getCensus(name = "acs5",
+acs5 <- getCensus(name = "acs/acs5",
                  vintage = 2015,
                  vars = variables,
                  region = "place:*")
 
-save(acs5, file = "rfiles/acs5.rdata")
+save(acs5, file = "out/acs5.rdata")
 
 #----
-
+# Merge with city metadata
 load("rfiles/allURLs.rdata")
-
-
 
 acs5$NAME <- sub(" \\(pt\\.\\)", "", acs5$NAME)
 acs5$NAME <- sub(" town", "", acs5$NAME)
@@ -97,4 +93,4 @@ websiteUrls <- merge(websiteUrls, acs5, by.x = "State_City", by.y = "NAME")
 websiteUrls <- websiteUrls[websiteUrls$place!=74183,]
 websiteMeta <- websiteUrls
 
-save(websiteMeta, file = "rfiles/websiteMetadata.rdata")
+save(websiteMeta, file = "out/websiteMetadata_Census.rdata")
