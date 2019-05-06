@@ -4,31 +4,36 @@ library('tidyr')
 library('ggplot2')
 library('scales')
 library('stringr')
-
 set.seed(1)
 
-load(file = "./rfiles/websiteMetadata.rdata")
-load(file = "rfiles/allDocuments.rdata")
-
-d <- merge(d, websiteMeta, by.x = "city", by.y = "State_City")
-d <- subset(d, State %in% c("Indiana", "Louisiana", "New York", "California", "Washington", "Texas"))
-
-d$doc_id <- paste("doc", 1:nrow(d))
-crps <- corpus(d)
-dtm <- dfm(crps)
+load(file = "../06_preprocessing/out/preprocessed_tks.rdata")
+#merge in census covariates
+d <- docvars(tks)
+load("../00_scrapeCovariates/out/websiteMetadata_Census.rdata")
+websiteMeta <- subset(websiteMeta, select = c(State_City, B01001_001E, B19013_001E))
+d <- merge(d, websiteMeta, by = "State_City")
+docvars(tks) <- d
+rm(websiteMeta, d)
+#use only the states for which we have data on multiple cities
+tks <- tokens_subset(tks, State %in% c("Indiana", "Louisiana", "New York", "California", "Washington", "Texas"))
+#convert to dfm and then stm
+d_dfm <- dfm(tks)
+d_stm <- convert(d_dfm, to = "stm")
 
 #Number of topics
 numtopics <- 60
 
 #Train the model
-stmFit <- stm(documents = dtm,
+stmFit <- stm(documents = d_stm$documents,
+              vocab = d_stm$vocab,
+              data = d_stm$meta,
               K = numtopics, 
               prevalence =~ party + State + B01001_001E + B19013_001E,
               max.em.its = 9999,
               init.type = "Spectral")
 
 #save.image("rfiles/stmSession2, _Party.rdata")
-save.image(paste("rfiles/stmSession_model_", numtopics, ".rdata", sep = ""))
+save.image(paste("out/stmSession_model_", numtopics, ".rdata", sep = ""))
 
 #set seed again in case the script was restarted from here
 set.seed(1)
@@ -43,4 +48,4 @@ prep <- estimateEffect(formula = 1:numtopics ~ party + State + B01001_001E + B19
                        uncertainty = "Global",
                        nsims = sims)
 
-save.image(paste("rfiles/stmSession_sim_", numtopics, ".rdata", sep = ""))
+save.image(paste("out/stmSession_sim_", numtopics, ".rdata", sep = ""))
