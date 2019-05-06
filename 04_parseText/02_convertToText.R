@@ -63,6 +63,13 @@ print(sum(d$filesize[which(!too_big)])) #combined size of the file we keep
 #remove them
 d <- d[!too_big,]
 
+#sort by size
+#the advantage of this should be that we don't have 10 cores sitting idle while one works on a huge file
+d <- d[order(d$filesize),]
+
+#remove robots.txt files
+d <- d[d$filename!="robots.txt",]
+
 #use ff to make 5k row chunks of the dataframe
 #iterate over them and read in and convert to text all of its documents
 #using the function above
