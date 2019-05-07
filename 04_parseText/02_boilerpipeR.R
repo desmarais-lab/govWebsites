@@ -1,5 +1,6 @@
 options(java.parameters="-Xmx12g")
 library(boilerpipeR)
+library(stringr)
 set.seed(1)
 
 load("out/citydocs.rdata")
@@ -30,6 +31,19 @@ for(i in 1:nrow(d)){
 extracts <- unlist(extracts)
 ids <- d$id
 results_html <- data.frame(text = extracts, id = ids, stringsAsFactors = F)
+
+#remove documents with embedded javascript, json, other html things, etc. 
+html_docs <- which(str_detect(results_html$text, "/*! jQuery"))
+html_docs <- c(html_docs, which(str_detect(results_html$text, ".className")))
+html_docs <- c(html_docs, which(str_detect(results_html$text, "\\{\\\""))) #json
+html_docs <- c(html_docs, which(str_detect(results_html$text, "wp-embedded-content")))
+html_docs <- c(html_docs, which(str_detect(results_html$text, "blockquote")))
+html_docs <- unique(html_docs)
+if(length(html_docs)>0){
+  results_html <- results_html[-html_docs,]
+}
+rm(html_docs)
+
 
 #save the results
 save(results_html, file = "out/results_boilerpipe.rdata")
