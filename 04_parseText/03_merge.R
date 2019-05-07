@@ -3,10 +3,17 @@ library(stringr)
 load("out/results_boilerpipe.rdata")
 load("out/results_readtext.rdata")
 
+#combine
 results_parsed <- rbind(results_html, results_nonhtml)
 rm(results_html, results_nonhtml)
+
+#remove empties
+results_parsed <- results_parsed[results_parsed$text!="",]
+
+#sort by id
 results_parsed <- results_parsed[order(as.numeric(str_remove(results_parsed$id, "file"))),]
 
+#save
 save(results_parsed, file = "out/results_parsed_all.rdata")
 
 # load("Alaska_Anchorage.rdata")
