@@ -6,48 +6,29 @@ library('stringr')
 library('ff')
 set.seed(1)
 
+#we are very RAM limited here, so only do whats necessary
+
 load("../04_parseText/out/results_parsed_all.rdata")
-load("../04_parseText/out/citydocs.rdata")
-#keep only the rows of the metadata for which text was extracted
-m <- match(results_parsed$id, d$id)
-#numeric indicator variable
-d <- d[m,]
-d$id_num <- as.numeric(str_remove(d$id, "file"))
-
-#----
-# Remove overtly useless content
-
-#remove empty documents 
-empty_docs <- which(results_parsed$text=="")
-if(length(empty_docs)>0){
-  d <- d[-empty_docs,]
-  results_parsed <- results_parsed[-empty_docs,]
-}
-
-#remove leftover html documents
-html_docs <- which(str_detect(results_parsed$text, "/*! jQuery"))
-html_docs <- c(html_docs, which(str_detect(results_parsed$text, ".className")))
-html_docs <- unique(html_docs)
-if(length(html_docs)>0){
-  d <- d[-html_docs,]
-  results_parsed <- results_parsed[-html_docs]
-}
 
 #----
 # Parsing
 
 #parse all html documents
-crps <- corpus(results_parsed$text, docnames = results_parsed$id, docvars = d)
-start_time <- Sys.time()
-parsedtxt <- spacy_parse(crps, tag = T, dependency = T)
-end_time <- Sys.time()
-end_time - start_time
+# crps <- corpus(results_parsed$text, docnames = results_parsed$id)
+# start_time <- Sys.time()
+# parsedtxt <- spacy_parse(crps, tag = T, dependency = T)
+# end_time <- Sys.time()
+# end_time - start_time
 
-#chunked version
-for(i in chunk(from = 1, to = nrow(crps$documents), by = 5000)){
-  ids <- d$id_num[c(min(i):max(i))]
-  crps_chunk <- corpus_subset(crps, id_num %in% ids)
+# Chunked version
+for(i in chunk(from = 1, to = nrow(results_parsed), by = 5000)){
+  #create chunked data frame
+  results_parsed_chunk <- results_parsed[c(min(i):max(i)),]
+  #create chunked quanteda corpus
+  crps_chunk <- corpus(results_parsed_chunk$text, docnames = results_parsed_chunk$id)
+  #parse with spacy
   parsedtxt_chunk <- spacy_parse(crps_chunk, tag = T, dependency = T)
+  #save
   save(parsedtxt_chunk, file = paste0("out/parsing_chunks/chunk_", min(i), "_", max(i), ".rdata"))
 }
 #combine the chunks into one file
