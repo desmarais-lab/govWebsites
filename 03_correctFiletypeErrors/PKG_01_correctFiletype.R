@@ -1,12 +1,13 @@
 
-corrrectFiletypes <- function(path){
+correctFiletypes <- function(path){
 
   #create a list of all files in all subdirectories
-  f <- list.files(path, recursive = T)
+  #f <- list.files(path, recursive = T)
   #ignore files whose names can't be read
-  f <- f[!stringr::str_detect(f, "[^\\x00-\\x7F]")]
+  #f <- f[!stringr::str_detect(f, "[^\\x00-\\x7F]")]
   #absolute file paths
-  fAbs <- paste(path, f, sep = "")
+  fAbs <- list.files(path, recursive = T, full.names = T)
+  fAbs <- fAbs[!stringr::str_detect(fAbs, "[^\\x00-\\x7F]")]
   
   #determine file type with the wand package (relying on libmagic)
   magicResults <- wand::incant(fAbs)
@@ -46,7 +47,7 @@ corrrectFiletypes <- function(path){
   magicResults$extensions[magicResults$extensions=="ttc, ttf"] <- "ttf"
   magicResults$extensions[magicResults$extensions=="xla, xlc, xlm, xls, xlt, xlw"] <- "xls"
   
-  #one exception: we don't change text files, because that would result in the file not getting parsed
+  #one exception: we don't change files to txt, because it would want to change js and css to text, which would be wrong
   magicResults$conflict <- F
   magicResults$conflict[magicResults$ext!=magicResults$extensions & magicResults$extensions!="txt"] <- T
   
@@ -63,8 +64,15 @@ corrrectFiletypes <- function(path){
   magicResults$nChar <- nchar(magicResults$file)
   magicResults <- magicResults[magicResults$nChar<500,]
   
+  #Print info
+  print("Making the following changes:")
+  print(paste(magicResults$file[magicResults$conflict==T], "  ----->  ", magicResults$extensions[magicResults$conflict==T]))
+  
   #rename everything
   purrr::map2(magicResults$file[magicResults$conflict==T], 
               magicResults$newpath[magicResults$conflict==T], file.rename)
 
 }
+
+path = "/media/mneumann/ec574740-a4f4-4bd0-b624-6ff2c4ac59e9/testGovWebsitesPackage/cityofboonvilleindiana.com"
+correctFiletypes(path)

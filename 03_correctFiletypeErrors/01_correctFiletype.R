@@ -3,11 +3,13 @@
 library(wand)
 
 path = "/home/mneumann/hd2/govWebsites/"
-f <- list.files(path, recursive = T) #create a list of all files in all subdirectories
+#f <- list.files(path, recursive = T) #create a list of all files in all subdirectories
 #ignore files whose names can't be read
-f <- f[!stringr::str_detect(f, "[^\\x00-\\x7F]")]
+#f <- f[!stringr::str_detect(f, "[^\\x00-\\x7F]")]
 #absolute file paths
-fAbs <- paste(path, f, sep = "")
+fAbs <- list.files(path, recursive = T, full.names = T)
+#ignore files whose names can't be read
+fAbs <- fAbs[!stringr::str_detect(fAbs, "[^\\x00-\\x7F]")]
 
 #determine file type with the wand pagacke (relying on libmagic)
 #and check how long it takes
@@ -67,7 +69,7 @@ magicResults$extensions[magicResults$extensions=="ttc, ttf"] <- "ttf"
 magicResults$extensions[magicResults$extensions=="xla, xlc, xlm, xls, xlt, xlw"] <- "xls"
 
 magicResults$conflict <- F
-#one exception: we don't change anything to text files, because that would result in the file not getting parsed
+#one exception: we don't change files to txt, because it would want to change js and css to text, which would be wrong
 magicResults$conflict[magicResults$ext!=magicResults$extensions & magicResults$extensions!="txt"] <- T
 #magicResults$conflict
 
