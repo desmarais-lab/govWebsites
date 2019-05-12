@@ -6,19 +6,22 @@ library('scales')
 library('stringr')
 set.seed(1)
 
-load(file = "../06_preprocessing/out/preprocessed_tks.rdata")
+load(file = "../06_preprocessing/out/preprocessing_finished.rdata")
 #merge in census covariates
-d <- docvars(tks)
+load("../04_parseText/out/citydocs.rdata")
 load("../00_scrapeCovariates/out/websiteMetadata_Census.rdata")
 websiteMeta <- subset(websiteMeta, select = c(State_City, B01001_001E, B19013_001E))
 d <- merge(d, websiteMeta, by = "State_City")
-docvars(tks) <- d
-rm(websiteMeta, d)
+d_reordered <- d[match(names(tks_all), d$id),]
+docvars(tks_all) <- d_reordered
+rm(websiteMeta, d, d_reordered)
 #use only the states for which we have data on multiple cities
-tks <- tokens_subset(tks, State %in% c("Indiana", "Louisiana", "New York", "California", "Washington", "Texas"))
+tks_all <- tokens_subset(tks_all, State %in% c("Indiana", "Louisiana", "New York", "California", "Washington", "Texas"))
 #convert to dfm and then stm
-d_dfm <- dfm(tks)
+d_dfm <- dfm(tks_all)
 d_stm <- convert(d_dfm, to = "stm")
+save(d_stm, file = "out/ready_for_stm.rdata")
+load("out/ready_for_stm.rdata")
 
 #Number of topics
 numtopics <- 60
@@ -44,7 +47,7 @@ sims <- 1000
 #re-estimate the effects, this time do 1000 draws from the posterior
 prep <- estimateEffect(formula = 1:numtopics ~ party + State + B01001_001E + B19013_001E, 
                        stmobj = stmFit,
-                       meta = d, 
+                       metadata = d_stm$meta, 
                        uncertainty = "Global",
                        nsims = sims)
 

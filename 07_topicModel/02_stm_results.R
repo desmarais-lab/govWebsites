@@ -2,7 +2,7 @@ library(stm)
 
 set.seed(1)
 
-load("rfiles/stmSession_sim_60.rdata")
+load("out/stmSession_sim_60.rdata")
 
 #make a dataframe to store the results in
 df <- data.frame(coef = rep(0, numtopics), sig = rep(FALSE, numtopics),
@@ -78,8 +78,8 @@ topwords3 <- topwords3[order(df$coef, decreasing = T),]
 #remove the last topic
 topwords3 <- topwords3[,-8]
 
-xtTopwords <- print(xtable(topwords3, caption = "Top words from a structural topic model with 60 topics and FREX scoring. Colors depict partisanship based on coefficient size. White cells are non-significant topics.",
-                           label = "tabSTMtopwords60"), 
+xtTopwords <- print(xtable(topwords3, caption = "NEW: Top words from a structural topic model with 60 topics and FREX scoring. Colors depict partisanship based on coefficient size. White cells are non-significant topics.",
+                           label = "tabSTMtopwords60New"), 
                     sanitize.text.function = identity,
                     size = "scriptsize",
                     include.rownames = FALSE)
@@ -89,5 +89,5 @@ xtTopwords <- str_replace(xtTopwords, "& Tokens assigned", "& \\\\multicolumn{2}
 xtTopwords <- str_replace(xtTopwords, "\nTopic &", "\n \\\\# &")
 
 
-writeLines(xtTopwords, con = 'paper/tables/stmTopWords60.tex')
+writeLines(xtTopwords, con = '../paper/tables/stmTopWords60New.tex')
 

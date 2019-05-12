@@ -225,7 +225,7 @@ We illustrate the analysis of municipal website content by studying differences 
 %BoW methods are methods of text analysis that do not take into account the sequence or placement of words in text---just the presence and frequency of words. As noted by \cite{GrimmerStewart2013}, for most applications, bag-of-words approaches have been found to be more than sufficient. Furthermore, there is reason to believe that city government websites are a particularly `safe' case for bag-of-words methods due to their informative, manner-of-fact based language. It is extremely unlikely for these pages to feature ambiguous language such as an abundance of negation or even sarcasm.
 
 
-\input{tables/tabBoilerplateIllustration.tex}
+%\input{tables/tabBoilerplateIllustration.tex}
 
 In order to analyze content differences between government websites based on mayoral partisanship, we draw upon a recently-developed class model for text, the structural topic model (STM), developed by \citet{Roberts2014}. Building on the conception of ``topics'' in Latent Dirichlet Allocation, in the STM a topic is a multinomial distribution defined on the word types in the corpus dictionary. The log-odds of the topic probabilities in each document-specific multinomial distribution over topics are drawn from a multivariate normal distribution in which the topic-specific means are determined by a linear regression function that associates document-attributed covariates with topics. For example, in the context of municipal website content, the structural topic model can be used to estimate a regression coefficient that defines the linear relationship between the log-odds of the municipality's population and the log-odds of each topic. For our primary empirical investigation, the STM provides with a tool with which to estimate the relationship between the party of the city's mayor and the prevalence of each topic we estimate. Further details on our STM specification can be found in the appendix.
 
@@ -352,6 +352,7 @@ City websites with Republican mayors, meanwhile, exhibit a pronounced focus on t
 
 
 \input{tables/stmTopWords60.tex} %\ref{tabSTMtopwords2}
+\input{tables/stmTopWords60New.tex}
 
 \section{Conclusion}
 
