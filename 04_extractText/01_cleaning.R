@@ -131,7 +131,15 @@ d <- d[is.na(d$path)==F,]
 #assign an id to each file
 d$id <- paste0("file", 1:nrow(d))
 
+#merge in the census data
+load("../00_scrapeCovariates/out/websiteMetadata_Census.rdata")
+websiteMeta <- subset(websiteMeta, select = c(State_City, B01001_001E, B19013_001E))
+d <- merge(d, websiteMeta, by = "State_City")
+
+#re-sort by id
+d <- d[order(as.numeric(str_remove(d$id, "file"))),]
+
 save(d, file = "out/citydocs.rdata")
 save(todo, file = "out/citydocs_todo.rdata")
 
-rm(todo, websiteUrls)
+rm(todo, websiteUrls, websiteMeta)

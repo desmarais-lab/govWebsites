@@ -59,7 +59,7 @@ save(acs5, file = "out/acs5.rdata")
 
 #----
 # Merge with city metadata
-load("rfiles/allURLs.rdata")
+load("out/allURLs.rdata")
 
 acs5$NAME <- sub(" \\(pt\\.\\)", "", acs5$NAME)
 acs5$NAME <- sub(" town", "", acs5$NAME)

@@ -1,5 +1,5 @@
 
-extractText <- function(path){
+extractText <- function(path, ncores = 11){
 
   f <- list.files(path, recursive = T, full.names = T)
   #kick out files with non-US-ASCII filenames
@@ -75,7 +75,7 @@ extractText <- function(path){
   convertToText <- function(paths, id){
     
     #register 11 parallel threads
-    doParallel::registerDoParallel(cores=11)
+    doParallel::registerDoParallel(cores=ncores)
     #parallel loop over the documents in the current website
     a <- foreach::foreach(j=(1:length(paths))) %dopar% {
       
@@ -165,3 +165,5 @@ extractText <- function(path){
 # set.seed(1)
 # path = "/media/mneumann/ec574740-a4f4-4bd0-b624-6ff2c4ac59e9/testGovWebsitesPackage/cityofboonvilleindiana.com"
 # df <- extractText(path)
+
+#Takes about 50 minutes on our largest city (Seattle), returning 35300 texts

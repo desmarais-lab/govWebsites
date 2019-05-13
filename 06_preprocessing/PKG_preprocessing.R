@@ -101,7 +101,16 @@ preprocessWebsite <- function(parsed, custom_nouns = NULL){
   
   #----
   # Remove words that contain numbers, because the parsing doesn't get stuff like 14th
+  # This is done in ADDITION to the step below (which would remove the numbers too)
   parsed <- parsed[!stringr::str_detect(parsed$lemma, "[0-9]"),]
+  
+  #----
+  # Remove any character that is not part of the English alphabet
+  parsed$lemma <- str_remove_all(parsed$lemma, "[^A-Za-z]")
+  
+  #----
+  # Remove words if they are entirely empty
+  parsed <- parsed[parsed$lemma != "",]
   
   #----
   # Convert to tokens object
