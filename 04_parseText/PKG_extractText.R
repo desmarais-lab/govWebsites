@@ -1,20 +1,14 @@
-options(java.parameters="-Xmx12g")
-set.seed(1)
-
-#path <- "/home/mneumann/hd2/govWebsites"
 
 extractText <- function(path){
 
-  f <- list.files(path, recursive = T)
+  f <- list.files(path, recursive = T, full.names = T)
   #kick out files with non-US-ASCII filenames
   f <- f[!stringr::str_detect(f, "[^\\x00-\\x7F]")]
   
   #store objects in a data frame
-  d <- data.frame(path = str_c(path, f, sep = "/"), 
-                  folder = str_c(path, folder, sep = "/"),
-                  filename,
-                  ext,
-                  stringsAsFactors = F)
+  d <- data.table::data.table(path = f,
+                              filename  = basename(f),
+                              ext = tools::file_ext(f))
   
   #only txt, pdf, html, doc, or docx
   d <- d[d$ext %in% c('txt', 'pdf', 'html', 'doc', 'docx'),]
@@ -28,10 +22,13 @@ extractText <- function(path){
   d$path <- stringr::str_replace_all(d$path, "\\[", "\\\\[")
   d$path <- stringr::str_replace_all(d$path, "\\]", "\\\\]")
   
+  #make an id
+  d$id <- paste0("file", 1:nrow(d))
+  
   #----------------------------------------------------------------------------------------
   # HTML
   
-  d <- d[d$ext=="html",]
+  d_html <- d[d$ext=="html",]
   
   #Function to extract the article text with boilerpipeR
   #Can fail if there is something wrong with the HTML, so wrapped in try()
@@ -46,8 +43,8 @@ extractText <- function(path){
   #Apply the function
   #No parallelization, seems to work better without
   extracts <- list()
-  for(i in 1:nrow(d)){
-    extracts[[i]] <- extractArticle(d$path[i])
+  for(i in 1:nrow(d_html)){
+    extracts[[i]] <- extractArticle(d_html$path[i])
     #Do some occasional garbage collection to ensure that nothing breaks
     if(i%%1000 == 0) {
       gc()
@@ -56,8 +53,9 @@ extractText <- function(path){
   }
   #put the results, along with ids, into a file
   extracts <- unlist(extracts)
-  ids <- d$id
-  results_html <- data.frame(text = extracts, id = ids, stringsAsFactors = F)
+  results_html <- data.table::data.table(text = extracts,
+                                         id = d_html$id,
+                                         path = d_html$path)
   
   #remove documents with embedded javascript, json, other html things, etc. 
   html_docs <- which(stringr::str_detect(results_html$text, "/*! jQuery"))
@@ -73,7 +71,7 @@ extractText <- function(path){
   
   #----------------------------------------------------------------------------------------
   # Other Filetypes
-  
+  library(foreach)
   convertToText <- function(paths, id){
     
     #register 11 parallel threads
@@ -87,6 +85,8 @@ extractText <- function(path){
         b <- readtext::readtext(paths[j])
         #record the file id
         b$id <- id[j]
+        #record the file path
+        b$path <- paths[j]
         
         return(b)
         
@@ -94,8 +94,8 @@ extractText <- function(path){
       
     }
     
-    #kick the data frames out of the list that don't have three columns
-    broken <- -which(unlist(lapply(a, length))!=3)
+    #kick the data frames out of the list that don't have 4 columns
+    broken <- -which(unlist(lapply(a, length))!=4)
     if(length(broken)!=0){
       a <- a[broken]
     }
@@ -107,34 +107,34 @@ extractText <- function(path){
     
   }
   
-  d <- d[d$ext!="html",]
+  d_other <- d[d$ext!="html",]
   
   #Flag files that are too large (>10Mb)
-  too_big <- d$filesize>1e+7
+  too_big <- d_other$filesize>1e+7
   #print(sum(d$filesize[which(too_big)])) #combined size of the file we kick out
   #print(sum(d$filesize[which(!too_big)])) #combined size of the file we keep
   #remove them
-  d <- d[!too_big,]
+  d_other <- d_other[!too_big,]
   
   #sort by size
   #the advantage of this should be that we don't have 10 cores sitting idle while one works on a huge file
-  d <- d[order(d$filesize),]
+  d_other <- d_other[order(d_other$filesize),]
   
   #remove robots.txt files
-  d <- d[d$filename!="robots.txt",]
+  d_other <- d_other[d_other$filename!="robots.txt",]
   
   #use ff to make 5k row chunks of the dataframe
   #iterate over them and read in and convert to text all of its documents
   #using the function above
   #the downside to this approach is that it often seems to get stuck on one thing while all the other cores are already done
-  for(i in ff:chunk(from = 1, to = nrow(d), by = 5000)){
-    d_chunk <- d[min(i):max(i), ]
+  for(i in bit::chunk(from = 1, to = nrow(d_other), by = 5000)){
+    d_chunk <- d_other[min(i):max(i), ]
     text_chunk <- convertToText(d_chunk$path, d_chunk$id)
     save(text_chunk, file = paste0("out_non_html_chunk_", min(i), "_", max(i), ".rdata"))
   }
   
   #combine the chunks into one file
-  f <- list.files("out_non_html_chunk_*", full.names = T)
+  f <- list.files(pattern = "out_non_html_chunk_", full.names = T)
   files <- list()
   for(i in 1:length(f)){
     load(f[i])
@@ -159,3 +159,9 @@ extractText <- function(path){
   return(results_extracted)
 
 }
+
+##How to use:
+# options(java.parameters="-Xmx12g")
+# set.seed(1)
+# path = "/media/mneumann/ec574740-a4f4-4bd0-b624-6ff2c4ac59e9/testGovWebsitesPackage/cityofboonvilleindiana.com"
+# df <- extractText(path)

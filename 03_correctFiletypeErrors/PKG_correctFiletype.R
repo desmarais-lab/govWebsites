@@ -74,5 +74,6 @@ correctFiletypes <- function(path){
 
 }
 
-path = "/media/mneumann/ec574740-a4f4-4bd0-b624-6ff2c4ac59e9/testGovWebsitesPackage/cityofboonvilleindiana.com"
-correctFiletypes(path)
+##How to use:
+# path = "/media/mneumann/ec574740-a4f4-4bd0-b624-6ff2c4ac59e9/testGovWebsitesPackage/cityofboonvilleindiana.com"
+# correctFiletypes(path)

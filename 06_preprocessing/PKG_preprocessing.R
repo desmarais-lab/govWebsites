@@ -1,38 +1,65 @@
-library('quanteda')
-library('spacyr')
-spacy_initialize()
-library('hunspell')
-library('stringr')
-library('ff')
-set.seed(1)
 
-preprocessFiles <- function(filetexts, fileids){
+#----
+# Function 1
 
-  results_parsed <- data.table(text = filetexts, id = fileids)
+spacy_parse_chunk <- function(texts, ids, chunk = NULL){
   
-  # Chunked version
-  for(i in chunk(from = 1, to = nrow(results_parsed), by = 5000)){
-    #create chunked data frame
-    results_parsed_chunk <- results_parsed[c(min(i):max(i)),]
-    #create chunked quanteda corpus
-    crps_chunk <- corpus(results_parsed_chunk$text, docnames = results_parsed_chunk$id)
+  #put into data table
+  dt <- data.table::data.table(text = texts, id = ids)
+  
+  #decide whether to chunk
+  if(is.null(chunk)==T){
+    if(nrow(dt)>=5000){
+      chunk <- T
+    }else{
+      chunk <- F
+    }
+  }
+  
+  #if no chunking
+  if(chunk==F){
+    #create quanteda corpus
+    crps <- quanteda::corpus(dt$text, docnames = dt$id)
     #parse with spacy
-    parsedtxt_chunk <- spacy_parse(crps_chunk, tag = T, dependency = T)
-    #save
-    save(parsedtxt_chunk, file = paste0("out_parsing_chunk_", min(i), "_", max(i), ".rdata"))
+    parsed <- spacyr::spacy_parse(crps)
   }
-  #combine the chunks into one file
-  f <- list.files("out_parsing_chunk_*", full.names = T)
-  files <- list()
-  for(i in 1:length(f)){
-    load(f[i])
-    files[[i]] <- parsedtxt_chunk
-  }
-  parsedtxt <- rbindlist(files)
-  file.remove(f)
   
+  #if chunking
+  if(chunk==T){
+    files <- list()
+    for(i in chunk(from = 1, to = nrow(dt), by = 5000)){
+      #create chunked data frame
+      dt_chunk <- dt[c(min(i):max(i)),]
+      #create chunked quanteda corpus
+      crps_chunk <- quanteda::corpus(dt_chunk$text, docnames = dt_chunk$id)
+      #parse with spacy
+      parsed_chunk <- spacyr::spacy_parse(crps_chunk)
+      #save
+      fname <- paste0("tmp_spacy_chunk_", min(i), "_", max(i), ".rdata")
+      files[[i]] <- fname
+      save(parsed_chunk, file = fname)
+    }
+    parsed_chunks <- list()
+    for(i in 1:length(files)){
+      load(files[i])
+      parsed_chunks[[i]] <- parsed_chunk
+    }
+    parsed <- rbindlist(parsed_chunks)
+    file.remove(unlist(files))
+  }
+  
+  #return the resultant spacy parsed data.table
+  return(parsed)
+  
+}
+
+#----
+# Function 2
+
+preprocessWebsite <- function(parsed, custom_nouns = NULL){
+
   #----
-  # Remove content based on NER
+  # Entity removal
   
   #entities to remove
   entity_rm <- c("CARDINAL_B", "CARDINAL_I", #numbers/counts
@@ -51,59 +78,78 @@ preprocessFiles <- function(filetexts, fileids){
                  "PERSON_B", "PERSON_I", #Grimmett, Ouabache, Askren, Wayne
                  "PRODUCT_I", #Cole, Danko, Engine, I: St
                  "QUANTITY_B", "QUANTITY_I", #54,000, 75/25, ninety
-                 "TIME_B", "TIME_I")#, #B: 5:00, I: P.M., hours
-  #"WORK_OF_ART_B", "WORK_OF_ART_I") # Keep -- B: Street, Attica, Confined, Riverboat, I: Ravine, Retirement Fund, Police
+                 "TIME_B", "TIME_I")#"WORK_OF_ART_B", "WORK_OF_ART_I") # Keep -- B: Street, Attica, Confined, Riverboat, I: Ravine, Retirement Fund, Police
   
+  #actual removal here
   #in attica, this removes about 40k out of 240k token instances
-  parsedtxt <- parsedtxt[!parsedtxt$entity%in%c(entity_rm),]
+  parsed <- parsed[!parsed$entity%in%c(entity_rm),]
   
   #----
-  # Remove content based on POS
+  # Remove POS
   
   #remove everything except adjectives, nouns, verbs and proper nouns that are also nouns
-  parsedtxt <- parsedtxt[parsedtxt$pos%in%c("ADJ", "NOUN", "PROPN", "VERB"),]
-  #PROPN_unique <- unique(parsedtxt$lemma[parsedtxt$pos=="PROPN"])
-  NOUN_unique <- unique(parsedtxt$lemma[parsedtxt$pos=="NOUN"])
-  parsedtxt$PROPN_and_NOUN <- parsedtxt$pos=="PROPN" & parsedtxt$lemma%in%NOUN_unique
-  parsedtxt <- parsedtxt[!(parsedtxt$pos=="PROPN" & parsedtxt$PROPN_and_NOUN==F),]
-  parsedtxt <- subset(parsedtxt, select = -PROPN_and_NOUN)
+  parsed <- parsed[parsed$pos%in%c("ADJ", "NOUN", "PROPN", "VERB"),]
+  #deal with proper nouns
+  if(is.null(custom_nouns)==F){
+    nouns_to_keep <- custom_nouns
+  }else{
+    nouns_to_keep <- unique(parsed$lemma[parsed$pos=="NOUN"])
+  }
+  parsed$PROPN_and_NOUN <- parsed$pos=="PROPN" & parsed$lemma%in%nouns_to_keep
+  parsed <- parsed[!(parsed$pos=="PROPN" & parsed$PROPN_and_NOUN==F),]
+  parsed <- subset(parsed, select = -PROPN_and_NOUN)
   
   #----
   # Remove words that contain numbers, because the parsing doesn't get stuff like 14th
-  parsedtxt <- parsedtxt[!str_detect(parsedtxt$lemma, "[0-9]"),]
+  parsed <- parsed[!stringr::str_detect(parsed$lemma, "[0-9]"),]
   
   #----
   # Convert to tokens object
-  tks <- as.tokens(parsedtxt, use_lemma = T)
-
+  tks <- quanteda::as.tokens(parsed, use_lemma = T)
+  
   #----
   #remove words that are too short, not english or stopwords
-  uniquetokens <- unique(parsedtxt$lemma)
+  uniquetokens <- unique(parsed$lemma)
   
   #create a vector of words to be removed: short words, non-English words, stopwords
   #get words that are too short
   tooShort <- uniquetokens[nchar(uniquetokens)<3]
   
   #spellchecking
-  spellingErrors <- sapply(uniquetokens, hunspell_check)
+  spellingErrors <- sapply(uniquetokens, hunspell::hunspell_check)
   spellingErrors <- names(spellingErrors)[spellingErrors==F]
   
   #get stopwords
-  removeWords <- unique(c(tooShort, spellingErrors, stopwords()))
+  removeWords <- unique(c(tooShort, spellingErrors, quanteda::stopwords()))
   
   #remove short words, non-english words and stopwords
-  tks = tokens_select(tks, removeWords, "remove", valuetype = "fixed")
+  tks = quanteda::tokens_select(tks, removeWords, "remove", valuetype = "fixed")
   rm(spellingErrors, removeWords)
+  
+  #----
+  # Remove empty docs
+  empty_docs <- which(unlist(lapply(tks, length))==0)
+  if(length(empty_docs)>0){
+    tks <- tks[-empty_docs]
+  }
   
   #----
   # Remove duplicated docs
   which_duplicated <- duplicated(tks)
   tks <- tks[!which_duplicated]
   
-  #----
-  # Remove empty docs
-  tks <- tks[-which(unlist(lapply(tks, length))==0)]
-  
   return(tks)
 
 }
+
+#----
+# Wrapper for functions 1 and 2
+
+preprocessingWrapper <- function(texts, ids, chunk = NULL, custom_nouns = NULL){
+  parsed <- spacy_parse_chunk(texts = texts, ids = ids, chunk = chunk)
+  tks <- preprocessWebsite(parsed = parsed, custom_nouns = custom_nouns)
+  return(tks)
+}
+
+##How to use:
+# result <- preprocessingWrapper(df$text, df$id)
