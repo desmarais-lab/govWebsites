@@ -1,15 +1,16 @@
 library('stringr')
+set.seed(1)
 
 # ----
 
-f <- list.files("rfiles/city_chunks_unprocessed", full.names = T)
-f_file <- list.files("rfiles/city_chunks_unprocessed")
+f <- list.files("../04_parseText/out/city_chunks_unprocessed", full.names = T)
+f_file <- list.files("../04_parseText/out/city_chunks_unprocessed")
 
-selected_cities <- c("rfiles/city_chunks_unprocessed/Indiana_Indianapolis.rdata",
-                     "rfiles/city_chunks_unprocessed/Louisiana_Shreveport.rdata",
-                     "rfiles/city_chunks_unprocessed/New York_New York City.rdata",
-                     "rfiles/city_chunks_unprocessed/California_Los Angeles.rdata",
-                     "rfiles/city_chunks_unprocessed/Washington_Seattle.rdata")
+selected_cities <- c("../04_parseText/out/city_chunks_unprocessed/Indiana_Indianapolis.rdata",
+                     "../04_parseText/out/city_chunks_unprocessed/Louisiana_Shreveport.rdata",
+                     "../04_parseText/out/city_chunks_unprocessed/New York_New York City.rdata",
+                     "../04_parseText/out/city_chunks_unprocessed/California_Los Angeles.rdata",
+                     "../04_parseText/out/city_chunks_unprocessed/Washington_Seattle.rdata")
 
 selected_cities <- which(f%in%selected_cities)
 f <- f[selected_cities]
@@ -29,7 +30,7 @@ for(city in 1:length(f)){
     a <- a[-gisWebplots,]
   }
   
-  source(textConnection(readLines("preprocessingQuanteda.R")[1:47]))
+  source(textConnection(readLines("../06_preprocessing/preprocessCityPart1.R")[1:47]))
   #source("preprocessingQuanteda.R")
   linesTable <- data.frame(linesRemove)
   linesTable$linesRemove <- as.character(linesTable$linesRemove)
