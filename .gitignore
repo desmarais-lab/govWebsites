@@ -4,4 +4,6 @@
 *.bbl
 *.blg
 *.synctex.gz
-*.DS_Store																															
+*.DS_Store
+00_scrapeCovariates/censusAPI_Key.txt
+02_downloadWebsites/seleniumCrawler/.ipynb_checkpoints/*
