@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en-us">
+    <head>
+        <title>Welcome to my.spokanecity.org!</title>
+        <meta content="City of Spokane, WA - Official Website. Before continuing, we need to ensure you're using an updated web browser with cookies and javascript enabled." name="description">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <link href="//static.spokanecity.org/my/images/favicon.png" rel="icon" type="image/png">
+        <link href="//static.spokanecity.org/my/styles/pages/welcome/v2.0.1.css" rel="stylesheet" type="text/css"><script src="//static.spokanecity.org/my/scripts/libraries/browser/v2.0.1.js" type="text/javascript"></script><script type="text/javascript">
+            function initDoc() {
+            
+                var objMessage = document.getElementById("emMessage");
+                objMessage.innerHTML = "Checking Your Browser...";
+                objMessage.className = "Checking";
+            
+                var objBrowserBox = document.getElementById("imgCheckBrowserBox");
+                var objBrowser = document.getElementById("tdCheckBrowser");
+                var objCookiesBox = document.getElementById("imgCheckCookiesBox");
+                var objCookies = document.getElementById("tdCheckCookies");
+                var objJavaScriptBox = document.getElementById("imgCheckJavaScriptBox");
+                var objJavaScript = document.getElementById("tdCheckJavaScript");
+            
+                var imgUnknown = new Image();
+                var imgFailed = new Image();
+                var imgPassed = new Image();
+            
+                if (document.images) {
+                    imgUnknown.src = "//static.spokanecity.org/my/images/welcome/unknown.png";
+                    imgFailed.src = "//static.spokanecity.org/my/images/welcome/failed.png";
+                    imgPassed.src = "//static.spokanecity.org/my/images/welcome/passed.png";
+                }
+            
+                objCookies.innerHTML = "Cookies Enabled";
+                objCookiesBox.src = imgPassed.src;
+                objCookies.className = "Passed";
+            
+                if (ValidBrowser) {
+                    objBrowser.innerHTML = "Browser Up to Date";
+                    objBrowserBox.src = imgPassed.src;
+                    objBrowser.className = "Passed";
+                    objJavaScript.innerHTML = "JavaScript Enabled";
+                    objJavaScriptBox.src = imgPassed.src;
+                    objJavaScript.className = "Passed";
+                    objMessage.innerHTML = "<a href='/citycable5/videos/2017/10/'>Continue</a>";
+                    objMessage.className = "Continue";
+                } else {
+                    objBrowser.innerHTML = "Browser Out-of-Date!";
+                    objBrowserBox.src = imgFailed.src;
+                    objBrowser.className = "Failed";
+                    if (BrowserDetect.browser == "Explorer") {
+                        objMessage.innerHTML = "Update browser and try again.<br><span class='Small Notes'>If you're using Internet Explorer... <a href='https://www.google.com/#q=disable%20compatibility%20view' target='_blank'>disable compatibility view</a>.</span>";
+                    } else {
+                        objMessage.innerHTML = "Update browser and try again.";
+                    }
+                    objMessage.className = "Failed";
+                    objJavaScript.innerHTML = "JavaScript Enabled";
+                    objJavaScriptBox.src = imgPassed.src;
+                    objJavaScript.className = "Passed";
+                }
+                document.getElementById("spanBrowser").innerHTML = BrowserDetect.browser + " " + BrowserDetect.version + " on " + BrowserDetect.OS + ".";
+            }
+            </script>
+    </head>
+    <body onload="initDoc();">
+        <table border="0" cellspacing="0" cellpadding="0" class="Template" width="100%">
+            <tr class="Header">
+                <td align="center" class="Bottom" valign="bottom">
+                    <div align="right">
+                        <a href="/" id="aLogo"><img align="left" alt="City of Spokane, WA - Official Website" border="0" height="48" id="imgLogo" src="//static.spokanecity.org/my/images/welcome/logo.png" width="42"></a>
+                        <img alt="my.spokanecity.org" height="96" id="imgCorner" src="//static.spokanecity.org/my/images/welcome/my.png" width="96">
+                    </div>
+                    <h1>Welcome to...</h1>
+                    <h2><a href="/">my.spokanecity.org</a></h2>
+                    <p id="pSite">
+                        City of Spokane, WA<br>
+                        <span class="X-Small Grey">Official Website</span>
+                    </p>
+                    <p class="Small Pad" id="pWelcome">Before continuing, we need to ensure you're using an updated web browser with cookies and javascript enabled.</p>
+                </td>
+            </tr>
+            <tr class="Content">
+                <td align="center" class="Top" valign="top">
+                    <table border="0" cellpadding="0" cellspacing="8" id="tableCheckBrowser">
+                        <tr>
+                            <td align="right" id="tdCheckBrowserBox" valign="middle"><img alt="Browser Check" height="24" id="imgCheckBrowserBox" src="//static.spokanecity.org/my/images/welcome/unknown.png" width="24"></td>
+                            <td align="left" class="Unknown" id="tdCheckBrowser" valign="middle">Browser Unknown!</td>
+                        </tr>
+                        <tr>
+                            <td align="right" id="tdCheckCookiesBox" valign="middle"><img alt="Cookie Check" height="24" id="imgCheckCookiesBox" src="//static.spokanecity.org/my/images/welcome/unknown.png" width="24"></td>
+                            <td align="left" class="Unknown" id="tdCheckCookies" valign="middle">Cookies Unknown!</td>
+                        </tr>
+                        <tr>
+                            <td align="right" id="tdCheckJavaScriptBox" valign="middle"><img alt="JavaScript Check" height="24" id="imgCheckJavaScriptBox" src="//static.spokanecity.org/my/images/welcome/failed.png" width="24"></td>
+                            <td align="left" class="Failed" id="tdCheckJavaScript" valign="middle">JavaScript Disabled!</td>
+                        </tr>
+                    </table>
+                    <p class="Pad" id="pMessage"><em class="Failed" id="emMessage">Enable JavaScript and try again.</em></p>
+                    <a href="/welcome/?Redirect=/citycable5/videos/2017/10/" id="aReload"><img align="right" alt="Reload" border="0" height="32" id="imgReload" src="//static.spokanecity.org/my/images/welcome/reload.png" title="Reload" width="32"></a>
+                </td>
+            </tr>
+            <tr class="Footer">
+                <td align="center" class="Divide" valign="middle">
+                    <hr>
+                    <h3>Most Popular Web Browsers</h3>
+                    <p class="Small">You can download and install the latest version of your favorite web browser by using the links provided below.</p>
+                    <table border="0" cellpadding="0" cellspacing="3" id="tableFooter">
+                        <tr>
+                            <td align="center"><a href="http://www.google.com/chrome/" target="_blank"><img alt="Get Google Chrome Browser" border="0" height="40" id="imgChrome" src="//static.spokanecity.org/my/images/welcome/chrome.png" width="40"><br><span>Chrome</span></a></td>
+                            <td align="center"><a href="http://www.apple.com/safari/" target="_blank"><img alt="Get Apple Safari Browser" border="0" height="40" id="imgSafari" src="//static.spokanecity.org/my/images/welcome/safari.png" width="40"><br><span>Safari</span></a></td>
+                            <td align="center"><a href="http://www.firefox.com/" target="_blank"><img alt="Get Firefox Browser" border="0" height="40" id="imgFirefox" src="//static.spokanecity.org/my/images/welcome/firefox.png" width="40"><br><span>Firefox</span></a></td>
+                            <td align="center"><a href="http://www.opera.com/" target="_blank"><img alt="Get Opera Browser" border="0" height="40" id="imgOpera" src="//static.spokanecity.org/my/images/welcome/opera.png" width="40"><br><span>Opera</span></a></td>
+                            <td align="center"><a href="http://www.microsoft.com/ie/" target="_blank"><img alt="Get Microsoft Internet Explorer Browser" border="0" height="40" id="imgIE" src="//static.spokanecity.org/my/images/welcome/ie.png" width="40"><br><span>IE</span></a></td>
+                        </tr>
+                    </table>
+                    <p class="X-Small Pad">Your browser is <span id="spanBrowser">unknown, javascript is disabled.</span></p>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

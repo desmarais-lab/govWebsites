@@ -1,3 +1,0 @@
-View all calendars is the default. Choose Select a Calendar to view a specific calendar.
-Select the arrows on either side of the current month to change the month.
-

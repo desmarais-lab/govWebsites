@@ -1,6 +1,0 @@
-Map
-Refine Search Results by Feature
-Filter results by up to 3 features The refined results will contain at least 1 of the selected features.
-Art in the Park (x)
-Adult Fitness Equipment (x)
-

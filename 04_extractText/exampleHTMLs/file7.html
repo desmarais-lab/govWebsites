@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html  lang="en-US">
+<head id="Head"><meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+<meta name="REVISIT-AFTER" content="1 DAYS" />
+<meta name="RATING" content="GENERAL" />
+<meta name="RESOURCE-TYPE" content="DOCUMENT" />
+<meta content="text/javascript" http-equiv="Content-Script-Type" />
+<meta content="text/css" http-equiv="Content-Style-Type" />
+<title>
+	City of Winston-Salem | Login
+</title><meta id="MetaRobots" name="ROBOTS" content="NOINDEX, NOFOLLOW" /><link href="/Portals/_default/default.css?cdv=179" media="all" type="text/css" rel="stylesheet"/><link href="/DesktopModules/HTML/module.css?cdv=179" media="all" type="text/css" rel="stylesheet"/><link href="/DesktopModules/Admin/Authentication/module.css?cdv=179" media="all" type="text/css" rel="stylesheet"/><link href="/Portals/0/Skins/WinstonSalem/skin.css?cdv=179" media="all" type="text/css" rel="stylesheet"/><link href="/Portals/0/Skins/WinstonSalem/basic.css?cdv=179" media="all" type="text/css" rel="stylesheet"/><link href="/Portals/0/Containers/WinstonSalem/container.css?cdv=179" media="all" type="text/css" rel="stylesheet"/><link href="/Portals/0/portal.css?cdv=179" media="all" type="text/css" rel="stylesheet"/><link href="/DesktopModules/DNNSharp/SearchBoost/module.css?cdv=179" media="all" type="text/css" rel="stylesheet"/><link href="/DesktopModules/DNNSharp/SearchBoost/templates/input/searchbar-flat-blue/styles.css?cdv=179" media="all" type="text/css" rel="stylesheet"/><script src="/Resources/libraries/jQuery/01_09_01/jquery.js?cdv=179" type="text/javascript"></script><script src="/Resources/libraries/jQuery-Migrate/01_02_01/jquery-migrate.js?cdv=179" type="text/javascript"></script><script src="/Resources/libraries/jQuery-UI/01_10_03/jquery-ui.js?cdv=179" type="text/javascript"></script><script type='text/javascript'>
+//<![CDATA[
+    var analytics_page_startTime = (new Date()).getTime();
+//]]>
+</script>
+<link rel='SHORTCUT ICON' href='/Portals/0/WinstonSalem/favicon.ico?ver=2013-04-16-110956-000' type='image/x-icon' />     
+        
+			    <script type="text/javascript">
+			      var _gaq = _gaq || [];
+			      _gaq.push(['_setAccount', 'UA-42181317-1']);
+			      _gaq.push(['_trackPageview']);
+			 
+			      (function() {
+				    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			      })();
+			    </script>
+        
+		  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><!--[if lt IE 9]><script src="/Portals/0/Skins/WinstonSalem/js/respond.js"></script><script src="/Portals/0/Skins/WinstonSalem/js/html5shiv-printshiv.js"></script><![endif]--><link rel="stylesheet" type="text/css" href="/Portals/0/Skins/WinstonSalem/CFWMenu/cfwMenu.css"></link><link href="/Telerik.Web.UI.WebResource.axd?compress=1&amp;_TSM_CombinedScripts_=%3b%3bTelerik.Web.UI%2c+Version%3d2013.2.717.40%2c+Culture%3dneutral%2c+PublicKeyToken%3d121fae78165ba3d4%3aen-US%3a636548d2-ff28-4c99-b077-b4b8ed4e8c55%3a45085116%3a27c5704c" type="text/css" rel="stylesheet" /></head>
+<body id="Body">
+    
+    <form method="post" action="/Login?returnurl=%2fDepartments%2fHuman-Relations%2fOutreach%2fYouth-Advisory-Council" id="Form" enctype="multipart/form-data">
+<div class="aspNetHidden">
+<input type="hidden" name="StylesheetManager_TSSM" id="StylesheetManager_TSSM" value="" />
+<input type="hidden" name="ScriptManager_TSM" id="ScriptManager_TSM" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="w3OvTxy74er9ossx9P6O/e8oOqbyBjV1f6aMwwfiKjGNu+4Eae3arA9jOfphvUI430oStkaBMDb68XHRQiNQlMLJliUMQIa92IEytfmjPy9kdEdvrJprswNeSs3pDmobgXzHYL7zrIl2kbKOVFGUbffLmxDzJamemuwg5jScI3ggDGfWwSRZYmiYgOIP5Rlyjk57OZKLIW8D8V9tbEyvCgV7Hb9eJErVek9VlBfdRceBmkpX4pSynJhclc9pYAzuHpXzkOxqepnF40KI0KGYfN2Xn1UhYwpn8XN9DfrQnRhntlYLVo5U/DhRgmJoOq5dKTaVkaecD7rL2GbBa86PG6AD2SD/ohOcVBOVx9eYifG5ZUnCdycqbD07eGZSrkbvZ/e26QaSgTqVECWJufIFteNXk7wjou/GS7xZAMCxm+jbcKkooIpIFvKS18qGsqwd5zSjN6swmYhe1KAmek6L1cXdmDzNUdtR1RHrlOZw/socKo2SHe0PIRFYDKd12FlUMhrl9fiIxnaRaKBPxiZCyBLPZfywWEEwCyWqWwj4XcSqXGVolkB1ONsJGwi+2YupOtEvfQk+uNrYxYS7DLV6HOt7/B10yTEVRIvdoHliL+TMEYi/QIkP2wl/kxGF9jYHy0/9Z4dw/Jkzmxup88OgXcU1XOFrBC+aZTB5xzpzpjMdifYiYRbQj/fEcheBi+hgYbb9J9Z/KkF+42tltEIoVtUG9THpBEhuWzmuO6dVwUAqupw0cKYgF1q3B/vW7ct0nZI3CCVw/DfdqZGzpNx4B1z8QMq8hDb9wfcZKVOAVf+sPvYaW9lD7F/bEGjf3iI/qEutTAgrRafNoj4X" />
+</div>
+
+
+<script type="text/javascript">
+//<![CDATA[
+var g_dnnsfState = {"protocol":"https","locale":"en-US","alias":"www.cityofws.org","rootAlias":"www.cityofws.org"};//]]>
+</script>
+<script type="text/javascript">if (!(window.jQuery && window.jQuery.fn && window.jQuery.fn.cfwMenu)) document.write(unescape('%3Cscript src="/Portals/0/Skins/WinstonSalem/CFWMenu/cfwMenu.js" type="text/javascript"%3E%3C/script%3E'));</script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(dnnsfjQuery) == 'undefined') dnnsfjQuery = jQuery;if (typeof(dnnsfjQuery) != 'undefined' && !dnnsfjQuery.ui) { document.write('<script src="/DesktopModules/DNNSharp/SearchBoost/static/jquery-ui.min.js?v=3.1.74"><\/script>'); }//]]>
+</script>
+
+<script src="/DesktopModules/DNNSharp/SearchBoost/static/sb-client.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+avt.sb.$(document).ready(function() { 
+                        avt.sb_initbox('dnn_avtSearch_pnlInput', 4, '/DesktopModules/DnnSharp/SearchBoost/SearchUrlService.ashx?_alias=www.cityofws.org&iinst=0_dnn_avtSearch&language=en-US', '/DesktopModules/DnnSharp/SearchBoost/Autocomplete.ashx?_alias=www.cityofws.org&iinst=0_dnn_avtSearch');
+                    });//]]>
+</script>
+
+<script src="/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=ScriptManager_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3aen-US%3a88fd0407-24cf-4abd-9df5-22f81b2bc835%3aea597d4b%3ab25378d2%3bTelerik.Web.UI%2c+Version%3d2013.2.717.40%2c+Culture%3dneutral%2c+PublicKeyToken%3d121fae78165ba3d4%3aen-US%3a636548d2-ff28-4c99-b077-b4b8ed4e8c55%3a16e4e7cd%3af7645509%3aed16cbdc" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="m2/tf5W1GFOlmt3oOMg1Epm9fxAz5GW7/zjMbY+Or7xfGRMlYRvwth0ADeB3f95m81Yf2467oCPTBP9AXGjTrCUcLqg+cH5mPaApcFGb7BXXOQXddoo5S3N2LEAGoexmM1a9Azy9evQRhBjGxqH2Ih9X1uPNulBP00Ssl+z/7nVCjpAJOlZ/W2NPYOw1/L5NMd13vJt+bp3dx62P5wvLt1QUGHscfnGsKEFFM1l2JwwXh4BJz+XoF1zdIuxyWw7sZDhb/Mghu1VjEbzrbF0wbyaH33Byi0N5S9LDxglb3GHmse0AI72v8SN8e65XgrY5jDf+6ZRGoZV9jWJGbK1hf8OVCrL19EP54YxVSg==" />
+</div><script src="/js/dnn.js?cdv=179" type="text/javascript"></script><script src="/Resources/Shared/Scripts/jquery/jquery.hoverIntent.min.js?cdv=179" type="text/javascript"></script><script src="/js/dnn.servicesframework.js?cdv=179" type="text/javascript"></script><script src="/Resources/Shared/Scripts/dnn.jquery.js?cdv=179" type="text/javascript"></script><script src="/Resources/Shared/Scripts/jquery/jquery.fileupload.js?cdv=179" type="text/javascript"></script><script src="/js/dnncore.js?cdv=179" type="text/javascript"></script><script src="/DesktopModules/DNNCorp/EvoqContentLibrary/ClientScripts/dnn.analytics.Injected.js?cdv=179" type="text/javascript"></script><script src="/Resources/Shared/Scripts/jquery/jquery.iframe-transport.js?cdv=179" type="text/javascript"></script><script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager', 'Form', ['tdnn$ctr2330$dnn$ctr2330$Login_UPPanel',''], [], [], 90, '');
+//]]>
+</script>
+
+        
+        
+        <!--CDF(Javascript|/Portals/0/Skins/WinstonSalem/js/site.js?cdv=179)-->
+<!--CDF(Javascript|/Portals/0/Skins/WinstonSalem/js/watermark.js?cdv=179)-->
+<!--CDF(Javascript|/Portals/0/Skins/WinstonSalem/js/bootstrap.min.js?cdv=179)-->
+<!--CDF(Javascript|/Portals/0/Skins/WinstonSalem/js/address.min.js?cdv=179)-->
+
+<!--40Fingers Stylehelper Conditions Return True-->
+
+<!--[if IE 9]><div id="IE9"><![endif]-->
+<!--[if IE 8]><div id="IE8"><![endif]-->
+<!--[if IE 7]><div id="IE7"><![endif]-->
+<div id="SiteContainer" class="siteContainer basic  page-p773">
+  <!--[if lt IE 9]><div id="IE8-PRINT-LOGO"><img src="/Portals/0/Skins/WinstonSalem/img/printLogo.png" alt="" /></div><![endif]-->
+  <div id="PageContainer">
+    <header>
+      <div id="wsnc-header" class="sitewidth">
+        <div class="logoArea">
+          <div id="headerSocial"><div id="dnn_HeaderLeft" class="wsnc-HeaderLeft"><div class="DnnModule DnnModule-DNN_HTML DnnModule-576 DnnVersionableControl"><a name="576"></a>
+<div class="cfw-container blank cctr576">
+	
+  
+	<div id="dnn_ctr576_ContentPane" class="cfw-content"><!-- Start_Module_576 --><div id="dnn_ctr576_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+	<div id="dnn_ctr576_HtmlModule_lblContent"><p><a href="/home-center/en-espanol"><img src="/portals/0/images/homepage/sm/enEspanol_16x16-forHomePage.gif?ver=2016-12-27-144645-963" alt="Recursos en español"></a>
+<a href="https://www.facebook.com/cityofwinstonsalem" target="_blank" title="Facebook - New Window"><img alt="Facebook" src="/portals/0/images/icons/icon-facebook-26px.png"></a> <a href="https://twitter.com/CityofWS" target="_blank" title="Twitter - New Window"><img alt="Twitter" src="/portals/0/images/icons/icon-twitter-26px.png"></a> <img alt="link to city Instagram page" src="/portals/0/images/homepage/sm/instagram-as-tr-png.png?ver=2016-08-18-080452-083">&nbsp;<a href="https://nextdoor.com/agency-detail/nc/winston-salem/city-of-winston-salem-2/" target="_blank"><img src="/portals/0/images/icons/nextdoor-icon-26px.png?ver=2018-03-13-153434-373" alt="link to City Nextdoor page"></a> <a href="https://plus.google.com/u/0/108878933481979380609/posts" target="_blank" title="new window for google plus"><img src="/portals/0/images/homepage/sm/googlePlus-red-noborder_26x26.gif" alt="google plus page" style="height: 27px; width: 27px;"></a> <a href="http://www.flickr.com/photos/cityofws/sets/" target="_blank" title="Flickr - New Window"><img alt="Flickr" src="/portals/0/images/icons/icon-flickr-26px.png"></a> <a href="https://www.youtube.com/winstonsalemcitygov" target="_blank" title="YouTube - New Window"><img alt="YouTube" src="/portals/0/images/icons/icon-youtube-26px.png"></a> <a href="http://winston-salem.granicus.com/ViewPublisher.php?view_id=6" target="_blank" title="Video - New Window"><img alt="Video" src="/portals/0/images/icons/icon-video-26px.png"></a></p></div>
+
+
+
+
+</div><!-- End_Module_576 --></div>
+	
+	
+</div>
+
+
+</div></div></div>
+          <div id="wsnc-logo"><a id="dnn_dnnLogo_hypLogo" title="City of Winston Salem" href="https://www.cityofws.org/"><img id="dnn_dnnLogo_imgLogo" src="/Portals/0/WinstonSalem/logo.png?ver=2013-04-16-110946-167" alt="City of Winston Salem" /></a></div>
+          <div id="headerButtons">
+            <div id="dnn_HeaderRight" class="wsnc-HeaderRight"><div class="DnnModule DnnModule-DNN_HTML DnnModule-468 DnnVersionableControl"><a name="468"></a>
+<div class="cfw-container blank cctr468">
+	
+  
+	<div id="dnn_ctr468_ContentPane" class="cfw-content"><!-- Start_Module_468 --><div id="dnn_ctr468_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+	<div id="dnn_ctr468_HtmlModule_lblContent"><p><a class="button" href="/home-center/forms-and-reports/forms">Forms</a> <a class="button centerButton" href="http://agency.governmentjobs.com/winstonsalemnc/default.cfm" target="_blank">Jobs</a></p></div>
+
+
+
+
+</div><!-- End_Module_468 --></div>
+	
+	
+</div>
+
+
+</div></div>
+            <div class="clearfix br600"><!-- CLEAR --></div>
+            <a id="dnn_dnnLoginHeader_loginLink" class="wsnc-loginHeader button" rel="nofollow" onclick="this.disabled=true;" href="https://www.cityofws.org/Login?returnurl=%2fLogin">Sign In</a>
+
+          </div>
+        </div>
+        <div class="navbar clearfix">
+          <script type="text/javascript">
+			jQuery(function($) {
+				$("#dnn_DNNMenu").cfwMenu();
+			});
+		</script><div class="cfw-menu" id="dnn_DNNMenu">
+  <ul class="cfw-root">
+    <li id="cfw-86" class="cfw-1 cfw-node cfw-root cfw-first"><a href="https://www.cityofws.org/Services" class="&#xA;						cfw-link&#xA;						 cfw-root">Services</a><ul class="&#xA;				cfw-0">
+        <li id="cfw-1735" class="cfw-1 cfw-node cfw-first"><a class="&#xA;						cfw-link disabled&#xA;						">Communicate</a><ul class="&#xA;				cfw-1">
+            <li id="cfw-1736" class="cfw-1 cfw-node cfw-first"><a href="https://www.cityofws.org/Departments/Human-Resources/City-Stars-of-Excellence" class="&#xA;						cfw-link&#xA;						">City Stars Commendation</a></li>
+            <li id="cfw-1737" class="cfw-2 cfw-node"><a href="https://www.cityofws.org/Manage-Content-Subscriptions" class="&#xA;						cfw-link&#xA;						">MyCityofWS</a></li>
+            <li id="cfw-1738" class="cfw-3 cfw-node"><a href="http://csr.cityofws.org/CWI/ServiceRequest.mvc/SRIntake" class="&#xA;						cfw-link&#xA;						">Report A Problem</a></li>
+            <li id="cfw-1739" class="cfw-4 cfw-node"><a href="http://csr.cityofws.org/CWI/ServiceRequest.mvc/SRIntake" class="&#xA;						cfw-link&#xA;						">Request a Service</a></li>
+            <li id="cfw-1740" class="cfw-5 cfw-node"><a href="https://www.cityofws.org/Home-Center/Citizen-Service-Desk/Citizen-Suggestion-Comment" class="&#xA;						cfw-link&#xA;						">Send Comment</a></li>
+            <li id="cfw-1741" class="cfw-6 cfw-node"><a href="http://www.wspdp2c.org/" class="&#xA;						cfw-link&#xA;						">Police to Citizen</a></li>
+            <li id="cfw-1742" class="cfw-7 cfw-node cfw-last"><a href="http://winston-salem.granicus.com/MediaPlayer.php?publish_id=29" class="&#xA;						cfw-link&#xA;						">WSTV13 Live</a></li>
+          </ul>
+        </li>
+        <li id="cfw-1743" class="cfw-2 cfw-node"><a class="&#xA;						cfw-link disabled&#xA;						">Pay Bills</a><ul class="&#xA;				cfw-1">
+            <li id="cfw-2740" class="cfw-1 cfw-node cfw-first"><a href="https://buildit.cityofws.org/wsfcpermit/Login.aspx?ReturnUrl=%2fwsfcpermit" class="&#xA;						cfw-link&#xA;						">Business License Renewal</a></li>
+            <li id="cfw-1744" class="cfw-2 cfw-node"><a href="https://www6.cityofws.org/firepermits/CustomerEntry.aspx" class="&#xA;						cfw-link&#xA;						">Fire Permit/Fine</a></li>
+            <li id="cfw-1745" class="cfw-3 cfw-node"><a href="https://www6.cityofws.org/YardCartAndSticker/MainPage.aspx" class="&#xA;						cfw-link&#xA;						">Order New Yard Cart</a></li>
+            <li id="cfw-1746" class="cfw-4 cfw-node"><a href="https://www6.cityofws.org/parkingtickets/" class="&#xA;						cfw-link&#xA;						">Parking Fine</a></li>
+            <li id="cfw-1748" class="cfw-5 cfw-node"><a href="https://www.cwsonline.org/webinquiry/JSP/login.jsp" class="&#xA;						cfw-link&#xA;						">Water/Stormwater</a></li>
+            <li id="cfw-1747" class="cfw-6 cfw-node cfw-last"><a href="https://www6.cityofws.org/yardcarts/" class="&#xA;						cfw-link&#xA;						">Yard Cart Renewal</a></li>
+          </ul>
+        </li>
+        <li id="cfw-1749" class="cfw-3 cfw-node"><a class="&#xA;						cfw-link disabled&#xA;						">General</a><ul class="&#xA;				cfw-1">
+            <li id="cfw-1750" class="cfw-1 cfw-node cfw-first"><a href="https://www.cityofws.org/Departments/Sanitation/Collections/Bulky-Items" class="&#xA;						cfw-link&#xA;						">Bulky Item Collection</a></li>
+            <li id="cfw-1751" class="cfw-2 cfw-node"><a href="http://www.cwsonline.org/iDocs/Default.aspx" class="&#xA;						cfw-link&#xA;						">iDocuments</a></li>
+            <li id="cfw-1752" class="cfw-3 cfw-node"><a href="http://agency.governmentjobs.com/winstonsalemnc/default.cfm" class="&#xA;						cfw-link&#xA;						">Jobs</a></li>
+            <li id="cfw-1753" class="cfw-4 cfw-node"><a href="https://www.cityofws.org/leafroutes" class="&#xA;						cfw-link&#xA;						">Leaf Collection</a></li>
+            <li id="cfw-1754" class="cfw-5 cfw-node"><a href="https://www6.cityofws.org/assessmentliens/" class="&#xA;						cfw-link&#xA;						">Liens/Assessments</a></li>
+            <li id="cfw-1755" class="cfw-6 cfw-node"><a href="https://www.cwsonline.org/webinquiry/JSP/logComplaintIssue.jsp" class="&#xA;						cfw-link&#xA;						">New or Change Water Services</a></li>
+            <li id="cfw-1756" class="cfw-7 cfw-node"><a href="https://www.cityofws.org/Departments/Police/Online-Services" class="&#xA;						cfw-link&#xA;						">Police Online Services</a></li>
+            <li id="cfw-1757" class="cfw-8 cfw-node"><a href="https://www.cityofws.org/Departments/Sanitation/Collections" class="&#xA;						cfw-link&#xA;						">Recycling and Garbage Collection</a></li>
+            <li id="cfw-1758" class="cfw-9 cfw-node"><a href="https://www6.cityofws.org/sanitationliens" class="&#xA;						cfw-link&#xA;						">Sanitation Liens</a></li>
+            <li id="cfw-1759" class="cfw-10 cfw-node cfw-last"><a href="https://www.cityofws.org/Departments/Planning/Publications-and-Maps/GIS" class="&#xA;						cfw-link&#xA;						">GIS</a></li>
+          </ul>
+        </li>
+        <li id="cfw-1760" class="cfw-4 cfw-node"><a class="&#xA;						cfw-link disabled&#xA;						">Permits</a><ul class="&#xA;				cfw-1">
+            <li id="cfw-1761" class="cfw-1 cfw-node cfw-first"><a href="https://www6.cityofws.org/FirePermits/CustomerEntry.aspx" class="&#xA;						cfw-link&#xA;						">Fire Permit/Fine</a></li>
+            <li id="cfw-1762" class="cfw-2 cfw-node"><a href="https://www.cityofws.org/Departments/Police/Online-Services/Alarm-Permits/Alarm-System-Permit-Online-Application" class="&#xA;						cfw-link&#xA;						">Home Alarm Permit</a></li>
+            <li id="cfw-1763" class="cfw-3 cfw-node"><a href="https://buildit.cityofws.org/wsfcpermit" class="&#xA;						cfw-link&#xA;						">BuildIT</a></li>
+            <li id="cfw-1764" class="cfw-4 cfw-node"><a href="https://www6.cityofws.org/LandfillPermitApplications/MainPage.aspx" class="&#xA;						cfw-link&#xA;						">Landfill Permit</a></li>
+            <li id="cfw-2483" class="cfw-5 cfw-node cfw-last"><a href="https://www.cityofws.org/Departments/Community-Development/Specialized-Permits" class="&#xA;						cfw-link&#xA;						">Specialized Permits</a></li>
+          </ul>
+        </li>
+        <li id="cfw-1765" class="cfw-5 cfw-node cfw-last"><a class="&#xA;						cfw-link disabled&#xA;						">Service Locations</a><ul class="&#xA;				cfw-1">
+            <li id="cfw-1766" class="cfw-1 cfw-node cfw-first"><a href="https://www.cityofws.org/Services/Service-Locations/Black-Phillips-Smith-Government-Center" class="&#xA;						cfw-link&#xA;						">Black Phillips-Smith Government Center</a></li>
+            <li id="cfw-1767" class="cfw-2 cfw-node cfw-last"><a href="https://www.cityofws.org/Services/Service-Locations/Bryce-A-Stuart-Municipal-Building" class="&#xA;						cfw-link&#xA;						">Bryce A Stuart Municipal Building</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li id="cfw-87" class="cfw-2 cfw-node cfw-root"><a href="https://www.cityofws.org/Residents" class="&#xA;						cfw-link&#xA;						 cfw-root">Residents</a><ul class="&#xA;				cfw-0">
+        <li id="cfw-893" class="cfw-1 cfw-node cfw-first"><a class="&#xA;						cfw-link disabled&#xA;						">Household</a><ul class="&#xA;				cfw-1">
+            <li id="cfw-894" class="cfw-1 cfw-node cfw-first"><a href="https://www.cityofws.org/Departments/Sanitation/Collections/Bulky-Items" class="&#xA;						cfw-link&#xA;						">Bulky Items</a></li>
+            <li id="cfw-895" class="cfw-2 cfw-node"><a href="https://www.cityofws.org/Departments/Sanitation/Collections/Curbside-Pickup" class="&#xA;						cfw-link&#xA;						">Garbage</a></li>
+            <li id="cfw-897" class="cfw-3 cfw-node"><a href="https://www.cityofws.org/Departments/Inspections" class="&#xA;						cfw-link&#xA;						">Inspections</a></li>
+            <li id="cfw-898" class="cfw-4 cfw-node"><a href="https://www.cityofws.org/Departments/Utilities/Operations/Solid-Waste" class="&#xA;						cfw-link&#xA;						">Landfill</a></li>
+            <li id="cfw-899" class="cfw-5 cfw-node"><a href="https://www.cityofws.org/leafroutes" class="&#xA;						cfw-link&#xA;						">Leaf Collection</a></li>
+            <li id="cfw-900" class="cfw-6 cfw-node"><a href="https://www.cityofws.org/recycling" class="&#xA;						cfw-link&#xA;						">Recycling</a></li>
+            <li id="cfw-901" class="cfw-7 cfw-node"><a href="https://www.cityofws.org/Departments/Utilities" class="&#xA;						cfw-link&#xA;						">Water/Sewer Service</a></li>
+            <li id="cfw-902" class="cfw-8 cfw-node cfw-last"><a href="https://www.cityofws.org/Departments/Planning/Zoning-and-Subdivision" class="&#xA;						cfw-link&#xA;						">Zoning</a></li>
+          </ul>
+        </li>
+        <li id="cfw-903" class="cfw-2 cfw-node"><a class="&#xA;						cfw-link disabled&#xA;						">Community Services</a><ul class="&#xA;				cfw-1">
+            <li id="cfw-904" class="cfw-1 cfw-node cfw-first"><a href="https://www.cityofws.org/Departments/Community-Development/Code-Enforcement" class="&#xA;						cfw-link&#xA;						">Code Enforcement</a></li>
+            <li id="cfw-905" class="cfw-2 cfw-node"><a href="https://www.cityofws.org/Departments/Community-Assistance" class="&#xA;						cfw-link&#xA;						">Community Assistance</a></li>
+            <li id="cfw-907" class="cfw-3 cfw-node"><a href="https://www.cityofws.org/cbd" class="&#xA;						cfw-link&#xA;						">Community Development</a></li>
+            <li id="cfw-908" class="cfw-4 cfw-node"><a href="https://www.cityofws.org/Departments/Community-Development/Planning" class="&#xA;						cfw-link&#xA;						">Housing Development</a></li>
+            <li id="cfw-909" class="cfw-5 cfw-node"><a href="https://www.cityofws.org/Departments/Community-Development/Housing-Development/Housing-Rehabilitation" class="&#xA;						cfw-link&#xA;						">Housing Rehabilitation</a></li>
+            <li id="cfw-910" class="cfw-6 cfw-node"><a href="https://www.cityofws.org/Departments/Keep-Winston-Salem-Beautiful" class="&#xA;						cfw-link&#xA;						">Keep W-S Beautiful</a></li>
+            <li id="cfw-911" class="cfw-7 cfw-node"><a href="https://www.cityofws.org/Departments/Human-Relations/Fair-Housing-Landlord-Tenant-LEP-Enforcement/FAQ" class="&#xA;						cfw-link&#xA;						">Landlord/Tenant</a></li>
+            <li id="cfw-912" class="cfw-8 cfw-node"><a href="https://www.cityofws.org/planning" class="&#xA;						cfw-link&#xA;						">Planning</a></li>
+            <li id="cfw-913" class="cfw-9 cfw-node cfw-last"><a href="https://www.cityofws.org/wstv" class="&#xA;						cfw-link&#xA;						">WSTV 13</a></li>
+          </ul>
+        </li>
+        <li id="cfw-914" class="cfw-3 cfw-node"><a class="&#xA;						cfw-link disabled&#xA;						">Recreation</a><ul class="&#xA;				cfw-1">
+            <li id="cfw-915" class="cfw-1 cfw-node cfw-first"><a href="https://www.cityofws.org/Departments/Recreation-Parks/Athletics/Adult-Athletics" class="&#xA;						cfw-link&#xA;						">Adult Athletics</a></li>
+            <li id="cfw-916" class="cfw-2 cfw-node"><a href="https://www.cityofws.org/Home-Center/Discover-Winston-Salem" class="&#xA;						cfw-link&#xA;						">Discover W-S</a></li>
+            <li id="cfw-917" class="cfw-3 cfw-node"><a href="http://www.dcfair.com/" class="&#xA;						cfw-link&#xA;						">Dixie Classic Fair</a></li>
+            <li id="cfw-918" class="cfw-4 cfw-node"><a href="https://www.cityofws.org/Departments/Recreation-Parks/Historic-Bethabara" class="&#xA;						cfw-link&#xA;						">Historic Bethabara Park</a></li>
+            <li id="cfw-919" class="cfw-5 cfw-node"><a href="https://www.cityofws.org/Departments/Recreation-Parks/Parks-Greenways" class="&#xA;						cfw-link&#xA;						">Parks and Greenways</a></li>
+            <li id="cfw-920" class="cfw-6 cfw-node"><a href="https://www.cityofws.org/Departments/Recreation-Parks" class="&#xA;						cfw-link&#xA;						">Recreation &amp; Parks</a></li>
+            <li id="cfw-921" class="cfw-7 cfw-node"><a href="https://www.cityofws.org/Departments/Recreation-Parks/Salem-Lake" class="&#xA;						cfw-link&#xA;						">Salem Lake</a></li>
+            <li id="cfw-922" class="cfw-8 cfw-node cfw-last"><a href="https://www.cityofws.org/seniors" class="&#xA;						cfw-link&#xA;						">Seniors</a></li>
+          </ul>
+        </li>
+        <li id="cfw-923" class="cfw-4 cfw-node"><a class="&#xA;						cfw-link disabled&#xA;						">Pay Bills</a><ul class="&#xA;				cfw-1">
+            <li id="cfw-924" class="cfw-1 cfw-node cfw-first"><a href="https://www6.cityofws.org/firepermits/CustomerEntry.aspx" class="&#xA;						cfw-link&#xA;						">Fire Permit/Fine</a></li>
+            <li id="cfw-925" class="cfw-2 cfw-node"><a href="https://www6.cityofws.org/YardCartAndSticker/MainPage.aspx" class="&#xA;						cfw-link&#xA;						">Order New Yard Cart</a></li>
+            <li id="cfw-926" class="cfw-3 cfw-node"><a href="https://www6.cityofws.org/parkingtickets/" class="&#xA;						cfw-link&#xA;						">Parking Fine</a></li>
+            <li id="cfw-927" class="cfw-4 cfw-node"><a href="https://www6.cityofws.org/yardcarts/" class="&#xA;						cfw-link&#xA;						">Yard Cart Renewal</a></li>
+            <li id="cfw-928" class="cfw-5 cfw-node cfw-last"><a href="https://www.cwsonline.org/webinquiry/JSP/login.jsp" class="&#xA;						cfw-link&#xA;						">Water/Stormwater</a></li>
+          </ul>
+        </li>
+        <li id="cfw-929" class="cfw-5 cfw-node"><a class="&#xA;						cfw-link disabled&#xA;						">Transportation</a><ul class="&#xA;				cfw-1">
+            <li id="cfw-930" class="cfw-1 cfw-node cfw-first"><a href="https://www.cityofws.org/Departments/Transportation/Biking" class="&#xA;						cfw-link&#xA;						">Biking</a></li>
+            <li id="cfw-931" class="cfw-2 cfw-node"><a href="https://www.cityofws.org/Departments/Transportation/Bus-Service" class="&#xA;						cfw-link&#xA;						">Bus Service</a></li>
+            <li id="cfw-932" class="cfw-3 cfw-node"><a href="https://www.cityofws.org/Departments/Transportation/Parking" class="&#xA;						cfw-link&#xA;						">Parking</a></li>
+            <li id="cfw-933" class="cfw-4 cfw-node cfw-last"><a href="https://www.cityofws.org/Departments/Transportation/Streets" class="&#xA;						cfw-link&#xA;						">Streets</a></li>
+          </ul>
+        </li>
+        <li id="cfw-934" class="cfw-6 cfw-node"><a class="&#xA;						cfw-link disabled&#xA;						">Public Safety</a><ul class="&#xA;				cfw-1">
+            <li id="cfw-935" class="cfw-1 cfw-node cfw-first"><a href="https://www.cityofws.org/Departments/Emergency-Management" class="&#xA;						cfw-link&#xA;						">Emergency Management</a></li>
+            <li id="cfw-936" class="cfw-2 cfw-node"><a href="https://www.cityofws.org/fire" class="&#xA;						cfw-link&#xA;						">Fire Department</a></li>
+            <li id="cfw-937" class="cfw-3 cfw-node cfw-last"><a href="https://www.cityofws.org/police" class="&#xA;						cfw-link&#xA;						">Police Department</a></li>
+          </ul>
+        </li>
+        <li id="cfw-938" class="cfw-7 cfw-node cfw-last"><a href="https://www.cityofws.org/Home-Center/Discover-Winston-Salem/Kids-Students-Children-Teens" class="&#xA;						cfw-link&#xA;						">Kids and Students</a></li>
+      </ul>
+    </li>
+    <li id="cfw-88" class="cfw-3 cfw-node cfw-root"><a href="https://www.cityofws.org/Business" class="&#xA;						cfw-link&#xA;						 cfw-root">Business</a><ul class="&#xA;				cfw-0">
+        <li id="cfw-1011" class="cfw-1 cfw-node cfw-first"><a class="&#xA;						cfw-link disabled&#xA;						">Business Services and Programs</a><ul class="&#xA;				cfw-1">
+            <li id="cfw-1012" class="cfw-1 cfw-node cfw-first"><a href="https://www.cityofws.org/Bids" class="&#xA;						cfw-link&#xA;						">Bids and Auctions</a></li>
+            <li id="cfw-1013" class="cfw-2 cfw-node"><a href="https://www.cityofws.org/Departments/Inspections/Commercial-Building-Evaluation-Service" class="&#xA;						cfw-link&#xA;						">Commercial Building Evaluation</a></li>
+            <li id="cfw-1015" class="cfw-3 cfw-node"><a href="https://www.cityofws.org/Departments/Business-Inclusion-and-Advancement/Business-Development/Economic-Development" class="&#xA;						cfw-link&#xA;						">Economic Development</a></li>
+            <li id="cfw-1016" class="cfw-4 cfw-node"><a href="https://www.cityofws.org/Departments/Community-and-Business-Development/Minority-Womens-Business-M-WBE" class="&#xA;						cfw-link&#xA;						">Minority/Women Business Enterprise</a></li>
+            <li id="cfw-1017" class="cfw-5 cfw-node"><a href="https://www.cityofws.org/Departments/Business-Inclusion-and-Advancement/Business-Development/NRSA-Building-Rehab" class="&#xA;						cfw-link&#xA;						">NRSA Building Rehab</a></li>
+            <li id="cfw-1018" class="cfw-6 cfw-node"><a href="https://www.cityofws.org/Departments/Business-Inclusion-and-Advancement/Business-Development/Small-Business-Liaison" class="&#xA;						cfw-link&#xA;						">Small Business Liaison</a></li>
+            <li id="cfw-1019" class="cfw-7 cfw-node"><a href="https://www.cityofws.org/Departments/Business-Inclusion-and-Advancement/Business-Development/Loan-Program" class="&#xA;						cfw-link&#xA;						">Small Business Loan</a></li>
+            <li id="cfw-1020" class="cfw-8 cfw-node"><a href="https://www.cityofws.org/Departments/Stormwater-Erosion-Control/For-Businesses" class="&#xA;						cfw-link&#xA;						">Stormwater</a></li>
+            <li id="cfw-1021" class="cfw-9 cfw-node cfw-last"><a href="https://www.cityofws.org/Departments/Utilities/Business-Services" class="&#xA;						cfw-link&#xA;						">Utilities</a></li>
+          </ul>
+        </li>
+        <li id="cfw-1022" class="cfw-2 cfw-node"><a class="&#xA;						cfw-link disabled&#xA;						">Starting a Business</a><ul class="&#xA;				cfw-1">
+            <li id="cfw-1023" class="cfw-1 cfw-node cfw-first"><a href="https://www.cityofws.org/Departments/Business-Inclusion-and-Advancement/Business-Development/Small-Business" class="&#xA;						cfw-link&#xA;						">Business Checklist</a></li>
+            <li id="cfw-1024" class="cfw-2 cfw-node"><a href="https://www.cityofws.org/Departments/Finance/Revenue/Business-License-Collections" class="&#xA;						cfw-link&#xA;						">Business License</a></li>
+            <li id="cfw-1025" class="cfw-3 cfw-node"><a href="/LinkClick.aspx?fileticket=w2NnFFdG4Y4%3d&amp;tabid=1025&amp;portalid=0" class="&#xA;						cfw-link&#xA;						">Home Occupation Requirements</a></li>
+            <li id="cfw-1026" class="cfw-4 cfw-node"><a href="https://www.cityofws.org/Departments/Community-and-Business-Development/Minority-Womens-Business-M-WBE" class="&#xA;						cfw-link&#xA;						">Minority/Women Business Enterprise</a></li>
+            <li id="cfw-1027" class="cfw-5 cfw-node cfw-last"><a href="https://www.cityofws.org/Departments/Business-Inclusion-and-Advancement/Business-Development/Small-Business-Liaison" class="&#xA;						cfw-link&#xA;						">Small Business Liaison</a></li>
+          </ul>
+        </li>
+        <li id="cfw-1028" class="cfw-3 cfw-node"><a class="&#xA;						cfw-link disabled&#xA;						">Business Resources</a><ul class="&#xA;				cfw-1">
+            <li id="cfw-1029" class="cfw-1 cfw-node cfw-first"><a href="https://www.cityofws.org/Departments/Police/Crime-Prevention/Handouts-and-Web-Links/Commercial-Property-Safety" class="&#xA;						cfw-link&#xA;						">Commercial Property Safety</a></li>
+            <li id="cfw-1030" class="cfw-2 cfw-node"><a href="https://www.cityofws.org/Departments/Planning/Publications-and-Maps/GIS" class="&#xA;						cfw-link&#xA;						">GIS</a></li>
+            <li id="cfw-1031" class="cfw-3 cfw-node"><a href="https://www.cityofws.org/Departments/Business-Inclusion-and-Advancement/Business-Development/Guides" class="&#xA;						cfw-link&#xA;						">Guides</a></li>
+            <li id="cfw-1032" class="cfw-4 cfw-node"><a href="https://www.cityofws.org/Business/Business-Resources/Newsletters" class="&#xA;						cfw-link&#xA;						">Newsletters</a></li>
+            <li id="cfw-1033" class="cfw-5 cfw-node"><a href="https://www.cityofws.org/Home-Center/Links" class="&#xA;						cfw-link&#xA;						">Resource Links</a></li>
+            <li id="cfw-1034" class="cfw-6 cfw-node"><a href="https://www.cityofws.org/Departments/Finance/Revenue/Small-Business-Listing" class="&#xA;						cfw-link&#xA;						">Small Business Listing</a></li>
+            <li id="cfw-1035" class="cfw-7 cfw-node cfw-last"><a href="https://www.cityofws.org/Home-Center/Videos" class="&#xA;						cfw-link&#xA;						">Videos</a></li>
+          </ul>
+        </li>
+        <li id="cfw-1036" class="cfw-4 cfw-node"><a class="&#xA;						cfw-link disabled&#xA;						">Regulations</a><ul class="&#xA;				cfw-1">
+            <li id="cfw-1037" class="cfw-1 cfw-node cfw-first"><a href="https://www.cityofws.org/Departments/Finance/Revenue/Business-License-Collections" class="&#xA;						cfw-link&#xA;						">Business License</a></li>
+            <li id="cfw-1038" class="cfw-2 cfw-node"><a href="https://www.cityofws.org/Departments/Fire/Ordinances-Fees" class="&#xA;						cfw-link&#xA;						">Fire Inspection</a></li>
+            <li id="cfw-1039" class="cfw-3 cfw-node"><a href="https://www.cityofws.org/Departments/Police/Online-Services/Alarm-Permits" class="&#xA;						cfw-link&#xA;						">Alarm Permit</a></li>
+            <li id="cfw-1040" class="cfw-4 cfw-node"><a href="https://www.cityofws.org/Departments/Inspections/Signs" class="&#xA;						cfw-link&#xA;						">Sign Ordinance</a></li>
+            <li id="cfw-1041" class="cfw-5 cfw-node"><a href="https://www.cityofws.org/Home-Center/Forms-and-Reports/Regulations" class="&#xA;						cfw-link&#xA;						">Forms</a></li>
+            <li id="cfw-1042" class="cfw-6 cfw-node"><a href="https://www.cityofws.org/Departments/Engineering/Records-Center/Water-and-Sewer-Rates" class="&#xA;						cfw-link&#xA;						">Water and Sewer Rates</a></li>
+            <li id="cfw-1043" class="cfw-7 cfw-node"><a href="https://www.cityofws.org/Departments/Stormwater-Erosion-Control/For-Businesses" class="&#xA;						cfw-link&#xA;						">Stormwater</a></li>
+            <li id="cfw-1044" class="cfw-8 cfw-node"><a href="https://www.cityofws.org/Departments/Planning/Zoning-and-Subdivision" class="&#xA;						cfw-link&#xA;						">Zoning/Planning</a></li>
+            <li id="cfw-1045" class="cfw-9 cfw-node cfw-last"><a href="https://www.cityofws.org/Departments/Inspections" class="&#xA;						cfw-link&#xA;						">Inspections</a></li>
+          </ul>
+        </li>
+        <li id="cfw-1046" class="cfw-5 cfw-node"><a href="https://www.cityofws.org/Departments/Community-and-Business-Development/Development" class="&#xA;						cfw-link&#xA;						">Development</a></li>
+        <li id="cfw-2486" class="cfw-6 cfw-node cfw-last"><a href="https://www.cityofws.org/Bids" class="&#xA;						cfw-link&#xA;						">Bids and Auctions</a></li>
+      </ul>
+    </li>
+    <li id="cfw-89" class="cfw-4 cfw-node cfw-root"><a href="https://www.cityofws.org/Development" class="&#xA;						cfw-link&#xA;						 cfw-root">Development</a><ul class="&#xA;				cfw-0">
+        <li id="cfw-847" class="cfw-1 cfw-node cfw-first"><a class="&#xA;						cfw-link disabled&#xA;						">Site Considerations</a><ul class="&#xA;				cfw-1">
+            <li id="cfw-848" class="cfw-1 cfw-node cfw-first"><a href="https://www.cityofws.org/Departments/Planning/Addresses-and-Street-Naming" class="&#xA;						cfw-link&#xA;						">Addresses</a></li>
+            <li id="cfw-849" class="cfw-2 cfw-node"><a href="https://www.cityofws.org/Departments/Planning/Area-Plans" class="&#xA;						cfw-link&#xA;						">Area Plans</a></li>
+            <li id="cfw-850" class="cfw-3 cfw-node"><a href="https://www.cityofws.org/Development/Site-Considerations/Change-of-Use" class="&#xA;						cfw-link&#xA;						">Change of Use</a></li>
+            <li id="cfw-851" class="cfw-4 cfw-node"><a href="https://www.cityofws.org/Departments/Planning/Publications-and-Maps/GIS" class="&#xA;						cfw-link&#xA;						">GIS</a></li>
+            <li id="cfw-852" class="cfw-5 cfw-node"><a href="https://www6.cityofws.org/idocs/Default.aspx" class="&#xA;						cfw-link&#xA;						">iDocuments</a></li>
+            <li id="cfw-853" class="cfw-6 cfw-node"><a href="https://www.cityofws.org/Departments/Inspections" class="&#xA;						cfw-link&#xA;						">Inspections</a></li>
+            <li id="cfw-854" class="cfw-7 cfw-node"><a href="https://www.cityofws.org/Departments/Planning/Legacy-Comprehensive-Plan/Legacy-2030" class="&#xA;						cfw-link&#xA;						">Legacy</a></li>
+            <li id="cfw-855" class="cfw-8 cfw-node"><a href="https://www.cityofws.org/Departments/Police/Online-Services" class="&#xA;						cfw-link&#xA;						">Police Online Services</a></li>
+            <li id="cfw-856" class="cfw-9 cfw-node"><a href="https://www.cityofws.org/Departments/Engineering/Real-Estate" class="&#xA;						cfw-link&#xA;						">Real Estate</a></li>
+            <li id="cfw-857" class="cfw-10 cfw-node"><a href="https://www.cityofws.org/Departments/Planning/Zoning-and-Subdivision/UDO-and-Amendments" class="&#xA;						cfw-link&#xA;						">UDO</a></li>
+            <li id="cfw-858" class="cfw-11 cfw-node cfw-last"><a href="https://www.cityofws.org/Departments/Planning/Zoning-and-Subdivision" class="&#xA;						cfw-link&#xA;						">Zoning</a></li>
+          </ul>
+        </li>
+        <li id="cfw-859" class="cfw-2 cfw-node"><a class="&#xA;						cfw-link disabled&#xA;						">Plan Reviews</a><ul class="&#xA;				cfw-1">
+            <li id="cfw-860" class="cfw-1 cfw-node cfw-first"><a href="https://www.cityofws.org/Departments/Finance/Revenue/Business-License-Collections" class="&#xA;						cfw-link&#xA;						">Business License</a></li>
+            <li id="cfw-861" class="cfw-2 cfw-node"><a href="https://www.cityofws.org/Departments/Engineering/Records-Center" class="&#xA;						cfw-link&#xA;						">Engineering</a></li>
+            <li id="cfw-862" class="cfw-3 cfw-node"><a href="https://www.cityofws.org/Development/Plan-Reviews/Fees" class="&#xA;						cfw-link&#xA;						">Fees</a></li>
+            <li id="cfw-863" class="cfw-4 cfw-node"><a href="https://www.cityofws.org/Departments/Fire/Fire-Prevention/General-Plan-Review" class="&#xA;						cfw-link&#xA;						">Fire</a></li>
+            <li id="cfw-864" class="cfw-5 cfw-node"><a href="https://www.cityofws.org/Departments/Inspections" class="&#xA;						cfw-link&#xA;						">Inspections</a></li>
+            <li id="cfw-865" class="cfw-6 cfw-node"><a href="https://www.cityofws.org/Departments/Planning/Zoning-and-Subdivision" class="&#xA;						cfw-link&#xA;						">Planning</a></li>
+            <li id="cfw-866" class="cfw-7 cfw-node"><a href="https://www.cityofws.org/Development/Plan-Reviews/Sketch-Review" class="&#xA;						cfw-link&#xA;						">Sketch Review</a></li>
+            <li id="cfw-867" class="cfw-8 cfw-node"><a href="https://www.cityofws.org/Departments/Stormwater-Erosion-Control/Stormwater-Management/Stormwater-Management-Plan-Review" class="&#xA;						cfw-link&#xA;						">Stormwater/Erosion Control</a></li>
+            <li id="cfw-868" class="cfw-9 cfw-node"><a href="https://www.cityofws.org/Departments/Transportation/Streets" class="&#xA;						cfw-link&#xA;						">Streets</a></li>
+            <li id="cfw-869" class="cfw-10 cfw-node"><a href="https://www.cityofws.org/Departments/Transportation/Planning" class="&#xA;						cfw-link&#xA;						">Transportation</a></li>
+            <li id="cfw-870" class="cfw-11 cfw-node cfw-last"><a href="https://www.cityofws.org/Departments/Utilities/Business-Services/Utilities-Plan-Review" class="&#xA;						cfw-link&#xA;						">Utilities</a></li>
+          </ul>
+        </li>
+        <li id="cfw-871" class="cfw-3 cfw-node"><a class="&#xA;						cfw-link disabled&#xA;						">Construction and Permits</a><ul class="&#xA;				cfw-1">
+            <li id="cfw-872" class="cfw-1 cfw-node cfw-first"><a href="https://www.cityofws.org/Departments/Engineering/Publications" class="&#xA;						cfw-link&#xA;						">Engineering</a></li>
+            <li id="cfw-873" class="cfw-2 cfw-node"><a href="https://www.cityofws.org/Departments/Fire/Fire-Prevention/General-Plan-Review" class="&#xA;						cfw-link&#xA;						">Fire</a></li>
+            <li id="cfw-874" class="cfw-3 cfw-node"><a href="https://www.cityofws.org/Departments/Inspections" class="&#xA;						cfw-link&#xA;						">Inspections</a></li>
+            <li id="cfw-875" class="cfw-4 cfw-node"><a href="https://www.cityofws.org/Departments/Planning/Zoning-and-Subdivision" class="&#xA;						cfw-link&#xA;						">Planning</a></li>
+            <li id="cfw-876" class="cfw-5 cfw-node"><a href="https://www.cityofws.org/Departments/Sanitation" class="&#xA;						cfw-link&#xA;						">Sanitation</a></li>
+            <li id="cfw-877" class="cfw-6 cfw-node"><a href="https://www.cityofws.org/Departments/Stormwater-Erosion-Control/Erosion-Control" class="&#xA;						cfw-link&#xA;						">Stormware/Erosion Control</a></li>
+            <li id="cfw-878" class="cfw-7 cfw-node"><a href="https://www.cityofws.org/Departments/Transportation/Streets/Permits/Street-Cut-Repair" class="&#xA;						cfw-link&#xA;						">Streets</a></li>
+            <li id="cfw-879" class="cfw-8 cfw-node"><a href="https://www.cityofws.org/Departments/Transportation/Planning" class="&#xA;						cfw-link&#xA;						">Transportation</a></li>
+            <li id="cfw-880" class="cfw-9 cfw-node cfw-last"><a href="https://www.cityofws.org/Departments/Utilities" class="&#xA;						cfw-link&#xA;						">Utilities</a></li>
+          </ul>
+        </li>
+        <li id="cfw-881" class="cfw-4 cfw-node"><a class="&#xA;						cfw-link disabled&#xA;						">Resources</a><ul class="&#xA;				cfw-1">
+            <li id="cfw-882" class="cfw-1 cfw-node cfw-first"><a href="https://www.cityofws.org/Home-Center/Links" class="&#xA;						cfw-link&#xA;						">Resource Links</a></li>
+            <li id="cfw-883" class="cfw-2 cfw-node"><a href="https://www.cityofws.org/Departments/Business-Inclusion-and-Advancement/Business-Development/Guides" class="&#xA;						cfw-link&#xA;						">Guides</a></li>
+            <li id="cfw-884" class="cfw-3 cfw-node"><a href="https://www.cityofws.org/Departments/Planning/Publications-and-Maps/GIS" class="&#xA;						cfw-link&#xA;						">GIS</a></li>
+            <li id="cfw-885" class="cfw-4 cfw-node"><a href="https://www.cityofws.org/Departments/Police/Crime-Prevention" class="&#xA;						cfw-link&#xA;						">Crime Prevention</a></li>
+            <li id="cfw-887" class="cfw-5 cfw-node cfw-last"><a href="https://www.cityofws.org/Home-Center/Videos" class="&#xA;						cfw-link&#xA;						">Videos</a></li>
+          </ul>
+        </li>
+        <li id="cfw-889" class="cfw-5 cfw-node"><a href="https://www.cityofws.org/Development/Business-Services-and-Programs" class="&#xA;						cfw-link&#xA;						">Business Services and Programs</a></li>
+        <li id="cfw-890" class="cfw-6 cfw-node cfw-last"><a href="https://www.cityofws.org/Home-Center/Public-Meetings" class="&#xA;						cfw-link&#xA;						">Public Meetings</a></li>
+      </ul>
+    </li>
+    <li id="cfw-90" class="cfw-5 cfw-node cfw-root cfw-last"><a href="https://www.cityofws.org/Government" class="&#xA;						cfw-link&#xA;						 cfw-root">Government</a><ul class="&#xA;				cfw-0">
+        <li id="cfw-939" class="cfw-1 cfw-node cfw-first"><a href="https://www.cityofws.org/Departments" class="&#xA;						cfw-link&#xA;						">Departments A-Z</a></li>
+        <li id="cfw-980" class="cfw-2 cfw-node"><a class="&#xA;						cfw-link disabled&#xA;						">City Officials</a><ul class="&#xA;				cfw-1">
+            <li id="cfw-981" class="cfw-1 cfw-node cfw-first"><a href="https://www.cityofws.org/Departments/Mayor" class="&#xA;						cfw-link&#xA;						">Mayor</a></li>
+            <li id="cfw-982" class="cfw-2 cfw-node"><a href="https://www.cityofws.org/Departments/City-Council" class="&#xA;						cfw-link&#xA;						">City Council</a></li>
+            <li id="cfw-983" class="cfw-3 cfw-node"><a href="https://www.cityofws.org/Departments/City-Attorney" class="&#xA;						cfw-link&#xA;						">City Attorney</a></li>
+            <li id="cfw-984" class="cfw-4 cfw-node"><a href="https://www.cityofws.org/Departments/City-Manager" class="&#xA;						cfw-link&#xA;						">City Manager</a></li>
+            <li id="cfw-985" class="cfw-5 cfw-node cfw-last"><a href="https://www.cityofws.org/Departments/City-Secretary" class="&#xA;						cfw-link&#xA;						">City Secretary</a></li>
+          </ul>
+        </li>
+        <li id="cfw-986" class="cfw-3 cfw-node"><a href="https://www.cityofws.org/Home-Center/Public-Meetings" class="&#xA;						cfw-link&#xA;						">Public Meetings</a><ul class="&#xA;				cfw-1">
+            <li id="cfw-987" class="cfw-1 cfw-node cfw-first"><a href="https://www.cityofws.org/Home-Center/Public-Meetings/Advisory-Boards-and-Commissions" class="&#xA;						cfw-link&#xA;						">Advisory Boards and Commissions Listing</a></li>
+            <li id="cfw-988" class="cfw-2 cfw-node"><a href="https://www.cityofws.org/Home-Center/Public-Meetings" class="&#xA;						cfw-link&#xA;						">City Council</a></li>
+            <li id="cfw-989" class="cfw-3 cfw-node"><a href="https://www.cityofws.org/Home-Center/Public-Meetings/Finance-Committee" class="&#xA;						cfw-link&#xA;						">Finance Committee</a></li>
+            <li id="cfw-990" class="cfw-4 cfw-node"><a href="https://www.cityofws.org/Home-Center/Public-Meetings/CDHGG-Committee" class="&#xA;						cfw-link&#xA;						">General Government</a></li>
+            <li id="cfw-991" class="cfw-5 cfw-node"><a href="https://www.cityofws.org/Departments/Planning/Boards-and-Commissions/City-County-Planning-Board/CCPB" class="&#xA;						cfw-link&#xA;						">Planning Board</a></li>
+            <li id="cfw-992" class="cfw-6 cfw-node"><a href="https://www.cityofws.org/Home-Center/Public-Meetings/Public-Safety-Committee" class="&#xA;						cfw-link&#xA;						">Public Safety</a></li>
+            <li id="cfw-993" class="cfw-7 cfw-node"><a href="https://www.cityofws.org/Home-Center/Public-Meetings/Public-Works-Committee" class="&#xA;						cfw-link&#xA;						">Public Works</a></li>
+            <li id="cfw-994" class="cfw-8 cfw-node"><a href="https://www.cityofws.org/Departments/Utilities/Utility-Commission" class="&#xA;						cfw-link&#xA;						">Utilities Commission</a></li>
+            <li id="cfw-995" class="cfw-9 cfw-node cfw-last"><a href="https://www.cityofws.org/Departments/Inspections/Boards-of-Adjustment" class="&#xA;						cfw-link&#xA;						">Zoning Board of Adjustment</a></li>
+          </ul>
+        </li>
+        <li id="cfw-996" class="cfw-4 cfw-node"><a class="&#xA;						cfw-link disabled&#xA;						">Open Government</a><ul class="&#xA;				cfw-1">
+            <li id="cfw-997" class="cfw-1 cfw-node cfw-first"><a href="https://www.cityofws.org/Home-Center/Citizen-Service-Desk/City-Phone-Number-Directory" class="&#xA;						cfw-link&#xA;						">Directory</a></li>
+            <li id="cfw-998" class="cfw-2 cfw-node"><a href="https://www.cityofws.org/Home-Center/Contact-Us/Directions-to-City-Locations" class="&#xA;						cfw-link&#xA;						">Directions</a></li>
+            <li id="cfw-999" class="cfw-3 cfw-node"><a href="https://www.cityofws.org/wstv" class="&#xA;						cfw-link&#xA;						">Watch Online</a></li>
+            <li id="cfw-1002" class="cfw-4 cfw-node"><a href="https://www.cityofws.org/Home-Center/Public-Meetings" class="&#xA;						cfw-link&#xA;						">Public Meetings</a></li>
+            <li id="cfw-1000" class="cfw-5 cfw-node"><a href="https://www.cityofws.org/Departments/Finance/Open-Financial-Information" class="&#xA;						cfw-link&#xA;						">Open Financial</a></li>
+            <li id="cfw-1001" class="cfw-6 cfw-node"><a href="https://www.cityofws.org/Budget" class="&#xA;						cfw-link&#xA;						">Budget</a></li>
+            <li id="cfw-1004" class="cfw-7 cfw-node"><a href="https://www.cityofws.org/Departments/City-Manager/Performance-Indicators-Report" class="&#xA;						cfw-link&#xA;						">Performance Indicators Report</a></li>
+            <li id="cfw-1003" class="cfw-8 cfw-node"><a href="http://library.municode.com/index.aspx?clientId=10054" class="&#xA;						cfw-link&#xA;						">Code of Ordinances</a></li>
+            <li id="cfw-2749" class="cfw-9 cfw-node cfw-last"><a href="http://www.cityofws.org/accessibility-statement" class="&#xA;						cfw-link&#xA;						">ADA Accessibility Statement</a></li>
+          </ul>
+        </li>
+        <li id="cfw-1005" class="cfw-5 cfw-node cfw-last"><a href="http://agency.governmentjobs.com/winstonsalemnc/default.cfm" class="&#xA;						cfw-link&#xA;						">Jobs</a><ul class="&#xA;				cfw-1">
+            <li id="cfw-1006" class="cfw-1 cfw-node cfw-first"><a href="https://www.cityofws.org/Departments/Human-Resources" class="&#xA;						cfw-link&#xA;						">Human Resources</a></li>
+            <li id="cfw-1007" class="cfw-2 cfw-node"><a href="http://agency.governmentjobs.com/winstonsalemnc/default.cfm" class="&#xA;						cfw-link&#xA;						">Apply Online</a></li>
+            <li id="cfw-1008" class="cfw-3 cfw-node"><a href="https://www.cityofws.org/Departments/Police/Employment" class="&#xA;						cfw-link&#xA;						">Police</a></li>
+            <li id="cfw-1009" class="cfw-4 cfw-node"><a href="https://www.cityofws.org/Departments/Fire/Employment" class="&#xA;						cfw-link&#xA;						">Fire</a></li>
+            <li id="cfw-1010" class="cfw-5 cfw-node cfw-last"><a href="http://agency.governmentjobs.com/winstonsalemnc/default.cfm?action=agencyspecs" class="&#xA;						cfw-link&#xA;						">Job Descriptions</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+        </div>
+        <div id="dnn_RotatorPane" class="wsnc-RotatorPane DNNEmptyPane"></div>
+        <div id="actionBar">
+          <div id="dnn_avtSearch_pnlInput"><div class="sbInp sbInp_BarFlatBlue" xmlns:tokens="sb:tokens"><div class="sbInputStart"><div class="sbInputEnd"><div class="sbInputInner"><input type="text" onfocus="sbInp_BarFlatBlue_removePlaceholder(this);" onblur="sbInp_BarFlatBlue_checkInput(this)" class="searchBox " value="" /></div></div></div><div class="sbBarStart"><div class="sbBarEnd"><div class="sbBarInner"><a href="javascript: ;" class="searchBtn" title="Search" onclick="var p = avt.sb.$(this).parents(&quot;.sbInp:first&quot;); if (p.find(&quot;.searchBox&quot;).hasClass(&quot;searchBoxEmpty&quot;)) return false; (p.find(&quot;.searchBox&quot;).val(), p.find(&quot;.portalFilter&quot;).val());">
+                        Search
+                    </a><div style="clear: both;"></div></div></div></div></div><div style="clear: both;" xmlns:tokens="sb:tokens"></div><script type="text/javascript" xmlns:tokens="sb:tokens">
+        function sbInp_BarFlatBlue_removePlaceholder (sbox) {
+            sbox = avt.sb.$(sbox);
+            if (sbox.hasClass("searchBoxEmpty")) {
+                sbox.removeClass("searchBoxEmpty").val("");
+            }
+        }
+        function sbInp_BarFlatBlue_checkInput(sbox) {
+            sbox = avt.sb.$(sbox);
+            if (avt.sb.$.trim(sbox.val()).length == 0 || avt.sb.$.trim(sbox.val()) == "Keyword here!") {
+                sbox.addClass("searchBoxEmpty").val("Keyword here!");
+            }
+        }
+        avt.sb.$(document).ready(function() {
+            avt.sb.$(".sbInp_BarFlatBlue .searchBox").each(function() {
+                sbInp_BarFlatBlue_checkInput(this);
+            });
+        });
+    </script></div>
+
+<!-- For old templates: -->
+<div>
+<script>
+    // some common functions
+    function sbInp_clearPlaceholder(sbox) {
+        sbox = avt.sb.$(sbox);
+        if (sbox.hasClass('searchBoxEmpty')) {
+            sbox.removeClass('searchBoxEmpty').val('').removeAttr('placeholder');
+        }
+    }
+    function sbInp_syncPlaceholder(sbox) {
+        sbox = avt.sb.$(sbox);
+        sbox.removeClass('searchBoxEmpty');
+        var emptyText = sbox.attr('data-empty');
+        if (avt.sb.$.trim(sbox.val()).length == 0 || avt.sb.$.trim(sbox.val()) == emptyText) {
+            sbox.addClass('searchBoxEmpty').val(emptyText).attr('placeholder', emptyText);
+        }
+    }
+</script>
+</div>
+
+        </div>
+      </div>
+    </header>
+    <section><!--[if lt IE 9]><div class="IE8"><![endif]-->
+      <div class="sitewidth">
+        <div class="main">
+          <div id="wsnc-breadcrumb">
+            <a href="/" class="wsnc-breadcrumb">Home</a>
+            <span id="dnn_dnnBreadcrumb_lblBreadCrumb"><a href="https://www.cityofws.org/Login" class="wsnc-breadcrumb">Login</a></span>
+
+            <div class="wsnc-printBtn"><a href="?skinsrc=[l]/skins/WinstonSalem/print" target="_blank">Print Page</a></div>
+          </div>
+          <div id="dnn_ContentPane" class="wsnc-ContentPane"><div class="DnnModule DnnModule-DNN_HTML DnnModule-2328 DnnVersionableControl"><a name="2328"></a>
+<div class="cfw-container h2 cctr2328">
+	
+	<h2 class="cfw-title-row">
+    
+		<span id="dnn_ctr2328_dnnTITLE_titleLabel" class="cfw-title">MyCityofWS</span>
+
+
+
+	</h2>
+	<div id="dnn_ctr2328_ContentPane" class="cfw-content"><!-- Start_Module_2328 --><div id="dnn_ctr2328_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+	<div id="dnn_ctr2328_HtmlModule_lblContent"><p>As a member, enjoy the benefits of MyCityofWS, including your choice of newsletters,&nbsp;and notifications about site updates.</p>
+<p>Not registered as a member yet? <a href="/registration.aspx">Start Here and register to become&nbsp;a member.</a></p></div>
+
+
+
+
+</div><!-- End_Module_2328 --></div>
+	
+	
+</div>
+
+
+</div><div class="DnnModule DnnModule-Authentication DnnModule-2330"><a name="2330"></a>
+<div class="cfw-container h2 cctr2330">
+	
+	<h2 class="cfw-title-row">
+    
+		<span id="dnn_ctr2330_dnnTITLE_titleLabel" class="cfw-title">Members Sign in Here</span>
+
+
+
+	</h2>
+	<div id="dnn_ctr2330_ContentPane" class="cfw-content"><!-- Start_Module_2330 --><div id="dnn_ctr2330_ModuleContent" class="DNNModuleContent ModAuthenticationC">
+	<div id="dnn_ctr2330_Login_Prog" class="RadAjax RadAjax_Default" style="display:none;">
+		<div class="raDiv">
+
+		</div><div class="raColor raTransp">
+
+		</div>
+	</div><div class="RadAjaxPanel" id="dnn_ctr2330_dnn_ctr2330_Login_UPPanel">
+		<div id="dnn_ctr2330_Login_UP">
+			<!-- 2013.2.717.40 -->
+<div class="dnnForm dnnLogin dnnClear">
+    <div id="dnn_ctr2330_Login_pnlLogin">
+				
+        <div class="loginContent">
+            <div id="dnn_ctr2330_Login_tsLogin">
+					<div  id="dnn_ctr2330_Login_tsLogin_lc" class="LoginTabGroup">
+						<span id="dnn_ctr2330_Login_DNN_l" class="LoginTabSelected" onclick="javascript:__doPostBack(&#39;dnn$ctr2330$Login$tsLogin&#39;,&#39;DNN~|~OnDemand&#39;)">Standard</span><span id="dnn_ctr2330_Login_ICGCustom_l" class="LoginTab" onclick="javascript:__doPostBack(&#39;dnn$ctr2330$Login$tsLogin&#39;,&#39;ICGCustom~|~OnDemand&#39;)">Login</span>
+					</div ><div id="dnn_ctr2330_Login_tsLogin_c" class="LoginContainerGroup">
+						<div id="dnn_ctr2330_Login_DNN" onkeydown="return __dnn_KeyDown(&#39;13&#39;, &#39;javascript:__doPostBack(%27dnn$ctr2330$Login$DNN$Login_DNN$cmdLogin%27,%27%27)&#39;, event);" class="LoginContainer">
+							
+<div class="dnnForm dnnLoginService dnnClear">
+    <div class="dnnFormItem">
+		<div class="dnnLabel">
+			<label for="dnn_ctr2330_Login_DNN_Login_DNN_txtUsername" id="dnn_ctr2330_Login_DNN_Login_DNN_plUsername" class="dnnFormLabel">Username:</label>
+		</div>        
+        <input name="dnn$ctr2330$Login$DNN$Login_DNN$txtUsername" type="text" id="dnn_ctr2330_Login_DNN_Login_DNN_txtUsername" AUTOCOMPLETE="off" />
+    </div>
+    <div class="dnnFormItem">
+		<div class="dnnLabel">
+			<label for="dnn_ctr2330_Login_DNN_Login_DNN_txtPassword" id="dnn_ctr2330_Login_DNN_Login_DNN_plPassword" class="dnnFormLabel">Password:</label>
+		</div>
+        <input name="dnn$ctr2330$Login$DNN$Login_DNN$txtPassword" type="password" id="dnn_ctr2330_Login_DNN_Login_DNN_txtPassword" AUTOCOMPLETE="off" />
+    </div>
+    
+    
+    <div class="dnnFormItem">
+        <label for="dnn_ctr2330_Login_DNN_Login_DNN_cmdLogin" id="dnn_ctr2330_Login_DNN_Login_DNN_lblLogin" class="dnnFormLabel"></label>
+        <a id="dnn_ctr2330_Login_DNN_Login_DNN_cmdLogin" title="Login" class="dnnPrimaryAction" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;dnn$ctr2330$Login$DNN$Login_DNN$cmdLogin&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">Login</a>
+		<a id="dnn_ctr2330_Login_DNN_Login_DNN_cmdCancel" title="Cancel" class="dnnSecondaryAction" href="javascript:__doPostBack(&#39;dnn$ctr2330$Login$DNN$Login_DNN$cmdCancel&#39;,&#39;&#39;)">Cancel</a>
+        
+    </div>
+	<div class="dnnFormItem">
+		<label for="dnn_ctr2330_Login_DNN_Login_DNN_cmdLogin" id="dnn_ctr2330_Login_DNN_Login_DNN_lblLoginRememberMe" class="dnnFormLabel"></label>
+		<span class="dnnLoginRememberMe"><input id="dnn_ctr2330_Login_DNN_Login_DNN_chkCookie" type="checkbox" name="dnn$ctr2330$Login$DNN$Login_DNN$chkCookie" /><label for="dnn_ctr2330_Login_DNN_Login_DNN_chkCookie">Remember Login</label></span>
+	</div>
+    <div class="dnnFormItem">
+        <label class="dnnFormLabel">&nbsp;</label>
+        <div class="dnnLoginActions">
+            <ul class="dnnActions dnnClear">
+                <li id="dnn_ctr2330_Login_DNN_Login_DNN_liRegister"><a id="dnn_ctr2330_Login_DNN_Login_DNN_registerLink" class="dnnSecondaryAction" href="https://www.cityofws.org/Registration?returnurl=%2fDepartments%2fHuman-Relations%2fOutreach%2fYouth-Advisory-Council">Register</a></li>                
+                <li id="dnn_ctr2330_Login_DNN_Login_DNN_liPassword"><a id="dnn_ctr2330_Login_DNN_Login_DNN_passwordLink" class="dnnSecondaryAction" href="https://www.cityofws.org/Login/ctl/SendPassword?returnurl=%2fDepartments%2fHuman-Relations%2fOutreach%2fYouth-Advisory-Council">Reset Password</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+	/*globals jQuery, window, Sys */
+	(function ($, Sys) {
+		function setUpLogin() {
+			var actionLinks = $("a[id$=DNN_cmdLogin]");
+			actionLinks.click(function () {
+				if ($(this).hasClass("dnnDisabledAction")) {
+					return false;
+				}
+
+				actionLinks.addClass("dnnDisabledAction");
+			});
+		}
+		
+		$(document).ready(function () {
+			setUpLogin();
+			Sys.WebForms.PageRequestManager.getInstance().add_endRequest(function () {
+				setUpLogin();
+			});
+		});
+	}(jQuery, window.Sys));
+</script>  
+
+						</div><div id="dnn_ctr2330_Login_ICGCustom" class="LoginContainer" style="display:none;">
+							
+
+<div class="dnnForm dnnClear">
+    <div class="dnnFormItem">
+        
+<div class="dnnLabel">    
+    <label id="dnn_ctr2330_Login_ICGCustom_Login_ICGCustom_lblUsername_label" for="dnn_ctr2330_Login_ICGCustom_Login_ICGCustom_txtUsername">
+        <span id="dnn_ctr2330_Login_ICGCustom_Login_ICGCustom_lblUsername_lblLabel">Username:</span>   
+    </label>
+    <a id="dnn_ctr2330_Login_ICGCustom_Login_ICGCustom_lblUsername_cmdHelp" tabindex="-1" class="dnnFormHelp" href="javascript:__doPostBack(&#39;dnn$ctr2330$Login$ICGCustom$Login_ICGCustom$lblUsername$cmdHelp&#39;,&#39;&#39;)"></a>
+    <div id="dnn_ctr2330_Login_ICGCustom_Login_ICGCustom_lblUsername_pnlHelp" class="dnnTooltip">
+								
+        <div class="dnnFormHelpContent dnnClear">
+            <span id="dnn_ctr2330_Login_ICGCustom_Login_ICGCustom_lblUsername_lblHelp" class="dnnHelpText">This is typically your e-mail address</span>
+            <a href="#" class="pinHelp"></a>
+       </div>   
+    
+							</div>
+</div>
+
+
+        <input name="dnn$ctr2330$Login$ICGCustom$Login_ICGCustom$txtUsername" type="text" maxlength="200" id="dnn_ctr2330_Login_ICGCustom_Login_ICGCustom_txtUsername" class="dnnFormRequired" AUTOCOMPLETE="off" />
+        &nbsp;
+    </div>
+    <div class="dnnFormItem">
+        
+<div class="dnnLabel">    
+    <label id="dnn_ctr2330_Login_ICGCustom_Login_ICGCustom_lblPassword_label" for="dnn_ctr2330_Login_ICGCustom_Login_ICGCustom_txtPassword">
+        <span id="dnn_ctr2330_Login_ICGCustom_Login_ICGCustom_lblPassword_lblLabel">Password:</span>   
+    </label>
+    <a id="dnn_ctr2330_Login_ICGCustom_Login_ICGCustom_lblPassword_cmdHelp" tabindex="-1" class="dnnFormHelp" href="javascript:__doPostBack(&#39;dnn$ctr2330$Login$ICGCustom$Login_ICGCustom$lblPassword$cmdHelp&#39;,&#39;&#39;)"></a>
+    <div id="dnn_ctr2330_Login_ICGCustom_Login_ICGCustom_lblPassword_pnlHelp" class="dnnTooltip">
+								
+        <div class="dnnFormHelpContent dnnClear">
+            <span id="dnn_ctr2330_Login_ICGCustom_Login_ICGCustom_lblPassword_lblHelp" class="dnnHelpText">Your password</span>
+            <a href="#" class="pinHelp"></a>
+       </div>   
+    
+							</div>
+</div>
+
+
+        <input name="dnn$ctr2330$Login$ICGCustom$Login_ICGCustom$txtPassword" type="password" maxlength="200" id="dnn_ctr2330_Login_ICGCustom_Login_ICGCustom_txtPassword" class="dnnFormRequired" AUTOCOMPLETE="off" />
+        &nbsp;
+    </div>
+    
+    <ul class="dnnActions">
+        <li><a id="dnn_ctr2330_Login_ICGCustom_Login_ICGCustom_btnLogin" title="Login" class="dnnPrimaryAction" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;dnn$ctr2330$Login$ICGCustom$Login_ICGCustom$btnLogin&quot;, &quot;&quot;, true, &quot;ICGCustomAuth&quot;, &quot;&quot;, false, true))">Login</a></li>
+    </ul>
+
+</div>
+
+						</div>
+					</div>
+				</div>
+            
+            <div class="dnnSocialRegistration">
+                <div id="socialControls">
+                    <ul class="buttonList">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+			</div>
+    
+    
+    
+    
+</div>
+		</div>
+	</div>
+</div><!-- End_Module_2330 --></div>
+	
+	
+</div>
+
+
+</div></div>
+          <div class="clearfix"><!-- EMPTY --></div>
+          <div id="dnn_ContentLeft" class="wsnc-ContentLeft DNNEmptyPane"></div>
+          <div id="dnn_ContentRight" class="wsnc-ContentRight DNNEmptyPane"></div>
+          <div class="clearfix"><!-- EMPTY --></div>
+          <div id="dnn_ContentBottom" class="wsnc-ContentBottom DNNEmptyPane"></div>
+        </div>
+        <div id="dnn_Sidebar" class="wsnc-Sidebar"><div class="DnnModule DnnModule-DNN_HTML DnnModule-708 DnnVersionableControl"><a name="708"></a>
+<div class="cfw-container blank cctr708">
+	
+  
+	<div id="dnn_ctr708_ContentPane" class="cfw-content"><!-- Start_Module_708 --><div id="dnn_ctr708_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+	<div id="dnn_ctr708_HtmlModule_lblContent"><p><a title="new window" target="_blank" href="http://www.cityofws.org/home-center/citizen-notification-system"><img alt="Citizen Notification System" style="" src="http://www.cityofws.org/Portals/0/images/homepage/sidebar-allpages/citizenNotificationSystem-sidebar_may2014.jpg"></a></p>
+<p><a href="http://www.cityofws.org/departments/city-link"><img alt="City Link 311" style="" src="http://www.cityofws.org/Portals/0/images/homepage/sidebar-allpages/side-311b2.jpg"></a></p></div>
+
+
+
+
+</div><!-- End_Module_708 --></div>
+	
+	
+</div>
+
+
+</div></div>
+        <div id="dnn_BottomPane" class="wsnc-BottomPane clearfix DNNEmptyPane"></div>
+      </div>
+    <!--[if lt IE 9]></div><![endif]--></section>
+    <div id="dnn_PhonePane" class="wsnc-PhonePane"><div class="DnnModule DnnModule-DNN_HTML DnnModule-478 DnnVersionableControl"><a name="478"></a>
+<div class="cfw-container blank cctr478">
+	
+  
+	<div id="dnn_ctr478_ContentPane" class="cfw-content"><!-- Start_Module_478 --><div id="dnn_ctr478_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+	<div id="dnn_ctr478_HtmlModule_lblContent"><div style="text-align: center;"><a href="http://www.cityofws.org/departments/city-link"><img alt="" src="http://www.cityofws.org/portals/0/images/citylink-mobile.png" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px; width: 308px; height: 36px;"></a></div></div>
+
+
+
+
+</div><!-- End_Module_478 --></div>
+	
+	
+</div>
+
+
+</div></div>
+    <footer>
+      <div id="wsnc-footer">
+        <div class="wsnc-footer clearfix sitewidth">
+          <div id="dnn_Footer1" class="wsnc-Footer1"><div class="DnnModule DnnModule-DNN_HTML DnnModule-499 DnnVersionableControl"><a name="499"></a>
+<div class="cfw-container h4 cctr499">
+	
+	<h4 class="cfw-title-row">
+    
+		<span id="dnn_ctr499_dnnTITLE_titleLabel" class="cfw-title">Spotlight On...</span>
+
+
+
+	</h4>
+	<div id="dnn_ctr499_ContentPane" class="cfw-content"><!-- Start_Module_499 --><div id="dnn_ctr499_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+	<div id="dnn_ctr499_HtmlModule_lblContent"><ul>
+    <li><a href="/home-center/discover-winston-salem">Discover Winston-Salem</a> </li>
+    <li><a href="/departments/marketing-and-communications/wstv-13/whats-on">WSTV Schedule</a> </li>
+    <li><a href="/departments/planning/zoning-and-subdivision/monthly-zoning">Zoning Cases</a> </li>
+    <li><a href="/home-center/citizen-service-desk/street-closings">Street Closings</a></li>
+    <li><a href="/departments">Departments</a> </li>
+    <li><a href="/departments/human-resources/city-stars-of-excellence">Commend an Employee</a> </li>
+    <li><a href="/home-center/en-espanol">En Espanol</a> </li>
+    <li><a href="/home-center/contact-us">Volunteer</a></li>
+</ul></div>
+
+
+
+
+</div><!-- End_Module_499 --></div>
+	
+	
+</div>
+
+
+</div></div>
+          <div id="dnn_Footer2" class="wsnc-Footer2"><div class="DnnModule DnnModule-DNN_HTML DnnModule-501 DnnVersionableControl"><a name="501"></a>
+<div class="cfw-container h4 cctr501">
+	
+	<h4 class="cfw-title-row">
+    
+		<span id="dnn_ctr501_dnnTITLE_titleLabel" class="cfw-title">Connect With Us</span>
+
+
+
+	</h4>
+	<div id="dnn_ctr501_ContentPane" class="cfw-content"><!-- Start_Module_501 --><div id="dnn_ctr501_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+	<div id="dnn_ctr501_HtmlModule_lblContent"><ul>
+    <li><a href="/departments/marketing-and-communications/city-edition-newsletter">City Edition</a></li>
+    <li><a href="/departments/sanitation/rollout-news">Rollout News</a></li>
+    <li><a href="/departments/transportation/biking/biking-and-walking-newsletter">Biking and Walking Newsletter</a></li>
+    <li><a href="/home-center/citizen-service-desk/social-media">Social Media</a></li>
+    <li><a href="/home-center/social-media-policy">Social Media Policy</a></li>
+    <li><a href="/manage-content-subscriptions">MyCityofWS</a></li>
+    <li><a href="/home-center/contact-us">Contact Us</a> </li>
+    <li><a href="/">Home</a></li>
+</ul></div>
+
+
+
+
+</div><!-- End_Module_501 --></div>
+	
+	
+</div>
+
+
+</div></div>
+          <div class="clearfix br600"><!-- CLEAR --></div>
+          <div id="dnn_Footer3" class="wsnc-Footer3"><div class="DnnModule DnnModule-DNN_HTML DnnModule-502 DnnVersionableControl"><a name="502"></a>
+<div class="cfw-container h4 cctr502">
+	
+	<h4 class="cfw-title-row">
+    
+		<span id="dnn_ctr502_dnnTITLE_titleLabel" class="cfw-title">Site Menu</span>
+
+
+
+	</h4>
+	<div id="dnn_ctr502_ContentPane" class="cfw-content"><!-- Start_Module_502 --><div id="dnn_ctr502_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+	<div id="dnn_ctr502_HtmlModule_lblContent"><ul>
+ <li><a href="/services" title="Services">Services</a></li>
+ <li><a href="/residents" title="Residents">Residents</a></li>
+ <li><a href="/business" title="Business">Business</a></li>
+ <li><a href="/development" title="development">Development</a></li>
+ <li><a href="/government" title="Government">Government</a></li>
+ <li><a href="/home-center/forms-and-reports/forms" title="Forms">Forms</a></li>
+ <li><a href="http://agency.governmentjobs.com/winstonsalemnc/default.cfm" target="_blank" title="Jobs - New Window">Jobs</a></li>
+ <li><a href="/login.aspx" title="Sign In">Sign In</a></li>
+</ul>
+</div>
+
+
+
+
+</div><!-- End_Module_502 --></div>
+	
+	
+</div>
+
+
+</div></div>
+          <div id="dnn_Footer4" class="wsnc-Footer4"><div class="DnnModule DnnModule-DNN_HTML DnnModule-500 DnnVersionableControl"><a name="500"></a>
+<div class="cfw-container h4 cctr500">
+	
+	<h4 class="cfw-title-row">
+    
+		<span id="dnn_ctr500_dnnTITLE_titleLabel" class="cfw-title">Contact Us</span>
+
+
+
+	</h4>
+	<div id="dnn_ctr500_ContentPane" class="cfw-content"><!-- Start_Module_500 --><div id="dnn_ctr500_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+	<div id="dnn_ctr500_HtmlModule_lblContent"><p><strong>City Link 311</strong><br>
+<strong>311</strong> or <strong>336-727-8000</strong><br>
+<a href="mailto:citylink@cityofws.org">citylink@cityofws.org</a> </p>
+<p>101 N. Main Street<br>
+Winston-Salem, NC 27101</p>
+<p>PO Box 2511<br>
+Winston-Salem, NC 27102</p>
+<ul>
+    <li><a href="/Portals/0/pdf/home-center/citytelephonedirectory.pdf">City Directory</a></li>
+    <li><a href="mailto:thewebmaster@cityofws.org">thewebmaster@cityofws.org</a></li>
+</ul></div>
+
+
+
+
+</div><!-- End_Module_500 --></div>
+	
+	
+</div>
+
+
+</div></div>
+        </div>
+        <div class="wsnc-copy">
+          <div class="sitewidth">
+            <div class="wsnc-copyLeft">
+              <span id="dnn_dnnCOPYRIGHT_lblCopyright" class="dnnCopyright">Copyright (c) 2018 City of Winston-Salem.</span>
+
+              <a id="dnn_dnnPRIVACY_hypPrivacy" class="SkinObject" rel="nofollow" href="https://www.cityofws.org/Privacy">Privacy Statement</a> |
+              <div id="dnn_CopyPane" class="wsnc-CopyPane"><div class="DnnModule DnnModule-DNN_HTML DnnModule-498 DnnVersionableControl"><a name="498"></a>
+<div class="cfw-container blank cctr498">
+	
+  
+	<div id="dnn_ctr498_ContentPane" class="cfw-content"><!-- Start_Module_498 --><div id="dnn_ctr498_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
+	<div id="dnn_ctr498_HtmlModule_lblContent"><p><a href="http://www.cityofws.org/accessibility-statement">Accessibility</a> | <a href="http://www.cityofws.org/site-map">Site Map</a> | <a href="http://www.cityofws.org/legal-notice">Legal Notice</a> | <a href="http://wshome.cityofws.org/" target="_blank">Employee Center</a> | <a href="https://www5.cityofws.org/ereports/" target="_blank" title="new window"> ePayStub</a> | <a href="http://www.cityofws.org/employee-login">Editor Login</a></p></div>
+
+
+
+
+</div><!-- End_Module_498 --></div>
+	
+	
+</div>
+
+
+</div></div> |
+              <a id="dnn_dnnLoginFooter_loginLink" title="Login" class="wsnc-login" rel="nofollow" onclick="this.disabled=true;" href="https://www.cityofws.org/Login?returnurl=%2fLogin">Login</a>
+
+            </div>
+            <div id="cfweb">Web Design by <a href="http://www.cfwebmasters.com" target="_blank">CFWebmasters</a></div>
+            <div id="pdfDisclaimer"><img src="/Portals/0/Skins/WinstonSalem/img/minicon-pdf.png" alt="pdf" /> Links bearing this icon require adobe reader to open, download adobe reader from <a href="http://get.adobe.com/reader/" target="_blank">http://get.adobe.com/reader/</a></div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+<!--[if IE]></div><![endif]-->
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("input#dnn_dnnSearch_txtSearch").watermark("How Can We Help You Today?");
+    $("#wsnc-breadcrumb span a:last-child").addClass("pageTitle");
+    $("#wsnc-breadcrumb span a:last-child").wrap("<h1></h1>");
+    $("#dnn_ContentPane .DnnModule:last-child").addClass("lastChild");
+    $("#dnn_Sidebar .DnnModule:last-child").addClass("lastChild");
+    $("#dnn_Footer1 .Normal li:first-child").addClass("firstChild");
+    $("#dnn_Footer3 .Normal li:first-child").addClass("firstChild");
+    $("#dnn_Footer4 .Normal li:first-child").addClass("firstChild");
+  });
+</script>
+<script>
+  // on dom ready
+  $('document').ready(function () {
+    // address map link
+    $('.DNNModuleContent address').mapLink({
+      remove: 'visit us at, 2DNN'
+    });
+    // extension links
+    $(".DNNModuleContent a[href$='.pdf']").addClass("pdf");
+    $(".DNNModuleContent a[href$='.doc'], a[href$='.txt'], a[href$='.rft']").addClass("txt");
+    $(".DNNModuleContent a[href$='.zip'], a[href$='.rar']").addClass("zip");
+    $(".DNNModuleContent a[href^='mailto:']").addClass("email");
+  });
+</script>
+<!-- TabID = 773 -->
+
+        <input name="ScrollTop" type="hidden" id="ScrollTop" />
+        <input name="__dnnVariable" type="hidden" id="__dnnVariable" autocomplete="off" value="`{`__scdoff`:`1`,`sf_siteRoot`:`/`,`sf_tabId`:`773`,`evoq_TabId`:`773`,`evoq_PageLanguage`:`en-US`,`evoq_ContentItemId`:`-1`,`evoq_UrlReferrer`:`//Departments//HumanRelations//Outreach//MLKYoungDreamerAward`,`evoq_UrlPath`:`https%3a%2f%2fwww.cityofws.org%2fLogin%3freturnurl%3d%252fDepartments%252fHuman-Relations%252fOutreach%252fYouth-Advisory-Council`,`evoq_UrlQuery`:`%3fTabId%3d773%26returnurl%3d%252fDepartments%252fHuman-Relations%252fOutreach%252fYouth-Advisory-Council%26language%3den-US`,`evoq_ContentItemReferrer`:`-1`,`evoq_PersonalizedUrlReferrer`:`-1`,`evoq_DisableAnalytics`:`False`}" />
+        <input name="__RequestVerificationToken" type="hidden" value="H13rF-VkCgDI4-5TvNqC5nVKh7-DulgKcohvgmZqGkZ71XrTW5xK_gWH_zucxW2Gra73QlxUbAa52Mg9MXsTu05SjQyPOKJ3OWiFWPHFxbyIlOYyKyesfWrzvoM1" /><script src="/Portals/0/Skins/WinstonSalem/js/bootstrap.min.js?cdv=179" type="text/javascript"></script><script src="/Portals/0/Skins/WinstonSalem/js/address.min.js?cdv=179" type="text/javascript"></script><script src="/Portals/0/Skins/WinstonSalem/js/site.js?cdv=179" type="text/javascript"></script><script src="/Portals/0/Skins/WinstonSalem/js/watermark.js?cdv=179" type="text/javascript"></script>
+    
+<script type='text/javascript'>
+//<![CDATA[
+(function() {
+
+  var analyticsSettings;
+  var initAnalyticsSettings = function (e) {
+    analyticsSettings = {
+      pageStart: analytics_page_startTime,
+      servicesFramework: $.ServicesFramework(-1)
+    };
+  };
+  if(window.addEventListener) {
+    window.addEventListener('load', initAnalyticsSettings, false);
+  } else {
+    window.attachEvent('onload', initAnalyticsSettings);
+  };
+
+  var eventName = (window.onpagehide || window.onpagehide === null) ? 'pagehide' : 'unload';
+  if (window.addEventListener) {
+    window.addEventListener(eventName, function (e) {
+      if (analyticsSettings) {
+        analyticsSettings.eventSource = 'pagehide';
+        if(dnn && dnn.analytics) { dnn.analytics.clientUnloading(e,analyticsSettings); }
+      }
+    }, false);
+  } else {
+    window.attachEvent('on' + eventName, function (e) {
+      if (analyticsSettings) {
+        analyticsSettings.eventSource = 'pagehide';
+        if(dnn && dnn.analytics) { dnn.analytics.clientUnloading(e,analyticsSettings); }
+      }
+    });
+  }
+
+})();
+//]]>
+</script>
+
+<script type="text/javascript" src="/Resources/Shared/scripts/initWidgets.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+;(function() {
+                        function loadHandler() {
+                            var hf = $get('StylesheetManager_TSSM');
+                            if (!hf._RSSM_init) { hf._RSSM_init = true; hf.value = ''; }
+                            hf.value += ';Telerik.Web.UI, Version=2013.2.717.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4:en-US:636548d2-ff28-4c99-b077-b4b8ed4e8c55:45085116:27c5704c';
+                            Sys.Application.remove_load(loadHandler);
+                        };
+                        Sys.Application.add_load(loadHandler);
+                    })();Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadAjaxLoadingPanel, {"initialDelayTime":0,"isSticky":false,"minDisplayTime":0,"skin":"Default","uniqueID":"dnn$ctr2330$Login_Prog","zIndex":90000}, null, null, $get("dnn_ctr2330_Login_Prog"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadAjaxPanel, {"clientEvents":{OnRequestStart:"",OnResponseEnd:""},"enableAJAX":true,"enableHistory":false,"links":[],"loadingPanelID":"dnn_ctr2330_Login_Prog","styles":[],"uniqueID":"dnn$ctr2330$Login_UP"}, null, null, $get("dnn_ctr2330_Login_UP"));
+});
+//]]>
+</script>
+</form>
+    
+    
+</body>
+</html>
