@@ -27,6 +27,7 @@ spacy_parse_chunk <- function(texts, ids, chunk = NULL){
   #if chunking
   if(chunk==T){
     files <- list()
+    files_int <- 1
     for(i in chunk(from = 1, to = nrow(dt), by = 5000)){
       #create chunked data frame
       dt_chunk <- dt[c(min(i):max(i)),]
@@ -36,12 +37,13 @@ spacy_parse_chunk <- function(texts, ids, chunk = NULL){
       parsed_chunk <- spacyr::spacy_parse(crps_chunk)
       #save
       fname <- paste0("tmp_spacy_chunk_", min(i), "_", max(i), ".rdata")
-      files[[i]] <- fname
+      files[[files_int]] <- fname
       save(parsed_chunk, file = fname)
+      files_int <- files_int+1
     }
     parsed_chunks <- list()
     for(i in 1:length(files)){
-      load(files[i])
+      load(files[[i]])
       parsed_chunks[[i]] <- parsed_chunk
     }
     parsed <- rbindlist(parsed_chunks)
