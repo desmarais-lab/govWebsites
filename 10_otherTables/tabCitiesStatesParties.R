@@ -1,7 +1,8 @@
 library(tidyr)
 library(xtable)
 
-load("rfiles/stmSession_sim.rdata")
+load("../06_preprocessing/out/stm_corpus.rdata")
+d <- d_stm$meta
 d <- subset(d, select = c(party, State, city))
 rm(list = ls()[ls()!="d"])
 
@@ -19,4 +20,4 @@ xtTopwords <- print(xtable(cities_states_parties,
                     #size = "scriptsize",
                     include.rownames = FALSE)
 
-writeLines(xtTopwords, con = 'paper/tables/tabCitiesStatesParties.tex')
+writeLines(xtTopwords, con = '../paper/tables/tabCitiesStatesParties.tex')
