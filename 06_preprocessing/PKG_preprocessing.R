@@ -47,6 +47,10 @@ spacy_parse_chunk <- function(texts, ids, chunk = NULL){
       parsed_chunks[[i]] <- parsed_chunk
     }
     parsed <- rbindlist(parsed_chunks)
+    #little hack to allow quanteda to recognize spacyr objects that were pasted together
+    if(any(class(parsed)=="spacyr_parsed")==F){
+      class(parsed) <- c("spacyr_parsed", "data.frame")
+    }
     file.remove(unlist(files))
   }
   
