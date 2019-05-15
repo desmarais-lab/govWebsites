@@ -3,11 +3,40 @@
 
 library(xtable)
 
-#re-use the script to detect filetypes
-source_lines <- function(file, lines){
-  source(textConnection(readLines(file)[lines]))
-}
-source_lines("inferFiletype.R", c(21,66))
+load("../03_correctFiletypeErrors/out/trueFileTypesOriginal.rdata")
+
+#----
+# Re-use the part of the filetype correction script
+#get the file extensions as they currently are
+
+magicResults$ext <- tools::file_ext(magicResults$file)
+magicResults$extensions <- as.character(magicResults$extensions)
+
+magicResults$extensions <- stringr::str_replace_all(magicResults$extensions, "\"", "")
+magicResults$extensions <- stringr::str_replace_all(magicResults$extensions, "c\\(", "")
+magicResults$extensions <- stringr::str_replace_all(magicResults$extensions, "\\)", "")
+
+magicResults$extensions[magicResults$extensions=="ai, eps, ps"] <- "ps"
+magicResults$extensions[magicResults$extensions=="asf, asx"] <- "asf"
+magicResults$extensions[magicResults$extensions=="asm, s"] <- "asm"
+magicResults$extensions[magicResults$extensions=="bin, bpk, buffer, deb, deploy, dist, distz, dll, dmg, dms, dump, elc, exe, img, iso, lrf, mar, msi, msm, msp, pkg, so"] <- "bin"
+magicResults$extensions[magicResults$extensions=="conf, def, in, ini, list, log, text, txt"] <- "txt"
+magicResults$extensions[magicResults$extensions=="doc, dot"] <- "doc"
+magicResults$extensions[magicResults$extensions=="eml, mime"] <- "eml"
+magicResults$extensions[magicResults$extensions=="f, f77, f90, for"] <- "f"
+magicResults$extensions[magicResults$extensions=="htm, html, shtml"] <- "html"
+magicResults$extensions[magicResults$extensions=="ics, ifb"] <- "ics"
+magicResults$extensions[magicResults$extensions=="jpe, jpeg, jpg"] <- "jpg"
+magicResults$extensions[magicResults$extensions=="m1v, m2v, mpe, mpeg, mpg"] <- "mpeg"
+magicResults$extensions[magicResults$extensions=="m2a, m3a, mp2, mp2a, mp3, mpga"] <- "mp3"
+magicResults$extensions[magicResults$extensions=="mov, qt"] <- "mov"
+magicResults$extensions[magicResults$extensions=="mp4, mp4v, mpg4"] <- "mp4"
+magicResults$extensions[magicResults$extensions=="pot, pps, ppt"] <- "ppt"
+magicResults$extensions[magicResults$extensions=="rng, xml, xsd, xsl"] <- "xml"
+magicResults$extensions[magicResults$extensions=="svg, svgz"] <- "svg"
+magicResults$extensions[magicResults$extensions=="tif, tiff"] <- "tif"
+magicResults$extensions[magicResults$extensions=="ttc, ttf"] <- "ttf"
+magicResults$extensions[magicResults$extensions=="xla, xlc, xlm, xls, xlt, xlw"] <- "xls"
 
 #create tables of filetype frequencies
 filetypes_after <- data.frame(sort(table(magicResults$extensions), decreasing = T), stringsAsFactors = F)
