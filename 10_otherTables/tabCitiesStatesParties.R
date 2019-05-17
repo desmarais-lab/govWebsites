@@ -14,9 +14,9 @@ cities_states_parties <- as.data.frame(cities_states_parties)
 cities_states_parties <- spread(cities_states_parties, party, Freq)
 
 xtTopwords <- print(xtable(cities_states_parties, 
-                           caption = "Descriptive statistics on the partisanship of the cities in the corpus."), 
+                           caption = "Descriptive statistics on the partisanship of the cities in the corpus.",
+                           label = "tab:cityparties"),
                     sanitize.text.function = identity,
-                    label = "tabCitiesStatesParties",
                     #size = "scriptsize",
                     include.rownames = FALSE)
 
