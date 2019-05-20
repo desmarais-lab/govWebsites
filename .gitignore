@@ -2,7 +2,8 @@
 *.log
 *.out
 *.bbl
+*.blg
 *.synctex.gz
 *.DS_Store
-02_downloadWebsites/websites/*
-*.Rhistory
+00_scrapeCovariates/censusAPI_Key.txt
+02_downloadWebsites/seleniumCrawler/.ipynb_checkpoints/*
