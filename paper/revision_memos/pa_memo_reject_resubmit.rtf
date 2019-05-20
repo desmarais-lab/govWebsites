@@ -1,0 +1,160 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 ArialMT;}
+{\colortbl;\red255\green255\blue255;\red26\green26\blue26;\red26\green26\blue26;\red255\green255\blue255;
+\red0\green0\blue0;}
+{\*\expandedcolortbl;;\csgenericrgb\c10196\c10196\c10196;\cssrgb\c13333\c13333\c13333;\cssrgb\c100000\c100000\c100000;
+\cssrgb\c0\c0\c0;}
+\margl1440\margr1440\vieww13300\viewh15260\viewkind0
+\deftab720
+\pard\pardeftab720\qj\partightenfactor0
+
+\f0\fs24 \cf2 \expnd0\expndtw0\kerning0
+We thank the editor for recommending that we revise our manuscript and resubmit it as a note for 
+\i Political Analysis
+\i0 . Throughout the revision process, we have incorporated the feedback of the reviewers. In this memo we have separated the editor\'92s and reviewers\'92 comments into separate points. Under each point, we describe how we have revised the manuscript in response to the feedback provided. We generally agree with the criticisms offered, and think that the manuscript has improved substantially as a result of incorporating this feedback.
+\b \cf3 \cb4 \
+\pard\pardeftab720\sl220\partightenfactor0
+\cf3 \
+Editor\
+\
+E.1: 
+\i\b0 \cf5 \cb4 Having said all of that, I would welcome a de novo contribution in the form of a letter (per our guidelines) with the specific software details furnished in an appendix to be placed online if published (or preferably as an R package automating some of the decisions).\
+\
+
+\i0\b \cf3 \cb4 Addressed:
+\i\b0 \cf5 \cb4 \
+
+\i0 \cb1 \
+
+\b \cf3 \cb4 E.2: 
+\i\b0 \cf5 \cb4 Of course this letter would have to be written such that there is a methodological contribution independent of the appendix. 
+\i0 \cb1 \
+
+\b \cf3 \cb4 \
+Addressed:\
+\
+Reviewer 1
+\b0 \uc0\u8232 \
+
+\b R1.1: 
+\i\b0 If pipeline is a research output, it should be made available (e.g. in form of an R-package) 
+\i0\b \
+\
+Addressed:  \
+\
+R1.2:
+\i\b0  I agree that extraction of plain text (body text extraction) is almost always the problem in online data collection, but author resort to manual coding and supervised machine learning to do the task. Since manual coding is not always the option, the authors should have tried to develop semi\'adsupervised or unsupervised method. Creation of such a tool is certanly a great contribution.\
+\
+
+\i0\b Addressed:  
+\i\b0 \
+\
+
+\i0\b R1.3: 
+\i\b0 I think the use of Selenium is appropriate because it replicates humans accessing website. However, I do not understand why the author used wget to download pages. There must be dynamic elements in the pages that are generated or inserted by javascript. I consider this is a deficiency of the pipeline, which leading to incomplete data collection. Also, there is no need to use Selenium only to handle redirections.\
+\
+
+\i0\b Addressed:  \
+\
+R1.4: 
+\i\b0 The authors removed boilerplate expressions line\'ad by\'adline after converting files into plain texts, but I am not sure how line \'adby\'adline elimination is effective, because inline elements (e.g. span tags) can occur in the same line as substantive content. They should have considered the nested structure of HTML documents for effective body text extraction.\
+\
+
+\i0\b \
+R1.5:
+\i\b0  It is strange to remove tokens before applying POS\'adtagger (spaCy), because accurate lemmatization requires syntactical parsing of the original texts.\
+\
+
+\i0\b Reviewer 2\
+
+\i\b0 \
+
+\i0\b R2.1: 
+\i\b0 \cf5 \cb4 I think the manuscript would be better suited for PA as a letter focused on the toolchain and explicitly aim at a broader audience than researchers working with local government documents.
+\i0\b  
+\i\b0 Revised into that form, it would work better if it would give more information on why and how the various components of the toolchain are preferable over the alternatives, and what are their limitations.\
+\
+
+\i0\b R2.2: 
+\i\b0 Perhaps the most important instance are the various methods for boilerplate identification, currently relegated to footnote 11. Here, it would help the manuscript\'92s case a good deal if it could show how boilerplate removal matters for substantive conclusions, and show this not only for the analyzed corpus but also for some published findings. \
+\
+
+\i0\b Reviewer 3
+\i\b0 \
+\
+
+\i0\b R3.1: 
+\i\b0 This article is a useful set of practices to help create a data\'adsource for local politics. However, the way that it\'92s written right now it seems more appropriate for a note than a full article. \
+\
+
+\i0\b \cf3 \cb4 Addressed:
+\b0 \cf5 \cb1 \
+
+\i \cb4 \
+
+\i0\b R3.2: 
+\i\b0 Gathering data in local politics is difficult and recent efforts such as the LEAP project, and Sumner, Farris and Holman\'92s crowdsourcing method aim to make that process more access to scholars studying local and state politics. This website method could supplement these efforts and help scholars in the US (and abroad) study processes at the level where most people interact with the state \'96 at the local level. 
+\i0 \cb1 \
+
+\i \cb4 \
+
+\i0\b \cf3 \cb4 Addressed:
+\i\b0 \cf5 \cb4 \
+\
+
+\i0\b \cb1 R3.3: 
+\i\b0 \cb4 The authors talk about the improvements over other methods that they are offering, but are there drawbacks as well? 
+\i0 \cb1 \
+\
+
+\b \cf3 \cb4 Addressed:
+\b0 \cf5 \cb1 \
+\
+
+\b R3.4: 
+\i\b0 \cb4 The topic modeling has no valence attached, so while the modeling can speak to broad categories that are being mentioned, can it also enable scholars to say something about credit claiming or blame attribution? Can we say something about the absence of terms across different types of municipalities? Right now, the article uses the partisanship of the mayor as a way to test whether websites across municipalities differ. This doesn\'92t seem to be the most useful example since most offices that people vote for in the US are non\'adpartisan and the data here can speak to a great deal of other things that may define information cities share with citizens and the broader public. \
+\
+
+\i0\b \cf3 \cb4 Addressed:
+\i\b0 \cf5 \cb4 \
+\
+
+\i0\b R3.5: 
+\i\b0 If the authors want to stay with the local politics example, it would be helpful to have a running example of a city throughout the text to show each step along the way. \
+\
+
+\i0\b \cf3 \cb4 Addressed:
+\i\b0 \cf5 \cb4 \
+\
+
+\i0\b R3.6:
+\i  
+\b0 In addition, the topic model technique should allow the authors to say something about the topics that occur in websites along multiple dimensions that they already have measures of like city size, region, median income. \
+\
+
+\i0\b \cf3 \cb4 Addressed:
+\b0 \cf5 \cb1 \
+\
+
+\b R3.7: 
+\i\b0 \cb4 The topics that occur in websites along multiple dimensions that they already have measures of like city size, region, median income. 
+\i0 \cb1 \
+\
+
+\b \cf3 \cb4 Addressed:
+\b0 \cf5 \cb1 \
+\
+
+\b R3.8:
+\i  
+\b0 \cb4 It would also be helpful to have a table or a figure that lays out the steps from pre\'adprocessing to topic modeling along with all of the R packages so that it\'92s more of a user guide for readers. 
+\i0 \cb1 \
+\
+
+\b \cf3 \cb4 Addressed:
+\b0 \cf5 \cb1 \
+\
+
+\i \cf3 \cb4 \
+\
+}
