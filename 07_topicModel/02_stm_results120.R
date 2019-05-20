@@ -6,7 +6,7 @@ library(stm)
 
 set.seed(1)
 
-load("rfiles/stmSession_sim_120.rdata")
+load("out/stmSession_sim_120.rdata")
 
 #make a dataframe to store the results in
 df <- data.frame(coef = rep(0, numtopics), sig = rep(FALSE, numtopics),
@@ -92,7 +92,7 @@ xtTopwords <- str_replace(xtTopwords, "rlllllll", "rllllllll")
 xtTopwords <- str_replace(xtTopwords, "& Tokens assigned", "& \\\\multicolumn{2}{c}{Tokens assigned}")
 xtTopwords <- str_replace(xtTopwords, "\nTopic &", "\n \\\\# &")
 
-writeLines(xtTopwords, con = 'paper/tables/stmTopWords120_1.tex')
+writeLines(xtTopwords, con = '../paper/tables/stmTopWords120_1.tex')
 
 xtTopwords <- print(xtable(topwords3[61:120,], caption = "Top words from a structural topic model with 120 topics (second 60 topics displayed here) and FREX scoring. Colors depict partisanship based on coefficient size. White cells are non-significant topics.", 
                            label = "tabSTMtopwords120_2"), 
@@ -104,4 +104,4 @@ xtTopwords <- str_replace(xtTopwords, "rlllllll", "rllllllll")
 xtTopwords <- str_replace(xtTopwords, "& Tokens assigned", "& \\\\multicolumn{2}{c}{Tokens assigned}")
 xtTopwords <- str_replace(xtTopwords, "\nTopic &", "\n \\\\# &")
 
-writeLines(xtTopwords, con = 'paper/tables/stmTopWords120_2.tex')
+writeLines(xtTopwords, con = '../paper/tables/stmTopWords120_2.tex')
