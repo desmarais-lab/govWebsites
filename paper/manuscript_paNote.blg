@@ -3,10 +3,15 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: manuscript_paNote.aux
 The style file: chicago.bst
 Database file #1: ref.bib
-Repeated entry---line 108 of file ref.bib
+Repeated entry---line 125 of file ref.bib
  : @manual{hunspell
  :                 ,
 I'm skipping whatever remains of this entry
+Repeated entry---line 144 of file ref.bib
+ : @manual{readtext
+ :                 ,
+I'm skipping whatever remains of this entry
+Warning--empty organization in boilerpipeR
 Warning--empty organization in spacyr
 Warning--empty organization in readtext
 Warning--no journal in Cryer2017
@@ -22,45 +27,45 @@ Warning--empty organization in stm
 Warning--empty organization in wand
 Warning--no journal in Therriault2010
 Warning--no number and no volume in Therriault2010
-You've used 39 entries,
+You've used 40 entries,
             2861 wiz_defined-function locations,
-            854 strings with 11853 characters,
-and the built_in function-call counts, 28000 in all, are:
-= -- 2364
-> -- 2148
+            860 strings with 12007 characters,
+and the built_in function-call counts, 28658 in all, are:
+= -- 2415
+> -- 2209
 < -- 3
-+ -- 644
-- -- 746
-* -- 2574
-:= -- 5110
-add.period$ -- 116
-call.type$ -- 39
-change.case$ -- 287
-chr.to.int$ -- 39
-cite$ -- 54
-duplicate$ -- 702
-empty$ -- 1613
-format.name$ -- 858
-if$ -- 5151
++ -- 662
+- -- 764
+* -- 2640
+:= -- 5234
+add.period$ -- 119
+call.type$ -- 40
+change.case$ -- 294
+chr.to.int$ -- 40
+cite$ -- 56
+duplicate$ -- 717
+empty$ -- 1644
+format.name$ -- 880
+if$ -- 5270
 int.to.chr$ -- 1
 int.to.str$ -- 0
 missing$ -- 32
-newline$ -- 196
-num.names$ -- 390
-pop$ -- 193
+newline$ -- 201
+num.names$ -- 400
+pop$ -- 198
 preamble$ -- 1
-purify$ -- 526
+purify$ -- 540
 quote$ -- 0
-skip$ -- 779
+skip$ -- 798
 stack$ -- 0
-substring$ -- 1488
-swap$ -- 242
+substring$ -- 1508
+swap$ -- 248
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 780
-warning$ -- 15
-while$ -- 399
+type$ -- 800
+warning$ -- 16
+while$ -- 405
 width$ -- 0
-write$ -- 507
-(There was 1 error message)
+write$ -- 520
+(There were 2 error messages)

@@ -233,12 +233,14 @@ After all the preprocessing is set and done, our corpus consists of 356,911 docu
         \hline
         1. Assemble url list. & \texttt{Selenium} & no \\
         2. Collect website files. & \texttt{wget} & no \\
-        3. Lemmatize text. & \texttt{spacyr} \citep{spacyr}& yes \\
-        4. Remove names. & \texttt{spacyr} & yes \\
-        5. Retain nouns, verbs, adjectives. & \texttt{spacyr} & yes \\
-        6. Stopword/number/0-2 character word removal. & \texttt{quanteda} \citep{quanteda} & yes \\ 
-        7. Retain tokens that are English words. & \texttt{Hunspell} \citep{hunspell} & yes \\
-        8. Removal of duplicate documents. & \texttt{gov2text} & yes \\
+        3. Discard website boilerplate. & \texttt{boilerpipeR} \citep{boilerpipeR} & yes \\
+        4. Convert non-HTML files to text. & \texttt{readtext} \citep{readtext} & yes \\
+        5. Lemmatize text. & \texttt{spacyr} \citep{spacyr}& yes \\
+        6. Remove names. & \texttt{spacyr} & yes \\
+        7. Retain nouns, verbs, adjectives. & \texttt{spacyr} & yes \\
+        8. Stopword/number removal. & \texttt{quanteda} \citep{quanteda} & yes \\ 
+        9. Retain tokens that are English words. & \texttt{Hunspell} \citep{hunspell} & yes \\
+        10. Removal of duplicate documents. & \texttt{gov2text} & yes \\
         \hline
     \end{tabular}
     \caption{\label{tab:list} Data collection and processing pipeline. Steps to collect and prepare text for topic modeling.} 
