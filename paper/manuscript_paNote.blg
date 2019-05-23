@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: manuscript_paNote.aux
+The style file: apsr.bst
+Database file #1: ref.bib
+You've used 36 entries,
+            2874 wiz_defined-function locations,
+            877 strings with 12083 characters,
+and the built_in function-call counts, 183461 in all, are:
+= -- 30424
+> -- 2080
+< -- 0
++ -- 14471
+- -- 728
+* -- 15886
+:= -- 36191
+add.period$ -- 145
+call.type$ -- 36
+change.case$ -- 468
+chr.to.int$ -- 36
+cite$ -- 36
+duplicate$ -- 595
+empty$ -- 1240
+format.name$ -- 763
+if$ -- 33079
+int.to.chr$ -- 5
+int.to.str$ -- 0
+missing$ -- 31
+newline$ -- 161
+num.names$ -- 421
+pop$ -- 140
+preamble$ -- 1
+purify$ -- 540
+quote$ -- 0
+skip$ -- 548
+stack$ -- 0
+substring$ -- 43283
+swap$ -- 129
+text.length$ -- 504
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 144
+warning$ -- 0
+while$ -- 868
+width$ -- 0
+write$ -- 508
