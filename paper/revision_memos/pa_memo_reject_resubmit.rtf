@@ -4,7 +4,7 @@
 \red0\green0\blue0;}
 {\*\expandedcolortbl;;\csgenericrgb\c10196\c10196\c10196;\cssrgb\c13333\c13333\c13333;\cssrgb\c100000\c100000\c100000;
 \cssrgb\c0\c0\c0;}
-\margl1440\margr1440\vieww14380\viewh15620\viewkind0
+\margl1440\margr1440\vieww14380\viewh10000\viewkind0
 \deftab720
 \pard\pardeftab720\qj\partightenfactor0
 
@@ -48,12 +48,21 @@ R1.2:
 \i\b0  I agree that extraction of plain text (body text extraction) is almost always the problem in online data collection, but author resort to manual coding and supervised machine learning to do the task. Since manual coding is not always the option, the authors should have tried to develop semi\'adsupervised or unsupervised method. Creation of such a tool is certanly a great contribution.\
 \
 
-\i0\b Addressed:  
+\i0\b Addressed:   
 \i\b0 \
 \
 
 \i0\b R1.3: 
-\i\b0 I think the use of Selenium is appropriate because it replicates humans accessing website. However, I do not understand why the author used wget to download pages. There must be dynamic elements in the pages that are generated or inserted by javascript. I consider this is a deficiency of the pipeline, which leading to incomplete data collection. Also, there is no need to use Selenium only to handle redirections.\
+\i\b0 I think the use of Selenium is appropriate because it replicates humans accessing website. However, I do not understand why the author used wget to download pages. There must be dynamic elements in the pages that are generated or inserted by javascript. I consider this is a deficiency of the pipeline, which leading to incomplete data collection. \
+\
+
+\i0\b Addressed: 
+\b0 We have added a discussion of this point to the conclusion\'97in response to this comment and to R3.3, where Reviewer 3 asks about limitations of our methods. Our objective is to provide a scalable pipeline. While we agree that we could use Selenium to gather the dynamic content on any given site, we would need to customize the process for each website, whereas wget can be applied across sites without site-specific supervision. We acknowledge that this is a limitation of our process\'97perhaps the biggest limitation, and note that it is an open area for future research. 
+\i \
+\
+
+\i0\b R1.4: 
+\i\b0 Also, there is no need to use Selenium only to handle redirections.\
 \
 
 \i0\b Addressed:  \
@@ -62,9 +71,15 @@ R1.4:
 \i\b0 The authors removed boilerplate expressions line\'ad by\'adline after converting files into plain texts, but I am not sure how line \'adby\'adline elimination is effective, because inline elements (e.g. span tags) can occur in the same line as substantive content. They should have considered the nested structure of HTML documents for effective body text extraction.\
 \
 
-\i0\b \
+\i0\b Addressed: \
+\
 R1.5:
 \i\b0  It is strange to remove tokens before applying POS\'adtagger (spaCy), because accurate lemmatization requires syntactical parsing of the original texts.\
+\
+
+\i0\b Addressed: 
+\b0 We agree with this criticism, and have now moved lemmatization up in the processing pipeline, as is made clear in Table 3.
+\i \
 \
 
 \i0\b Reviewer 2\
@@ -109,8 +124,8 @@ R1.5:
 \i0 \cb1 \
 \
 
-\b \cf3 \cb4 Addressed:
-\b0 \cf5 \cb1 \
+\b \cf3 \cb4 Addressed: 
+\b0 The biggest limitation in our methodology is the reliance on wget to collect content from government websites. This method misses dynamic content displayed via JavaScript (i.e., a table populated by querying a database). We added a paragraph to the conclusion in which we discuss this limitation, and call for it to be addressed in future research.\cf5 \cb1 \
 \
 
 \b R3.4: 
@@ -132,30 +147,23 @@ R1.5:
 
 \i0\b R3.6:
 \i  
-\b0 In addition, the topic model technique should allow the authors to say something about the topics that occur in websites along multiple dimensions that they already have measures of like city size, region, median income. \
-\
-
-\i0\b \cf3 Addressed:
-\b0 \cf5 \cb1 \
-\
-
-\b R3.7: 
-\i\b0 \cb4 The topics that occur in websites along multiple dimensions that they already have measures of like city size, region, median income. 
-\i0 \cb1 \
+\b0 In addition, the topic model technique should allow the authors to say something about the topics that occur in websites along multiple dimensions that they already have measures of like city size, region, median income.
+\i0\b \cb1  
+\b0 \
 \
 
 \b \cf3 \cb4 Addressed:
 \b0 \cf5 \cb1 \
 \
 
-\b R3.8:
+\b R3.7:
 \i  
 \b0 \cb4 It would also be helpful to have a table or a figure that lays out the steps from pre\'adprocessing to topic modeling along with all of the R packages so that it\'92s more of a user guide for readers. 
 \i0 \cb1 \
 \
 
-\b \cf3 \cb4 Addressed:
-\b0 \cf5 \cb1 \
+\b \cf3 \cb4 Addressed: 
+\b0 We have added a table to the paper (Table 3) in which we list the steps in the pipeline, the software on which each step depends, and indicate whether the step is incorporated into our R package, gov2text.\cf5 \cb1 \
 \
 
 \i \cf3 \cb4 \
