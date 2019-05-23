@@ -31,7 +31,7 @@ E.1:
 \i0 \cb1 \
 
 \b \cf3 \cb4 \
-Addressed:\
+Addressed: \
 \
 Reviewer 1
 \b0 \uc0\u8232 \
@@ -49,7 +49,8 @@ R1.2:
 \
 
 \i0\b Addressed:   
-\i\b0 \
+\b0 We now introduce the boilerpipe algorithm for this purpose, which does not require the development of a corpus-specific classifier. 
+\i \
 \
 
 \i0\b R1.3: 
@@ -70,11 +71,11 @@ R1.2:
 \b \
 \
 R1.4: 
-\i\b0 The authors removed boilerplate expressions line\'ad by\'adline after converting files into plain texts, but I am not sure how line \'adby\'adline elimination is effective, because inline elements (e.g. span tags) can occur in the same line as substantive content. They should have considered the nested structure of HTML documents for effective body text extraction.\
+\i\b0 The authors removed boilerplate expressions line\'ad by\'adline after converting files into plain texts, but I am not sure how line \'adby\'adline elimination is effective, because inline elements (e.g. span tags) can occur in the same line as substantive content. They should have considered the nested structure of HTML documents for effective body text extraction. \
 \
 
 \i0\b Addressed: 
-\b0 Since submitting the first version of the paper, we discovered the boilerpipe algorithm, which is very effective at extracting substantive blocks of text from websites (and has been tested and verified in published work). We abandoned our initial line-by-line approach in favor of using boilerpipe.
+\b0 Since submitting the first version of the paper, we discovered the boilerpipe algorithm, which is very effective at extracting substantive blocks of text from websites (and has been tested and verified in published work). We abandoned our initial line-by-line approach in favor of using boilerpipe. Of course, we did not create boilerpipe. However, from what we can tell, it has not yet been used in political science (which we note in the paper), and we do ease its application to government website files through its incorporation in the gov2text package.
 \b \
 \
 R1.5:
@@ -96,11 +97,18 @@ R1.5:
 \i\b0 Revised into that form, it would work better if it would give more information on why and how the various components of the toolchain are preferable over the alternatives, and what are their limitations.\
 \
 
+\i0\b Addressed: 
+\b0 We have revised the paper to be formatted as a letter focused on the toolchain. Our intention is to focus on government websites in general, with the running application of city websites. We removed much of the theoretical discussion of local government websites, and retain just enough to make sense of the running application. Since there are 8-10 separate tools in the toolchain, we do not have room to engage each one with a detailed comparison of alternatives. However, one improvement along these lines is that we now use a well established (and published) method for website boilerplate removal, so we can at least reference previous work regarding the effectiveness of that methodology.
+\i \
+\
+
 \i0\b R2.2: 
 \i\b0 Perhaps the most important instance are the various methods for boilerplate identification, currently relegated to footnote 11. Here, it would help the manuscript\'92s case a good deal if it could show how boilerplate removal matters for substantive conclusions, and show this not only for the analyzed corpus but also for some published findings. \
 \
 
-\i0\b Reviewer 3
+\i0\b Addressed: \
+\
+Reviewer 3
 \i\b0 \
 \
 
@@ -119,7 +127,7 @@ R1.5:
 
 \i \cb4 \
 
-\i0\b \cf3 Addressed:
+\i0\b \cf3 Addressed: 
 \i\b0 \cf5 \
 \
 

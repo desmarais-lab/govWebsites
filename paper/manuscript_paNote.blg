@@ -11,6 +11,8 @@ Repeated entry---line 144 of file ref.bib
  : @manual{readtext
  :                 ,
 I'm skipping whatever remains of this entry
+Warning--string name "forthcoming" is undefined
+--line 202 of file ref.bib
 Warning--empty organization in boilerpipeR
 Warning--empty organization in spacyr
 Warning--empty organization in readtext
@@ -25,47 +27,50 @@ Warning--no number and no volume in morgan1992policy
 Warning--empty organization in hunspell
 Warning--empty organization in stm
 Warning--empty organization in wand
+Warning--empty year in sumner2019
+Warning--no number and no volume in sumner2019
+Warning--page numbers missing in sumner2019
 Warning--no journal in Therriault2010
 Warning--no number and no volume in Therriault2010
-You've used 40 entries,
+You've used 41 entries,
             2861 wiz_defined-function locations,
-            860 strings with 12007 characters,
-and the built_in function-call counts, 28658 in all, are:
-= -- 2415
-> -- 2209
+            863 strings with 12110 characters,
+and the built_in function-call counts, 29325 in all, are:
+= -- 2467
+> -- 2270
 < -- 3
-+ -- 662
-- -- 764
-* -- 2640
-:= -- 5234
-add.period$ -- 119
-call.type$ -- 40
-change.case$ -- 294
-chr.to.int$ -- 40
-cite$ -- 56
-duplicate$ -- 717
-empty$ -- 1644
-format.name$ -- 880
-if$ -- 5270
++ -- 680
+- -- 782
+* -- 2705
+:= -- 5358
+add.period$ -- 122
+call.type$ -- 41
+change.case$ -- 302
+chr.to.int$ -- 41
+cite$ -- 60
+duplicate$ -- 733
+empty$ -- 1677
+format.name$ -- 902
+if$ -- 5393
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 32
-newline$ -- 201
-num.names$ -- 400
-pop$ -- 198
+missing$ -- 33
+newline$ -- 206
+num.names$ -- 410
+pop$ -- 211
 preamble$ -- 1
-purify$ -- 540
+purify$ -- 554
 quote$ -- 0
-skip$ -- 798
+skip$ -- 807
 stack$ -- 0
-substring$ -- 1508
-swap$ -- 248
+substring$ -- 1528
+swap$ -- 253
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 800
-warning$ -- 16
-while$ -- 405
+type$ -- 820
+warning$ -- 19
+while$ -- 411
 width$ -- 0
-write$ -- 520
+write$ -- 532
 (There were 2 error messages)
