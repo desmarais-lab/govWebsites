@@ -233,11 +233,10 @@ After all the preprocessing is set and done, our corpus consists of 259,099 docu
         \hline
         1. Assemble url list. & N/A & no \\
         2. Collect website files. & wget \& Selenium & no \\
-        3. Remove names. & \texttt{spacyR} & yes \\
-        4. Retain nouns, verbs, adjectives. & \texttt{spacyR} & yes \\
-        5. Lemmatize text. & \texttt{spacyR} & yes \\
+        3. Lemmatize text. & \texttt{spacyR} & yes \\
+        4. Remove names. & \texttt{spacyR} & yes \\
+        5. Retain nouns, verbs, adjectives. & \texttt{spacyR} & yes \\
         6. Retain tokens that are English words. & \texttt{Hunspell} & yes \\
-        7. Convert corpus to document-term matrix. & [MARKUS?] & no \\
         \hline
     \end{tabular}
     \caption{\label{tab:list} Data collection and processing pipeline. Steps to collect and prepare text for topic modeling.} 
