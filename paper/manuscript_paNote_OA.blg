@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: manuscript_paNote_OA.aux
+The style file: chicago.bst
+Database file #1: ref.bib
+Warning--no number and no volume in marschall2013local
+Warning--page numbers missing in marschall2013local
+Warning--no number and no volume in morgan1992policy
+Warning--empty organization in stm
+You've used 7 entries,
+            2861 wiz_defined-function locations,
+            661 strings with 6224 characters,
+and the built_in function-call counts, 5057 in all, are:
+= -- 437
+> -- 391
+< -- 0
++ -- 118
+- -- 134
+* -- 475
+:= -- 917
+add.period$ -- 21
+call.type$ -- 7
+change.case$ -- 51
+chr.to.int$ -- 7
+cite$ -- 11
+duplicate$ -- 120
+empty$ -- 284
+format.name$ -- 162
+if$ -- 932
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 6
+newline$ -- 38
+num.names$ -- 70
+pop$ -- 31
+preamble$ -- 1
+purify$ -- 94
+quote$ -- 0
+skip$ -- 142
+stack$ -- 0
+substring$ -- 262
+swap$ -- 40
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 140
+warning$ -- 4
+while$ -- 68
+width$ -- 0
+write$ -- 93
+(There were 4 warnings)
