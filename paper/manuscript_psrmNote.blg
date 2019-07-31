@@ -30,45 +30,45 @@ Warning--no number and no volume in sumner2019
 Warning--page numbers missing in sumner2019
 Warning--no journal in Therriault2010
 Warning--no number and no volume in Therriault2010
-You've used 37 entries,
+You've used 38 entries,
             2861 wiz_defined-function locations,
-            839 strings with 11374 characters,
-and the built_in function-call counts, 26239 in all, are:
-= -- 2205
-> -- 2009
-< -- 3
-+ -- 602
-- -- 698
-* -- 2392
-:= -- 4807
-add.period$ -- 110
-call.type$ -- 37
-change.case$ -- 271
-chr.to.int$ -- 37
-cite$ -- 54
-duplicate$ -- 664
-empty$ -- 1513
-format.name$ -- 798
-if$ -- 4817
+            845 strings with 11577 characters,
+and the built_in function-call counts, 27093 in all, are:
+= -- 2279
+> -- 2070
+< -- 4
++ -- 620
+- -- 716
+* -- 2466
+:= -- 4948
+add.period$ -- 113
+call.type$ -- 38
+change.case$ -- 279
+chr.to.int$ -- 38
+cite$ -- 55
+duplicate$ -- 694
+empty$ -- 1568
+format.name$ -- 820
+if$ -- 4992
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 30
-newline$ -- 186
-num.names$ -- 370
-pop$ -- 191
+missing$ -- 31
+newline$ -- 191
+num.names$ -- 380
+pop$ -- 202
 preamble$ -- 1
-purify$ -- 498
+purify$ -- 512
 quote$ -- 0
-skip$ -- 727
+skip$ -- 754
 stack$ -- 0
-substring$ -- 1372
-swap$ -- 229
-text.length$ -- 3
+substring$ -- 1419
+swap$ -- 241
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 740
+type$ -- 760
 warning$ -- 17
-while$ -- 377
+while$ -- 386
 width$ -- 0
-write$ -- 480
+write$ -- 494
 (There were 2 error messages)
