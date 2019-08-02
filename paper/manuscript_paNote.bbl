@@ -1,0 +1,242 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{Annau, Kohlschuetter, and Clark}{Annau
+  et~al.}{2015}]{boilerpipeR}
+Annau, M., C.~Kohlschuetter, and A.~Clark (2015).
+\newblock {\em boilerpipeR: Interface to the Boilerpipe Java Library}.
+\newblock R package version 1.3.
+
+\bibitem[\protect\citeauthoryear{Armstrong}{Armstrong}{2011}]{Armstrong2011}
+Armstrong, C.~L. (2011).
+\newblock {Providing a clearer view: An examination of transparency on local
+  government websites}.
+\newblock {\em Government Information Quarterly\/}~{\em 28\/}(1), 11--16.
+
+\bibitem[\protect\citeauthoryear{Benoit and Matsuo}{Benoit and
+  Matsuo}{2018}]{spacyr}
+Benoit, K. and A.~Matsuo (2018).
+\newblock {\em spacyr: Wrapper to the 'spaCy' 'NLP' Library}.
+\newblock R package version 1.0.
+
+\bibitem[\protect\citeauthoryear{Benoit and Obeng}{Benoit and
+  Obeng}{2019}]{readtext}
+Benoit, K. and A.~Obeng (2019).
+\newblock {\em readtext: Import and Handling for Plain and Formatted Text
+  Files}.
+\newblock R package version 0.74.
+
+\bibitem[\protect\citeauthoryear{Benoit, Watanabe, Wang, Nulty, Obeng, Müller,
+  and Matsuo}{Benoit et~al.}{2018}]{quanteda}
+Benoit, K., K.~Watanabe, H.~Wang, P.~Nulty, A.~Obeng, S.~Müller, and A.~Matsuo
+  (2018).
+\newblock quanteda: An r package for the quantitative analysis of textual data.
+\newblock {\em Journal of Open Source Software\/}~{\em 3\/}(30), 774.
+
+\bibitem[\protect\citeauthoryear{Brown}{Brown}{2017}]{Brown2017}
+Brown, A. (2017).
+\newblock {Republicans more likely than Democrats to have confidence in
+  police}.
+
+\bibitem[\protect\citeauthoryear{Cryer}{Cryer}{2017}]{Cryer2017}
+Cryer, J.~E. (2017).
+\newblock {Candidate Identity and Strategic Communication}.
+\newblock pp.\  1--42.
+
+\bibitem[\protect\citeauthoryear{Darwin}{Darwin}{2008}]{darwin2008libmagic}
+Darwin, I. (2008).
+\newblock Libmagic.
+
+\bibitem[\protect\citeauthoryear{de~Benedictis-Kessner and
+  Warshaw}{de~Benedictis-Kessner and Warshaw}{2016}]{de2016mayoral}
+de~Benedictis-Kessner, J. and C.~Warshaw (2016).
+\newblock Mayoral partisanship and municipal fiscal policy.
+\newblock {\em The Journal of Politics\/}~{\em 78\/}(4), 1124--1138.
+
+\bibitem[\protect\citeauthoryear{Denny and Spirling}{Denny and
+  Spirling}{2018}]{denny2018text}
+Denny, M.~J. and A.~Spirling (2018).
+\newblock Text preprocessing for unsupervised learning: why it matters, when it
+  misleads, and what to do about it.
+\newblock {\em Political Analysis\/}~{\em 26\/}(2), 168--189.
+
+\bibitem[\protect\citeauthoryear{Druckman, Hennessy, Kifer, and
+  Parkin}{Druckman et~al.}{2010}]{Druckman2010}
+Druckman, J.~N., C.~L. Hennessy, M.~J. Kifer, and M.~Parkin (2010).
+\newblock {Issue Engagement on Congressional Candidate Web Sites, 2002—2006}.
+\newblock {\em Social Science Computer Review\/}~{\em 28\/}(1), 3--23.
+
+\bibitem[\protect\citeauthoryear{Druckman, Kifer, and Parkin}{Druckman
+  et~al.}{2009}]{Druckman2009}
+Druckman, J.~N., M.~Kifer, and M.~Parkin (2009).
+\newblock {Campaign Communications in U.S. Congressional Elections}.
+\newblock {\em American Political Science Review\/}~{\em 103\/}(03), 343--366.
+
+\bibitem[\protect\citeauthoryear{Einstein and Glick}{Einstein and
+  Glick}{2016}]{einstein2016mayors}
+Einstein, K.~L. and D.~M. Glick (2016).
+\newblock Mayors, partisanship, and redistribution: Evidence directly from us
+  mayors.
+\newblock {\em Urban Affairs Review\/}, 1078087416674829.
+
+\bibitem[\protect\citeauthoryear{Einstein and Kogan}{Einstein and
+  Kogan}{2015}]{Einstein2015}
+Einstein, K.~L. and V.~Kogan (2015).
+\newblock {Pushing the City Limits: Policy Responsiveness in Municipal
+  Government}.
+\newblock {\em Urban Affairs Review\/}, 1--30.
+
+\bibitem[\protect\citeauthoryear{Eschenfelder, Beachboard, McClure, and
+  Wyman}{Eschenfelder et~al.}{1997}]{Eschenfelder2002}
+Eschenfelder, K.~R., J.~C. Beachboard, C.~R. McClure, and S.~K. Wyman (1997).
+\newblock {Assessing U.S. federal government websites}.
+\newblock {\em Government Information Quarterly\/}~{\em 14\/}(2), 173--189.
+
+\bibitem[\protect\citeauthoryear{Esterling, Lazer, and Neblo}{Esterling
+  et~al.}{2011}]{Esterling2011}
+Esterling, K.~M., D.~M. Lazer, and M.~A. Neblo (2011).
+\newblock Representative communication: Web site interactivity and
+  distributional path dependence in the us congress.
+\newblock {\em Political Communication\/}~{\em 28\/}(4), 409--439.
+
+\bibitem[\protect\citeauthoryear{Esterling and Neblo}{Esterling and
+  Neblo}{2011}]{Esterling2011a}
+Esterling, K.~M. and M.~A. Neblo (2011).
+\newblock {Explaining the Diffusion of Representation Practices among
+  Congressional Websites}.
+\newblock {\em Working Paper\/}, 1--42.
+
+\bibitem[\protect\citeauthoryear{Feeney and Brown}{Feeney and
+  Brown}{2017}]{Feeney2017}
+Feeney, M.~K. and A.~Brown (2017).
+\newblock {Are small cities online? Content, ranking, and variation of U.S.
+  municipal websites}.
+\newblock {\em Government Information Quarterly\/}~{\em 34\/}(1), 62--74.
+
+\bibitem[\protect\citeauthoryear{Gerber and Hopkins}{Gerber and
+  Hopkins}{2011}]{gerber2011mayors}
+Gerber, E.~R. and D.~J. Hopkins (2011).
+\newblock When mayors matter: estimating the impact of mayoral partisanship on
+  city policy.
+\newblock {\em American Journal of Political Science\/}~{\em 55\/}(2),
+  326--339.
+
+\bibitem[\protect\citeauthoryear{Grimmelikhuijsen}{Grimmelikhuijsen}{2010}]{grimmelikhuijsen2010transparency}
+Grimmelikhuijsen, S.~G. (2010).
+\newblock Transparency of public decision-making: Towards trust in local
+  government?
+\newblock {\em Policy \& Internet\/}~{\em 2\/}(1), 5--35.
+
+\bibitem[\protect\citeauthoryear{Grimmelikhuijsen and Welch}{Grimmelikhuijsen
+  and Welch}{2012}]{grimmelikhuijsen2012developing}
+Grimmelikhuijsen, S.~G. and E.~W. Welch (2012).
+\newblock Developing and testing a theoretical framework for computer-mediated
+  transparency of local governments.
+\newblock {\em Public administration review\/}~{\em 72\/}(4), 562--571.
+
+\bibitem[\protect\citeauthoryear{Kohlsch{\"{u}}tter, Fankhauser, and
+  Nejdl}{Kohlsch{\"{u}}tter et~al.}{2010}]{Kohlschutter2010}
+Kohlsch{\"{u}}tter, C., P.~Fankhauser, and W.~Nejdl (2010).
+\newblock {Boilerplate Detection using Shallow Text Features}.
+\newblock In {\em Web Search and Data Mining}.
+
+\bibitem[\protect\citeauthoryear{Marion and Oliver}{Marion and
+  Oliver}{2013}]{marion2013mayor}
+Marion, N.~E. and W.~M. Oliver (2013).
+\newblock When the mayor speaks... mayoral crime control rhetoric in the top us
+  cities: Symbolic or tangible?
+\newblock {\em Criminal justice policy review\/}~{\em 24\/}(4), 473--491.
+
+\bibitem[\protect\citeauthoryear{Marschall and Shah}{Marschall and
+  Shah}{2013}]{marschall2013local}
+Marschall, M. and P.~Shah (2013).
+\newblock Local elections in america project.
+\newblock {\em Center for Local Elections in American Politics. Kinder
+  Institute for Urban Research, Rice University.(Database)\/}.
+
+\bibitem[\protect\citeauthoryear{McNutt}{McNutt}{2010}]{mcnutt2010virtual}
+McNutt, K. (2010).
+\newblock Virtual policy networks: Where all roads lead to rome.
+\newblock {\em Canadian Journal of Political Science/Revue canadienne de
+  science politique\/}~{\em 43\/}(4), 915--935.
+
+\bibitem[\protect\citeauthoryear{Norris}{Norris}{2003}]{Norris2003}
+Norris, P. (2003).
+\newblock {Preaching to the Converted?: Pluralism, Participation and Party
+  Websites}.
+\newblock {\em Party Politics\/}~{\em 9\/}(1), 21--45.
+
+\bibitem[\protect\citeauthoryear{Ooms}{Ooms}{2018}]{hunspell}
+Ooms, J. (2018).
+\newblock {\em hunspell: High-Performance Stemmer, Tokenizer, and Spell
+  Checker}.
+\newblock R package version 3.0.
+
+\bibitem[\protect\citeauthoryear{Osman, Anouze, Irani, Al-Ayoubi, Lee,
+  Balc{\i}, Medeni, and Weerakkody}{Osman et~al.}{2014}]{osman2014cobra}
+Osman, I.~H., A.~L. Anouze, Z.~Irani, B.~Al-Ayoubi, H.~Lee, A.~Balc{\i}, T.~D.
+  Medeni, and V.~Weerakkody (2014).
+\newblock Cobra framework to evaluate e-government services: A citizen-centric
+  perspective.
+\newblock {\em Government Information Quarterly\/}~{\em 31\/}(2), 243--256.
+
+\bibitem[\protect\citeauthoryear{Roberts, Stewart, Tingley, Lucas, Leder-Luis,
+  Gadarian, Albertson, and Rand}{Roberts et~al.}{2014}]{Roberts2014}
+Roberts, M.~E., B.~M. Stewart, D.~Tingley, C.~Lucas, J.~Leder-Luis, S.~K.
+  Gadarian, B.~Albertson, and D.~G. Rand (2014).
+\newblock {Structural topic models for open-ended survey responses}.
+\newblock {\em American Journal of Political Science\/}~{\em 58\/}(4),
+  1064--1082.
+
+\bibitem[\protect\citeauthoryear{Rudis, Zoulas, Rullgard, and Ong}{Rudis
+  et~al.}{2016}]{wand}
+Rudis, B., C.~Zoulas, M.~Rullgard, and J.~Ong (2016).
+\newblock {\em wand: Retrieve 'Magic' Attributes from Files and Directories}.
+\newblock R package version 0.2.0.
+
+\bibitem[\protect\citeauthoryear{Sorens}{Sorens}{2018}]{sorens2018effects}
+Sorens, J. (2018).
+\newblock The effects of housing supply restrictions on partisan geography.
+\newblock {\em Political Geography\/}~{\em 66}, 44--56.
+
+\bibitem[\protect\citeauthoryear{Stanyer}{Stanyer}{2008}]{stanyer2008elected}
+Stanyer, J. (2008).
+\newblock Elected representatives, online self-presentation and the personal
+  vote: Party, personality and webstyles in the united states and united
+  kingdom.
+\newblock {\em Information, Community \& Society\/}~{\em 11\/}(3), 414--432.
+
+\bibitem[\protect\citeauthoryear{Sumner, Farris, and Holman}{Sumner
+  et~al.}{}]{sumner2019}
+Sumner, J.~L., E.~M. Farris, and M.~R. Holman.
+\newblock Crowdsourcing reliable local data.
+\newblock {\em Political Analysis\/}.
+
+\bibitem[\protect\citeauthoryear{Therriault}{Therriault}{2010}]{Therriault2010}
+Therriault, A. (2010).
+\newblock {Taking Campaign Strategy Online: Using Candidate Websites to Advance
+  the Study of Issue Emphases}.
+\newblock pp.\  1--23.
+
+\bibitem[\protect\citeauthoryear{Thomas and Streib}{Thomas and
+  Streib}{2003}]{thomas2003new}
+Thomas, J.~C. and G.~Streib (2003).
+\newblock The new face of government: citizen-initiated contacts in the era of
+  e-government.
+\newblock {\em Journal of public administration research and theory\/}~{\em
+  13\/}(1), 83--102.
+
+\bibitem[\protect\citeauthoryear{Urban}{Urban}{2002}]{Urban2002}
+Urban, F. (2002).
+\newblock {Small town, big website? Cities and their representation on the
+  internet}.
+\newblock {\em Cities\/}~{\em 19\/}(1), 49--59.
+
+\bibitem[\protect\citeauthoryear{Wang, Bretschneider, and Gant}{Wang
+  et~al.}{2005}]{wang2005evaluating}
+Wang, L., S.~Bretschneider, and J.~Gant (2005).
+\newblock Evaluating web-based e-government services with a citizen-centric
+  approach.
+\newblock In {\em System Sciences, 2005. HICSS'05. Proceedings of the 38th
+  Annual Hawaii International Conference on}, pp.\  129b--129b. Ieee.
+
+\end{thebibliography}
