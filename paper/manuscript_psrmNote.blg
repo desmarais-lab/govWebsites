@@ -1,18 +1,18 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: manuscript_psrmNote.aux
 The style file: chicago.bst
 Database file #1: ref.bib
-Repeated entry---line 125 of file ref.bib
+Repeated entry---line 146 of file ref.bib
  : @manual{hunspell
  :                 ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 144 of file ref.bib
+Repeated entry---line 165 of file ref.bib
  : @manual{readtext
  :                 ,
 I'm skipping whatever remains of this entry
 Warning--string name "forthcoming" is undefined
---line 202 of file ref.bib
+--line 223 of file ref.bib
 Warning--empty organization in boilerpipeR
 Warning--empty organization in spacyr
 Warning--empty organization in readtext
@@ -30,45 +30,45 @@ Warning--no number and no volume in sumner2019
 Warning--page numbers missing in sumner2019
 Warning--no journal in Therriault2010
 Warning--no number and no volume in Therriault2010
-You've used 38 entries,
+You've used 40 entries,
             2861 wiz_defined-function locations,
-            845 strings with 11577 characters,
-and the built_in function-call counts, 27093 in all, are:
-= -- 2279
-> -- 2070
+            857 strings with 11897 characters,
+and the built_in function-call counts, 28338 in all, are:
+= -- 2376
+> -- 2157
 < -- 4
-+ -- 620
-- -- 716
-* -- 2466
-:= -- 4948
-add.period$ -- 113
-call.type$ -- 38
-change.case$ -- 279
-chr.to.int$ -- 38
-cite$ -- 55
-duplicate$ -- 694
-empty$ -- 1568
-format.name$ -- 820
-if$ -- 4992
++ -- 644
+- -- 744
+* -- 2578
+:= -- 5181
+add.period$ -- 119
+call.type$ -- 40
+change.case$ -- 292
+chr.to.int$ -- 40
+cite$ -- 57
+duplicate$ -- 730
+empty$ -- 1650
+format.name$ -- 852
+if$ -- 5219
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 31
-newline$ -- 191
-num.names$ -- 380
-pop$ -- 202
+missing$ -- 34
+newline$ -- 201
+num.names$ -- 400
+pop$ -- 214
 preamble$ -- 1
-purify$ -- 512
+purify$ -- 538
 quote$ -- 0
-skip$ -- 754
+skip$ -- 789
 stack$ -- 0
-substring$ -- 1419
-swap$ -- 241
+substring$ -- 1490
+swap$ -- 252
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 760
+type$ -- 790
 warning$ -- 17
-while$ -- 386
+while$ -- 404
 width$ -- 0
-write$ -- 494
+write$ -- 520
 (There were 2 error messages)
