@@ -1,50 +1,52 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+This is BibTeX, Version 0.99d (TeX Live 2018/Arch Linux)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: manuscript_psrmNote_OA.aux
 The style file: chicago.bst
 Database file #1: ref.bib
+Warning--page numbers missing in Bischof2012
 Warning--no number and no volume in marschall2013local
 Warning--page numbers missing in marschall2013local
+Warning--no volume for Mimno2011
 Warning--empty organization in stm
-You've used 4 entries,
+You've used 7 entries,
             2861 wiz_defined-function locations,
-            638 strings with 5656 characters,
-and the built_in function-call counts, 2847 in all, are:
-= -- 234
-> -- 235
+            659 strings with 6427 characters,
+and the built_in function-call counts, 5626 in all, are:
+= -- 440
+> -- 528
 < -- 0
-+ -- 70
-- -- 74
-* -- 280
-:= -- 522
-add.period$ -- 12
-call.type$ -- 4
-change.case$ -- 30
-chr.to.int$ -- 4
-cite$ -- 7
-duplicate$ -- 67
-empty$ -- 154
-format.name$ -- 90
-if$ -- 524
++ -- 164
+- -- 172
+* -- 578
+:= -- 1041
+add.period$ -- 21
+call.type$ -- 7
+change.case$ -- 60
+chr.to.int$ -- 7
+cite$ -- 12
+duplicate$ -- 118
+empty$ -- 277
+format.name$ -- 200
+if$ -- 1029
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 3
-newline$ -- 23
-num.names$ -- 40
-pop$ -- 19
+missing$ -- 6
+newline$ -- 38
+num.names$ -- 70
+pop$ -- 40
 preamble$ -- 1
-purify$ -- 55
+purify$ -- 103
 quote$ -- 0
-skip$ -- 76
+skip$ -- 132
 stack$ -- 0
-substring$ -- 130
-swap$ -- 23
+substring$ -- 246
+swap$ -- 39
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 80
-warning$ -- 3
-while$ -- 32
+type$ -- 140
+warning$ -- 5
+while$ -- 58
 width$ -- 0
-write$ -- 54
-(There were 3 warnings)
+write$ -- 93
+(There were 5 warnings)

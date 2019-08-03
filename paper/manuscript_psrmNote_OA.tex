@@ -174,14 +174,15 @@ In Table \ref{tabSTMtopwords60keep}, we present topic results from an STM, and m
 
 \input{tables/stmTopWords60_KeepEverything.tex}
 
-In Tables \ref{tabSTMtopwords120_1} and \ref{tabSTMtopwords120_2} we present results of the STM with 120 topics organized according to the effect of mayoral partisanship on topic prevalence. The partisan themes in the 120-topic STM mirror those in the 60-topic model, with cities led by Democratic mayors focused disproportionately on finances (e.g., Topics 75, 71, 61) and social problems (e.g., Topics 93, 101, 39, 52), and cities led by Republican mayors focused disproportionately on basic services and utilities (e.g., Topics 114, 11,  86, 116).
+In Tables \ref{tabSTMtopwords120_1} and \ref{tabSTMtopwords120_2}, we present results of the STM with 120 topics organized according to the effect of mayoral partisanship on topic prevalence. The partisan themes in the 120-topic STM mirror those in the 60-topic model, with cities led by Democratic mayors focused disproportionately on finances (e.g., Topics 75, 71, 61) and social problems (e.g., Topics 93, 101, 39, 52), and cities led by Republican mayors focused disproportionately on basic services and utilities (e.g., Topics 114, 11,  86, 116).
 
 
 \input{tables/stmTopWords120_1.tex}
 \input{tables/stmTopWords120_2.tex}
 
-In Tables \ref{tabSTMtopwords60_income} and \ref{tabSTMtopwords60_population} we present the topics ordered according to the effects of median income and population, respectively. Considering income-based variation in topics, there are several topics prevalent in more wealthy cities that focus on initiatives that go well-beyond standard city services---downtown and building revitalization (Topics 39 and 12), renewable energy (Topic 20), bike/pedestrian-oriented development (Topic 60), wildlife conservation (Topic 3). Such topics cannot be found among those that are more prevalent in less wealthy cities. When it comes to population, more populous cities deal disproportionately with issues related to public health (Topics  2 and 11), crime (Topic 59), homelessness (Topic 52), and diversity (Topic 6).
+In Tables \ref{tabSTMtopwords60_income} and \ref{tabSTMtopwords60_population}, we present the topics ordered according to the effects of median income and population, respectively. Considering income-based variation in topics, there are several topics prevalent in more wealthy cities that focus on initiatives that go well-beyond standard city services---downtown and building revitalization (Topics 39 and 12), renewable energy (Topic 20), bike/pedestrian-oriented development (Topic 60), wildlife conservation (Topic 3). Such topics cannot be found among those that are more prevalent in less wealthy cities. When it comes to population, more populous cities deal disproportionately with issues related to public health (Topics  2 and 11), crime (Topic 59), homelessness (Topic 52), and diversity (Topic 6).
 
+In Figure \ref{fig:coherence_exclusivity}, we present a quantitative assessment of relative topic quality for our main model, using two metrics, semantic coherence and exclusivity. Semantic coherence \citep{Mimno2011} describes the extent to which the 10 top words in a topic model belong to the same underlying concept. Exclusivity \citep{Bischof2012,Roberts2014} measures whether the top 10 words in one topic feature primarily in this topic, rather than being dispersed across a range of topics. As coherence tends to be outright better in models with fewer topics, the comparison with exclusivity creates a trade-off. Figure \ref{fig:coherence_exclusivity} shows that the model performs well in this regard, as most topics have both high coherence and exclusivity. Even topic 11, which does worst in terms of coherence, looks like a good topic upon manual inspection, as its top words all pertain to obesity.
 
 \input{tables/stmTopWords60_income.tex}
 \input{tables/stmTopWords60_population.tex}
@@ -189,7 +190,7 @@ In Tables \ref{tabSTMtopwords60_income} and \ref{tabSTMtopwords60_population} we
 \begin{figure}
 	\centering
 	\includegraphics{figures/stm_60_coherence_exclusivity.pdf}
-	\caption{Semantic coherence and exclusivity for the structural topic model with 60 topics.}
+	\caption{Semantic coherence and exclusivity for each of the 60 topics in our main structural topic model. Coherence describes the extent to which the 10 top words in a topic model belong to the same underlying concept. Exclusivity measures whether the top words in one topic feature primarily in this topic, rather than being dispersed across a range of topics. The model performs well in this trade-off, as both coherence and exclusivity are high for most topics.}
 	\label{fig:coherence_exclusivity}
 \end{figure}
 
