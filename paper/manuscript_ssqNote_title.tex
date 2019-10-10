@@ -1,0 +1,146 @@
+\documentclass[11pt]{article}
+
+%==============Packages & Commands==============
+\usepackage{graphicx}
+\usepackage{fancyvrb}
+\usepackage{tikz}
+%%%<
+\usepackage{verbatim}
+%\usepackage[active,tightpage]{preview}
+%\PreviewEnvironment{tikzpicture} 
+%\setlength\PreviewBorder{5pt}%
+
+\usepackage{geometry}                        % See geometry.pdf to learn the layout options. There are lots.
+% \geometry{a4paper}                           % ... or a4paper or a5paper or ...
+%\geometry{landscape}                        % Activat\usetikzlibrary{arrows}e for for rotated page geometry
+%\usepackage[parfill]{parskip}            % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}                % Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+                                % TeX will automatically convert eps --> pdf in pdflatex
+\usepackage{amssymb}
+
+\usepackage[ruled,vlined]{algorithm2e}
+\usetikzlibrary{arrows}
+\usepackage{alltt}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage{natbib} % For references
+\bibpunct{(}{)}{;}{a}{}{,} % Reference punctuation
+\usepackage{changepage}
+\usepackage{setspace}
+\usepackage{booktabs} % For tables
+\usepackage{rotating} % For sideways tables/figures
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{color}
+\usepackage{dcolumn}
+\usepackage{comment}
+\usepackage{pgf}
+\usepackage{xcolor, colortbl}
+\usepackage{array}
+
+\def\mybar#1{%%
+    #1 & {\color{red}\pgfmathsetlengthmacro\x{#1*0.006mm}\rule{\x}{4pt}}}
+
+%\pgfmathsetlengthmacro\x{#1^0.1mm}
+%\show\x -> 25.0pt
+
+%\usepackage{fullwidth}
+\newcolumntype{d}[1]{D{.}{\cdot}{#1}}
+\newcolumntype{.}{D{.}{.}{-1}}
+\newcolumntype{3}{D{.}{.}{3}}
+\newcolumntype{4}{D{.}{.}{4}}
+\newcolumntype{5}{D{.}{.}{5}}
+\usepackage{float}
+\usepackage[hyphens]{url}
+%\usepackage[margin = 1.25in]{geometry}
+%\usepackage[nolists,figuresfirst]{endfloat} % Figures and tables at the end
+\usepackage{subfig}
+\captionsetup[subfloat]{position = top, font = normalsize} % For sub-figure captions
+\usepackage{fancyhdr}
+%\makeatletter
+%\def\url@leostyle{%
+%  \@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small\ttfamily}}}
+%\makeatother
+%% Now actually use the newly defined style.
+\urlstyle{same}
+\usepackage{times}
+
+\usepackage{lscape}
+% \usepackage{mathptmx}
+%\usepackage[colorlinks = true,
+%                        bookmarksopen = true,
+%                        pagebackref = true,
+%                        linkcolor = black,
+%                        citecolor = black,
+%                     urlcolor = black]{hyperref}
+%\usepackage[all]{hypcap}
+%\urlstyle{same}
+\newcommand{\fnote}[1]{\footnote{\normalsize{#1}}} % 12 pt, double spaced footnotes
+\def\citeapos#1{\citeauthor{#1}'s (\citeyear{#1})}
+\def\citeaposs#1{\citeauthor{#1}' (\citeyear{#1})}
+\newcommand{\bm}[1]{\boldsymbol{#1}} %makes bold math symbols easier
+\newcommand{\R}{\textsf{R}\space} %R in textsf font
+\newcommand{\netinf}{\texttt{NetInf}\space} %R in textsf font
+\newcommand{\iid}{i.i.d} %shorthand for iid
+\newcommand{\cites}{{\bf \textcolor{red}{CITES}}} %shorthand for iid
+%\usepackage[compact]{titlesec}
+%\titlespacing{\section}{0pt}{*0}{*0}
+%\titlespacing{\subsection}{0pt}{*0}{*0}
+%\titlespacing{\subsubsection}{0pt}{*0}{*0}
+%\setlength{\parskip}{0pt}
+%\setlength{\parsep}{0pt}
+%\setlength{\bibsep}{2pt}
+%\renewcommand{\headrulewidth}{0pt}
+
+%\renewcommand{\figureplace}{ % This places [Insert Table X here] and [Insert Figure Y here] in the text
+%\begin{center}
+%[Insert \figurename~\thepostfig\ here]
+%\end{center}}
+%\renewcommand{\tableplace}{%
+%\begin{center}
+%[Insert \tablename~\theposttbl\ here]
+%\end{center}}
+
+\newcommand\independent{\protect\mathpalette{\protect\independenT}{\perp}}
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\Y}{\bm{\mathcal{Y}}}
+\newcommand{\bZ}{\bm{Z}}
+
+\usepackage[colorlinks = TRUE, urlcolor = black, linkcolor = black, citecolor = black, pdfstartview = FitV]{hyperref}
+
+
+%============Article Title, Authors==================
+\title{\vspace{-2cm} Government Websites As Data: \\ A methodological pipeline with application to the websites of municipalities in the United States\footnote{This work was supported by the National Science Foundation [1320219, 1637089, 1641047].}}
+
+
+\author{ Markus Neumann\footnote{Department of Political Science, The Pennsylvania State University, University Park, PA 16802, USA. Email: mvn5218@psu.edu. Corresponding author.} \and Fridolin Linder\footnote{Department of Political Science, Social Media and Political Participation Lab, New York University, New York, NY 10012, USA. Email: fridolin.linder@nyu.edu} \and Bruce Desmarais\footnote{Department of Political Science, The Pennsylvania State University, University Park, PA 16802, USA. Email: bdesmarais@psu.edu. }} \date{\today}
+
+%===================Startup=======================
+\begin{document}
+\maketitle 
+
+
+
+%=============Abstract & Keywords==================
+
+\begin{abstract}
+
+\noindent {\bf Objective:} Existing social science research that uses government website content has relied on manual methods of content collection, limiting the scale and scope of projects. Our objectives and corresponding contributions in this research note are two-fold. First, we develop a methodological pipeline to gather, process, and analyze website content, along with an R package implementation of the pipeline. Second, we illustrate the pipeline through the collection and analysis of the websites of over two hundred municipal governments in the United States. 
+\\~\\
+\noindent {\bf Methods:} We propose and utilize a pipeline consisting of tools for web-scraping, text parsing and cleaning, and text analysis.  \\~\\
+\noindent {\bf Results:} Our pipeline is effective in extracting large-scale meaningful substantive text from government websites. We identify a strong relationship between the topical content on municipal websites and the partisanship of the mayor.  \\~\\
+\noindent {\bf Conclusion:}  The pipeline we develop, associated software, and dataset of municipal websites, represent valuable research tools for social scientists. 
+
+%\noindent We explore the effect of transitions of power in municipal governments on the content of their websites. We hypothesize that when party control changes, city administrators modify the contents of their websites in order to fit the agenda of the new incumbent. To test this theory, we study cities in Indiana and Louisiana, two states in which all municipal elections are partisan and the parties of the candidates appear on the ballots. Snapshots of websites before and after transitions of power are acquired through the Wayback Machine. We apply statistical topic models based in latent dirichlet allocation, focusing on changes to the websites. We present results on both which topics see the greatest degree of change associated with transitions in city administrations, and how the topics modified differ with regard to political parties.
+
+\end{abstract}
+\thispagestyle{empty}
+% \doublespacing
+% Description of the possible challenges
+
+\end{document}
+
+
+

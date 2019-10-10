@@ -1,0 +1,74 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: manuscript_ssqNote.aux
+The style file: chicago.bst
+Database file #1: ref.bib
+Repeated entry---line 180 of file ref.bib
+ : @manual{hunspell
+ :                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 199 of file ref.bib
+ : @manual{readtext
+ :                 ,
+I'm skipping whatever remains of this entry
+Warning--string name "forthcoming" is undefined
+--line 257 of file ref.bib
+Warning--empty organization in boilerpipeR
+Warning--empty organization in spacyr
+Warning--empty organization in readtext
+Warning--no journal in Cryer2017
+Warning--no number and no volume in Cryer2017
+Warning--no number and no volume in einstein2016mayors
+Warning--no number and no volume in Einstein2015
+Warning--no number and no volume in Esterling2011a
+Warning--no number and no volume in marschall2013local
+Warning--page numbers missing in marschall2013local
+Warning--empty organization in hunspell
+Warning--empty organization in wand
+Warning--empty year in sumner2019
+Warning--no number and no volume in sumner2019
+Warning--page numbers missing in sumner2019
+Warning--no journal in Therriault2010
+Warning--no number and no volume in Therriault2010
+You've used 43 entries,
+            2861 wiz_defined-function locations,
+            873 strings with 12401 characters,
+and the built_in function-call counts, 30700 in all, are:
+= -- 2568
+> -- 2357
+< -- 4
++ -- 704
+- -- 804
+* -- 2830
+:= -- 5601
+add.period$ -- 128
+call.type$ -- 43
+change.case$ -- 317
+chr.to.int$ -- 43
+cite$ -- 60
+duplicate$ -- 784
+empty$ -- 1782
+format.name$ -- 924
+if$ -- 5662
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 37
+newline$ -- 216
+num.names$ -- 430
+pop$ -- 230
+preamble$ -- 1
+purify$ -- 581
+quote$ -- 0
+skip$ -- 840
+stack$ -- 0
+substring$ -- 1625
+swap$ -- 270
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 850
+warning$ -- 17
+while$ -- 428
+width$ -- 0
+write$ -- 559
+(There were 2 error messages)
