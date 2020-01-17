@@ -1,0 +1,65 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: manuscript_aprNote_OA.aux
+The style file: chicago.bst
+Database file #1: ref.bib
+Repeated entry---line 180 of file ref.bib
+ : @manual{hunspell
+ :                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 199 of file ref.bib
+ : @manual{readtext
+ :                 ,
+I'm skipping whatever remains of this entry
+Warning--empty organization in boilerpipeR
+Warning--empty organization in spacyr
+Warning--empty organization in readtext
+Warning--page numbers missing in Bischof2012
+Warning--no number and no volume in marschall2013local
+Warning--page numbers missing in marschall2013local
+Warning--no volume for Mimno2011
+Warning--empty organization in hunspell
+Warning--empty organization in stm
+Warning--empty organization in wand
+You've used 17 entries,
+            2861 wiz_defined-function locations,
+            711 strings with 7955 characters,
+and the built_in function-call counts, 12601 in all, are:
+= -- 999
+> -- 1126
+< -- 1
++ -- 344
+- -- 372
+* -- 1217
+:= -- 2341
+add.period$ -- 50
+call.type$ -- 17
+change.case$ -- 133
+chr.to.int$ -- 17
+cite$ -- 27
+duplicate$ -- 297
+empty$ -- 646
+format.name$ -- 432
+if$ -- 2305
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 10
+newline$ -- 87
+num.names$ -- 170
+pop$ -- 103
+preamble$ -- 1
+purify$ -- 241
+quote$ -- 0
+skip$ -- 337
+stack$ -- 0
+substring$ -- 507
+swap$ -- 103
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 340
+warning$ -- 10
+while$ -- 144
+width$ -- 0
+write$ -- 222
+(There were 2 error messages)

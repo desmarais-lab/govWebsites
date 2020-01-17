@@ -1,0 +1,346 @@
+\documentclass[12pt]{article}
+
+%==============Packages & Commands==============
+\usepackage{graphicx}
+\usepackage{fancyvrb}
+\usepackage{tikz}
+%%%<
+\usepackage{verbatim}
+%\usepackage[active,tightpage]{preview}
+%\PreviewEnvironment{tikzpicture} 
+%\setlength\PreviewBorder{5pt}%
+
+\usepackage[margin=1in]{geometry}                        % See geometry.pdf to learn the layout options. There are lots.
+% \geometry{a4paper}                           % ... or a4paper or a5paper or ...
+%\geometry{landscape}                        % Activat\usetikzlibrary{arrows}e for for rotated page geometry
+%\usepackage[parfill]{parskip}            % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}                % Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+                                % TeX will automatically convert eps --> pdf in pdflatex
+\usepackage{amssymb}
+
+
+\usepackage[ruled,vlined]{algorithm2e}
+\usetikzlibrary{arrows}
+\usepackage{alltt}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage{natbib} % For references
+\bibpunct{(}{)}{;}{a}{}{,} % Reference punctuation
+\usepackage{changepage}
+\usepackage{setspace}
+\usepackage{booktabs} % For tables
+\usepackage{rotating} % For sideways tables/figures
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{color}
+\usepackage{dcolumn}
+\usepackage{comment}
+\usepackage{pgf}
+\usepackage{xcolor, colortbl}
+\usepackage{array}
+
+\def\mybar#1{%%
+    #1 & {\color{red}\pgfmathsetlengthmacro\x{#1*0.006mm}\rule{\x}{4pt}}}
+
+%\pgfmathsetlengthmacro\x{#1^0.1mm}
+%\show\x -> 25.0pt
+
+%\usepackage{fullwidth}
+\newcolumntype{d}[1]{D{.}{\cdot}{#1}}
+\newcolumntype{.}{D{.}{.}{-1}}
+\newcolumntype{3}{D{.}{.}{3}}
+\newcolumntype{4}{D{.}{.}{4}}
+\newcolumntype{5}{D{.}{.}{5}}
+\usepackage{float}
+\usepackage[hyphens]{url}
+%\usepackage[margin = 1.25in]{geometry}
+\usepackage[nolists,figuresfirst]{endfloat} % Figures and tables at the end
+\usepackage{subfig}
+\captionsetup[subfloat]{position = top, font = normalsize} % For sub-figure captions
+\usepackage{fancyhdr}
+%\makeatletter
+%\def\url@leostyle{%
+%  \@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small\ttfamily}}}
+%\makeatother
+%% Now actually use the newly defined style.
+\urlstyle{same}
+\usepackage{times}
+
+\usepackage{lscape}
+% \usepackage{mathptmx}
+%\usepackage[colorlinks = true,
+%                        bookmarksopen = true,
+%                        pagebackref = true,
+%                        linkcolor = black,
+%                        citecolor = black,
+%                     urlcolor = black]{hyperref}
+%\usepackage[all]{hypcap}
+%\urlstyle{same}
+\newcommand{\fnote}[1]{\footnote{\normalsize{#1}}} % 12 pt, double spaced footnotes
+\def\citeapos#1{\citeauthor{#1}'s (\citeyear{#1})}
+\def\citeaposs#1{\citeauthor{#1}' (\citeyear{#1})}
+\newcommand{\bm}[1]{\boldsymbol{#1}} %makes bold math symbols easier
+\newcommand{\R}{\textsf{R}\space} %R in textsf font
+\newcommand{\netinf}{\texttt{NetInf}\space} %R in textsf font
+\newcommand{\iid}{i.i.d} %shorthand for iid
+\newcommand{\cites}{{\bf \textcolor{red}{CITES}}} %shorthand for iid
+%\usepackage[compact]{titlesec}
+%\titlespacing{\section}{0pt}{*0}{*0}
+%\titlespacing{\subsection}{0pt}{*0}{*0}
+%\titlespacing{\subsubsection}{0pt}{*0}{*0}
+%\setlength{\parskip}{0pt}
+%\setlength{\parsep}{0pt}
+%\setlength{\bibsep}{2pt}
+%\renewcommand{\headrulewidth}{0pt}
+
+%\renewcommand{\figureplace}{ % This places [Insert Table X here] and [Insert Figure Y here] in the text
+%\begin{center}
+%[Insert \figurename~\thepostfig\ here]
+%\end{center}}
+%\renewcommand{\tableplace}{%
+%\begin{center}
+%[Insert \tablename~\theposttbl\ here]
+%\end{center}}
+
+\newcommand\independent{\protect\mathpalette{\protect\independenT}{\perp}}
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\Y}{\bm{\mathcal{Y}}}
+\newcommand{\bZ}{\bm{Z}}
+
+\usepackage[colorlinks = TRUE, urlcolor = black, linkcolor = black, citecolor = black, pdfstartview = FitV]{hyperref}
+
+
+%============Article Title, Authors==================
+\title{\vspace{-2cm} Government Websites As Data: \\ Understanding how Mayoral Partisanship Shapes Municipal Website Content}
+
+
+%\author{ Markus Neumann\footnote{Department of Political Science, The Pennsylvania State University, University Park, PA 16802, USA. Email: mvn5218@psu.edu. Corresponding author.} \and Fridolin Linder\footnote{Department of Political Science, Social Media and Political Participation Lab, New York University, New York, NY 10012, USA. Email: fridolin.linder@nyu.edu} \and Bruce Desmarais\footnote{Department of Political Science, The Pennsylvania State University, University Park, PA 16802, USA. Email: bdesmarais@psu.edu. This work was supported by the National Science Foundation [1320219, 1637089, 1641047].}} \date{\today}
+
+%===================Startup=======================
+\begin{document}
+\maketitle 
+
+
+
+%=============Abstract & Keywords==================
+
+\begin{abstract}
+
+A local government's website is an important source of information about policies and procedures for residents and community stakeholders . Existing research in political science and related fields has relied on manual methods of website content collection and processing, limiting the scale and scope of website content analysis. In this research note, we propose that the automated collection of website content from large samples of government websites can can compliment more targeted manual methods, and offer contributions through comparative analyses. Our approach, which represents a considerable improvement in scalability, involves downloading the entire contents of a website, extracting the text and discarding redundant information. In our application, we collect and analyze a new and innovative dataset---the websites of over two hundred municipal governments in the United States. We build upon recent research that analyzes how variation in the partisan control of government relates to content made available on the government's website. Using topic modeling methods, we find that cities with Democratic mayors provide more information on policy deliberation and crime control, whereas Republicans prioritize basic utilities and services such as water, electricity, and fire safety. As an additional contribution, we provide an R package that can be used to process government website files into raw text.
+%\noindent We explore the effect of transitions of power in municipal governments on the content of their websites. We hypothesize that when party control changes, city administrators modify the contents of their websites in order to fit the agenda of the new incumbent. To test this theory, we study cities in Indiana and Louisiana, two states in which all municipal elections are partisan and the parties of the candidates appear on the ballots. Snapshots of websites before and after transitions of power are acquired through the Wayback Machine. We apply statistical topic models based in latent dirichlet allocation, focusing on changes to the websites. We present results on both which topics see the greatest degree of change associated with transitions in city administrations, and how the topics modified differ with regard to political parties.
+
+
+\end{abstract}
+\thispagestyle{empty}
+% \doublespacing
+% Description of the possible challenges
+\newpage 
+
+
+\begin{center}
+\Large
+Government Websites As Data: Understanding how Mayoral Partisanship Shapes Municipal Website Content
+\end{center}
+\doublespacing
+\vspace{-1cm}
+\section{Introduction} \vspace{-.2cm}
+Government websites convey voluminous information about all aspects of government policy priorities, policy implementation, and public deliberation. The vital role of official websites in connecting the government and the governed has motivated a wave of research on the contents of government websites, focusing in particular on textual contents \citep[e.g.,][]{grimmelikhuijsen2010transparency,wang2005evaluating,osman2014cobra}. The conventional approach to data collection in projects focused on government websites involves manual content extraction from each website in the dataset. Though accurate, the manual approach to data collection is costly for large-scale analysis. We propose the use of automatic web-scraping to gather and process government websites in order to build datasets that can be used for text analysis, as well as the solutions we adopt. We apply this approach to build a novel dataset of U.S. municipal government website contents, and analyze how the textual contents of city government websites in six American states correlate with the partisanship of the city mayor.
+
+Our contributions are two-fold. First, we propose, and provide software to apply, the large-scale automated collection of textual data from government websites--covering entire contents including the plain HTML files, and linked files in various formats (e.g., DOC, PDF, and TXT) into plain text for analysis. Second, we gather and analyze a dataset that covers the textual contents of websites from over two hundred municipal governments in the United States. By studying the covariation of topical contents on these websites with the partisanship of the city mayors, we both illustrate the utility of automated web content collection from government websites, and present new findings on the relationship between government website concepts and executive partisanship. 
+
+
+%Though there exists a variety of software tools that are designed to automatically scrape all of the files available at a website \citep{glez2013web}, raw website downloads have to be processed significantly before the files are adequately prepared for content (e.g., text, image) analysis. We describe and provide solutions to two central challenges in automatically gathering and analyzing website textual contents. First, plain text must be extracted from the files. This challenge would arise in any context in which researchers sought to study the textual contents of websites. The second challenge we address in our methodological pipeline is, however, specific to the research objective of comparing websites on the basis of a common lexicon. For any two governments, the textual signatures that most dramatically differentiate the textual contents of their websites consist of what we can call ``boilerplate'' text---header, footer, or other titling text that is designed to identify the website as being associated with a specific government entity (e.g., ``Welcome to the city of Santa Cruz'', ``The City of Los Angeles welcomes you''). The second methodological innovation we offer in our pipeline is designed to minimize the impact of this boilerplate text on the comparative analysis of government website content. 
+
+\vspace{-.8cm}
+\section{Politics and Government Website Content} \vspace{-.3cm}
+
+
+ Though government websites serve largely instrumental service-delivery purposes, they also offer officials a prime venue via which to communicate policy goals and accomplishments, which inevitably reflect officials' politics. In the current paper, we focus on the running example of the reflection of mayoral partisanship on municipal government websites. A substantial body of research has found that the partisanship of the mayor affects city governance along multiple dimensions of spending and policy attention \citep[e.g.,][]{gerber2011mayors,de2016mayoral,einstein2016mayors}. Official city websites allow mayors to present their views and policy priorities to the public. In local politics, where campaign funds are low, this lends incumbents a crucial advantage in becoming more well-known among their constituencies \citep{stanyer2008elected}. Local government websites are frequently visited by the public \citep{thomas2003new}. City websites can be used to communicate the stance of a mayor on social or economic programs. Consider the screenshot of the Gary, Indiana homepage in Figure \ref{fig:garymayor}.  This provides a clear example of the utility of a city website for communicating the mayor's policy priorities and accomplishments.
+ 
+\begin{figure}
+\centering
+\includegraphics[scale=0.45]{figures/gary_hp}
+\caption{Screenshot from the homepage at \url{https://garyin.us/}, accessed on 05/22/2019. Image depicts Democratic mayor of Gary, IN, Karen Freeman-Wilson.} \vspace{-.3cm}
+\label{fig:garymayor}
+\end{figure}
+
+
+%Members of the public visit municipal government websites for a wide variety of purposes \citep{sandoval2012government}, and with significant regularity. In a survey conducted among a random sample of citizens in the state of Georgia in 2000---nearly two decades ago---found that 25\% of internet users reported visiting a local government website in the previous twelve months \citep{thomas2003new}. %Furthermore, the use of a local government website is associated with an individual's perspective on government. \citet{tolbert2006effects} find that users of local government websites are more likely to trust local governments, and hold other positive attitudes related to local and federal governments. Lastly, in a study of residents of Kansas City, Missouri, \citet{ho2017government} find that participants' perceived quality of the city website is strongly associated with their perceptions of the overall effectiveness of the City's communication with the public.
+
+The existing research that uses scraped websites provides an indication of the theoretical value of empirical analysis of web contents. Research on `e-governance' evaluates government websites in terms of accessibility, ease-of-use, and function \citep[e.g., ][]{mcneal2003innovating,tolbert2008institutions,mcnutt2010virtual}. As an example, \cite{grimmelikhuijsen2012developing} study local government websites of Dutch municipalities to measure government transparency regarding air quality in the municipalities. The websites of politicians and their parties have also been the object of research \citep{Druckman2009,Druckman2010,Esterling2011,Esterling2011a,Norris2003}. For example, \cite{Druckman2010} analyze the issues engaged on websites for candidates in U.S. Congressional elections, and find that candidates strategically engage just a few issues based on the priorities in their districts and the characteristics of their opponents.  
+
+%Important to our methodological objectives, research analyzing and improving the scraping, pre-processing and text analysis pipeline that is applicable to government websites is still in its infancy. \cite{Eschenfelder2002} provide something of an overview of how federal websites should be assessed from an e-governance point of view, but they largely focus on the substantive criteria that should be fulfilled, rather than the technical aspects of website acquisition and analysis. %In what follows we first define the target dataset---the textual contents of websites of United States municipalities, along with associated metadata on the municipalities and their governments. We then define a pipeline for data collection and analysis that includes methods to access government website URLs, scrape their raw contents from the World Wide Web, gather plain text from the website files, and identify boilerplate text within the plain text contents. Lastly, we illustrate the analysis of municipal government website text by exploring the relationship between the city mayors' party affiliations and the topical contents of the websites.
+
+\vspace{-.8cm}
+
+\section{Data: US Municipal Government Website Text} \vspace{-.3cm}
+
+For data availability reasons when it comes to mayoral partisanship, we focus our analysis of municipal websites on six states---Indiana, Louisiana, New York, Washington, California, and Texas. The websites were scraped in March 2018. The selection of states and cities is largely dictated by the presence of partisan mayors. Municipal elections in Indiana and Louisiana are partisan across the board, so our sample is primarily focused on these two states. For Indiana and Louisiana, all cities with a website are included, resulting in a considerably larger sample than for the other four states. New York and Washington do not have nominally partisan elections, but for a subset of cities, partisanship can be determined through contribution data (see supplementary material for more detail). California and Texas contain a number of large cities whose mayors are sufficiently well-known for their partisanship to be available. Our sample is well-balanced on a number of theoretically important dimensions. One, each of the four Census regions are represented with at least one state. Two, we have a fairly well-balanced sample with respect to the urban/rural cleavage. Furthermore, the sample is politically balanced---we have three blue states, and three red states.  The partisan breakdown of city websites by state is provided in the supplementary material. This dataset of city website contents represents a contribution in the growing area of cross-municipality datasets covering local governements \citep[e.g., ][]{marschall2013local,sumner2019}. Details on the sources and methods of raw data collection can be found in the supplementary material.
+
+%One of the more subtle aspects of local government is the presence of different types of government structures. Between council-manager governments and mayor-council governments \citep{morgan1992policy}---either in the weak or strong mayor variant \citep{desantis2002city}---there is variance in where a city's executive authority lies. We do not have access to information about the type of governments across the breadth of our dataset. Given the prominent place that mayors tend to have on their cities' websites, we feel that any bias arising from this nuance should be minor. \cite{gerber2011mayors}, whose theory is somewhat comparable to ours, find that the inclusion of this potential confounder does not affect the results.
+
+
+\vspace{-.8cm}
+
+\section{Partisan Language on Municipal Websites} \vspace{-.3cm}
+
+City mayors use government websites to present their policy priorities to the public. Consider an example; \cite[p.55]{formicola2003faith} document a significant website content change during a transition in mayoral administrations in the city of Indianapolis. Under the Republican mayor Stephen Goldsmith, voluminous content was added to the city website in connection with the Front Porch Alliance---a faith-based initiative to create partnerships with religious organizations for the use and administration of city resources. Faith-based initiatives represent a type of public-private partnership that is popular with Republicans \citep{saperstein2003public}. When Democrat Bart Peterson took office in 2000, the material related to the Front Porch Alliance was removed from the website. We consider whether the partisan manipulation of city website contents documented in this example holds in a large-scale and more recent sample of city websites. We illustrate the analysis of municipal website content by studying how differences in website content correlate with the partisanship of the city's mayor. As we reviewed above, the partisanship of the mayor has been found in past research to affect several features of city governance. However, \citet{gerber2011mayors} note that, due to the constraints of state and national policies, municipalities lack discretion in many domains of governance. These constraints do not apply to website contents. City governments have great discretion in composing their websites, modifying website content is low cost relative to other policy changes, and city websites provide an effective and often-used means of communication with city residents. 
+
+%BoW methods are methods of text analysis that do not take into account the sequence or placement of words in text---just the presence and frequency of words. As noted by \cite{GrimmerStewart2013}, for most applications, bag-of-words approaches have been found to be more than sufficient. Furthermore, there is reason to believe that city government websites are a particularly `safe' case for bag-of-words methods due to their informative, manner-of-fact based language. It is extremely unlikely for these pages to feature ambiguous language such as an abundance of negation or even sarcasm.
+
+
+%\input{tables/tabBoilerplateIllustration.tex}
+
+We use well established web-scraping and text-processing tools to go from a list of municipal website URLs to a corpus of clean text to analyze. The first step is to automatically download the entire file contents of municipal websites, which we do using the Unix tool \texttt{wget} \citep{glez2013web}. Step two is to convert each file (including, e.g., HTML, DOC, PDF) into a plain text file, which we do using the \texttt{readtext} R package \citep{readtext}. Step three is to discard website boilerplate text (e.g., navigation menus), which we do using the ``boilerpipe''  algorithm \citep{Kohlschutter2010}, which is implemented in the R package \texttt{boilerpipeR}. The fourth step is a final processing wave applied to the resulting text corpus, which includes, e.g., removing strings that are not English words. This web-scraping and processing pipeline is described in greater detail in the supplementary material, and we have implemented all but the first step in a new R package (\texttt{gov2test}).
+
+To study content differences between government websites based on mayoral partisanship, we draw upon a recently-developed model for text, the structural topic model (STM), developed by \citet{Roberts2014}. Building on the conception of ``topics'' in conventional topic models \citep{valdez2018topic}, in the STM a topic is a multinomial distribution defined on the word types in the corpus dictionary. The log-odds of the topic probabilities in each document-specific multinomial distribution over topics are drawn from a multivariate normal distribution in which the topic-specific means are determined by a linear regression function that associates document-attributed covariates with topics. For example, in the context of municipal website content, the structural topic model can be used to estimate a regression coefficient that defines the linear relationship between the log-odds of the municipality's population and the log-odds of each topic. For our primary empirical investigation, the STM provides a tool to estimate the relationship between the party of the city's mayor and the prevalence of each topic. We also include the municipality's population and median income as covariates. Further details on and results from our STM specification can be found in the supplementary material.
+
+\vspace{-.4cm}
+\subsubsection{Structural topic model results}
+
+
+The results are shown in Table \ref{tabSTMtopwords60}. First, it is notable that the 95\% credible interval includes zero (indicated by rows with white backgrounds) in only seven of the sixty topics. This suggests that the topics discussed on city websites varies systematically with the partisanship of the mayor. Many of the topics associated with Democrats fit with what we understand to be national party priorities. Topic \textbf{52}, on affordable housing, clearly resonates with the Democratic party's appeal to low-income voters. Topic {\bf 6} ('race', 'islander', 'census, 'female') covers racial and gender identity issues. Similarly, employee rights and benefits are represented in topics \textbf{10} and \textbf{29}. Democrats also exhibit a strong preference for words related to public finances, such as Topic \textbf{58} ('budget', 'revenue', 'expenditure'), Topic {\bf 45} ('asset', 'actuarial', 'liability', 'financial'), Topic \textbf{35} ('bond', 'obligation', 'proceeds') as well as Topic \textbf{55} ('taxable', 'deed', 'value'). We suspect that the association of Democratic mayors with finance-related terms is indicative of a greater willingness to emphasize the city's efforts to raise and spend money, and take credit for those efforts (e.g., the Gary, IN example in Figure \ref{fig:garymayor}). This finding is consistent with \cite{Einstein2015}, who show that Democratic mayors tend to favor greater spending. A second, consistent Democratic focus appears to be law enforcement: The most Democratic topic, \textbf{59} ('burglary', 'robbery', 'theft', 'homicide') is clearly focused on crime. On the one hand, Democratic partisans have a more negative perception of the police, rating it considerably more negatively on the appropriate use of force and the equal treatment of minorities \citep{Brown2017}. On the other hand, the literature has also shown that cities with a higher Democratic vote share spend more on law enforcement, even after controlling for crime \citep{Einstein2015}. 
+
+City websites with Republican mayors, meanwhile, exhibit a pronounced focus on the essential functions of government. Basic utilities such as energy (Topic \textbf{20}), fire protection (Topic \textbf{51}), vaccination (Topic \textbf{2}),  and sanitation (Topic \textbf{47}), are prevalent among cities with Republican mayors. These basic service issues cannot be found among topics prevalent in cities with Democratic mayors. Similarly, zoning issues figure prominently in the set of republican topic (Topic \textbf{19}), which fits with the findings of \citet{sorens2018effects} that Republicans are more supportive of restrictive residential zoning rules. The Democratic topics also include one that is somewhat focused on zoning, Topic {\bf 39} ('downtown', 'mixed', 'density'), but emphasizes mixed-use zoning---a loosening of conventional single-use zoning rules.
+
+
+
+%Interestingly enough, Democrats also `own' the topic related to law enforcement, which might be somewhat unexpected given Republicans' usual focus on law and order \citep{gerber2011mayors}. However, this kind of finding is not entirely without precedent in the literature (see \citep{Einstein2015}). Similar to the informed dirichlet model, the structural topic model also finds the emphasis on construction and infrastructure by Republicans - in table \ref{tabSTMINRep}, topics 2, 7 and 8 clearly focus on these issues.\footnote{The first Republican topic in Indiana (library, stream, obj, etc.) is likely an artifact from incorrectly converted HTML, and since it presumably only happens only in one Republican city, the topic is classified as very Republican.}
+
+%When comparing Indiana to Louisiana, it appears that the Democratic emphasis on law enforcement is robust. Furthermore, as with the fightin' words approach, some smaller degree of focus on money (see topic 1) is still evident. For Republicans, topics 2 to 4 seem to be, once again about infrastructure and utilities, pointing to a certain degree of robustness in these results, as well as the emergence of a trend. The results produced by the structural topic model are not flawless, but the two parties do seem to have somewhat consistent themes on which they focus on in both states. Furthermore, in comparison to the fightin' words approach, the ability of the structural topic model to form coherent topics is quite evident and helpful in the interpretation of the results.
+
+%An ostensibly intuitive solution to topics clustering into cities in LDA is to include dummies for the cities in a statistical model of topics. This is facilitated by the structural topic model, which uses document metadata t to account for variation in topics \citep{Roberts2014}. However, figure \ref{stm_results} shows that if anything, the STM exacerbates the problem. Here, we plot the \textit{p-values} of the coefficients for each city as well as the party variable across each topic. Under normal circumstances, plotting the p-values, as opposed to the fitted values, does not make much sense, but here it serves a diagnostic purpose. The plot shows that the party variable is never statistically significant at any conceivable level of confidence, nor is it even close to. Interestingly the same is true for a number of the cities as well. The topics cluster heavily into only about half of the cities, which does not present an improvement over LDA at all.
+
+%Partisan top words - stm Louisiana -- Rep
+%\input{tables/stmTopWordsINRep.tex} %\ref{tabSTMINRep}
+
+%Partisan top words - stm Louisiana -- Dem
+%\input{tables/stmTopWordsINDem.tex} %\ref{tabSTMLADem}
+
+%Partisan top words - stm Louisiana -- Rep
+%\input{tables/stmTopWordsLARep.tex} %\ref{tabSTMLARep}
+
+%Partisan top words - stm Louisiana -- Dem
+%\input{tables/stmTopWordsLADem.tex} %\ref{tabSTMLADem}
+
+%\subsubsection{Prediction with SVM}
+%An alternative approach to the problem is to ignore topics entirely and go straight to predicting documents that are much more likely to be included on websites belonging to one or the other party. Classic machine learning techniques such as Naive Bayes, Linear Discriminant Analysis, or SVM should be expected to fare well in this context. Here, we rely on SVM, implemented with the SciKitLearn package in Python.\footnote{We also implemented SVM in R through the packages kernlab and e1071 in R. However, neither of these provide a regularized version of SVM (NOTE: at least that is what I am gathering from the stack overflow error), which prevents us from using all of the features contained in our data. Instead, we ranked the features according to tf-idf and selected the top 5000. These methods are also quite slow, and provide a maximum accuracy of 82\% in five-fold cross-validation.} A grid search reveals the tf-idf representation of the document-term matrix to be better than pure word counts, unigrams to be superior to bi-grams, the application of an L2 penalty to be preferable to either L1 or elasticnet, and an alpha (a constant to multiply with the regularization parameter C) of 0.0005 to lead to the best results. Applying five-fold cross-validation to the (tf-idf) document-term matrix with the dimensions 16011x35000 leads to an average accuracy of 89\%.\footnote{Other methods used: Elastic-net in the glmnet package in R. Accuracy is 0.6924795 for in-sample prediction, so not worth bothering with.}
+
+%However, \cite{Monroe2008} advise against using these types of methods in this context because they get the data generation process backward: Our theory assumes that party leads to variation in writing, and yet we rely on the documents to predict party, in spite of the fact that we actually have perfect knowledge of it.
+
+
+
+%Heatmaps
+%\begin{figure}[htp]
+%    \centering % Using \begin{figure*} makes the figure take up the entire width of the page
+%    \caption{Word-topic probabilities for topics with big partisan differences, across documents (Indiana).}
+%    \label{heatmaps_weights}
+%    \includegraphics[width=0.8\linewidth]{figures/heatmaps_weights_IN.png}
+%\end{figure}
+
+
+
+%US map
+%\begin{figure}[htp]
+  %  \centering % Using \begin{figure*} makes the figure take up the entire width of the page
+    %\includegraphics[width=\linewidth]{figures/us_map.pdf} \vspace{-2cm}
+       % \caption{Map of the cities in the corpus in the contiguous U.S. The corpus also includes Alaska. In the analysis, only cities in California, Indiana, Louisiana, New York, Texas and Washington are used. The colors represent the partisanship of the mayor (blue corresponding to Democrats and red to Republicans).}
+    %\label{us_map}
+%\end{figure}
+
+%stm results
+%\begin{figure}[htp]
+%    \centering % Using \begin{figure*} makes the figure take up the entire width of the page
+%    \caption{Results from a structural topic model, displayed as the p-values for each variable for each topic. This would normally be somewhat nonsensical, but here it illustrates why the model does not work.}
+%    \label{stm_results}
+%%    \includegraphics[width=1.1\linewidth]{figures/stm_results.pdf}
+%\end{figure}
+
+
+
+%Partisan top words - topic model Indiana
+%\input{tables/partisanTopWords.tex} %\ref{tabFightinIN}
+
+%Partisan top words - topic model Louisiana
+%\input{tables/partisanTopWordsLA.tex} %tabLDALA
+
+%Partisan top words - stm Indiana
+%\input{tables/stmTopWordsIN.tex} %\ref{tabSTMLA}
+
+%Partisan top words - stm Louisiana
+%\input{tables/stmTopWordsLA.tex} %\ref{tabSTMLA}
+
+
+%Some basic descriptive statistics of documents by party
+%\input{tables/descriptiveStatisticsPartisanIN.tex}
+
+%Some basic descriptive statistics of documents by party
+%\input{tables/descriptiveStatisticsPartisanLA.tex}
+
+%fightin words results
+%\begin{figure}[htp]
+%    \centering % Using \begin{figure*} makes the figure take up the entire width of the page
+%    \includegraphics[width=\linewidth]{figures/linesCutoffIN.pdf}
+%        \caption{Total number of lines retained at a given threshold for removing duplicated lines. For example, at x = 10, all lines occurring more than 10 times within a city's documents are removed.}
+%    \label{linesCutoff}
+%\end{figure}
+
+
+%\section{Ground truth test}
+%In the realm of public administration, the notion that the partisan leaning of mayors might have an effect on how they run their cities is still frowned upon to some extent. Perceived more as managers than politicians, they have been portrayed as the last bastion of non-partisanship in America, and in many cases, also style themselves that way \citep{Dovere2018}. However, the aspirations some mayors have shown towards higher offices - in some cases, even the presidency - reveal that they are not quite as above the fray as some may believe them to be. One of the most vicious and blatantly partisan cleavages in current U.S. politics - the debate surrounding sanctuary cities - has seen mayors in a central role. Research into local politics has shown that partisan elections consistently have greater turnout \citep{Schaffner2001}. When voters are denied this cue, they make use of other, and considerably more irrational heuristics, such as name, gender, or occupation of the contenders. Consequently, it only makes sense for any office-seeking politician to emphasize their partisanship. Finally, decades of research in political psychology have consistently shown that no matter how hard we try, humans are simply incapable of escaping our partisan biases, a finding that is especially pronounced among elites \citep{Hatemi2011}.
+%
+%In an effort to underline this fact and remove any doubt about the fact that the partisanship of mayors colors their decision-making, we conduct a ground truth test between our main corpus - the websites of cities - and a second, decidedly more partisan set of texts: the campaign websites of these mayors. As noted above, partisanship has been shown to be a powerful driving force even in local politics, and mayors are incentivized to exploit it. Consequently, they are very likely to emphasize conservative/liberal values on this platform. If there is a greater correlation in word use between the cities managed by a party and the campaign websites of its mayors than with those of the other party, evidence for the partisanship of city websites can be established.
+%
+%Using the same methods as described for our main corpus, we have gathered these sites and then concatenated all of the documents belonging to mayors of the two parties into one ground truth document each. We do the same for the city documents, and then compare the four document collections using cosine similarity. This measure is the cosine between the angle of two vectors, in this case, the frequencies of all words in the two vocabularies. Compared to a simple Euclidean distance, this has the advantage of accounting for the fact that the two corpora being compared are not necessarily of the same length. The cosine measure between two documents ranges between 0 and 1, 0 signifying absolutely no correlation, and 1 perfect overlap. Figure \ref{groundtruth} shows the result of this test. The expectation is for a greater similarity between Republican cities and the Republican ground truth than Republican cities and Democratic ground truth - and vice versa. At present, however, this does not appear to be the case, presumably because the Republican ground truth consists of 8 documents, and the Democratic one of 290.
+
+%ground truth test
+%\begin{figure}[htp]
+%    \centering % Using \begin{figure*} makes the figure take up the entire width of the page
+%    \includegraphics[width=\linewidth]{figures/groundtruth_corrplot.png}
+%    \caption{Ground truth test. The values are cosine similarities between a pair of document collections.}
+%    \label{groundtruth}
+%\end{figure}
+%
+%%ground truth test
+%\begin{figure}[htp]
+%    \centering % Using \begin{figure*} makes the figure take up the entire width of the page
+%    \includegraphics[width=\linewidth]{figures/groundtruth_bs_bigcities_corrplot.png}
+%    \caption{Ground truth test. The values are cosine similarities between a pair of document collections (top 100 mayors vs. IN and LA).}
+%    \label{groundtruth}
+%\end{figure}
+
+%Ground truth test between top100 mayors and IN + LA; with bootstrapped confidence bounds
+% label: groundtruth_bootstrapped
+%\input{tables/groundtruth_bootstrapped.tex}
+
+
+%\input{tables/stmTopWords.tex} %\ref{tabSTMtopwords}
+\vspace{-.2cm}
+\input{tables/stmTopWords60.tex} \vspace{-.2cm}
+%\input{tables/stmTopWords60_OLD.tex} %\ref{tabSTMtopwords2}
+
+\vspace{-.8cm}
+\section{Conclusion} \vspace{-.3cm}
+
+
+We have proposed the automatic collection and processing of government websites for comparative content analysis. We have produced an R package \texttt{gov2text}, in which we have implemented and wrapped the core components of the methods we use. This methodology holds the potential to vastly scale up the data collection efforts underpinning the growing body of research that is focused on government website analysis. Through an application to the analysis of municipal websites in six different states, we show how our pipeline is capable of gathering corpora that shed light on the forms and functions of local government. We find that government website contents are associated with the partisanship of the mayor in ways that would be expected based on the parties' national priorities and past research on the effects of mayoral partisanship on city governments.
+
+
+\vspace{-.6cm}
+%We offer several contributions that will be valuable in future research endeavors. First, the data collected in the current study can be used for comparative analysis of US city website contents. Second, the pipeline we present can be used as a set of procedures to follow in gathering large-scale datasets of textual contents from other samples of governments. For example, the pipeline we have developed could be used to build comparative datasets of state or federal bureaucratic agencies. Third, our findings regarding the effects of mayoral partisanship on city website contents advance the literature on the role of partisan leadership in local government, and reinforce the finding of \citet{gerber2011mayors} that the effects of mayoral partisanship can be best observed through the analysis of domains of government (e.g., website contents) that are not heavily constrained by state or national governments.
+
+
+%\input{tables/tabCitiesStatesParties.tex}
+%\input{tables/stateUrlSummary.tex}
+\begin{spacing}{1.25}
+ \bibliographystyle{chicago} % apsr stopped working for me
+%\bibliographystyle{plainnat}
+\bibliography{ref}
+\end{spacing}
+
+\end{document}
+
+
+

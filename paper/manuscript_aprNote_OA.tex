@@ -1,0 +1,627 @@
+\documentclass[11pt]{article}
+
+%==============Packages & Commands==============
+\usepackage{graphicx}
+\usepackage{fancyvrb}
+\usepackage{tikz}
+%%%<
+\usepackage{verbatim}
+%\usepackage[active,tightpage]{preview}
+%\PreviewEnvironment{tikzpicture} 
+%\setlength\PreviewBorder{5pt}%
+
+\usepackage{geometry}                        % See geometry.pdf to learn the layout options. There are lots.
+% \geometry{a4paper}                           % ... or a4paper or a5paper or ...
+%\geometry{landscape}                        % Activat\usetikzlibrary{arrows}e for for rotated page geometry
+%\usepackage[parfill]{parskip}            % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}                % Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+                                % TeX will automatically convert eps --> pdf in pdflatex
+\usepackage{amssymb}
+
+\usepackage[ruled,vlined]{algorithm2e}
+\usetikzlibrary{arrows}
+\usepackage{alltt}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage{natbib} % For references
+\bibpunct{(}{)}{;}{a}{}{,} % Reference punctuation
+\usepackage{changepage}
+\usepackage{setspace}
+\usepackage{booktabs} % For tables
+\usepackage{rotating} % For sideways tables/figures
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{color}
+\usepackage{dcolumn}
+\usepackage{comment}
+\usepackage{pgf}
+\usepackage{xcolor, colortbl}
+\usepackage{array}
+
+\def\mybar#1{%%
+    #1 & {\color{red}\pgfmathsetlengthmacro\x{#1*0.006mm}\rule{\x}{4pt}}}
+
+%\pgfmathsetlengthmacro\x{#1^0.1mm}
+%\show\x -> 25.0pt
+
+%\usepackage{fullwidth}
+\newcolumntype{d}[1]{D{.}{\cdot}{#1}}
+\newcolumntype{.}{D{.}{.}{-1}}
+\newcolumntype{3}{D{.}{.}{3}}
+\newcolumntype{4}{D{.}{.}{4}}
+\newcolumntype{5}{D{.}{.}{5}}
+\usepackage{float}
+\usepackage[hyphens]{url}
+%\usepackage[margin = 1.25in]{geometry}
+%\usepackage[nolists,figuresfirst]{endfloat} % Figures and tables at the end
+\usepackage{subfig}
+\captionsetup[subfloat]{position = top, font = normalsize} % For sub-figure captions
+\usepackage{fancyhdr}
+%\makeatletter
+%\def\url@leostyle{%
+%  \@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small\ttfamily}}}
+%\makeatother
+%% Now actually use the newly defined style.
+\urlstyle{same}
+\usepackage{times}
+
+\usepackage{lscape}
+% \usepackage{mathptmx}
+%\usepackage[colorlinks = true,
+%                        bookmarksopen = true,
+%                        pagebackref = true,
+%                        linkcolor = black,
+%                        citecolor = black,
+%                     urlcolor = black]{hyperref}
+%\usepackage[all]{hypcap}
+%\urlstyle{same}
+\newcommand{\fnote}[1]{\footnote{\normalsize{#1}}} % 12 pt, double spaced footnotes
+\def\citeapos#1{\citeauthor{#1}'s (\citeyear{#1})}
+\def\citeaposs#1{\citeauthor{#1}' (\citeyear{#1})}
+\newcommand{\bm}[1]{\boldsymbol{#1}} %makes bold math symbols easier
+\newcommand{\R}{\textsf{R}\space} %R in textsf font
+\newcommand{\netinf}{\texttt{NetInf}\space} %R in textsf font
+\newcommand{\iid}{i.i.d} %shorthand for iid
+\newcommand{\cites}{{\bf \textcolor{red}{CITES}}} %shorthand for iid
+%\usepackage[compact]{titlesec}
+%\titlespacing{\section}{0pt}{*0}{*0}
+%\titlespacing{\subsection}{0pt}{*0}{*0}
+%\titlespacing{\subsubsection}{0pt}{*0}{*0}
+%\setlength{\parskip}{0pt}
+%\setlength{\parsep}{0pt}
+%\setlength{\bibsep}{2pt}
+%\renewcommand{\headrulewidth}{0pt}
+
+%\renewcommand{\figureplace}{ % This places [Insert Table X here] and [Insert Figure Y here] in the text
+%\begin{center}
+%[Insert \figurename~\thepostfig\ here]
+%\end{center}}
+%\renewcommand{\tableplace}{%
+%\begin{center}
+%[Insert \tablename~\theposttbl\ here]
+%\end{center}}
+
+\newcommand\independent{\protect\mathpalette{\protect\independenT}{\perp}}
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\Y}{\bm{\mathcal{Y}}}
+\newcommand{\bZ}{\bm{Z}}
+
+\usepackage[colorlinks = TRUE, urlcolor = black, linkcolor = black, citecolor = black, pdfstartview = FitV]{hyperref}
+
+\linespread{0.9}
+%============Article Title, Authors==================
+\title{\vspace{-2cm} {\bf Online Appendix} \\ Government Websites As Data: \\ Understanding how Mayoral Partisanship Shapes Municipal Website Content}
+
+
+%\author{ Markus Neumann\footnote{Department of Political Science, The Pennsylvania State University, University Park, PA 16802, USA. Email: mvn5218@psu.edu. Corresponding author.} \and Fridolin Linder\footnote{Department of Political Science, Social Media and Political Participation Lab, New York University, New York, NY 10012, USA. Email: fridolin.linder@nyu.edu} \and Bruce Desmarais\footnote{Department of Political Science, The Pennsylvania State University, University Park, PA 16802, USA. Email: bdesmarais@psu.edu}} \date{\today}
+
+%===================Startup=======================
+\begin{document}
+\maketitle
+
+
+
+%=============Abstract & Keywords==================
+
+\begin{abstract}
+
+A local government's website is an important source of information about policies and procedures for residents and community stakeholders . Existing research in political science and related fields has relied on manual methods of website content collection and processing, limiting the scale and scope of website content analysis. In this research note, we propose that the automated collection of website content from large samples of government websites can can compliment more targeted manual methods, and offer contributions through comparative analyses. Our approach, which represents a considerable improvement in scalability, involves downloading the entire contents of a website, extracting the text and discarding redundant information. In our application, we collect and analyze a new and innovative dataset---the websites of over two hundred municipal governments in the United States. We build upon recent research that analyzes how variation in the partisan control of government relates to content made available on the government's website. Using topic modeling methods, we find that cities with Democratic mayors provide more information on policy deliberation and crime control, whereas Republicans prioritize basic utilities and services such as water, electricity, and fire safety. As an additional contribution, we provide an R package that can be used to process government website files into raw text.
+%\noindent We explore the effect of transitions of power in municipal governments on the content of their websites. We hypothesize that when party control changes, city administrators modify the contents of their websites in order to fit the agenda of the new incumbent. To test this theory, we study cities in Indiana and Louisiana, two states in which all municipal elections are partisan and the parties of the candidates appear on the ballots. Snapshots of websites before and after transitions of power are acquired through the Wayback Machine. We apply statistical topic models based in latent dirichlet allocation, focusing on changes to the websites. We present results on both which topics see the greatest degree of change associated with transitions in city administrations, and how the topics modified differ with regard to political parties.
+
+
+\end{abstract}
+\thispagestyle{empty}
+% \doublespacing
+% Description of the possible challenges
+\doublespacing
+
+\section{Overview}
+
+In this online appendix we include supporting information about our data, the data collection process, the data collection and cleaning pipeline, and some additional analyses. In the first section, we present additional details on data collection, along with some additional descriptive statistics. In the second section, we provide additional details on, and results from, our topic modeling analysis.
+
+
+
+
+\section{Data collection methods and sources}
+
+We acquired the municipal website URLs from two sources: One, we scraped the URLs of city websites from their respective Wikipedia pages, which we found from lists of cities contained within each state. Two, the General Services Administration (GSA) maintains all `.gov' addresses, and provides a complete list of all such domains to the public.\footnote{The dataset is made available at \url{https://github.com/GSA/data/tree/gh-pages/dotgov-domains}. This list is updated once per month---we rely on the version released on January 16, 2017.} The data from the GSA contains the following variables: (1) domain name, specifically, the all-uppercase version of domain and top-level domain (for example, 'ABERDEENMD.GOV'); (2) the type of government entity to which the domain is registered, such as city, county, federal agency, etc; (3) for federal agencies, the name is specified; (4) the city in which the domain is registered. Naturally, the GSA's list does not contain cities which do not use a `.gov' website (or, in many cases, a city owns a registered `.gov' address, but uses a different one). Furthermore, some of the links are non-functional, and some of the county websites on the list are incorrectly marked as city websites (and vice versa). Since the GSA data is less complete and less reliable than the URLs found on Wikipedia, we mainly rely on the latter and only supplement them with the GSA data if a specific city doesn't have a URL recorded on Wikipedia, or our tests (see below) find it to be non-functional.
+
+Not all of the URLs contained in these archives are functional. To test the URLs' functionality, we use a web driver-controlled browser - a browser that is automatically controlled by a program rather than a human user. We use the Python bindings for the program \texttt{Selenium}, which we use to control \texttt{Firefox} through the web driver  \texttt{Geckodriver}. This is advantageous compared to conventional scraping tools such as \texttt{Beautiful Soup} or \texttt{Rvest} because most websites are designed to be explored by browsers. Modern browsers perform a lot of actions behind the scenes, such as URL resolution and redirection. The use of a web driver-controlled browser is necessary in our case because a) some city websites simply don't work, but they don't always output an error code correctly (this can fail, for example, if a webmaster simply stops maintaining a site without removing it entirely) which would throw off an automatic scraper, and more often, b) cities sometimes change their websites' URLs, in which case they redirect from the old to the new URL. A web driver-controlled browser, unlike the more rigid conventional scraping tools, will simply follow this redirection. This allows us to subsequently record and use the new URL for the actual website scraping. Consequently, an automated browser allows us to robustly answer the following questions: Is the website actually there? Does it work? If not, is it somewhere else or is it broken? We record this information and construct a list of verified URLs.
+
+To download the websites, we rely on the Unix command line tool \texttt{wget}.\footnote{An alternative source of web data which has attained some popularity within the digital humanities is the Internet Archive's Wayback Machine (\url{https://archive.org/}), which preserves snapshots of websites over time. In theory, this would be very useful to projects such as ours, since it would allow us to measure the evolution of websites over time, in response to changes in city executives. However, the Wayback Machine suffers from some limitations that, in our eyes, inhibit its usefulness for scientific research in general, and our project in particular. First of all, the Internet Archive does not conduct all of its web crawling itself. Rather, third parties donate their crawling data to the Internet Archive. This means that the source of the data varies and the crawling process often remains opaque, which is a problem with respect to scientific transparency. Second, this also means that the crawling isn’t done in regular intervals unless the website in question is extremely prominent. Our research is focused on municipal websites, many of which are fairly obscure, preventing the Wayback Machine from being useful to us. For example, as of the time of writing, the website of Attica, IN, has only been crawled 25 times since the Wayback Machine's inception in 1996 (and in this case, all of these crawls are from 2014 on). By contrast, the website of New York City has been crawled over 7,000 times. Third, webcrawls are not instant and are not always done on an entire website at the same time. This means that for example, a website's frontpage might have been scraped one day, and its page on the city's mayor only a month later -- within the same crawl. Once again, this problem is exacerbated for small, less prominent websites. While we appreciate the Internet Archive's efforts to preserve snapshots of the web and recommend its API to practitioners who can work around the limitations outlined here, these problems preclude its usefulness for our purposes.} This program is used to download files from the Internet, and with the use of a recursive option, acts like a web crawler and scraper. This means that \texttt{wget} downloads HTML files, parses them and then follows the links contained therein. Then it follows those links and repeats the process until it has constructed a complete tree of the website (note that the program is instructed to stay on the same domain, i.e. it does not follow external links). This way, all the files that make up a website are downloaded. For some cities, whose websites make heavy use of JavaScript to serve content dynamically, such content is not reachable with our methodology and would require additional steps to obtain. For this paper, we ignore such sites and restricted our corpus to cities with at least three successfully downloaded pages.\footnote{There is a possibility that this leads to a small bias in selecting against cities with the resources to build more elaborate websites. However, given that our sample is generally more on the wealthy side, this, if anything, should lead to a more balanced sample.}
+
+The partisanship of the mayor of each city is coded in different ways, depending on the state. For Indiana, where elections are nominally partisan, this information is accessible through the state government's website\footnote{\url{http://www.in.gov/apps/sos/election/general/general2015?page=office&countyID=1&officeID=32&districtID=-1&candidate=}}. For Louisiana, we received data on the outcomes of mayoral elections from the Local Elections in America Project (LEAP) \citep{marschall2013local}. For the other states, where mayoral elections are not nominally partisan (but the partisanship of the mayor is still well-known), we employed different means: For New York and Washington, we searched the state campaign finance websites, and coded the parties of the candidates based on the party committees from which they received donations. For California and Texas, where our data consists of highly populated cities, partisanship information was acquired from Ballotpedia\footnote{\url{https://ballotpedia.org/List_of_current_mayors_of_the_top_100_cities_in_the_United_States}}. Finally, we also scraped mayoral partisanship from the cities' Wikipedia pages. When compared to the other data sources above, (and manual searches in case of conflicts) Wikipedia proved to be very reliable and added additional cases to our dataset even for Indiana and Louisiana. Generally speaking, we found data scraped from Wikipedia, aided by manual corrections in case of missing or conflicting data, to be more reliable than data from governmental sources.\footnote{In Indiana, the data includes only cities - incorporated municipalities with at least 2,000 inhabitants - as opposed to towns.}
+
+
+Information on other covariates (population and median household income - from the American Community Survey 5-Year Data (2015)) was acquired through the API of the U.S. Census Bureau\footnote{\url{https://www.census.gov/data/developers/data-sets.html}}.
+
+%One of the more subtle aspects of local government is the presence of different types of government structures. Between council-manager governments and mayor-council governments \citep{morgan1992policy}---either in the weak or strong mayor variant \citep{desantis2002city}---there is variance in where a city's executive authority lies. We do not have access to information about the type of governments across the breadth of our dataset. Given the prominent place that mayors tend to have on their cities' websites, we feel that any bias arising from this nuance should be minor. \cite{gerber2011mayors}, whose theory is somewhat comparable to ours, find that the inclusion of this potential confounder does not affect the results.
+
+Tables \ref{tab:cityparties} and \ref{tab:filetypes} provide additional information about the data collected for this project. In Table \ref{tab:cityparties}, we present the state-by-state breakdown of the mayoral partisanship of the cities collected in the respective state. In Table \ref{tab:filetypes}, we present the distribution of file extensions before and after processing. 
+
+\input{tables/tabCitiesStatesParties.tex}
+
+\input{tables/tabFiletypeFrequencies.tex}
+
+
+\section{The Web to Text Pipeline} \vspace{-.2cm}
+In this section, we describe our methodological pipeline, with which we take an archive of website files, and output a corpus of formatted plain text documents.\footnote{It is useful to note a couple of features that we do not intend to provide with this pipeline. First, this is not intended to be a pipeline for scraping and analyzing any and all websites. Our focus is on government websites, as we assume that the contents are in the public domain, and not subject to limitations on the application of scraping technology. Second, though such extensions would be valuable, we do not address the collection and analysis of image, video, sound, and  tabular data from government websites.}  We address three methodological challenges.  First, though they contain significant amounts of text, websites are not comprised of clean plain text files. Rather, the files available at websites are of multiple types, including HTML, PDF, word processor, plain text, and image files. The first step is aimed at extracting clean plain text from this heterogeneous file base. The second step in our pipeline is to process the text to remove language that is effective at differentiating one website from another but is uninformative regarding policy or political differences between governments. Finally, these tools need to work consistently across all of the websites in our corpus, in spite of the fact that relevant information is stored and structured in different ways. We make a software recommendation for each of these steps and gather most of them our R package, \texttt{gov2text}. All of the recommended software is either well-established in the natural language processing community, or part of the Unix ecosystem. As such, all of it is free, open source, well-developed and will continue to be supported by a dedicated community. Some of the steps we take in this processing pipeline are universally applicable in the analysis of textual data, and some of them are most appropriate for the particular type of text analysis that we apply to this data---statistical topic modeling. We will clarify this distinction as we describe steps in our pipeline.
+
+\subsection{Site to Text Conversion}
+\subsubsection{File Type Detection}
+The format of a file has a major impact on whether and how textual data can be extracted from a document. For the most part, the file type of a document can be correctly determined through the filename ending---its extension. However, there are exceptions to this, which, if ignored, can lead to large amounts of improperly formatted text. For example, we found thousands of documents that ended in .html, when they were actually PDFs. A more accurate test for file type relies on the use of magic numbers, a short sequence of bytes at the start (and sometimes end) of files that is unique for each file type and therefore allows its correct identification. We implement this method using the R package \texttt{wand} \citep{wand}.\footnote{\texttt{Wand} is an R interface to the Unix library \texttt{libmagic} \citep{darwin2008libmagic}, which is included in all Linux distributions (which use this library to determine file types by default), Mac OS X, and has also been ported to Windows.}
+
+\subsubsection{Extracting Text from HTML}
+The HTML files that websites are comprised of contain a large amount of useful information, but also completely irrelevant text such as menus, navigational elements and other boilerplate. The side-by-side screenshots presented in Figure \ref{fig:garysbs} convey the challenges presented by extracting content for text analysis for websites. The textual content that is substantive and unique to the Gary, IN homepage is the Mayor's message depicted in Figure \ref{fig:garymayor}. The top row of Figure \ref{fig:garysbs} presents the complete homepage, along with all of the text that can be naively extracted from the site. The Mayor's message represents a relatively small fraction of the total text on the page.
+
+
+\begin{figure}
+\centering
+{\bf (a)} Naive Parsing  \\ \vspace{.2cm} 
+\includegraphics[scale=0.35]{figures/gary_sidebyside} \\ \vspace{.4cm}
+{\bf (b)} Boilerpipe 
+\includegraphics[scale=0.375]{figures/gary_bp}
+
+\caption{The top image provides a side-by-side depiction of the entire homepage of \url{https://garyin.us/}, accessed on 05/22/2019, and complete/naive extraction of all of the text on the site. Bottom image provides the result of running \url{https://garyin.us/} through the \texttt{boilerpipe} algorithm at \url{https://boilerpipe-web.appspot.com/}.}
+\label{fig:garysbs}
+\end{figure}
+
+
+A subfield of the information retrieval literature, dealing with boilerplate extraction, can offer a solution to this problem. The goal of this branch of research is to develop algorithms with the ability to estimate whether a given portion of an HTML file is substantive. To this end, structural features, such as HTML tags (which are not sufficiently informative on their own), text statistics such as word and sentence length, as well as other heuristics are used. We rely on the \texttt{boilerpipe} classifier described in \cite{Kohlschutter2010}, which is implemented through the R package \texttt{boilerpipeR}. The \texttt{boilerpipe} algorithm has been widely used in the computer science and natural language processing literatures, but to our knowledge has not been previously used in the social sciences.   The complete text extracted from the Gary, IN homepage using boilerpipe is depicted in the screenshot in the bottom row of Figure \ref{fig:garysbs}. We see that only the Mayor's message is extracted, leaving the rest of the text as boilerplate.\footnote{In the online appendix we present a replication of the topic modeling presented in the main text below in which we use a minimal HTML parser rather than \texttt{boilerpipe} to process the data. We show that without \texttt{boilerpipe}, some of the most partisan 'topics' are simply website boilerplate text. }
+
+\subsubsection{Extracting Text from PDF, DOC, DOCX and TXT}
+The extraction of information from other text-based file formats is more straightforward.\footnote{See \cite{Berg2012} for a discussion of why extracting text from PDFs is nevertheless nontrivial.} To this end, we rely on \texttt{readtext} R package \citep{readtext}, which is a wrapper for a set of parsers.\footnote{\texttt{readtext} determines a document's type solely through its ending---so the conversion described above is necessary.}$^{,}$\footnote{\texttt{readtext} also contains an HTML parser, but it does not eliminate boilerplate like boilerpipe.} The breakdown of all files by type is given in the online appendix. The most frequent file type besides HTML is PDF, from which we are able to extract a substantial amount of usable text. Files of type DOC, TXT, and DOCX, also occur regularly in our corpus and offer a considerable volume of textual data.
+
+\subsection{Preprocessing}
+Preprocessing is an important part of text-as-data research and choices made therein can have significant effects on the outcomes of an analysis \citep{denny2018text}. As such, our advice given in this section, more than in any other, is specific to the problem of extracting meaningful textual information from municipal government websites, with the end goal of its use in a bag-of-words-based model. The techniques we employ might also be of use in other types of applications, but by no means should this section be regarded as a general-purpose manual for preprocessing. The challenge in conducting preprocessing for a comparative analysis of websites lies in the considerable variance between websites. Some of it is substantively informative and some of it is completely irrelevant. As an example of the latter, names of city officials and citizen petitioners feature frequently in city documents. The same is true for streets, locations and not least of all, the city itself. Since individual names recur at a much higher rate within a city than across the entire corpus, this would cause a topic model to cluster its topics by city. Consequently we require a tool which detects the signal in the noise and does so consistently for a discordant set of sources.
+
+%The type of text analysis we conduct---topic modeling---requires that the words in the document be meaningful and interpretable, and does not make use of the sequence of words within a document (i.e., is a bag-of-words method). %With the exception of file type conversion and boilerplate removal, the pre-processing steps taken here should therefore not be seen as universally applicable to all analyses of government website data.
+
+To this end, we turn to a common method in natural language processing---part-of-speech (POS) tagging and named entity recognition (NER). In our case, names are the source of substantively uninteresting heterogeneity between cities, so NER is used to detect and remove them.\footnote{We retain laws, nationalities or religious or political groups, as well as works of art (e.g., statutes).} However, we caution here that for many other applications, where the names of political actors might be of interest, this step is not recommended. Furthermore, we select words on the basis of their POS-tags, retaining only nouns (the modal category), verbs, and adjectives.\footnote{For applications outside of bag-of-words models, where the grammatical structure remains of interest, users might also want to retain other parts of speech.} Furthermore, we keep proper nouns that also occur as nouns---this removes names, but retains titles such as ``Police Chief'' which can appear as proper nouns if they are followed by a name. Finally, we also conduct lemmatization to reduce words to their basic form.\footnote{Lemmatization is similar to stemming, but works differently by taking grammar and surrounding words into account to identify the dictionary form of a word. } POS-tagging, NER and lemmatization are all implemented through \texttt{spacyr}. To deal with any leftover issues, we remove words with less than three characters (these are usually artifacts from improperly encoded documents and faulty or impartial optical character recognition), stopwords and non-English words (using the R package \texttt{Hunspell}).  A final and crucial step is the removal of duplicate documents, which occur very frequently on websites. In addition to their primary purpose, the previous preprocessing steps also help in stripping otherwise identical documents of information that makes them unique -- such as names and dates -- thus facilitating their deletion. %The removal of duplicate information also solves a problem posed by a recurring feature of municipal websites -- city calendars. For most days in most cities, these calendars tend to be empty, but nevertheless contain a template, which would lead to the creation of a document in our corpus. These short and repetitive -- but numerous -- texts would pose severe problems to a topic model. Our approach preserves the valuable information contained within these calendars when cities do make use of them, but removes them when they offer no substantive data.
+
+After preprocessing, our corpus consists of 356,911 documents.  In Table \ref{tab:list} we summarize all of the steps we take in gathering and processing our data. The summary includes a brief description of the step, the software packages used, and an indicator of whether the method is implemented in our R package, \texttt{gov2text}. 
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{lrr}
+        \hline
+        Process & Software dependency & in \texttt{gov2text} \\
+        \hline
+        1. Assemble url list. & \texttt{Selenium} & no \\
+        2. Collect website files. & \texttt{wget} & no \\
+        3. Correct file extensions. & \texttt{wand} \citep{wand} & yes \\
+        4. Discard website boilerplate. & \texttt{boilerpipeR} \citep{boilerpipeR} & yes \\
+        5. Convert non-HTML files to text. & \texttt{readtext} \citep{readtext} & yes \\
+        6. Lemmatize text. & \texttt{spacyr} \citep{spacyr}& yes \\
+        7. Remove names. & \texttt{spacyr} & yes \\
+        8. Retain nouns, verbs, adjectives. & \texttt{spacyr} & yes \\
+        9. Stopword/number removal. & \texttt{quanteda} \citep{quanteda} & yes \\ 
+        10. Retain only English words. & \texttt{Hunspell} \citep{hunspell} & yes \\
+        11. Removal of duplicate documents. & \texttt{gov2text} & yes \\
+        \hline
+    \end{tabular}
+    \caption{\label{tab:list} Data collection and processing pipeline. Steps to collect and prepare text for topic modeling.}  \vspace{-.9cm}
+\end{table}
+
+
+The biggest limitation in our pipeline, and an open area for future research, is the reliance on \texttt{wget} to gather the initial website files. By using \texttt{wget}, we miss content that is displayed dynamically on websites using JavaScript. For any one website, it would be possible to customize a routine with \texttt{Selenium} to access dynamic elements, but the process would need to be customized for each website.\footnote{ We investigated whether the presence of JavaScript was related to the amount of text we gathered from the website. We calculated the correlation between the number of <script> HTML tags on a city's website, which indicate the use of JavaScript on a site, and the number of text tokens we scrape from the site. This correlation is -0.059, which indicates a very weak relationship between the use of JavaScript and the amount of text scraped from the site.}
+
+\section{Supplemental Informational on Topic Modeling Application}
+
+The structural topic model is implemented in the R package \texttt{STM} \citep{stm}. We use 60 topics---the number recommended by the authors\footnote{For this recommendation, see the documentation for the function \texttt{stm()} in version 1.3.0 of the R package \texttt{stm} \citep{stm}.} for medium- to large-sized corpora.\footnote{Since our corpus is at the larger end of that spectrum, we also estimated a model with 120 topics, but found no notable differences.} We use four covariates: First, \textit{party}, to estimate the difference in topic prevalence based on whether mayors are Republican or Democratic. Second, \textit{city population}, which the literature frequently emphasizes as a determinant of the issues a city faces (see, for example, \cite{Guillamon2013}). Third, we control for wealth by relying on \textit{median income} as a covariate, which we use as a proxy for the tax base in a city. Fourth and finally, we include state dummy variables, which should account for language that is associated with state-specific issues, and general background variables that vary across states.\footnote{The ``Fightin' Words'' methodology developed by \citet{Monroe2008} could also be used to analyze word-frequency differences between cities based on mayors' partisanship, but we elected to use the structural topic model since, unlike ``Fightin' Words'' , the structural topic model enables us to adjust for several other features through multiple regression.} 
+
+\subsection{Supplemental results}
+
+In Table \ref{tabSTMtopwords60keep}, we present topic results from an STM, and mayoral party effect, estimated on data processed using a minimal HTML parser, implemented as the 'KeepEvertything' algorithm in the boilerpipeR package. An illustration of the content removed by the full boilerpipe procedure is given by Topic 56. This is the fourth-most Republican topic, and is a website boilerplate topic, with top words 'click', 'reserved', 'trademark', 'password', 'search', and 'connected'.  As further illustration, the second-most Democratic topic is another website boilerplate topic, with top words 'sitemap', 'clerk', 'calendar', 'online', 'bureau', and 'alert'. We do not see any clear boilerplate topics when using data processed using boilerpipe.
+
+\input{tables/stmTopWords60_KeepEverything.tex}
+
+In Tables \ref{tabSTMtopwords120_1} and \ref{tabSTMtopwords120_2}, we present results of the STM with 120 topics organized according to the effect of mayoral partisanship on topic prevalence. The partisan themes in the 120-topic STM mirror those in the 60-topic model, with cities led by Democratic mayors focused disproportionately on finances (e.g., Topics 75, 71, 61) and social problems (e.g., Topics 93, 101, 39, 52), and cities led by Republican mayors focused disproportionately on basic services and utilities (e.g., Topics 114, 11,  86, 116).
+
+
+\input{tables/stmTopWords120_1.tex}
+\input{tables/stmTopWords120_2.tex}
+
+In Tables \ref{tabSTMtopwords60_income} and \ref{tabSTMtopwords60_population}, we present the topics ordered according to the effects of median income and population, respectively. Considering income-based variation in topics, there are several topics prevalent in more wealthy cities that focus on initiatives that go well-beyond standard city services---downtown and building revitalization (Topics 39 and 12), renewable energy (Topic 20), bike/pedestrian-oriented development (Topic 60), wildlife conservation (Topic 3). Such topics cannot be found among those that are more prevalent in less wealthy cities. When it comes to population, more populous cities deal disproportionately with issues related to public health (Topics  2 and 11), crime (Topic 59), homelessness (Topic 52), and diversity (Topic 6).
+
+In Figure \ref{fig:coherence_exclusivity}, we present a quantitative assessment of relative topic quality for our main model, using two metrics, semantic coherence and exclusivity. Semantic coherence \citep{Mimno2011} describes the extent to which the 10 top words in a topic model belong to the same underlying concept. Exclusivity \citep{Bischof2012,Roberts2014} measures whether the top 10 words in one topic feature primarily in this topic, rather than being dispersed across a range of topics. As coherence tends to be outright better in models with fewer topics, the comparison with exclusivity creates a trade-off. Figure \ref{fig:coherence_exclusivity} shows that the model performs well in this regard, as most topics have both high coherence and exclusivity. Even topic 11, which does worst in terms of coherence, looks like a good topic upon manual inspection, as its top words all pertain to obesity.
+
+\input{tables/stmTopWords60_income.tex}
+\input{tables/stmTopWords60_population.tex}
+
+\begin{figure}
+	\centering
+	\includegraphics{figures/stm_60_coherence_exclusivity.pdf}
+	\caption{Semantic coherence and exclusivity for each of the 60 topics in our main structural topic model. Coherence describes the extent to which the 10 top words in a topic model belong to the same underlying concept. Exclusivity measures whether the top words in one topic feature primarily in this topic, rather than being dispersed across a range of topics. The model performs well in this trade-off, as both coherence and exclusivity are high for most topics.}
+	\label{fig:coherence_exclusivity}
+\end{figure}
+
+
+
+
+%\input{tables/tabCitiesStatesParties.tex}
+%\input{tables/stateUrlSummary.tex}
+
+\bibliographystyle{chicago} % apsr stopped working for me
+%\bibliographystyle{plainnat}
+\bibliography{ref}
+
+
+%\begin{figure}[htp]
+  %  \centering
+   % \caption{Five largest topic effects for the population covariate. The fact that the population and epidemiology topics are positively correlated with city size is indicative of the model's validity.}
+    %  \label{stmEffectPop}
+    % \includegraphics[width=\linewidth]{figures/stm_effect_pop.pdf}
+% \end{figure}
+
+% \begin{figure}[htp]
+  %  \centering
+   % \caption{Five largest topic effects for the median income covariate. The fact that the crime topic is most prevalent in poorer cities, good governance is the most positively correlated with income is indicative of the model's validity.}
+   % \label{stmEffectIncome}
+    %\includegraphics[width=\linewidth]{figures/stm_effect_income.pdf}
+%\end{figure}
+
+
+\end{document}
+
+
+
+
+
+%\begin{enumerate}
+%    \item Design
+%    \begin{enumerate}
+%        \item Choosing the sample
+%        \item Finding URLs
+%        \item list of .gov websites
+%        \item Finding supporting data
+%    \end{enumerate}
+%    \item Scraping
+%        \begin{enumerate}
+%            \item wget
+%            \item headless browser/Selenium
+%            \item Beautifulsoup/rvest
+%            \item APIs (httr)
+%            \item Wayback Machine
+%        \end{enumerate}
+%    \item Pre-processing
+%        \begin{enumerate}
+%            \item Determining document filetype
+%            \item File conversion
+%            \item Conventional preprocessing (lowercase, numbers, punctuation)
+%            \item Stemming and lemmatization
+%            \item spellchecking
+%            \item Dealing with duplicate text \& html documents in particular
+%        \end{enumerate}
+%    \item Analysis
+%        \begin{enumerate}
+%            \item LDA
+%            \item Other topic models (structural, author, dynamic -- maybe?)
+%            \item SVM (+ other machine learning classifiers?)
+%            \item Fightin Words
+%        \end{enumerate}
+%\end{enumerate}
+%
+%
+%
+%
+%
+%
+%% latex table generated in R 3.3.3 by xtable 1.8-2 package
+%% Wed Mar 22 11:32:43 2017
+%%\begin{table}[ht]
+%%    \centering
+%%    \begin{tabular}{lrrlrrl}
+%%        \hline
+%%        City & DemVotes & RepVotes & Winner & Change & Pop15 & url \\ 
+%%        \hline
+%%        Attica &  & 187 & Republican & 0 & 3117 & https://attica-in.gov/ \\ 
+%%        Connersville & 1005 & 995 & Democratic & 1 & 13010 & http://connersvillecommunity.com/ \\ 
+%%        Frankfort &  & 1748 & Republican & 0 & 16060 & http://frankfort-in.gov/ \\ 
+%%        Huntingburg & 447 & 793 & Republican & 0 & 6035 & http://www.huntingburg-in.gov/ \\ 
+%%        Indianapolis & 92830 & 56661 & Democratic & 1 & 862781 & http://www.indy.gov \\ 
+%%        Lake Station & 1483 & 227 & Democratic & 0 & 12054 & http://www.lakestation-in.gov/ \\ 
+%%        Linton & 785 & 692 & Democratic & 0 & 5284 & http://www.linton-in.gov/ \\ 
+%%        Madison & 1192 & 1915 & Republican & 0 & 12040 & http://www.madison-in.gov/ \\ 
+%%        Mitchell & 229 & 495 & Republican & 1 & 4252 & http://mitchell-in.com/ \\ 
+%%        Monticello & 0 &  & Democratic & 0 & 5322 & http://www.monticelloin.gov/ \\ 
+%%        North Vernon & 679 & 697 & Republican & 1 & 6619 & http://www.northvernon-in.gov/ \\ 
+%%        Richmond & 3421 & 2731 & Democratic & 0 & 35854 & http://www.richmondindiana.gov/ \\ 
+%%        Rockport & 286 & 272 & Democratic & 1 & 2223 & http://www.cityofrockport-in.gov/ \\ 
+%%        South Bend & 8515 & 2074 & Democratic & 0 & 101516 & https://www.southbendin.gov/ \\ 
+%%        Union City & 338 & 440 & Republican & 0 & 3447 & http://www.unioncity-in.gov/ \\ 
+%%        Winchester & 606 & 524 & Democratic & 1 & 4769 & http://www.winchester-in.gov/ \\ 
+%%        \hline
+%%    \end{tabular}
+%%    \caption{} 
+%%\end{table}
+%
+%\subsection{Research Design}
+%
+%\begin{table}[ht]
+%    \centering
+%    \begin{tabular}{llr}
+%        \hline
+%        Variable & Unit & Source \\
+%        \hline
+%        Population size & 1000 people & Census \\
+%        Population growth last 5 years & Percent & Census \\
+%        Type of economy (agriculture/industry/services) & ? & Census \\
+%        Economic performance (GDP?) & \$ & Census \\
+%        Party of mayor before election & Rep/Dem/(Ind) & in.gov/sos/elections/ \\
+%        Party of mayor after election & Rep/Dem/(Ind) & in.gov/sos/elections/ \\
+%        Change of party control & 0/1 & in.gov/sos/elections/ \\
+%        Presidential vote 2012 in county & Percent Rep & ? (but I have the data) \\
+%        Unemployment rate & Percent & Census \\
+%        Broadband speed & Avg. Mbps DL & broadbandmap.gov \\
+%        \hline
+%    \end{tabular}
+%    \caption{List of covariates} 
+%\end{table}
+%
+%
+%
+%\begin{enumerate}
+%\item Corpus:
+%\begin{enumerate}
+%\item Last snapshots before the election (November 3, 2015 in Indiana; tbd. in Louisiana (probably February))
+%\item First snapshot that is at least 2 months after the new government's inauguration (which is in January for Indiana, May for Louisiana)
+%\end{enumerate}
+%\item Preprocessing:
+%\begin{enumerate}
+%\item restrict corpus to:
+%\begin{enumerate}
+%\item documents belonging to cities in which a change of power occurred
+%\item documents that were added, deleted or changed between the two snapshots
+%\end{enumerate}
+%\item words to lowercase
+%\item remove punctuation
+%\item stemming (Porter stemming algorithm?)
+%\item Remove stop words (regular list of stop words is enough, since we use an asymmetric prior)
+%\end{enumerate}
+%\item Apply Grimmer's expressed agenda model to the corpus
+%\begin{enumerate}
+%\item Asymmetric prior
+%\item Each document can have only one topic (in contrast to the author-topic model)
+%\item Cities $i = 1,..., n = 15$
+%\item Topic $k(k = 1,..., K )$
+%\item Documents $j(j = 1,...,D_i)$ from city i
+%\item Party covariate in the prior, where the deleted and unmodified documents are coded as from the first, and the added and modified documents from the second party
+%\end{enumerate}
+%\item Results
+%\begin{enumerate}
+%\item Label topics using Grimmer's automatic cluster labeling method, based on most commonly used words in documents belonging to topic
+%\item Evaluate topics
+%\end{enumerate}
+%\end{enumerate}
+%
+%Validation:
+%
+%\begin{itemize}
+%\item Do the above for cities in which no change of power occurred.
+%\item Check whether there is higher than average turnover around the new year by comparing changes to non-election years (and also Louisiana, where elections are later).
+%\item Check how long documents stay on websites on average. Use websites with a lot of snapshots for this (these exist for both small and large cities).
+%\end{itemize}
+%
+%Problem with using this model: Grimmer's expressed agenda model uses Senators as the actors. Senators is also who he is substantively interested in. For us, the equivalent to Senators is cities. However, we care about parties, not cities.
+%
+%\subsection{Survival model}
+%The existence of individual documents on municipal government websites can be though of as a survival process. No document stays on a website forever, and it appears to be a reasonable assumption that as documents get older and thus less relevant, they get replaced. The factors determining the steepness of the survival curve are the topic - fire safety regulations likely stay up longer than a bulletin on the annual spring banquet - and the change of party control after an election.
+%
+%\begin{quote}
+%\textit{H1}: The older a document, the more likely it is to be removed.
+%\end{quote}
+%
+%$S(t)$ has a downward slope. Admittedly, this is almost impossible not to be true. Also, test proportional, rising and falling hazard models.
+%
+%\begin{quote}
+%\textit{H2}: Documents pertaining to administrative matters are less likely to be removed.
+%\end{quote}
+%
+%Introduce a categorical variable for the top 10(?) topics. A negative coefficient for administrative topics would support this hypothesis.
+%
+%\begin{quote}
+%\textit{H3}: Documents introduced by the opposing party are more likely to be removed.
+%\end{quote}
+%
+%Introduce two variables into the survival model: One variable indicating which party has introduced a document, and a time-varying variable describing which party is currently in government. The hypothesis is tested through an interaction term between the two.
+%
+%\begin{quote}
+%\textit{H4a}: Democrats are more likely to remove documents with topics pertaining to private enterprise, private schools.
+%\end{quote}
+%
+%Interaction term between party in power and categorical topic variable.
+%
+%\begin{quote}
+%\textit{H4b}: Republicans are more likely to remove documents with topics pertaining to social justice, equality, taxes, public schools, etc.
+%\end{quote}
+%
+%Interaction term between party in power and categorical topic variable.
+%
+%\begin{quote}
+%\textit{H5}: In line with their commitment to small government, Republicans are more likely than Democrats to remove documents.
+%\end{quote}
+%
+%Party in power variable.\\
+%
+%
+%This model will take up a lot of degrees of freedom. The rarity of snapshots for some cities might be a problem. Documents being changed and being removed can be modeled as competing risks.
+%
+%
+%\begin{equation} 
+%\label{eq1}
+%\begin{split}
+%Y & = \text{Party that introduced the document} \\
+% & + \text{Party that is currently in power} \\
+% & + \text{Topic 1, topic 2, ..., topic k} \\
+% & + \text{Party that is currently in power} \times \text{Topic 1, topic 2, ..., topic k} \\
+% & + \text{Days since start of mayoral term (control)}
+%\end{split}
+%\end{equation}
+%
+%
+%
+%
+%
+%After the counties, townships and cities that cannot be matched to the Census data\footnote{There are five cities that are not contained in the Census data} and duplicate websites (some cities have more than one website) are removed, 1813 domains/cities remain.
+%
+%These cities contain 90,616,865 people, and thus about 28\% of the U.S. population (see figure 1).
+%
+%\begin{figure}[htp]
+%    \centering
+%    \caption{Percentage of state population covered.}
+%    \includegraphics[width=0.9\linewidth,height=0.9\textheight]{figures/coverage_states.pdf}
+%\end{figure}
+%
+%We use the resulting list of websites to acccess their copies stored in the Internet Archive's Wayback Machine. To this end, we rely on the Ruby Gem 'Wayback Machine Downloader'\footnote{https://github.com/hartator/wayback-machine-downloader} (WbMD). We supply the URL that each .gov website redirects to to the WbMD, which then downloads every file present in the WbM from a snapshot in October 2016, or, if not available, as soon as possible after this point.
+%
+%<Note: We have not actually done this last step for all websites (however, the R script which runs the Ruby package is already set up to do so once we need to). Instead 10 websites were randomly sampled from an older version of the GSA list, which still contained counties and townships, which is why one of the 10 websites is from Dutchess County, NY.>
+%
+%It would be fine to focus on Indiana as a case. First, we need to answer some preliminary questions about the data.
+%
+%\begin{enumerate}
+%
+%\item For what percentage and number of IN cities can we find data from the WBM?
+%\item For how many election cycles can we find political leadership data for these matched cities?
+%\item In what number and percentage of cities is the local leadership majority Republican? 
+%\item Relatedly, in a typical election cycle, for how many cities do we see a transition in party leadership (i.e., a shift from majority D (R) to majority (R) D). 
+%
+%\end{enumerate}
+%
+%\begin{enumerate}
+%    
+%    \item 30 cities, with a combined population of 1,180,435. However, since only cities (as opposed to towns and villages) hold mayoral elections, only 16 of these, with a combined population of 1,094,383 can be matched to the election data.
+%    \item 2015, 2011, 2007, 2003.
+%    \item Of the 16 cities, 7 have Republican mayors after the 2015 elections.
+%    \item In 6 cases, a shift of party control occurs, with 4 of these being Republican --> Democratic. 
+%    
+%\end{enumerate}
+%
+%
+%
+%
+%\section{Running Application: Party Differences in Municipal Websites}
+%
+%
+%\begin{landscape}
+%\begin{table}[htbp]
+%    %\caption{}
+%    \begin{tabular}{|p{2cm}|c|p{3cm}|p{12cm}|l|}
+%        \hline
+%        Names & Year & Journal & Findings & Important? \\ \hline
+%        Benedictis-Kessner, Justin De
+%        Warshaw, Christopher & 2016 & JOP* & Regression discontinuity design. Democratic mayors spend more (but it is unclear on what, not the typical Democratic issue-areas), issue more debt, pay more interest & Yes \\ \hline
+%        Caughey, Devin
+%        Warshaw, Christopher
+%        Xu, Yiqing & 2015 & Working Paper & Regression discontinuity design. Partisan composition of state governments affects state policy liberalism (composite index for the areas of social welfare, taxation, labor, civil rights, women’s rights, moral legislation, family planning, environment). & Somewhat \\ \hline
+%        Einstein, Katherine Levine
+%        Kogan, Vladimir & 2015 & Urban Affairs Review & Cities with more Democratic citizens spend more; more progressive (rather than regressive) forms of taxation; pursue intergov. aid more; spend more on police, fire, parks \& recreation & Somewhat \\ \hline
+%        Einstein, Katherine Levine
+%        Glick, David M. & 2015 & Working Paper & Survey of 72 mayors. Unlike Republican mayors, roughly half of Democrats seem to agree that cities should aim to reduce inequality. Democratic mayors also seem to favor redistribution to accomplish that goal. & Somewhat \\ \hline
+%        Kiewiet, D Roderick
+%        Mccubbins, Mathew D & 2014 & Annual Review & City budgets have been severeley constrained since the Great Recession. Spending has thus decreased in general. Lack of funds means that there is not much discretion for partisanship. & Somewhat \\ \hline
+%        Tausanovitch, Chris
+%        Warshaw, Christopher & 2014 & APSR* & Cities are responsive (taxes, expenditures, regressiveness of taxation) to citizens' conservatism/liberalism. Partisan elections do not make cities more or less responsive. & Yes \\ \hline
+%        Guillamón, Ma Dolores
+%        Bastida, Francisco
+%        Benito, Bernardino & 2013 & European Journal of Law and Economics & Police spending in Spain. Conservative parties spend more on police. Spending is higher before elections. Also contains a useful overview of the literature. & Yes \\ \hline
+%    \end{tabular}
+%    \label{}
+%\end{table}
+%\end{landscape}
+%
+%\begin{landscape}
+%    \begin{table}[htbp]
+%        %\caption{}
+%        \begin{tabular}{|p{2cm}|c|p{3cm}|p{12cm}|l|}
+%            \hline
+%            Names & Year & Journal & Findings & Important? \\ \hline
+%            Gerber, Elisabeth R. & 2013 & Cityscape & Partisanship of both citizens and elected city officials separately affect climate policy. & Yes \\ \hline
+%            Solé-Ollé, Albert
+%            Viladecans-Marsal, Elisabet & 2013 & Journal of Urban Economics & Spanish cities. The authors "employ a regression discontinuity design to document that cities controlled by left-wing parties convert much less land from rural to urban uses than is the case in similar cities con- trolled by the right". Partisanship might also affect housing construction and price growth. & Yes \\ \hline
+%            Gerber, Elisabeth R.
+%            Hopkins, Daniel J. & 2011 & AJPS & Regression discontinuity design. Democratic mayors spend less on public safety. All other policy areas (including taxation) are unaffected. & Yes \\ \hline
+%            Trounstine, Jessica & 2010 & Annual Review & Race and ethnicity in local elections (not relevant to us). Partisan elections have higher turnout; non-partisan elections still tend to have some partisanship in them because voters learn about party of candidates from media. Non-partisan elections favor Republicans/upper class. Mixed evidence for whether partisanship of mayor is important for policy. & Somewhat \\ \hline
+%            Palus, Christine Kelleher & 2010 & State and Local Government Review & Ideology (liberal/conservative) of citizen is well represented by gov. spending in five areas: (1) community development, housing, and conservation, (2) health and human services, (3) culture, the arts, and recreation, (4) environmental programs, and (5) transportation. & Somewhat \\ \hline
+%            Ferreira, Fernando
+%            Gyourko, Joseph & 2009 & The Quarterly Journal of Economics & Regression discontinuity design. Null results for spending and city gov. size with regard to mayor partisanship. & Yes \\ \hline
+%            Ansolabehere, Stephen
+%            Snyder, James M. & 2006 & Scandinavian Journal of Economics & Despite the journal, this is about the U.S. The important finding (for us) is the fact that counties whose government is controlled by the same party as the state government, receive more funding (county's share of state transfers, normalized by county pop.) from the state. & Somewhat \\ \hline
+%            Murphy, Russell D. & 2002 & Annual Review & Not useful. Too philosophical; mostly cites papers written a hundred years ago. Also exclusively about larger cities. & No \\ \hline
+%        \end{tabular}
+%        \label{}
+%    \end{table}
+%\end{landscape}
+%
+%\begin{landscape}
+%    \begin{table}[htbp]
+%        %\caption{}
+%        \begin{tabular}{|p{2cm}|c|p{3cm}|p{12cm}|l|}
+%            \hline
+%            Names & Year & Journal & Findings & Important? \\ \hline
+%            Armstrong, Cory L. & 2011 & Government Information Quarterly & Comparison of county and school board websites in Florida (where the two align) with regard to transparency (presence or absence of public records). Manual content analysis (undergrads told to look around for 15 minutes). School board websites, more professional websites, and websites in Republican-dominated counties are found to be more transparent. & Yes \\ \hline
+%            Cegarra-Navarro, Juan
+%            Pachón, José
+%            Cegarra, José & 2012 & International Journal of Information Management & Survey of Spanish municipal government officials (specifically, the city website managers). Respondents are asked about the features of their websites, the level of civic engagement and the size of their municipality. More sophisticated websites are correlated with greater civic engagement and greater use of e-government functions. & Yes \\ \hline
+%            Dolson, Jordan
+%            Young, Robert & 2012 & Canadian Journal of Urban Research & Determinants of website content. Three categories: e-content (city information on website), e-participation, social media use. Tables on page 15 show frequencies of these categories across sites, and might be useful to inform our topics. Larger cities have better websites. Population growth and immigration are also tested, but the findings are somewhat inconclusive. & Yes \\ \hline
+%            Feeney, Mary K.
+%            Brown, Adrian & 2017 & Government Information Quarterly & 500 U.S. city websites at two points in time (2010-2014). Count model of website features regarding information, e-services, utilities, transparency and civic engagement. Having a larger population leads to more features. Relying on a website contractor leads to more information and transparency. The authors say that mayor-councils are negatively correlated with website sophistication, but their regression tables state the opposite. & Yes \\ \hline
+%            Kaylor, Charles
+%            Deshazo, Randy
+%            Van Eck, David & 2001 & Government Information Quarterly & Model of best practices of e-government. Table 1 lists a number of possible ways this manifests, could be useful for our theory. & Somewhat \\ \hline
+%            Ansolabehere, Stephen
+%            Urban, Florian & 2002 & Cities & Websites of 20 major cities across the world. Is website content correlated with city characteristics? Not particularly systematic, and the findings are inconclusive. & Somewhat \\ \hline
+%            Jeffres, Leo W.
+%            Lin, Carolyn A. & 2006 & Journal of Computer-Mediated Communication & 50 largest metropolitan areas in the U.S. Features include information about city, opportunities for citizen feedback, galleries of photos, links, etc.  Purely descriptive analysis, doesn't contain anything that isn't covered in any of the other aricles. & No \\ \hline
+%        \end{tabular}
+%        \label{}
+%    \end{table}
+%\end{landscape}
+%
+%\subsection{Informative Dirichlet model}
+%%However, \cite{Monroe2008} advise against using these types of methods in this context because they get the data generation process backwards: Our theory assumes that party leads to variation in writing, and yet we rely on the documents to predict party, in spite of the fact that we actually have perfect knowledge of it.
+%
+%For the analysis of the data, we present two approaches, the first being the informative dirichlet model developed by \citep{Monroe2008}. This approach aims to account for the fact that some words naturally occur more than others by applying a Dirichlet prior based on the distribution of words in random text. Table \ref{tabFightinIN} shows the top words for both Democrats and Republicans - and accomplishes, to some extent, the goal of \citep{Monroe2008} of banishing frequent words from this list and supplanting them with text with greater semantic, and in our case, partisan meaning. 
+%
+%In Indiana, Democrats exhibit a preference for words related to public finance, such as 'fund', 'budget', or 'tax', indicative of a greater willingness to emphasize the city's efforts to raise and spend money. This finding is consistent with \citep{Einstein2015}, who show that Democratic mayors tend to favor greater spending. Beyond the focus on public finance, the words preferably used by Democrats do not fall into any particularly congruent categories, and largely sort into various areas related to city administration - i.e. `council', `services', `budget', `committee', `contract', etc. If there is theme around the words preferred by Republicans, it seems to center around city planning - street, fire, water, building, construction, park. These words suggest that the hands-off approach favored by Republicans results in a focus on supporting infrastructure and logistics.
+%
+%%Partisan top words - fightin words Indiana
+%\input{tables/fightinwordsIN.tex} %\ref{tabFightinIN}
+%
+%For Lousiana, the results (see table \ref{tabFightinLA}) are less coherent. Only one of the finance-related terms appears again for Democrats - specifically `fund', although `rate' might also be used in a financial context. Beyond that, some focus on a `historic' `'district of a city seems evident, as is the use of some words - `infrastructure', `water', `building' that were used for Republicans in Indiana. Conversely, Republicans are now missing these words, and their preferred terms generally do not seem to follow any particular theme.
+%
+%%Partisan top words - fightin words Louisiana
+%\input{tables/fightinwordsLA.tex} %\ref{tabFightinLA}
+%
+%The weakness of the fightin' words method is evident here, as a list of words does not necessarily provide sufficient information to glean preferred topics from. This is especially the case when the texts are spread across a broad number of issue-areas, with little semantic similarity. In \citep{Monroe2008}, the authors focus on the fairly constrained corpus of U.S. Senate speeches with respect to abortion - our context, by comparison, is far more eclectic.
+
+
+
+
+
+
+
+

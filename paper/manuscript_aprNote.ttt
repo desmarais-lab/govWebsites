@@ -1,0 +1,75 @@
+\begin{table}[ht]
+\centering
+\begingroup\scriptsize
+\begin{tabular}{rllllllll}
+  \hline
+ \# & Top Word 1 & Top Word 2 & Top Word 3 & Top Word 4 & Top Word 5 & Top Word 6 & \multicolumn{2}{c}{Tokens assigned} \\
+  \hline
+ 49 & \cellcolor{red!50}artist & \cellcolor{red!50}fun & \cellcolor{red!50}music & \cellcolor{red!50}beginner & \cellcolor{red!50}player & \cellcolor{red!50}prize & \mybar{4565} \\
+   46 & \cellcolor{red!40}chair & \cellcolor{red!40}subcommittee & \cellcolor{red!40}speaker & \cellcolor{red!40}agenda & \cellcolor{red!40}committee & \cellcolor{red!40}commission & \mybar{446} \\
+   16 & \cellcolor{red!30}motion & \cellcolor{red!30}second & \cellcolor{red!30}adjourn & \cellcolor{red!30}carry & \cellcolor{red!30}unanimous & \cellcolor{red!30}chairman & \mybar{419} \\
+   47 & \cellcolor{red!20}effluent & \cellcolor{red!20}inf & \cellcolor{red!20}eff & \cellcolor{red!20}infiltration & \cellcolor{red!20}discharge & \cellcolor{red!20}sludge & \mybar{751} \\
+   21 & \cellcolor{red!20}everybody & \cellcolor{red!20}think & \cellcolor{red!20}something & \cellcolor{red!20}thing & \cellcolor{red!20}try & \cellcolor{red!20}want & \mybar{2609} \\
+    2 & \cellcolor{red!20}influenza & \cellcolor{red!20}infection & \cellcolor{red!20}vaccine & \cellcolor{red!20}patient & \cellcolor{red!20}tuberculosis & \cellcolor{red!20}hepatitis & \mybar{2980} \\
+   27 & \cellcolor{red!20}article & \cellcolor{red!20}subsection & \cellcolor{red!20}shall & \cellcolor{red!20}franchisee & \cellcolor{red!20}paragraph & \cellcolor{red!20}meaning & \mybar{658} \\
+   30 & \cellcolor{red!20}subcontractor & \cellcolor{red!20}bid & \cellcolor{red!20}bidder & \cellcolor{red!20}proposer & \cellcolor{red!20}subcontract & \cellcolor{red!20}bidding & \mybar{512} \\
+   12 & \cellcolor{red!10}craftsman & \cellcolor{red!10}architecture & \cellcolor{red!10}brick & \cellcolor{red!10}distinctive & \cellcolor{red!10}revival & \cellcolor{red!10}storefront & \mybar{1731} \\
+   24 & \cellcolor{red!10}mail & \cellcolor{red!10}fax & \cellcolor{red!10}application & \cellcolor{red!10}click & \cellcolor{red!10}applicant & \cellcolor{red!10}copy & \mybar{367} \\
+   34 & \cellcolor{red!10}playground & \cellcolor{red!10}recreation & \cellcolor{red!10}picnic & \cellcolor{red!10}park & \cellcolor{red!10}restroom & \cellcolor{red!10}zoo & \mybar{546} \\
+   19 & \cellcolor{red!10}setback & \cellcolor{red!10}variance & \cellcolor{red!10}zoning & \cellcolor{red!10}height & \cellcolor{red!10}yard & \cellcolor{red!10}accessory & \mybar{453} \\
+   26 & \cellcolor{red!10}mesa & \cellcolor{red!10}canyon & \cellcolor{red!10}via & \cellcolor{red!10}odd & \cellcolor{red!10}unidentified & \cellcolor{red!10}paradise & \mybar{1886} \\
+   23 & \cellcolor{red!10}bag & \cellcolor{red!10}recyclable & \cellcolor{red!10}recyclables & \cellcolor{red!10}reusable & \cellcolor{red!10}vegetable & \cellcolor{red!10}bait & \mybar{2254} \\
+   20 & \cellcolor{red!10}customer & \cellcolor{red!10}renewable & \cellcolor{red!10}efficiency & \cellcolor{red!10}energy & \cellcolor{red!10}saving & \cellcolor{red!10}conservation & \mybar{652} \\
+   31 & \cellcolor{red!10}student & \cellcolor{red!10}teacher & \cellcolor{red!10}preschool & \cellcolor{red!10}academic & \cellcolor{red!10}kindergarten & \cellcolor{red!10}youth & \mybar{855} \\
+   28 & \cellcolor{red!10}garland & \cellcolor{red!10}assoc & \cellcolor{red!10}association & \cellcolor{red!10}firefighter & \cellcolor{red!10}duke & \cellcolor{red!10}xerox & \mybar{480} \\
+   50 & \cellcolor{red!10}trench & \cellcolor{red!10}manhole & \cellcolor{red!10}ductile & \cellcolor{red!10}excavation & \cellcolor{red!10}pipe & \cellcolor{red!10}grout & \mybar{1436} \\
+   32 & \cellcolor{red!10}canceled & \cellcolor{red!10}dwelling & \cellcolor{red!10}suite & \cellcolor{red!10}ave & \cellcolor{red!10}tad & \cellcolor{red!10}alteration & \mybar{491} \\
+   51 & \cellcolor{red!10}vent & \cellcolor{red!10}combustible & \cellcolor{red!10}flammable & \cellcolor{red!10}egress & \cellcolor{red!10}ceiling & \cellcolor{red!10}extinguisher & \mybar{1160} \\
+   44 & \cellcolor{red!10}findings & \cellcolor{red!10}tank & \cellcolor{red!10}string & \cellcolor{red!10}carcinogen & \cellcolor{red!10}lust & \cellcolor{red!10}sic & \mybar{255} \\
+   17 & \cellcolor{red!10}portfolio & \cellcolor{red!10}micron & \cellcolor{red!10}maturity & \cellcolor{red!10}treasury & \cellcolor{red!10}yield & \cellcolor{red!10}investment & \mybar{538} \\
+   48 & \cellcolor{red!10}contributor & \cellcolor{red!10}filer & \cellcolor{red!10}officeholder & \cellcolor{red!10}political & \cellcolor{red!10}rouge & \cellcolor{red!10}payee & \mybar{293} \\
+    5 & \cellcolor{red!10}draft & \cellcolor{red!10}comment & \cellcolor{red!10}review & \cellcolor{red!10}revision & \cellcolor{red!10}clarify & \cellcolor{red!10}process & \mybar{356} \\
+   37 & \cellcolor{red!10}endorsed & \cellcolor{red!10}endorse & \cellcolor{red!10}rescue & \cellcolor{red!10}assistant & \cellcolor{red!10}analyst & \cellcolor{red!10}technician & \mybar{355} \\
+    9 & \cellcolor{red!10}trust & \cellcolor{red!10}revocable & \cellcolor{red!10}planned & \cellcolor{red!10}mfr & \cellcolor{red!10}apportionment & \cellcolor{red!10}exhibit & \mybar{361} \\
+    8 & \cellcolor{red!10}imp & \cellcolor{red!10}assessor & \cellcolor{red!10}taxpayer & \cellcolor{red!10}petition & \cellcolor{red!10}preliminary & \cellcolor{red!10}determination & \mybar{91} \\
+   40 & \cellcolor{white}amt & \cellcolor{white}invoice & \cellcolor{white}acct & \cellcolor{white}exp & \cellcolor{white}unencumbered & \cellcolor{white}encumbrance & \mybar{116} \\
+   57 & \cellcolor{white}councilman & \cellcolor{white}introduced & \cellcolor{white}alderman & \cellcolor{white}whereas & \cellcolor{white}resolved & \cellcolor{white}councilwoman & \mybar{615} \\
+   11 & \cellcolor{white}obesity & \cellcolor{white}sugary & \cellcolor{white}epidemic & \cellcolor{white}drink & \cellcolor{white}calorie & \cellcolor{white}sensible & \mybar{96} \\
+   15 & \cellcolor{white}credit & \cellcolor{white}docket & \cellcolor{white}app & \cellcolor{white}post & \cellcolor{white}download & \cellcolor{white}month & \mybar{61} \\
+    3 & \cellcolor{white}wetland & \cellcolor{white}specie & \cellcolor{white}species & \cellcolor{white}vernal & \cellcolor{white}ecological & \cellcolor{white}riparian & \mybar{2293} \\
+   29 & \cellcolor{blue!10}margin & \cellcolor{blue!10}error & \cellcolor{blue!10}disability & \cellcolor{blue!10}speak & \cellcolor{blue!10}employed & \cellcolor{blue!10}language & \mybar{180} \\
+   43 & \cellcolor{white}medicare & \cellcolor{white}payroll & \cellcolor{white}blanket & \cellcolor{white}contractual & \cellcolor{white}undistributed & \cellcolor{white}dept & \mybar{322} \\
+   42 & \cellcolor{white}incumbent & \cellcolor{white}prep & \cellcolor{white}batch & \cellcolor{white}qualifier & \cellcolor{white}analytical & \cellcolor{white}examination & \mybar{1091} \\
+   55 & \cellcolor{blue!10}taxable & \cellcolor{blue!10}deed & \cellcolor{blue!10}res & \cellcolor{blue!10}homestead & \cellcolor{blue!10}value & \cellcolor{blue!10}book & \mybar{87} \\
+   22 & \cellcolor{blue!10}allocation & \cellcolor{blue!10}subtotal & \cellcolor{blue!10}admin & \cellcolor{blue!10}cost & \cellcolor{blue!10}yon & \cellcolor{blue!10}allocate & \mybar{190} \\
+   25 & \cellcolor{blue!10}mitigation & \cellcolor{blue!10}impact & \cellcolor{blue!10}significant & \cellcolor{blue!10}adverse & \cellcolor{blue!10}environmental & \cellcolor{blue!10}measure & \mybar{217} \\
+   56 & \cellcolor{blue!10}savings & \cellcolor{blue!10}neighborhood & \cellcolor{blue!10}village & \cellcolor{blue!10}excise & \cellcolor{blue!10}ltd & \cellcolor{blue!10}matrix & \mybar{131} \\
+   33 & \cellcolor{blue!10}thence & \cellcolor{blue!10}east & \cellcolor{blue!10}south & \cellcolor{blue!10}corner & \cellcolor{blue!10}west & \cellcolor{blue!10}avenue & \mybar{340} \\
+    7 & \cellcolor{blue!10}fugitive & \cellcolor{blue!10}bio & \cellcolor{blue!10}emission & \cellcolor{blue!10}coal & \cellcolor{blue!10}unmitigated & \cellcolor{blue!10}exhaust & \mybar{773} \\
+   18 & \cellcolor{blue!10}perm & \cellcolor{blue!10}queue & \cellcolor{blue!10}delay & \cellcolor{blue!10}peak & \cellcolor{blue!10}adj & \cellcolor{blue!10}flt & \mybar{187} \\
+   54 & \cellcolor{blue!10}license & \cellcolor{blue!10}licensee & \cellcolor{blue!10}citation & \cellcolor{blue!10}tow & \cellcolor{blue!10}fee & \cellcolor{blue!10}taxicab & \mybar{710} \\
+    6 & \cellcolor{blue!10}race & \cellcolor{blue!10}householder & \cellcolor{blue!10}islander & \cellcolor{blue!10}census & \cellcolor{blue!10}occupied & \cellcolor{blue!10}female & \mybar{160} \\
+   60 & \cellcolor{blue!10}bicycle & \cellcolor{blue!10}bike & \cellcolor{blue!10}pedestrian & \cellcolor{blue!10}route & \cellcolor{blue!10}sidewalk & \cellcolor{blue!10}bicyclist & \mybar{561} \\
+   14 & \cellcolor{blue!10}accomplishment & \cellcolor{blue!10}grantee & \cellcolor{blue!10}narrative & \cellcolor{blue!10}outcome & \cellcolor{blue!10}grant & \cellcolor{blue!10}recipient & \mybar{255} \\
+   53 & \cellcolor{blue!10}applied & \cellcolor{blue!10}col & \cellcolor{blue!10}dist & \cellcolor{blue!10}occupancy & \cellcolor{blue!10}monoxide & \cellcolor{blue!10}valuation & \mybar{128} \\
+    4 & \cellcolor{blue!10}audit & \cellcolor{blue!10}auditor & \cellcolor{blue!10}procedure & \cellcolor{blue!10}timely & \cellcolor{blue!10}implemented & \cellcolor{blue!10}oversight & \mybar{472} \\
+   35 & \cellcolor{blue!10}redemption & \cellcolor{blue!10}bond & \cellcolor{blue!10}increment & \cellcolor{blue!10}obligation & \cellcolor{blue!10}proceeds & \cellcolor{blue!10}lease & \mybar{339} \\
+   39 & \cellcolor{blue!10}downtown & \cellcolor{blue!10}mixed & \cellcolor{blue!10}retail & \cellcolor{blue!10}waterfront & \cellcolor{blue!10}orient & \cellcolor{blue!10}density & \mybar{419} \\
+   10 & \cellcolor{blue!10}grievance & \cellcolor{blue!10}deductible & \cellcolor{blue!10}coinsurance & \cellcolor{blue!10}dependent & \cellcolor{blue!10}employee & \cellcolor{blue!10}copay & \mybar{583} \\
+   38 & \cellcolor{blue!10}para & \cellcolor{blue!10}persona & \cellcolor{blue!10}horas & \cellcolor{blue!10}bud & \cellcolor{blue!10}contracted & \cellcolor{blue!10}ante & \mybar{1334} \\
+   36 & \cellcolor{blue!10}respondent & \cellcolor{blue!10}compare & \cellcolor{blue!10}figure & \cellcolor{blue!10}trend & \cellcolor{blue!10}appendix & \cellcolor{blue!10}satisfied & \mybar{696} \\
+   45 & \cellcolor{blue!10}governmental & \cellcolor{blue!10}asset & \cellcolor{blue!10}actuarial & \cellcolor{blue!10}liability & \cellcolor{blue!10}financial & \cellcolor{blue!10}statement & \mybar{235} \\
+   41 & \cellcolor{blue!20}complainant & \cellcolor{blue!20}allegation & \cellcolor{blue!20}defendant & \cellcolor{blue!20}offender & \cellcolor{blue!20}commander & \cellcolor{blue!20}complaint & \mybar{1695} \\
+   52 & \cellcolor{blue!20}homeless & \cellcolor{blue!20}homelessness & \cellcolor{blue!20}affordable & \cellcolor{blue!20}supportive & \cellcolor{blue!20}housing & \cellcolor{blue!20}affordability & \mybar{394} \\
+   58 & \cellcolor{blue!20}budget & \cellcolor{blue!20}revenue & \cellcolor{blue!20}adopted & \cellcolor{blue!20}balance & \cellcolor{blue!20}transfer & \cellcolor{blue!20}expenditure & \mybar{176} \\
+   13 & \cellcolor{blue!20}initiative & \cellcolor{blue!20}outreach & \cellcolor{blue!20}strategy & \cellcolor{blue!20}leadership & \cellcolor{blue!20}engagement & \cellcolor{blue!20}focus & \mybar{502} \\
+    1 & \cellcolor{blue!30}absent & \cellcolor{blue!30}preside & \cellcolor{blue!30}authorize & \cellcolor{blue!30}ordained & \cellcolor{blue!30}int & \cellcolor{blue!30}tag & \mybar{377} \\
+   59 & \cellcolor{blue!80}burglary & \cellcolor{blue!80}robbery & \cellcolor{blue!80}theft & \cellcolor{blue!80}homicide & \cellcolor{blue!80}murder & \cellcolor{blue!80}gunshot & \mybar{945} \\
+   \hline
+\end{tabular}
+\endgroup
+\caption{Top words from a structural topic model with 60 topics and FREX scoring. Colors depict partisanship based on coefficient size. White cells are non-significant topics.}
+\label{tabSTMtopwords60}
+\end{table}
+\efloatseparator
+ 

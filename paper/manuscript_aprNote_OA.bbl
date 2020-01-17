@@ -1,0 +1,114 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{Annau, Kohlschuetter, and Clark}{Annau
+  et~al.}{2015}]{boilerpipeR}
+Annau, M., C.~Kohlschuetter, and A.~Clark (2015).
+\newblock {\em boilerpipeR: Interface to the Boilerpipe Java Library}.
+\newblock R package version 1.3.
+
+\bibitem[\protect\citeauthoryear{Benoit and Matsuo}{Benoit and
+  Matsuo}{2018}]{spacyr}
+Benoit, K. and A.~Matsuo (2018).
+\newblock {\em spacyr: Wrapper to the 'spaCy' 'NLP' Library}.
+\newblock R package version 1.0.
+
+\bibitem[\protect\citeauthoryear{Benoit and Obeng}{Benoit and
+  Obeng}{2019}]{readtext}
+Benoit, K. and A.~Obeng (2019).
+\newblock {\em readtext: Import and Handling for Plain and Formatted Text
+  Files}.
+\newblock R package version 0.74.
+
+\bibitem[\protect\citeauthoryear{Benoit, Watanabe, Wang, Nulty, Obeng, Müller,
+  and Matsuo}{Benoit et~al.}{2018}]{quanteda}
+Benoit, K., K.~Watanabe, H.~Wang, P.~Nulty, A.~Obeng, S.~Müller, and A.~Matsuo
+  (2018).
+\newblock quanteda: An r package for the quantitative analysis of textual data.
+\newblock {\em Journal of Open Source Software\/}~{\em 3\/}(30), 774.
+
+\bibitem[\protect\citeauthoryear{Berg, Oepen, and Read}{Berg
+  et~al.}{2012}]{Berg2012}
+Berg, {\O}.~R., S.~Oepen, and J.~Read (2012).
+\newblock {Towards High-Quality Text Stream Extraction from PDF}.
+\newblock In {\em ACL-2012 Special Workshop on Rediscovering 50 Years of
+  Discoveries}, pp.\  98--103.
+
+\bibitem[\protect\citeauthoryear{Bischof and Airoldi}{Bischof and
+  Airoldi}{2012}]{Bischof2012}
+Bischof, J. and E.~Airoldi (2012).
+\newblock {Summarizing topical content with word frequency and exclusivity}.
+\newblock {\em Proceedings of the 29th International Conference on Machine
+  Learning, ICML 2012\/}~{\em 1}.
+
+\bibitem[\protect\citeauthoryear{Darwin}{Darwin}{2008}]{darwin2008libmagic}
+Darwin, I. (2008).
+\newblock Libmagic.
+
+\bibitem[\protect\citeauthoryear{Denny and Spirling}{Denny and
+  Spirling}{2018}]{denny2018text}
+Denny, M.~J. and A.~Spirling (2018).
+\newblock Text preprocessing for unsupervised learning: why it matters, when it
+  misleads, and what to do about it.
+\newblock {\em Political Analysis\/}~{\em 26\/}(2), 168--189.
+
+\bibitem[\protect\citeauthoryear{Guillam{\'{o}}n, Bastida, and
+  Benito}{Guillam{\'{o}}n et~al.}{2013}]{Guillamon2013}
+Guillam{\'{o}}n, M.~D., F.~Bastida, and B.~Benito (2013).
+\newblock {The electoral budget cycle on municipal police expenditure}.
+\newblock {\em European Journal of Law and Economics\/}~{\em 36\/}(3),
+  447--469.
+
+\bibitem[\protect\citeauthoryear{Kohlsch{\"{u}}tter, Fankhauser, and
+  Nejdl}{Kohlsch{\"{u}}tter et~al.}{2010}]{Kohlschutter2010}
+Kohlsch{\"{u}}tter, C., P.~Fankhauser, and W.~Nejdl (2010).
+\newblock {Boilerplate Detection using Shallow Text Features}.
+\newblock In {\em Web Search and Data Mining}.
+
+\bibitem[\protect\citeauthoryear{Marschall and Shah}{Marschall and
+  Shah}{2013}]{marschall2013local}
+Marschall, M. and P.~Shah (2013).
+\newblock Local elections in america project.
+\newblock {\em Center for Local Elections in American Politics. Kinder
+  Institute for Urban Research, Rice University.(Database)\/}.
+
+\bibitem[\protect\citeauthoryear{Mimno, Wallach, Talley, Leenders, and
+  McCallum}{Mimno et~al.}{2011}]{Mimno2011}
+Mimno, D., H.~M. Wallach, E.~Talley, M.~Leenders, and A.~McCallum (2011).
+\newblock {Optimizing semantic coherence in topic models}.
+\newblock {\em Proceedings of the 2011 Conference on Empirical Methods in
+  Natural Language Processing\/}~(2), 262--272.
+
+\bibitem[\protect\citeauthoryear{Monroe, Colaresi, and Quinn}{Monroe
+  et~al.}{2008}]{Monroe2008}
+Monroe, B.~L., M.~P. Colaresi, and K.~M. Quinn (2008).
+\newblock {Fightin' words: Lexical feature selection and evaluation for
+  identifying the content of political conflict}.
+\newblock {\em Political Analysis\/}~{\em 16\/}(4 SPEC. ISS.), 372--403.
+
+\bibitem[\protect\citeauthoryear{Ooms}{Ooms}{2018}]{hunspell}
+Ooms, J. (2018).
+\newblock {\em hunspell: High-Performance Stemmer, Tokenizer, and Spell
+  Checker}.
+\newblock R package version 3.0.
+
+\bibitem[\protect\citeauthoryear{Roberts, Stewart, and Tingley}{Roberts
+  et~al.}{2018}]{stm}
+Roberts, M.~E., B.~M. Stewart, and D.~Tingley (2018).
+\newblock {\em stm: R Package for Structural Topic Models}.
+\newblock R package version 1.3.3.
+
+\bibitem[\protect\citeauthoryear{Roberts, Stewart, Tingley, Lucas, Leder-Luis,
+  Gadarian, Albertson, and Rand}{Roberts et~al.}{2014}]{Roberts2014}
+Roberts, M.~E., B.~M. Stewart, D.~Tingley, C.~Lucas, J.~Leder-Luis, S.~K.
+  Gadarian, B.~Albertson, and D.~G. Rand (2014).
+\newblock {Structural topic models for open-ended survey responses}.
+\newblock {\em American Journal of Political Science\/}~{\em 58\/}(4),
+  1064--1082.
+
+\bibitem[\protect\citeauthoryear{Rudis, Zoulas, Rullgard, and Ong}{Rudis
+  et~al.}{2016}]{wand}
+Rudis, B., C.~Zoulas, M.~Rullgard, and J.~Ong (2016).
+\newblock {\em wand: Retrieve 'Magic' Attributes from Files and Directories}.
+\newblock R package version 0.2.0.
+
+\end{thebibliography}

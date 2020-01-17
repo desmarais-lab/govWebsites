@@ -1,0 +1,10 @@
+\BOOKMARK [1][-]{section.1}{Overview}{}% 1
+\BOOKMARK [1][-]{section.2}{Data collection methods and sources}{}% 2
+\BOOKMARK [1][-]{section.3}{The Web to Text Pipeline}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Site to Text Conversion}{section.3}% 4
+\BOOKMARK [3][-]{subsubsection.3.1.1}{File Type Detection}{subsection.3.1}% 5
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Extracting Text from HTML}{subsection.3.1}% 6
+\BOOKMARK [3][-]{subsubsection.3.1.3}{Extracting Text from PDF, DOC, DOCX and TXT}{subsection.3.1}% 7
+\BOOKMARK [2][-]{subsection.3.2}{Preprocessing}{section.3}% 8
+\BOOKMARK [1][-]{section.4}{Supplemental Informational on Topic Modeling Application}{}% 9
+\BOOKMARK [2][-]{subsection.4.1}{Supplemental results}{section.4}% 10
