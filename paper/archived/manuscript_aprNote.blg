@@ -7,60 +7,56 @@ Repeated entry---line 210 of file ref.bib
  : @manual{readtext
  :                 ,
 I'm skipping whatever remains of this entry
-Warning--string name "forthcoming" is undefined
---line 268 of file ref.bib
-Repeated entry---line 365 of file ref.bib
+Repeated entry---line 366 of file ref.bib
  : @article{glez2013web
  :                     ,
 I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "sumner2019"
 Warning--empty organization in readtext
 Warning--no number and no volume in einstein2016mayors
 Warning--no number and no volume in Einstein2015
 Warning--no number and no volume in Esterling2011a
 Warning--no number and no volume in marschall2013local
 Warning--page numbers missing in marschall2013local
-Warning--empty year in sumner2019
-Warning--no number and no volume in sumner2019
-Warning--page numbers missing in sumner2019
-You've used 29 entries,
+You've used 28 entries,
             2861 wiz_defined-function locations,
-            799 strings with 10410 characters,
-and the built_in function-call counts, 21367 in all, are:
-= -- 1778
-> -- 1681
+            795 strings with 10305 characters,
+and the built_in function-call counts, 20769 in all, are:
+= -- 1732
+> -- 1620
 < -- 1
-+ -- 508
-- -- 568
-* -- 2022
-:= -- 3884
-add.period$ -- 87
-call.type$ -- 29
-change.case$ -- 221
-chr.to.int$ -- 29
-cite$ -- 38
-duplicate$ -- 529
-empty$ -- 1232
-format.name$ -- 656
-if$ -- 3947
++ -- 490
+- -- 550
+* -- 1968
+:= -- 3769
+add.period$ -- 85
+call.type$ -- 28
+change.case$ -- 213
+chr.to.int$ -- 28
+cite$ -- 34
+duplicate$ -- 515
+empty$ -- 1208
+format.name$ -- 634
+if$ -- 3840
 int.to.chr$ -- 1
 int.to.str$ -- 0
 missing$ -- 28
-newline$ -- 147
-num.names$ -- 290
-pop$ -- 162
+newline$ -- 143
+num.names$ -- 280
+pop$ -- 147
 preamble$ -- 1
-purify$ -- 397
+purify$ -- 383
 quote$ -- 0
-skip$ -- 550
+skip$ -- 541
 stack$ -- 0
-substring$ -- 1164
-swap$ -- 175
+substring$ -- 1156
+swap$ -- 170
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 570
-warning$ -- 9
-while$ -- 284
+type$ -- 550
+warning$ -- 6
+while$ -- 279
 width$ -- 0
-write$ -- 378
+write$ -- 368
 (There were 2 error messages)

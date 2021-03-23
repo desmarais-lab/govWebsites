@@ -1,0 +1,67 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: manuscript_jitp.aux
+The style file: chicago.bst
+Database file #1: ref.bib
+Repeated entry---line 231 of file ref.bib
+ : @manual{hunspell
+ :                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 250 of file ref.bib
+ : @manual{readtext
+ :                 ,
+I'm skipping whatever remains of this entry
+Warning--empty organization in boilerpipeR
+Warning--empty organization in spacyr
+Warning--empty organization in readtext
+Warning--no number and no volume in einstein2016mayors
+Warning--no number and no volume in Einstein2015
+Warning--no number and no volume in Esterling2011a
+Warning--no number and no volume in marschall2013local
+Warning--page numbers missing in marschall2013local
+Warning--empty organization in hunspell
+Warning--empty organization in wand
+Warning--no journal in Therriault2010
+Warning--no number and no volume in Therriault2010
+You've used 44 entries,
+            2861 wiz_defined-function locations,
+            883 strings with 12878 characters,
+and the built_in function-call counts, 31519 in all, are:
+= -- 2633
+> -- 2418
+< -- 3
++ -- 722
+- -- 822
+* -- 2926
+:= -- 5743
+add.period$ -- 132
+call.type$ -- 44
+change.case$ -- 325
+chr.to.int$ -- 44
+cite$ -- 56
+duplicate$ -- 808
+empty$ -- 1844
+format.name$ -- 946
+if$ -- 5818
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 39
+newline$ -- 222
+num.names$ -- 440
+pop$ -- 231
+preamble$ -- 1
+purify$ -- 595
+quote$ -- 0
+skip$ -- 858
+stack$ -- 0
+substring$ -- 1679
+swap$ -- 273
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 870
+warning$ -- 12
+while$ -- 436
+width$ -- 0
+write$ -- 575
+(There were 2 error messages)

@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  16 JAN 2020 18:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  16 NOV 2020 21:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**manuscript_aprNote_OA.tex
-(./manuscript_aprNote_OA.tex
+**manuscript_jitp.tex
+(./manuscript_jitp.tex
 LaTeX2e <2017-04-15>
 Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/article.cls
@@ -1096,8 +1096,8 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip87
 )
-(./manuscript_aprNote_OA.aux)
-\openout1 = `manuscript_aprNote_OA.aux'.
+(./manuscript_jitp.aux)
+\openout1 = `manuscript_jitp.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 121.
 LaTeX Font Info:    ... okay on input line 121.
@@ -1201,12 +1201,10 @@ LaTeX Info: Redefining \ref on input line 121.
 LaTeX Info: Redefining \pageref on input line 121.
 LaTeX Info: Redefining \nameref on input line 121.
 
-(./manuscript_aprNote_OA.out) (./manuscript_aprNote_OA.out)
+(./manuscript_jitp.out) (./manuscript_jitp.out)
 \@outlinefile=\write6
-\openout6 = `manuscript_aprNote_OA.out'.
+\openout6 = `manuscript_jitp.out'.
 
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 123.
 LaTeX Font Info:    Try loading font information for U+msa on input line 123.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -1227,144 +1225,92 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
 [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 151.
+[2] <figures/gary_hp.png, id=96, 598.235pt x 522.95375pt>
+File: figures/gary_hp.png Graphic file (type png)
+
+<use figures/gary_hp.png>
+Package pdftex.def Info: figures/gary_hp.png used on input line 156.
+(pdftex.def)             Requested size: 269.20326pt x 235.32701pt.
+ [3 <./figures/gary_hp.png>]
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 178.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-) [2]
-Underfull \hbox (badness 10000) in paragraph at lines 155--155
-[][][][][]$\T1/ptm/m/n/9 http : / / www . in . gov / apps / sos / election / ge
-neral / general2015 ? page = o^^^ce & countyID = 1 & o^^^ceID = 32 & districtID
-= -[]
- []
-
-[3] (./tables/tabCitiesStatesParties.tex) (./tables/tabFiletypeFrequencies.tex)
-[4] [5]
+) [4]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 172.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 180.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 173.
-
-
-LaTeX Warning: Reference `fig:garymayor' on page 6 undefined on input line 177.
-
-
-[6] <figures/gary_sidebyside.png, id=116, 1135.24126pt x 736.7525pt>
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 181.
+ [5]
+<figures/gary_sidebyside.png, id=178, 1135.24126pt x 736.7525pt>
 File: figures/gary_sidebyside.png Graphic file (type png)
 
 <use figures/gary_sidebyside.png>
-Package pdftex.def Info: figures/gary_sidebyside.png used on input line 183.
+Package pdftex.def Info: figures/gary_sidebyside.png used on input line 191.
 (pdftex.def)             Requested size: 397.3404pt x 257.86723pt.
 
-<figures/gary_bp.png, id=118, 1122.1925pt x 324.21124pt>
+<figures/gary_bp.png, id=179, 1122.1925pt x 324.21124pt>
 File: figures/gary_bp.png Graphic file (type png)
 
 <use figures/gary_bp.png>
-Package pdftex.def Info: figures/gary_bp.png used on input line 185.
+Package pdftex.def Info: figures/gary_bp.png used on input line 193.
 (pdftex.def)             Requested size: 420.82115pt x 121.57892pt.
- [7] [8 <./figures/gary_sidebyside.png> <./figures/gary_bp.png>] [9]
-Overfull \hbox (0.56491pt too wide) in paragraph at lines 208--225
+ [6] [7 <./figures/gary_sidebyside.png> <./figures/gary_bp.png>] [8]
+Overfull \hbox (0.56491pt too wide) in paragraph at lines 216--233
  [][] 
  []
 
-[10] [11] (./tables/stmTopWords60_KeepEverything.tex
-Overfull \hbox (27.12364pt too wide) in paragraph at lines 6--73
- [][] 
- []
+[9] [10]
 
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 261.
 
-LaTeX Warning: Float too large for page by 75.02249pt on input line 75.
-
-) (./tables/stmTopWords120_1.tex
-Overfull \hbox (6.82887pt too wide) in paragraph at lines 6--73
- [][] 
- []
-
-
-LaTeX Warning: Float too large for page by 75.02249pt on input line 75.
-
-) (./tables/stmTopWords120_2.tex
-Overfull \hbox (8.96822pt too wide) in paragraph at lines 6--73
- [][] 
- []
-
-
-LaTeX Warning: Float too large for page by 75.02249pt on input line 75.
-
-) [12] (./tables/stmTopWords60_income.tex
+[11] (./tables/stmTopWords60.tex
 Overfull \hbox (47.517pt too wide) in paragraph at lines 6--73
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 75.02249pt on input line 75.
+LaTeX Warning: Float too large for page by 61.42249pt on input line 75.
 
-) (./tables/stmTopWords60_population.tex
-Overfull \hbox (47.517pt too wide) in paragraph at lines 6--73
- [][] 
- []
-
-
-LaTeX Warning: Float too large for page by 75.02249pt on input line 75.
-
-) <figures/stm_60_coherence_exclusivity.pdf, id=241, 433.62pt x 289.08pt>
-File: figures/stm_60_coherence_exclusivity.pdf Graphic file (type pdf)
-
-<use figures/stm_60_coherence_exclusivity.pdf>
-Package pdftex.def Info: figures/stm_60_coherence_exclusivity.pdf used on input
- line 256.
-(pdftex.def)             Requested size: 433.61894pt x 289.07928pt.
-
-Overfull \hbox (3.61432pt too wide) in paragraph at lines 256--257
- [][] 
- []
-
-(./manuscript_aprNote_OA.bbl [13 <./figures/stm_60_coherence_exclusivity.pdf>]
-[14])
+) [12] (./manuscript_jitp.bbl [13] [14] [15] [16] [17])
 
 Package caption Warning: Unused \captionsetup[subfloat] on input line 59.
 See the caption package documentation for explanation.
 
-[15]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 287.
- [16] [17] [18] [19] [20]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 287.
- (./manuscript_aprNote_OA.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 287.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 287.
-Package rerunfilecheck Info: File `manuscript_aprNote_OA.out' has not changed.
-(rerunfilecheck)             Checksum: 36DB39DD4BF160EA8262C4ECCAF45F10;731.
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 287.
+[18]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 403.
+ [19]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 403.
+ (./manuscript_jitp.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 403.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 403.
+Package rerunfilecheck Info: File `manuscript_jitp.out' has not changed.
+(rerunfilecheck)             Checksum: 59709BA4F34D456C499D5D413B33379C;861.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 403.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 21212 strings out of 492995
- 385789 string characters out of 6132704
- 723561 words of memory out of 5000000
- 24250 multiletter control sequences out of 15000+600000
- 51595 words of font info for 79 fonts, out of 8000000 for 9000
+ 21104 strings out of 492995
+ 384482 string characters out of 6132704
+ 507662 words of memory out of 5000000
+ 24150 multiletter control sequences out of 15000+600000
+ 48792 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,10n,54p,3232b,9306s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,10n,54p,2644b,9334s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc
 }</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
 /usr/local/texlive/2017/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/loc
 al/texlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive
 /2017/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texm
 f-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on manuscript_aprNote_OA.pdf (20 pages, 1022435 bytes).
+Output written on manuscript_jitp.pdf (19 pages, 1318409 bytes).
 PDF statistics:
- 324 PDF objects out of 1000 (max. 8388607)
- 285 compressed objects within 3 object streams
- 79 named destinations out of 1000 (max. 500000)
- 108 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 375 PDF objects out of 1000 (max. 8388607)
+ 335 compressed objects within 4 object streams
+ 90 named destinations out of 1000 (max. 500000)
+ 124 words of extra memory for PDF output out of 10000 (max. 10000000)
 

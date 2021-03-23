@@ -3,11 +3,11 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: manuscript_aprNote_OA.aux
 The style file: chicago.bst
 Database file #1: ref.bib
-Repeated entry---line 180 of file ref.bib
+Repeated entry---line 191 of file ref.bib
  : @manual{hunspell
  :                 ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 199 of file ref.bib
+Repeated entry---line 210 of file ref.bib
  : @manual{readtext
  :                 ,
 I'm skipping whatever remains of this entry
