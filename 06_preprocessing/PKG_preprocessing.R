@@ -112,7 +112,7 @@ preprocessWebsite <- function(parsed, custom_nouns = NULL){
   
   #----
   # Remove any character that is not part of the English alphabet
-  parsed$lemma <- str_remove_all(parsed$lemma, "[^A-Za-z]")
+  parsed$lemma <- stringr::str_remove_all(parsed$lemma, "[^A-Za-z]")
   
   #----
   # Remove words if they are entirely empty
