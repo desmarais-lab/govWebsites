@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  20 MAY 2021 20:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  21 MAY 2021 15:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -940,8 +940,8 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.101 
-       [1]
+l.96 
+      [1]
 Underfull \hbox (badness 10000) in paragraph at lines 117--118
 
  []
@@ -956,7 +956,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 125--126
 
  []
 
-
+[2]
 Underfull \hbox (badness 10000) in paragraph at lines 130--131
 
  []
@@ -966,7 +966,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 134--135
 
  []
 
-[2]
+
 Underfull \hbox (badness 10000) in paragraph at lines 138--139
 
  []
@@ -984,7 +984,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 157.
 Here is how much of TeX's memory you used:
  9668 strings out of 492995
  145017 string characters out of 6132704
- 252525 words of memory out of 5000000
+ 251525 words of memory out of 5000000
  13042 multiletter control sequences out of 15000+600000
  6861 words of font info for 25 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -993,7 +993,7 @@ Here is how much of TeX's memory you used:
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
 /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></u
 sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on jitp_rr_memo.pdf (4 pages, 65014 bytes).
+Output written on jitp_rr_memo.pdf (4 pages, 66598 bytes).
 PDF statistics:
  59 PDF objects out of 1000 (max. 8388607)
  48 compressed objects within 1 object stream
