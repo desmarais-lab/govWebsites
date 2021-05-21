@@ -1,0 +1,157 @@
+\documentclass[12pt,titlepage]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage[capposition=top]{floatrow}
+\usepackage{subfig}
+\usepackage{amsmath}
+\usepackage{natbib}
+\usepackage{adjustbox}
+\usepackage{url}
+\usepackage[section]{placeins}
+\usepackage{setspace}   %Allows double spacing with the \doublespacing command
+\usepackage{lscape}
+\usepackage{float}
+\usepackage{multirow} % table
+\usepackage{dcolumn} % table
+\usepackage{booktabs} % table
+\usepackage{titling}
+\usepackage{blindtext}
+\usepackage{nameref} % ref section title!! don't ref the section title [external document]
+
+
+%%%% Cross-referencing ----------------
+% In your preamble
+
+%\usepackage{xr-hyper}
+% must use xr-hyper
+\usepackage[colorlinks=black,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+
+\makeatletter
+\newcommand*{\addFileDependency}[1]{% argument=file name and extension
+  \typeout{(#1)}
+  \@addtofilelist{#1}
+  \IfFileExists{#1}{}{\typeout{No file #1.}}
+}
+\makeatother
+
+\newcommand*{\myexternaldocument}[1]{%
+    \externaldocument{#1}%
+    \addFileDependency{#1.tex}%
+    \addFileDependency{#1.aux}%
+}
+
+%\myexternaldocument{appendix}
+%%%% Cross-referencing ----------------
+
+
+% We expect to receive your revision by 18-May-2021. If it is not possible for you to submit your revision by this date, please contact the Editorial Office to rearrange the due date. Otherwise we may have to consider your paper as a new submission.
+
+% HL: Just a note to share here that PRSM replication team can be pretty stringent on wanting to see the exact same number being reproduced in the replication file. I am also not sure if we want the replication team to run our models on their HPC.
+
+\title{Revision Memo for, ``Government Websites As Data: A methodological pipeline with application to the websites of municipalities in the United States''}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\maketitle
+
+Dear Profs. Copeland, Gainous, and Towner,\\
+
+Thank you for your comments and for giving us the opportunity to revise and resubmit our paper Thanks also to the reviewers for their constructive comments. As we hope you will see both in the revised manuscript and in this response letter, we have taken each comment seriously and have endeavored to address each as completely as possible. Each of the comments from reviewers is addressed in the order presented in the review. We do believe that addressing reviewers' comments has significantly improved the paper. \\
+
+%% R1 ----------------------------------
+\section*{Reviewer 1}
+
+\begin{enumerate}
+
+
+\item \emph{My main recommendation is to add some figures/plots that show the substantive findings about the differences between Democratic and Republican mayors.  You do a good job describing the findings in the text, but I think figures would also help make the findings clear to readers.  } 
+
+	\textbf{Response}: 	
+	
+	\item \emph{ Also, in the conclusion can you give some more examples of other research areas and questions where this approach will be useful? I think that would increase the usage and citations. Along similar lines, I hope you plan to produce step-by-step replication code and instructions about how readers can use your workflow.  I think that too will increase the usage and citations of your approach.  } 
+
+	\textbf{Response}: 
+
+\item \emph{ One minor point -- there's a typo in the abstract -- "can can" } 
+
+
+\textbf{Response}: 	
+
+
+\end{enumerate}
+
+
+
+%% R2 -------------------
+\section*{Reviewer 2}
+
+\begin{enumerate}
+
+
+\item \emph{  Research question & objective: From the title, it seems that the main objective of this study is to develop a new methodology that aid in collecting and analyzing data from government websites and examining the association between website content and mayoral partisanship is a way to validate. However, the author(s) did not develop the discussion about the challenges and issues that they found in the existing methodology after indicating the problem statement in the Introduction as “The conventional approach to data collection in projects focused on government websites involves manual content extraction from each website in the dataset (p. 1, line 42-44).” This leaves me confused about the objective and the research question of this study. While the objective is to develop a new methodology, the research question is to examine the mayoral partisanship in the website contents? The author(s) should address this gap by clearly explaining the differences in a set of research objectives throughout the manuscript.}
+ 
+    \textbf{Response}: 
+    
+
+\item \emph{ Locating within the existing literature: While the main objective of this study is to develop a new methodology, it lacked discussion of the existing methodologies. Instead, the author(s) discussed the current literature about the partisanship and government website contents in section 2 and then jumped right into the method part in sections 3-5. Without locating the objective of the study in the existing literature, the conclusion is a mere summary of this study and it did not develop into a deeper discussion of theoretical and practical implications of this study.}
+    
+    
+    \textbf{Response}: 
+    
+    
+
+\item \emph{The abstract is not well framed to effectively introduce the goal and the question of this study. The last sentence is particularly confusing to grasp the main contribution of this study.}
+
+     \textbf{Response}: 
+
+
+\item \emph{The last paragraph that explains the structure of this study is clear, which should be used as the reference to organize the overall narratives of the manuscript.}
+
+     \textbf{Response}: 
+
+
+\item \emph{ While it is essential to provide the background of the association between government website content and mayoral partisanship, it did not well developed. As the findings are related to the types of contents of government websites depending on mayors’ partisanship, while it explained the ways government websites are used to reflect policy priorities, it lacked the discussion of the overall political objectives of each party. }\\
+
+    \textbf{Response}: 
+    
+    \item \emph{As this paper’s contribution is mainly methodological, there should be a separate, in-depth discussion of the problems and limitations in the existing methodologies. This discussion is more important than the reflection of partisanship on government website contents because it explains the need for a new methodology, supporting the contribution of this study.}\\
+
+    \textbf{Response}: 
+    
+        \item \emph{The conclusion should be improved by adding its theoretical and practical implications by aligning with the limitations of the existing studies that you should discuss earlier (see my comment \#6.)}\\
+
+    \textbf{Response}: 
+    
+    
+            \item \emph{The author(s) should check typos after revising}\\
+
+    \textbf{Response}: 
+    
+     \item \emph{Abstract: “… from large samples of government websites can can compliment … (p. 1, line 22).”}\\
+
+    \textbf{Response}: 
+    
+    \item \emph{Section 2: “… mobile accessibility, and verall function… (p. 3, line 42)”}\\
+
+    \textbf{Response}: 
+
+
+    
+
+\end{enumerate}
+
+
+
+
+
+\newpage
+\singlespacing
+%\bibliographystyle{apsr}
+% \bibliography{spatialPredict.bib}
+
+
+\end{document}
