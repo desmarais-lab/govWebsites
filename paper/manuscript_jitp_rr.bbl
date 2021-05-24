@@ -39,6 +39,12 @@ Berg, {\O}.~R., S.~Oepen, and J.~Read (2012).
 \newblock In {\em ACL-2012 Special Workshop on Rediscovering 50 Years of
   Discoveries}, pp.\  98--103.
 
+\bibitem[\protect\citeauthoryear{Bisong}{Bisong}{2019}]{bisong2019google}
+Bisong, E. (2019).
+\newblock Google colaboratory.
+\newblock In {\em Building Machine Learning and Deep Learning Models on Google
+  Cloud Platform}, pp.\  59--64. Springer.
+
 \bibitem[\protect\citeauthoryear{Brown~Jr}{Brown~Jr}{2017}]{brown2017different}
 Brown~Jr, L.~T. (2017).
 \newblock Different lyrics, same song: Watts, ferguson, and the stagnating

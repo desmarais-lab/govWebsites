@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  21 MAY 2021 15:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  24 MAY 2021 15:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1255,21 +1255,21 @@ File: figures/gary_bp.png Graphic file (type png)
 <use figures/gary_bp.png>
 Package pdftex.def Info: figures/gary_bp.png used on input line 193.
 (pdftex.def)             Requested size: 420.82115pt x 121.57892pt.
- [6] [7 <./figures/gary_sidebyside.png> <./figures/gary_bp.png>] [8]
+ [6] [7 <./figures/gary_sidebyside.png> <./figures/gary_bp.png>] [8] [9]
 Overfull \hbox (0.56491pt too wide) in paragraph at lines 216--233
  [][] 
  []
 
-[9] [10]
+[10]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 261.
 
-[11]
+[11] [12]
 
-LaTeX Warning: Reference `demreptop' on page 12 undefined on input line 269.
+LaTeX Warning: Reference `demreptop' on page 13 undefined on input line 269.
 
-[12] <figures/Democratic_topics.pdf, id=300, 650.43pt x 361.35pt>
+<figures/Democratic_topics.pdf, id=302, 650.43pt x 361.35pt>
 File: figures/Democratic_topics.pdf Graphic file (type pdf)
 
 <use figures/Democratic_topics.pdf>
@@ -1280,7 +1280,7 @@ Overfull \hbox (41.55994pt too wide) in paragraph at lines 273--273
  [][] 
  []
 
-<figures/Republican_topics.pdf, id=301, 650.43pt x 361.35pt>
+<figures/Republican_topics.pdf, id=303, 650.43pt x 361.35pt>
 File: figures/Republican_topics.pdf Graphic file (type pdf)
 
 <use figures/Republican_topics.pdf>
@@ -1328,10 +1328,10 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 414.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 21118 strings out of 492995
- 384888 string characters out of 6132704
- 507913 words of memory out of 5000000
- 24160 multiletter control sequences out of 15000+600000
+ 21122 strings out of 492995
+ 384981 string characters out of 6132704
+ 507945 words of memory out of 5000000
+ 24163 multiletter control sequences out of 15000+600000
  48792 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,10n,54p,2647b,9334s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1341,10 +1341,10 @@ Here is how much of TeX's memory you used:
 al/texlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive
 /2017/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texm
 f-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on manuscript_jitp_rr.pdf (20 pages, 1329935 bytes).
+Output written on manuscript_jitp_rr.pdf (20 pages, 1330375 bytes).
 PDF statistics:
- 399 PDF objects out of 1000 (max. 8388607)
- 354 compressed objects within 4 object streams
- 92 named destinations out of 1000 (max. 500000)
+ 400 PDF objects out of 1000 (max. 8388607)
+ 355 compressed objects within 4 object streams
+ 93 named destinations out of 1000 (max. 500000)
  134 words of extra memory for PDF output out of 10000 (max. 10000000)
 

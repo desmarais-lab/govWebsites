@@ -3,11 +3,11 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: manuscript_jitp_rr.aux
 The style file: chicago.bst
 Database file #1: ref.bib
-Repeated entry---line 231 of file ref.bib
+Repeated entry---line 239 of file ref.bib
  : @manual{hunspell
  :                 ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 250 of file ref.bib
+Repeated entry---line 258 of file ref.bib
  : @manual{readtext
  :                 ,
 I'm skipping whatever remains of this entry
@@ -23,45 +23,45 @@ Warning--empty organization in hunspell
 Warning--empty organization in wand
 Warning--no journal in Therriault2010
 Warning--no number and no volume in Therriault2010
-You've used 44 entries,
+You've used 45 entries,
             2861 wiz_defined-function locations,
-            883 strings with 12884 characters,
-and the built_in function-call counts, 31519 in all, are:
-= -- 2633
-> -- 2418
-< -- 3
-+ -- 722
-- -- 822
-* -- 2926
-:= -- 5743
-add.period$ -- 132
-call.type$ -- 44
-change.case$ -- 325
-chr.to.int$ -- 44
-cite$ -- 56
-duplicate$ -- 808
-empty$ -- 1844
-format.name$ -- 946
-if$ -- 5818
+            889 strings with 13021 characters,
+and the built_in function-call counts, 32194 in all, are:
+= -- 2698
+> -- 2444
+< -- 4
++ -- 728
+- -- 832
+* -- 2967
+:= -- 5858
+add.period$ -- 136
+call.type$ -- 45
+change.case$ -- 331
+chr.to.int$ -- 45
+cite$ -- 57
+duplicate$ -- 837
+empty$ -- 1898
+format.name$ -- 956
+if$ -- 5956
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 39
-newline$ -- 222
-num.names$ -- 440
-pop$ -- 231
+missing$ -- 40
+newline$ -- 227
+num.names$ -- 450
+pop$ -- 238
 preamble$ -- 1
-purify$ -- 595
+purify$ -- 607
 quote$ -- 0
-skip$ -- 858
+skip$ -- 885
 stack$ -- 0
-substring$ -- 1679
-swap$ -- 273
-text.length$ -- 3
+substring$ -- 1723
+swap$ -- 285
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 870
+type$ -- 890
 warning$ -- 12
-while$ -- 436
+while$ -- 449
 width$ -- 0
-write$ -- 575
+write$ -- 590
 (There were 2 error messages)
