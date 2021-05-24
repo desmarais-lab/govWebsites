@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  21 MAY 2021 15:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  24 MAY 2021 16:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -930,22 +930,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--64
 
  []
 
-./jitp_rr_memo.tex:95: Misplaced alignment tab character &.
-<argument>  Research question &
-                                objective: From the title, it seems that the...
-l.95 ...rch objectives throughout the manuscript.}
-                                                  
-? 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.96 
-      [1]
-Underfull \hbox (badness 10000) in paragraph at lines 117--118
-
- []
-
+l.89 \end{enumerate}
+                     [1]
+./jitp_rr_memo.tex:99: Misplaced alignment tab character &.
+<argument>  Research question &
+                                objective: From the title, it seems that the...
+l.99 ...rch objectives throughout the manuscript.}
+                                                  
+? 
 
 Underfull \hbox (badness 10000) in paragraph at lines 121--122
 
@@ -957,7 +953,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 125--126
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 130--131
+Underfull \hbox (badness 10000) in paragraph at lines 129--130
 
  []
 
@@ -971,32 +967,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 138--139
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 142--143
+
+ []
+
 [3]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 157.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 157.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 161.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 161.
  (./jitp_rr_memo.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 157.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 157.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 161.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 161.
 Package rerunfilecheck Info: File `jitp_rr_memo.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 157.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 161.
  ) 
 Here is how much of TeX's memory you used:
- 9668 strings out of 492995
- 145017 string characters out of 6132704
+ 9671 strings out of 492995
+ 145045 string characters out of 6132704
  251525 words of memory out of 5000000
- 13042 multiletter control sequences out of 15000+600000
- 6861 words of font info for 25 fonts, out of 8000000 for 9000
+ 13043 multiletter control sequences out of 15000+600000
+ 7030 words of font info for 26 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,6n,38p,1082b,419s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,6n,38p,1082b,421s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
 /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></u
-sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on jitp_rr_memo.pdf (4 pages, 66598 bytes).
+sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></us
+r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on jitp_rr_memo.pdf (4 pages, 71896 bytes).
 PDF statistics:
- 59 PDF objects out of 1000 (max. 8388607)
- 48 compressed objects within 1 object stream
- 19 named destinations out of 1000 (max. 500000)
+ 64 PDF objects out of 1000 (max. 8388607)
+ 52 compressed objects within 1 object stream
+ 20 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
