@@ -32,13 +32,6 @@ Benoit, K., K.~Watanabe, H.~Wang, P.~Nulty, A.~Obeng, S.~Müller, and A.~Matsuo
 \newblock quanteda: An r package for the quantitative analysis of textual data.
 \newblock {\em Journal of Open Source Software\/}~{\em 3\/}(30), 774.
 
-\bibitem[\protect\citeauthoryear{Berg, Oepen, and Read}{Berg
-  et~al.}{2012}]{Berg2012}
-Berg, {\O}.~R., S.~Oepen, and J.~Read (2012).
-\newblock {Towards High-Quality Text Stream Extraction from PDF}.
-\newblock In {\em ACL-2012 Special Workshop on Rediscovering 50 Years of
-  Discoveries}, pp.\  98--103.
-
 \bibitem[\protect\citeauthoryear{Bisong}{Bisong}{2019}]{bisong2019google}
 Bisong, E. (2019).
 \newblock Google colaboratory.
@@ -64,10 +57,6 @@ Cryer, J. (2019).
   gender on strategy in us congressional elections.
 \newblock In {\em 2019 National Conference of Black Political Scientists
   (NCOBPS) Annual Meeting}.
-
-\bibitem[\protect\citeauthoryear{Darwin}{Darwin}{2008}]{darwin2008libmagic}
-Darwin, I. (2008).
-\newblock Libmagic.
 
 \bibitem[\protect\citeauthoryear{de~Benedictis-Kessner and
   Warshaw}{de~Benedictis-Kessner and Warshaw}{2016}]{de2016mayoral}
@@ -100,6 +89,20 @@ Einstein, K.~L. and D.~M. Glick (2016).
 \newblock Mayors, partisanship, and redistribution: Evidence directly from us
   mayors.
 \newblock {\em Urban Affairs Review\/}, 1078087416674829.
+
+\bibitem[\protect\citeauthoryear{Einstein and Glick}{Einstein and
+  Glick}{2018}]{einstein2018mayors}
+Einstein, K.~L. and D.~M. Glick (2018).
+\newblock Mayors, partisanship, and redistribution: Evidence directly from us
+  mayors.
+\newblock {\em Urban Affairs Review\/}~{\em 54\/}(1), 74--106.
+
+\bibitem[\protect\citeauthoryear{Einstein, Godinez~Puig, and Piston}{Einstein
+  et~al.}{2021}]{einstein2021pictures}
+Einstein, K.~L., L.~Godinez~Puig, and S.~Piston (2021).
+\newblock The pictures in their heads: How us mayors think about racial
+  inequality.
+\newblock {\em Urban Affairs Review\/}~{\em 57\/}(3), 611--642.
 
 \bibitem[\protect\citeauthoryear{Einstein and Kogan}{Einstein and
   Kogan}{2015}]{Einstein2015}
@@ -188,12 +191,6 @@ Marschall, M. and P.~Shah (2013).
 \newblock Local elections in america project.
 \newblock {\em Center for Local Elections in American Politics. Kinder
   Institute for Urban Research, Rice University.(Database)\/}.
-
-\bibitem[\protect\citeauthoryear{McNeal, Tolbert, Mossberger, and
-  Dotterweich}{McNeal et~al.}{2003}]{mcneal2003innovating}
-McNeal, R.~S., C.~J. Tolbert, K.~Mossberger, and L.~J. Dotterweich (2003).
-\newblock Innovating in digital government in the american states.
-\newblock {\em Social Science Quarterly\/}~{\em 84\/}(1), 52--70.
 
 \bibitem[\protect\citeauthoryear{McNutt}{McNutt}{2010}]{mcnutt2010virtual}
 McNutt, K. (2010).

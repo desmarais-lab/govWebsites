@@ -25,45 +25,45 @@ Warning--empty organization in hunspell
 Warning--empty organization in wand
 Warning--no journal in Therriault2010
 Warning--no number and no volume in Therriault2010
-You've used 47 entries,
+You've used 46 entries,
             2861 wiz_defined-function locations,
-            899 strings with 13372 characters,
-and the built_in function-call counts, 33637 in all, are:
-= -- 2831
-> -- 2548
-< -- 4
-+ -- 760
-- -- 872
-* -- 3088
-:= -- 6119
-add.period$ -- 142
-call.type$ -- 47
-change.case$ -- 345
-chr.to.int$ -- 47
-cite$ -- 61
-duplicate$ -- 871
-empty$ -- 1981
-format.name$ -- 1004
-if$ -- 6222
+            893 strings with 13122 characters,
+and the built_in function-call counts, 32990 in all, are:
+= -- 2784
+> -- 2496
+< -- 3
++ -- 748
+- -- 858
+* -- 3042
+:= -- 6000
+add.period$ -- 140
+call.type$ -- 46
+change.case$ -- 337
+chr.to.int$ -- 46
+cite$ -- 60
+duplicate$ -- 844
+empty$ -- 1940
+format.name$ -- 990
+if$ -- 6092
 int.to.chr$ -- 1
 int.to.str$ -- 0
 missing$ -- 42
-newline$ -- 237
-num.names$ -- 470
-pop$ -- 246
+newline$ -- 233
+num.names$ -- 460
+pop$ -- 233
 preamble$ -- 1
-purify$ -- 633
+purify$ -- 619
 quote$ -- 0
-skip$ -- 929
+skip$ -- 907
 stack$ -- 0
-substring$ -- 1804
-swap$ -- 295
-text.length$ -- 4
+substring$ -- 1787
+swap$ -- 284
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 930
+type$ -- 910
 warning$ -- 14
-while$ -- 473
+while$ -- 466
 width$ -- 0
-write$ -- 616
+write$ -- 604
 (There were 2 error messages)
