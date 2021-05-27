@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.6)  27 MAY 2021 14:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.6)  27 MAY 2021 15:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -940,27 +940,19 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 (hyperref)                than one, level fixed on input line 267.
 
 [11]
-<figures/Democratic_topics.pdf, id=284, 650.43pt x 361.35pt>
-File: figures/Democratic_topics.pdf Graphic file (type pdf)
-<use figures/Democratic_topics.pdf>
-Package pdftex.def Info: figures/Democratic_topics.pdf  used on input line 279.
+<figures/Democratic_Republican_topics.pdf, id=284, 650.43pt x 722.7pt>
+File: figures/Democratic_Republican_topics.pdf Graphic file (type pdf)
+<use figures/Democratic_Republican_topics.pdf>
+Package pdftex.def Info: figures/Democratic_Republican_topics.pdf  used on inpu
+t line 279.
+(pdftex.def)             Requested size: 471.56456pt x 523.96062pt.
 
-(pdftex.def)             Requested size: 471.56456pt x 261.98032pt.
-
-Overfull \hbox (41.55994pt too wide) in paragraph at lines 279--279
+Overfull \hbox (41.55994pt too wide) in paragraph at lines 279--280
  [][] 
  []
 
-<figures/Republican_topics.pdf, id=285, 650.43pt x 361.35pt>
-File: figures/Republican_topics.pdf Graphic file (type pdf)
-<use figures/Republican_topics.pdf>
-Package pdftex.def Info: figures/Republican_topics.pdf  used on input line 280.
 
-(pdftex.def)             Requested size: 471.56456pt x 261.98032pt.
-
-Overfull \hbox (41.55994pt too wide) in paragraph at lines 280--281
- [][] 
- []
+LaTeX Warning: Float too large for page by 9.74815pt on input line 282.
 
 (./tables/stmTopWords60.tex
 Overfull \hbox (47.517pt too wide) in paragraph at lines 6--73
@@ -970,27 +962,31 @@ Overfull \hbox (47.517pt too wide) in paragraph at lines 6--73
 
 LaTeX Warning: Float too large for page by 61.42249pt on input line 75.
 
-) [12] [13 <./figures/Democratic_topics.pdf> <./figures/Republican_topics.pdf>]
+) [12] [13 <./figures/Democratic_Republican_topics.pdf>]
 (./manuscript_jitp_rr.bbl [14] [15] [16] [17] [18])
 
 Package caption Warning: Unused \captionsetup[subfloat] on input line 59.
 See the caption package documentation for explanation.
 
 [19] [20]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 421.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 421.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 420.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 420.
  (./manuscript_jitp_rr.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 421.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 421.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 420.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 420.
 Package rerunfilecheck Info: File `manuscript_jitp_rr.out' has not changed.
 (rerunfilecheck)             Checksum: 59709BA4F34D456C499D5D413B33379C;861.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 421.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 420.
  ) 
 Here is how much of TeX's memory you used:
- 21710 strings out of 483183
- 398510 string characters out of 5966293
+ 21703 strings out of 483183
+ 398353 string characters out of 5966293
  680418 words of memory out of 5000000
- 36168 multiletter control sequences out of 15000+600000
+ 36162 multiletter control sequences out of 15000+600000
  577490 words of font info for 87 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  60i,10n,60p,2647b,519s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -999,10 +995,10 @@ e/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
 /times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.
 pfb>
-Output written on manuscript_jitp_rr.pdf (20 pages, 1320221 bytes).
+Output written on manuscript_jitp_rr.pdf (20 pages, 1316233 bytes).
 PDF statistics:
- 388 PDF objects out of 1000 (max. 8388607)
- 345 compressed objects within 4 object streams
+ 379 PDF objects out of 1000 (max. 8388607)
+ 338 compressed objects within 4 object streams
  89 named destinations out of 1000 (max. 500000)
- 134 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 129 words of extra memory for PDF output out of 10000 (max. 10000000)
 
