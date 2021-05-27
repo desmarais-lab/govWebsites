@@ -233,7 +233,7 @@ After preprocessing, our corpus consists of 356,911 documents.  In Table \ref{ta
         11. Removal of duplicate documents. & \texttt{gov2text} & yes \\
         \hline
     \end{tabular}
-    \caption{\label{tab:list} Data collection and processing pipeline. Steps to collect and prepare text for topic modeling.}  \vspace{-.9cm}
+    \caption{\label{tab:list} Data collection and processing pipeline. Steps to collect and prepare text for topic modeling.}  \vspace{-.5cm}
 \end{table}
 
 The biggest limitation in our pipeline, and an open area for future research, is the reliance on \texttt{wget} to gather the initial website files. By using \texttt{wget}, we miss content that is displayed dynamically on websites using JavaScript. We investigated whether the presence of JavaScript was related to the amount of text we gathered from the website. We calculated the correlation between the number of <script> HTML tags on a city's website, which indicate the use of JavaScript on a site, and the number of text tokens we scrape from the site. This correlation is -0.059, which indicates a very weak relationship between the use of JavaScript and the amount of text scraped from the site.
