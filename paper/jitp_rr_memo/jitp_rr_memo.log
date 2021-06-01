@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  26 MAY 2021 19:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  1 JUN 2021 16:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -934,8 +934,8 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.89 \end{enumerate}
-                     [1]
+l.86 \textbf{Response}
+                      : Fixed. [1]
 ./jitp_rr_memo.tex:99: Misplaced alignment tab character &.
 <argument>  Research question &
                                 objective: From the title, it seems that the...
@@ -975,7 +975,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 153.
 Here is how much of TeX's memory you used:
  9669 strings out of 492995
  145031 string characters out of 6132704
- 251525 words of memory out of 5000000
+ 252525 words of memory out of 5000000
  13043 multiletter control sequences out of 15000+600000
  7030 words of font info for 26 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -985,7 +985,7 @@ Here is how much of TeX's memory you used:
 /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></u
 sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></us
 r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on jitp_rr_memo.pdf (4 pages, 74422 bytes).
+Output written on jitp_rr_memo.pdf (4 pages, 74654 bytes).
 PDF statistics:
  61 PDF objects out of 1000 (max. 8388607)
  49 compressed objects within 1 object stream

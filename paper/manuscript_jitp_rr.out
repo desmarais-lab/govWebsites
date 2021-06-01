@@ -1,7 +1,7 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
 \BOOKMARK [1][-]{section.2}{Politics and Government Website Content}{}% 2
 \BOOKMARK [1][-]{section.3}{Data: US Municipal Government Website Text}{}% 3
-\BOOKMARK [1][-]{section.4}{The Web to Text Pipeline}{}% 4
+\BOOKMARK [1][-]{section.4}{The Web-to-Text Pipeline}{}% 4
 \BOOKMARK [2][-]{subsection.4.1}{Site to Text Conversion}{section.4}% 5
 \BOOKMARK [3][-]{subsubsection.4.1.1}{File Type Detection}{subsection.4.1}% 6
 \BOOKMARK [3][-]{subsubsection.4.1.2}{Extracting Text from HTML}{subsection.4.1}% 7
