@@ -1,0 +1,141 @@
+\begin{columns}[T]
+
+%%%% 1st Column
+\begin{column}{.4\textwidth}
+
+\begin{block}{Overview}
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{eriemayor.png}
+    %\caption{Caption}
+    %\label{fig:my_label}
+\end{figure}
+\begin{itemize}
+\item Government websites contain important information
+\item Research has largely relied on manual coding
+\item Our contribution: pipeline for automated analysis
+\item Application: websites of partisan municipalities
+\end{itemize}
+\end{block}
+
+\begin{block}{Data Collection}
+\begin{itemize}
+\item City URLs are scraped from Wikipedia and the GSA
+\end{itemize}
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{us_map_resized.png}
+    %\caption{Caption}
+    %\label{fig:my_label}
+\end{figure}
+%\include{tabCitiesStatesParties.tex}
+\end{block}
+
+\begin{block}{Site to Text Conversion}
+\input{tabFiletypeFrequencies.tex}
+\begin{itemize}
+\item The file endings from city websites are sometimes wrong
+\item We use file signatures to identify the correct type
+\item Preprocessing: lowercase; removal of punctuation, numbers, dates, etc.; removal of non-English words; lemmatization
+\end{itemize}
+\end{block}
+
+\end{column}
+\begin{column}{.6\textwidth}
+\begin{block}{Boilerplate Removal}
+\begin{itemize}
+\item Websites contain a lot repetitive and uninformative content
+\end{itemize}
+\begin{figure}
+    \centering
+    \includegraphics[width=.65\linewidth]{arcadia_water_TADA_rect.png}
+    %\caption{Caption}
+    %\label{fig:my_label}
+\end{figure}
+\begin{itemize}
+\item A classifier (random forest) is trained to identify and remove boilerplate lines
+\end{itemize}
+\begin{minipage}{\textwidth}
+  \begin{minipage}[b]{0.49\textwidth}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.85\linewidth]{boilerplateBeforeAfterNwords.pdf}
+        %\caption{Caption}
+        %\label{fig:my_label}
+    \end{figure}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.49\textwidth}
+    \input{boilerplateClassifierRFMetrics.tex}
+    \end{minipage}
+  \end{minipage}
+\end{block}
+
+
+
+%\begin{column}{.63\textwidth}
+%\begin{block}{Additional Preprocessing}
+%\begin{itemize}
+%\item Lowercase; removal of punctuation, numbers, dates, etc.
+%\item Spellchecking/Removal of non-English words
+%\item Lemmatization
+%\end{itemize}
+%\end{block}
+%\end{column}
+
+%%%% 2nd Column
+
+
+
+%\begin{column}{.23\textwidth}
+
+
+
+
+
+%\end{column}
+
+
+%%%%  3rd column
+
+%\begin{column}{.23\textwidth}
+
+\begin{block}{Analysis}
+
+\begin{center}
+\begin{itemize}
+\item Structural topic model with 60 topics
+\item Covariates: Party, state, population, median income
+\end{itemize}
+
+\vspace{5mm}
+
+\input{stmTopWords60.tex}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=\linewidth]{stm_test.png}
+%    %\caption{Caption}
+%    \label{fig:my_label}
+%\end{figure}
+
+\end{center}
+
+\end{block}
+
+\begin{block}{Conclusion}
+\begin{itemize}
+\item Republican cities feature information on basic utilities and protection from natural disasters
+\item Democratic cities feature information on policy deliberation, crime control and city budgeting
+\item Politics at the municipal level is not entirely non-partisan
+\item We plan to implement the pipeline in an R package
+\end{itemize}
+\end{block}
+
+%\end{column}
+\end{column}
+
+\end{columns}
+
+
+

@@ -1,0 +1,93 @@
+\documentclass[12pt,titlepage]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage[capposition=top]{floatrow}
+\usepackage{subfig}
+\usepackage{amsmath}
+\usepackage{natbib}
+\usepackage{adjustbox}
+\usepackage{url}
+\usepackage[section]{placeins}
+\usepackage{setspace}   %Allows double spacing with the \doublespacing command
+\usepackage{lscape}
+\usepackage{float}
+\usepackage{multirow} % table
+\usepackage{dcolumn} % table
+\usepackage{booktabs} % table
+\usepackage{titling}
+\usepackage{blindtext}
+\usepackage{nameref} % ref section title!! don't ref the section title [external document]
+
+
+%%%% Cross-referencing ----------------
+% In your preamble
+
+%\usepackage{xr-hyper}
+% must use xr-hyper
+\usepackage[colorlinks=black,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+
+\makeatletter
+\newcommand*{\addFileDependency}[1]{% argument=file name and extension
+  \typeout{(#1)}
+  \@addtofilelist{#1}
+  \IfFileExists{#1}{}{\typeout{No file #1.}}
+}
+\makeatother
+
+\newcommand*{\myexternaldocument}[1]{%
+    \externaldocument{#1}%
+    \addFileDependency{#1.tex}%
+    \addFileDependency{#1.aux}%
+}
+
+%\myexternaldocument{appendix}
+%%%% Cross-referencing ----------------
+
+
+% We expect to receive your revision by 18-May-2021. If it is not possible for you to submit your revision by this date, please contact the Editorial Office to rearrange the due date. Otherwise we may have to consider your paper as a new submission.
+
+% HL: Just a note to share here that PRSM replication team can be pretty stringent on wanting to see the exact same number being reproduced in the replication file. I am also not sure if we want the replication team to run our models on their HPC.
+
+\title{Revision Memo for, ``Government Websites As Data: A methodological pipeline with application to the websites of municipalities in the United States''}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\maketitle
+
+Dear Profs. Copeland, Gainous, and Towner,\\
+
+Thank you for your comments and for giving us the opportunity to revise and resubmit our paper. Thanks also to Reviewer 1 for their constructive comments. As we hope you will see both in the revised manuscript and in this response letter, we have taken each comment seriously and have endeavored to address each as completely as possible. Each of the comments s addressed in the order presented in the review.  We should note that we are now approximately NNN words over the 5,000 word limit. We trimmed the text substantially as we revised the paper, but we think the current version provides the most effective presentation of our core contributions and the revisions suggested by the reviewers. Of course, we are happy to trim further if necessary.  We do believe that addressing reviewers' comments has significantly improved the paper. \\
+
+%% R1 ----------------------------------
+\section*{Reviewer 1}
+
+\begin{enumerate}
+
+
+\item \emph{ Abstract: in the last sentence, “The application validates the utility of website content data…”, I’d suggest changing the word, validate, to demonstrate/illustrate as validation of a new method requires a much more rigorous approach. } 
+
+	\textbf{Response}: We agree with this comment, and revised it to be, ``illustrates.''
+	
+	\item \emph{ In section 2, the author(s) added the discussion of the existing studies that used manual methods. However, it is not clear how the author(s) connect the website evaluation studies to the use of website data. These seem to be two separate branches of study in the e-government website literature. If there is an important connection, the author(s) should explain and make a clearer argument on how the current study can help with the limitations found in the manual website evaluation study. Otherwise, the author(s) should use more relevant examples of the existing studies that are more tightly aligned with the subject of the current study. } 
+
+	\textbf{Response}: 
+	
+	\item \emph{ Conclusion: In the last paragraph, the author(s) presented two studies by explaining the implications of the study. These sets of existing studies should have been discussed earlier. Also, the author(s) should explain more in detail why these studies show the usefulness of the new methodology that this study provides. Have these studies used the manual method? If not, any ideas on how the approaches these studies used can be applied in the context of e-government studies? } 
+
+	\textbf{Response}: 
+
+
+
+\end{enumerate}
+
+
+
+%\bibliographystyle{apsr}
+% \bibliography{spatialPredict.bib}
+
+
+\end{document}
