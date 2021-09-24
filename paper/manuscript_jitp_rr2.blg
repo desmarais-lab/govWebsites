@@ -3,11 +3,11 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: manuscript_jitp_rr2.aux
 The style file: chicago.bst
 Database file #1: ref.bib
-Repeated entry---line 297 of file ref.bib
+Repeated entry---line 320 of file ref.bib
  : @manual{hunspell
  :                 ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 316 of file ref.bib
+Repeated entry---line 339 of file ref.bib
  : @manual{readtext
  :                 ,
 I'm skipping whatever remains of this entry
@@ -23,45 +23,45 @@ Warning--page numbers missing in marschall2013local
 Warning--empty organization in hunspell
 Warning--empty organization in wand
 Warning--no number and no volume in Therriault2010
-You've used 49 entries,
+You've used 51 entries,
             2861 wiz_defined-function locations,
-            911 strings with 13949 characters,
-and the built_in function-call counts, 35075 in all, are:
-= -- 2957
-> -- 2661
+            922 strings with 14334 characters,
+and the built_in function-call counts, 36750 in all, are:
+= -- 3094
+> -- 2808
 < -- 2
-+ -- 798
-- -- 916
-* -- 3245
-:= -- 6385
-add.period$ -- 149
-call.type$ -- 49
-change.case$ -- 358
-chr.to.int$ -- 49
-cite$ -- 61
-duplicate$ -- 895
-empty$ -- 2062
-format.name$ -- 1060
-if$ -- 6468
++ -- 846
+- -- 966
+* -- 3416
+:= -- 6687
+add.period$ -- 155
+call.type$ -- 51
+change.case$ -- 375
+chr.to.int$ -- 51
+cite$ -- 63
+duplicate$ -- 931
+empty$ -- 2150
+format.name$ -- 1118
+if$ -- 6776
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 46
-newline$ -- 248
-num.names$ -- 490
-pop$ -- 249
+missing$ -- 48
+newline$ -- 258
+num.names$ -- 510
+pop$ -- 260
 preamble$ -- 1
-purify$ -- 659
+purify$ -- 688
 quote$ -- 0
-skip$ -- 962
+skip$ -- 1001
 stack$ -- 0
-substring$ -- 1894
-swap$ -- 298
+substring$ -- 1986
+swap$ -- 310
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 960
+type$ -- 1000
 warning$ -- 12
-while$ -- 495
+while$ -- 515
 width$ -- 0
-write$ -- 643
+write$ -- 669
 (There were 2 error messages)

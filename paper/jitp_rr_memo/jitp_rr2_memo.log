@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.8.9)  23 SEP 2021 13:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.8.9)  24 SEP 2021 14:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -496,7 +496,7 @@ File: l3backend-pdftex.def 2021-08-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count326
 \l__pdf_internal_box=\box59
 )
-No file jitp_rr2_memo.aux.
+(./jitp_rr2_memo.aux)
 \openout1 = `jitp_rr2_memo.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
@@ -517,6 +517,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 57.
 LaTeX Font Info:    ... okay on input line 57.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 57.
 LaTeX Font Info:    ... okay on input line 57.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -596,6 +597,8 @@ Package hyperref Info: Link coloring OFF on input line 57.
 LaTeX Info: Redefining \ref on input line 57.
 LaTeX Info: Redefining \pageref on input line 57.
 LaTeX Info: Redefining \nameref on input line 57.
+
+(./jitp_rr2_memo.out) (./jitp_rr2_memo.out)
 \@outlinefile=\write3
 \openout3 = `jitp_rr2_memo.out'.
 
@@ -619,34 +622,28 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.82 
-      [1] [2] (./jitp_rr2_memo.aux)
-
-Package rerunfilecheck Warning: File `jitp_rr2_memo.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `jitp_rr2_memo.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+l.81 	\textbf{Response}
+                       :  We removed the discussion of these studies from th...
+[1] [2] (./jitp_rr2_memo.aux)
+Package rerunfilecheck Info: File `jitp_rr2_memo.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 12763 strings out of 478542
- 197200 string characters out of 5850388
- 519198 words of memory out of 5000000
- 30509 multiletter control sequences out of 15000+600000
- 406820 words of font info for 39 fonts, out of 8000000 for 9000
+ 12766 strings out of 478542
+ 197288 string characters out of 5850388
+ 519423 words of memory out of 5000000
+ 30508 multiletter control sequences out of 15000+600000
+ 406651 words of font info for 38 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,6n,80p,882b,425s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,6n,80p,882b,423s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
 /usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></u
-sr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></us
-r/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on jitp_rr2_memo.pdf (3 pages, 68944 bytes).
+sr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on jitp_rr2_memo.pdf (3 pages, 63696 bytes).
 PDF statistics:
- 52 PDF objects out of 1000 (max. 8388607)
- 36 compressed objects within 1 object stream
- 8 named destinations out of 1000 (max. 500000)
+ 46 PDF objects out of 1000 (max. 8388607)
+ 32 compressed objects within 1 object stream
+ 7 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

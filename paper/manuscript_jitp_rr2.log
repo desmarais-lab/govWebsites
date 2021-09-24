@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.8.9)  23 SEP 2021 14:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.8.9)  24 SEP 2021 14:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -951,48 +951,49 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 ) [3]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 170.
+(hyperref)                removing `\\' on input line 173.
 
-<figures/gary_hp.png, id=167, 598.235pt x 522.95375pt>
+[4]
+<figures/gary_hp.png, id=184, 598.235pt x 522.95375pt>
 File: figures/gary_hp.png Graphic file (type png)
 <use figures/gary_hp.png>
-Package pdftex.def Info: figures/gary_hp.png  used on input line 177.
+Package pdftex.def Info: figures/gary_hp.png  used on input line 180.
 (pdftex.def)             Requested size: 269.20326pt x 235.32701pt.
-[4] [5 <./figures/gary_hp.png>] [6]
-<figures/gary_sidebyside.png, id=205, 1135.24126pt x 736.7525pt>
+ [5 <./figures/gary_hp.png>] [6]
+<figures/gary_sidebyside.png, id=216, 1135.24126pt x 736.7525pt>
 File: figures/gary_sidebyside.png Graphic file (type png)
 <use figures/gary_sidebyside.png>
-Package pdftex.def Info: figures/gary_sidebyside.png  used on input line 201.
+Package pdftex.def Info: figures/gary_sidebyside.png  used on input line 204.
 (pdftex.def)             Requested size: 397.3404pt x 257.86723pt.
-<figures/gary_bp.png, id=206, 1122.1925pt x 324.21124pt>
+<figures/gary_bp.png, id=217, 1122.1925pt x 324.21124pt>
 File: figures/gary_bp.png Graphic file (type png)
 <use figures/gary_bp.png>
-Package pdftex.def Info: figures/gary_bp.png  used on input line 203.
+Package pdftex.def Info: figures/gary_bp.png  used on input line 206.
 (pdftex.def)             Requested size: 420.82115pt x 121.57892pt.
- [7] [8 <./figures/gary_sidebyside.png> <./figures/gary_bp.png>]
-Overfull \hbox (0.56491pt too wide) in paragraph at lines 227--244
+ [7] [8 <./figures/gary_sidebyside.png> <./figures/gary_bp.png>] [9]
+Overfull \hbox (0.56491pt too wide) in paragraph at lines 229--246
  [][] 
  []
 
-[9] [10]
+[10] [11]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 275.
+(hyperref)                than one, level fixed on input line 277.
 
-[11] [12]
-<figures/Democratic_Republican_topics.pdf, id=315, 650.43pt x 722.7pt>
+[12] [13]
+<figures/Democratic_Republican_topics.pdf, id=334, 650.43pt x 722.7pt>
 File: figures/Democratic_Republican_topics.pdf Graphic file (type pdf)
 <use figures/Democratic_Republican_topics.pdf>
 Package pdftex.def Info: figures/Democratic_Republican_topics.pdf  used on inpu
-t line 287.
+t line 289.
 (pdftex.def)             Requested size: 471.56456pt x 523.96062pt.
 
-Overfull \hbox (41.55994pt too wide) in paragraph at lines 287--288
+Overfull \hbox (41.55994pt too wide) in paragraph at lines 289--290
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 9.74815pt on input line 290.
+LaTeX Warning: Float too large for page by 9.74815pt on input line 292.
 
 (./tables/stmTopWords60.tex
 Overfull \hbox (47.517pt too wide) in paragraph at lines 6--73
@@ -1002,33 +1003,33 @@ Overfull \hbox (47.517pt too wide) in paragraph at lines 6--73
 
 LaTeX Warning: Float too large for page by 61.42249pt on input line 75.
 
-) [13] [14 <./figures/Democratic_Republican_topics.pdf>]
-(./manuscript_jitp_rr2.bbl [15] [16] [17] [18] [19])
+) (./manuscript_jitp_rr2.bbl [14] [15 <./figures/Democratic_Republican_topics.p
+df>] [16] [17] [18] [19] [20])
 
 Package caption Warning: Unused \captionsetup[subfloat] on input line 59.
 See the caption package documentation for explanation.
 
-[20] [21] (./manuscript_jitp_rr2.aux)
+[21] [22] (./manuscript_jitp_rr2.aux)
 Package rerunfilecheck Info: File `manuscript_jitp_rr2.out' has not changed.
 (rerunfilecheck)             Checksum: 205268340DDF85AEF0B1ABF521C98C87;2522.
  ) 
 Here is how much of TeX's memory you used:
- 24651 strings out of 478542
- 445752 string characters out of 5850388
- 796215 words of memory out of 5000000
- 42016 multiletter control sequences out of 15000+600000
+ 24660 strings out of 478542
+ 445973 string characters out of 5850388
+ 798354 words of memory out of 5000000
+ 42022 multiletter control sequences out of 15000+600000
  449523 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,12n,89p,2648b,524s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 84i,12n,89p,2648b,534s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2021/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2
 021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2021/texmf-
 dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts
 /type1/urw/times/utmri8a.pfb>
-Output written on manuscript_jitp_rr2.pdf (21 pages, 1325297 bytes).
+Output written on manuscript_jitp_rr2.pdf (22 pages, 1333221 bytes).
 PDF statistics:
- 414 PDF objects out of 1000 (max. 8388607)
- 368 compressed objects within 4 object streams
- 95 named destinations out of 1000 (max. 500000)
+ 425 PDF objects out of 1000 (max. 8388607)
+ 378 compressed objects within 4 object streams
+ 98 named destinations out of 1000 (max. 500000)
  129 words of extra memory for PDF output out of 10000 (max. 10000000)
 
