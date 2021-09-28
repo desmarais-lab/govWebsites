@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.8.9)  24 SEP 2021 14:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.8.9)  28 SEP 2021 05:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -954,7 +954,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\\' on input line 173.
 
 [4]
-<figures/gary_hp.png, id=184, 598.235pt x 522.95375pt>
+<figures/gary_hp.png, id=189, 598.235pt x 522.95375pt>
 File: figures/gary_hp.png Graphic file (type png)
 <use figures/gary_hp.png>
 Package pdftex.def Info: figures/gary_hp.png  used on input line 180.
@@ -1010,23 +1010,26 @@ Package caption Warning: Unused \captionsetup[subfloat] on input line 59.
 See the caption package documentation for explanation.
 
 [21] [22] (./manuscript_jitp_rr2.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `manuscript_jitp_rr2.out' has not changed.
 (rerunfilecheck)             Checksum: 205268340DDF85AEF0B1ABF521C98C87;2522.
  ) 
 Here is how much of TeX's memory you used:
  24660 strings out of 478542
  445973 string characters out of 5850388
- 798354 words of memory out of 5000000
+ 798353 words of memory out of 5000000
  42022 multiletter control sequences out of 15000+600000
  449523 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,12n,89p,2648b,534s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 84i,12n,89p,2648b,536s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2021/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2
 021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2021/texmf-
 dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts
 /type1/urw/times/utmri8a.pfb>
-Output written on manuscript_jitp_rr2.pdf (22 pages, 1333221 bytes).
+Output written on manuscript_jitp_rr2.pdf (22 pages, 1332434 bytes).
 PDF statistics:
  425 PDF objects out of 1000 (max. 8388607)
  378 compressed objects within 4 object streams
